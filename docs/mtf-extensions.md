@@ -31,6 +31,6 @@ Map的宽度为总宽度，单位为角度视场的度数或其他视场的镜�
 Map每方向采样数为3到100。本机2点网格未返回对应尺寸的数据，服务在原生执行前拒绝该设置。
 
 
-2026-11-06 B003续探查090：FFT/Huygens曲面MTF设置、频率网格及单视场对照已执行。修复Huygens原生MinX/MinY将DC置于网格外的问题，保留native_axes，公开零频索引与频率单位。匹配显式ImageDelta1µm、瞳/像面256后，19次DC和弧矢/子午比较通过，固定绝对容差0.005，最大截面差0.0018245707674065526；普通25通过。FFT离轴子午差异在128到256采样仍超限，保持implemented。证据verification/development/CV-01/probe090.json。GE-01补五项后剩余159个去重条目；B0030/10，无全量或wheel，无活动原生会话。
+2026-11-06 B003续探查090：FFT/Huygens曲面MTF设置、频率网格及单视场对照已执行。修复Huygens原生MinX/MinY将DC置于网格外的问题，保留native_axes，公开零频索引与频率单位。匹配显式ImageDelta1µm、瞳/像面256后，19次DC和弧矢/子午比较通过，固定绝对容差0.005，最大截面差0.0018245707674065526；普通25通过。FFT离轴子午差异在128到256采样仍超限，保持implemented。证据.local/evidence/development/CV-01/probe090.json。GE-01补五项后剩余159个去重条目；B0030/10，无全量或wheel，无活动原生会话。
 
 二维曲面MTF网格返回frequency_unit、value_quantity、zero_frequency_index与native_axes；Huygens使用校准后的零频原点，保留原生Dx/Dy。FFT的rotation与scale_factor控制原生绘图视角及显示高度，频率数据保持系统坐标。涉及Huygens截面对照时，两端均须匹配image_sampling及image_delta；自动采样与显式采样分别记录。

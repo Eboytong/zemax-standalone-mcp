@@ -1,6 +1,6 @@
 # 双目FOV
 
-当前done，证据见`verification/development/CV-02/acceptance422-fov.json`。
+当前done，证据见`.local/evidence/development/CV-02/acceptance422-fov.json`。
 
 ```json
 {"request":{"kind":"biocular_field_of_view","configurations":[1,0,2],"wavelength":1,"use_angles":true,"left":-14,"right":14,"bottom":-9,"top":9,"x_points":13,"y_points":9,"refinement_steps":8}}

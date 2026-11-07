@@ -4,9 +4,9 @@
   "work_package": "CV-01",
   "completed_increment": "FullFieldAberration request, native settings adapter, schema, documentation, tests and isolated wheel smoke",
   "analysis_kind_count": 73,
-  "ordinary_tests": {"passed": 1305, "skipped": 500, "junit": "verification/development/CV-01/ordinary035.xml"},
+  "ordinary_tests": {"passed": 1305, "skipped": 500, "junit": ".local/evidence/development/CV-01/ordinary035.xml"},
   "wheel": "wheels/zemax_standalone_mcp-0.1.25-py3-none-any.whl",
-  "stdio_smoke": "verification/development/CV-01/stdio-smoke035.json",
-  "native_runtime": {"status": "blocked", "evidence": "verification/development/BASE-04/connection019/supervisor.json", "reason": "OpticStudio initialization timed out after 180.526 seconds"},
+  "stdio_smoke": ".local/evidence/development/CV-01/stdio-smoke035.json",
+  "native_runtime": {"status": "blocked", "evidence": ".local/evidence/development/BASE-04/connection019/supervisor.json", "reason": "OpticStudio initialization timed out after 180.526 seconds"},
   "next_backlog_item": "CV-01.FullFieldSpot"
 }

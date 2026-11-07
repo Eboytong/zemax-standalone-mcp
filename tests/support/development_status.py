@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def read_ledger(name):
-    with (ROOT / 'docs' / name).open(encoding='utf-8-sig', newline='') as stream:
+    with (ROOT / 'development/ledgers' / dict(zip(['development-tasks.csv','development-items.csv','development-backlog.csv'],['packages.csv','operations.csv','analyses.csv']))[name]).open(encoding='utf-8-sig', newline='') as stream:
         return list(csv.DictReader(stream))
 
 

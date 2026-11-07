@@ -3,7 +3,7 @@
   "date": "2026-11-05",
   "item_id": "IM-01.GeometricBitmapImageAnalysis",
   "native_probe": {
-    "source": "verification/development/BASE-01/probe/api-interfaces.json",
+    "source": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
     "analysis_id": "ZOSAPI.Analysis.AnalysisIDM.GeometricBitmapImageAnalysis (61)",
     "settings_interface": "IAS_GeometricImageAnalysis",
     "settings_interface_scope": "The static reflection inventory has no dedicated BitmapImage settings interface; the shared interface exposes File, FieldSize, ImageSize, Field, Wavelength, Surface, RaysX1000, ShowAs, Source, NumberOfPixels, NA, TotalWatts, Parity, Reference, UseSymbols, UsePolarization, RemoveVignettingFactors, ScatterRays, DeleteVignetted, UsePixelInterpolation and SaveAsBIMFile.",
@@ -11,7 +11,7 @@
     "result_surface": "General imaging collector reads native grids, RGB grids, series and scatter points; BitmapImage result shape awaits native call.",
     "resource": "geometric_image_files; IMA/BIM",
     "native_execution": "not_run",
-    "connection_evidence": "verification/development/BASE-04/connection040.json",
+    "connection_evidence": ".local/evidence/development/BASE-04/connection040.json",
     "unlock_condition": "Successful OpticStudio initialization; execute geometric_bitmap_image with controlled IMA/BIM, inspect runtime settings type/readback, result dimensions/labels and close."
   },
   "implementation": {

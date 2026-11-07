@@ -3,26 +3,26 @@
   "source_version": "0.1.60",
   "batch": "B0054/10",
   "completed_function_count": 0,
-  "documentation": "docs/next-development-plan.md",
+  "documentation": "development/current.md",
   "ordinary": {
-    "report": "verification/development/BASE-01/ordinary438-status.xml",
+    "report": ".local/evidence/development/BASE-01/ordinary438-status.xml",
     "passed": 2
   },
   "native_runs": [
     {
-      "path": "verification/development/MA-01/probe439-grin/probe.json",
+      "path": ".local/evidence/development/MA-01/probe439-grin/probe.json",
       "outcome": "parameter-validation failure: Backend SystemPatch requires flat settings; disconnected; corrected in440"
     },
     {
-      "path": "verification/development/MA-01/probe440-grin/probe.json",
+      "path": ".local/evidence/development/MA-01/probe440-grin/probe.json",
       "outcome": "2 successful typed GRIN analyses on owned Gradium surface; disconnected"
     },
     {
-      "path": "verification/development/MA-01/probe441-reference/probe.json",
+      "path": ".local/evidence/development/MA-01/probe441-reference/probe.json",
       "outcome": "2 analyses;101 independent GRD checks; numerical acceptance failed; disconnected"
     },
     {
-      "path": "verification/development/CV-02/probe442-b005/probe.json",
+      "path": ".local/evidence/development/CV-02/probe442-b005/probe.json",
       "outcome": "5 owned analyses closed;ZRD sequential factory null;disconnected"
     }
   ],

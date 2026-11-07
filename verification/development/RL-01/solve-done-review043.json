@@ -1,6 +1,6 @@
 {
   "version": "0.1.43",
-  "source": "verification/development/ED-02/final-cases018/cases.json",
+  "source": ".local/evidence/development/ED-02/final-cases018/cases.json",
   "native_rerun": false,
   "items": [
     {

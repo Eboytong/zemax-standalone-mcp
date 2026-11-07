@@ -39,7 +39,7 @@
     "stderr_bytes": 0
   },
   "conclusion": "Application creation did not return; CLR, initializer and connection object stages completed. No API license status or PrimarySystem handle was returned.",
-  "license_query": "verification/development/BASE-04/lmstat045.json",
+  "license_query": ".local/evidence/development/BASE-04/lmstat045.json",
   "license_observations": {
     "server": "UP",
     "vendor_daemon": "UP",
@@ -68,7 +68,7 @@
   ],
   "tests": {
     "targeted_passed": 28,
-    "ordinary": "verification/development/BASE-04/ordinary055.xml"
+    "ordinary": ".local/evidence/development/BASE-04/ordinary055.xml"
   },
   "next_action": "Investigate OpticStudio startup before it returns from CreateNewApplication using local startup/support diagnostics. After a relevant change rerun the staged isolated probe, then minimal model and real stdio gates. Do not repeat the same unmodified startup attempt.",
   "remaining": "Successful application/primary-system/minimal-model/normal-close evidence is pending; downstream native tests were not run."

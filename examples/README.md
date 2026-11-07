@@ -35,3 +35,5 @@
 - `test-plates.json`：样板目录资源发现、原生活动目录读取及显式TPD文件读取。
 
 IMA/BIM 查看示例：[`ima-bim-viewer.json`](ima-bim-viewer.json)。
+
+请求模板位于 `requests/`，工作流脚本位于 `workflows/`，配置模板位于 `config/`。运行输出默认位于 `.local/runs/`。

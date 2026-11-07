@@ -39,7 +39,7 @@
       "cleanup_warnings": null
     }
   ],
-  "command": ".venv/Scripts/python.exe -X utf8 tests/support/quick_yield_reference_sphere530.py verification/development/TO-01/probe530-reference-primary",
+  "command": ".venv/Scripts/python.exe -X utf8 tests/support/quick_yield_reference_sphere530.py .local/evidence/development/TO-01/probe530-reference-primary",
   "lifecycle": {
     "surfaces_preserved": true,
     "settings_preserved": true,

@@ -7,8 +7,8 @@
       "item_id": "CV-02.LightSourceAnalysis",
       "state": "blocked",
       "native_reports": [
-        "verification/development/CV-02/probe464-light-source/probe.json",
-        "verification/development/CV-02/probe466-light-source/probe.json"
+        ".local/evidence/development/CV-02/probe464-light-source/probe.json",
+        ".local/evidence/development/CV-02/probe466-light-source/probe.json"
       ],
       "condition": "OpticStudio 24.2.0 build240529 PremiumEdition; new sequential model with 100 mm finite object distance; installed sample.SDF; native tool closed and application disconnected.",
       "observation": "LightSourceAnalysis settings are AS_Default with IsValid as the only writable property. Twenty-two manual-described ModifySettings key attempts returned true, but LoadFrom provided no field getters and Apply returned zero grids, series, scatter points and messages. The dedicated analysis window output identity remains unverified.",
@@ -21,10 +21,10 @@
       ],
       "state": "blocked",
       "native_reports": [
-        "verification/development/CV-02/probe468-image-analyses/probe.json",
-        "verification/development/CV-02/probe469-image-grids/probe.json",
-        "verification/development/CV-02/probe470-image-axes/probe.json",
-        "verification/development/CV-02/probe471-cfg-validation/probe.json"
+        ".local/evidence/development/CV-02/probe468-image-analyses/probe.json",
+        ".local/evidence/development/CV-02/probe469-image-grids/probe.json",
+        ".local/evidence/development/CV-02/probe470-image-axes/probe.json",
+        ".local/evidence/development/CV-02/probe471-cfg-validation/probe.json"
       ],
       "condition": "Cooke 40 degree field model; owned asymmetric 7x7 IMA placed in Images and removed after each analysis; each native analysis closed.",
       "observation": "Both analyses return AR_Default settings and one grid. Grid sizes observed were 256x256 and 13x13. CFG ModifySettings returned true for documented candidate keys and for a deliberately nonexistent key; therefore its boolean cannot verify key recognition or setting adoption. Grid source, data type, scale and coherence selection remain unassigned.",

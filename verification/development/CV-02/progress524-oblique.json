@@ -23,7 +23,7 @@
   "tolerance": "2e-4 absolute +2e-5 relative; same as474/487",
   "results": [
     {
-      "run": "outputs/runs/power523_oblique_646b7fd442",
+      "run": ".local/runs/power523_oblique_646b7fd442",
       "conditions": {
         "reference": "Oblique spherical refraction wavefront curvatures",
         "refractive_index": 1.5168000345005883,
@@ -104,7 +104,7 @@
       "maximum_error": 0.0002277337095222265
     },
     {
-      "run": "outputs/runs/power524_oblique_50_50_94c8a8d60b",
+      "run": ".local/runs/power524_oblique_50_50_94c8a8d60b",
       "conditions": {
         "reference": "Oblique spherical refraction wavefront curvatures",
         "refractive_index": 1.5168000345005883,
@@ -187,7 +187,7 @@
       "maximum_error": 0.0002277337095222265
     },
     {
-      "run": "outputs/runs/power524_oblique_100_50_0a34343333",
+      "run": ".local/runs/power524_oblique_100_50_0a34343333",
       "conditions": {
         "reference": "Oblique spherical refraction wavefront curvatures",
         "refractive_index": 1.5168000345005883,
@@ -270,7 +270,7 @@
       "maximum_error": 0.0002277337095222265
     },
     {
-      "run": "outputs/runs/power524_oblique_50_100_8f1c60fe8d",
+      "run": ".local/runs/power524_oblique_50_100_8f1c60fe8d",
       "conditions": {
         "reference": "Oblique spherical refraction wavefront curvatures",
         "refractive_index": 1.5168000345005883,
@@ -359,11 +359,11 @@
     "ordinary525": "107passed targeted SagTable/CAD/PowerMap/status"
   },
   "commands": [
-    ".venv/Scripts/python.exe -m pytest tests/test_power_map_oblique_live.py -q -s --run-zemax --junitxml=verification/development/CV-02/native523-oblique.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_power_map_oblique_live.py -q -s --run-zemax --junitxml=verification/development/CV-02/native524-oblique-biconic.xml"
+    ".venv/Scripts/python.exe -m pytest tests/test_power_map_oblique_live.py -q -s --run-zemax --junitxml=.local/evidence/development/CV-02/native523-oblique.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_power_map_oblique_live.py -q -s --run-zemax --junitxml=.local/evidence/development/CV-02/native524-oblique-biconic.xml"
   ],
   "retained_failure": {
-    "report": "verification/development/CV-02/native522-oblique.xml",
+    "report": ".local/evidence/development/CV-02/native522-oblique.xml",
     "reason": "Initial model retained image stop, so20deg reference ray was vignetted at selected sphere and mapped null. Fixed controlled model stop location, not tolerance or mask."
   },
   "lifecycle": "All successful control sessions finished task queries, preserved surfaces/settings and disconnected. Formal query composite opens no separate native analysis; batch ray tool owned/closed by trace flow.",

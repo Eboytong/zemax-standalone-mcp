@@ -3,8 +3,8 @@
   "execution_state": "implemented",
   "date": "2026-11-06",
   "probes": [
-    "outputs/runs/universal221_indexed_a9afb7e036/probe.json",
-    "outputs/runs/universal222_dynamic_6e50fa4f95/probe.json"
+    ".local/runs/universal221_indexed_a9afb7e036/probe.json",
+    ".local/runs/universal222_dynamic_6e50fa4f95/probe.json"
   ],
   "changes": [
     "Explicit one-based selection for System XField/YField/Wavelength; inactive fields rejected",
@@ -14,26 +14,26 @@
   ],
   "index_formula": "F=fields,W=wavelengths: XField(i)=i; YField(i)=F+i; Wavelength(i)=2F+i; Aperture0; Apodization2F+W+1; Temperature2F+W+2; Pressure2F+W+3; UN1_SURFACE does not select System index",
   "checks": {
-    "ordinary": "verification/development/EX-01/ordinary226.xml",
+    "ordinary": ".local/evidence/development/EX-01/ordinary226.xml",
     "ordinary_passed": 131,
-    "native_indexed": "verification/development/EX-01/native223.xml",
+    "native_indexed": ".local/evidence/development/EX-01/native223.xml",
     "native_indexed_passed": 2,
-    "native_height": "verification/development/EX-01/native225-finite-height.xml",
+    "native_height": ".local/evidence/development/EX-01/native225-finite-height.xml",
     "native_height_passed": 1
   },
   "runs": [
     {
-      "path": "outputs/runs/universal219_system_236631ba57",
+      "path": ".local/runs/universal219_system_236631ba57",
       "numeric_checks": 21,
       "disconnect": true
     },
     {
-      "path": "outputs/runs/universal200_cvva_Radius_ec5eb04f7b",
+      "path": ".local/runs/universal200_cvva_Radius_ec5eb04f7b",
       "numeric_checks": 3,
       "disconnect": true
     },
     {
-      "path": "outputs/runs/universal224_system_df84e35cf8",
+      "path": ".local/runs/universal224_system_df84e35cf8",
       "numeric_checks": 24,
       "disconnect": true
     }

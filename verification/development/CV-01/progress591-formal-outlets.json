@@ -135,7 +135,7 @@
       "Surface": 7
     }
   ],
-  "command": ".venv/Scripts/python.exe -X utf8 tests/support/full_field_ray_data_probe591.py verification/development/CV-01/probe591-full-field-ray-data",
+  "command": ".venv/Scripts/python.exe -X utf8 tests/support/full_field_ray_data_probe591.py .local/evidence/development/CV-01/probe591-full-field-ray-data",
   "results": [
     {
       "counts": {
@@ -199,7 +199,7 @@
     "merit_preserved": true,
     "disconnect_ok": true
   },
-  "raw": "verification/development/CV-01/probe591-full-field-ray-data/probe.json",
+  "raw": ".local/evidence/development/CV-01/probe591-full-field-ray-data/probe.json",
   "numerical_acceptance": false,
   "next_action": "Need a populated formal graphic/dedicated result outlet or full shared-reference/exaggeration contract for equivalent trace implementation. Keep implemented."
 }

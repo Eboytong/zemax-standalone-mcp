@@ -15,8 +15,8 @@
   "resource_lifecycle": "Analysis task succeeded and closed; stdio session disconnected by native test harness.",
   "evidence": [
     "tests/test_nsc_mtf_live.py::test_nsc_point_detector_mtf_dft_diagnostic",
-    "outputs/runs/nsc_mtf_dft_diagnostic_ca0040ba7c/mtf-dft-diagnostic.json",
-    "verification/development/BASE-04/batch-B006.json"
+    ".local/runs/nsc_mtf_dft_diagnostic_ca0040ba7c/mtf-dft-diagnostic.json",
+    ".local/evidence/development/BASE-04/batch-B006.json"
   ],
   "conclusion": "The measured single occupied pixel and independent DFT reproduce the earlier 9.875e-7 deviation. Both axes have reference magnitude 1, so this case cannot distinguish directional mapping. The cause remains unresolved; tolerance unchanged.",
   "next_action": "Obtain higher-precision native ordinate/frequency output or a multi-pixel point-spread reference that separates native formatting precision from internal frequency evaluation. Continue the B006 queue meanwhile."

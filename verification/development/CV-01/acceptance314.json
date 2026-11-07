@@ -5,11 +5,11 @@
   "source_version": "0.1.59",
   "native_version": "24.2.0 build240529",
   "scope": "Typed native settings/readback; four grids identified from descriptions; independent phase and Moore-Elliott two-ray loss, automatic frequency, pair-pupil masks, display toggles, selection/paging/PNG/failure/cancel/reuse/reload/closure",
-  "ordinary_report": "verification/development/CV-01/ordinary313-related.xml",
+  "ordinary_report": ".local/evidence/development/CV-01/ordinary313-related.xml",
   "ordinary_passed": 59,
   "native_reports": [
-    "verification/development/CV-01/native313-contrast-reference.xml",
-    "verification/development/CV-01/native314-final.xml"
+    ".local/evidence/development/CV-01/native313-contrast-reference.xml",
+    ".local/evidence/development/CV-01/native314-final.xml"
   ],
   "tolerances": {
     "loss_atol": 0.005,
@@ -22,10 +22,10 @@
     "pupil_validity": "both displaced pupil rays must be within unit circle",
     "normalization": "Normalize and ShowOPD change display, not raw grid values"
   },
-  "manual": "verification/development/CV-01/manual311-contrast.txt;verification/development/CV-01/contrast-page311.png",
+  "manual": ".local/evidence/development/CV-01/manual311-contrast.txt;.local/evidence/development/CV-01/contrast-page311.png",
   "runs": [
     {
-      "path": "outputs/runs/contrast_loss311_b573b66cc9",
+      "path": ".local/runs/contrast_loss311_b573b66cc9",
       "checks": [],
       "disconnect": true,
       "close_receipt": {
@@ -51,7 +51,7 @@
       }
     },
     {
-      "path": "outputs/runs/contrast_loss312_reference_9da177eff3",
+      "path": ".local/runs/contrast_loss312_reference_9da177eff3",
       "checks": [
         {
           "label": "Tangential phase degrees",
@@ -110,7 +110,7 @@
       }
     },
     {
-      "path": "outputs/runs/contrast_loss312_reference_1fdcf07378",
+      "path": ".local/runs/contrast_loss312_reference_1fdcf07378",
       "checks": [
         {
           "label": "Tangential phase degrees",
@@ -169,7 +169,7 @@
       }
     },
     {
-      "path": "outputs/runs/contrast_loss314_lifecycle_3fc04e21ca",
+      "path": ".local/runs/contrast_loss314_lifecycle_3fc04e21ca",
       "checks": [],
       "disconnect": true,
       "close_receipt": {
@@ -197,5 +197,5 @@
   ],
   "max_loss_error": 2.3203661214665772e-14,
   "max_phase_error_degrees": 1.3622880601360521e-11,
-  "image_viewed": "outputs/runs/contrast_loss314_lifecycle_3fc04e21ca/contrast-loss.png"
+  "image_viewed": ".local/runs/contrast_loss314_lifecycle_3fc04e21ca/contrast-loss.png"
 }

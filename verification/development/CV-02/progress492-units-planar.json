@@ -10,7 +10,7 @@
   "native": "24.2.0 build 240529 Premium",
   "scope": "Power diopters and EFL lens-unit identity; planar zero native outputs",
   "input_source": "Owned single N-BK7 interface, wavelength .5875618um; 50mm or 5cm radius; corresponding 10mm or 1cm aperture; radius0 planar limit",
-  "command": ".venv/Scripts/python.exe -m pytest tests/test_power_maps_live.py::test_power_maps_lens_units_and_planar_limit -q -s --run-zemax --junitxml=verification/development/CV-02/native492-units-planar.xml",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_power_maps_live.py::test_power_maps_lens_units_and_planar_limit -q -s --run-zemax --junitxml=.local/evidence/development/CV-02/native492-units-planar.xml",
   "requests_and_adopted_settings": "outputs\\runs\\power492_units_planar_7afbb89369\\calls.json",
   "results": "outputs\\runs\\power492_units_planar_7afbb89369\\unit-planar-reference.json",
   "numerical_reference": "EFL=n R/(n-1) in lens units; Power=1000(n-1)/(n R_mm); planar Power=0",

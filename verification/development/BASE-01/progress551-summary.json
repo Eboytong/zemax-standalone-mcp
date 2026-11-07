@@ -11,7 +11,7 @@
   "new_completed": [
     "CV-01.FftPsfLineEdgeSpread"
   ],
-  "completed_evidence": "verification/development/CV-01/acceptance547-spread.json",
+  "completed_evidence": ".local/evidence/development/CV-01/acceptance547-spread.json",
   "maintenance": [
     "MCE numeric getter precision checks and metadata542",
     "FullFieldSpot direction-cosine units and invalid-radius rejection533"

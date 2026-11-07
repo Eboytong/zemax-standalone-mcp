@@ -8,27 +8,27 @@
   "source_version": "0.1.60",
   "source_analysis_count": 108,
   "batch": "B0056/10",
-  "interface_probe": "verification/development/CV-02/probe444-power/probe.json",
-  "ordinary_report": "verification/development/CV-02/ordinary462-candidates.xml",
+  "interface_probe": ".local/evidence/development/CV-02/probe444-power/probe.json",
+  "ordinary_report": ".local/evidence/development/CV-02/ordinary462-candidates.xml",
   "ordinary_passed": 49,
   "native": [
     {
-      "report": "verification/development/CV-02/native446-power.xml",
-      "run": "outputs/runs/power446_cooke_c8502d4fdb",
+      "report": ".local/evidence/development/CV-02/native446-power.xml",
+      "run": ".local/runs/power446_cooke_c8502d4fdb",
       "passed": 1,
       "coverage": "two 7x5 Cooke grids,stdio,pages,PNG,settings/surfaces/MFE unchanged"
     },
     {
-      "report": "verification/development/CV-02/native447-power-reference.xml",
-      "run": "outputs/runs/power447_paraxial_0dd8f05006",
+      "report": ".local/evidence/development/CV-02/native447-power-reference.xml",
+      "run": ".local/runs/power447_paraxial_0dd8f05006",
       "passed": 1,
       "coverage": "two kinds x Power/EFL,analytic axial f100mm",
       "atol": 1e-06,
       "rtol": 1e-06
     },
     {
-      "report": "verification/development/CV-02/native474-power-reference.xml",
-      "run": "outputs/runs/power463_spherical_8d6d9f4a64",
+      "report": ".local/evidence/development/CV-02/native474-power-reference.xml",
+      "run": ".local/runs/power463_spherical_8d6d9f4a64",
       "passed": 1,
       "coverage": "POWF and POWP at a single spherical N-BK7 surface; Power reference from native index and EFL=R*n/(n-1); quantity/data codes; 22 checks, max absolute error 1.934985890557074e-4, atol 2e-4 + rtol 2e-5"
     }
@@ -42,6 +42,6 @@
   "failures_retained": [
     "ordinary445-power.xml circular import; moved normalized_field import inside runner; ordinary445-final and448 passed"
   ],
-  "png_viewed": "outputs/runs/power446_cooke_c8502d4fdb/power_pupil_map.png",
+  "png_viewed": ".local/runs/power446_cooke_c8502d4fdb/power_pupil_map.png",
   "resolved_diagnosis": "POWF and EFL are whole-system results through the selected surface; for this single spherical interface EFL=R*n/(n-1)=146.749026 mm and power=1000/EFL=6.814355 D. The earlier 10.336 D expectation treated the surface as a thin lens and omitted refractive-index scaling; no implementation tolerance was relaxed."
 }

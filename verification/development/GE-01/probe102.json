@@ -6,16 +6,16 @@
     "GE-01.MediumRegions"
   ],
   "state": "implemented; partial native acceptance",
-  "ordinary": "verification/development/GE-01/ordinary101.xml",
+  "ordinary": ".local/evidence/development/GE-01/ordinary101.xml",
   "ordinary_passed": 40,
   "native": [
-    "verification/development/GE-01/native099-gaps.xml",
-    "verification/development/GE-01/native101-scope.xml"
+    ".local/evidence/development/GE-01/native099-gaps.xml",
+    ".local/evidence/development/GE-01/native101-scope.xml"
   ],
   "native_passed": 6,
   "runs": [
     {
-      "run": "outputs/runs/geometry093_slabs_e35bc07413",
+      "run": ".local/runs/geometry093_slabs_e35bc07413",
       "checks": 5,
       "disconnect_confirmed": true,
       "interval_mm": [
@@ -26,7 +26,7 @@
       "reloaded": true
     },
     {
-      "run": "outputs/runs/geometry093_slabs_cabc6c3219",
+      "run": ".local/runs/geometry093_slabs_cabc6c3219",
       "checks": 5,
       "disconnect_confirmed": true,
       "interval_mm": [
@@ -37,7 +37,7 @@
       "reloaded": true
     },
     {
-      "run": "outputs/runs/geometry093_slabs_32835afc68",
+      "run": ".local/runs/geometry093_slabs_32835afc68",
       "checks": 5,
       "disconnect_confirmed": true,
       "interval_mm": [
@@ -48,7 +48,7 @@
       "reloaded": true
     },
     {
-      "run": "outputs/runs/geometry093_slabs_66d9be9330",
+      "run": ".local/runs/geometry093_slabs_66d9be9330",
       "checks": 5,
       "disconnect_confirmed": true,
       "interval_mm": [
@@ -59,7 +59,7 @@
       "reloaded": true
     },
     {
-      "run": "outputs/runs/geometry093_slabs_bf5f649669",
+      "run": ".local/runs/geometry093_slabs_bf5f649669",
       "checks": 5,
       "disconnect_confirmed": true,
       "interval_mm": [
@@ -70,7 +70,7 @@
       "reloaded": true
     },
     {
-      "run": "outputs/runs/geometry101_scope_727818cd9b",
+      "run": ".local/runs/geometry101_scope_727818cd9b",
       "checks": 0,
       "disconnect_confirmed": true
     }

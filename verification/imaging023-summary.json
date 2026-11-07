@@ -10,14 +10,14 @@
     "native_deselected": 459,
     "seconds": 20.05,
     "new_tests": 50,
-    "evidence": "verification/development/IM-01/ordinary023-final.xml"
+    "evidence": ".local/evidence/development/IM-01/ordinary023-final.xml"
   },
   "native": {
     "status": "not_run",
     "environment": "OpticStudio 2024 R2; Python 3.14.6; current configuration; focused sequential",
     "license": "not established by screenshot or static reflection",
     "reason": "prior 180s native initialization timeout; environment change not observed",
-    "evidence": "verification/development/BASE-04/connection019/supervisor.json",
+    "evidence": ".local/evidence/development/BASE-04/connection019/supervisor.json",
     "prepared_tests": "tests/test_imaging_live.py",
     "prepared_count": 9,
     "actual_settings": null,
@@ -29,7 +29,7 @@
     "status": "passed",
     "wheel": "wheels/zemax_standalone_mcp-0.1.13-py3-none-any.whl",
     "install": "outputs/wheel-release023",
-    "smoke": "verification/development/IM-01/wheel-smoke023.json",
+    "smoke": ".local/evidence/development/IM-01/wheel-smoke023.json",
     "stdio_closed": true
   },
   "limitations": [
@@ -68,12 +68,12 @@
         "y_pixels": 0,
         "suppress_frame": false
       },
-      "interface_probe": "verification/development/IM-01/probe023.json",
+      "interface_probe": ".local/evidence/development/IM-01/probe023.json",
       "settings_readback": "per-field and final primitive/enum/selectors checked; live actual values pending",
       "results": "native scalar/RGB grids, series and scatter; text failure preserved",
       "resources": "settings failure and terminal/cancel use existing owner close; discovery finally close; live closure pending",
-      "ordinary_evidence": "verification/development/IM-01/ordinary023-final.xml",
-      "native_evidence": "verification/development/BASE-04/connection019/supervisor.json",
+      "ordinary_evidence": ".local/evidence/development/IM-01/ordinary023-final.xml",
+      "native_evidence": ".local/evidence/development/BASE-04/connection019/supervisor.json",
       "remaining": "actual settings, native outputs and numerical orientation/scale/normalization references"
     },
     {
@@ -104,12 +104,12 @@
         "use_pixel_interpolation": true,
         "row_column_number": 0
       },
-      "interface_probe": "verification/development/IM-01/probe023.json",
+      "interface_probe": ".local/evidence/development/IM-01/probe023.json",
       "settings_readback": "per-field and final primitive/enum/selectors checked; live actual values pending",
       "results": "native scalar/RGB grids, series and scatter; text failure preserved",
       "resources": "settings failure and terminal/cancel use existing owner close; discovery finally close; live closure pending",
-      "ordinary_evidence": "verification/development/IM-01/ordinary023-final.xml",
-      "native_evidence": "verification/development/BASE-04/connection019/supervisor.json",
+      "ordinary_evidence": ".local/evidence/development/IM-01/ordinary023-final.xml",
+      "native_evidence": ".local/evidence/development/BASE-04/connection019/supervisor.json",
       "remaining": "actual settings, native outputs and numerical orientation/scale/normalization references"
     },
     {
@@ -126,12 +126,12 @@
         "use_polarization": false,
         "plot_scale": 0
       },
-      "interface_probe": "verification/development/IM-01/probe023.json",
+      "interface_probe": ".local/evidence/development/IM-01/probe023.json",
       "settings_readback": "per-field and final primitive/enum/selectors checked; live actual values pending",
       "results": "native scalar/RGB grids, series and scatter; text failure preserved",
       "resources": "settings failure and terminal/cancel use existing owner close; discovery finally close; live closure pending",
-      "ordinary_evidence": "verification/development/IM-01/ordinary023-final.xml",
-      "native_evidence": "verification/development/BASE-04/connection019/supervisor.json",
+      "ordinary_evidence": ".local/evidence/development/IM-01/ordinary023-final.xml",
+      "native_evidence": ".local/evidence/development/BASE-04/connection019/supervisor.json",
       "remaining": "actual settings, native outputs and numerical orientation/scale/normalization references"
     },
     {
@@ -147,12 +147,12 @@
         "use_polarization": false,
         "radius_maximum": 0
       },
-      "interface_probe": "verification/development/IM-01/probe023.json",
+      "interface_probe": ".local/evidence/development/IM-01/probe023.json",
       "settings_readback": "per-field and final primitive/enum/selectors checked; live actual values pending",
       "results": "native scalar/RGB grids, series and scatter; text failure preserved",
       "resources": "settings failure and terminal/cancel use existing owner close; discovery finally close; live closure pending",
-      "ordinary_evidence": "verification/development/IM-01/ordinary023-final.xml",
-      "native_evidence": "verification/development/BASE-04/connection019/supervisor.json",
+      "ordinary_evidence": ".local/evidence/development/IM-01/ordinary023-final.xml",
+      "native_evidence": ".local/evidence/development/BASE-04/connection019/supervisor.json",
       "remaining": "actual settings, native outputs and numerical orientation/scale/normalization references"
     },
     {
@@ -175,12 +175,12 @@
         "field_size": 1,
         "rotation": 0
       },
-      "interface_probe": "verification/development/IM-01/probe023.json",
+      "interface_probe": ".local/evidence/development/IM-01/probe023.json",
       "settings_readback": "per-field and final primitive/enum/selectors checked; live actual values pending",
       "results": "native scalar/RGB grids, series and scatter; text failure preserved",
       "resources": "settings failure and terminal/cancel use existing owner close; discovery finally close; live closure pending",
-      "ordinary_evidence": "verification/development/IM-01/ordinary023-final.xml",
-      "native_evidence": "verification/development/BASE-04/connection019/supervisor.json",
+      "ordinary_evidence": ".local/evidence/development/IM-01/ordinary023-final.xml",
+      "native_evidence": ".local/evidence/development/BASE-04/connection019/supervisor.json",
       "remaining": "actual settings, native outputs and numerical orientation/scale/normalization references"
     },
     {
@@ -188,7 +188,7 @@
       "status": "blocked",
       "probe": "full installed interface inventory has no dedicated BitmapImage settings type; enum and local manual index831 exist",
       "release_condition": "restore native startup, inspect runtime settings and documented CFG fields plus result export",
-      "evidence": "verification/development/IM-01/probe023.json"
+      "evidence": ".local/evidence/development/IM-01/probe023.json"
     }
   ]
 }

@@ -19,7 +19,7 @@
     "passed": 781,
     "native_deselected": 437,
     "duration_seconds": 15.14,
-    "evidence": "verification/development/ED-02/ordinary-final.xml"
+    "evidence": ".local/evidence/development/ED-02/ordinary-final.xml"
   },
   "native": {
     "matrix_cases": 41,
@@ -54,9 +54,9 @@
     "evidence": "verification\\development\\ED-02\\final-cases018\\cases.json",
     "closed": true,
     "stdio": {
-      "passed": "outputs/runs/extended_solves_stdio018_da27de1613",
-      "material_reference_exceeded": "outputs/runs/material_solves_numeric018_ddcc5b728d",
-      "automatic_initial_reference_failure": "outputs/runs/automatic_dimensions018_43ba64b655"
+      "passed": ".local/runs/extended_solves_stdio018_da27de1613",
+      "material_reference_exceeded": ".local/runs/material_solves_numeric018_ddcc5b728d",
+      "automatic_initial_reference_failure": ".local/runs/automatic_dimensions018_43ba64b655"
     },
     "limitations": "Four native mode/name failures and two initial inactive macro fixtures; GridSag replacement fixture awaits licensed run."
   },
@@ -78,7 +78,7 @@
     "installed_directory": "outputs/wheel-release018",
     "dependency_runtime": ".venv Python 3.14.6; existing locked dependencies reused",
     "installed_smoke": "passed: real stdio, 74 tools, 27 solve modes, packaged evidence, schema, connection precondition, typed rejection and close",
-    "installed_smoke_evidence": "verification/development/ED-02/wheel-smoke018.json",
+    "installed_smoke_evidence": ".local/evidence/development/ED-02/wheel-smoke018.json",
     "installed_native_smoke": "blocked: INVALID_LICENSE and subsequent initialization timeout; no completed native package smoke"
   },
   "completion_date": "2026-11-05"

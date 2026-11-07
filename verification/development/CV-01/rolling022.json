@@ -10,12 +10,12 @@
   "ordinary_tests": {
     "targeted": "32 passed",
     "full": "1284 passed, 499 skipped",
-    "junit": "verification/development/CV-01/ordinary032.xml"
+    "junit": ".local/evidence/development/CV-01/ordinary032.xml"
   },
   "release": {
     "wheel": "wheels/zemax_standalone_mcp-0.1.22-py3-none-any.whl",
     "isolated_install": "outputs/wheel-release032",
-    "stdio": "verification/development/CV-01/stdio-smoke032.json",
+    "stdio": ".local/evidence/development/CV-01/stdio-smoke032.json",
     "status": "passed",
     "tool_count": 95,
     "analysis_kinds": 70,
@@ -24,7 +24,7 @@
   "native_execution": {
     "status": "not_run",
     "blocker": "OpticStudio initialization timeout after 180.526 seconds",
-    "evidence": "verification/development/BASE-04/connection019/supervisor.json",
+    "evidence": ".local/evidence/development/BASE-04/connection019/supervisor.json",
     "prepared_tests": [
       "tests/test_fft_surface_mtf_live.py",
       "tests/test_configuration_matrix_spot_live.py"

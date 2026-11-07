@@ -6,7 +6,7 @@
 
 ## 当前状态
 
-发行与源码0.1.61，100工具/110分析；B005已完成10/10并发行。B006仍5/10，目标0.1.62。剩余130条源记录、122个不同编号、120组共同功能；38条历史范围另列。 发行证据见 [release061.json](verification/development/BASE-04/release061.json)。
+发行与源码0.1.61，100工具/110分析；B005已完成10/10并发行。B006仍5/10，目标0.1.62。剩余130条源记录、122个不同编号、120组共同功能；38条历史范围另列。 发行证据见 [release061.json](.local/evidence/development/BASE-04/release061.json)。
 
 本批已完成几何壁厚、接触关系、介质区域、源表示、间隙、图像模拟、NSC 镀膜扫描、点云导出及 Universal 1D/2D。各专题的适用条件见能力说明及对应文档。
 
@@ -61,4 +61,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\start.ps1
 OpticStudio 商业软件由本机安装提供。
 
 
-当前开发见[交接](docs/development-handoff.md)，历史材料见[归档索引](docs/history-archive.md)。
+当前开发见[交接](development/handoff.md)，历史材料见[归档索引](docs/history-archive.md)。

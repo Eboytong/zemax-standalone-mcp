@@ -2,19 +2,19 @@
   "date": "2026-11-06",
   "item": "GE-01.MediumRegions",
   "state": "implemented",
-  "ordinary": "verification/development/GE-01/ordinary117.xml",
+  "ordinary": ".local/evidence/development/GE-01/ordinary117.xml",
   "ordinary_passed": 54,
-  "native": "verification/development/GE-01/native118-media-final.xml",
+  "native": ".local/evidence/development/GE-01/native118-media-final.xml",
   "native_passed": 2,
   "runs": [
     {
-      "run": "outputs/runs/geometry109_cemented_4f7179f37c",
+      "run": ".local/runs/geometry109_cemented_4f7179f37c",
       "checks": 3,
       "max_error": 1.1712586456269491e-10,
       "disconnect_confirmed": true
     },
     {
-      "run": "outputs/runs/geometry110_nested_90a7f8f8bf",
+      "run": ".local/runs/geometry110_nested_90a7f8f8bf",
       "checks": 19,
       "max_error": 1.4210854715202004e-14,
       "disconnect_confirmed": true

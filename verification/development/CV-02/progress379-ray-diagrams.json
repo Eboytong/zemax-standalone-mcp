@@ -9,9 +9,9 @@
   "source_version": "0.1.60 plus B005 source",
   "native_version": "24.2.0 build240529 PremiumEdition",
   "evidence": [
-    "verification/development/CV-02/probe377-paraxial-diagrams/probe.json",
-    "verification/development/CV-02/probe378-ray-operands/probe.json",
-    "verification/development/CV-02/probe379-primary-ray-operands/probe.json"
+    ".local/evidence/development/CV-02/probe377-paraxial-diagrams/probe.json",
+    ".local/evidence/development/CV-02/probe378-ray-operands/probe.json",
+    ".local/evidence/development/CV-02/probe379-primary-ray-operands/probe.json"
   ],
   "official_references": [
     "https://ansyshelp.ansys.com/public/Views/Secured/Zemax/v242/en/OpticStudio_User_Guide/OpticStudio_Help/topics/Y_Ybar_Drawing.html",

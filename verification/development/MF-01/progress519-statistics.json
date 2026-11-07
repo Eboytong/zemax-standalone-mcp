@@ -29,7 +29,7 @@
   },
   "results": [
     {
-      "run": "outputs/runs/sag518_statistics_1_0_d62ebbf93f",
+      "run": ".local/runs/sag518_statistics_1_0_d62ebbf93f",
       "checks": [
         {
           "label": "1000 intervals inclusive area rms_slope_difference",
@@ -73,7 +73,7 @@
       }
     },
     {
-      "run": "outputs/runs/sag518_statistics_-1_0_c36ade9bfb",
+      "run": ".local/runs/sag518_statistics_-1_0_c36ade9bfb",
       "checks": [
         {
           "label": "1000 intervals inclusive area rms_slope_difference",
@@ -117,7 +117,7 @@
       }
     },
     {
-      "run": "outputs/runs/sag518_statistics_1_1_14dd838311",
+      "run": ".local/runs/sag518_statistics_1_1_14dd838311",
       "checks": [
         {
           "label": "1000 intervals inclusive area rms_slope_difference",
@@ -161,7 +161,7 @@
       }
     },
     {
-      "run": "outputs/runs/sag518_statistics_1_1_b483204776",
+      "run": ".local/runs/sag518_statistics_1_1_b483204776",
       "checks": [
         {
           "label": "1000 intervals inclusive area rms_slope_difference",
@@ -215,17 +215,17 @@
     "ordinary519": "21passed"
   },
   "commands": [
-    ".venv/Scripts/python.exe -m pytest tests/test_sag_table_statistics_live.py -q -s --run-zemax --junitxml=verification/development/MF-01/native518-statistics.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_sag_table_statistics_live.py -k 1-1 -q -s --run-zemax --junitxml=verification/development/MF-01/native519-metadata.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_sag_table.py tests/test_sag_fit.py tests/test_development_status_report.py -q --junitxml=verification/development/MF-01/ordinary519-statistics.xml"
+    ".venv/Scripts/python.exe -m pytest tests/test_sag_table_statistics_live.py -q -s --run-zemax --junitxml=.local/evidence/development/MF-01/native518-statistics.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_sag_table_statistics_live.py -k 1-1 -q -s --run-zemax --junitxml=.local/evidence/development/MF-01/native519-metadata.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_sag_table.py tests/test_sag_fit.py tests/test_development_status_report.py -q --junitxml=.local/evidence/development/MF-01/ordinary519-statistics.xml"
   ],
   "retained_failures": [
     {
-      "report": "verification/development/MF-01/native516-statistics.xml",
+      "report": ".local/evidence/development/MF-01/native516-statistics.xml",
       "reason": "Unweighted1000-node RMS hypothesis rejected: .0006054949 versus native .0007594690"
     },
     {
-      "report": "verification/development/MF-01/native517-statistics.xml",
+      "report": ".local/evidence/development/MF-01/native517-statistics.xml",
       "reason": "Right-endpoint-only annular volume omitted inner endpoint contribution2.78566424e-5; positive/negative full-disk passed, annular failed. Inclusive-endpoint prediction518 passes original tolerances."
     }
   ],

@@ -6,9 +6,9 @@
   "installed_release": "0.1.61",
   "native": "24.2.0 build240529 Premium",
   "scope": "Official wavelength anchor/fit definition re-read against retained native six-wavelength results; no additional native execution",
-  "documentation": "verification/development/BASE-01/manual527-selected.json page indices1347/1348; installed2024R2 manual defines Nd.5875618 and F/C .4861327/.6562725um, states approximate model dispersion",
-  "command": ".venv/Scripts/python.exe -X utf8 tests/support/manual_pages.py --page-index 966 --page-index 967 --page-index 968 --page-index 969 --page-index 1347 --page-index 1348 --output verification/development/BASE-01/manual527-selected.json",
-  "input_source": "verification/development/ED-02/material-diagnostic271/anchors.json",
+  "documentation": ".local/evidence/development/BASE-01/manual527-selected.json page indices1347/1348; installed2024R2 manual defines Nd.5875618 and F/C .4861327/.6562725um, states approximate model dispersion",
+  "command": ".venv/Scripts/python.exe -X utf8 tests/support/manual_pages.py --page-index 966 --page-index 967 --page-index 968 --page-index 969 --page-index 1347 --page-index 1348 --output .local/evidence/development/BASE-01/manual527-selected.json",
+  "input_source": ".local/evidence/development/ED-02/material-diagnostic271/anchors.json",
   "actual_settings": "Native271 anchors/calls contain typed MaterialModel request and final solve readback; native048 numerical gate retained",
   "results": [
     {

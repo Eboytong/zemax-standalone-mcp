@@ -16,35 +16,35 @@
   ],
   "runs": [
     {
-      "path": "outputs/runs/cad180_nsc_reference_990b85aa05",
+      "path": ".local/runs/cad180_nsc_reference_990b85aa05",
       "numeric_checks": 66,
       "max_absolute_error": 6.77111999891622e-05,
       "cad_close_confirmed": true,
       "disconnect": true
     },
     {
-      "path": "outputs/runs/cad185_acis_readback_eb4ec8fe89",
+      "path": ".local/runs/cad185_acis_readback_eb4ec8fe89",
       "numeric_checks": 0,
       "max_absolute_error": 0,
       "cad_close_confirmed": true,
       "disconnect": true
     },
     {
-      "path": "outputs/runs/cad_settings_step_4443438ca1",
+      "path": ".local/runs/cad_settings_step_4443438ca1",
       "numeric_checks": 0,
       "max_absolute_error": 0,
       "cad_close_confirmed": true,
       "disconnect": true
     },
     {
-      "path": "outputs/runs/cad_settings_stl_2f82731227",
+      "path": ".local/runs/cad_settings_stl_2f82731227",
       "numeric_checks": 0,
       "max_absolute_error": 0,
       "cad_close_confirmed": true,
       "disconnect": true
     },
     {
-      "path": "outputs/runs/cad_settings_sat_261c96da59",
+      "path": ".local/runs/cad_settings_sat_261c96da59",
       "numeric_checks": 0,
       "max_absolute_error": 0,
       "cad_close_confirmed": true,
@@ -52,12 +52,12 @@
     }
   ],
   "checks": {
-    "ordinary": "verification/development/EXT-EXPORT/ordinary186.xml",
+    "ordinary": ".local/evidence/development/EXT-EXPORT/ordinary186.xml",
     "ordinary_passed": 87,
-    "native": "verification/development/EXT-EXPORT/native185.xml",
+    "native": ".local/evidence/development/EXT-EXPORT/native185.xml",
     "native_passed": 5
   },
-  "version_probe": "outputs/runs/cad183_acis_versions_f7e715d095/probe.json",
+  "version_probe": ".local/runs/cad183_acis_versions_f7e715d095/probe.json",
   "remaining": [
     "SAT/SAB Current/V25-V30 getter adopts request, actual files all ACIS500; require a formal exporter that adopts requested version. ASAT/ASAB actual version contract remains unprobed."
   ],

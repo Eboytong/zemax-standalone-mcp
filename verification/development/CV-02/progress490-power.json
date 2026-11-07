@@ -60,7 +60,7 @@
     ]
   },
   "commands": [
-    ".venv/Scripts/python.exe -m pytest tests/test_power_maps_live.py -q -s --run-zemax --junitxml=verification/development/CV-02/native490-power-regression.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_power_maps_live.py -q -s --run-zemax --junitxml=.local/evidence/development/CV-02/native490-power-regression.xml",
     ".venv/Scripts/python.exe -m pytest tests/test_development_status_report.py tests/test_power_maps.py tests/test_protocol.py -q"
   ],
   "checks": {
@@ -76,9 +76,9 @@
   "result_sources": [
     "outputs\\runs\\power486_biconic_8d1e612777",
     "outputs\\runs\\power488_tangent_d5d94b8feb",
-    "verification/development/CV-02/native487-biconic.xml",
-    "verification/development/CV-02/native488-tangent.xml",
-    "verification/development/CV-02/native490-power-regression.xml"
+    ".local/evidence/development/CV-02/native487-biconic.xml",
+    ".local/evidence/development/CV-02/native488-tangent.xml",
+    ".local/evidence/development/CV-02/native490-power-regression.xml"
   ],
   "lifecycle": "Composite jobs succeeded without cleanup warnings; native batch child owns trace closure. Model settings/surfaces retained. Previous cancellation/save-reload/reuse evidence: power475_lifecycle_828e022f44. Sessions disconnected.",
   "limitations": [

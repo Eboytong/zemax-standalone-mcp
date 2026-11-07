@@ -1,6 +1,6 @@
 # Y-Ybar与入射角随像高
 
-两项均已完成本机原生验收，证据为`verification/development/CV-02/acceptance400-ray-diagrams.json`。当前源码包含103种分析；发行wheel0.1.60保持100种，待B005十项完成后集中发行。
+两项均已完成本机原生验收，证据为`.local/evidence/development/CV-02/acceptance400-ray-diagrams.json`。当前源码包含103种分析；发行wheel0.1.60保持100种，待B005十项完成后集中发行。
 
 ## 请求
 

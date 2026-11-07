@@ -16,7 +16,7 @@
     "native_deselected": 484,
     "seconds": 21.97,
     "new": 61,
-    "command": ".venv/Scripts/python.exe -B -m pytest -q -m \"not zemax\" --junitxml=verification/development/NS-02/ordinary027.xml"
+    "command": ".venv/Scripts/python.exe -B -m pytest -q -m \"not zemax\" --junitxml=.local/evidence/development/NS-02/ordinary027.xml"
   },
   "native": {
     "state": "pending",
@@ -25,14 +25,14 @@
     "tolerance": "1e-8 absolute + 1e-7 * reference for controlled coordinates, direction and watts",
     "actual_error": null,
     "close": "not executed",
-    "blocker": "verification/development/BASE-04/connection019/supervisor.json"
+    "blocker": ".local/evidence/development/BASE-04/connection019/supervisor.json"
   },
   "correction": "Complete reflection includes IAS_CriticalRayTracer; previous summary interface absence claim withdrawn. Dedicated typed request/result now implemented.",
   "release": {
     "wheel": "wheels/zemax_standalone_mcp-0.1.17-py3-none-any.whl",
     "installed": "outputs/wheel-release027",
     "stdio": "passed",
-    "evidence": "verification/development/NS-02/wheel-smoke027.json"
+    "evidence": ".local/evidence/development/NS-02/wheel-smoke027.json"
   },
   "remaining": [
     "native settings/index/count/sequence adoption and cancellation/close",

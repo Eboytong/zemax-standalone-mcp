@@ -2,7 +2,7 @@
   "version": "0.1.25",
   "date": "2026-11-05",
   "item_id": "CV-01.FullFieldSpot",
-  "probe_source": "verification/development/BASE-01/probe/api-interfaces.json",
+  "probe_source": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
   "analysis_id": 45,
   "settings_interfaces_found": [],
   "probe_result": "The static reflection inventory contains the analysis ID but no FullFieldSpot settings interface or properties.",

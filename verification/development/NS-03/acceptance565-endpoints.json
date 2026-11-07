@@ -14,8 +14,8 @@
   "reference": "Independent normalized exact detector pixel-power DFT; Tangential=localY, Sagittal=localX",
   "tolerance": "1e-7 absolute +1e-7 relative; unchanged",
   "commands": [
-    ".venv/Scripts/python.exe -m pytest tests/test_nsc_mtf_endpoints_live.py -q -s --run-zemax --junitxml=verification/development/NS-03/native563-endpoints.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_nsc_mtf_live.py::test_nsc_point_detector_geometric_mtf tests/test_nsc_mtf_live.py::test_nsc_asymmetric_detector_mtf_dft_diagnostic -q -s --run-zemax --junitxml=verification/development/NS-03/native565-regression.xml"
+    ".venv/Scripts/python.exe -m pytest tests/test_nsc_mtf_endpoints_live.py -q -s --run-zemax --junitxml=.local/evidence/development/NS-03/native563-endpoints.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_nsc_mtf_live.py::test_nsc_point_detector_geometric_mtf tests/test_nsc_mtf_live.py::test_nsc_asymmetric_detector_mtf_dft_diagnostic -q -s --run-zemax --junitxml=.local/evidence/development/NS-03/native565-regression.xml"
   ],
   "results": [
     {

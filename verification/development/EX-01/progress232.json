@@ -7,8 +7,8 @@
   "execution_state": "implemented",
   "native_version": "OpticStudio 2024 R2; connect/version/license in calls.json",
   "probes": [
-    "outputs/runs/universal229_configuration_8bb3ecf772/probe.json",
-    "outputs/runs/universal229_configuration_19691f884d/probe.json"
+    ".local/runs/universal229_configuration_8bb3ecf772/probe.json",
+    ".local/runs/universal229_configuration_19691f884d/probe.json"
   ],
   "formal_reference": "Installed UserManual_en.pdf sections3.6.1/3.6.2 and page1550; extracts manual229.txt/manual-sections229.txt",
   "changes": [

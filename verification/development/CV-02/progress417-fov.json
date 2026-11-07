@@ -7,17 +7,17 @@
   "native_version": "24.2.0 build240529 PremiumEdition",
   "scope": "Typed4configuration slots, angle/cosine window, non-square sampling and boundary refinement; native direct rays from STOP on independent copies, pass mask, ambiguous-cell center measurements, multiple closed loops including holes and scan borders.",
   "interface_evidence": [
-    "verification/development/CV-02/probe415-fov-outlets/probe.json",
-    "verification/development/CV-02/probe417-fov-scatter/probe.json"
+    ".local/evidence/development/CV-02/probe415-fov-outlets/probe.json",
+    ".local/evidence/development/CV-02/probe417-fov-scatter/probe.json"
   ],
   "interface_result": "AS_Default; all inspected series/grid/RGB/scatter/RGBscatter/ray arrays empty; messages0, text=false. Apply completed and Close true. Native direct ray alternative uses documented STOP origin and fixed apertures.",
   "ordinary_passed": 83,
-  "ordinary_report": "verification/development/CV-02/ordinary416-fov.xml",
+  "ordinary_report": ".local/evidence/development/CV-02/ordinary416-fov.xml",
   "native_passed": 1,
-  "native_report": "verification/development/CV-02/native416-fov.xml",
+  "native_report": ".local/evidence/development/CV-02/native416-fov.xml",
   "commands": [
-    ".venv/Scripts/python.exe -X utf8 tests/support/biocular_fov_probe.py verification/development/CV-02/probe417-fov-scatter",
-    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_biocular_fov_live.py --run-zemax -q --junitxml=verification/development/CV-02/native416-fov.xml"
+    ".venv/Scripts/python.exe -X utf8 tests/support/biocular_fov_probe.py .local/evidence/development/CV-02/probe417-fov-scatter",
+    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_biocular_fov_live.py --run-zemax -q --junitxml=.local/evidence/development/CV-02/native416-fov.xml"
   ],
   "reference": "Two plane distances50/100mm, radius10mm aperture: pass iff (d*tanX)^2+(d*tanY)^2<100.13x9 grid, refinement8, scan clipped config1 and complete config2 boundary.",
   "preset_boundary_radius_atol_mm": 0.02,

@@ -2,7 +2,7 @@
   "date": "2026-11-05",
   "item_id": "CV-01.PupilAberrationFan",
   "state": "done",
-  "run": "outputs/runs/pupil073_fc28e45330",
+  "run": ".local/runs/pupil073_fc28e45330",
   "native_evidence": "verification\\development\\CV-01\\native074-final.xml",
   "ordinary_evidence": "verification\\development\\CV-01\\ordinary073-pupil.xml",
   "references": {
@@ -17,6 +17,6 @@
   "outputs": "native text, 3PNG, paged curves, model preserved, analysis closed/disconnect success",
   "historical_failure": "native073-pupil-reference.xml uses opposite sign; native sign characterized and returned definition corrected without tolerance change",
   "version": "0.1.56",
-  "lifecycle_evidence": "outputs/runs/pupil073_353613f00e/cancellation.json",
+  "lifecycle_evidence": ".local/runs/pupil073_353613f00e/cancellation.json",
   "lifecycle": "running cancellation cancelled/closed; surfaces preserved; subsequent valid analysis succeeded"
 }

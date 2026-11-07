@@ -1,11 +1,11 @@
 {
   "version": "0.1.48",
   "wheel": "wheels/zemax_standalone_mcp-0.1.48-py3-none-any.whl",
-  "installation": "verification/development/BASE-04/wheel-install048",
+  "installation": ".local/evidence/development/BASE-04/wheel-install048",
   "ordinary_passed": 1702,
-  "ordinary_report": "verification/development/BASE-04/ordinary050.xml",
+  "ordinary_report": ".local/evidence/development/BASE-04/ordinary050.xml",
   "native_wheel_passed": 3,
-  "native_report": "verification/development/BASE-04/wheel-native048.xml",
+  "native_report": ".local/evidence/development/BASE-04/wheel-native048.xml",
   "evidence": "verification\\development\\IM-01\\acceptance050\\summary.json",
   "request_schema": "unchanged; runtime geometric bitmap interface limitation now structured"
 }

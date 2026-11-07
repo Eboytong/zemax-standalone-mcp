@@ -7,12 +7,12 @@
   "native": "24.2.0 build240529 Premium",
   "scope": "Guard-pupil node hypothesis compared with prior interior nodes",
   "input_source": "Owned mirror R=-200mm conic=-1 aperture10mm wavelength.55um, thickness-100/-100.02mm",
-  "command": ".venv/Scripts/python.exe -m pytest tests/test_fft_spread_coherent_live.py -k \"guard and psf_auto\" -q -s --run-zemax --junitxml=verification/development/CV-01/native513-guard.xml",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_fft_spread_coherent_live.py -k \"guard and psf_auto\" -q -s --run-zemax --junitxml=.local/evidence/development/CV-01/native513-guard.xml",
   "reference": "Trace independent OPD at strict interior (i-N/2)/(N/2-1) coordinates; physical Fraunhofer sum at original native display positions",
   "tolerance": "0.005 intensity absolute; unchanged",
   "results": [
     {
-      "run": "outputs/runs/fft_spread513_guard_psf_auto_64_ff55d8cad8",
+      "run": ".local/runs/fft_spread513_guard_psf_auto_64_ff55d8cad8",
       "conditions": {
         "intensity_atol": 0.005,
         "reference": "Scalar Fraunhofer sum at native physical positions; complex pupil slice from independent OPD batch rays",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "run": "outputs/runs/fft_spread513_guard_psf_auto_128_8ffa9a3470",
+      "run": ".local/runs/fft_spread513_guard_psf_auto_128_8ffa9a3470",
       "conditions": {
         "intensity_atol": 0.005,
         "reference": "Scalar Fraunhofer sum at native physical positions; complex pupil slice from independent OPD batch rays",

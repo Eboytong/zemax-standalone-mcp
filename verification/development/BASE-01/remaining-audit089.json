@@ -44,10 +44,10 @@
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。实际范围与条件见本条evidence引用的记录",
       "evidence": [
         "verification/property-pages017-summary.json",
-        "verification/development/BASE-04/connection040.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/connection040.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -59,7 +59,7 @@
       "next_action": "native UILDEScatterData serialization exception; needs corrected native endpoint",
       "evidence": [
         "verification/property-pages017-summary.json",
-        "verification/development/BASE-04/reboot046.json"
+        ".local/evidence/development/BASE-04/reboot046.json"
       ]
     },
     {
@@ -71,7 +71,7 @@
       "next_action": "native file list points to ABGF and filename assignment ignored; needs corrected native selector",
       "evidence": [
         "verification/property-pages017-summary.json",
-        "verification/development/BASE-04/reboot046.json"
+        ".local/evidence/development/BASE-04/reboot046.json"
       ]
     },
     {
@@ -83,8 +83,8 @@
       "next_action": "Provide a documented ISX data file with its matching catalog entry; after startup recovery verify selection, parameters, trace and save/reload.",
       "evidence": [
         "verification/property-pages017-summary.json",
-        "verification/development/EX-01/contract-followup045.json",
-        "verification/development/BASE-04/reboot046.json"
+        ".local/evidence/development/EX-01/contract-followup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json"
       ]
     },
     {
@@ -96,7 +96,7 @@
       "next_action": "native returns success while retaining FloatingAperture; needs reliable formal reset",
       "evidence": [
         "verification/property-pages017-summary.json",
-        "verification/development/BASE-04/reboot046.json"
+        ".local/evidence/development/BASE-04/reboot046.json"
       ]
     },
     {
@@ -107,12 +107,12 @@
       "reason": "Model Abbe=59.99988524798844 vs60; Offset Abbe increment=0.9992435881404731 vs1. Original atol=1e-5,rtol=1e-7 retained.",
       "next_action": "Locate exact native dispersion definition/anchors; preserve current six-wavelength Snell measurements and original tolerances.",
       "evidence": [
-        "verification/development/ED-02/final-cases018/cases.json",
+        ".local/evidence/development/ED-02/final-cases018/cases.json",
         "docs/solve-extensions.md",
-        "verification/development/ED-02/licensing018.json",
-        "verification/development/ED-02/acceptance047/summary.json",
+        ".local/evidence/development/ED-02/licensing018.json",
+        ".local/evidence/development/ED-02/acceptance047/summary.json",
         "verification\\development\\ED-03\\acceptance048\\summary.json",
-        "verification/development/NS-01/probe061/summary.json"
+        ".local/evidence/development/NS-01/probe061/summary.json"
       ]
     },
     {
@@ -123,12 +123,12 @@
       "reason": "Model Abbe=59.99988524798844 vs60; Offset Abbe increment=0.9992435881404731 vs1. Original atol=1e-5,rtol=1e-7 retained.",
       "next_action": "Locate exact native dispersion definition/anchors; preserve current six-wavelength Snell measurements and original tolerances.",
       "evidence": [
-        "verification/development/ED-02/final-cases018/cases.json",
+        ".local/evidence/development/ED-02/final-cases018/cases.json",
         "docs/solve-extensions.md",
-        "verification/development/ED-02/licensing018.json",
-        "verification/development/ED-02/acceptance047/summary.json",
+        ".local/evidence/development/ED-02/licensing018.json",
+        ".local/evidence/development/ED-02/acceptance047/summary.json",
         "verification\\development\\ED-03\\acceptance048\\summary.json",
-        "verification/development/NS-01/probe061/summary.json"
+        ".local/evidence/development/NS-01/probe061/summary.json"
       ]
     },
     {
@@ -139,9 +139,9 @@
       "reason": "直接 API 与 MCP 均回退模式或丢失宏名；见 controls.json。",
       "next_action": "取得能采用并持久保存该模式/宏名的正式原生路径",
       "evidence": [
-        "verification/development/ED-02/final-cases018/cases.json",
+        ".local/evidence/development/ED-02/final-cases018/cases.json",
         "docs/solve-extensions.md",
-        "verification/development/ED-02/diagnostics/controls.json"
+        ".local/evidence/development/ED-02/diagnostics/controls.json"
       ]
     },
     {
@@ -152,9 +152,9 @@
       "reason": "直接 API 与 MCP 均回退模式或丢失宏名；见 controls.json。",
       "next_action": "取得能采用并持久保存该模式/宏名的正式原生路径",
       "evidence": [
-        "verification/development/ED-02/final-cases018/cases.json",
+        ".local/evidence/development/ED-02/final-cases018/cases.json",
         "docs/solve-extensions.md",
-        "verification/development/ED-02/diagnostics/controls.json"
+        ".local/evidence/development/ED-02/diagnostics/controls.json"
       ]
     },
     {
@@ -165,9 +165,9 @@
       "reason": "直接 API 与 MCP 均回退模式或丢失宏名；见 controls.json。",
       "next_action": "取得能采用并持久保存该模式/宏名的正式原生路径",
       "evidence": [
-        "verification/development/ED-02/final-cases018/cases.json",
+        ".local/evidence/development/ED-02/final-cases018/cases.json",
         "docs/solve-extensions.md",
-        "verification/development/ED-02/diagnostics/controls.json"
+        ".local/evidence/development/ED-02/diagnostics/controls.json"
       ]
     },
     {
@@ -178,9 +178,9 @@
       "reason": "直接 API 与 MCP 均回退模式或丢失宏名；见 controls.json。",
       "next_action": "取得能采用并持久保存该模式/宏名的正式原生路径",
       "evidence": [
-        "verification/development/ED-02/final-cases018/cases.json",
+        ".local/evidence/development/ED-02/final-cases018/cases.json",
         "docs/solve-extensions.md",
-        "verification/development/ED-02/diagnostics/controls.json"
+        ".local/evidence/development/ED-02/diagnostics/controls.json"
       ]
     },
     {
@@ -191,7 +191,7 @@
       "reason": "81种面型的基本列和活动参数未提供可用单元格；具体接口情况见说明。",
       "next_action": "取得本机正式可用单元格及设置接口、样例后实现",
       "evidence": [
-        "verification/development/ED-02/all-types/probe.json",
+        ".local/evidence/development/ED-02/all-types/probe.json",
         "docs/solve-extensions.md"
       ]
     },
@@ -203,7 +203,7 @@
       "reason": "81种面型的基本列和活动参数未提供可用单元格；具体接口情况见说明。",
       "next_action": "取得本机正式可用单元格及设置接口、样例后实现",
       "evidence": [
-        "verification/development/ED-02/all-types/probe.json",
+        ".local/evidence/development/ED-02/all-types/probe.json",
         "docs/solve-extensions.md"
       ]
     },
@@ -215,7 +215,7 @@
       "reason": "81种面型的基本列和活动参数未提供可用单元格；具体接口情况见说明。",
       "next_action": "取得本机正式可用单元格及设置接口、样例后实现",
       "evidence": [
-        "verification/development/ED-02/all-types/probe.json",
+        ".local/evidence/development/ED-02/all-types/probe.json",
         "docs/solve-extensions.md"
       ]
     },
@@ -227,7 +227,7 @@
       "reason": "81种面型的基本列和活动参数未提供可用单元格；具体接口情况见说明。",
       "next_action": "取得本机正式可用单元格及设置接口、样例后实现",
       "evidence": [
-        "verification/development/ED-02/all-types/probe.json",
+        ".local/evidence/development/ED-02/all-types/probe.json",
         "docs/solve-extensions.md"
       ]
     },
@@ -239,7 +239,7 @@
       "reason": "81种面型的基本列和活动参数未提供可用单元格；具体接口情况见说明。",
       "next_action": "取得本机正式可用单元格及设置接口、样例后实现",
       "evidence": [
-        "verification/development/ED-02/all-types/probe.json",
+        ".local/evidence/development/ED-02/all-types/probe.json",
         "docs/solve-extensions.md"
       ]
     },
@@ -251,10 +251,10 @@
       "reason": "Complete IMultiConfigEditor plus inherited IEditor reflection contains no independent Load/Save entry.",
       "next_action": "Use whole-system save/load for configuration preservation; obtain a formal independent MCE file interface before implementation.",
       "evidence": [
-        "verification/development/ED-03/probe/editor-interfaces.json",
+        ".local/evidence/development/ED-03/probe/editor-interfaces.json",
         "docs/editor-extensions.md",
-        "verification/development/ED-03/ordinary019-final.xml",
-        "verification/development/EX-01/contract-followup045.json"
+        ".local/evidence/development/ED-03/ordinary019-final.xml",
+        ".local/evidence/development/EX-01/contract-followup045.json"
       ]
     },
     {
@@ -266,9 +266,9 @@
       "next_action": "Inspect native completion/cancel behavior after 180s Cooke preview and 90s controlled Apply timeouts; keep current calls and original model.",
       "evidence": [
         "verification/design-tools020-summary.json",
-        "verification/development/ED-04/ordinary020-final.xml",
-        "verification/development/BASE-04/connection040.json",
-        "verification/development/BASE-04/startup045.json",
+        ".local/evidence/development/ED-04/ordinary020-final.xml",
+        ".local/evidence/development/BASE-04/connection040.json",
+        ".local/evidence/development/BASE-04/startup045.json",
         "verification\\development\\ED-04\\acceptance049\\summary.json"
       ]
     },
@@ -281,13 +281,13 @@
       "next_action": "纯NSC关闭光阑孔径转换后执行、保存重载及追迹通过；继续等价光线和混合组启动失败定位",
       "evidence": [
         "verification/conversion026-summary.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-01/probe061/summary.json",
-        "outputs/runs/conversion_options062_35ee51bf2a/option-results.json",
-        "verification/development/NS-01/native062-options-final.xml",
-        "verification/development/NS-02/acceptance063.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-01/probe061/summary.json",
+        ".local/runs/conversion_options062_35ee51bf2a/option-results.json",
+        ".local/evidence/development/NS-01/native062-options-final.xml",
+        ".local/evidence/development/NS-02/acceptance063.json"
       ]
     },
     {
@@ -299,10 +299,10 @@
       "next_action": "定位阈值剔除分支的未分类功率正式出口；已完成直达/双源、取消、保存重载与重复面交互检查",
       "evidence": [
         "verification/paths027-summary.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-02/acceptance063.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-02/acceptance063.json"
       ]
     },
     {
@@ -314,10 +314,10 @@
       "next_action": "定位单点MTF约9.875e-7偏差；当前探测器/ZRD、7x5与32x16、关闭像素插值结果相同；原容差2e-7保持",
       "evidence": [
         "verification/illumination028-summary.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-03/acceptance064.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-03/acceptance064.json"
       ]
     },
     {
@@ -328,15 +328,15 @@
       "reason": "",
       "next_action": "原生Hologram1的S/P离轴384点、持久性和失败/取消通过；DLL的P参考偏差跟踪CO-01.KogelnikDLL.PProjection，继续NSC镀膜及其余P2队列。",
       "evidence": [
-        "verification/development/CO-01/diffraction-efficiency028.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/CO-01/diffraction-efficiency028.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
         "tests/test_diff_efficiency.py",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CO-01/acceptance056.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CO-01/acceptance056.json",
         "tests/test_diff_efficiency_live.py",
-        "verification/development/CO-01/acceptance059.json",
+        ".local/evidence/development/CO-01/acceptance059.json",
         "tests/test_diff_efficiency_offaxis_live.py"
       ]
     },
@@ -348,15 +348,15 @@
       "reason": "",
       "next_action": "原生Hologram1的S/P离轴384点、持久性和失败/取消通过；DLL的P参考偏差跟踪CO-01.KogelnikDLL.PProjection，继续NSC镀膜及其余P2队列。",
       "evidence": [
-        "verification/development/CO-01/diffraction-efficiency028.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/CO-01/diffraction-efficiency028.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
         "tests/test_diff_efficiency.py",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CO-01/acceptance056.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CO-01/acceptance056.json",
         "tests/test_diff_efficiency_live.py",
-        "verification/development/CO-01/acceptance059.json",
+        ".local/evidence/development/CO-01/acceptance059.json",
         "tests/test_diff_efficiency_offaxis_live.py"
       ]
     },
@@ -368,15 +368,15 @@
       "reason": "",
       "next_action": "原生Hologram1的S/P离轴384点、持久性和失败/取消通过；DLL的P参考偏差跟踪CO-01.KogelnikDLL.PProjection，继续NSC镀膜及其余P2队列。",
       "evidence": [
-        "verification/development/CO-01/diffraction-efficiency028.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/CO-01/diffraction-efficiency028.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
         "tests/test_diff_efficiency.py",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CO-01/acceptance056.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CO-01/acceptance056.json",
         "tests/test_diff_efficiency_live.py",
-        "verification/development/CO-01/acceptance059.json",
+        ".local/evidence/development/CO-01/acceptance059.json",
         "tests/test_diff_efficiency_offaxis_live.py"
       ]
     },
@@ -388,12 +388,12 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。typed boundary validation; native AxisType/setting readback; controlled profile result comparison; task cleanup and close",
       "evidence": [
-        "verification/development/MA-01/grin-profile029.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/MA-01/grin-profile029.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
         "tests/test_grin_profile.py",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -404,12 +404,12 @@
       "reason": "实际 SettingsFirst/GetSettings 为 AS_Default，无专题可写属性；正式 SaveTo 已成功，需确认该专题官方 CFG 键及结果出口。",
       "next_action": "从本机正式手册取得专题 CFG 键；执行 ModifySettings/LoadFrom、采用回读与结果数值验收。",
       "evidence": [
-        "verification/development/MA-01/material-interface-probe029.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/MA-01/runtime054/settings.json"
+        ".local/evidence/development/MA-01/material-interface-probe029.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/MA-01/runtime054/settings.json"
       ]
     },
     {
@@ -420,12 +420,12 @@
       "reason": "实际 SettingsFirst/GetSettings 为 AS_Default，无专题可写属性；正式 SaveTo 已成功，需确认该专题官方 CFG 键及结果出口。",
       "next_action": "从本机正式手册取得专题 CFG 键；执行 ModifySettings/LoadFrom、采用回读与结果数值验收。",
       "evidence": [
-        "verification/development/MA-01/material-interface-probe029.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/MA-01/runtime054/settings.json"
+        ".local/evidence/development/MA-01/material-interface-probe029.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/MA-01/runtime054/settings.json"
       ]
     },
     {
@@ -436,12 +436,12 @@
       "reason": "实际 SettingsFirst/GetSettings 为 AS_Default，无专题可写属性；正式 SaveTo 已成功，需确认该专题官方 CFG 键及结果出口。",
       "next_action": "从本机正式手册取得专题 CFG 键；执行 ModifySettings/LoadFrom、采用回读与结果数值验收。",
       "evidence": [
-        "verification/development/MA-01/material-interface-probe029.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/MA-01/runtime054/settings.json"
+        ".local/evidence/development/MA-01/material-interface-probe029.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/MA-01/runtime054/settings.json"
       ]
     },
     {
@@ -452,12 +452,12 @@
       "reason": "实际 SettingsFirst/GetSettings 为 AS_Default，无专题可写属性；正式 SaveTo 已成功，需确认该专题官方 CFG 键及结果出口。",
       "next_action": "从本机正式手册取得专题 CFG 键；执行 ModifySettings/LoadFrom、采用回读与结果数值验收。",
       "evidence": [
-        "verification/development/MA-01/material-interface-probe029.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/MA-01/runtime054/settings.json"
+        ".local/evidence/development/MA-01/material-interface-probe029.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/MA-01/runtime054/settings.json"
       ]
     },
     {
@@ -468,11 +468,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。runtime settings identity and readback; controlled execution; result/text/data inspection; normal and failure close",
       "evidence": [
-        "verification/development/MA-01/material-interface-probe029.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/MA-01/material-interface-probe029.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -483,11 +483,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。runtime settings identity and readback; controlled execution; result/text/data inspection; normal and failure close",
       "evidence": [
-        "verification/development/MA-01/material-interface-probe029.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/MA-01/material-interface-probe029.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -498,10 +498,10 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Native setting/resource selection and result/lifecycle acceptance as specified per operation",
       "evidence": [
-        "verification/development/EX-01/probe036.json",
+        ".local/evidence/development/EX-01/probe036.json",
         "docs/extensions.md",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -512,11 +512,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Native setting/resource selection and result/lifecycle acceptance as specified per operation",
       "evidence": [
-        "verification/development/EX-01/probe036.json",
+        ".local/evidence/development/EX-01/probe036.json",
         "docs/extensions.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -527,11 +527,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Native setting/resource selection and result/lifecycle acceptance as specified per operation",
       "evidence": [
-        "verification/development/EX-01/probe036.json",
+        ".local/evidence/development/EX-01/probe036.json",
         "docs/extensions.md",
-        "verification/development/EX-01/contract-followup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/EX-01/contract-followup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -542,13 +542,13 @@
       "reason": "LoadNETCallback returned null after successful native connection; no callback handle for Execute or Dispose. Application closed normally. Confirm supported loader/assembly/type contract or provide a working controlled callback sample.",
       "next_action": "Inspect the formal loader contract and native diagnostics for the controlled DLL/type; obtain non-null callback before Execute/settings/Dispose acceptance.",
       "evidence": [
-        "verification/development/EX-01/probe036.json",
+        ".local/evidence/development/EX-01/probe036.json",
         "docs/extensions.md",
-        "verification/development/EX-01/callback-contract045.json",
-        "verification/development/EX-01/callback-build045.json",
-        "verification/development/EX-01/callback-offline045.json",
+        ".local/evidence/development/EX-01/callback-contract045.json",
+        ".local/evidence/development/EX-01/callback-build045.json",
+        ".local/evidence/development/EX-01/callback-offline045.json",
         "tests/test_net_callback_live.py",
-        "verification/development/BASE-04/reboot046.json"
+        ".local/evidence/development/BASE-04/reboot046.json"
       ]
     },
     {
@@ -559,9 +559,9 @@
       "reason": "The full application interface has no inherited unregister endpoint; registration result, operand invocation and session-scoped cleanup remain unverified.",
       "next_action": "After startup recovery use the compiled controlled .NET fixture; inspect registration IMessage, operand results and application teardown.",
       "evidence": [
-        "verification/development/EX-01/probe036.json",
+        ".local/evidence/development/EX-01/probe036.json",
         "docs/extensions.md",
-        "verification/development/EX-01/contract-followup045.json"
+        ".local/evidence/development/EX-01/contract-followup045.json"
       ]
     },
     {
@@ -572,7 +572,7 @@
       "reason": "Existing ED-02 native checks remain open; use existing solve evidence.",
       "next_action": "After native startup recover the remaining GridSag 9/10 macro cases and save/reload verification.",
       "evidence": [
-        "verification/development/EX-01/probe036.json",
+        ".local/evidence/development/EX-01/probe036.json",
         "docs/extensions.md"
       ]
     },
@@ -584,9 +584,9 @@
       "reason": "Full reflection confirms RunCommand(String) but no documented arbitrary ZPL command verb or dedicated macro endpoint; official reference fetch returned HTTP 403 in this followup.",
       "next_action": "Obtain a supported macro execution contract and stop/output protocol; continue using the existing typed ZPL solve path.",
       "evidence": [
-        "verification/development/EX-01/probe036.json",
+        ".local/evidence/development/EX-01/probe036.json",
         "docs/extensions.md",
-        "verification/development/EX-01/contract-followup045.json"
+        ".local/evidence/development/EX-01/contract-followup045.json"
       ]
     },
     {
@@ -597,11 +597,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Actual settings, controlled reference, persistence and successful/failed/cancelled lifecycle",
       "evidence": [
-        "verification/development/EXT-STAR/probe037.json",
+        ".local/evidence/development/EXT-STAR/probe037.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -612,11 +612,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Actual settings, controlled reference, persistence and successful/failed/cancelled lifecycle",
       "evidence": [
-        "verification/development/EXT-STAR/probe037.json",
+        ".local/evidence/development/EXT-STAR/probe037.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -627,11 +627,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Actual settings, controlled reference, persistence and successful/failed/cancelled lifecycle",
       "evidence": [
-        "verification/development/EXT-STAR/probe037.json",
+        ".local/evidence/development/EXT-STAR/probe037.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -642,11 +642,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Actual settings, controlled reference, persistence and successful/failed/cancelled lifecycle",
       "evidence": [
-        "verification/development/EXT-STAR/probe037.json",
+        ".local/evidence/development/EXT-STAR/probe037.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -657,11 +657,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Actual settings, controlled reference, persistence and successful/failed/cancelled lifecycle",
       "evidence": [
-        "verification/development/EXT-STAR/probe037.json",
+        ".local/evidence/development/EXT-STAR/probe037.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -672,11 +672,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Actual settings, controlled reference, persistence and successful/failed/cancelled lifecycle",
       "evidence": [
-        "verification/development/EXT-STAR/probe037.json",
+        ".local/evidence/development/EXT-STAR/probe037.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -687,11 +687,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Actual settings, controlled reference, persistence and successful/failed/cancelled lifecycle",
       "evidence": [
-        "verification/development/EXT-STAR/probe037.json",
+        ".local/evidence/development/EXT-STAR/probe037.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -702,11 +702,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Actual settings, controlled reference, persistence and successful/failed/cancelled lifecycle",
       "evidence": [
-        "verification/development/EXT-STAR/probe037.json",
+        ".local/evidence/development/EXT-STAR/probe037.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -717,12 +717,12 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Actual settings, controlled reference, persistence and successful/failed/cancelled lifecycle",
       "evidence": [
-        "verification/development/EXT-STAR/probe038.json",
-        "verification/development/EXT-STAR/parameters038.json",
+        ".local/evidence/development/EXT-STAR/probe038.json",
+        ".local/evidence/development/EXT-STAR/parameters038.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -733,12 +733,12 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Actual settings, controlled reference, persistence and successful/failed/cancelled lifecycle",
       "evidence": [
-        "verification/development/EXT-STAR/probe038.json",
-        "verification/development/EXT-STAR/parameters038.json",
+        ".local/evidence/development/EXT-STAR/probe038.json",
+        ".local/evidence/development/EXT-STAR/parameters038.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -749,12 +749,12 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Actual settings, controlled reference, persistence and successful/failed/cancelled lifecycle",
       "evidence": [
-        "verification/development/EXT-STAR/probe038.json",
-        "verification/development/EXT-STAR/parameters038.json",
+        ".local/evidence/development/EXT-STAR/probe038.json",
+        ".local/evidence/development/EXT-STAR/parameters038.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -765,12 +765,12 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Actual settings, controlled reference, persistence and successful/failed/cancelled lifecycle",
       "evidence": [
-        "verification/development/EXT-STAR/probe038.json",
-        "verification/development/EXT-STAR/parameters038.json",
+        ".local/evidence/development/EXT-STAR/probe038.json",
+        ".local/evidence/development/EXT-STAR/parameters038.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -781,12 +781,12 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Actual settings, controlled reference, persistence and successful/failed/cancelled lifecycle",
       "evidence": [
-        "verification/development/EXT-STAR/probe038.json",
-        "verification/development/EXT-STAR/parameters038.json",
+        ".local/evidence/development/EXT-STAR/probe038.json",
+        ".local/evidence/development/EXT-STAR/parameters038.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -797,11 +797,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Final adoption, relationship protection, native/numeric/persistence and restoration checks",
       "evidence": [
-        "verification/development/EXT-STAR/probe038.json",
+        ".local/evidence/development/EXT-STAR/probe038.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -812,11 +812,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Final adoption, relationship protection, native/numeric/persistence and restoration checks",
       "evidence": [
-        "verification/development/EXT-STAR/probe038.json",
+        ".local/evidence/development/EXT-STAR/probe038.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -827,11 +827,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Final adoption, relationship protection, native/numeric/persistence and restoration checks",
       "evidence": [
-        "verification/development/EXT-STAR/probe038.json",
+        ".local/evidence/development/EXT-STAR/probe038.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -842,11 +842,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Final adoption, relationship protection, native/numeric/persistence and restoration checks",
       "evidence": [
-        "verification/development/EXT-STAR/probe038.json",
+        ".local/evidence/development/EXT-STAR/probe038.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -857,11 +857,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Final adoption, relationship protection, native/numeric/persistence and restoration checks",
       "evidence": [
-        "verification/development/EXT-STAR/probe038.json",
+        ".local/evidence/development/EXT-STAR/probe038.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -872,11 +872,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Final adoption, relationship protection, native/numeric/persistence and restoration checks",
       "evidence": [
-        "verification/development/EXT-STAR/probe038.json",
+        ".local/evidence/development/EXT-STAR/probe038.json",
         "docs/star.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -887,11 +887,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Native input/result, numerical reference, unchanged model and catalog ownership close",
       "evidence": [
-        "verification/development/EXT-STAR/probe039.json",
+        ".local/evidence/development/EXT-STAR/probe039.json",
         "docs/materials.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -902,11 +902,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Native input/result, numerical reference, unchanged model and catalog ownership close",
       "evidence": [
-        "verification/development/EXT-STAR/probe039.json",
+        ".local/evidence/development/EXT-STAR/probe039.json",
         "docs/materials.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -917,11 +917,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Native input/result, numerical reference, unchanged model and catalog ownership close",
       "evidence": [
-        "verification/development/EXT-STAR/probe039.json",
+        ".local/evidence/development/EXT-STAR/probe039.json",
         "docs/materials.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -932,11 +932,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Native input/result, numerical reference, unchanged model and catalog ownership close",
       "evidence": [
-        "verification/development/EXT-STAR/probe039.json",
+        ".local/evidence/development/EXT-STAR/probe039.json",
         "docs/materials.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -947,11 +947,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Native input/result, numerical reference, unchanged model and catalog ownership close",
       "evidence": [
-        "verification/development/EXT-STAR/probe039.json",
+        ".local/evidence/development/EXT-STAR/probe039.json",
         "docs/materials.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -962,14 +962,14 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Configuration and factory adoption, minimal job submit/status/cancel/results/close; default local behavior preserved",
       "evidence": [
-        "verification/development/EXT-HPC/probe040.json",
+        ".local/evidence/development/EXT-HPC/probe040.json",
         "docs/hpc.md",
         "tests/test_hpc.py",
         "tests/test_hpc_execution.py",
         "tests/test_hpc_live.py",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -980,14 +980,14 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Configuration and factory adoption, minimal job submit/status/cancel/results/close; default local behavior preserved",
       "evidence": [
-        "verification/development/EXT-HPC/probe040.json",
+        ".local/evidence/development/EXT-HPC/probe040.json",
         "docs/hpc.md",
         "tests/test_hpc.py",
         "tests/test_hpc_execution.py",
         "tests/test_hpc_live.py",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -998,14 +998,14 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Configuration and factory adoption, minimal job submit/status/cancel/results/close; default local behavior preserved",
       "evidence": [
-        "verification/development/EXT-HPC/probe040.json",
+        ".local/evidence/development/EXT-HPC/probe040.json",
         "docs/hpc.md",
         "tests/test_hpc.py",
         "tests/test_hpc_execution.py",
         "tests/test_hpc_live.py",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1016,14 +1016,14 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Configuration and factory adoption, minimal job submit/status/cancel/results/close; default local behavior preserved",
       "evidence": [
-        "verification/development/EXT-HPC/probe040.json",
+        ".local/evidence/development/EXT-HPC/probe040.json",
         "docs/hpc.md",
         "tests/test_hpc.py",
         "tests/test_hpc_execution.py",
         "tests/test_hpc_live.py",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1034,14 +1034,14 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Configuration and factory adoption, minimal job submit/status/cancel/results/close; default local behavior preserved",
       "evidence": [
-        "verification/development/EXT-HPC/probe040.json",
+        ".local/evidence/development/EXT-HPC/probe040.json",
         "docs/hpc.md",
         "tests/test_hpc.py",
         "tests/test_hpc_execution.py",
         "tests/test_hpc_live.py",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1052,13 +1052,13 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Source model preserved; native export/cancel/close on success/failure; imported geometry/units in receiver",
       "evidence": [
-        "verification/development/EXT-SPEOS/probe041.json",
+        ".local/evidence/development/EXT-SPEOS/probe041.json",
         "docs/speos.md",
         "tests/test_speos.py",
         "tests/test_speos_live.py",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1069,13 +1069,13 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Source model preserved; native export/cancel/close on success/failure; imported geometry/units in receiver",
       "evidence": [
-        "verification/development/EXT-SPEOS/probe041.json",
+        ".local/evidence/development/EXT-SPEOS/probe041.json",
         "docs/speos.md",
         "tests/test_speos.py",
         "tests/test_speos_live.py",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1086,9 +1086,9 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Source model preserved; native export/cancel/close on success/failure; imported geometry/units in receiver",
       "evidence": [
-        "verification/development/EXT-SPEOS/probe041.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/EXT-SPEOS/probe041.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1099,7 +1099,7 @@
       "reason": "Default v242 directory and HKLM uninstall inventory found no confirmed Speos receiver; native readonly output filename/package still awaits execution.",
       "next_action": "Identify runnable receiver version/location and native output package format; then verify import, units and geometry.",
       "evidence": [
-        "verification/development/EXT-SPEOS/probe041.json"
+        ".local/evidence/development/EXT-SPEOS/probe041.json"
       ]
     },
     {
@@ -1110,11 +1110,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Controlled native output and source-model preservation; native resource closure",
       "evidence": [
-        "verification/development/EXT-EXPORT/probe042.json",
+        ".local/evidence/development/EXT-EXPORT/probe042.json",
         "docs/special-exports.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1125,7 +1125,7 @@
       "reason": "No corresponding named creation/export interface in 908 public types; GUI feature documented in local manual.",
       "next_action": "Identify supported formal creation interface/protocol and parameters; see probe042.json.",
       "evidence": [
-        "verification/development/EXT-EXPORT/probe042.json",
+        ".local/evidence/development/EXT-EXPORT/probe042.json",
         "docs/special-exports.md"
       ]
     },
@@ -1137,7 +1137,7 @@
       "reason": "No corresponding named creation/export interface in 908 public types; GUI feature documented in local manual.",
       "next_action": "Identify supported formal creation interface/protocol and parameters; see probe042.json.",
       "evidence": [
-        "verification/development/EXT-EXPORT/probe042.json",
+        ".local/evidence/development/EXT-EXPORT/probe042.json",
         "docs/special-exports.md"
       ]
     },
@@ -1149,7 +1149,7 @@
       "reason": "No corresponding named creation/export interface in 908 public types; GUI feature documented in local manual.",
       "next_action": "Identify supported formal creation interface/protocol and parameters; see probe042.json.",
       "evidence": [
-        "verification/development/EXT-EXPORT/probe042.json",
+        ".local/evidence/development/EXT-EXPORT/probe042.json",
         "docs/special-exports.md"
       ]
     },
@@ -1161,12 +1161,12 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。优化后评价值<=原值*1.001+1e-10；既有光线参考rel1e-7+abs1e-8；运行同会话入口并记录实际终态与关闭。",
       "evidence": [
-        "verification/development/RL-01/workflows043.json",
+        ".local/evidence/development/RL-01/workflows043.json",
         "tests/test_release_handoffs_live.py",
         "docs/release-workflows.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1177,12 +1177,12 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。球面sag和旋转矩阵解析参考rel1e-7+abs1e-8；面型/设置保存重载；运行同会话入口并记录实际终态与关闭。",
       "evidence": [
-        "verification/development/RL-01/workflows043.json",
+        ".local/evidence/development/RL-01/workflows043.json",
         "tests/test_release_handoffs_live.py",
         "docs/release-workflows.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1193,12 +1193,12 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。图像有效输出/分页/导出；Fresnel通道abs1e-6+rel1e-5；膜层保存重载；运行同会话入口并记录实际终态与关闭。",
       "evidence": [
-        "verification/development/RL-01/workflows043.json",
+        ".local/evidence/development/RL-01/workflows043.json",
         "tests/test_release_handoffs_live.py",
         "docs/release-workflows.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1209,12 +1209,12 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。受控路径输入/结束功率1W，abs1e-8+rel1e-7；坐标和ZRD读取；运行同会话入口并记录实际终态与关闭。",
       "evidence": [
-        "verification/development/RL-01/workflows043.json",
+        ".local/evidence/development/RL-01/workflows043.json",
         "tests/test_release_handoffs_live.py",
         "docs/release-workflows.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1225,12 +1225,12 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。解析高斯束宽rel5e-4；功率/耦合abs5e-4；分页/收敛/倾斜对称性；运行同会话入口并记录实际终态与关闭。",
       "evidence": [
-        "verification/development/RL-01/workflows043.json",
+        ".local/evidence/development/RL-01/workflows043.json",
         "tests/test_release_handoffs_live.py",
         "docs/release-workflows.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1241,12 +1241,12 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。灵敏度/Monte Carlo/逆公差终态；保存样本2；STEP/网格/PDF文件及图像可读；运行同会话入口并记录实际终态与关闭。",
       "evidence": [
-        "verification/development/RL-01/workflows043.json",
+        ".local/evidence/development/RL-01/workflows043.json",
         "tests/test_release_handoffs_live.py",
         "docs/release-workflows.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1257,12 +1257,12 @@
       "reason": "",
       "next_action": "STEP/STL/SAT settings, output creation and Close passed after native current-configuration encoding fix; continue independent file geometry and NSC option acceptance.",
       "evidence": [
-        "verification/development/EXT-EXPORT/cad-settings044.json",
+        ".local/evidence/development/EXT-EXPORT/cad-settings044.json",
         "tests/test_cad_adoption.py",
         "tests/test_cad_formats_live.py",
         "docs/special-exports.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json"
       ]
     },
     {
@@ -1273,12 +1273,12 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。模式采用；所有文件及层级；模型配置保持；终态与关闭",
       "evidence": [
-        "verification/development/EXT-EXPORT/cad-settings044.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/EXT-EXPORT/manual042.txt",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/EXT-EXPORT/cad-settings044.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/EXT-EXPORT/manual042.txt",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1289,8 +1289,8 @@
       "reason": "",
       "next_action": "探查IAS_RTA/偏振专题的ObjectNumber、FaceNumber和ReverseDirection条件；用受控NSC组件建立正反介质参考，增加独立有类型选择与最终回读。",
       "evidence": [
-        "verification/development/CO-01/manual-index-931.txt",
-        "verification/development/CO-01/acceptance058.json"
+        ".local/evidence/development/CO-01/manual-index-931.txt",
+        ".local/evidence/development/CO-01/acceptance058.json"
       ]
     },
     {
@@ -1301,7 +1301,7 @@
       "reason": "Installed sequential us_hologram_kogelnik.dll gives an additional external ray-direction dot-product squared factor for P; 192 physical comparisons fail, maximum absolute error 0.4438234531919145.",
       "next_action": "Obtain DLL source/fixed build or vendor clarification of Jones basis and efficiency semantics, then rerun independent S/P comparisons; native Hologram1 route already passes.",
       "evidence": [
-        "verification/development/CO-01/acceptance059.json",
+        ".local/evidence/development/CO-01/acceptance059.json",
         "tests/test_diff_efficiency_offaxis_live.py"
       ]
     },
@@ -1313,8 +1313,8 @@
       "reason": "",
       "next_action": "按probe030既有接口建立受控模型；探查实际输出并完成独立数值、配置/保存重载和关闭验收",
       "evidence": [
-        "verification/development/GE-01/probe030.json",
-        "verification/development/GE-01/items090.json"
+        ".local/evidence/development/GE-01/probe030.json",
+        ".local/evidence/development/GE-01/items090.json"
       ]
     },
     {
@@ -1325,8 +1325,8 @@
       "reason": "",
       "next_action": "按probe030既有接口建立受控模型；探查实际输出并完成独立数值、配置/保存重载和关闭验收",
       "evidence": [
-        "verification/development/GE-01/probe030.json",
-        "verification/development/GE-01/items090.json"
+        ".local/evidence/development/GE-01/probe030.json",
+        ".local/evidence/development/GE-01/items090.json"
       ]
     },
     {
@@ -1337,8 +1337,8 @@
       "reason": "",
       "next_action": "按probe030既有接口建立受控模型；探查实际输出并完成独立数值、配置/保存重载和关闭验收",
       "evidence": [
-        "verification/development/GE-01/probe030.json",
-        "verification/development/GE-01/items090.json"
+        ".local/evidence/development/GE-01/probe030.json",
+        ".local/evidence/development/GE-01/items090.json"
       ]
     },
     {
@@ -1349,8 +1349,8 @@
       "reason": "",
       "next_action": "按probe030既有接口建立受控模型；探查实际输出并完成独立数值、配置/保存重载和关闭验收",
       "evidence": [
-        "verification/development/GE-01/probe030.json",
-        "verification/development/GE-01/items090.json"
+        ".local/evidence/development/GE-01/probe030.json",
+        ".local/evidence/development/GE-01/items090.json"
       ]
     },
     {
@@ -1361,8 +1361,8 @@
       "reason": "",
       "next_action": "按probe030既有接口建立受控模型；探查实际输出并完成独立数值、配置/保存重载和关闭验收",
       "evidence": [
-        "verification/development/GE-01/probe030.json",
-        "verification/development/GE-01/items090.json"
+        ".local/evidence/development/GE-01/probe030.json",
+        ".local/evidence/development/GE-01/items090.json"
       ]
     },
     {
@@ -1373,19 +1373,19 @@
       "reason": "",
       "next_action": "原生Hologram1的S/P离轴384点、持久性和失败/取消通过；DLL的P参考偏差跟踪CO-01.KogelnikDLL.PProjection，继续NSC镀膜及其余P2队列。",
       "evidence": [
-        "verification/development/CO-01/diffraction-efficiency028.json",
-        "verification/development/CO-01/ordinary038.xml",
-        "verification/development/CO-01/stdio-smoke038.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/CO-01/diffraction-efficiency028.json",
+        ".local/evidence/development/CO-01/ordinary038.xml",
+        ".local/evidence/development/CO-01/stdio-smoke038.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
         "tests/test_diff_efficiency.py",
         "docs/diffraction-efficiency.md",
         "examples/diffraction_efficiency_requests.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CO-01/acceptance056.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CO-01/acceptance056.json",
         "tests/test_diff_efficiency_live.py",
-        "verification/development/CO-01/acceptance059.json",
+        ".local/evidence/development/CO-01/acceptance059.json",
         "tests/test_diff_efficiency_offaxis_live.py"
       ]
     },
@@ -1397,19 +1397,19 @@
       "reason": "",
       "next_action": "原生Hologram1的S/P离轴384点、持久性和失败/取消通过；DLL的P参考偏差跟踪CO-01.KogelnikDLL.PProjection，继续NSC镀膜及其余P2队列。",
       "evidence": [
-        "verification/development/CO-01/diffraction-efficiency028.json",
-        "verification/development/CO-01/ordinary038.xml",
-        "verification/development/CO-01/stdio-smoke038.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/CO-01/diffraction-efficiency028.json",
+        ".local/evidence/development/CO-01/ordinary038.xml",
+        ".local/evidence/development/CO-01/stdio-smoke038.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
         "tests/test_diff_efficiency.py",
         "docs/diffraction-efficiency.md",
         "examples/diffraction_efficiency_requests.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CO-01/acceptance056.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CO-01/acceptance056.json",
         "tests/test_diff_efficiency_live.py",
-        "verification/development/CO-01/acceptance059.json",
+        ".local/evidence/development/CO-01/acceptance059.json",
         "tests/test_diff_efficiency_offaxis_live.py"
       ]
     },
@@ -1421,19 +1421,19 @@
       "reason": "",
       "next_action": "原生Hologram1的S/P离轴384点、持久性和失败/取消通过；DLL的P参考偏差跟踪CO-01.KogelnikDLL.PProjection，继续NSC镀膜及其余P2队列。",
       "evidence": [
-        "verification/development/CO-01/diffraction-efficiency028.json",
-        "verification/development/CO-01/ordinary038.xml",
-        "verification/development/CO-01/stdio-smoke038.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/CO-01/diffraction-efficiency028.json",
+        ".local/evidence/development/CO-01/ordinary038.xml",
+        ".local/evidence/development/CO-01/stdio-smoke038.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
         "tests/test_diff_efficiency.py",
         "docs/diffraction-efficiency.md",
         "examples/diffraction_efficiency_requests.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CO-01/acceptance056.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CO-01/acceptance056.json",
         "tests/test_diff_efficiency_live.py",
-        "verification/development/CO-01/acceptance059.json",
+        ".local/evidence/development/CO-01/acceptance059.json",
         "tests/test_diff_efficiency_offaxis_live.py"
       ]
     },
@@ -1445,14 +1445,14 @@
       "reason": "Native GetTextFile=false, SpotData=null and all inspected data arrays empty after valid execution; corrected native result outlet required.",
       "next_action": "Cooke结果出口为空；需正式数值/图形出口或修正版本，见probe088；继续其余专题",
       "evidence": [
-        "verification/development/CV-01/configuration-matrix-spot022.json",
+        ".local/evidence/development/CV-01/configuration-matrix-spot022.json",
         "tests/test_configuration_matrix_spot.py",
         "tests/test_configuration_matrix_spot_live.py",
         "docs/configuration-matrix-spot.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CV-01/probe088.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CV-01/probe088.json"
       ]
     },
     {
@@ -1463,11 +1463,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
-        "verification/development/CV-01/contrast-loss032.json",
+        ".local/evidence/development/CV-01/contrast-loss032.json",
         "docs/contrast-loss.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1479,10 +1479,10 @@
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1494,10 +1494,10 @@
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1508,14 +1508,14 @@
       "reason": "",
       "next_action": "Cooke离轴子午截面对照超0.005；补PSF/OTF独立参考与频率定义定位",
       "evidence": [
-        "verification/development/CV-01/fft-surface-mtf021.json",
+        ".local/evidence/development/CV-01/fft-surface-mtf021.json",
         "tests/test_fft_surface_mtf.py",
         "tests/test_fft_surface_mtf_live.py",
         "docs/fft-surface-mtf.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CV-01/probe090.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CV-01/probe090.json"
       ]
     },
     {
@@ -1526,17 +1526,17 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, adopted settings, result data, checks and lifecycle evidence",
       "evidence": [
-        "verification/development/CV-01/foucault024.json",
+        ".local/evidence/development/CV-01/foucault024.json",
         "tests/test_foucault.py",
         "tests/test_foucault_live.py",
         "docs/foucault.md",
-        "verification/development/CV-01/foucault024.json",
-        "verification/development/CV-01/stdio-smoke034.json",
-        "verification/development/CV-01/foucault024.json",
-        "verification/development/CV-01/stdio-smoke034.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/CV-01/foucault024.json",
+        ".local/evidence/development/CV-01/stdio-smoke034.json",
+        ".local/evidence/development/CV-01/foucault024.json",
+        ".local/evidence/development/CV-01/stdio-smoke034.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1547,12 +1547,12 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and reference complete",
       "evidence": [
-        "verification/development/CV-01/full-field-aberration025.json",
+        ".local/evidence/development/CV-01/full-field-aberration025.json",
         "tests/test_full_field_aberration.py",
         "docs/full-field-aberration.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1563,12 +1563,12 @@
       "reason": "",
       "next_action": "Formal graphics/dedicated data export or attributed shared-reference ray-trace fallback; numerical acceptance remains open",
       "evidence": [
-        "verification/development/CV-01/full-field-spot-probe025.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CV-01/acceptance074.json"
+        ".local/evidence/development/CV-01/full-field-spot-probe025.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CV-01/acceptance074.json"
       ]
     },
     {
@@ -1580,11 +1580,11 @@
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, adopted settings, result data, checks and lifecycle evidence",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/connection040.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/connection040.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1595,13 +1595,13 @@
       "reason": "",
       "next_action": "零频原点已校准、匹配ImageDelta后截面通过；补圆瞳/复数模式及生命周期验收",
       "evidence": [
-        "verification/development/CV-01/huygens-surface-mtf026.json",
+        ".local/evidence/development/CV-01/huygens-surface-mtf026.json",
         "tests/test_huygens_surface_mtf.py",
         "docs/huygens-surface-mtf.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CV-01/probe090.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CV-01/probe090.json"
       ]
     },
     {
@@ -1612,12 +1612,12 @@
       "reason": "",
       "next_action": "Runtime071 returned AS_Default; establish documented settings keys, actual adoption readback and meaningful result outlet before typed execution.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CV-01/runtime071/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CV-01/runtime071/settings.json"
       ]
     },
     {
@@ -1629,12 +1629,12 @@
       "next_action": "Cooke结果出口为空；需正式数值/图形出口或修正版本，见probe088；继续其余专题",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/connection040.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CV-01/probe088.json"
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/connection040.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CV-01/probe088.json"
       ]
     },
     {
@@ -1645,12 +1645,12 @@
       "reason": "Runtime071 factory null on ordinary sequential model; requires valid STAR model/input and factory availability.",
       "next_action": "Ordinary sequential factory returned null; establish STAR license/FEA input/active deformation conditions and re-probe; no owned analysis created.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CV-01/runtime071/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CV-01/runtime071/settings.json"
       ]
     },
     {
@@ -1661,12 +1661,12 @@
       "reason": "Runtime071 factory null on ordinary sequential model; requires valid STAR model/input and factory availability.",
       "next_action": "Ordinary sequential factory returned null; establish STAR license/FEA input/active deformation conditions and re-probe; no owned analysis created.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CV-01/runtime071/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CV-01/runtime071/settings.json"
       ]
     },
     {
@@ -1677,12 +1677,12 @@
       "reason": "Runtime071 factory null on ordinary sequential model; requires valid STAR model/input and factory availability.",
       "next_action": "Ordinary sequential factory returned null; establish STAR license/FEA input/active deformation conditions and re-probe; no owned analysis created.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CV-01/runtime071/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CV-01/runtime071/settings.json"
       ]
     },
     {
@@ -1693,12 +1693,12 @@
       "reason": "Runtime071 factory null on ordinary sequential model; requires valid STAR model/input and factory availability.",
       "next_action": "Ordinary sequential factory returned null; establish STAR license/FEA input/active deformation conditions and re-probe; no owned analysis created.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CV-01/runtime071/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CV-01/runtime071/settings.json"
       ]
     },
     {
@@ -1709,12 +1709,12 @@
       "reason": "Runtime071 factory null on ordinary sequential model; requires valid STAR model/input and factory availability.",
       "next_action": "Ordinary sequential factory returned null; establish STAR license/FEA input/active deformation conditions and re-probe; no owned analysis created.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CV-01/runtime071/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CV-01/runtime071/settings.json"
       ]
     },
     {
@@ -1725,12 +1725,12 @@
       "reason": "Runtime071 factory null on ordinary sequential model; requires valid STAR model/input and factory availability.",
       "next_action": "Ordinary sequential factory returned null; establish STAR license/FEA input/active deformation conditions and re-probe; no owned analysis created.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CV-01/runtime071/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CV-01/runtime071/settings.json"
       ]
     },
     {
@@ -1741,11 +1741,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
-        "verification/development/CV-01/seidel-diagram034.json",
+        ".local/evidence/development/CV-01/seidel-diagram034.json",
         "docs/seidel-diagram.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1756,12 +1756,12 @@
       "reason": "",
       "next_action": "Runtime071 returned AS_Default; establish documented settings keys, actual adoption readback and meaningful result outlet before typed execution.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CV-01/runtime071/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CV-01/runtime071/settings.json"
       ]
     },
     {
@@ -1772,12 +1772,12 @@
       "reason": "",
       "next_action": "Runtime071 returned AS_Default; establish documented settings keys, actual adoption readback and meaningful result outlet before typed execution.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CV-01/runtime071/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CV-01/runtime071/settings.json"
       ]
     },
     {
@@ -1788,12 +1788,12 @@
       "reason": "",
       "next_action": "Runtime071 returned AS_Default; establish documented settings keys, actual adoption readback and meaningful result outlet before typed execution.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/CV-01/runtime071/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/CV-01/runtime071/settings.json"
       ]
     },
     {
@@ -1804,11 +1804,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1819,11 +1819,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1834,11 +1834,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1849,11 +1849,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1864,11 +1864,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1879,11 +1879,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1894,11 +1894,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, adopted settings, result data, checks and lifecycle evidence",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1909,11 +1909,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
-        "verification/development/CV-02/interferogram035.json",
+        ".local/evidence/development/CV-02/interferogram035.json",
         "docs/wavefront-topics.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1924,11 +1924,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1939,11 +1939,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1954,11 +1954,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1969,11 +1969,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -1984,11 +1984,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -2000,9 +2000,9 @@
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed solve settings, readback, persistence and numeric reference",
       "evidence": [
         "verification/solve-extensions018-summary.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -2013,11 +2013,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -2028,11 +2028,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, actual settings, results and lifecycle evidence",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -2043,11 +2043,11 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, adopted settings, result data, checks and lifecycle evidence",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -2059,8 +2059,8 @@
       "next_action": "Probe AS_Default SaveSettings/ModifySettings/LoadSettings and formal CFG keys, verify settings adoption and output before enabling typed execution.",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
         "verification\\development\\IM-01\\acceptance050\\summary.json"
       ]
     },
@@ -2073,8 +2073,8 @@
       "next_action": "Inspect formal output image/results contract with controlled IMA/BMP sources; then finish numeric references and output acceptance.",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
         "verification\\development\\IM-01\\acceptance050\\summary.json"
       ]
     },
@@ -2086,12 +2086,12 @@
       "reason": "实际 SettingsFirst/GetSettings 为 AS_Default，无专题可写属性；正式 SaveTo 已成功，需确认该专题官方 CFG 键及结果出口。",
       "next_action": "从本机正式手册取得专题 CFG 键；执行 ModifySettings/LoadFrom、采用回读与结果数值验收。",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/MA-01/runtime054/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/MA-01/runtime054/settings.json"
       ]
     },
     {
@@ -2102,12 +2102,12 @@
       "reason": "实际 SettingsFirst/GetSettings 为 AS_Default，无专题可写属性；正式 SaveTo 已成功，需确认该专题官方 CFG 键及结果出口。",
       "next_action": "从本机正式手册取得专题 CFG 键；执行 ModifySettings/LoadFrom、采用回读与结果数值验收。",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/MA-01/runtime054/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/MA-01/runtime054/settings.json"
       ]
     },
     {
@@ -2118,12 +2118,12 @@
       "reason": "实际 SettingsFirst/GetSettings 为 AS_Default，无专题可写属性；正式 SaveTo 已成功，需确认该专题官方 CFG 键及结果出口。",
       "next_action": "从本机正式手册取得专题 CFG 键；执行 ModifySettings/LoadFrom、采用回读与结果数值验收。",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/MA-01/runtime054/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/MA-01/runtime054/settings.json"
       ]
     },
     {
@@ -2134,12 +2134,12 @@
       "reason": "实际 SettingsFirst/GetSettings 为 AS_Default，无专题可写属性；正式 SaveTo 已成功，需确认该专题官方 CFG 键及结果出口。",
       "next_action": "从本机正式手册取得专题 CFG 键；执行 ModifySettings/LoadFrom、采用回读与结果数值验收。",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/MA-01/runtime054/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/MA-01/runtime054/settings.json"
       ]
     },
     {
@@ -2150,12 +2150,12 @@
       "reason": "",
       "next_action": "Runtime078 AS_Default only; establish documented CFG keys/adoption readback and numerical or drawing output contract.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/MF-01/runtime078/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/MF-01/runtime078/settings.json"
       ]
     },
     {
@@ -2166,11 +2166,11 @@
       "reason": "",
       "next_action": "Runtime078 AS_Default only; establish documented CFG keys/adoption readback and numerical or drawing output contract.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/MF-01/runtime078/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/MF-01/runtime078/settings.json"
       ]
     },
     {
@@ -2181,12 +2181,12 @@
       "reason": "",
       "next_action": "Runtime078 AS_Default only; establish documented CFG keys/adoption readback and numerical or drawing output contract.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe035.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/MF-01/runtime078/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/MF-01/runtime078/settings.json"
       ]
     },
     {
@@ -2198,12 +2198,12 @@
       "next_action": "定位阈值剔除分支的未分类功率正式出口；已完成直达/双源、取消、保存重载与重复面交互检查",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        "verification/development/BASE-01/probe/api-interfaces.json",
-        "verification/development/BASE-04/connection040.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-02/acceptance063.json"
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-04/connection040.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-02/acceptance063.json"
       ]
     },
     {
@@ -2214,10 +2214,10 @@
       "reason": "",
       "next_action": "原生启动已恢复；执行当前条目的运行时接口、实际设置、结果及关闭验收。Typed request, adopted settings, result data, checks and lifecycle evidence",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json"
       ]
     },
     {
@@ -2228,11 +2228,11 @@
       "reason": "",
       "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-03/runtime069/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-03/runtime069/settings.json"
       ]
     },
     {
@@ -2243,11 +2243,11 @@
       "reason": "",
       "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-03/runtime069/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-03/runtime069/settings.json"
       ]
     },
     {
@@ -2259,13 +2259,13 @@
       "next_action": "定位单点MTF约9.875e-7偏差；当前探测器/ZRD、7x5与32x16、关闭像素插值结果相同；原容差2e-7保持",
       "evidence": [
         "verification/illumination028-summary.json",
-        "verification/development/NS-03/probe028.json",
+        ".local/evidence/development/NS-03/probe028.json",
         "tests/test_nsc_mtf.py",
         "tests/test_nsc_mtf_live.py",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-03/acceptance064.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-03/acceptance064.json"
       ]
     },
     {
@@ -2276,11 +2276,11 @@
       "reason": "",
       "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-03/runtime069/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-03/runtime069/settings.json"
       ]
     },
     {
@@ -2291,11 +2291,11 @@
       "reason": "",
       "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-03/runtime069/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-03/runtime069/settings.json"
       ]
     },
     {
@@ -2306,13 +2306,13 @@
       "reason": "",
       "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
       "evidence": [
-        "verification/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
         "verification/design-tools020-summary.json",
         "docs/design-tools.md",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-03/runtime069/settings.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-03/runtime069/settings.json"
       ]
     },
     {
@@ -2323,11 +2323,11 @@
       "reason": "",
       "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-03/runtime069/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-03/runtime069/settings.json"
       ]
     },
     {
@@ -2338,11 +2338,11 @@
       "reason": "",
       "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-03/runtime069/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-03/runtime069/settings.json"
       ]
     },
     {
@@ -2353,11 +2353,11 @@
       "reason": "",
       "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-03/runtime069/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-03/runtime069/settings.json"
       ]
     },
     {
@@ -2368,11 +2368,11 @@
       "reason": "",
       "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-03/runtime069/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-03/runtime069/settings.json"
       ]
     },
     {
@@ -2383,11 +2383,11 @@
       "reason": "",
       "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-03/runtime069/settings.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-03/runtime069/settings.json"
       ]
     },
     {
@@ -2398,12 +2398,12 @@
       "reason": "",
       "next_action": "Pure NSC factory creates AS_Default; sequential factory null. Default pure NSC text export false; analysis closed. Official MODIFYSETTINGS has SHA_ROTX/Y/Z only; object selector and rotation readback unavailable. Need formal object selection/readback and graphics outlet.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-04/runtime066/summary.json",
-        "verification/development/NS-04/runtime068-sequential/summary.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-04/runtime066/summary.json",
+        ".local/evidence/development/NS-04/runtime068-sequential/summary.json"
       ]
     },
     {
@@ -2414,12 +2414,12 @@
       "reason": "",
       "next_action": "AS_Default in both modes; default text export false, closed. Needs formal part input selection/readback and graphics outlet.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-04/runtime066/summary.json",
-        "verification/development/NS-04/runtime068-sequential/summary.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-04/runtime066/summary.json",
+        ".local/evidence/development/NS-04/runtime068-sequential/summary.json"
       ]
     },
     {
@@ -2430,12 +2430,12 @@
       "reason": "",
       "next_action": "AS_Default in both modes; default native prescription text export works and closed. Typed section selections and actual adopted readback unavailable; require official keys or dedicated settings interface.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-04/runtime066/summary.json",
-        "verification/development/NS-04/runtime068-sequential/summary.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-04/runtime066/summary.json",
+        ".local/evidence/development/NS-04/runtime068-sequential/summary.json"
       ]
     },
     {
@@ -2446,12 +2446,12 @@
       "reason": "",
       "next_action": "Sequential factory creates AS_Default; pure NSC factory null. Default text export false and closed; requires graphics export and settings contract.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-04/runtime066/summary.json",
-        "verification/development/NS-04/runtime068-sequential/summary.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-04/runtime066/summary.json",
+        ".local/evidence/development/NS-04/runtime068-sequential/summary.json"
       ]
     },
     {
@@ -2462,12 +2462,12 @@
       "reason": "",
       "next_action": "Sequential AS_Default; NSC factory null. Default surface report text exports and closes. Need formal surface selector and adopted selection readback.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/NS-04/runtime066/summary.json",
-        "verification/development/NS-04/runtime068-sequential/summary.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/NS-04/runtime066/summary.json",
+        ".local/evidence/development/NS-04/runtime068-sequential/summary.json"
       ]
     },
     {
@@ -2478,8 +2478,8 @@
       "reason": "AS_Default has no specialized typed settings. Five binary CFG exports succeeded; supported parameter keys and numerical execution remain unresolved.",
       "next_action": "Use formal IAS_.SaveTo/LoadFrom/ModifySettings; obtain documented CFG parameter keys and verify adoption/results before typed execution.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
         "verification\\development\\CO-01\\acceptance051\\summary.json",
         "verification\\development\\CO-01\\acceptance052\\summary.json"
       ]
@@ -2492,8 +2492,8 @@
       "reason": "AS_Default has no specialized typed settings. Five binary CFG exports succeeded; supported parameter keys and numerical execution remain unresolved.",
       "next_action": "Use formal IAS_.SaveTo/LoadFrom/ModifySettings; obtain documented CFG parameter keys and verify adoption/results before typed execution.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
         "verification\\development\\CO-01\\acceptance051\\summary.json",
         "verification\\development\\CO-01\\acceptance052\\summary.json"
       ]
@@ -2506,8 +2506,8 @@
       "reason": "AS_Default has no specialized typed settings. Five binary CFG exports succeeded; supported parameter keys and numerical execution remain unresolved.",
       "next_action": "Use formal IAS_.SaveTo/LoadFrom/ModifySettings; obtain documented CFG parameter keys and verify adoption/results before typed execution.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
         "verification\\development\\CO-01\\acceptance051\\summary.json",
         "verification\\development\\CO-01\\acceptance052\\summary.json"
       ]
@@ -2520,8 +2520,8 @@
       "reason": "AS_Default has no specialized typed settings. Five binary CFG exports succeeded; supported parameter keys and numerical execution remain unresolved.",
       "next_action": "Use formal IAS_.SaveTo/LoadFrom/ModifySettings; obtain documented CFG parameter keys and verify adoption/results before typed execution.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
         "verification\\development\\CO-01\\acceptance051\\summary.json",
         "verification\\development\\CO-01\\acceptance052\\summary.json"
       ]
@@ -2536,13 +2536,13 @@
       "evidence": [
         "docs/tolerancing-quick-yield.md",
         "tests/test_quick_yield.py",
-        "verification/development/WP-01/probe030.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/TO-01/probe083.json",
-        "verification/development/TO-01/probe084.json",
-        "verification/development/TO-01/probe086.json"
+        ".local/evidence/development/WP-01/probe030.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/TO-01/probe083.json",
+        ".local/evidence/development/TO-01/probe084.json",
+        ".local/evidence/development/TO-01/probe086.json"
       ]
     },
     {
@@ -2555,10 +2555,10 @@
       "evidence": [
         "verification/tolerancing030-summary.json",
         "src/zemax_mcp/physical_optics.py",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/WP-01/runtime072/summary.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/WP-01/runtime072/summary.json"
       ]
     },
     {
@@ -2571,10 +2571,10 @@
       "evidence": [
         "verification/tolerancing030-summary.json",
         "src/zemax_mcp/physical_optics.py",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/WP-01/runtime072/summary.json"
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/WP-01/runtime072/summary.json"
       ]
     },
     {
@@ -2585,11 +2585,11 @@
       "reason": "",
       "next_action": "AS_Default/base IAS_ only; dedicated analysis settings/readback/output contract remains open. Existing POP/file-reader path retained.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/WP-01/runtime070/summary.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/WP-01/runtime070/summary.json"
       ]
     },
     {
@@ -2600,11 +2600,11 @@
       "reason": "",
       "next_action": "AS_Default/base IAS_ only; dedicated analysis settings/readback/output contract remains open. Existing POP/file-reader path retained.",
       "evidence": [
-        "verification/development/BASE-01/static-runtime-probe031.json",
-        "verification/development/BASE-04/startup045.json",
-        "verification/development/BASE-04/reboot046.json",
-        "verification/development/BASE-01/ledger-refresh054.json",
-        "verification/development/WP-01/runtime070/summary.json"
+        ".local/evidence/development/BASE-01/static-runtime-probe031.json",
+        ".local/evidence/development/BASE-04/startup045.json",
+        ".local/evidence/development/BASE-04/reboot046.json",
+        ".local/evidence/development/BASE-01/ledger-refresh054.json",
+        ".local/evidence/development/WP-01/runtime070/summary.json"
       ]
     }
   ],
@@ -2621,17 +2621,17 @@
     "MA-01.GlassMap"
   ],
   "release": {
-    "source": "verification/development/BASE-04/release058.json",
+    "source": ".local/evidence/development/BASE-04/release058.json",
     "version": "0.1.58",
     "date": "2026-11-06",
     "batch_id": "B002",
     "wheel": "wheels/zemax_standalone_mcp-0.1.58-py3-none-any.whl",
-    "installation": "verification/development/BASE-04/wheel-install058-b002",
+    "installation": ".local/evidence/development/BASE-04/wheel-install058-b002",
     "ordinary_passed": 1889,
     "ordinary_skipped_native": 605,
-    "ordinary_evidence": "verification/development/BASE-01/ordinary089-b002.xml",
+    "ordinary_evidence": ".local/evidence/development/BASE-01/ordinary089-b002.xml",
     "native_test_cases_completed": 17,
-    "native_wheel_evidence": "verification/development/BASE-04/native-wheel058-b002.xml",
+    "native_wheel_evidence": ".local/evidence/development/BASE-04/native-wheel058-b002.xml",
     "native_test_cases": [
       {
         "classname": "tests.test_phase_slope_reference_live",
@@ -2719,7 +2719,7 @@
         "time": "18.481"
       }
     ],
-    "schema_evidence": "verification/development/BASE-04/stdio058-schema/summary.json",
+    "schema_evidence": ".local/evidence/development/BASE-04/stdio058-schema/summary.json",
     "tool_count": 100,
     "analysis_kind_count": 96,
     "completed_item_ids": [
@@ -2753,7 +2753,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/nonsequential.py",
@@ -2768,7 +2768,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -2784,7 +2784,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/exports.py",
@@ -2799,7 +2799,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/exports.py",
@@ -2814,7 +2814,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/backend.py",
@@ -2830,7 +2830,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -2846,7 +2846,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -2862,7 +2862,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -2878,7 +2878,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -2894,7 +2894,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -2910,7 +2910,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -2926,7 +2926,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -2942,7 +2942,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -2958,7 +2958,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -2974,7 +2974,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -2990,7 +2990,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -3006,7 +3006,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -3022,7 +3022,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -3038,7 +3038,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -3054,7 +3054,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/exports.py",
@@ -3069,7 +3069,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/exports.py",
@@ -3084,7 +3084,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -3100,7 +3100,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/physical_optics.py",
@@ -3118,7 +3118,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -3134,10 +3134,10 @@
       "reason": "",
       "next_action": "Preserve documented product/placeholder boundary; re-evaluate only when installed version or supported interface changes.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
-        "verification/development/BASE-01/probe/api-interfaces.json",
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
         "docs/model-adaptation.md",
         "src/zemax_mcp/detectors.py"
       ]
@@ -3150,7 +3150,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/exports.py",
@@ -3165,7 +3165,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/backend.py",
@@ -3181,7 +3181,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -3197,7 +3197,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -3213,7 +3213,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -3229,7 +3229,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -3245,7 +3245,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -3261,7 +3261,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -3277,7 +3277,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -3293,10 +3293,10 @@
       "reason": "",
       "next_action": "Preserve documented product/placeholder boundary; re-evaluate only when installed version or supported interface changes.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
-        "verification/development/BASE-01/probe/api-interfaces.json"
+        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -3307,7 +3307,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -3323,7 +3323,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",
@@ -3339,7 +3339,7 @@
       "reason": "",
       "next_action": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope.",
       "evidence": [
-        "verification/development/RL-01/baseline-review043.json",
+        ".local/evidence/development/RL-01/baseline-review043.json",
         "docs/native-analysis-matrix.csv",
         "docs/tool-schemas.json",
         "src/zemax_mcp/analyses.py",

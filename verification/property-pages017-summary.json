@@ -54,7 +54,7 @@
   "wheel_smoke": "verification/property-pages017-wheel-smoke.json",
   "bsdf_diagnostic": "verification/property-pages017-bsdf-native.json",
   "historical_failure": {
-    "auto_pop_256_evidence": "outputs/runs/property_pop_numeric_e3f84e60ff",
+    "auto_pop_256_evidence": ".local/runs/property_pop_numeric_e3f84e60ff",
     "radius_mm": 0.20291556989154308,
     "reference_mm": 0.20161760352659483,
     "relative_tolerance": 0.0005,

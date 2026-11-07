@@ -2,7 +2,7 @@
   "hypothesis": "Actual exit-pupil intersections and reference-sphere projection supply the missing nonlinear pupil mapping",
   "native_execution": false,
   "source": "outputs\\runs\\surface_mtf512_primary_89cacce054",
-  "formal_pupil_geometry": "verification/development/CV-01/probe608-pupil-geometry/geometry.json",
+  "formal_pupil_geometry": ".local/evidence/development/CV-01/probe608-pupil-geometry/geometry.json",
   "chief_position": [
     0.0,
     18.1360272446397,

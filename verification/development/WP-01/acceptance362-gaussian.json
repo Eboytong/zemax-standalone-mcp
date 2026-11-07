@@ -9,15 +9,15 @@
   "native_version": "24.2.0 build240529 PremiumEdition",
   "scope": "Native operand Gaussian propagation: typed input, query identity, per-surface six quantities, M2 embedded/scaled groups, axes, source/target/wave/field/config, paging/plot/lifecycle.",
   "evidence": [
-    "verification/development/WP-01/native361-gaussian.xml",
-    "verification/development/WP-01/native362-glass.xml",
-    "verification/development/WP-01/ordinary358-related.xml",
-    "verification/development/WP-01/operands352/probe.json",
-    "verification/development/WP-01/manual352-gaussian-operands.txt"
+    ".local/evidence/development/WP-01/native361-gaussian.xml",
+    ".local/evidence/development/WP-01/native362-glass.xml",
+    ".local/evidence/development/WP-01/ordinary358-related.xml",
+    ".local/evidence/development/WP-01/operands352/probe.json",
+    ".local/evidence/development/WP-01/manual352-gaussian-operands.txt"
   ],
   "commands": [
-    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_gaussian_beams_live.py --run-zemax -q --junitxml=verification/development/WP-01/native361-gaussian.xml",
-    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_gaussian_beams_live.py::test_gaussian_glass_plate_wavelength_and_configuration --run-zemax -q --junitxml=verification/development/WP-01/native362-glass.xml"
+    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_gaussian_beams_live.py --run-zemax -q --junitxml=.local/evidence/development/WP-01/native361-gaussian.xml",
+    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_gaussian_beams_live.py::test_gaussian_glass_plate_wavelength_and_configuration --run-zemax -q --junitxml=.local/evidence/development/WP-01/native362-glass.xml"
   ],
   "numerical": {
     "check_count": 336,
@@ -31,11 +31,11 @@
   "native_report_test_executions": 5,
   "ordinary_related_passed": 83,
   "run_folders": [
-    "outputs/runs/gaussian353_free_318b8d6212",
-    "outputs/runs/gaussian356_lens_569ef06033",
-    "outputs/runs/gaussian357_lifecycle_7a4c414ffc",
-    "outputs/runs/gaussian360_skew_offaxis_2bfbe59921",
-    "outputs/runs/gaussian362_glass_aeac657703"
+    ".local/runs/gaussian353_free_318b8d6212",
+    ".local/runs/gaussian356_lens_569ef06033",
+    ".local/runs/gaussian357_lifecycle_7a4c414ffc",
+    ".local/runs/gaussian360_skew_offaxis_2bfbe59921",
+    ".local/runs/gaussian362_glass_aeac657703"
   ],
   "settings_source": "Direct formal GetOperandValue argument identity; no hidden dialog mutation",
   "lifecycle": "Row/series paging and PNG export viewed; bad index errors; running cancel then repeat; save/reload; surfaces/solves/configuration/system/MFE retained; sessions normally disconnected. No separate native analysis/tool object created.",

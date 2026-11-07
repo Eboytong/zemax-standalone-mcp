@@ -1,6 +1,6 @@
 # SagTable制造数据
 
-当前为implemented。三准则及反向全口径曲线已接入，最新证据见 `verification/development/MF-01/progress622-dsag-fit.json`。默认MinimumVolume提供原生BFSD摘要；MinimumRMS的物理顶点偏移固定为0，带偏移和反向曲线的物理偏移继续待补。
+当前为implemented。三准则及反向全口径曲线已接入，最新证据见 `.local/evidence/development/MF-01/progress622-dsag-fit.json`。默认MinimumVolume提供原生BFSD摘要；MinimumRMS的物理顶点偏移固定为0，带偏移和反向曲线的物理偏移继续待补。
 
 ```json
 {"request":{"kind":"sag_table","surface":2,"minimum_radius":0,"maximum_radius":5,"samples":51}}
@@ -27,7 +27,7 @@ rows支持start/count分页，三个series分别提供sag、去除量和斜率�
 
 在这些受控条件下，原生摘要对应1000个等长区间、1001个含两端的节点 `r_i=lo+i*(hi-lo)/1000`。RMS为 `sqrt(sum(r_i*d_i²)/sum(r_i))`，体积为 `2*pi*delta_r*sum(r_i*removal_depth_i)`。体积采用含端点矩形和；内边界项对环形区间不可省略。手册描述“1000等间距Y点”，本机观察到的离散节点定义另存于 `statistics_sampling.observed_reference`，其验证范围明确列出。请求的 `samples` 控制rows，与原生摘要采样独立。原生摘要数值继续原样返回。
 
-516无权RMS假设失败；517省略内边界的体积少2.78566424e-5 mm³，正负整孔径通过、环形失败；518含端点预测三项通过原统计/体积容差，519最终输出复核通过。普通519共21通过。详见 `verification/development/MF-01/progress519-statistics.json`。完整准则的制造偏移/摘要出口及非对称/Composite等条件仍保留implemented；MinimumVolume对应BFSD的明确正式定义，其他准则的曲率识别沿用425。
+516无权RMS假设失败；517省略内边界的体积少2.78566424e-5 mm³，正负整孔径通过、环形失败；518含端点预测三项通过原统计/体积容差，519最终输出复核通过。普通519共21通过。详见 `.local/evidence/development/MF-01/progress519-statistics.json`。完整准则的制造偏移/摘要出口及非对称/Composite等条件仍保留implemented；MinimumVolume对应BFSD的明确正式定义，其他准则的曲率识别沿用425。
 
 
 2026-11-07 执行537–542：补齐MinimumVolume的毫米/厘米、R40/R60两当前配置，以及零间隔EvenAspheric Add-on/Base叠加面检查。两种单位保存重载后仍采用配置2，长度/体积单位及解析sag/斜率/BFS半径正确；Composite采用总sag=.003*r²及其解析斜率和拟合球。native541的三组SagTable用例共319个数值检查通过，最大绝对误差1.1979751e-11；第四个受影响MCE扫描回归通过。所有会话断连，查询任务终态成功、无独立分析句柄，曲面/solve、配置、系统、MFE保持。537首次在MCE精度检查阶段失败，538探查及542共用修复后通过，原失败保留。
@@ -49,18 +49,18 @@ native553首次偏心孔径用例暴露SSLP截断，原失败保留。修复后�
 
 这些新增曲线的`summary.vertex_offset`及`rows.removal_depth`为null，`manufacturing_state=unavailable`。`data_piston`描述数值曲线的常量项；物理制造偏移继续等待正式契约。第二个series输出deviation，可分页并导出PNG。完整条目仍为implemented，MF/MA别名同步，B006保持5/10。
 
-582正负抛物面各三种新增曲线，共402项检查通过；独立解析行数据最大差8.7153e-15，独立设置SurfaceSlopeCross的报告半径最大差4.1108e-7（容差5e-6）。7项原生包含既有MinimumVolume解析、符号、环形区间、分页/绘图/取消复用与重载回归；68项普通通过。新用例保存重载后检查曲面/solve、系统、MFE/MCE并正常断连，PNG已查看。测试阶段的产物类型、编码、复合任务资源字段和重名保存错误分别保留578–581；最终582通过。证据`verification/development/MF-01/progress582-criterion-curves.json`。
+582正负抛物面各三种新增曲线，共402项检查通过；独立解析行数据最大差8.7153e-15，独立设置SurfaceSlopeCross的报告半径最大差4.1108e-7（容差5e-6）。7项原生包含既有MinimumVolume解析、符号、环形区间、分页/绘图/取消复用与重载回归；68项普通通过。新用例保存重载后检查曲面/solve、系统、MFE/MCE并正常断连，PNG已查看。测试阶段的产物类型、编码、复合任务资源字段和重名保存错误分别保留578–581；最终582通过。证据`.local/evidence/development/MF-01/progress582-criterion-curves.json`。
 
 
 执行587–589补充当前契约：MinimumRMS（No Offset）按准则定义约束球面顶点不偏移，因此`summary.vertex_offset=0`、`vertex_offset_state=fixed_zero_by_criterion`；MinimumRMSWithOffset和反向MinimumVolume继续返回null。非MinimumVolume的去除统计标为`manufacturing_state=not_applicable`；反向MinimumVolume未取得的制造统计标为unavailable。`rows.removal_depth`在新增曲线中继续null，第二个series为deviation。
 
-独立使用256点Gauss-Legendre圆盘面积权重与曲率最小化求解两种RMS准则，拟合半径与425原生曲线恢复半径通过5e-6mm门槛。带偏移准则的独立最优偏移约±0.00020837249mm作为待验证预测保存，生产结果保留null。最终587正负曲面两项原生通过，既有582七项回归证据沿用；589普通72通过。证据`verification/development/MF-01/progress589-offset-reference.json`。
+独立使用256点Gauss-Legendre圆盘面积权重与曲率最小化求解两种RMS准则，拟合半径与425原生曲线恢复半径通过5e-6mm门槛。带偏移准则的独立最优偏移约±0.00020837249mm作为待验证预测保存，生产结果保留null。最终587正负曲面两项原生通过，既有582七项回归证据沿用；589普通72通过。证据`.local/evidence/development/MF-01/progress589-offset-reference.json`。
 
 2026-11-07 执行611–622：正式DSAG的Data9/10已接入两种RMS结果的`native_bfs_fit`，返回原生半径、原始`vertex_z_offset`、参数列身份及与四点SSAG球面重建的`curve_radius_check`。参数顺序为`[Surf,0,Data,Samp,Off-axis,Remove,BFS,0]`，当前Samp=1、Off-axis=0、Remove=2。半径对照绝对容差5e-6镜头单位；不一致时保留原值和失败标志。物理制造`summary.vertex_offset`沿用此前归属，原始DSAG值单列。
 
 正负EvenAspheric在33/129两档采样的值一致；带偏移原始值分别−.0002083725005/+.0002083725027mm，与独立球面加法偏移符号相反。621以ZernikeFringeSag加入±.003mm已知piston，确认原始值还包含局部顶点基准。同形无piston的Zernike带偏移半径39.8400013026mm，与EvenAspheric39.8400396827mm相差3.8380e-5mm，超5e-6门槛；原生拟合的面型适用性仍待解释。反向DSAG BFS3只保留615直接诊断，当前DSAG手册列0–2，生产未据此新增反向合同。
 
-普通620共75通过，真实stdio617正负两例通过；分页、PNG、保存重载、源曲面/solve/系统/MFE/MCE保持、六个原生参考分析关闭及断连通过。612六个专题结果探查、614元数据副本、615直接查询、621三个piston专题均关闭并断连。611结果头属性读取错误及613错位参数原记录保留，修正记录分别为612、614/615。完整MF/MA条目保持implemented，B0065/10。证据`verification/development/MF-01/progress622-dsag-fit.json`。
+普通620共75通过，真实stdio617正负两例通过；分页、PNG、保存重载、源曲面/solve/系统/MFE/MCE保持、六个原生参考分析关闭及断连通过。612六个专题结果探查、614元数据副本、615直接查询、621三个piston专题均关闭并断连。611结果头属性读取错误及613错位参数原记录保留，修正记录分别为612、614/615。完整MF/MA条目保持implemented，B0065/10。证据`.local/evidence/development/MF-01/progress622-dsag-fit.json`。
 
 621保留文本进一步确认：默认SagTable/BFSD在piston+.003mm时仍报告制造偏移0、半径约39.46718mm；piston−.003mm时报告偏移−.003000003mm。DSAG BFS0保持半径约39.8401mm且偏移反向响应，两个出口在这些控制下采用不同基准/拟合合同。617带偏移deviation图已查看，轴、单位和图例清晰。
 

@@ -1,6 +1,6 @@
 # 双目发散/会聚
 
-`run_analysis`新增`biocular_dipvergence_convergence`，当前done，完整验收见acceptance414-biocular.json；历史推进记录保留，见`verification/development/CV-02/acceptance414-biocular.json`。
+`run_analysis`新增`biocular_dipvergence_convergence`，当前done，完整验收见acceptance414-biocular.json；历史推进记录保留，见`.local/evidence/development/CV-02/acceptance414-biocular.json`。
 
 ```json
 {"request":{"kind":"biocular_dipvergence_convergence","left_configuration":1,"right_configuration":2,"wavelength":1,"scan_axis":"Y","use_angles":true,"minimum":5,"maximum":-5,"offsets":[-5,-3,-1,1,3,5],"points":21,"convergence_offset_mrad":0}}

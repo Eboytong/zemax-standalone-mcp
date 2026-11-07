@@ -4,11 +4,11 @@
   "status": "implemented",
   "tools": 83,
   "native_probe": [
-    "verification/development/ED-04/probe/interfaces.json",
-    "verification/development/ED-04/probe/inheritance.json"
+    ".local/evidence/development/ED-04/probe/interfaces.json",
+    ".local/evidence/development/ED-04/probe/inheritance.json"
   ],
   "ordinary": {
-    "command": ".venv/Scripts/python.exe -B -m pytest -q -m \"not zemax\" --junitxml=verification/development/ED-04/ordinary020-final.xml",
+    "command": ".venv/Scripts/python.exe -B -m pytest -q -m \"not zemax\" --junitxml=.local/evidence/development/ED-04/ordinary020-final.xml",
     "passed": 899,
     "native_deselected": 448,
     "seconds": 15.32,
@@ -23,7 +23,7 @@
   "native": {
     "status": "pending_connection",
     "reason": "existing 180-second initialization timeout; no changed license condition; no repeated native startup",
-    "evidence": "verification/development/BASE-04/connection019/supervisor.json",
+    "evidence": ".local/evidence/development/BASE-04/connection019/supervisor.json",
     "prepared": "tests/test_design_tools_live.py",
     "prepared_cases": 10,
     "close": "native execution not started in 0.1.10; SystemTool close tested with controlled doubles",
@@ -40,7 +40,7 @@
   "release": {
     "wheel": "wheels/zemax_standalone_mcp-0.1.10-py3-none-any.whl",
     "install": "outputs/wheel-release020",
-    "smoke": "verification/development/ED-04/wheel-smoke020.json",
+    "smoke": ".local/evidence/development/ED-04/wheel-smoke020.json",
     "status": "passed installed-package stdio; native smoke pending"
   }
 }

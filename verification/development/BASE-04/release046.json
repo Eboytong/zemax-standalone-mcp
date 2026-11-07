@@ -2,7 +2,7 @@
   "version": "0.1.46",
   "wheel": "wheels/zemax_standalone_mcp-0.1.46-py3-none-any.whl",
   "build_command": ".venv/Scripts/python.exe -B -m pip wheel --no-deps --no-build-isolation . --wheel-dir wheels",
-  "install_command": ".venv/Scripts/python.exe -B -m pip install --no-deps --target verification/development/BASE-04/wheel-install046 wheels/zemax_standalone_mcp-0.1.46-py3-none-any.whl",
+  "install_command": ".venv/Scripts/python.exe -B -m pip install --no-deps --target .local/evidence/development/BASE-04/wheel-install046 wheels/zemax_standalone_mcp-0.1.46-py3-none-any.whl",
   "build_note": "python -m build unavailable; pip wheel build succeeded",
   "installation": "verification\\development\\BASE-04\\wheel-install046",
   "ordinary": {
@@ -27,7 +27,7 @@
       "item": "EX-01.NETCallback",
       "result": "LoadNETCallback returned null",
       "execution": "Execute and callback Dispose not reached; application closed",
-      "evidence": "outputs/runs/net_callback_contract_85db66cbb5/callback-contract.json"
+      "evidence": ".local/runs/net_callback_contract_85db66cbb5/callback-contract.json"
     }
   ]
 }

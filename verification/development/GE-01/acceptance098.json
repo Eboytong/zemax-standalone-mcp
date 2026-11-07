@@ -9,16 +9,16 @@
     "GE-01.Gaps",
     "GE-01.ContactRelations"
   ],
-  "ordinary": "verification/development/GE-01/ordinary095-final.xml",
+  "ordinary": ".local/evidence/development/GE-01/ordinary095-final.xml",
   "ordinary_passed": 37,
   "native": [
-    "verification/development/GE-01/native095-slabs.xml",
-    "verification/development/GE-01/native097-reload.xml"
+    ".local/evidence/development/GE-01/native095-slabs.xml",
+    ".local/evidence/development/GE-01/native097-reload.xml"
   ],
   "native_passed": 4,
   "runs": [
     {
-      "run": "outputs/runs/geometry093_slabs_e35d791109",
+      "run": ".local/runs/geometry093_slabs_e35d791109",
       "checks": 5,
       "wall_interval_mm": [
         2.999999798,
@@ -30,7 +30,7 @@
       "reloaded": false
     },
     {
-      "run": "outputs/runs/geometry093_slabs_bba121f50f",
+      "run": ".local/runs/geometry093_slabs_bba121f50f",
       "checks": 4,
       "wall_interval_mm": [
         2.999999798,
@@ -42,7 +42,7 @@
       "reloaded": false
     },
     {
-      "run": "outputs/runs/geometry093_slabs_e648795a06",
+      "run": ".local/runs/geometry093_slabs_e648795a06",
       "checks": 4,
       "wall_interval_mm": [
         2.999999798,
@@ -54,7 +54,7 @@
       "reloaded": false
     },
     {
-      "run": "outputs/runs/geometry093_slabs_e44d238225",
+      "run": ".local/runs/geometry093_slabs_e44d238225",
       "checks": 5,
       "wall_interval_mm": [
         2.999999798,

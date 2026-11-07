@@ -7,12 +7,12 @@
   "native_version": "24.2.0 build240529 PremiumEdition",
   "scope": "Typed left/right configuration, wavelength, X/Y angle/cosine scan, ascending/descending/equal limits, up to6 offset slots with−99 disable, point density, convergence offset; native BIOC/BIOD query rows and curves.",
   "evidence": [
-    "verification/development/CV-02/probe404-biocular/probe.json",
-    "verification/development/CV-02/probe405-biocular-operands/probe.json",
-    "verification/development/CV-02/ordinary406-biocular.xml",
-    "verification/development/CV-02/native406-biocular.xml"
+    ".local/evidence/development/CV-02/probe404-biocular/probe.json",
+    ".local/evidence/development/CV-02/probe405-biocular-operands/probe.json",
+    ".local/evidence/development/CV-02/ordinary406-biocular.xml",
+    ".local/evidence/development/CV-02/native406-biocular.xml"
   ],
-  "command": ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_biocular_live.py --run-zemax -q --junitxml=verification/development/CV-02/native406-biocular.xml",
+  "command": ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_biocular_live.py --run-zemax -q --junitxml=.local/evidence/development/CV-02/native406-biocular.xml",
   "numerical_reference": "Two planes, config1 STOP-to-image100mm/config2 120mm: angle_right=atan(100/120*tan(angle_left)); BIOC/BIOD=1000*(right-left) for corresponding axis.",
   "atol_mrad": 0.001,
   "rtol": 0,

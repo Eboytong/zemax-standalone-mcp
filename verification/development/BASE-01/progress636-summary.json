@@ -4,8 +4,8 @@
   "completed_count": 5,
   "new_complete_count": 0,
   "evidence": [
-    "verification/development/CV-02/progress636-unit-scaling.json",
-    "verification/development/MA-01/progress636-positive-profile.json"
+    ".local/evidence/development/CV-02/progress636-unit-scaling.json",
+    ".local/evidence/development/MA-01/progress636-positive-profile.json"
   ],
   "native634_passed": 1,
   "ordinary636_passed": 46,

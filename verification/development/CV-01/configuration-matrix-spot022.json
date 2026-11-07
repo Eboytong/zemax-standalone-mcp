@@ -3,7 +3,7 @@
   "date": "2026-11-05",
   "item_id": "CV-01.ConfigurationMatrixSpot",
   "native_api": {
-    "probe": "verification/development/BASE-01/probe/api-interfaces.json",
+    "probe": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
     "analysis_id": "ZOSAPI.Analysis.AnalysisIDM.ConfigurationMatrixSpot",
     "settings_interface": "ZOSAPI.Analysis.Settings.Spot.IAS_Spot",
     "native_execution": "not_run",

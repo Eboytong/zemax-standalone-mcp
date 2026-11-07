@@ -7,13 +7,13 @@
     "nsc_geometric_mtf"
   ],
   "blocked_count": 13,
-  "probe": "verification/development/NS-03/probe028.json",
+  "probe": ".local/evidence/development/NS-03/probe028.json",
   "ordinary": {
     "passed": 1206,
     "native_deselected": 486,
     "junit_seconds": 22.08,
     "new": 20,
-    "command": ".venv/Scripts/python.exe -B -m pytest -q -m \"not zemax\" --junitxml=verification/development/NS-03/ordinary028.xml"
+    "command": ".venv/Scripts/python.exe -B -m pytest -q -m \"not zemax\" --junitxml=.local/evidence/development/NS-03/ordinary028.xml"
   },
   "native": {
     "state": "pending",
@@ -22,13 +22,13 @@
     "tolerance": "MTF 1e-7 + 1e-7 * reference; Nyquist 1e-12 + 1e-12 * reference",
     "actual_error": null,
     "close": "not executed",
-    "blocker": "verification/development/BASE-04/connection019/supervisor.json"
+    "blocker": ".local/evidence/development/BASE-04/connection019/supervisor.json"
   },
   "release": {
     "wheel": "wheels/zemax_standalone_mcp-0.1.18-py3-none-any.whl",
     "installed": "outputs/wheel-release028",
     "stdio": "passed",
-    "evidence": "verification/development/NS-03/wheel-smoke028.json"
+    "evidence": ".local/evidence/development/NS-03/wheel-smoke028.json"
   },
   "next": "NS-04 paged native object facets and property/data inventory"
 }

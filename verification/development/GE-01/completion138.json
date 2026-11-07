@@ -10,11 +10,11 @@
     "GE-01.ContactRelations"
   ],
   "evidence": [
-    "verification/development/GE-01/acceptance098.json",
-    "verification/development/GE-01/acceptance114.json",
-    "verification/development/GE-01/acceptance123.json",
-    "verification/development/GE-01/acceptance127.json",
-    "verification/development/GE-01/acceptance138.json"
+    ".local/evidence/development/GE-01/acceptance098.json",
+    ".local/evidence/development/GE-01/acceptance114.json",
+    ".local/evidence/development/GE-01/acceptance123.json",
+    ".local/evidence/development/GE-01/acceptance127.json",
+    ".local/evidence/development/GE-01/acceptance138.json"
   ],
   "scope": "Native typed geometry source, bounded representations, medium topology, wall/gap constraints and relations; supported-domain and unknown-source conditions explicitly returned",
   "batch": "B0035/10; package completion is not release completion"

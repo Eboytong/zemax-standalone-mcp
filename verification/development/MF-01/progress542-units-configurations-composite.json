@@ -16,9 +16,9 @@
   "reference": "Analytic sag=a*r^2 and slope2*a*r; MinimumVolume sphere through vertex/edge R_bfs=(edge^2+edge_sag^2)/(2*edge_sag)",
   "tolerance": "Rows/radius1e-8+1e-6*reference; physical MCE radius projection1e-12+1e-12*reference",
   "commands": [
-    ".venv/Scripts/python.exe -m pytest tests/test_sag_table_units_configuration_live.py -q -s --run-zemax --junitxml=verification/development/MF-01/native537-units-configurations.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_sag_table_units_configuration_live.py -q -s --run-zemax --junitxml=verification/development/MF-01/native540-units-configurations.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_sag_table_units_configuration_live.py tests/test_universal_mce_live.py -q -s --run-zemax --junitxml=verification/development/MF-01/native541-composite-mce.xml"
+    ".venv/Scripts/python.exe -m pytest tests/test_sag_table_units_configuration_live.py -q -s --run-zemax --junitxml=.local/evidence/development/MF-01/native537-units-configurations.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_sag_table_units_configuration_live.py -q -s --run-zemax --junitxml=.local/evidence/development/MF-01/native540-units-configurations.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_sag_table_units_configuration_live.py tests/test_universal_mce_live.py -q -s --run-zemax --junitxml=.local/evidence/development/MF-01/native541-composite-mce.xml"
   ],
   "results": [
     {

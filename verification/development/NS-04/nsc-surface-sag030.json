@@ -2,7 +2,7 @@
   "work_package": "NS-04",
   "item": "NS-04.NSCSurfaceSag",
   "version": "0.1.30",
-  "native_reflection_source": "verification/development/BASE-01/probe/api-interfaces.json",
+  "native_reflection_source": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
   "analysis_id": {
     "enum": "NSCSurfaceSag",
     "value": 150
@@ -172,14 +172,14 @@
   "ordinary_checks": {
     "command": ".venv\\Scripts\\python.exe -m pytest tests/test_nsc_surface_sag.py tests/test_nsc_mtf.py tests/test_imaging.py tests/test_diff_efficiency.py tests/test_grin_profile.py -q",
     "result": "112 passed",
-    "full_suite_report": "verification/development/NS-04/ordinary040.xml",
+    "full_suite_report": ".local/evidence/development/NS-04/ordinary040.xml",
     "full_suite_result": "1355 passed, 500 skipped"
   },
   "native": {
     "status": "blocked",
     "startup_evidence": [
-      "verification/development/BASE-04/connection040.json",
-      "verification/development/BASE-04/connection019/supervisor.json"
+      ".local/evidence/development/BASE-04/connection040.json",
+      ".local/evidence/development/BASE-04/connection019/supervisor.json"
     ],
     "observed": "Latest isolated ZOS-API initialization timed out after 180.578 seconds; no NSCSurfaceSag runtime case ran.",
     "pending": [
@@ -193,11 +193,11 @@
   "wheel_smoke": "pending",
   "wheel": {
     "artifact": "wheels/zemax_standalone_mcp-0.1.30-py3-none-any.whl",
-    "isolated_install": "verification/development/NS-04/wheel-install030",
+    "isolated_install": ".local/evidence/development/NS-04/wheel-install030",
     "status": "installed"
   },
   "stdio_smoke": {
-    "evidence": "verification/development/NS-04/stdio-smoke040.json",
+    "evidence": ".local/evidence/development/NS-04/stdio-smoke040.json",
     "status": "passed",
     "tool_count": 95,
     "analysis_kind_count": 80,

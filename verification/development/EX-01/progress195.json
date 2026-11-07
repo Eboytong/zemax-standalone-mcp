@@ -1,12 +1,12 @@
 {
   "item_id": "EX-01.UniversalPlot1D",
   "execution_state": "implemented",
-  "native_probe": "outputs/runs/universal194_settings_ff40aa8762/probe.json",
-  "native": "verification/development/EX-01/native195.xml",
-  "ordinary": "verification/development/EX-01/ordinary195.xml",
+  "native_probe": ".local/runs/universal194_settings_ff40aa8762/probe.json",
+  "native": ".local/evidence/development/EX-01/native195.xml",
+  "ordinary": ".local/evidence/development/EX-01/ordinary195.xml",
   "ordinary_passed": 7,
   "native_passed": 1,
-  "path": "outputs/runs/universal195_thickness_5dfa53b88a",
+  "path": ".local/runs/universal195_thickness_5dfa53b88a",
   "implemented": "Typed sequential surface Thickness scan versus TTHI; native SaveTo/ModifySettings/LoadFrom; text identity/coordinate readback; owned copy; rows/series pagination and PNG; source unchanged and native closed.",
   "remaining": [
     "Surface radius/curvature/conic/parameter selectors and native identity readback",

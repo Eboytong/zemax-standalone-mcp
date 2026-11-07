@@ -1,7 +1,7 @@
 {
   "cases": [
     {
-      "source": "outputs/runs/polarization_pupil054_3_2f4b22598e",
+      "source": ".local/runs/polarization_pupil054_3_2f4b22598e",
       "requests": [
         {
           "kind": "polarization_pupil_map",
@@ -14,7 +14,7 @@
           "y_phase": 0
         }
       ],
-      "evidence": "verification/development/PO-01/acceptance054/polarization_pupil054_3_2f4b22598e",
+      "evidence": ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_3_2f4b22598e",
       "context": {
         "session_id": "cadaa933b0d14a53a5d25eef3ae40b61",
         "model_revision": 0,
@@ -324,13 +324,13 @@
         "artifacts": []
       },
       "saved_outputs": [
-        "verification/development/PO-01/acceptance054/polarization_pupil054_3_2f4b22598e/pupil.png",
-        "verification/development/PO-01/acceptance054/polarization_pupil054_3_2f4b22598e/cadaa933b0d14a53a5d25eef3ae40b61/2b128c6c16ad402db6342fcbb5fe960a_native.txt",
-        "verification/development/PO-01/acceptance054/polarization_pupil054_3_2f4b22598e/cadaa933b0d14a53a5d25eef3ae40b61/pupil_019c89144ab64917be08262d1a88b203.CFG"
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_3_2f4b22598e/pupil.png",
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_3_2f4b22598e/cadaa933b0d14a53a5d25eef3ae40b61/2b128c6c16ad402db6342fcbb5fe960a_native.txt",
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_3_2f4b22598e/cadaa933b0d14a53a5d25eef3ae40b61/pupil_019c89144ab64917be08262d1a88b203.CFG"
       ]
     },
     {
-      "source": "outputs/runs/polarization_pupil054_5_39e71b036c",
+      "source": ".local/runs/polarization_pupil054_5_39e71b036c",
       "requests": [
         {
           "kind": "polarization_pupil_map",
@@ -343,7 +343,7 @@
           "y_phase": 0
         }
       ],
-      "evidence": "verification/development/PO-01/acceptance054/polarization_pupil054_5_39e71b036c",
+      "evidence": ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_5_39e71b036c",
       "context": {
         "session_id": "acb8bad854274d0fb5d9375d35d4c7f1",
         "model_revision": 0,
@@ -710,13 +710,13 @@
         "artifacts": []
       },
       "saved_outputs": [
-        "verification/development/PO-01/acceptance054/polarization_pupil054_5_39e71b036c/pupil.png",
-        "verification/development/PO-01/acceptance054/polarization_pupil054_5_39e71b036c/acb8bad854274d0fb5d9375d35d4c7f1/6264f1a0fbd840319d1b4c0709347aa6_native.txt",
-        "verification/development/PO-01/acceptance054/polarization_pupil054_5_39e71b036c/acb8bad854274d0fb5d9375d35d4c7f1/pupil_4736a2cd71df4f3cbdf2116809b9800f.CFG"
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_5_39e71b036c/pupil.png",
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_5_39e71b036c/acb8bad854274d0fb5d9375d35d4c7f1/6264f1a0fbd840319d1b4c0709347aa6_native.txt",
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_5_39e71b036c/acb8bad854274d0fb5d9375d35d4c7f1/pupil_4736a2cd71df4f3cbdf2116809b9800f.CFG"
       ]
     },
     {
-      "source": "outputs/runs/polarization_pupil054_7_d6ac7b7846",
+      "source": ".local/runs/polarization_pupil054_7_d6ac7b7846",
       "requests": [
         {
           "kind": "polarization_pupil_map",
@@ -729,7 +729,7 @@
           "y_phase": 90
         }
       ],
-      "evidence": "verification/development/PO-01/acceptance054/polarization_pupil054_7_d6ac7b7846",
+      "evidence": ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_7_d6ac7b7846",
       "context": {
         "session_id": "7ed2a5bff96b4241be9401fe661b8bf1",
         "model_revision": 0,
@@ -1207,13 +1207,13 @@
         "artifacts": []
       },
       "saved_outputs": [
-        "verification/development/PO-01/acceptance054/polarization_pupil054_7_d6ac7b7846/pupil.png",
-        "verification/development/PO-01/acceptance054/polarization_pupil054_7_d6ac7b7846/7ed2a5bff96b4241be9401fe661b8bf1/e8f606dccac64202a266c76f2ebc326c_native.txt",
-        "verification/development/PO-01/acceptance054/polarization_pupil054_7_d6ac7b7846/7ed2a5bff96b4241be9401fe661b8bf1/pupil_d64d1d87e8b44f918348bed43d93668e.CFG"
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_7_d6ac7b7846/pupil.png",
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_7_d6ac7b7846/7ed2a5bff96b4241be9401fe661b8bf1/e8f606dccac64202a266c76f2ebc326c_native.txt",
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_7_d6ac7b7846/7ed2a5bff96b4241be9401fe661b8bf1/pupil_d64d1d87e8b44f918348bed43d93668e.CFG"
       ]
     },
     {
-      "source": "outputs/runs/polarization_pupil054_9_0e8d42a9cb",
+      "source": ".local/runs/polarization_pupil054_9_0e8d42a9cb",
       "requests": [
         {
           "kind": "polarization_pupil_map",
@@ -1226,7 +1226,7 @@
           "y_phase": 45
         }
       ],
-      "evidence": "verification/development/PO-01/acceptance054/polarization_pupil054_9_0e8d42a9cb",
+      "evidence": ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_9_0e8d42a9cb",
       "context": {
         "session_id": "c2c777d5c9794131bc8ebe6207edc380",
         "model_revision": 0,
@@ -1844,13 +1844,13 @@
         "artifacts": []
       },
       "saved_outputs": [
-        "verification/development/PO-01/acceptance054/polarization_pupil054_9_0e8d42a9cb/pupil.png",
-        "verification/development/PO-01/acceptance054/polarization_pupil054_9_0e8d42a9cb/c2c777d5c9794131bc8ebe6207edc380/7a783f8e833042b7bf83072555ef0aea_native.txt",
-        "verification/development/PO-01/acceptance054/polarization_pupil054_9_0e8d42a9cb/c2c777d5c9794131bc8ebe6207edc380/pupil_5ff951579b3442f9a739df360d0c52cb.CFG"
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_9_0e8d42a9cb/pupil.png",
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_9_0e8d42a9cb/c2c777d5c9794131bc8ebe6207edc380/7a783f8e833042b7bf83072555ef0aea_native.txt",
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_9_0e8d42a9cb/c2c777d5c9794131bc8ebe6207edc380/pupil_5ff951579b3442f9a739df360d0c52cb.CFG"
       ]
     },
     {
-      "source": "outputs/runs/polarization_pupil054_101_8d83521302",
+      "source": ".local/runs/polarization_pupil054_101_8d83521302",
       "requests": [
         {
           "kind": "polarization_pupil_map",
@@ -1863,7 +1863,7 @@
           "y_phase": 0
         }
       ],
-      "evidence": "verification/development/PO-01/acceptance054/polarization_pupil054_101_8d83521302",
+      "evidence": ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_101_8d83521302",
       "context": {
         "session_id": "2fc1355233df42e5ad0a664dd8b26920",
         "model_revision": 0,
@@ -57053,12 +57053,12 @@
         "artifacts": []
       },
       "saved_outputs": [
-        "verification/development/PO-01/acceptance054/polarization_pupil054_101_8d83521302/2fc1355233df42e5ad0a664dd8b26920/e7fae16ed6264fb3bf78fd6ab98c95a1_native.txt",
-        "verification/development/PO-01/acceptance054/polarization_pupil054_101_8d83521302/2fc1355233df42e5ad0a664dd8b26920/pupil_fc174fe054484a74bdb1550968dfd32f.CFG"
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_101_8d83521302/2fc1355233df42e5ad0a664dd8b26920/e7fae16ed6264fb3bf78fd6ab98c95a1_native.txt",
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_101_8d83521302/2fc1355233df42e5ad0a664dd8b26920/pupil_fc174fe054484a74bdb1550968dfd32f.CFG"
       ]
     },
     {
-      "source": "outputs/runs/polarization_pupil054_7_286c9cd7ea",
+      "source": ".local/runs/polarization_pupil054_7_286c9cd7ea",
       "requests": [
         {
           "kind": "polarization_pupil_map",
@@ -57071,7 +57071,7 @@
           "y_phase": 450
         }
       ],
-      "evidence": "verification/development/PO-01/acceptance054/polarization_pupil054_7_286c9cd7ea",
+      "evidence": ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_7_286c9cd7ea",
       "context": {
         "session_id": "70b25b0ee7554bd8ab3f0a8a70fb43fa",
         "model_revision": 0,
@@ -57549,12 +57549,12 @@
         "artifacts": []
       },
       "saved_outputs": [
-        "verification/development/PO-01/acceptance054/polarization_pupil054_7_286c9cd7ea/pupil.png",
-        "verification/development/PO-01/acceptance054/polarization_pupil054_7_286c9cd7ea/70b25b0ee7554bd8ab3f0a8a70fb43fa/4bfedc953385461abfab244f66dcb57f_native.txt",
-        "verification/development/PO-01/acceptance054/polarization_pupil054_7_286c9cd7ea/70b25b0ee7554bd8ab3f0a8a70fb43fa/pupil_37ac27864f63456aadea27c7f7aaa1aa.CFG",
-        "verification/development/PO-01/acceptance054/polarization_pupil054_7_286c9cd7ea/70b25b0ee7554bd8ab3f0a8a70fb43fa/report_f272197bef/4bfedc953385461abfab244f66dcb57f_scatter0.png",
-        "verification/development/PO-01/acceptance054/polarization_pupil054_7_286c9cd7ea/70b25b0ee7554bd8ab3f0a8a70fb43fa/report_f272197bef/report.md",
-        "verification/development/PO-01/acceptance054/polarization_pupil054_7_286c9cd7ea/70b25b0ee7554bd8ab3f0a8a70fb43fa/report_f272197bef/response.json"
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_7_286c9cd7ea/pupil.png",
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_7_286c9cd7ea/70b25b0ee7554bd8ab3f0a8a70fb43fa/4bfedc953385461abfab244f66dcb57f_native.txt",
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_7_286c9cd7ea/70b25b0ee7554bd8ab3f0a8a70fb43fa/pupil_37ac27864f63456aadea27c7f7aaa1aa.CFG",
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_7_286c9cd7ea/70b25b0ee7554bd8ab3f0a8a70fb43fa/report_f272197bef/4bfedc953385461abfab244f66dcb57f_scatter0.png",
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_7_286c9cd7ea/70b25b0ee7554bd8ab3f0a8a70fb43fa/report_f272197bef/report.md",
+        ".local/evidence/development/PO-01/acceptance054/polarization_pupil054_7_286c9cd7ea/70b25b0ee7554bd8ab3f0a8a70fb43fa/report_f272197bef/response.json"
       ]
     }
   ],

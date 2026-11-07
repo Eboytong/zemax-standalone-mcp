@@ -280,15 +280,15 @@
     }
   },
   "reports": [
-    "verification/development/TO-01/native568-refractive.xml",
-    "verification/development/TO-01/native569-wavelength-identity.xml",
-    "verification/development/TO-01/native570-solve-reference.xml",
-    "verification/development/TO-01/native571-fixed-solve.xml",
-    "verification/development/TO-01/native572-refractive-reference.xml",
-    "verification/development/TO-01/native573-refractive-clear.xml",
-    "verification/development/TO-01/native574-final-reference.xml",
-    "verification/development/TO-01/ordinary574-targeted.xml",
-    "verification/development/TO-01/ordinary575-final.xml"
+    ".local/evidence/development/TO-01/native568-refractive.xml",
+    ".local/evidence/development/TO-01/native569-wavelength-identity.xml",
+    ".local/evidence/development/TO-01/native570-solve-reference.xml",
+    ".local/evidence/development/TO-01/native571-fixed-solve.xml",
+    ".local/evidence/development/TO-01/native572-refractive-reference.xml",
+    ".local/evidence/development/TO-01/native573-refractive-clear.xml",
+    ".local/evidence/development/TO-01/native574-final-reference.xml",
+    ".local/evidence/development/TO-01/ordinary574-targeted.xml",
+    ".local/evidence/development/TO-01/ordinary575-final.xml"
   ],
   "final_native": "5744passed: original Cooke Standard with matched reference, Uniform finite perturbation/cancel/reuse/reload and both dynamic/fixed solve controls",
   "ordinary": "57580passed; final targeted QuickYield/distribution/basic/RMS/historystdio/status checks",

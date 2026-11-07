@@ -3,13 +3,13 @@
   "date": "2026-11-05",
   "status": "implemented",
   "tools": 87,
-  "probe": "verification/development/ED-05/probe",
+  "probe": ".local/evidence/development/ED-05/probe",
   "ordinary": {
     "passed": 926,
     "native_deselected": 450,
     "seconds": 14.99,
     "new_tests": 27,
-    "evidence": "verification/development/ED-05/ordinary021-final.xml"
+    "evidence": ".local/evidence/development/ED-05/ordinary021-final.xml"
   },
   "examples": {
     "file": "examples/lens_catalogs021_requests.json",
@@ -18,7 +18,7 @@
   },
   "native": {
     "status": "pending_connection",
-    "evidence": "verification/development/BASE-04/connection019/supervisor.json",
+    "evidence": ".local/evidence/development/BASE-04/connection019/supervisor.json",
     "repeated_startup": false,
     "prepared": "tests/test_catalogs_live.py",
     "prepared_cases": 2,
@@ -33,6 +33,6 @@
     "status": "passed independently installed wheel and real stdio; native smoke pending",
     "wheel": "wheels/zemax_standalone_mcp-0.1.11-py3-none-any.whl",
     "install": "outputs/wheel-release021",
-    "smoke": "verification/development/ED-05/wheel-smoke021.json"
+    "smoke": ".local/evidence/development/ED-05/wheel-smoke021.json"
   }
 }

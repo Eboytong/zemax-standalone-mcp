@@ -14,36 +14,36 @@
     "run_analysis: incident_angle_vs_image_height"
   ],
   "interface_probe": [
-    "verification/development/CV-02/progress379-ray-diagrams.json",
-    "verification/development/CV-02/probe386-mirror/probe.json",
-    "verification/development/CV-02/probe387-image-glass/probe.json",
-    "verification/development/CV-02/probe392-image-power/probe.json",
-    "verification/development/CV-02/probe393-image-power-glass/probe.json",
-    "verification/development/CV-02/probe395-fields-mixed/probe.json",
-    "verification/development/CV-02/probe397-fields-negative/probe.json",
-    "verification/development/CV-02/probe398-finite-object/probe.json"
+    ".local/evidence/development/CV-02/progress379-ray-diagrams.json",
+    ".local/evidence/development/CV-02/probe386-mirror/probe.json",
+    ".local/evidence/development/CV-02/probe387-image-glass/probe.json",
+    ".local/evidence/development/CV-02/probe392-image-power/probe.json",
+    ".local/evidence/development/CV-02/probe393-image-power-glass/probe.json",
+    ".local/evidence/development/CV-02/probe395-fields-mixed/probe.json",
+    ".local/evidence/development/CV-02/probe397-fields-negative/probe.json",
+    ".local/evidence/development/CV-02/probe398-finite-object/probe.json"
   ],
   "official_references": [
     "https://ansyshelp.ansys.com/public/Views/Secured/Zemax/v242/en/OpticStudio_User_Guide/OpticStudio_Help/topics/Y_Ybar_Drawing.html",
     "https://ansyshelp.ansys.com/public/Views/Secured/Zemax/v242/en/OpticStudio_User_Guide/OpticStudio_Help/topics/Incident_Angle_vs_Image_Height.html"
   ],
   "commands": [
-    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_ray_diagrams.py tests/test_analysis_scenarios.py tests/test_plotting_units.py tests/test_extended_source_results.py tests/test_gaussian_beams.py tests/test_sag_table.py -q --junitxml=verification/development/CV-02/ordinary403-rays-related.xml",
+    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_ray_diagrams.py tests/test_analysis_scenarios.py tests/test_plotting_units.py tests/test_extended_source_results.py tests/test_gaussian_beams.py tests/test_sag_table.py -q --junitxml=.local/evidence/development/CV-02/ordinary403-rays-related.xml",
     ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_ray_diagrams_live.py --run-zemax -q (incremental native runs listed separately; preserve each XML report)"
   ],
   "native_reports": [
-    "verification/development/CV-02/native385-rays.xml",
-    "verification/development/CV-02/native394-image-conditions.xml",
-    "verification/development/CV-02/native390-conditions.xml",
-    "verification/development/CV-02/native399-fields-lifecycle.xml",
-    "verification/development/CV-02/native400-final-capability.xml",
-    "verification/development/CV-02/native401-yybar-mirror.xml",
-    "verification/development/CV-02/native402-planarity.xml"
+    ".local/evidence/development/CV-02/native385-rays.xml",
+    ".local/evidence/development/CV-02/native394-image-conditions.xml",
+    ".local/evidence/development/CV-02/native390-conditions.xml",
+    ".local/evidence/development/CV-02/native399-fields-lifecycle.xml",
+    ".local/evidence/development/CV-02/native400-final-capability.xml",
+    ".local/evidence/development/CV-02/native401-yybar-mirror.xml",
+    ".local/evidence/development/CV-02/native402-planarity.xml"
   ],
   "native_unique_cases": 14,
   "native_report_test_executions": 18,
   "ordinary_passed": 135,
-  "ordinary_report": "verification/development/CV-02/ordinary403-rays-related.xml",
+  "ordinary_report": ".local/evidence/development/CV-02/ordinary403-rays-related.xml",
   "reference": "Native same-wave Cooke/mirror/material/power worksheets; independent thin lens/free propagation, finite-object rays, rectangle/radial normalization, two thickness configurations and centimeter units.",
   "tolerances": {
     "native_yybar_atol": 5e-09,
@@ -88,7 +88,7 @@
   "max_fraction_of_tolerance": 0.5592220020389504,
   "sessions": [
     {
-      "folder": "outputs/runs/ray380_cooke_2642f1a80c",
+      "folder": ".local/runs/ray380_cooke_2642f1a80c",
       "checks": 98,
       "disconnect_ok": true,
       "native_closed": true,
@@ -96,7 +96,7 @@
       "pngs": []
     },
     {
-      "folder": "outputs/runs/ray381_controlled_ce2faf2ae7",
+      "folder": ".local/runs/ray381_controlled_ce2faf2ae7",
       "checks": 48,
       "disconnect_ok": true,
       "native_closed": true,
@@ -104,18 +104,18 @@
       "pngs": []
     },
     {
-      "folder": "outputs/runs/ray384_lifecycle_b5d9563e9a",
+      "folder": ".local/runs/ray384_lifecycle_b5d9563e9a",
       "checks": 0,
       "disconnect_ok": true,
       "native_closed": true,
       "forced": false,
       "pngs": [
-        "outputs/runs/ray384_lifecycle_b5d9563e9a/incident_angle_vs_image_height.png",
-        "outputs/runs/ray384_lifecycle_b5d9563e9a/yybar_diagram.png"
+        ".local/runs/ray384_lifecycle_b5d9563e9a/incident_angle_vs_image_height.png",
+        ".local/runs/ray384_lifecycle_b5d9563e9a/yybar_diagram.png"
       ]
     },
     {
-      "folder": "outputs/runs/ray385_clipped_5f04309c6f",
+      "folder": ".local/runs/ray385_clipped_5f04309c6f",
       "checks": 0,
       "disconnect_ok": true,
       "native_closed": true,
@@ -123,7 +123,7 @@
       "pngs": []
     },
     {
-      "folder": "outputs/runs/ray388_mirror_31227c8f39",
+      "folder": ".local/runs/ray388_mirror_31227c8f39",
       "checks": 109,
       "disconnect_ok": true,
       "native_closed": true,
@@ -131,7 +131,7 @@
       "pngs": []
     },
     {
-      "folder": "outputs/runs/ray388_image_glass_990de0dc24",
+      "folder": ".local/runs/ray388_image_glass_990de0dc24",
       "checks": 105,
       "disconnect_ok": true,
       "native_closed": true,
@@ -139,7 +139,7 @@
       "pngs": []
     },
     {
-      "folder": "outputs/runs/ray388_image_power_c5755f6c86",
+      "folder": ".local/runs/ray388_image_power_c5755f6c86",
       "checks": 84,
       "disconnect_ok": true,
       "native_closed": true,
@@ -147,7 +147,7 @@
       "pngs": []
     },
     {
-      "folder": "outputs/runs/ray388_image_power_glass_1ff3004655",
+      "folder": ".local/runs/ray388_image_power_glass_1ff3004655",
       "checks": 105,
       "disconnect_ok": true,
       "native_closed": true,
@@ -155,7 +155,7 @@
       "pngs": []
     },
     {
-      "folder": "outputs/runs/ray389_configuration_786f50aa4d",
+      "folder": ".local/runs/ray389_configuration_786f50aa4d",
       "checks": 24,
       "disconnect_ok": true,
       "native_closed": true,
@@ -163,7 +163,7 @@
       "pngs": []
     },
     {
-      "folder": "outputs/runs/ray390_copy_lifecycle_982ba6d2ac",
+      "folder": ".local/runs/ray390_copy_lifecycle_982ba6d2ac",
       "checks": 0,
       "disconnect_ok": true,
       "native_closed": true,
@@ -171,7 +171,7 @@
       "pngs": []
     },
     {
-      "folder": "outputs/runs/ray399_fields_mixed_68d2a317ce",
+      "folder": ".local/runs/ray399_fields_mixed_68d2a317ce",
       "checks": 84,
       "disconnect_ok": true,
       "native_closed": true,
@@ -179,7 +179,7 @@
       "pngs": []
     },
     {
-      "folder": "outputs/runs/ray399_fields_negative_bb88a3c61a",
+      "folder": ".local/runs/ray399_fields_negative_bb88a3c61a",
       "checks": 84,
       "disconnect_ok": true,
       "native_closed": true,
@@ -187,7 +187,7 @@
       "pngs": []
     },
     {
-      "folder": "outputs/runs/ray399_finite_object_4f94a82662",
+      "folder": ".local/runs/ray399_finite_object_4f94a82662",
       "checks": 174,
       "disconnect_ok": true,
       "native_closed": true,
@@ -195,7 +195,7 @@
       "pngs": []
     },
     {
-      "folder": "outputs/runs/ray402_nonplanar_be76d5bcbf",
+      "folder": ".local/runs/ray402_nonplanar_be76d5bcbf",
       "checks": 0,
       "disconnect_ok": true,
       "native_closed": true,

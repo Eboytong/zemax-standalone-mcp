@@ -9,7 +9,7 @@
   "scope": "Shared maintenance: update_configurations numeric readback and get_configurations precision metadata",
   "input_source": "OwnedCRVT config1/2, target1/60; actual native probe538 and millimeter/centimeter analytic models541",
   "formal_members": "IMultiConfigOperandCell.DataType,DoubleValue,Value; LDE surface Radius",
-  "probe": "verification/development/ED-03/probe538-mce.json",
+  "probe": ".local/evidence/development/ED-03/probe538-mce.json",
   "observation": "Both Value and DoubleValue setters store1/60, numeric getter returns.0166666667, LDE radius59.99999999999988. Actual numeric data rather than string formatting alone is rounded in getter.",
   "implementation": "MCE-only write wrapper retains strict checks first; on numeric SETTING_REJECTED compare confirmed9-significant-digit getter representation. Preserve original rejection when mismatch or secondary read fails. Return raw getter value andvalue_readback metadata; expose capability.",
   "request_example": "examples/mce-precision542.json",
@@ -21,6 +21,6 @@
   },
   "numerical_acceptance": "Native radius projection1e-12 absolute+1e-12 relative; never widen geometric/analysis numerical tolerances",
   "lifecycle": "Probe538 explicitly disconnects; native541 succeeds/retains states/saves/reloads/disconnects. Failure537 was before analysis; original assertions and process-exit context retained.",
-  "command": ".venv/Scripts/python.exe -m pytest tests/test_sag_table_units_configuration_live.py tests/test_universal_mce_live.py -q -s --run-zemax --junitxml=verification/development/MF-01/native541-composite-mce.xml",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_sag_table_units_configuration_live.py tests/test_universal_mce_live.py -q -s --run-zemax --junitxml=.local/evidence/development/MF-01/native541-composite-mce.xml",
   "next_action": "Use returned precision metadata when interpreting MCE values; continue B006 candidates."
 }

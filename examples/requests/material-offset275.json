@@ -1,0 +1,35 @@
+{
+  "item_id": "ED-02.MaterialOffset.Material",
+  "baseline": "Independent plane interface, SCHOTT N-BK7, six wavelengths; run setup in order.",
+  "setup": [
+    {"tool": "new_system", "arguments": {}},
+    {"tool": "insert_surfaces", "arguments": {"at": 1}},
+    {"tool": "update_system_settings", "arguments": {"settings": {
+      "wavelengths": [
+        {"wavelength_um": 0.5875618}, {"wavelength_um": 0.5876},
+        {"wavelength_um": 0.4861327}, {"wavelength_um": 0.4861},
+        {"wavelength_um": 0.6562725}, {"wavelength_um": 0.6563}
+      ],
+      "primary_wavelength": 2
+    }}},
+    {"tool": "update_surfaces", "arguments": {"changes": [
+      {"surface": 0, "thickness": 1},
+      {"surface": 1, "radius": "Infinity", "thickness": 1,
+       "semi_diameter": 5, "material": "N-BK7", "replace_solves": true}
+    ]}}
+  ],
+  "apply": {"tool": "update_surfaces", "arguments": {"changes": [
+    {"surface": 1, "replace_solves": true,
+     "solves": {"material": {"mode": "material_offset", "nd_offset": 0.001, "vd_offset": 1}}}
+  ]}},
+  "readback": {"tool": "get_surfaces", "arguments": {"start": 1, "count": 1}},
+  "trace": {"tool": "run_batch_ray_trace", "arguments": {"request": {
+    "input_mode": "Direct", "start_surface": 0, "target_surface": 1,
+    "rays": [
+      {"x": 0, "y": 0, "z": 0, "l": 0.1, "m": 0, "n": 0.99498743710662, "wavelength": 2}
+    ]
+  }}},
+  "result": "Poll the returned task, then get_task_result. For this air-to-glass plane interface n=0.1/direction[0].",
+  "definition": "Dispersion uses the catalog curve plus the difference between offset and baseline model-glass curves, including the catalog dPgF. Local v242 uses this branch at minimum wavelength0.3um; the accepted0.29um LITHOSIL-Q case uses constant index offset.",
+  "evidence": ".local/evidence/development/ED-02/acceptance275.json"
+}

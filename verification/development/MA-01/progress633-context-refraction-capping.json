@@ -19,16 +19,16 @@
     "capping": "629direct physical launch confirms normal-range and rightcap rules; leftcap2/3 four setups fail.626normalized/627direct retained failures agree."
   },
   "commands": [
-    ".venv/Scripts/python.exe -X utf8 tests/support/gradium_dispersion624.py verification/development/MA-01/probe624-shared-dispersion",
-    ".venv/Scripts/python.exe -m pytest tests/test_gradium_extent_live.py --run-zemax -x -q --junitxml=verification/development/MA-01/native629-extent-diagnostic.xml",
-    ".venv/Scripts/python.exe -X utf8 tests/support/gradium_snell630.py verification/development/MA-01/probe631-snell",
-    ".venv/Scripts/python.exe -m pytest tests/test_grin_profile_live.py::test_grin_profile_polynomial_native[Z] --run-zemax -x -q --junitxml=verification/development/MA-01/native632-gradient1-regression.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_grin_profile.py tests/test_analysis_scenarios.py tests/test_model_adaptation.py -q --junitxml=verification/development/MA-01/ordinary631-final.xml"
+    ".venv/Scripts/python.exe -X utf8 tests/support/gradium_dispersion624.py .local/evidence/development/MA-01/probe624-shared-dispersion",
+    ".venv/Scripts/python.exe -m pytest tests/test_gradium_extent_live.py --run-zemax -x -q --junitxml=.local/evidence/development/MA-01/native629-extent-diagnostic.xml",
+    ".venv/Scripts/python.exe -X utf8 tests/support/gradium_snell630.py .local/evidence/development/MA-01/probe631-snell",
+    ".venv/Scripts/python.exe -m pytest tests/test_grin_profile_live.py::test_grin_profile_polynomial_native[Z] --run-zemax -x -q --junitxml=.local/evidence/development/MA-01/native632-gradient1-regression.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_grin_profile.py tests/test_analysis_scenarios.py tests/test_model_adaptation.py -q --junitxml=.local/evidence/development/MA-01/ordinary631-final.xml"
   ],
   "actual_settings": {
-    "dispersion": "verification/development/MA-01/probe624-shared-dispersion/dispersion.json",
-    "extent": "outputs/runs/gradium629_extent_diagnostic_5f73f1f6d5/extent.json",
-    "snell": "verification/development/MA-01/probe631-snell/snell.json"
+    "dispersion": ".local/evidence/development/MA-01/probe624-shared-dispersion/dispersion.json",
+    "extent": ".local/runs/gradium629_extent_diagnostic_5f73f1f6d5/extent.json",
+    "snell": ".local/evidence/development/MA-01/probe631-snell/snell.json"
   },
   "numerical_gate": "Original Gradium index1e-10+1e-9relative retained; complete numerical acceptancefalse",
   "dispersion_controls": [
@@ -8812,19 +8812,19 @@
   },
   "retained_failures": [
     {
-      "report": "verification/development/MA-01/native626-extent.xml",
+      "report": ".local/evidence/development/MA-01/native626-extent.xml",
       "reason": "Documented cap2left-extension expectation failed with normalized launch;finally disconnected"
     },
     {
-      "report": "verification/development/MA-01/native627-direct-extent.xml",
+      "report": ".local/evidence/development/MA-01/native627-direct-extent.xml",
       "reason": "Direct physical launch repeats leftcap2failure;finally disconnected"
     },
     {
-      "report": "verification/development/MA-01/native628-extent-diagnostic.xml",
+      "report": ".local/evidence/development/MA-01/native628-extent-diagnostic.xml",
       "reason": "Test read nonexistent result.actual_settings;general analysis stores task.settings;native toolalreadyclosed,finallydisconnected;629corrects"
     },
     {
-      "report": "verification/development/MA-01/probe630-snell/snell.json",
+      "report": ".local/evidence/development/MA-01/probe630-snell/snell.json",
       "reason": "Direct Backend batch dispatch mistakenlyusedMCPrequestwrapper;validationfailedbeforetracing;finallydisconnected;631usesflatbackendarguments"
     }
   ],

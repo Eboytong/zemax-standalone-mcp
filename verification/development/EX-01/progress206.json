@@ -2,36 +2,36 @@
   "item_id": "EX-01.UniversalPlot2D",
   "execution_state": "implemented",
   "date": "2026-11-06",
-  "native_probe": "outputs/runs/universal202_grid_9112abfb6d/probe.json",
+  "native_probe": ".local/runs/universal202_grid_9112abfb6d/probe.json",
   "scope": "Surface Radius/Curvature/Thickness axes; TTHI/CVVA typed requests, CFG and native header/grid setting readback, endpoint coordinates and rows[y][x], grid pagination and PNG",
   "ordinary": {
-    "report": "verification/development/EX-01/ordinary210.xml",
+    "report": ".local/evidence/development/EX-01/ordinary210.xml",
     "passed": 117
   },
   "native_history": [
     {
-      "report": "verification/development/EX-01/native204.xml",
+      "report": ".local/evidence/development/EX-01/native204.xml",
       "passed": 1,
       "note": "TTHI before reload baseline passed15 points, pagination/PNG/source preservation/close"
     },
     {
-      "report": "verification/development/EX-01/native206.xml",
+      "report": ".local/evidence/development/EX-01/native206.xml",
       "passed": 2,
       "failed": 1,
       "note": "reloaded TTHI passed and1D regression passed; CVVA numeric15 checks passed but close IPC failed"
     },
     {
-      "report": "verification/development/EX-01/native207-close.xml",
+      "report": ".local/evidence/development/EX-01/native207-close.xml",
       "failed": 1,
       "note": "CVVA independent repeat close IPC failed"
     },
     {
-      "report": "verification/development/EX-01/native209-valid-radius.xml",
+      "report": ".local/evidence/development/EX-01/native209-valid-radius.xml",
       "failed": 1,
       "note": "valid radius20-40 still close IPC failed; radius<aperture hypothesis insufficient"
     },
     {
-      "report": "verification/development/EX-01/native210-tthi.xml",
+      "report": ".local/evidence/development/EX-01/native210-tthi.xml",
       "failed": 1,
       "note": "closing from collector also fails in TTHI; cleanup now fails task explicitly; reconnect flag added"
     }

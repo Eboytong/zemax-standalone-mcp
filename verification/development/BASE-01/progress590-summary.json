@@ -11,9 +11,9 @@
   "new_completed": [],
   "implemented_increment": "SagTable typed RMS/reverse full-aperture curves and fixed-zero NoOffset semantics",
   "evidence": [
-    "verification/development/MF-01/progress589-offset-reference.json",
-    "verification/development/MA-01/progress584-native-index.json",
-    "verification/development/EXT-EXPORT/progress585-solid-surface-layers.json"
+    ".local/evidence/development/MF-01/progress589-offset-reference.json",
+    ".local/evidence/development/MA-01/progress584-native-index.json",
+    ".local/evidence/development/EXT-EXPORT/progress585-solid-surface-layers.json"
   ],
   "checks": {
     "ordinary589": 72,

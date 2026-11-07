@@ -39,10 +39,10 @@
     }
   ],
   "reports": [
-    "verification/development/MF-01/native555-unclipped.xml",
-    "verification/development/MF-01/native557-regression.xml",
-    "verification/development/MF-01/native558-cancel-copy.xml",
-    "verification/development/BASE-01/ordinary559-targeted.xml"
+    ".local/evidence/development/MF-01/native555-unclipped.xml",
+    ".local/evidence/development/MF-01/native557-regression.xml",
+    ".local/evidence/development/MF-01/native558-cancel-copy.xml",
+    ".local/evidence/development/BASE-01/ordinary559-targeted.xml"
   ],
   "checks": {
     "native555": 1,

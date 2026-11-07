@@ -12,7 +12,7 @@
     "passed": 1256,
     "native_deselected": 496,
     "seconds": 22.8,
-    "command": ".venv/Scripts/python.exe -B -m pytest -q -m \"not zemax\" --junitxml=verification/development/NS-04/ordinary029-final.xml"
+    "command": ".venv/Scripts/python.exe -B -m pytest -q -m \"not zemax\" --junitxml=.local/evidence/development/NS-04/ordinary029-final.xml"
   },
   "native": {
     "state": "pending",
@@ -20,7 +20,7 @@
     "file": "tests/test_object_data_live.py",
     "actual_error": null,
     "close": "not executed",
-    "blocker": "verification/development/BASE-04/connection019/supervisor.json",
+    "blocker": ".local/evidence/development/BASE-04/connection019/supervisor.json",
     "native_acceptance": "faceted bounds/local-global/cursor restoration; region equality with full read; 128^3 volume one-cell read"
   },
   "remaining": [

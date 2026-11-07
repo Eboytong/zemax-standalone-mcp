@@ -21,8 +21,8 @@
     "report_radius": "5e-6 absolute display-rounding tolerance retained from425"
   },
   "commands": [
-    ".venv/Scripts/python.exe -m pytest tests/test_sag_table.py tests/test_sag_fit.py tests/test_surface_slopes.py -q --junitxml=verification/development/MF-01/ordinary580-criteria.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_sag_criteria_live.py tests/test_sag_table_live.py --run-zemax -x -q --junitxml=verification/development/MF-01/native582-criteria-regression.xml"
+    ".venv/Scripts/python.exe -m pytest tests/test_sag_table.py tests/test_sag_fit.py tests/test_surface_slopes.py -q --junitxml=.local/evidence/development/MF-01/ordinary580-criteria.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_sag_criteria_live.py tests/test_sag_table_live.py --run-zemax -x -q --junitxml=.local/evidence/development/MF-01/native582-criteria-regression.xml"
   ],
   "ordinary_passed": 68,
   "native_passed": 7,

@@ -4,7 +4,7 @@
   "date": "2026-11-05",
   "status": "implemented",
   "probe": {
-    "source": "verification/development/BASE-01/probe/api-interfaces.json",
+    "source": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
     "interface": {
       "properties": [
         {
@@ -114,14 +114,14 @@
     "next_action": "Restore native startup; execute Cooke case, verify settings, output form, normalize/OPD behavior and Analysis closure"
   },
   "ordinary": {
-    "command": ".venv/Scripts/python.exe -B -m pytest -q -m 'not zemax' --junitxml=verification/development/CV-01/ordinary042.xml",
+    "command": ".venv/Scripts/python.exe -B -m pytest -q -m 'not zemax' --junitxml=.local/evidence/development/CV-01/ordinary042.xml",
     "passed": 1370,
     "deselected": 500
   },
   "release": {
     "wheel": "wheels/zemax_standalone_mcp-0.1.32-py3-none-any.whl",
-    "independent_install": "verification/development/CV-01/wheel-install032",
-    "stdio_smoke": "verification/development/CV-01/stdio-smoke042.json",
+    "independent_install": ".local/evidence/development/CV-01/wheel-install032",
+    "stdio_smoke": ".local/evidence/development/CV-01/stdio-smoke042.json",
     "status": "passed"
   }
 }

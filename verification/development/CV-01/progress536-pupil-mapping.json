@@ -18,8 +18,8 @@
   "actual_settings": "outputs\\runs\\surface_mtf531_apparent_b12614714b\\autocorrelation.json",
   "tolerance": "0.005 absolute; unchanged",
   "commands": [
-    ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_pupil_reference_live.py -k apparent -q -s --run-zemax --junitxml=verification/development/CV-01/native531-apparent.xml",
-    ".venv/Scripts/python.exe -X utf8 tests/support/surface_mtf_angular536.py outputs/runs/surface_mtf531_apparent_b12614714b verification/development/CV-01/offline536-angular.json"
+    ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_pupil_reference_live.py -k apparent -q -s --run-zemax --junitxml=.local/evidence/development/CV-01/native531-apparent.xml",
+    ".venv/Scripts/python.exe -X utf8 tests/support/surface_mtf_angular536.py .local/runs/surface_mtf531_apparent_b12614714b .local/evidence/development/CV-01/offline536-angular.json"
   ],
   "reference": "531 scales entrance pupil with Fs/minF,Ft/minF;536 triangulates independent OPD/sqrt(intensity) onto outgoing angular coordinates, then autocorrelates. No fitted frequency scale.",
   "results": {

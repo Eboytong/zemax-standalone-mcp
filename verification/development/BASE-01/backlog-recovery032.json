@@ -1058,7 +1058,7 @@
     "feasibility_status": "Static reflection confirms the dedicated writable settings interface and sample-size enum. Typed dispatch uses the standard result collector and owned task lifecycle; native defaults, axes, units and numeric output require runtime confirmation.",
     "execution_state": "implemented",
     "next_action": "After successful OpticStudio initialization, execute on a controlled hologram model and record actual settings, result axes/units, reference values, cancellation/failure cleanup and close.",
-    "evidence": "verification/development/CO-01/diffraction-efficiency028.json;verification/development/CO-01/ordinary038.xml;verification/development/CO-01/stdio-smoke038.json;verification/development/CO-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;docs/diffraction-efficiency.md;examples/diffraction_efficiency_requests.json",
+    "evidence": ".local/evidence/development/CO-01/diffraction-efficiency028.json;.local/evidence/development/CO-01/ordinary038.xml;.local/evidence/development/CO-01/stdio-smoke038.json;.local/evidence/development/CO-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;docs/diffraction-efficiency.md;examples/diffraction_efficiency_requests.json",
     "blocked_reason": "Native execution is pending because the latest isolated ZOS-API initialization timed out after 180.578 seconds. Resume the recorded runtime acceptance after startup succeeds."
   },
   {
@@ -1076,7 +1076,7 @@
     "feasibility_status": "Static reflection confirms the dedicated writable settings interface and sample-size enum. Typed dispatch uses the standard result collector and owned task lifecycle; native defaults, axes, units and numeric output require runtime confirmation.",
     "execution_state": "implemented",
     "next_action": "After successful OpticStudio initialization, execute on a controlled hologram model and record actual settings, result axes/units, reference values, cancellation/failure cleanup and close.",
-    "evidence": "verification/development/CO-01/diffraction-efficiency028.json;verification/development/CO-01/ordinary038.xml;verification/development/CO-01/stdio-smoke038.json;verification/development/CO-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;docs/diffraction-efficiency.md;examples/diffraction_efficiency_requests.json",
+    "evidence": ".local/evidence/development/CO-01/diffraction-efficiency028.json;.local/evidence/development/CO-01/ordinary038.xml;.local/evidence/development/CO-01/stdio-smoke038.json;.local/evidence/development/CO-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;docs/diffraction-efficiency.md;examples/diffraction_efficiency_requests.json",
     "blocked_reason": "Native execution is pending because the latest isolated ZOS-API initialization timed out after 180.578 seconds. Resume the recorded runtime acceptance after startup succeeds."
   },
   {
@@ -1094,7 +1094,7 @@
     "feasibility_status": "Static reflection confirms the dedicated writable settings interface and sample-size enum. Typed dispatch uses the standard result collector and owned task lifecycle; native defaults, axes, units and numeric output require runtime confirmation.",
     "execution_state": "implemented",
     "next_action": "After successful OpticStudio initialization, execute on a controlled hologram model and record actual settings, result axes/units, reference values, cancellation/failure cleanup and close.",
-    "evidence": "verification/development/CO-01/diffraction-efficiency028.json;verification/development/CO-01/ordinary038.xml;verification/development/CO-01/stdio-smoke038.json;verification/development/CO-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;docs/diffraction-efficiency.md;examples/diffraction_efficiency_requests.json",
+    "evidence": ".local/evidence/development/CO-01/diffraction-efficiency028.json;.local/evidence/development/CO-01/ordinary038.xml;.local/evidence/development/CO-01/stdio-smoke038.json;.local/evidence/development/CO-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;docs/diffraction-efficiency.md;examples/diffraction_efficiency_requests.json",
     "blocked_reason": "Native execution is pending because the latest isolated ZOS-API initialization timed out after 180.578 seconds. Resume the recorded runtime acceptance after startup succeeds."
   },
   {
@@ -1256,7 +1256,7 @@
     "feasibility_status": "本机反射确认ConfigurationMatrixSpot、IAS_Spot及11项可写设置；类型请求、设置适配和通用结果链路已实现",
     "execution_state": "implemented",
     "next_action": "连接恢复后执行双配置Cooke样例，回读设置并核对矩阵轴、数值/文本结果及工具关闭",
-    "evidence": "verification/development/CV-01/configuration-matrix-spot022.json;tests/test_configuration_matrix_spot.py;tests/test_configuration_matrix_spot_live.py;docs/configuration-matrix-spot.md",
+    "evidence": ".local/evidence/development/CV-01/configuration-matrix-spot022.json;tests/test_configuration_matrix_spot.py;tests/test_configuration_matrix_spot_live.py;docs/configuration-matrix-spot.md",
     "blocked_reason": "原生初始化180.526秒超时；解除条件：成功启动OpticStudio并完成双配置模型的设置回读、结果轴与关闭检查"
   },
   {
@@ -1454,7 +1454,7 @@
     "feasibility_status": "No typed request was found in the current run_analysis union; native interface and formal result path require item-level probe.",
     "execution_state": "pending",
     "next_action": "Inspect local interface, enums, settings/result methods, resources and lifecycle; then define typed request or record the concrete blocker.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json",
     "blocked_reason": ""
   },
   {
@@ -1490,7 +1490,7 @@
     "feasibility_status": "基于本机DLL反射实现typed request及通用结果任务；原生执行待验收",
     "execution_state": "implemented",
     "next_action": "连接恢复后采用Cooke公差样例检查设置/输出/良率并与ToleranceYield交叉核对",
-    "evidence": "docs/tolerancing-quick-yield.md;tests/test_quick_yield.py;verification/development/WP-01/probe030.json",
+    "evidence": "docs/tolerancing-quick-yield.md;tests/test_quick_yield.py;.local/evidence/development/WP-01/probe030.json",
     "blocked_reason": "原生初始化180秒超时；解除条件：成功连接并运行受控样例"
   },
   {
@@ -1508,7 +1508,7 @@
     "feasibility_status": "已有POP调用链；独立FiberCouplingSettings专题设置需运行时确认",
     "execution_state": "implemented",
     "next_action": "连接恢复后与FiberCouplingSettings专题交叉核对设置及耦合效率",
-    "evidence": "docs/tolerancing-quick-yield.md;tests/test_pop_receiver_modes_live.py;verification/development/WP-01/probe030.json;verification/pop-receiver-modes-live.json",
+    "evidence": "docs/tolerancing-quick-yield.md;tests/test_pop_receiver_modes_live.py;.local/evidence/development/WP-01/probe030.json;verification/pop-receiver-modes-live.json",
     "blocked_reason": "OpticStudio初始化超时；解除条件：成功连接后逐模式执行并比较耦合定义"
   },
   {
@@ -1526,7 +1526,7 @@
     "feasibility_status": "AnalysisIDM枚举存在；未发现同名公开ZOS-API设置接口，等待运行时New_Analysis/GetSettings探查",
     "execution_state": "blocked",
     "next_action": "成功启动原生应用后探查ParaxialGaussianBeam的设置、结果出口与关闭",
-    "evidence": "verification/development/BASE-01/inventory029.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/WP-01/probe030.json",
+    "evidence": ".local/evidence/development/BASE-01/inventory029.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/WP-01/probe030.json",
     "blocked_reason": "原生初始化180秒超时；解除条件：原生分析成功创建并返回设置对象"
   },
   {
@@ -1544,7 +1544,7 @@
     "feasibility_status": "AnalysisIDM枚举存在；现有适配未证明等同SkewGaussianBeam，静态接口未给出该分析设置接口",
     "execution_state": "blocked",
     "next_action": "成功启动原生应用后探查SkewGaussianBeam独立设置、参数及结果数据",
-    "evidence": "verification/development/BASE-01/inventory029.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/WP-01/probe030.json",
+    "evidence": ".local/evidence/development/BASE-01/inventory029.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/WP-01/probe030.json",
     "blocked_reason": "原生初始化180秒超时；解除条件：原生分析成功创建并取得官方参数定义"
   },
   {
@@ -1562,7 +1562,7 @@
     "feasibility_status": "数据检查器已实现；原生GUI专题的运行时设置与展示出口待确认",
     "execution_state": "implemented",
     "next_action": "连接恢复后核对原生BeamFileViewer展示与解析数据及导出结果",
-    "evidence": "tests/test_remaining_adapters.py;tests/test_saved_detectors.py;verification/development/WP-01/probe030.json",
+    "evidence": "tests/test_remaining_adapters.py;tests/test_saved_detectors.py;.local/evidence/development/WP-01/probe030.json",
     "blocked_reason": "原生初始化180秒超时；解除条件：启动BeamFileViewer并取得其结果及关闭状态"
   },
   {
@@ -1796,7 +1796,7 @@
     "feasibility_status": "本机反射确认FftSurfaceMtf及六项可写设置；类型请求、设置适配和通用结果链路已实现",
     "execution_state": "implemented",
     "next_action": "连接恢复后执行Cooke样例，回读六项设置并检查表面数据/文本导出、工具关闭及与参考曲面MTF的数值关系",
-    "evidence": "verification/development/CV-01/fft-surface-mtf021.json;tests/test_fft_surface_mtf.py;tests/test_fft_surface_mtf_live.py;docs/fft-surface-mtf.md",
+    "evidence": ".local/evidence/development/CV-01/fft-surface-mtf021.json;tests/test_fft_surface_mtf.py;tests/test_fft_surface_mtf_live.py;docs/fft-surface-mtf.md",
     "blocked_reason": "原生初始化180.526秒超时；解除条件：成功启动OpticStudio并完成受控曲面的设置回读、结果和关闭检查"
   },
   {
@@ -1814,7 +1814,7 @@
     "feasibility_status": "本机反射确认IAS_Foucault的枚举/数值属性和Foucault分析ID；核心展示设置已实现",
     "execution_state": "implemented",
     "next_action": "连接恢复后检查设置采用、输出数据/轴、保存图像和关闭；确认Source及SaveBMP字符串路径语义",
-    "evidence": "verification/development/CV-01/foucault024.json;tests/test_foucault.py;tests/test_foucault_live.py;docs/foucault.md;verification/development/CV-01/foucault024.json;verification/development/CV-01/stdio-smoke034.json;verification/development/CV-01/foucault024.json;verification/development/CV-01/stdio-smoke034.json",
+    "evidence": ".local/evidence/development/CV-01/foucault024.json;tests/test_foucault.py;tests/test_foucault_live.py;docs/foucault.md;.local/evidence/development/CV-01/foucault024.json;.local/evidence/development/CV-01/stdio-smoke034.json;.local/evidence/development/CV-01/foucault024.json;.local/evidence/development/CV-01/stdio-smoke034.json",
     "blocked_reason": "原生初始化180.526秒超时；解除条件：成功启动OpticStudio并使用Cooke样例执行Foucault分析"
   },
   {
@@ -1832,7 +1832,7 @@
     "feasibility_status": "Reflection confirms writable IAS_FullFieldAberration properties, enums and selection methods; typed request and standard settings/results/release path implemented; ordinary tests and wheel smoke passed",
     "execution_state": "implemented",
     "next_action": "After native startup recovers, run rectangular and elliptical Cooke cases; check readback, native results, numeric reference and tool closure",
-    "evidence": "verification/development/CV-01/full-field-aberration025.json;tests/test_full_field_aberration.py;docs/full-field-aberration.md",
+    "evidence": ".local/evidence/development/CV-01/full-field-aberration025.json;tests/test_full_field_aberration.py;docs/full-field-aberration.md",
     "blocked_reason": "Native acceptance awaits OpticStudio startup recovery; BASE-04/connection019 records initialization timeout of 180.526 seconds"
   },
   {
@@ -1850,7 +1850,7 @@
     "feasibility_status": "Analysis ID 45 is present in static reflection, but the formal settings interface and properties are absent from the checked inventory",
     "execution_state": "blocked",
     "next_action": "After native startup, inspect New_FullFieldSpot().GetSettings runtime type; proceed only if the formal interface exposes settings and result access",
-    "evidence": "verification/development/CV-01/full-field-spot-probe025.json;verification/development/BASE-01/probe/api-interfaces.json",
+    "evidence": ".local/evidence/development/CV-01/full-field-spot-probe025.json;.local/evidence/development/BASE-01/probe/api-interfaces.json",
     "blocked_reason": "Formal settings interface absent from static reflection; native startup also waits on BASE-04 recovery (180.526 second initialization timeout)"
   },
   {
@@ -1868,7 +1868,7 @@
     "feasibility_status": "Reflection confirms IAS_HuygensSurfaceMtf, seven writable settings and enums; typed request and standard results/release path implemented; ordinary regression and wheel smoke passed",
     "execution_state": "implemented",
     "next_action": "After native startup, execute matched Huygens/FFT Surface MTF cases; verify settings readback, numerical curve/grid and analysis close",
-    "evidence": "verification/development/CV-01/huygens-surface-mtf026.json;tests/test_huygens_surface_mtf.py;docs/huygens-surface-mtf.md",
+    "evidence": ".local/evidence/development/CV-01/huygens-surface-mtf026.json;tests/test_huygens_surface_mtf.py;docs/huygens-surface-mtf.md",
     "blocked_reason": "Native acceptance awaits OpticStudio startup recovery; BASE-04/connection019 initialization timeout is 180.526 seconds"
   },
   {
@@ -1886,7 +1886,7 @@
     "feasibility_status": "Typed run_analysis request and dispatch found in current source; native setup/result/close acceptance remains open.",
     "execution_state": "implemented",
     "next_action": "Run a controlled native case and verify setup readback, result axes/data and close.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json",
     "blocked_reason": ""
   },
   {
@@ -1904,7 +1904,7 @@
     "feasibility_status": "No typed request was found in the current run_analysis union; native interface and formal result path require item-level probe.",
     "execution_state": "pending",
     "next_action": "Inspect local interface, enums, settings/result methods, resources and lifecycle; then define typed request or record the concrete blocker.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json",
     "blocked_reason": ""
   },
   {
@@ -1922,7 +1922,7 @@
     "feasibility_status": "Typed run_analysis request and dispatch found in current source; native setup/result/close acceptance remains open.",
     "execution_state": "implemented",
     "next_action": "Run a controlled native case and verify setup readback, result axes/data and close.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json",
     "blocked_reason": ""
   },
   {
@@ -1940,7 +1940,7 @@
     "feasibility_status": "No typed request was found in the current run_analysis union; native interface and formal result path require item-level probe.",
     "execution_state": "pending",
     "next_action": "Inspect local interface, enums, settings/result methods, resources and lifecycle; then define typed request or record the concrete blocker.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json",
     "blocked_reason": ""
   },
   {
@@ -1958,7 +1958,7 @@
     "feasibility_status": "No typed request was found in the current run_analysis union; native interface and formal result path require item-level probe.",
     "execution_state": "pending",
     "next_action": "Inspect local interface, enums, settings/result methods, resources and lifecycle; then define typed request or record the concrete blocker.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json",
     "blocked_reason": ""
   },
   {
@@ -1976,7 +1976,7 @@
     "feasibility_status": "No typed request was found in the current run_analysis union; native interface and formal result path require item-level probe.",
     "execution_state": "pending",
     "next_action": "Inspect local interface, enums, settings/result methods, resources and lifecycle; then define typed request or record the concrete blocker.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json",
     "blocked_reason": ""
   },
   {
@@ -1994,7 +1994,7 @@
     "feasibility_status": "Typed run_analysis request and dispatch found in current source; native setup/result/close acceptance remains open.",
     "execution_state": "implemented",
     "next_action": "Run a controlled native case and verify setup readback, result axes/data and close.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json",
     "blocked_reason": ""
   },
   {
@@ -2012,7 +2012,7 @@
     "feasibility_status": "Typed run_analysis request and dispatch found in current source; native setup/result/close acceptance remains open.",
     "execution_state": "implemented",
     "next_action": "Run a controlled native case and verify setup readback, result axes/data and close.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json",
     "blocked_reason": ""
   },
   {
@@ -2030,7 +2030,7 @@
     "feasibility_status": "No typed request was found in the current run_analysis union; native interface and formal result path require item-level probe.",
     "execution_state": "blocked",
     "next_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-01/static-runtime-probe031.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-01/static-runtime-probe031.json",
     "blocked_reason": "Local static reflection found no exact IAS_RayDatabaseViewer settings interface; the installed ZOS-API initialization probe timed out before runtime New_Analysis/GetSettings discovery."
   },
   {
@@ -2048,7 +2048,7 @@
     "feasibility_status": "No typed request was found in the current run_analysis union; native interface and formal result path require item-level probe.",
     "execution_state": "blocked",
     "next_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-01/static-runtime-probe031.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-01/static-runtime-probe031.json",
     "blocked_reason": "Local static reflection found no exact IAS_DirectivityPlot settings interface; the installed ZOS-API initialization probe timed out before runtime New_Analysis/GetSettings discovery."
   },
   {
@@ -2066,7 +2066,7 @@
     "feasibility_status": "No typed request was found in the current run_analysis union; native interface and formal result path require item-level probe.",
     "execution_state": "blocked",
     "next_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-01/static-runtime-probe031.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-01/static-runtime-probe031.json",
     "blocked_reason": "Local static reflection found no exact IAS_FluxvsWavelength settings interface; the installed ZOS-API initialization probe timed out before runtime New_Analysis/GetSettings discovery."
   },
   {
@@ -2084,7 +2084,7 @@
     "feasibility_status": "No typed request was found in the current run_analysis union; native interface and formal result path require item-level probe.",
     "execution_state": "blocked",
     "next_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-01/static-runtime-probe031.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-01/static-runtime-probe031.json",
     "blocked_reason": "Local static reflection found no exact IAS_PhotoluminscenceViewer settings interface; the installed ZOS-API initialization probe timed out before runtime New_Analysis/GetSettings discovery."
   },
   {
@@ -2102,7 +2102,7 @@
     "feasibility_status": "No typed request was found in the current run_analysis union; native interface and formal result path require item-level probe.",
     "execution_state": "blocked",
     "next_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-01/static-runtime-probe031.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-01/static-runtime-probe031.json",
     "blocked_reason": "Local static reflection found no exact IAS_RadiantSourceModelViewerSettings settings interface; the installed ZOS-API initialization probe timed out before runtime New_Analysis/GetSettings discovery."
   },
   {
@@ -2120,7 +2120,7 @@
     "feasibility_status": "The project provides an NSCRoadwayLightingWizard, a distinct merit-function wizard workflow. Static reflection confirms AnalysisIDM.RoadwayLighting but has no matching IAS_RoadwayLighting settings interface; runtime New_Analysis/GetSettings and its result/lifecycle remain unverified.",
     "execution_state": "blocked",
     "next_action": "After successful ZOS-API initialization, invoke RoadwayLighting and inspect runtime GetSettings type, available selectors, result shape and close behavior before adding a typed analysis request.",
-    "evidence": "verification/development/BASE-01/probe/api-interfaces.json;verification/design-tools020-summary.json;docs/design-tools.md",
+    "evidence": ".local/evidence/development/BASE-01/probe/api-interfaces.json;verification/design-tools020-summary.json;docs/design-tools.md",
     "blocked_reason": "No matching IAS_RoadwayLighting interface in local static reflection; runtime interface discovery requires successful initialization, while the existing wizard is not the analysis entry."
   },
   {
@@ -2138,7 +2138,7 @@
     "feasibility_status": "No typed request was found in the current run_analysis union; native interface and formal result path require item-level probe.",
     "execution_state": "blocked",
     "next_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-01/static-runtime-probe031.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-01/static-runtime-probe031.json",
     "blocked_reason": "Local static reflection found no exact IAS_ScatterFunctionViewer settings interface; the installed ZOS-API initialization probe timed out before runtime New_Analysis/GetSettings discovery."
   },
   {
@@ -2156,7 +2156,7 @@
     "feasibility_status": "No typed request was found in the current run_analysis union; native interface and formal result path require item-level probe.",
     "execution_state": "blocked",
     "next_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-01/static-runtime-probe031.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-01/static-runtime-probe031.json",
     "blocked_reason": "Local static reflection found no exact IAS_ScatterPolarPlotSettings settings interface; the installed ZOS-API initialization probe timed out before runtime New_Analysis/GetSettings discovery."
   },
   {
@@ -2174,7 +2174,7 @@
     "feasibility_status": "No typed request was found in the current run_analysis union; native interface and formal result path require item-level probe.",
     "execution_state": "blocked",
     "next_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-01/static-runtime-probe031.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-01/static-runtime-probe031.json",
     "blocked_reason": "Local static reflection found no exact IAS_SourceIlluminationMap settings interface; the installed ZOS-API initialization probe timed out before runtime New_Analysis/GetSettings discovery."
   },
   {
@@ -2192,7 +2192,7 @@
     "feasibility_status": "No typed request was found in the current run_analysis union; native interface and formal result path require item-level probe.",
     "execution_state": "blocked",
     "next_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-01/static-runtime-probe031.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-01/static-runtime-probe031.json",
     "blocked_reason": "Local static reflection found no exact IAS_SourcePolarViewer settings interface; the installed ZOS-API initialization probe timed out before runtime New_Analysis/GetSettings discovery."
   },
   {
@@ -2210,7 +2210,7 @@
     "feasibility_status": "No typed request was found in the current run_analysis union; native interface and formal result path require item-level probe.",
     "execution_state": "blocked",
     "next_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
-    "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-01/static-runtime-probe031.json",
+    "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-01/static-runtime-probe031.json",
     "blocked_reason": "Local static reflection found no exact IAS_SourceSpectrumViewer settings interface; the installed ZOS-API initialization probe timed out before runtime New_Analysis/GetSettings discovery."
   }
 ]

@@ -10,7 +10,7 @@
   "input_source": "Official Cooke40degree sample; primary wavelength2; fields1/3; current configuration",
   "request": "fft_surface_mtf,S_256x256,wavelength2,use_polarizationfalse",
   "actual_settings": "outputs\\runs\\surface_mtf566_stretched_e003d11f7f\\autocorrelation.json",
-  "command": ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_pupil_reference_live.py -k stretched -q -s --run-zemax --junitxml=verification/development/CV-01/native566-stretched-pupil.xml",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_pupil_reference_live.py -k stretched -q -s --run-zemax --junitxml=.local/evidence/development/CV-01/native566-stretched-pupil.xml",
   "reference": "Direct normalized entrance-pupil OPD/intensity rays at (index-N/2)*sqrt(N/32)/(N/2-1); zero-padded autocorrelation; frequency step scaled by same explicit stretch; no fitted scale",
   "tolerance": "0.005 absolute; unchanged",
   "results": [

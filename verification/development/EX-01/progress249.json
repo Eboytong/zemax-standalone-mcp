@@ -7,11 +7,11 @@
   "execution_state": "implemented",
   "native_version": "OpticStudio2024 R2 build240529 Premium; actual connect in calls.json",
   "probes": [
-    "outputs/runs/universal243_mixed_8f6030e0fa/probe.json",
-    "outputs/runs/universal244_surface_bd5f67a868/probe.json",
-    "outputs/runs/universal245_surface_targets_15a322d171/probe.json",
-    "outputs/runs/universal246_mixed_categories_d545f573a9/probe.json",
-    "outputs/runs/universal247_surface_confirm_0ee1582bfa/probe.json"
+    ".local/runs/universal243_mixed_8f6030e0fa/probe.json",
+    ".local/runs/universal244_surface_bd5f67a868/probe.json",
+    ".local/runs/universal245_surface_targets_15a322d171/probe.json",
+    ".local/runs/universal246_mixed_categories_d545f573a9/probe.json",
+    ".local/runs/universal247_surface_confirm_0ee1582bfa/probe.json"
   ],
   "discoveries": [
     "Mixed CATEGORY=3+zero-based NSC group ordinal in LDE; ActiveSurface alone does not select the scan group. Category3/4 map to groups2/4; out-of-range5 fell back to Surface.",
@@ -38,9 +38,9 @@
     "earlier_nsc_regression": "native247.xml (NSC passed; Surface PNG failed then fixed)"
   },
   "commands": [
-    ".venv/Scripts/python.exe -m pytest tests/test_universal_surface_live.py tests/test_universal_mixed_live.py -q --run-zemax --junitxml=verification/development/EX-01/native248.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_universal_mixed_live.py -q --run-zemax --junitxml=verification/development/EX-01/native249.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_universal_nsc_live.py -q --run-zemax --junitxml=verification/development/EX-01/native250-pure-regression.xml"
+    ".venv/Scripts/python.exe -m pytest tests/test_universal_surface_live.py tests/test_universal_mixed_live.py -q --run-zemax --junitxml=.local/evidence/development/EX-01/native248.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_universal_mixed_live.py -q --run-zemax --junitxml=.local/evidence/development/EX-01/native249.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_universal_nsc_live.py -q --run-zemax --junitxml=.local/evidence/development/EX-01/native250-pure-regression.xml"
   ],
   "runs": [
     {
@@ -61,7 +61,7 @@
   "tolerance": "atol1e-8 + rtol1e-7*abs(reference)",
   "references": "COVA equals requested conic; PMVA equals selected parameter; NPXV/NPVA equal local position/Rectangle half-width; two unit-weight zero-target NPXV merit=sqrt((x^2+y^2)/2).",
   "lifecycle": "Saved/reloaded EvenAspheric, CoordinateBreak and two-group mixed baselines; surfaces/solve/system/object/active group/model revision preserved;13 successful closed tasks; grid pagination and PNG; disconnect",
-  "visual_inspection": "outputs/runs/universal247_surface_7e2e925c09/EvenAspheric.png: ascending5-column response, coordinates, unknown-unit labels and PMVA colorbar visible",
+  "visual_inspection": ".local/runs/universal247_surface_7e2e925c09/EvenAspheric.png: ascending5-column response, coordinates, unknown-unit labels and PMVA colorbar visible",
   "historical_failure": "native247 Surface PNG IMAGE_EXPORT_FAILED from null x_unit concatenation; original calls/log retained. Both corrected Surface cases passed native248.",
   "remaining": [
     "Other numeric MCE operand axes",

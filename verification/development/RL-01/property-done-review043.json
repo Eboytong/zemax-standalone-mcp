@@ -55,9 +55,9 @@
   ],
   "visual_review": {
     "files": [
-      "outputs/runs/property_mirror_layout_d2bd687f54/Curved.png",
-      "outputs/runs/property_mirror_layout_d2bd687f54/Flat.png",
-      "outputs/runs/property_mirror_layout_d2bd687f54/Hidden.png"
+      ".local/runs/property_mirror_layout_d2bd687f54/Curved.png",
+      ".local/runs/property_mirror_layout_d2bd687f54/Flat.png",
+      ".local/runs/property_mirror_layout_d2bd687f54/Hidden.png"
     ],
     "observed": "Curved and Flat images contain different visible substrate profiles; Hidden shows background/axes with substrate and ray absent. Ray stability remains a separate recorded test assertion."
   },

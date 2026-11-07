@@ -5,12 +5,12 @@
   "source_version": "0.1.59",
   "native_version": "24.2.0 build240529",
   "scope": "Native six energy/distribution kinds and typed settings/readback; field-size units and source resources; native cumulative bin semantics, square analytic integrals, point limit/auto radius, Airy correction, stripe rotation, field/wavelength/reference/polarization/vignetting selections, paging/PNG/failure/cancel/reuse/save-reload/closure",
-  "ordinary_report": "verification/development/CV-01/ordinary337-energy-pagination.xml",
+  "ordinary_report": ".local/evidence/development/CV-01/ordinary337-energy-pagination.xml",
   "ordinary_passed": 145,
   "native_reports": [
-    "verification/development/CV-01/native333-energy-reference.xml",
-    "verification/development/CV-01/native336-auto-distance.xml",
-    "verification/development/CV-01/native337-energy-lifecycle.xml"
+    ".local/evidence/development/CV-01/native333-energy-reference.xml",
+    ".local/evidence/development/CV-01/native336-auto-distance.xml",
+    ".local/evidence/development/CV-01/native337-energy-lifecycle.xml"
   ],
   "native_unique_cases": 3,
   "native_report_test_executions": 4,
@@ -45,10 +45,10 @@
       "finding": "Airy correction at reported x differs .04844; matching native bin edge resolves .000574. Original failures retained and tolerance unchanged."
     }
   ],
-  "manual": "verification/development/CV-01/manual326-extended-source.txt",
+  "manual": ".local/evidence/development/CV-01/manual326-extended-source.txt",
   "runs": [
     {
-      "path": "outputs/runs/extended_source326_square_596c1239e2",
+      "path": ".local/runs/extended_source326_square_596c1239e2",
       "checks": [
         {
           "label": "Encircled analytic square through native bin edge",
@@ -171,7 +171,7 @@
       }
     },
     {
-      "path": "outputs/runs/extended_source329_point_cf80ba8b5f",
+      "path": ".local/runs/extended_source329_point_cf80ba8b5f",
       "checks": [
         {
           "label": "point limit standard geometric energy",
@@ -222,7 +222,7 @@
       }
     },
     {
-      "path": "outputs/runs/extended_source332_lifecycle_3588b11eb9",
+      "path": ".local/runs/extended_source332_lifecycle_3588b11eb9",
       "checks": [
         {
           "label": "stripe rotation X0 equals Y90",
@@ -265,6 +265,6 @@
       }
     }
   ],
-  "image_viewed": "outputs/runs/extended_source332_lifecycle_3588b11eb9/extended-energy.png",
+  "image_viewed": ".local/runs/extended_source332_lifecycle_3588b11eb9/extended-energy.png",
   "pagination_fix": "Parallel native_x, field_coordinates and native_binning.enclosure_radius_um now follow the same series page; affected consumers covered by 145 ordinary checks."
 }

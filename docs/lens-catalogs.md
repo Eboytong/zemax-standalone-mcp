@@ -35,10 +35,10 @@
 
 ## 探查、检查和后续原生验收
 
-本机DLL方法参数及继承探查：`verification/development/ED-05/probe/methods.json`；声明摘录：同目录`interfaces.json`。本机手册第1363–1366页摘录保存于同目录，明确目录文件来自Stockcat，EFL/EPD单位为毫米。
+本机DLL方法参数及继承探查：`.local/evidence/development/ED-05/probe/methods.json`；声明摘录：同目录`interfaces.json`。本机手册第1363–1366页摘录保存于同目录，明确目录文件来自Stockcat，EFL/EPD单位为毫米。
 
-普通检查：`tests/test_catalogs.py`，覆盖请求边界、厂商和资源、最终回读、空/截断结果、名称歧义、原生失败、加载/插入参数、独立基线、条件差异、失败继续及取消恢复。全量结果为`verification/development/ED-05/ordinary021-final.xml`：926通过，450原生未执行，14.99秒。
+普通检查：`tests/test_catalogs.py`，覆盖请求边界、厂商和资源、最终回读、空/截断结果、名称歧义、原生失败、加载/插入参数、独立基线、条件差异、失败继续及取消恢复。全量结果为`.local/evidence/development/ED-05/ordinary021-final.xml`：926通过，450原生未执行，14.99秒。
 
 新增原生用例`tests/test_catalogs_live.py`覆盖真实stdio目录发现、查询、选择、插入、分页、设计重载及重复材料候选的可重复性。代表性目录插入的光线/光焦度参考、目录镜头候选的独立数值评价以及原生取消/关闭仍需补测。缺少Stockcat或匹配镜头时，原生用例记录具体输入条件。
 
-原生连接沿用既有180秒初始化超时证据`verification/development/BASE-04/connection019/supervisor.json`，本批未重复启动。批次汇总及安装包结果见`verification/lens-catalogs021-summary.json`。
+原生连接沿用既有180秒初始化超时证据`.local/evidence/development/BASE-04/connection019/supervisor.json`，本批未重复启动。批次汇总及安装包结果见`verification/lens-catalogs021-summary.json`。

@@ -5,11 +5,11 @@
   "candidate": "0.1.59",
   "ordinary_passed": 2166,
   "ordinary_native_deselected": 661,
-  "ordinary_evidence": "verification/development/BASE-04/ordinary266-b003.xml",
+  "ordinary_evidence": ".local/evidence/development/BASE-04/ordinary266-b003.xml",
   "related_passed": 148,
-  "related_evidence": "verification/development/BASE-04/ordinary266-related.xml",
-  "installation": "verification/development/BASE-04/wheel-install059-b003-final266",
-  "schema_stdio": "verification/development/BASE-04/stdio059-final267/summary.json",
+  "related_evidence": ".local/evidence/development/BASE-04/ordinary266-related.xml",
+  "installation": ".local/evidence/development/BASE-04/wheel-install059-b003-final266",
+  "schema_stdio": ".local/evidence/development/BASE-04/stdio059-final267/summary.json",
   "tools": 100,
   "analysis_kinds": 98,
   "fixes": [
@@ -23,7 +23,7 @@
   "native_gate": {
     "state": "passed",
     "session": null,
-    "evidence": "verification/development/BASE-04/native-wheel059-final267.xml",
+    "evidence": ".local/evidence/development/BASE-04/native-wheel059-final267.xml",
     "passed": 25,
     "failed": 0,
     "skipped": 0
@@ -31,7 +31,7 @@
   "limitation": {
     "item_id": "CV-01.SeidelDiagram",
     "state": "blocked",
-    "evidence": "verification/development/CV-01/outlets265/summary.json"
+    "evidence": ".local/evidence/development/CV-01/outlets265/summary.json"
   },
   "historical_attempts": [
     "ordinary263-b003.xml",
@@ -43,5 +43,5 @@
   ],
   "released_baseline": "0.1.59",
   "next_release": "0.1.60",
-  "release_evidence": "verification/development/BASE-04/release059.json"
+  "release_evidence": ".local/evidence/development/BASE-04/release059.json"
 }

@@ -11,7 +11,7 @@
   "new_completed": [
     "TO-01.QuickYield"
   ],
-  "evidence": "verification/development/TO-01/acceptance574-reference.json",
+  "evidence": ".local/evidence/development/TO-01/acceptance574-reference.json",
   "implementation": [
     "Source primary and selected wavelength identity",
     "Qualified controlled native-reference equivalence",

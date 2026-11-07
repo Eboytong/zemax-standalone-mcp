@@ -6,7 +6,7 @@
 
 ImageSimulation用受控IMA及BMP均未取得可读取结果，当前GetTextFile返回false；下一步探查正式输出图像和结果契约。GeometricBitmapImageAnalysis实际GetSettings为AS_Default且无GetFileNames；已返回含实际类型和缺失方法的UNSUPPORTED_INTERFACE，普通与原生关闭/会话复用检查通过。该条目转blocked，继续探查CFG采用及正式结果出口。
 
-全量普通1702通过；独立安装0.1.48 wheel，真实stdio三项冒烟通过（位图Apply、道路Apply、几何位图限制及清理）。原始失败与成功报告分别保留，证据 verification/development/IM-01/acceptance050/summary.json；发行 verification/development/BASE-04/release048.json。下一步继续成像数值/出口探查，再推进偏振、镀膜和材料。全量目标继续进行。
+全量普通1702通过；独立安装0.1.48 wheel，真实stdio三项冒烟通过（位图Apply、道路Apply、几何位图限制及清理）。原始失败与成功报告分别保留，证据 .local/evidence/development/IM-01/acceptance050/summary.json；发行 .local/evidence/development/BASE-04/release048.json。下一步继续成像数值/出口探查，再推进偏振、镀膜和材料。全量目标继续进行。
 
 
 ## 0.1.47 NSC 评价函数读回修复与设计/目录验收
@@ -17,7 +17,7 @@ ImageSimulation用受控IMA及BMP均未取得可读取结果，当前GetTextFile
 
 RayAiming在Cooke预览180秒及受控模型Apply90秒均未终态，保留具体超时与原始调用，继续检查原生完成/取消条件。FindBestAsphere原生评价函数下降及重载已执行，独立最优候选参考待补；Bitmap已有13个原生位图选项，Bitmap/Roadway实际Apply待执行。材料Model/Offset此前数值超限继续保留。
 
-证据 verification/development/ED-04/acceptance049/summary.json，发行 verification/development/BASE-04/release047.json。0.1.47 wheel已构建并独立安装；本轮初次失败及修复后报告分别保留。下一步按上述四项及后续成像/材料队列继续，全量目标保持进行。
+证据 .local/evidence/development/ED-04/acceptance049/summary.json，发行 .local/evidence/development/BASE-04/release047.json。0.1.47 wheel已构建并独立安装；本轮初次失败及修复后报告分别保留。下一步按上述四项及后续成像/材料队列继续，全量目标保持进行。
 
 
 ## 2026-11-05 独立材料、编辑器与设计工具验收
@@ -26,7 +26,7 @@ RayAiming在Cooke预览180秒及受控模型Apply90秒均未终态，保留具�
 
 Model与Offset已拆成独立基线执行，原生舍入谱线阿贝数分别为59.99988524798844（目标60）和增量0.9992435881404731（目标1），仍超原容差1e-5+1e-7×参考值，继续implemented。下一步定位原生色散定义，继续ED-04剩余七项与ED-05；MCE独立文件正式入口仍缺失。
 
-证据 verification/development/ED-03/acceptance048/summary.json，JUnit native048-final.xml及ED-04/native048.xml。本轮只修改测试、证据、文档与台账，版本保留0.1.46，全量目标继续进行。
+证据 .local/evidence/development/ED-03/acceptance048/summary.json，JUnit native048-final.xml及ED-04/native048.xml。本轮只修改测试、证据、文档与台账，版本保留0.1.46，全量目标继续进行。
 
 
 更新日期：2026-11-05。ED-04九个操作已接入有类型请求和结果链路，状态为`implemented`。本批普通回归899项通过；448项原生检查未执行，其中新增10项原生用例。原生采用、数值和关闭验收待ZOS-API连接恢复后执行。
@@ -67,15 +67,15 @@ MFE向导由编辑器拥有，正式接口没有SystemTool的Run/Cancel/Close；
 
 ## 探查与检查证据
 
-- 本机接口：`verification/development/ED-04/probe/interfaces.json`；继承关系：`inheritance.json`。已确认Ray Aiming属于ISystemTool，SEQ向导属于IWizard。
+- 本机接口：`.local/evidence/development/ED-04/probe/interfaces.json`；继承关系：`inheritance.json`。已确认Ray Aiming属于ISystemTool，SEQ向导属于IWizard。
 - 本机手册摘录：同目录`manual-page-*.txt`，涵盖Scale、Quick Adjust、非球面、Ray Aiming及各向导。
 - 新增66项普通检查：`tests/test_design_tools.py`、`tests/test_wizards.py`，覆盖类型边界、活动条件、最终回读、原始错误、取消、关闭及向导Apply。
-- 全量普通回归：`verification/development/ED-04/ordinary020-final.xml`，899通过，448原生未执行，15.32秒。首次回归的测试替身错误保留在`ordinary020.xml`。
+- 全量普通回归：`.local/evidence/development/ED-04/ordinary020-final.xml`，899通过，448原生未执行，15.32秒。首次回归的测试替身错误保留在`ordinary020.xml`。
 - 待执行原生用例：`tests/test_design_tools_live.py`。Scale参考为独立量纲换算，容差`1e-8 + 1e-7×参考值`；非球面转换逐点比较sag，同一容差。Quick Adjust最优性、Ray Aiming应用、位图/道路资源Apply仍需补独立参考及输入夹具。
-- 原生连接条件沿用`verification/development/BASE-04/connection019/supervisor.json`：180秒初始化未返回。本批没有重启原生实例，正常原生关闭验收待测。
+- 原生连接条件沿用`.local/evidence/development/BASE-04/connection019/supervisor.json`：180秒初始化未返回。本批没有重启原生实例，正常原生关闭验收待测。
 - 批次汇总：`verification/design-tools020-summary.json`。安装包与真实stdio结果由发行步骤补入该汇总。
 
 
-B001进展（2026-11-05，基线0.1.56）：FindBestAsphere独立Conic候选比较完成。Cooke同一基线下手动分别设置曲面1/2的conic为变量并运行DLS Automatic，候选评价函数分别0.0030534502405461456、0.0016077722515191782；原生选择曲面2，最优值完全相同。初值0.00809324547994345，保存重载后的曲面、solve及评价函数保持；三个任务均succeeded/close_attempted，disconnect成功。原容差1e-7+1e-5×参考值。普通定向63通过；见verification/development/ED-04/acceptance062/summary.json，真实stdio输出outputs/runs/best_asphere062_1d547abc51。条目done，批次1/10，本轮无全量、wheel或独立安装。
+B001进展（2026-11-05，基线0.1.56）：FindBestAsphere独立Conic候选比较完成。Cooke同一基线下手动分别设置曲面1/2的conic为变量并运行DLS Automatic，候选评价函数分别0.0030534502405461456、0.0016077722515191782；原生选择曲面2，最优值完全相同。初值0.00809324547994345，保存重载后的曲面、solve及评价函数保持；三个任务均succeeded/close_attempted，disconnect成功。原容差1e-7+1e-5×参考值。普通定向63通过；见.local/evidence/development/ED-04/acceptance062/summary.json，真实stdio输出.local/runs/best_asphere062_1d547abc51。条目done，批次1/10，本轮无全量、wheel或独立安装。
 
-转换差异探查：Cooke分别使用no_stop、ignore_errors、pure/no_stop，前两项TASK_START_FAILED，pure/no_stop成功。见outputs/runs/conversion_options062_35ee51bf2a/option-results.json；该探查用例通过表示三种结果记录完成，父条目原生等价光线/持久性仍待验收。早期探查辅助代码错误读取成功响应的ok字段已修正，失败记录8038cc0c1f保留。下一步继续RayAiming的新条件探查及纯NSC转换剩余验收，现有重复失败条件不重跑。
+转换差异探查：Cooke分别使用no_stop、ignore_errors、pure/no_stop，前两项TASK_START_FAILED，pure/no_stop成功。见.local/runs/conversion_options062_35ee51bf2a/option-results.json；该探查用例通过表示三种结果记录完成，父条目原生等价光线/持久性仍待验收。早期探查辅助代码错误读取成功响应的ok字段已修正，失败记录8038cc0c1f保留。下一步继续RayAiming的新条件探查及纯NSC转换剩余验收，现有重复失败条件不重跑。

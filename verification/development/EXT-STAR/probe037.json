@@ -1,7 +1,7 @@
 {
   "version": "0.1.37",
   "date": "2026-11-05",
-  "probe_source": "verification/development/BASE-01/probe/api-interfaces.json",
+  "probe_source": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
   "interfaces": {
     "ZOSAPI.ISTARSubsystem": {
       "properties": [
@@ -1363,14 +1363,14 @@
     "errors": 0,
     "deselected": 512,
     "focused_passed": 72,
-    "report": "verification/development/EXT-STAR/ordinary047-final.xml",
-    "prior_report": "verification/development/EXT-STAR/ordinary047.xml",
+    "report": ".local/evidence/development/EXT-STAR/ordinary047-final.xml",
+    "prior_report": ".local/evidence/development/EXT-STAR/ordinary047.xml",
     "prior_failure": "Capability test hardcoded 95 tools; updated to 97 and explicitly asserts STAR tools."
   },
   "release": {
     "status": "passed",
     "wheel": "wheels/zemax_standalone_mcp-0.1.37-py3-none-any.whl",
-    "install": "verification/development/EXT-STAR/wheel-install037",
-    "stdio": "verification/development/EXT-STAR/stdio-smoke047.json"
+    "install": ".local/evidence/development/EXT-STAR/wheel-install037",
+    "stdio": ".local/evidence/development/EXT-STAR/stdio-smoke047.json"
   }
 }

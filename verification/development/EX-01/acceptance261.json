@@ -27,9 +27,9 @@
     ]
   },
   "checks": {
-    "ordinary": "verification/development/EX-01/ordinary261-final.xml",
+    "ordinary": ".local/evidence/development/EX-01/ordinary261-final.xml",
     "ordinary_passed": 334,
-    "native": "verification/development/EX-01/native261-final.xml",
+    "native": ".local/evidence/development/EX-01/native261-final.xml",
     "native_passed": 17,
     "native_skipped": 0,
     "numeric_checks": 471,
@@ -42,14 +42,14 @@
   "lifecycle": "75 native tasks: success/cancel/failed-result paths, close confirmation, source preservation, revision/solve/configuration/active NSC group, save/reload, same-session reuse; fault-injection tests cover calculation report/start/settings/parse/close errors.",
   "tolerance": "Per-check fixed references and tolerances in checks.json; default1e-8 +1e-7*abs(reference); six-digit native text coordinate/parameter adoption tolerance5e-7.",
   "supporting": [
-    "verification/development/EX-01/progress217.json",
-    "verification/development/EX-01/progress224.json",
-    "verification/development/EX-01/progress228.json",
-    "verification/development/EX-01/progress232.json",
-    "verification/development/EX-01/progress236.json",
-    "verification/development/EX-01/progress242.json",
-    "verification/development/EX-01/progress249.json",
-    "verification/development/EX-01/native259.xml"
+    ".local/evidence/development/EX-01/progress217.json",
+    ".local/evidence/development/EX-01/progress224.json",
+    ".local/evidence/development/EX-01/progress228.json",
+    ".local/evidence/development/EX-01/progress232.json",
+    ".local/evidence/development/EX-01/progress236.json",
+    ".local/evidence/development/EX-01/progress242.json",
+    ".local/evidence/development/EX-01/progress249.json",
+    ".local/evidence/development/EX-01/native259.xml"
   ],
   "discoveries": [
     "WAVE/XFIE/YFIE native Param1 is zero-based; native axis header one-based; both identities preserved",

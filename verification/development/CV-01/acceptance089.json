@@ -3,14 +3,14 @@
   "state": "done",
   "date": "2026-11-06",
   "native": [
-    "verification/development/CV-01/native089-signed.xml",
-    "verification/development/CV-01/native089-selection-final.xml"
+    ".local/evidence/development/CV-01/native089-signed.xml",
+    ".local/evidence/development/CV-01/native089-selection-final.xml"
   ],
-  "ordinary": "verification/development/CV-01/ordinary089-final-delivery.xml",
+  "ordinary": ".local/evidence/development/CV-01/ordinary089-final-delivery.xml",
   "ordinary_passed": 40,
   "runs": [
-    "outputs/runs/zernike089_delivery_4c181b1262",
-    "outputs/runs/zernike089_selection_3289965687"
+    ".local/runs/zernike089_delivery_4c181b1262",
+    ".local/runs/zernike089_selection_3289965687"
   ],
   "numeric": {
     "comparisons": 133,

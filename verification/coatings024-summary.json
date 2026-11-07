@@ -10,7 +10,7 @@
     "new_tests": 70,
     "native_deselected": 476,
     "seconds": 20.89,
-    "evidence": "verification/development/CO-01/ordinary024.xml",
+    "evidence": ".local/evidence/development/CO-01/ordinary024.xml",
     "development_failure": "one new fake-read timing test initially failed; fixture trigger corrected to begin after target commit; native code unchanged for that failure"
   },
   "native": {
@@ -19,7 +19,7 @@
     "actual_settings": null,
     "license": "not established",
     "reason": "prior 180s CreateNewApplication initialization timeout; no environment change observed",
-    "evidence": "verification/development/BASE-04/connection019/supervisor.json",
+    "evidence": ".local/evidence/development/BASE-04/connection019/supervisor.json",
     "prepared_tests": "tests/test_coatings_live.py",
     "prepared_count": 17,
     "instance": "none started",
@@ -41,12 +41,12 @@
     "status": "passed",
     "wheel": "wheels/zemax_standalone_mcp-0.1.14-py3-none-any.whl",
     "install": "outputs/wheel-release024",
-    "smoke": "verification/development/CO-01/wheel-smoke024.json",
+    "smoke": ".local/evidence/development/CO-01/wheel-smoke024.json",
     "stdio_closed": true
   },
   "corrected": "0.1.13 TaskResult.series internal model existed, MCP server signature omitted it; 0.1.14 signature fixed and inspected over actual stdio",
   "other_probes": {
-    "PO_01": "verification/development/PO-01/probe024.json",
+    "PO_01": ".local/evidence/development/PO-01/probe024.json",
     "IM_01_bitmap": "official GBM CFG keys found at manual index1543; runtime adoption/readback pending"
   },
   "items": [
@@ -64,8 +64,8 @@
         "maximum_y": null
       },
       "interface": "IAS_RTA_Angle",
-      "probe": "verification/development/CO-01/probe024.json",
-      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "probe": ".local/evidence/development/CO-01/probe024.json",
+      "ordinary": ".local/evidence/development/CO-01/ordinary024.xml",
       "actual_settings": null,
       "native_results": null,
       "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
@@ -84,8 +84,8 @@
         "maximum_y": null
       },
       "interface": "IAS_RTA_Wavelength",
-      "probe": "verification/development/CO-01/probe024.json",
-      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "probe": ".local/evidence/development/CO-01/probe024.json",
+      "ordinary": ".local/evidence/development/CO-01/ordinary024.xml",
       "actual_settings": null,
       "native_results": null,
       "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
@@ -104,8 +104,8 @@
         "maximum_y": null
       },
       "interface": "IAS_RTA_Angle",
-      "probe": "verification/development/CO-01/probe024.json",
-      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "probe": ".local/evidence/development/CO-01/probe024.json",
+      "ordinary": ".local/evidence/development/CO-01/ordinary024.xml",
       "actual_settings": null,
       "native_results": null,
       "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
@@ -124,8 +124,8 @@
         "maximum_y": null
       },
       "interface": "IAS_RTA_Wavelength",
-      "probe": "verification/development/CO-01/probe024.json",
-      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "probe": ".local/evidence/development/CO-01/probe024.json",
+      "ordinary": ".local/evidence/development/CO-01/ordinary024.xml",
       "actual_settings": null,
       "native_results": null,
       "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
@@ -144,8 +144,8 @@
         "maximum_y": null
       },
       "interface": "IAS_RTA_Angle",
-      "probe": "verification/development/CO-01/probe024.json",
-      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "probe": ".local/evidence/development/CO-01/probe024.json",
+      "ordinary": ".local/evidence/development/CO-01/ordinary024.xml",
       "actual_settings": null,
       "native_results": null,
       "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
@@ -164,8 +164,8 @@
         "maximum_y": null
       },
       "interface": "IAS_RTA_Wavelength",
-      "probe": "verification/development/CO-01/probe024.json",
-      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "probe": ".local/evidence/development/CO-01/probe024.json",
+      "ordinary": ".local/evidence/development/CO-01/ordinary024.xml",
       "actual_settings": null,
       "native_results": null,
       "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
@@ -184,8 +184,8 @@
         "maximum_y": null
       },
       "interface": "IAS_RTA_Angle",
-      "probe": "verification/development/CO-01/probe024.json",
-      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "probe": ".local/evidence/development/CO-01/probe024.json",
+      "ordinary": ".local/evidence/development/CO-01/ordinary024.xml",
       "actual_settings": null,
       "native_results": null,
       "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
@@ -204,8 +204,8 @@
         "maximum_y": null
       },
       "interface": "IAS_RTA_Wavelength",
-      "probe": "verification/development/CO-01/probe024.json",
-      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "probe": ".local/evidence/development/CO-01/probe024.json",
+      "ordinary": ".local/evidence/development/CO-01/ordinary024.xml",
       "actual_settings": null,
       "native_results": null,
       "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
@@ -224,8 +224,8 @@
         "maximum_y": null
       },
       "interface": "IAS_RTA_Angle",
-      "probe": "verification/development/CO-01/probe024.json",
-      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "probe": ".local/evidence/development/CO-01/probe024.json",
+      "ordinary": ".local/evidence/development/CO-01/ordinary024.xml",
       "actual_settings": null,
       "native_results": null,
       "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
@@ -244,8 +244,8 @@
         "maximum_y": null
       },
       "interface": "IAS_RTA_Wavelength",
-      "probe": "verification/development/CO-01/probe024.json",
-      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "probe": ".local/evidence/development/CO-01/probe024.json",
+      "ordinary": ".local/evidence/development/CO-01/ordinary024.xml",
       "actual_settings": null,
       "native_results": null,
       "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
@@ -264,8 +264,8 @@
         "maximum_y": null
       },
       "interface": "IAS_RTA_Angle",
-      "probe": "verification/development/CO-01/probe024.json",
-      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "probe": ".local/evidence/development/CO-01/probe024.json",
+      "ordinary": ".local/evidence/development/CO-01/ordinary024.xml",
       "actual_settings": null,
       "native_results": null,
       "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
@@ -284,8 +284,8 @@
         "maximum_y": null
       },
       "interface": "IAS_RTA_Wavelength",
-      "probe": "verification/development/CO-01/probe024.json",
-      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "probe": ".local/evidence/development/CO-01/probe024.json",
+      "ordinary": ".local/evidence/development/CO-01/ordinary024.xml",
       "actual_settings": null,
       "native_results": null,
       "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
@@ -297,8 +297,8 @@
         "kind": "coating_listing"
       },
       "interface": "generic inherited settings; current coating text listing",
-      "probe": "verification/development/CO-01/probe024.json",
-      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "probe": ".local/evidence/development/CO-01/probe024.json",
+      "ordinary": ".local/evidence/development/CO-01/ordinary024.xml",
       "actual_settings": null,
       "native_results": null,
       "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
@@ -307,7 +307,7 @@
       "item_id": "CO-01.LayerRead",
       "status": "implemented",
       "probe": "ILDECoatingData / ILDECoatingSettings",
-      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "ordinary": ".local/evidence/development/CO-01/ordinary024.xml",
       "actual_settings": null,
       "remaining": "multilayer fixture and formal native layer indices, numerical offsets, optimizer and persistence"
     },
@@ -315,7 +315,7 @@
       "item_id": "CO-01.LayerEdit",
       "status": "implemented",
       "probe": "ILDECoatingData / ILDECoatingSettings",
-      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "ordinary": ".local/evidence/development/CO-01/ordinary024.xml",
       "actual_settings": null,
       "remaining": "multilayer fixture and formal native layer indices, numerical offsets, optimizer and persistence"
     },
@@ -323,7 +323,7 @@
       "item_id": "CO-01.LayerSolve",
       "status": "implemented",
       "probe": "ILDECoatingData / ILDECoatingSettings",
-      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "ordinary": ".local/evidence/development/CO-01/ordinary024.xml",
       "actual_settings": null,
       "remaining": "multilayer fixture and formal native layer indices, numerical offsets, optimizer and persistence"
     }

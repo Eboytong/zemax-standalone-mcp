@@ -3,7 +3,7 @@
   "date": "2026-11-05",
   "item_id": "CV-01.HuygensSurfaceMtf",
   "native_api": {
-    "reflection_source": "verification/development/BASE-01/probe/api-interfaces.json",
+    "reflection_source": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
     "analysis_id": "ZOSAPI.Analysis.AnalysisIDM.HuygensSurfaceMtf (26)",
     "settings_interface": "ZOSAPI.Analysis.Settings.Mtf.IAS_HuygensSurfaceMtf",
     "writable_properties": ["ImageSampleSize", "PupilSampleSize", "ShowAs", "Type", "UsePolarization", "ImageDelta", "Configuration"],
@@ -23,8 +23,8 @@
     "result_path": "standard native analysis task and general text/series/grid collector",
     "resource_close": "standard analysis task lifecycle"
   },
-  "ordinary_tests": {"focused": "8 passed", "full_suite": "1313 passed, 500 skipped", "junit": "verification/development/CV-01/ordinary036.xml"},
-  "release": {"wheel": "wheels/zemax_standalone_mcp-0.1.26-py3-none-any.whl", "isolated_install": "outputs/wheel-release036", "stdio_smoke": "verification/development/CV-01/stdio-smoke036.json", "stdio_status": "passed; 95 tools, 74 analysis kinds; typed request dispatched; worker closed"},
+  "ordinary_tests": {"focused": "8 passed", "full_suite": "1313 passed, 500 skipped", "junit": ".local/evidence/development/CV-01/ordinary036.xml"},
+  "release": {"wheel": "wheels/zemax_standalone_mcp-0.1.26-py3-none-any.whl", "isolated_install": "outputs/wheel-release036", "stdio_smoke": ".local/evidence/development/CV-01/stdio-smoke036.json", "stdio_status": "passed; 95 tools, 74 analysis kinds; typed request dispatched; worker closed"},
   "documentation": ["docs/huygens-surface-mtf.md", "docs/tool-schemas.json", "docs/tools.md"],
   "numerical_reference": "pending native same-condition comparison against FFT Surface MTF"
 }

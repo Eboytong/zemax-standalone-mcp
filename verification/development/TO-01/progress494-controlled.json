@@ -8,12 +8,12 @@
   "native": "24.2.0 build 240529 Premium",
   "input_source": "Owned on-axis mirror radius -200mm, aperture10mm, wavelength .55um; conic-1 at -100/-100.02mm and conic0 at -100mm. Official Cooke sample in user Documents/Zemax/Samples/Sequential/Objectives.",
   "commands": [
-    ".venv/Scripts/python.exe -m pytest tests/test_quick_yield_live.py::test_quick_yield_controlled_mirror_reference_diagnostic -q -s --run-zemax --junitxml=verification/development/TO-01/native493-mirror.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_quick_yield_live.py::test_quick_yield_cooke_sampling_fit_diagnostic -q -s --run-zemax --junitxml=verification/development/TO-01/native494-sampling.xml"
+    ".venv/Scripts/python.exe -m pytest tests/test_quick_yield_live.py::test_quick_yield_controlled_mirror_reference_diagnostic -q -s --run-zemax --junitxml=.local/evidence/development/TO-01/native493-mirror.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_quick_yield_live.py::test_quick_yield_cooke_sampling_fit_diagnostic -q -s --run-zemax --junitxml=.local/evidence/development/TO-01/native494-sampling.xml"
   ],
   "requests_and_actual_settings": [
-    "outputs/runs/quickyield493_mirror_7dfbefded5/controlled-mirror.json",
-    "outputs/runs/quickyield494_sampling_90d83628aa/sampling-fit.json"
+    ".local/runs/quickyield493_mirror_7dfbefded5/controlled-mirror.json",
+    ".local/runs/quickyield494_sampling_90d83628aa/sampling-fit.json"
   ],
   "reference": "Same field/wavelength, ChiefRay RMS-vs-field Wavefront, GaussQuad10; mirror parabola wavefront independently zero. Ignore compensation and TTHI min=max=0.",
   "tolerance": "1e-5 waves absolute + 1% reference, unchanged",

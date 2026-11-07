@@ -1,8 +1,8 @@
 {
   "version": "0.1.54",
   "state": "implemented",
-  "native_evidence": "outputs/runs/coating_reference057_4b1c450392/calls.json",
-  "checks": "outputs/runs/coating_reference057_4b1c450392/checks.json",
+  "native_evidence": ".local/runs/coating_reference057_4b1c450392/calls.json",
+  "checks": ".local/runs/coating_reference057_4b1c450392/checks.json",
   "native_test": "native057-final.xml",
   "ordinary_test": "ordinary057.xml",
   "native_analysis_count": 24,
@@ -55,7 +55,7 @@
     "Relative-thickness coating primary-wavelength handling"
   ],
   "historical_failure": {
-    "evidence": "outputs/runs/coating_reference057_68def8c1ee/calls.json",
+    "evidence": ".local/runs/coating_reference057_68def8c1ee/calls.json",
     "result": "Wavelength scans pass; angle requests wavelength=2 evaluate wavelength3=.7. Corrected mapping validated against all three wavelengths."
   }
 }

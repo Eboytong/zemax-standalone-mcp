@@ -8,9 +8,9 @@
     "Native no-array outlet therefore has no enabled file outlet in current adapter"
   ],
   "evidence": [
-    "verification/development/IM-01/manual-page-824.txt",
+    ".local/evidence/development/IM-01/manual-page-824.txt",
     "src/zemax_mcp/imaging.py: configure/collect_imaging",
-    "verification/development/IM-01/acceptance050/summary.json"
+    ".local/evidence/development/IM-01/acceptance050/summary.json"
   ],
   "next_action": "Probe native OutputFile absolute path versus unique basename under Images with controlled owned resources; read back settings and exact produced location. Then collect native output as artifact/RGB with explicit rendered pixel units and retained physical conditions; verify asymmetric source orientation.",
   "constraints": [

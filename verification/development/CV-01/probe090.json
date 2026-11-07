@@ -5,11 +5,11 @@
     "CV-01.HuygensSurfaceMtf"
   ],
   "state": "implemented",
-  "ordinary": "verification/development/CV-01/ordinary090-final.xml",
+  "ordinary": ".local/evidence/development/CV-01/ordinary090-final.xml",
   "ordinary_passed": 25,
   "huygens": {
-    "native": "verification/development/CV-01/native090-huygens-calibrated.xml",
-    "run": "outputs/runs/surface_mtf090_matched_d91e886ee9",
+    "native": ".local/evidence/development/CV-01/native090-huygens-calibrated.xml",
+    "run": ".local/runs/surface_mtf090_matched_d91e886ee9",
     "comparisons": 19,
     "tolerance": 0.005,
     "max_slice_error": 0.0018245707674065526,
@@ -18,8 +18,8 @@
     "remaining": "ideal circular pupil reference, coherent/complex types, pagination/plot, state/cancel/reload"
   },
   "fft": {
-    "native": "verification/development/CV-01/native090-matched-sampling.xml",
-    "run": "outputs/runs/surface_mtf090_matched_78fb748014",
+    "native": ".local/evidence/development/CV-01/native090-matched-sampling.xml",
+    "run": ".local/runs/surface_mtf090_matched_78fb748014",
     "tangential_errors_10_30_50": [
       0.03980469668087794,
       0.05153308521038294,

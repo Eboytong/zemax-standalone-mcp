@@ -1,15 +1,15 @@
 {
   "version": "0.1.53",
   "wheel": "wheels/zemax_standalone_mcp-0.1.53-py3-none-any.whl",
-  "installation": "verification/development/BASE-04/wheel-install053-release",
+  "installation": ".local/evidence/development/BASE-04/wheel-install053-release",
   "ordinary_passed": 1767,
   "ordinary_skipped_native": 560,
-  "ordinary_evidence": "verification/development/BASE-01/ordinary056-delivery.xml",
+  "ordinary_evidence": ".local/evidence/development/BASE-01/ordinary056-delivery.xml",
   "native_wheel_passed": 2,
-  "native_wheel_evidence": "verification/development/BASE-04/native-wheel053-release.xml",
+  "native_wheel_evidence": ".local/evidence/development/BASE-04/native-wheel053-release.xml",
   "native_runs": [
-    "outputs/runs/diff_efficiency056_probe_e2b1d55114/calls.json",
-    "outputs/runs/coating_polarization055_ccbd95db68/calls.json"
+    ".local/runs/diff_efficiency056_probe_e2b1d55114/calls.json",
+    ".local/runs/coating_polarization055_ccbd95db68/calls.json"
   ],
   "scope": "Three diffraction-efficiency analyses, six coating phase/retardance/diattenuation scans; pagination, images, settings/model preservation and normal close. Diffraction includes 192 normal-incidence and grid/line comparisons.",
   "remaining": "Independent off-axis grating, failure/cancel/persistence acceptance, thin-film polarization references and remaining ledger gates.",

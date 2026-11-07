@@ -5,7 +5,7 @@
   "rtol": 0,
   "runs": [
     {
-      "run": "outputs/runs/surface_mtf283_fft_e7ada56201",
+      "run": ".local/runs/surface_mtf283_fft_e7ada56201",
       "fields": [
         {
           "field": 1,
@@ -18,7 +18,7 @@
       ]
     },
     {
-      "run": "outputs/runs/surface_mtf283_fft_6cafe19fc8",
+      "run": ".local/runs/surface_mtf283_fft_6cafe19fc8",
       "fields": [
         {
           "field": 1,

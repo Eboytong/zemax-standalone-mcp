@@ -6,7 +6,7 @@
 
 Model与Offset已拆成独立基线执行，原生舍入谱线阿贝数分别为59.99988524798844（目标60）和增量0.9992435881404731（目标1），仍超原容差1e-5+1e-7×参考值，继续implemented。下一步定位原生色散定义，继续ED-04剩余七项与ED-05；MCE独立文件正式入口仍缺失。
 
-证据 verification/development/ED-03/acceptance048/summary.json，JUnit native048-final.xml及ED-04/native048.xml。本轮只修改测试、证据、文档与台账，版本保留0.1.46，全量目标继续进行。
+证据 .local/evidence/development/ED-03/acceptance048/summary.json，JUnit native048-final.xml及ED-04/native048.xml。本轮只修改测试、证据、文档与台账，版本保留0.1.46，全量目标继续进行。
 
 
 本批实现TDE逐行修改、插入和删除，MFE/MCE/TDE统一插入、复制和元数据查询，以及原生`.tol`文件读写。原生设置采用与持久状态验收等待成功连接；普通检查和安装包stdio记录分别列出。
@@ -15,7 +15,7 @@ Model与Offset已拆成独立基线执行，原生舍入谱线阿贝数分别为
 
 本机`ZOSAPI_Interfaces.dll`反射确认三个编辑器均公开`InsertNewOperandAt`及`CopyOperands(fromOperandNumber, NumberOfOperands, toOperandNumber)`。TDE另有`LoadToleranceFile`、`SaveToleranceFile`；MFE已有`LoadMeritFunction`、`SaveMeritFunction`入口。MCE未公开独立Load/Save方法，使用现有完整系统保存和加载。
 
-探查文件为`verification/development/ED-03/probe/editor-interfaces.json`，记录373个编辑器接口、65个枚举。它证明本机声明的接口和字段，实际采用结果以原生运行记录为准。
+探查文件为`.local/evidence/development/ED-03/probe/editor-interfaces.json`，记录373个编辑器接口、65个枚举。它证明本机声明的接口和字段，实际采用结果以原生运行记录为准。
 
 ## 请求与结果
 
@@ -33,7 +33,7 @@ Model与Offset已拆成独立基线执行，原生舍入谱线阿贝数分别为
 
 普通检查覆盖稀疏修改、活动字段、32位整数、类型拒绝、插入顺序、降序删除、TOFF占位、原生静默忽略、最终回读、状态读取失败和原始错误、公差文件载入及覆盖条件。真实stdio原生用例为`tests/test_editor_extensions_live.py`，包含表编辑、元数据、文件回读、系统保存重载和正常断开。
 
-2026-11-05连接探测在180秒预算内未完成；监督进程终止本次创建的进程树，记录在`verification/development/BASE-04/connection019/supervisor.json`。本批新增原生用例尚未运行。解除条件：本机ZOS-API成功连接后，串行运行新增用例及既有建模、配置和公差回归。
+2026-11-05连接探测在180秒预算内未完成；监督进程终止本次创建的进程树，记录在`.local/evidence/development/BASE-04/connection019/supervisor.json`。本批新增原生用例尚未运行。解除条件：本机ZOS-API成功连接后，串行运行新增用例及既有建模、配置和公差回归。
 
 请求示例见`examples/editor_extensions019_requests.json`；当前schema由`docs/tool-schemas.json`和`get_capabilities(topic="tool")`提供。发行与检查结论见`verification/editor-extensions019-summary.json`。
 
@@ -41,7 +41,7 @@ Model与Offset已拆成独立基线执行，原生舍入谱线阿贝数分别为
 
 多配置模型的replace请求以显式CONF行开头，CONF仅使用parameters第2列指定配置号，省略target/weight。省略字段经stdio保留，结构行的原生非活动目标/权重保持。替换完成后重新读取最终行类型、参数、目标和权重，拒绝原生自动插入导致的静默改写；失败返回实际完成项和检查点，便于读取和恢复。
 
-原始问题在Universal二维独立参考中定位：请求TTHI/PMVA实际变为CONF1/PMVA/BLNK。修复后显式CONF2/TTHI/PMVA的已知均方根参考通过，普通拒绝/最终改写故障注入和真实配置/优化回归通过。证据verification/development/ED-03/mfe-conf261.json、EX-01/acceptance261.json、native259.xml。此项作为共用修复，不额外计入十项批次。
+原始问题在Universal二维独立参考中定位：请求TTHI/PMVA实际变为CONF1/PMVA/BLNK。修复后显式CONF2/TTHI/PMVA的已知均方根参考通过，普通拒绝/最终改写故障注入和真实配置/优化回归通过。证据.local/evidence/development/ED-03/mfe-conf261.json、EX-01/acceptance261.json、native259.xml。此项作为共用修复，不额外计入十项批次。
 
 
 ## MCE数值回读精度（542）

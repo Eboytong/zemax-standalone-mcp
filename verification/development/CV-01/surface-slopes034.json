@@ -288,19 +288,19 @@
       }
     }
   ],
-  "probe_source": "verification/development/BASE-01/probe/api-interfaces.json",
+  "probe_source": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
   "ordinary": {
     "passed": 1425,
     "failures": 0,
     "errors": 0,
     "deselected": 506,
-    "report": "verification/development/CV-01/ordinary044.xml"
+    "report": ".local/evidence/development/CV-01/ordinary044.xml"
   },
   "release": {
     "status": "passed",
     "wheel": "wheels/zemax_standalone_mcp-0.1.34-py3-none-any.whl",
-    "independent_install": "verification/development/CV-01/wheel-install034",
-    "stdio_smoke": "verification/development/CV-01/stdio-smoke044.json"
+    "independent_install": ".local/evidence/development/CV-01/wheel-install034",
+    "stdio_smoke": ".local/evidence/development/CV-01/stdio-smoke044.json"
   },
   "enums": {
     "ZOSAPI.Analysis.SurfaceSlopeData": {

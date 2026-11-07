@@ -7,35 +7,35 @@
   "state": "implemented",
   "ordinary": {
     "passed": 26,
-    "evidence": "verification/development/ED-01/ordinary268.xml"
+    "evidence": ".local/evidence/development/ED-01/ordinary268.xml"
   },
   "native": {
     "passed": 4,
-    "evidence": "verification/development/ED-01/native268.xml",
+    "evidence": ".local/evidence/development/ED-01/native268.xml",
     "runs": [
       {
-        "folder": "outputs/runs/scatter268_builtins_7377530639",
+        "folder": ".local/runs/scatter268_builtins_7377530639",
         "disconnect_ok": true,
         "close_receipt": "outputs\\runs\\scatter268_builtins_7377530639\\state\\close_receipt.json",
         "native_closed": true,
         "forced": false
       },
       {
-        "folder": "outputs/runs/property_scatter_resources_33ce81183a",
+        "folder": ".local/runs/property_scatter_resources_33ce81183a",
         "disconnect_ok": true,
         "close_receipt": "outputs\\runs\\property_scatter_resources_33ce81183a\\state\\close_receipt.json",
         "native_closed": true,
         "forced": false
       },
       {
-        "folder": "outputs/runs/property_preflight_state_0666a803b2",
+        "folder": ".local/runs/property_preflight_state_0666a803b2",
         "disconnect_ok": true,
         "close_receipt": "outputs\\runs\\property_preflight_state_0666a803b2\\state\\close_receipt.json",
         "native_closed": true,
         "forced": false
       },
       {
-        "folder": "outputs/runs/property_pages_38d18ce1a5",
+        "folder": ".local/runs/property_pages_38d18ce1a5",
         "disconnect_ok": true,
         "close_receipt": "outputs\\runs\\property_pages_38d18ce1a5\\state\\close_receipt.json",
         "native_closed": true,

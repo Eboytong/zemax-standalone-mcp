@@ -12,7 +12,7 @@
     "Inactive apodization/aperture, invalid selectors and infinite-distance ObjectHeight rejected before native creation",
     "Preserve original native result failure messages"
   ],
-  "command": ".venv/Scripts/python.exe -m pytest tests/test_universal_grid_system_live.py tests/test_universal_system_live.py tests/test_universal_grid_live.py -q --run-zemax --junitxml=verification/development/EX-01/native228.xml",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_universal_grid_system_live.py tests/test_universal_system_live.py tests/test_universal_grid_live.py -q --run-zemax --junitxml=.local/evidence/development/EX-01/native228.xml",
   "checks": {
     "ordinary": "ordinary227.xml",
     "ordinary_passed": 138,

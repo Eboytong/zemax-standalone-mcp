@@ -10,7 +10,7 @@
   "scope": "Independent coherent line spread from OPD pupil slices at native physical output positions",
   "original_maximum_error": 0.26097592912754874,
   "reference": "Direct Fraunhofer complex sum using independently traced OPD/intensity; pupil nodes (i-N/2)/(N/2); abs(image thickness) distance; native physical um positions; every second text sample; no fitted coordinate scale",
-  "command": ".venv/Scripts/python.exe -m pytest tests/test_fft_spread_coherent_live.py -q -s --run-zemax --junitxml=verification/development/CV-01/native489-coherent-physical.xml",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_fft_spread_coherent_live.py -q -s --run-zemax --junitxml=.local/evidence/development/CV-01/native489-coherent-physical.xml",
   "results": [
     {
       "pupil_size": 64,

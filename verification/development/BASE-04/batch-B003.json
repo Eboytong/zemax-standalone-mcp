@@ -17,18 +17,18 @@
   ],
   "verification_state": "passed",
   "evidence": [
-    "verification/development/GE-01/acceptance098.json",
-    "verification/development/GE-01/acceptance114.json",
-    "verification/development/GE-01/acceptance123.json",
-    "verification/development/GE-01/acceptance127.json",
-    "verification/development/GE-01/acceptance138.json",
-    "verification/development/IM-01/acceptance150.json",
-    "verification/development/CO-01/acceptance165.json",
-    "verification/development/EXT-EXPORT/acceptance179.json",
-    "verification/development/EX-01/acceptance261.json"
+    ".local/evidence/development/GE-01/acceptance098.json",
+    ".local/evidence/development/GE-01/acceptance114.json",
+    ".local/evidence/development/GE-01/acceptance123.json",
+    ".local/evidence/development/GE-01/acceptance127.json",
+    ".local/evidence/development/GE-01/acceptance138.json",
+    ".local/evidence/development/IM-01/acceptance150.json",
+    ".local/evidence/development/CO-01/acceptance165.json",
+    ".local/evidence/development/EXT-EXPORT/acceptance179.json",
+    ".local/evidence/development/EX-01/acceptance261.json"
   ],
   "counting": "Unique completed functional items; blocked probes, duplicate rows and historical evidence maintenance excluded.",
   "current_item": "Ten unique completed functional items accepted on independently installed wheel.",
-  "previous_batch": "verification/development/BASE-04/batch-B002.json",
-  "release_evidence": "verification/development/BASE-04/release059.json"
+  "previous_batch": ".local/evidence/development/BASE-04/batch-B002.json",
+  "release_evidence": ".local/evidence/development/BASE-04/release059.json"
 }

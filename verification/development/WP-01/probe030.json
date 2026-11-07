@@ -3,7 +3,7 @@
   "probe_kind": "installed public DLL reflection plus source/test inspection",
   "date": "2026-11-05",
   "opticstudio": "2024 R2",
-  "native_assembly_evidence": "verification/development/BASE-01/probe/api-interfaces.json",
+  "native_assembly_evidence": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
   "native_analysis_enum": {
     "QuickYield": 143,
     "analysis_interface": "ZOSAPI.Analysis.Tolerancing.IAS_QuickYield"

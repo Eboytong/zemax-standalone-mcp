@@ -51,10 +51,10 @@
       "Wavelength": 1
     }
   },
-  "run": "outputs/runs/quickyield502_uniform_bf6c242375",
+  "run": ".local/runs/quickyield502_uniform_bf6c242375",
   "commands": [
-    ".venv/Scripts/python.exe -m pytest tests/test_quick_yield.py tests/test_protocol.py -q --junitxml=verification/development/TO-01/ordinary505-units.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_quick_yield_live.py::test_quick_yield_uniform_defocus_quantiles -q -s --run-zemax --junitxml=verification/development/TO-01/native507-uniform-reload.xml"
+    ".venv/Scripts/python.exe -m pytest tests/test_quick_yield.py tests/test_protocol.py -q --junitxml=.local/evidence/development/TO-01/ordinary505-units.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_quick_yield_live.py::test_quick_yield_uniform_defocus_quantiles -q -s --run-zemax --junitxml=.local/evidence/development/TO-01/native507-uniform-reload.xml"
   ],
   "ordinary_passed": 31,
   "native_passed": 1,

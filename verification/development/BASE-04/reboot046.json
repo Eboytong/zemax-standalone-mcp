@@ -42,7 +42,7 @@
   "startup_license": "ProfessionalEdition",
   "native_reports": [
     {
-      "path": "verification/development/ED-01/reboot046.xml",
+      "path": ".local/evidence/development/ED-01/reboot046.xml",
       "tests": 7,
       "failures": 0,
       "errors": 0
@@ -54,7 +54,7 @@
       "errors": 0
     },
     {
-      "path": "verification/development/EXT-EXPORT/cad-settings046.xml",
+      "path": ".local/evidence/development/EXT-EXPORT/cad-settings046.xml",
       "tests": 3,
       "failures": 0,
       "errors": 0
@@ -77,14 +77,14 @@
     "not_selected_native": 539,
     "report": "verification\\development\\BASE-04\\ordinary046.xml"
   },
-  "configuration_probe": "verification/development/EXT-EXPORT/cad-configuration046.json",
+  "configuration_probe": ".local/evidence/development/EXT-EXPORT/cad-configuration046.json",
   "fixed_failure": "CAD SetCurrentConfiguration encodes Configuration=0, not current positive model index; explicit SetSingleConfiguration(1/2) encodes 1/2.",
   "remaining_failures": [
     {
       "item": "EX-01.NETCallback",
       "result": "LoadNETCallback returned null",
       "execution": "Execute and callback Dispose not reached; application closed",
-      "evidence": "outputs/runs/net_callback_contract_85db66cbb5/callback-contract.json"
+      "evidence": ".local/runs/net_callback_contract_85db66cbb5/callback-contract.json"
     }
   ],
   "notes": [

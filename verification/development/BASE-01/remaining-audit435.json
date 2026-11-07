@@ -25,5 +25,5 @@
   "source_record_count": 142,
   "canonical_group_count": 131,
   "gate": "B0054/10; release0.1.60",
-  "queue": "docs/development-queue.json"
+  "queue": "development/generated/queue.json"
 }

@@ -9,7 +9,7 @@
     "native_deselected": 450,
     "seconds": 18.73,
     "new_tests": 24,
-    "evidence": "verification/development/BASE-03/ordinary022-final.xml",
+    "evidence": ".local/evidence/development/BASE-03/ordinary022-final.xml",
     "stdio_restart": "tests/test_history_stdio.py passed; two actual worker generations"
   },
   "examples": {
@@ -31,6 +31,6 @@
     "status": "passed",
     "wheel": "wheels/zemax_standalone_mcp-0.1.12-py3-none-any.whl",
     "install": "outputs/wheel-release022",
-    "smoke": "verification/development/BASE-03/wheel-smoke022.json"
+    "smoke": ".local/evidence/development/BASE-03/wheel-smoke022.json"
   }
 }

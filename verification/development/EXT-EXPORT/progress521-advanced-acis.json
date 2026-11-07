@@ -22,8 +22,8 @@
     }
   ],
   "actual_settings": "Task settings in declarations.json; formal IExportCAD FileType/FileVersion getters accepted before native Run",
-  "command": ".venv/Scripts/python.exe -m pytest tests/test_cad_advanced_acis_live.py -q -s --run-zemax --junitxml=verification/development/EXT-EXPORT/native521-advanced-acis.xml",
-  "run": "outputs/runs/cad521_advanced_acis_0ee39e58ce",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_cad_advanced_acis_live.py -q -s --run-zemax --junitxml=.local/evidence/development/EXT-EXPORT/native521-advanced-acis.xml",
+  "run": ".local/runs/cad521_advanced_acis_0ee39e58ce",
   "result": [
     {
       "format": "ASAT",
@@ -58,7 +58,7 @@
   ],
   "checks": "Native5211diagnostic passed; both requested native exports rejected, no file header/geometry to inspect",
   "retained_failure": {
-    "report": "verification/development/EXT-EXPORT/native520-advanced-acis.xml",
+    "report": ".local/evidence/development/EXT-EXPORT/native520-advanced-acis.xml",
     "reason": "Probe assumed initial task dispatch would succeed; corrected to collect initial refusal task and continue second format."
   },
   "lifecycle": "Both failed task native owners closed without cleanup warnings; source surfaces/system settings retained and session disconnected",

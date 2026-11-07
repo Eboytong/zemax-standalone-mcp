@@ -14,23 +14,23 @@
     "ordinary_passed": 1694,
     "ordinary_failures": 0,
     "native_cases_deselected": 539,
-    "report": "verification/development/BASE-04/ordinary055.xml",
+    "report": ".local/evidence/development/BASE-04/ordinary055.xml",
     "wheel": "wheels/zemax_standalone_mcp-0.1.45-py3-none-any.whl",
-    "independent_install": "verification/development/BASE-04/wheel-install045",
-    "stdio": "verification/development/BASE-04/stdio-smoke055.json",
+    "independent_install": ".local/evidence/development/BASE-04/wheel-install045",
+    "stdio": ".local/evidence/development/BASE-04/stdio-smoke055.json",
     "tool_count": 100,
     "analysis_kind_count": 90
   },
   "native_probe": {
     "attempts": 1,
     "state": "timeout_in_application_create",
-    "evidence": "verification/development/BASE-04/startup045.json",
+    "evidence": ".local/evidence/development/BASE-04/startup045.json",
     "api_license_status": "not reached",
     "minimal_model": "not reached",
     "owned_child_alive_after_cleanup": false
   },
   "callback": {
-    "interface_probe": "verification/development/EX-01/callback-contract045.json",
+    "interface_probe": ".local/evidence/development/EX-01/callback-contract045.json",
     "compilation": "passed",
     "offline_constructor": "NullReferenceException in APINetCallback constructor without a host",
     "host_execution": "not attempted",

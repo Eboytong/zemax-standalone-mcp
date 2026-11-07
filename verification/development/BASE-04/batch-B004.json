@@ -17,22 +17,22 @@
   ],
   "verification_state": "passed",
   "evidence": [
-    "verification/development/ED-01/scattering268.json",
-    "verification/development/ED-02/acceptance275.json",
-    "verification/development/ED-04/ray-aiming276/probe.json",
-    "verification/development/NS-01/progress282.json",
-    "verification/development/CV-01/acceptance287.json",
-    "verification/development/CV-01/acceptance295.json",
-    "verification/development/CV-01/acceptance300.json",
-    "verification/development/CV-02/acceptance310.json",
-    "verification/development/CV-01/acceptance314.json",
-    "verification/development/CV-01/acceptance325.json",
-    "verification/development/CV-01/acceptance337.json",
-    "verification/development/EX-01/acceptance348.json",
-    "verification/development/WP-01/acceptance362-gaussian.json"
+    ".local/evidence/development/ED-01/scattering268.json",
+    ".local/evidence/development/ED-02/acceptance275.json",
+    ".local/evidence/development/ED-04/ray-aiming276/probe.json",
+    ".local/evidence/development/NS-01/progress282.json",
+    ".local/evidence/development/CV-01/acceptance287.json",
+    ".local/evidence/development/CV-01/acceptance295.json",
+    ".local/evidence/development/CV-01/acceptance300.json",
+    ".local/evidence/development/CV-02/acceptance310.json",
+    ".local/evidence/development/CV-01/acceptance314.json",
+    ".local/evidence/development/CV-01/acceptance325.json",
+    ".local/evidence/development/CV-01/acceptance337.json",
+    ".local/evidence/development/EX-01/acceptance348.json",
+    ".local/evidence/development/WP-01/acceptance362-gaussian.json"
   ],
   "counting": "Unique completed functional items; blocked probes, duplicate rows and historical evidence maintenance excluded.",
   "current_item": "B004 concentrated regression, wheel0.1.60 and independent-install stdio gate",
-  "previous_batch": "verification/development/BASE-04/batch-B003.json",
-  "release_evidence": "verification/development/BASE-04/release060.json"
+  "previous_batch": ".local/evidence/development/BASE-04/batch-B003.json",
+  "release_evidence": ".local/evidence/development/BASE-04/release060.json"
 }

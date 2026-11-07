@@ -13,7 +13,7 @@
   "source": "User PROFILE.GRD G14SFN/GSF; SGRIN.DAT; owned plane Gradium surface with delta_z1..2, thickness1, step.01, wavelengths .58756/.55um",
   "documentation": "Installed2024R2 manual page index241 formula visually inspected; manual583-sgrin.json; GRADIUM formula244/245 retained437",
   "formula": "n(w)^2=n_ref^2+sum(K_i*(w^2-w_ref^2)/(w^2-L_i)); K_i,L_i polynomials in n_ref; w_ref=.58756um",
-  "command": ".venv/Scripts/python.exe -X utf8 tests/support/gradium_vertex_probe584.py verification/development/MA-01/probe584-vertex-index",
+  "command": ".venv/Scripts/python.exe -X utf8 tests/support/gradium_vertex_probe584.py .local/evidence/development/MA-01/probe584-vertex-index",
   "requests_and_actual": "probe584-vertex-index/probe.json retains all typed setup calls and source system/curve readbacks; each copy DeltaZ/RefN and GetIndex return2 recorded",
   "reference": "GRD polynomial and independent SGRIN dispersion evaluation, original atol1e-10+rtol1e-9",
   "native_reference_max_error": 3.3448140479563904e-08,

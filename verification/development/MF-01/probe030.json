@@ -2,7 +2,7 @@
   "work_package": "MF-01",
   "date": "2026-11-05",
   "opticstudio": "2024 R2",
-  "source": "verification/development/BASE-01/probe/api-interfaces.json and inventory029.json",
+  "source": ".local/evidence/development/BASE-01/probe/api-interfaces.json and inventory029.json",
   "analysis_ids": {
     "SagTable": 77,
     "ZemaxElementDrawing": 125,

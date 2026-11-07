@@ -2,7 +2,7 @@
   "item_id": "EX-01.UniversalPlot1D",
   "execution_state": "implemented",
   "date": "2026-11-06",
-  "native_parameter_probe": "outputs/runs/universal196_parameters_811b0a0b39/probe.json",
+  "native_parameter_probe": ".local/runs/universal196_parameters_811b0a0b39/probe.json",
   "implemented_parameters": {
     "Radius": 0,
     "Curvature": 1,
@@ -11,15 +11,15 @@
   "readback": "Native text parameter label and surface identity plus coordinate/sample checks; curvature uses reciprocal lens units.",
   "rejected_assumption": "Parameter3 is not adopted as Conic in controlled Standard surface; native resets to Radius despite ModifySettings returning True. Not publicly exposed.",
   "checks": {
-    "ordinary": "verification/development/EX-01/ordinary197.xml",
+    "ordinary": ".local/evidence/development/EX-01/ordinary197.xml",
     "ordinary_passed": 108,
-    "native": "verification/development/EX-01/native197.xml",
+    "native": ".local/evidence/development/EX-01/native197.xml",
     "native_passed": 3
   },
   "runs": [
-    "outputs/runs/universal197_Thickness_b664440658",
-    "outputs/runs/universal197_Radius_83dbe91137",
-    "outputs/runs/universal197_Curvature_a45db86cd6"
+    ".local/runs/universal197_Thickness_b664440658",
+    ".local/runs/universal197_Radius_83dbe91137",
+    ".local/runs/universal197_Curvature_a45db86cd6"
   ],
   "remaining": [
     "General surface/system/configuration/NSC selectors and operand/merit contracts",

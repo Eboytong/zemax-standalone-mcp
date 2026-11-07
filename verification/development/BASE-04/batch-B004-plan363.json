@@ -1,12 +1,12 @@
 {
   "batch_id": "B004",
   "version": "0.1.60",
-  "ordinary_report": "verification/development/BASE-04/ordinary363-b004.xml",
+  "ordinary_report": ".local/evidence/development/BASE-04/ordinary363-b004.xml",
   "ordinary_passed": 2237,
-  "native_report": "verification/development/BASE-04/native-wheel060-b004-364.xml",
-  "installation": "verification/development/BASE-04/wheel-install060-b004-364",
-  "final_installation": "verification/development/BASE-04/wheel-install060-b004-final365",
-  "schema": "verification/development/BASE-04/schema060-b004-final365/summary.json",
+  "native_report": ".local/evidence/development/BASE-04/native-wheel060-b004-364.xml",
+  "installation": ".local/evidence/development/BASE-04/wheel-install060-b004-364",
+  "final_installation": ".local/evidence/development/BASE-04/wheel-install060-b004-final365",
+  "schema": ".local/evidence/development/BASE-04/schema060-b004-final365/summary.json",
   "final_delta": "Only Gaussian connected-capability verification string changed from in_progress to accepted; final package receives targeted Gaussian lifecycle/capability regression after serial batch.",
   "native_scope": "Ten B004 functional IDs plus ZPL solve name boundary regression, sequential modeling and Gaussian POP reference. Modeling test retains own source stdio launcher and is counted separately from installed-wheel cases.",
   "preserved_numeric_conditions": [

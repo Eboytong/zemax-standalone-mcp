@@ -1,7 +1,7 @@
 {
   "version": "0.1.59",
   "batch_id": "B003",
-  "installation": "verification/development/BASE-04/wheel-install059-b003",
+  "installation": ".local/evidence/development/BASE-04/wheel-install059-b003",
   "wheel": "wheels/zemax_standalone_mcp-0.1.59-py3-none-any.whl",
   "tests": [
     "tests/test_geometry_reference_live.py::test_native_plane_slabs[2]",
@@ -20,6 +20,6 @@
     "tests/test_universal_cancel_live.py",
     "tests/test_analyses_live.py"
   ],
-  "ordinary": "verification/development/BASE-04/ordinary262-b003.xml",
-  "native": "verification/development/BASE-04/native-wheel059-b003.xml"
+  "ordinary": ".local/evidence/development/BASE-04/ordinary262-b003.xml",
+  "native": ".local/evidence/development/BASE-04/native-wheel059-b003.xml"
 }

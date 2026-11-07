@@ -5,20 +5,20 @@
   "verification_state": "passed",
   "wheel": "wheels/zemax_standalone_mcp-0.1.61-py3-none-any.whl",
   "wheel_sha256": "537873d259c881dc5d400e258846f58d5e8980136cb4f7284a17d12172bb9069",
-  "installation": "verification/development/BASE-04/wheel-install061-final",
+  "installation": ".local/evidence/development/BASE-04/wheel-install061-final",
   "ordinary_passed": 2381,
   "ordinary_skipped": 741,
   "ordinary_failures": 0,
-  "ordinary_evidence": "verification/development/BASE-04/batch-B005-ordinary-final.xml",
+  "ordinary_evidence": ".local/evidence/development/BASE-04/batch-B005-ordinary-final.xml",
   "initial_ordinary_failures": {
     "count": 4,
     "cause": "Generic analysis scenario coverage omitted required inputs for IMA/BIM viewer, Ray Database viewer and both Power Maps.",
     "resolution": "Routed those requests to their specialized native test owners; scenario module passed 62 tests and final full suite passed.",
-    "evidence": "verification/development/BASE-04/batch-B005-ordinary.xml"
+    "evidence": ".local/evidence/development/BASE-04/batch-B005-ordinary.xml"
   },
   "native_passed": 12,
   "native_failures": 0,
-  "native_evidence": "verification/development/BASE-04/batch-B005-native-final.xml",
+  "native_evidence": ".local/evidence/development/BASE-04/batch-B005-native-final.xml",
   "native_cases": [
     "IMA/BIM typed reader and bitmap conversion/lifecycle (2)",
     "ZRD reader/filter/segments/cancellation/close (2)",
@@ -29,7 +29,7 @@
   "analysis_kind_count": 110,
   "schema_evidence": "docs/tool-schemas.json",
   "installed_stdio": {
-    "evidence": "outputs/runs/release061_installed_stdio_final_bf7a9c780a",
+    "evidence": ".local/runs/release061_installed_stdio_final_bf7a9c780a",
     "version": "0.1.61",
     "opticstudio": "24.2.0 build 240529",
     "analysis_kind_count": 110,

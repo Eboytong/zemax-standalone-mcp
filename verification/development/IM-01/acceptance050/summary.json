@@ -3,11 +3,11 @@
   "ordinary_passed": 1702,
   "native_wheel_passed": 3,
   "reports": [
-    "verification/development/ED-04/native050.xml",
-    "verification/development/IM-01/native050.xml",
-    "verification/development/IM-01/bmp050.xml",
-    "verification/development/IM-01/native050-final.xml",
-    "verification/development/BASE-04/wheel-native048.xml"
+    ".local/evidence/development/ED-04/native050.xml",
+    ".local/evidence/development/IM-01/native050.xml",
+    ".local/evidence/development/IM-01/bmp050.xml",
+    ".local/evidence/development/IM-01/native050-final.xml",
+    ".local/evidence/development/BASE-04/wheel-native048.xml"
   ],
   "runs": [
     {

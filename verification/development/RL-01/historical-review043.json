@@ -50,7 +50,7 @@
     }
   ],
   "solve_cases": {
-    "source": "verification/development/ED-02/final-cases018/cases.json",
+    "source": ".local/evidence/development/ED-02/final-cases018/cases.json",
     "persistence_passed": [
       "marginal_ray_angle.radius",
       "chief_ray_angle.radius",

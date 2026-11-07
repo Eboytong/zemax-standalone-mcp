@@ -88,7 +88,7 @@
 
 最近发行证据：
 
-当前版本发行记录：verification/development/BASE-04/release060.json。
+当前版本发行记录：.local/evidence/development/BASE-04/release060.json。
 - 普通检查通过：2237 项。
 
 以上检查数量属于对应发行记录；本轮新增执行另存证据，历史执行与当前执行分别记录。

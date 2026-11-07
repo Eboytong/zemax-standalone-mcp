@@ -16,6 +16,6 @@ class Config:
     def from_env(cls):
         return cls(
             Path(os.environ.get("ZEMAX_INSTALL_DIR", str(DEFAULT_INSTALL))).resolve(),
-            Path(os.environ.get("ZEMAX_OUTPUT_DIR", str(PROJECT_ROOT / "outputs" / "runs"))).resolve(),
+            Path(os.environ.get("ZEMAX_OUTPUT_DIR", str(PROJECT_ROOT / ".local" / "runs"))).resolve(),
         )
 

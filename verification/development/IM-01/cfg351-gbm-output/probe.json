@@ -291,7 +291,7 @@
       "closed": true
     }
   ],
-  "manual": "verification/development/BASE-01/manual349-modifysettings.txt",
+  "manual": ".local/evidence/development/BASE-01/manual349-modifysettings.txt",
   "connect": {
     "connected": true,
     "native_system_status": "",

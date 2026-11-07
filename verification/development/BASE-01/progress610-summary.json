@@ -9,7 +9,7 @@
   "batch_target": 10,
   "new_completed": [],
   "evidence": [
-    "verification/development/CV-01/progress610-coherent-pupil.json"
+    ".local/evidence/development/CV-01/progress610-coherent-pupil.json"
   ],
   "checks": {
     "ordinary610_passed": 25,

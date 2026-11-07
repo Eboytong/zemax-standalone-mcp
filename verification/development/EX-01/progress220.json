@@ -2,7 +2,7 @@
   "item_id": "EX-01.UniversalPlot1D",
   "execution_state": "implemented",
   "date": "2026-11-06",
-  "native_parameter_probe": "outputs/runs/universal218_system_afe8a26176/probe.json",
+  "native_parameter_probe": ".local/runs/universal218_system_afe8a26176/probe.json",
   "system_parameters": {
     "Aperture": 0,
     "ApodizationFactor": 4,
@@ -15,26 +15,26 @@
     "native text variable/operand identity and coordinates; existing owned copy and cleanup"
   ],
   "checks": {
-    "ordinary": "verification/development/EX-01/ordinary220.xml",
+    "ordinary": ".local/evidence/development/EX-01/ordinary220.xml",
     "ordinary_passed": 123,
-    "native": "verification/development/EX-01/native220.xml",
+    "native": ".local/evidence/development/EX-01/native220.xml",
     "native_passed": 3
   },
   "runs": [
     {
-      "path": "outputs/runs/universal219_system_51e92f7d83",
+      "path": ".local/runs/universal219_system_51e92f7d83",
       "numeric_checks": 12,
       "normal_close": true,
       "disconnect": true
     },
     {
-      "path": "outputs/runs/universal206_TTHI_66eb1b6bbc",
+      "path": ".local/runs/universal206_TTHI_66eb1b6bbc",
       "numeric_checks": 15,
       "normal_close": true,
       "disconnect": true
     },
     {
-      "path": "outputs/runs/universal206_CVVA_b137ff0e52",
+      "path": ".local/runs/universal206_CVVA_b137ff0e52",
       "numeric_checks": 15,
       "normal_close": true,
       "disconnect": true
