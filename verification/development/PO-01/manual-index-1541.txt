@@ -1,0 +1,42 @@
+EXD_DISPLAYSIZE: The display size.
+EXD_FIELD: The field number.
+EXD_FILESIZE: The file size.
+EXD_WAVE: The wavelength number.
+ExtendedDiffraction Image
+Analysis
+XSE_FIELD: Field number (1, .., n)
+XSE_FIELDSIZE: Field Size
+XSE_WAVE: Wavelength (0 = "All", 1, ...n)
+XSE_KRAYS: Rays x 1000
+XSE_IMANAME: *.IMA File name
+XSE_SURFACE: Surface number
+XSE_MAXRAD: Maximum Radial Distance
+XSE_TYPE: Type of the Data (1 = "Encircled", 2 = "X Only", 3 = "Y Only", etc.)
+XSE_REF: Reference to (0 = "Chief Ray", 1 = "Centroid", 2 = "Vertex")
+XSE_POLARIZATION: Use Polarization flag (0 for off, 1 for on)
+XSE_REMVIGNET: Remove Vignetting Factors flag
+XSE_MULDIFFLI: Multiply by Diffraction Limit flag
+Extended Source Encircled
+Energy
+LSF_COHERENT: Use 0 for incoherent, 1 for coherent
+LSF_TYPE:Use 0-9 for X-Linear, Y-Linear, X-Log, Y-Log, X-Phase, Y-Phase, X-Real, Y-Real,
+X-Imaginary, or Y-Imaginary, respectively.
+LSF_SAMP: The sampling, use 1 for 32 x 32, 2 for 64 x 64, etc.
+LSF_SPREAD: Use 0 for line, 1 for edge.
+LSF_WAVE: The wavelength number, use 0 for polychromatic (incoherent only).
+LSF_FIELD: The field number.
+LSF_POLARIZATION: Use 0 for unpolarized, 1 for polarized.
+LSF_PLOTSCALE: The plot scale.
+FFT Line/Edge Spread
+PSF_TYPE: Use 0-4 for Linear, Log, Phase, Real, or Imaginary, respectively.
+PSF_SAMP: The sampling, use 1 for 32 x 32, 2 for 64 x 64, etc.
+PSF_WAVE: The wavelength number, use 0 for polychromatic.
+PSF_FIELD: The field number.
+PSF_SURFACE: The surface number, use 0 for image.
+PSF_POLARIZATION: Use 0 for unpolarized, 1 for polarized.
+PSF_NORMALIZE: Use 0 for unnormalized, 1 for unity normalization.
+PSF_IMAGEDELTA: The image point spacing in micrometers.
+FFT PSF
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1542
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Programming Tab

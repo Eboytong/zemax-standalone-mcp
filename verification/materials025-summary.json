@@ -1,0 +1,108 @@
+{
+  "version": "0.1.15",
+  "date": "2026-11-05",
+  "status": "in_progress",
+  "work_package": "MA-01",
+  "tools": 93,
+  "analysis_kinds": 61,
+  "ordinary": {
+    "passed": 1103,
+    "new_tests": 33,
+    "native_deselected": 478,
+    "seconds": 20.67,
+    "evidence": "verification/development/MA-01/ordinary025-final.xml",
+    "previous": "ordinary025.xml passed1102; ordinary025-error-retention.xml records a test using missing Exception.message; corrected to str(exception)"
+  },
+  "native": {
+    "status": "not_run",
+    "actual_settings": null,
+    "numeric_errors": null,
+    "instance": "none started",
+    "environment": "OpticStudio 2024 R2; Python 3.14.6; catalog reference data, sequential transmission analysis",
+    "license": "not established",
+    "reason": "BASE-04 180s initialization timeout; environment change not observed",
+    "evidence": "verification/development/BASE-04/connection019/supervisor.json",
+    "prepared": "tests/test_materials_live.py",
+    "prepared_count": 2,
+    "reference": {
+      "method": "Beer-Lambert T(d/2)=sqrt(T(d)) at native catalog IT table wavelength",
+      "atol": 1e-06,
+      "rtol": 1e-05
+    },
+    "remaining": [
+      "catalog and material selection",
+      "coefficient and data point zero-based indexing",
+      "table wavelength/thickness units and reference conditions",
+      "native transmittance and closure",
+      "four graph runtime settings and numerical references"
+    ]
+  },
+  "release": {
+    "status": "passed",
+    "wheel": "wheels/zemax_standalone_mcp-0.1.15-py3-none-any.whl",
+    "install": "outputs/wheel-release025",
+    "smoke": "verification/development/MA-01/wheel-smoke025.json",
+    "stdio_closed": true,
+    "initial": "wheel-smoke025-initial.json records unnecessary working-model prerequisite; removed, rebuilt, smoke passed"
+  },
+  "items": [
+    {
+      "item_id": "MA-01.InternalTransmissionvsWavelength",
+      "status": "implemented",
+      "request": {
+        "kind": "internal_transmission_vs_wavelength",
+        "catalog": "SCHOTT",
+        "glasses": [
+          "N-BK7"
+        ],
+        "thickness_mm": 10
+      },
+      "settings": "IAS_InternalTransmissionvsWavelength writes, clears unused slots and final readback",
+      "actual_settings": null,
+      "results": "native curves/grid/text/headers/messages, series pages and plots",
+      "close": "existing analysis task owner; native acceptance pending"
+    },
+    {
+      "item_id": "MA-01.MaterialProperties",
+      "status": "implemented",
+      "request": {
+        "catalog": "SCHOTT",
+        "material": "N-BK7",
+        "table_start": 0,
+        "table_count": 200
+      },
+      "settings": "IMaterialsCatalog selectors checked before/after reads",
+      "actual_settings": null,
+      "results": "named coefficients, raw thermal/mechanical properties, paged IT and birefringence tables",
+      "close": "owned directory tool in finally; ordinary success/failure and original-error retention passed"
+    },
+    {
+      "item_id": "MA-01.DispersionDiagram",
+      "status": "blocked",
+      "reason": "no dedicated static settings interface in full installed inventory; runtime/CFG adoption probe needs restored startup",
+      "release_condition": "restore CreateNewApplication; discover runtime GetSettings/official CFG and confirm actual settings/result layout",
+      "probe": "verification/development/MA-01/probe025.json"
+    },
+    {
+      "item_id": "MA-01.GlassMap",
+      "status": "blocked",
+      "reason": "no dedicated static settings interface in full installed inventory; runtime/CFG adoption probe needs restored startup",
+      "release_condition": "restore CreateNewApplication; discover runtime GetSettings/official CFG and confirm actual settings/result layout",
+      "probe": "verification/development/MA-01/probe025.json"
+    },
+    {
+      "item_id": "MA-01.AthermalGlassMap",
+      "status": "blocked",
+      "reason": "no dedicated static settings interface in full installed inventory; runtime/CFG adoption probe needs restored startup",
+      "release_condition": "restore CreateNewApplication; discover runtime GetSettings/official CFG and confirm actual settings/result layout",
+      "probe": "verification/development/MA-01/probe025.json"
+    },
+    {
+      "item_id": "MA-01.DispersionvsWavelength",
+      "status": "blocked",
+      "reason": "no dedicated static settings interface in full installed inventory; runtime/CFG adoption probe needs restored startup",
+      "release_condition": "restore CreateNewApplication; discover runtime GetSettings/official CFG and confirm actual settings/result layout",
+      "probe": "verification/development/MA-01/probe025.json"
+    }
+  ]
+}

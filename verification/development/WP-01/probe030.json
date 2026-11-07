@@ -1,0 +1,61 @@
+{
+  "item_ids": ["TO-01.QuickYield", "TO-01.ToleranceYield", "TO-01.ToleranceHistogram", "WP-01"],
+  "probe_kind": "installed public DLL reflection plus source/test inspection",
+  "date": "2026-11-05",
+  "opticstudio": "2024 R2",
+  "native_assembly_evidence": "verification/development/BASE-01/probe/api-interfaces.json",
+  "native_analysis_enum": {
+    "QuickYield": 143,
+    "analysis_interface": "ZOSAPI.Analysis.Tolerancing.IAS_QuickYield"
+  },
+  "settings": {
+    "Configuration": "Int32, readable and writable",
+    "NumMonteCarlo": "Int32, readable and writable",
+    "PupilSampling": "Int32, readable and writable",
+    "Statistic": "MonteCarloStatistics, readable and writable",
+    "Precision": "QYPrecisions, readable and writable",
+    "Compensation": "QYCompensations, readable and writable",
+    "CompensatorStrategy": "QYCompensatorStrategy, readable and writable",
+    "QYField": "read-only IAS_QYField child; SetFieldUser(Int32) returns IMessage; GetFieldUser() reads selected field"
+  },
+  "enums": {
+    "MonteCarloStatistics": {"Normal": 0, "Uniform": 1, "Parabolic": 2},
+    "QYPrecisions": {"Standard": 0, "High": 1, "VeryHigh": 2},
+    "QYCompensations": {"Standard": 0, "High": 1, "VeryHigh": 2},
+    "QYCompensatorStrategy": {"OptimizeAllDampedLeastSquares": 0, "ParaxialFocus": 1, "Ignore": 2, "OptimizeAllOrthogonalDescent": 3},
+    "AnalysisErrorType": {"Success": 0, "InvalidParameter": 1, "InvalidSettings": 2, "Failed": 3}
+  },
+  "tolerance_distribution_interfaces": {
+    "ToleranceYield": {
+      "analysis_enum": 145,
+      "interface": "ZOSAPI.Analysis.Tolerancing.IAS_TolerancingYield",
+      "writable": ["Filename", "Operand"],
+      "methods": ["UseSystemTolerances()", "GetOperands()", "GetToleranceFiles()"]
+    },
+    "ToleranceHistogram": {
+      "analysis_enum": 146,
+      "interface": "ZOSAPI.Analysis.Tolerancing.IAS_TolerancingHistogram",
+      "writable": ["Filename", "Operand", "MinValue", "MaxValue", "NumBins"],
+      "methods": ["UseSystemTolerances()", "GetOperands()", "GetToleranceFiles()"]
+    },
+    "histogram_result_object": {
+      "interface": "ZOSAPI.Tools.Tolerancing.ITolerancingHistogram",
+      "read_only": ["NumberOfBins", "BinCounts", "BinValues", "Underflow", "Overflow"],
+      "mapping_status": "No live result association established; run-time output correspondence is pending."
+    }
+  },
+  "existing_related_adapters": {
+    "run_pop": "typed beam/fiber modes, parameter metadata and readback, analysis task, result beam file and coupling metrics; tests include live native receiver/mode references",
+    "get_beam_file": "text/binary ZBF v1, polarized complex fields, paged samples and optional coordinates; ordinary malformed-input/pagination tests exist"
+  },
+  "runtime_execution": {
+    "attempted_this_turn": false,
+    "reason": "Existing BASE-04 connection record shows initialization_timeout after 180.526 seconds; no environment change was available, so the native process was not started again.",
+    "required_to_close": "Successful OpticStudio connection and licensed sequential system; run QuickYield against controlled tolerance operands, capture actual settings/output and close state."
+  },
+  "ordinary_tests": {
+    "command": ".venv/Scripts/python.exe -m pytest tests/test_quick_yield.py tests/test_basic_analyses.py tests/test_files_and_analysis.py tests/test_tolerancing_live.py tests/test_tolerance_special_analyses_live.py -q",
+    "result": "40 passed, 2 native skipped in 0.91s"
+  },
+  "implementation_state": "QuickYield, ToleranceYield and ToleranceHistogram request/dispatch adapters implemented; native execution/value acceptance pending"
+}

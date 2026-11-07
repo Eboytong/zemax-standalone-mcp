@@ -1,0 +1,12 @@
+[
+  {
+    "request": {
+      "kind": "zernike_coefficients_vs_field"
+    }
+  },
+  {
+    "request": {
+      "kind": "interferogram"
+    }
+  }
+]

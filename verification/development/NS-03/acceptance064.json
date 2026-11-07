@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-05",
+  "item_id": "NS-03.NSCGeometricMtf",
+  "state": "implemented",
+  "version": "0.1.56; B001 3/10",
+  "native": "OpticStudio 24.2.0 build 240529 PremiumEdition",
+  "executed": "Current detector and staged ZRD with H2 filter; 7x5 and 32x16 asymmetric grids; 600 MTF ordinates each, native settings/readback, pagination, four image exports, close and disconnect, object state preserved.",
+  "reference": "A single occupied pixel/point image has normalized discrete Fourier magnitude 1.",
+  "tolerance": "Original absolute 1e-7 + relative 1e-7 * reference = 2e-7; unchanged",
+  "max_absolute_error": 9.875124906688626e-7,
+  "reference_passed": false,
+  "diagnostic": "Deviation is unchanged by disabling UsePixelInterpolation, changing grid to 32x16, and selecting current detector versus ZRD. These probes exclude those settings as the cause under the tested conditions; algorithm cause remains open.",
+  "evidence": [
+    "verification/development/NS-03/native064-mtf.xml",
+    "verification/development/NS-03/native064-diagnostic.xml",
+    "outputs/runs/illumination028_mtf_1795a110de",
+    "outputs/runs/illumination028_mtf_a499dfd60b",
+    "outputs/runs/nsc_mtf064_diagnostic_7474b19604/numerical-diagnostic.json"
+  ],
+  "checks": "115 targeted ordinary tests passed: verification/development/NS-02/ordinary064-focused.xml. Diagnostic test passing means the four outcomes were captured; it does not mean the MTF numeric reference passed.",
+  "next_action": "Inspect installed native point MTF computation/text and independent multiple-pixel Fourier references; retain error and tolerance. Continue other executable NSC topics.",
+  "release_checks": "No full regression, wheel build or independent installation before ten unique completions."
+}

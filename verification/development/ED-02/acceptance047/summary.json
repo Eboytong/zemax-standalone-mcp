@@ -1,0 +1,12 @@
+{
+  "version": "0.1.46",
+  "date": "2026-11-05",
+  "ordinary_report": "verification/development/ED-02/ordinary047.xml",
+  "ordinary_passed": 100,
+  "matrix_states": {
+    "persistence_passed": 37,
+    "failed": 4
+  },
+  "remaining_material_error": "Six wavelength/two-angle Snell check: rounded Abbe=59.99988524798844 vs 60, atol=1e-5 rtol=1e-7; retain failure; offset/substitute reference not reached.",
+  "artifacts": "verification\\development\\ED-02\\acceptance047"
+}

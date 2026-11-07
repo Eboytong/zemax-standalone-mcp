@@ -1,0 +1,62 @@
+{
+  "item_id": "CV-01.SeidelDiagram",
+  "version": "0.1.34",
+  "date": "2026-11-05",
+  "status": "implemented",
+  "request": {
+    "request": {
+      "kind": "seidel_diagram"
+    }
+  },
+  "probe": {
+    "source": "verification/development/BASE-01/probe/api-interfaces.json",
+    "interface": {
+      "properties": [
+        {
+          "name": "IgnoreChromatic",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IgnoreDistortion",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SuppressFrame",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "PlotScale",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    }
+  },
+  "implementation": "Four writable settings use checked_setting; shared Analysis execution, native text/series/grid retrieval, cancel and close",
+  "native": {
+    "status": "not_run",
+    "reason": "BASE-04 initialization timeout of 180.578 seconds",
+    "next_action": "Restore startup; run Cooke baseline; verify settings and display switches, native axes/units/result shape; compare SeidelCoefficients; save/reload and successful/failed/cancelled resource closure"
+  },
+  "ordinary": {
+    "passed": 1425,
+    "failures": 0,
+    "errors": 0,
+    "deselected": 506,
+    "report": "verification/development/CV-01/ordinary044.xml"
+  },
+  "release": {
+    "status": "passed",
+    "wheel": "wheels/zemax_standalone_mcp-0.1.34-py3-none-any.whl",
+    "independent_install": "verification/development/CV-01/wheel-install034",
+    "stdio_smoke": "verification/development/CV-01/stdio-smoke044.json"
+  }
+}

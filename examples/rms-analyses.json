@@ -1,0 +1,43 @@
+[
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "rms_vs_field"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "rms_vs_focus"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "through_focus_spot"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "rms_field_map",
+        "field": 1,
+        "wavelength": 1,
+        "data_type": "SpotRadius",
+        "method": "RectArray",
+        "sampling": "S_64x64",
+        "x_field_size": 4.0,
+        "y_field_size": 2.0,
+        "x_field_sampling": 7,
+        "y_field_sampling": 5
+      }
+    }
+  }
+]

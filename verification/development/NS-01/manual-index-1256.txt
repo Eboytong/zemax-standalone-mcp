@@ -1,0 +1,40 @@
+Each tolerance operand also has a minimum and maximum value. These values refer to the maximum acceptable
+change from the nominal value. Each operand also has space for an optional comment to make the tolerance set
+easier to read. The available tolerance operands are listed in the following table, and are described in detail below.
+Summary ofTolerance Operands
+ISOA Tolerance on peak-to-valley power
+ISOB Tolerance on total peak-to-valley irregularity
+ISOC Peak-to-valley rotationally symmetric irregularity (RSI)
+ISOD RMS total irregularity
+TRAD Tolerance on surface radius of curvature in lens units
+TCUR Tolerance on surface curvature in inverse lens units
+TFRN Tolerance on surface radius of curvature in fringes
+TTHI Tolerance on thickness or position in lens units
+TCON Tolerance on conic constant (dimensionless)
+TSDI Tolerance on clear semi-diameter or semi-diameter in lens units
+TSDR Tolerance on Standard surface radial decenter in lens units
+TSDX Tolerance on Standard surface x-decenter in lens units
+TSDY Tolerance on Standard surface y-decenter in lens units
+TSTX Tolerance on Standard surface tilt x in degrees
+TSTY Tolerance on Standard surface tilt y in degrees
+TIRX Tolerance on Standard surface tilt in x in lens units
+TIRY Tolerance on Standard surface tilt in y in lens units
+TIRR Tolerance on Standard surface irregularity
+TEXI Tolerance on surface irregularity using Zernike Fringe polynomials
+TEZI Tolerance on surface irregularity using Zernike Standard polynomials
+TPAI Tolerance on the inverse of parameter value of surface
+TPAR Tolerance on parameter value of surface
+TIND Tolerance on index of refraction of surface
+TABB Tolerance on Abbe number of surface
+TCMU Tolerance on coating multiplier of surface
+TCIO Tolerance on coating index offset of surface
+TCEO Tolerance on coating extinction offset of surface
+TEDR Tolerance on element radial decenter in lens units
+TEDX Tolerance on element x-decenter in lens units
+TEDY Tolerance on element y-decenter in lens units
+TETX Tolerance on element tilt about x in degrees
+TETY Tolerance on element tilt about y in degrees
+TETZ Tolerance on element tilt about z in degrees
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1257
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Tolerance Tab

@@ -1,0 +1,121 @@
+[
+  {
+    "tool": "run_design_tool",
+    "arguments": {
+      "request": {
+        "kind": "scale_factor",
+        "factor": 2
+      }
+    }
+  },
+  {
+    "tool": "run_design_tool",
+    "arguments": {
+      "request": {
+        "kind": "scale_units",
+        "unit": "Inches"
+      }
+    }
+  },
+  {
+    "tool": "run_design_tool",
+    "arguments": {
+      "request": {
+        "kind": "quick_adjust",
+        "surface": 6
+      }
+    }
+  },
+  {
+    "tool": "run_design_tool",
+    "arguments": {
+      "request": {
+        "kind": "find_best_asphere",
+        "first_surface": 1,
+        "last_surface": 6,
+        "asphere_type": "Polynomial_4thOrder"
+      }
+    }
+  },
+  {
+    "tool": "run_design_tool",
+    "arguments": {
+      "request": {
+        "kind": "convert_asphere",
+        "surface": 2,
+        "asphere_type": "ExtendedAsphere",
+        "number_of_terms": 8
+      }
+    }
+  },
+  {
+    "tool": "run_design_tool",
+    "arguments": {
+      "request": {
+        "kind": "ray_aiming_wizard"
+      }
+    }
+  },
+  {
+    "tool": "run_design_tool",
+    "arguments": {
+      "request": {
+        "kind": "ray_aiming_wizard",
+        "apply": true
+      }
+    }
+  },
+  {
+    "tool": "run_optimization_wizard",
+    "arguments": {
+      "request": {
+        "kind": "sequential",
+        "criterion": "Spot",
+        "type": "RMS",
+        "use_gaussian_quadrature": true,
+        "rings": 3,
+        "apply": true
+      }
+    }
+  },
+  {
+    "tool": "run_optimization_wizard",
+    "arguments": {
+      "request": {
+        "kind": "nsc"
+      }
+    }
+  },
+  {
+    "tool": "run_optimization_wizard",
+    "arguments": {
+      "request": {
+        "kind": "bitmap"
+      }
+    }
+  },
+  {
+    "tool": "run_optimization_wizard",
+    "arguments": {
+      "request": {
+        "kind": "roadway"
+      }
+    }
+  },
+  {
+    "tool": "get_design_tool_options",
+    "arguments": {
+      "request": {
+        "kind": "scale_factor"
+      }
+    }
+  },
+  {
+    "tool": "get_optimization_wizard_options",
+    "arguments": {
+      "request": {
+        "kind": "bitmap"
+      }
+    }
+  }
+]

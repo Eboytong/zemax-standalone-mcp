@@ -1,0 +1,14 @@
+Most of the options are identical to the Standard Spot Diagram.
+Delta Focus: The delta focus option is only used if through-focus spot diagrams are selected. For focal systems,
+delta focus is the Z-axis spacing between the spot diagrams in micrometers. For afocal systems, delta focus is the
+opticalpower spacingbetweenthe spotdiagrams indiopters. Five spotdiagramswillbe shownfor eachfieldposition.
+The defocus will be -2, -1, 0, 1, and 2 times the delta focus provided. The delta focus units are in microns. For some
+systems the default delta focus may be too small to cause a change in the spot diagram structure.
+Discussion
+The through focus spot diagrams are usefulfor estimating astigmatism, orfor analyzing bestfocus or depth offocus.
+The Direction Cosine option is not supported.
+3.2.1.6. Full Field Spot Diagram
+Shows spot diagram with all field points on a common scale.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 719
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

@@ -1,0 +1,18 @@
+{
+  "plane_model_condition": "顺序平面模型，曲面1为光阑；MFE第1行为TTHI曲面1至2、target=1、weight=1",
+  "general_operand": {"request": {
+    "kind": "universal_plot_1d", "category": "System", "parameter": "Aperture",
+    "start": 4, "stop": 8, "samples": 3,
+    "target": {"mode": "operand", "operand": "REAY", "parameters": [1, 1, 0, 0, 0, 0.5]}
+  }},
+  "merit_grid": {"request": {
+    "kind": "universal_plot_2d",
+    "x": {"surface": 1, "start": 2, "stop": 6, "samples": 5},
+    "y": {"surface": 2, "start": 3, "stop": 5, "samples": 3},
+    "target": {"mode": "merit", "line": 0}
+  }},
+  "merit_line": {"request": {
+    "kind": "universal_plot_1d", "surface": 1, "start": 2, "stop": 4, "samples": 3,
+    "target": {"mode": "merit", "line": 1}
+  }}
+}

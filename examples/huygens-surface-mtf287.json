@@ -1,0 +1,45 @@
+{
+  "calls": [
+    {
+      "tool": "run_analysis",
+      "arguments": {
+        "request": {
+          "kind": "huygens_surface_mtf",
+          "field": 3,
+          "wavelength": 1,
+          "sampling": "S_256x256",
+          "image_sampling": "S_512x512",
+          "image_delta": 1,
+          "mtf_type": "MTF_Incoherent"
+        }
+      }
+    },
+    {
+      "tool": "get_task_status",
+      "arguments": {
+        "task_id": "<task_id>"
+      }
+    },
+    {
+      "tool": "get_task_result",
+      "arguments": {
+        "task_id": "<task_id>",
+        "grid": 0,
+        "x_start": 253,
+        "y_start": 254,
+        "width": 7,
+        "height": 5
+      }
+    },
+    {
+      "tool": "export_analysis_image",
+      "arguments": {
+        "request": {
+          "task_id": "<task_id>",
+          "path": "<absolute output directory>/surface.png"
+        }
+      }
+    }
+  ],
+  "notes": "Connect and open a Sequential lens first. Poll to terminal before reading/exporting; disconnect when complete. ImageDelta is micrometers; frequency grid uses current MTF units."
+}

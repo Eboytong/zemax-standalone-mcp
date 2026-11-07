@@ -1,0 +1,577 @@
+{
+  "version": "0.1.60",
+  "date": "2026-11-07",
+  "batch_id": "B004",
+  "verification_state": "passed",
+  "wheel": "wheels/zemax_standalone_mcp-0.1.60-py3-none-any.whl",
+  "installation": "verification/development/BASE-04/wheel-install060-b004-final365",
+  "ordinary_passed": 2237,
+  "ordinary_native_deselected": 702,
+  "ordinary_evidence": "verification/development/BASE-04/ordinary363-b004.xml",
+  "native_test_executions": 30,
+  "native_installed_wheel_executions": 29,
+  "native_source_regression_executions": 1,
+  "native_unique_cases": 29,
+  "native_installed_wheel_unique_cases": 28,
+  "native_reports": [
+    "verification/development/BASE-04/native-wheel060-b004-364.xml",
+    "verification/development/BASE-04/native-wheel060-final365.xml"
+  ],
+  "schema_smoke": "verification/development/BASE-04/schema060-b004-final365/summary.json",
+  "tool_count": 100,
+  "analysis_kind_count": 100,
+  "final_package_delta": "Connected Gaussian capabilities status metadata changed to accepted after initial cross-module package; final package installed in fresh target and Gaussian lifecycle plus connected capability readback repeated successfully. All analysis implementation code identical between packages.",
+  "native_test_cases": [
+    {
+      "classname": "tests.test_material_offset_reference_live",
+      "name": "test_material_offset_dispersion_definition[visible]",
+      "time": "13.256"
+    },
+    {
+      "classname": "tests.test_material_offset_reference_live",
+      "name": "test_material_offset_dispersion_definition[boundary]",
+      "time": "12.896"
+    },
+    {
+      "classname": "tests.test_material_offset_reference_live",
+      "name": "test_material_offset_dispersion_definition[below_visible]",
+      "time": "12.007"
+    },
+    {
+      "classname": "tests.test_surface_mtf_reference_live",
+      "name": "test_surface_mtf_native_reference_probe[huygens]",
+      "time": "15.724"
+    },
+    {
+      "classname": "tests.test_full_field_aberration_live",
+      "name": "test_full_field_aberration_non_square_outlet",
+      "time": "21.433"
+    },
+    {
+      "classname": "tests.test_full_field_aberration_lifecycle_live",
+      "name": "test_full_field_display_defocus_reference",
+      "time": "11.269"
+    },
+    {
+      "classname": "tests.test_full_field_aberration_lifecycle_live",
+      "name": "test_full_field_selection_units_and_lifecycle",
+      "time": "13.158"
+    },
+    {
+      "classname": "tests.test_foucault_reference_live",
+      "name": "test_foucault_ideal_mirror_outlets",
+      "time": "9.695"
+    },
+    {
+      "classname": "tests.test_foucault_lifecycle_live",
+      "name": "test_foucault_source_selection_and_lifecycle",
+      "time": "11.212"
+    },
+    {
+      "classname": "tests.test_interferogram_opd_live",
+      "name": "test_interferogram_independent_opd",
+      "time": "9.615"
+    },
+    {
+      "classname": "tests.test_interferogram_opd_live",
+      "name": "test_interferogram_two_configurations_and_opl[True]",
+      "time": "9.532"
+    },
+    {
+      "classname": "tests.test_interferogram_opd_live",
+      "name": "test_interferogram_two_configurations_and_opl[False]",
+      "time": "9.808"
+    },
+    {
+      "classname": "tests.test_interferogram_lifecycle_live",
+      "name": "test_interferogram_selection_and_lifecycle",
+      "time": "11.312"
+    },
+    {
+      "classname": "tests.test_contrast_loss_reference_live",
+      "name": "test_contrast_loss_independent_ray_reference[0]",
+      "time": "9.634"
+    },
+    {
+      "classname": "tests.test_contrast_loss_reference_live",
+      "name": "test_contrast_loss_independent_ray_reference[50]",
+      "time": "9.870"
+    },
+    {
+      "classname": "tests.test_contrast_loss_lifecycle_live",
+      "name": "test_contrast_loss_selection_and_lifecycle",
+      "time": "11.052"
+    },
+    {
+      "classname": "tests.test_geometric_spread_reference_live",
+      "name": "test_geometric_spread_controlled_outlets[S_1024x1024-20]",
+      "time": "9.362"
+    },
+    {
+      "classname": "tests.test_geometric_spread_lifecycle_live",
+      "name": "test_geometric_spread_selection_and_lifecycle",
+      "time": "13.077"
+    },
+    {
+      "classname": "tests.test_extended_source_reference_live",
+      "name": "test_extended_source_square_outlets",
+      "time": "10.803"
+    },
+    {
+      "classname": "tests.test_extended_source_point_live",
+      "name": "test_extended_source_point_and_diffraction_outlets",
+      "time": "9.479"
+    },
+    {
+      "classname": "tests.test_extended_source_lifecycle_live",
+      "name": "test_extended_source_rotation_and_lifecycle",
+      "time": "20.893"
+    },
+    {
+      "classname": "tests.test_gaussian_beams_live",
+      "name": "test_gaussian_free_propagation_and_preserved_model",
+      "time": "10.717"
+    },
+    {
+      "classname": "tests.test_gaussian_beams_live",
+      "name": "test_gaussian_astigmatic_lens_abcd_reference",
+      "time": "9.812"
+    },
+    {
+      "classname": "tests.test_gaussian_beams_live",
+      "name": "test_gaussian_selection_paging_cancel_export_and_reload",
+      "time": "13.858"
+    },
+    {
+      "classname": "tests.test_gaussian_beams_live",
+      "name": "test_skew_off_axis_moving_frame_and_centimeter_units",
+      "time": "8.939"
+    },
+    {
+      "classname": "tests.test_gaussian_beams_live",
+      "name": "test_gaussian_glass_plate_wavelength_and_configuration",
+      "time": "11.950"
+    },
+    {
+      "classname": "tests.test_zpl_solve_gridsag_live",
+      "name": "test_zpl_solve_gridsag_parameters_9_10",
+      "time": "10.084"
+    },
+    {
+      "classname": "tests.test_modeling_live",
+      "name": "test_modeling_over_stdio",
+      "time": "10.936"
+    },
+    {
+      "classname": "tests.test_pop_propagation_live",
+      "name": "test_gaussian_propagation_and_receiver_native[30-0-0]",
+      "time": "9.364"
+    }
+  ],
+  "final_targeted_cases": [
+    {
+      "classname": "tests.test_gaussian_beams_live",
+      "name": "test_gaussian_selection_paging_cancel_export_and_reload",
+      "time": "14.210"
+    }
+  ],
+  "sessions": [
+    {
+      "folder": "outputs/runs/contrast_loss312_reference_78b73a192b",
+      "calls": 26,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/contrast_loss312_reference_78b73a192b/state/close_receipt.json",
+      "numeric_checks": 4,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/contrast_loss312_reference_a4db99122f",
+      "calls": 26,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/contrast_loss312_reference_a4db99122f/state/close_receipt.json",
+      "numeric_checks": 4,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/contrast_loss314_lifecycle_21e21ee8bd",
+      "calls": 33,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/contrast_loss314_lifecycle_21e21ee8bd/state/close_receipt.json",
+      "numeric_checks": 0,
+      "failed_numeric_checks": 0,
+      "png_files": [
+        "outputs/runs/contrast_loss314_lifecycle_21e21ee8bd/contrast-loss.png"
+      ]
+    },
+    {
+      "folder": "outputs/runs/extended_source326_square_4ceddf550a",
+      "calls": 57,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/extended_source326_square_4ceddf550a/state/close_receipt.json",
+      "numeric_checks": 12,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/extended_source329_point_c1e42c55b1",
+      "calls": 27,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/extended_source329_point_c1e42c55b1/state/close_receipt.json",
+      "numeric_checks": 3,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/extended_source332_lifecycle_c6c0438b1d",
+      "calls": 340,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/extended_source332_lifecycle_c6c0438b1d/state/close_receipt.json",
+      "numeric_checks": 2,
+      "failed_numeric_checks": 0,
+      "png_files": [
+        "outputs/runs/extended_source332_lifecycle_c6c0438b1d/extended-energy.png"
+      ]
+    },
+    {
+      "folder": "outputs/runs/foucault297_963ab1a654",
+      "calls": 33,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/foucault297_963ab1a654/state/close_receipt.json",
+      "numeric_checks": 6,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/foucault298_lifecycle_3e645a24a0",
+      "calls": 38,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/foucault298_lifecycle_3e645a24a0/state/close_receipt.json",
+      "numeric_checks": 0,
+      "failed_numeric_checks": 0,
+      "png_files": [
+        "outputs/runs/foucault298_lifecycle_3e645a24a0/foucault.png"
+      ]
+    },
+    {
+      "folder": "outputs/runs/full_field288_017b6cb0c7",
+      "calls": 109,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/full_field288_017b6cb0c7/state/close_receipt.json",
+      "numeric_checks": 12,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/full_field293_displays_dfdf88bd55",
+      "calls": 41,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/full_field293_displays_dfdf88bd55/state/close_receipt.json",
+      "numeric_checks": 108,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/full_field294_lifecycle_6ffa057ff7",
+      "calls": 64,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/full_field294_lifecycle_6ffa057ff7/state/close_receipt.json",
+      "numeric_checks": 5,
+      "failed_numeric_checks": 0,
+      "png_files": [
+        "outputs/runs/full_field294_lifecycle_6ffa057ff7/full-field.png"
+      ]
+    },
+    {
+      "folder": "outputs/runs/gaussian353_free_24f1bddb5d",
+      "calls": 66,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/gaussian353_free_24f1bddb5d/state/close_receipt.json",
+      "numeric_checks": 96,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/gaussian356_lens_dd485784ea",
+      "calls": 45,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/gaussian356_lens_dd485784ea/state/close_receipt.json",
+      "numeric_checks": 72,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/gaussian357_lifecycle_00031ec222",
+      "calls": 126,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/gaussian357_lifecycle_00031ec222/state/close_receipt.json",
+      "numeric_checks": 0,
+      "failed_numeric_checks": 0,
+      "png_files": [
+        "outputs/runs/gaussian357_lifecycle_00031ec222/paraxial_gaussian_beam.png",
+        "outputs/runs/gaussian357_lifecycle_00031ec222/skew_gaussian_beam.png"
+      ]
+    },
+    {
+      "folder": "outputs/runs/gaussian357_lifecycle_2303daa0d3",
+      "calls": 127,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/gaussian357_lifecycle_2303daa0d3/state/close_receipt.json",
+      "numeric_checks": 0,
+      "failed_numeric_checks": 0,
+      "png_files": [
+        "outputs/runs/gaussian357_lifecycle_2303daa0d3/paraxial_gaussian_beam.png",
+        "outputs/runs/gaussian357_lifecycle_2303daa0d3/skew_gaussian_beam.png"
+      ]
+    },
+    {
+      "folder": "outputs/runs/gaussian360_skew_offaxis_eccd8bfcf8",
+      "calls": 18,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/gaussian360_skew_offaxis_eccd8bfcf8/state/close_receipt.json",
+      "numeric_checks": 24,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/gaussian362_glass_36dd13d754",
+      "calls": 109,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/gaussian362_glass_36dd13d754/state/close_receipt.json",
+      "numeric_checks": 144,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/gaussian_distance_offset_tilt_bab476dfc7",
+      "calls": 12,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/gaussian_distance_offset_tilt_bab476dfc7/state/close_receipt.json",
+      "numeric_checks": 4,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/geometric_spread322_9238d7f9e6",
+      "calls": 26,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/geometric_spread322_9238d7f9e6/state/close_receipt.json",
+      "numeric_checks": 12,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/geometric_spread325_lifecycle_5a217bc2f6",
+      "calls": 104,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/geometric_spread325_lifecycle_5a217bc2f6/state/close_receipt.json",
+      "numeric_checks": 0,
+      "failed_numeric_checks": 0,
+      "png_files": [
+        "outputs/runs/geometric_spread325_lifecycle_5a217bc2f6/geometric-spread.png"
+      ]
+    },
+    {
+      "folder": "outputs/runs/interferogram304_opd_be186b39e3",
+      "calls": 19,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/interferogram304_opd_be186b39e3/state/close_receipt.json",
+      "numeric_checks": 4,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/interferogram307_lifecycle_9a6c377b39",
+      "calls": 37,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/interferogram307_lifecycle_9a6c377b39/state/close_receipt.json",
+      "numeric_checks": 0,
+      "failed_numeric_checks": 0,
+      "png_files": [
+        "outputs/runs/interferogram307_lifecycle_9a6c377b39/interferogram.png"
+      ]
+    },
+    {
+      "folder": "outputs/runs/interferogram308_mirror_23bb35da64",
+      "calls": 32,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/interferogram308_mirror_23bb35da64/state/close_receipt.json",
+      "numeric_checks": 3,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/interferogram308_paraxial_c29af6bb35",
+      "calls": 34,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/interferogram308_paraxial_c29af6bb35/state/close_receipt.json",
+      "numeric_checks": 3,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/material272_offset_below_visible_86d04f1aa1",
+      "calls": 99,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/material272_offset_below_visible_86d04f1aa1/state/close_receipt.json",
+      "numeric_checks": 88,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/material272_offset_boundary_bb3af952a5",
+      "calls": 129,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/material272_offset_boundary_bb3af952a5/state/close_receipt.json",
+      "numeric_checks": 112,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/material272_offset_visible_25419a46d9",
+      "calls": 129,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/material272_offset_visible_25419a46d9/state/close_receipt.json",
+      "numeric_checks": 173,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/modeling_cd3dc210cb",
+      "calls": 51,
+      "disconnect_ok": true,
+      "installed_wheel": false,
+      "native_closed": null,
+      "forced": null,
+      "close_receipt": null,
+      "numeric_checks": 0,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/surface_mtf090_matched_81ad74455c",
+      "calls": 171,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/surface_mtf090_matched_81ad74455c/state/close_receipt.json",
+      "numeric_checks": 19,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    },
+    {
+      "folder": "outputs/runs/zpl339_gridsag_7147535e80",
+      "calls": 41,
+      "disconnect_ok": true,
+      "installed_wheel": true,
+      "native_closed": true,
+      "forced": false,
+      "close_receipt": "outputs/runs/zpl339_gridsag_7147535e80/state/close_receipt.json",
+      "numeric_checks": 8,
+      "failed_numeric_checks": 0,
+      "png_files": []
+    }
+  ],
+  "completed_item_ids": [
+    "ED-02.MaterialOffset.Material",
+    "CV-01.HuygensSurfaceMtf",
+    "CV-01.FullFieldAberration",
+    "CV-01.Foucault",
+    "CV-02.Interferogram",
+    "CV-01.ContrastLoss",
+    "CV-01.GeometricLineEdgeSpread",
+    "CV-01.ExtendedSourceEncircledEnergy",
+    "WP-01.ParaxialGaussianBeam",
+    "WP-01.SkewGaussianBeam"
+  ],
+  "remaining_canonical_groups": 135,
+  "known_limitations": [
+    "GeometricBitmap official GBM CFG calls return true but adoption/result file unconfirmed; progress351-gbm.json",
+    "FFT SurfaceMTF independent numeric differences remain implemented; progress285-fft.json",
+    "FFT coherent line/edge spread reference discrepancy remains implemented; progress320-spread.json",
+    "RayAiming/resource/module constraints retain exact probe/conditions in original ledgers"
+  ]
+}

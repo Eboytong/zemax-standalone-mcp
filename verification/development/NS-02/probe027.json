@@ -1,0 +1,702 @@
+{
+  "source": "installed DLL static reflection",
+  "interfaces": {
+    "ZOSAPI.Analysis.RayTracing.IAS_PathAnalysis": {
+      "properties": [
+        {
+          "name": "RayDatabaseFile",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AvailableRayDatabaseFiles",
+          "type": "System.String[]",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "FirstRay",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "LastRay",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "FilterString",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "GeneratePathFilters",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "RelativeMinimumFlux",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SortBy",
+          "type": "ZOSAPI.Analysis.RayTracing.PathAnalysisSortType",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    },
+    "ZOSAPI.Analysis.Data.IAR_PathAnalysisData": {
+      "properties": [
+        {
+          "name": "TotalFluxIn",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "TotalFluxOut",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "TotalRays",
+          "type": "System.UInt32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "TotalHits",
+          "type": "System.UInt32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumPaths",
+          "type": "System.UInt32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "PathNumber",
+          "type": "System.UInt32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "PathBranches",
+          "type": "System.UInt32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "PathSource",
+          "type": "System.UInt32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "LastObject",
+          "type": "System.UInt32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "LastFace",
+          "type": "System.UInt32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "PathFluxOut",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "PathFluxPercent",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "PathSequence",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Paths",
+          "type": "ZOSAPI.Analysis.Data.IAR_PathAnalysisEntry[]",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "ZOSAPI.Analysis.Data.IAR_PathAnalysisEntry GetPathNumber(UInt32)",
+        "ZOSAPI.Analysis.Data.IAR_PathAnalysisEntry GetPathUncategorized()"
+      ]
+    },
+    "ZOSAPI.Analysis.Data.IAR_PathAnalysisEntry": {
+      "properties": [
+        {
+          "name": "PathNumber",
+          "type": "System.UInt32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "RaysInPath",
+          "type": "System.UInt64",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "HitsInPath",
+          "type": "System.UInt32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "GhostsInPath",
+          "type": "System.UInt32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "UniqueObjectsInPath",
+          "type": "System.UInt32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "TotalPathFlux",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfObjectsInPath",
+          "type": "System.UInt32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "PathObjectList",
+          "type": "System.Int32[]",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "PathObjectAndFaceList",
+          "type": "System.Int32[,]",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "PathSource",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "Int32 GetPathObjectNumber(Int32)"
+      ]
+    },
+    "ZOSAPI.Tools.ICriticalRaysetGenerator": {
+      "properties": [
+        {
+          "name": "RayPattern",
+          "type": "ZOSAPI.Tools.RayPatternOption",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "NumRays",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MinimumEfectiveInputDistance",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "EffectiveInputDistance",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseAllFields",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseAllWavelengths",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ReadRaysFromFilename",
+          "type": "System.String",
+          "can_read": false,
+          "can_write": true
+        },
+        {
+          "name": "SaveCriticalRaysFilename",
+          "type": "System.String",
+          "can_read": false,
+          "can_write": true
+        },
+        {
+          "name": "RayScale",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    },
+    "ZOSAPI.Analysis.Data.IAR_CriticalRayData": {
+      "properties": [
+        {
+          "name": "NumRays",
+          "type": "System.UInt32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "HeaderLabels",
+          "type": "System.String[]",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Rays",
+          "type": "ZOSAPI.Analysis.Data.IAR_CriticalRayInfo[]",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "ZOSAPI.Analysis.Data.IAR_CriticalRayInfo GetRay(UInt32)"
+      ]
+    },
+    "ZOSAPI.Analysis.Data.IAR_CriticalRayInfo": {
+      "properties": [
+        {
+          "name": "FieldPoint",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "RayType",
+          "type": "ZOSAPI.Tools.CriticalRayType",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Pass",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "TerminationObject",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Wavelength",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "XIn",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "YIn",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "ZIn",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "LIn",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "MIn",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NIn",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "XTarget",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "YTarget",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "ZTarget",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "LTarget",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "MTarget",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NTarget",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "XActual",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "YActual",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "ZActual",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "LActual",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "MActual",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NActual",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": []
+    },
+    "ZOSAPI.Analysis.Data.IAR_NSCSingleRayTraceData": {
+      "properties": [
+        {
+          "name": "IsValid",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "ZRDFile",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfSegments",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "WaveIndex",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "WavelengthUM",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "Boolean ReadSegmentFull(Int32, Int32 ByRef, Int32 ByRef, Int32 ByRef, Int32 ByRef, Int32 ByRef, ZOSAPI.Tools.RayTrace.RayStatus ByRef, Double ByRef, Double ByRef, Double ByRef, Double ByRef, Double ByRef, Double ByRef, Double ByRef, Double ByRef, Double ByRef, Double ByRef, Double ByRef, Double ByRef, Double ByRef, Double ByRef, Int32 ByRef, Int32 ByRef, Double ByRef, Double ByRef, Double ByRef, Double ByRef, Double ByRef, Double ByRef, Double ByRef)"
+      ]
+    },
+    "ZOSAPI.Analysis.Settings.IAS_CriticalRayTracer": {
+      "properties": [
+        {
+          "name": "PositionTolerance",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AngleTolerance",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Filename",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "RaysToDisplay",
+          "type": "ZOSAPI.Analysis.Settings.DisplayOption",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "DisplayXYZ",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "DisplayLMN",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "DisplayActualEndData",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "DisplayTargetEndData",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "DisplayStartData",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    },
+    "ZOSAPI.Analysis.Settings.RayTracing.IAS_NSCSingleRayTrace": {
+      "properties": [
+        {
+          "name": "Wavelength",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Wavelength",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "RaySourceX",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "RaySourceY",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "RaySourceZ",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "RaySourceL",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "RaySourceM",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "RaySourceN",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "RefObject",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SplitNSCRays",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ScatterNSCRays",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UsePolarization",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ShowXYZ",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ShowLMN",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ShowPath",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ShowNormal",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ShowExyz",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ExpandIntoBranches",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "DecimalPrecision",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SaveRaysFile",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    }
+  },
+  "enums": {
+    "ZOSAPI.Analysis.RayTracing.PathAnalysisSortType": {
+      "TotalEndingFlux": 0,
+      "NumberOfObjectsStruck": 1,
+      "NumberOfBranches": 2,
+      "LastObjectStruck": 3,
+      "NumberOfUniqueObjectsStruct": 4,
+      "AverageOpticalPathLength": 5,
+      "NumberOfDiffractionEvents": 6
+    },
+    "ZOSAPI.Tools.RayTrace.RayStatus": {
+      "Parent": 0,
+      "Terminated": 1,
+      "Reflected": 2,
+      "Transmitted": 4,
+      "Scattered": 8,
+      "Diffracted": 16,
+      "GhostedFrom": 32,
+      "DiffractedFrom": 64,
+      "ScatteredFrom": 128,
+      "RayError": 256,
+      "BulkScattered": 512,
+      "WaveShifted": 1024,
+      "TIR": 2048,
+      "OrdinaryRay": 65536,
+      "ExtraordinaryRay": 131072,
+      "WaveShiftPL": 262144
+    },
+    "ZOSAPI.Analysis.Settings.DisplayOption": {
+      "AllRays": 0,
+      "FailedRays": 1,
+      "PassedRays": 2
+    }
+  },
+  "native_execution": "pending BASE-04 initialization timeout",
+  "correction": "IAS_CriticalRayTracer exists in complete reflection; prior blocked wording corrected in 0.1.17",
+  "ray_database_viewer": {
+    "analysis_id": "RayDatabaseViewer",
+    "dedicated_settings_interfaces": [],
+    "search": "complete installed public interface list; names containing RayDatabase/DatabaseViewer",
+    "available_alternative": "read_zrd native database reader exists; dedicated viewer remains separate",
+    "unblock": "runtime GetSettings / official CFG and final adoption / output once initialization is restored"
+  }
+}

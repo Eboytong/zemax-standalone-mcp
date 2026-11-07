@@ -1,0 +1,48 @@
+In the coating file,the keywords MATE (for material), TAPR (fortaper profile), COAT (for coating), TABLE (for coatings
+defined by a table of points) and IDEAL or IDEAL2 (for ideal coatings) are used to define different types of coating
+data. All of the material and taper definitions come first, then all of the coating definitions. The materials, tapers,
+and coatings may be any user defined name up to 32 characters in length. No error message will be given if a name
+is longer than 32 characters, however it will be truncated. If multiple materials/tapers/coatings/etc. are defined
+with the same name, then the behavior is undefined, and it is likely that only the first definition will be used.
+8.4.3.1. Editing the Coating File
+There are a few ways of accessing the data in the coating file. First, the file can be edited outside of OpticStudio
+using any text editor. Second, there is an "Edit Coating File" option in the Coating Tools group of the Libraries tab.
+This invokes the OpticStudio text editor. Also, there is a "Coating Catalog" option in the Libraries tab, which lists
+the coating and material definition data. If the coating file is edited, the file must be reloaded in orderto update the
+new coating data; there is a menu option on the Tools menu for reloading the catalog. The coating file may be
+reloaded using the "Reload Coating File" option in the Coating Tools group in the Libraries tab, or using the Reload
+button in the Files section of the System Explorer.
+8.4.3.2. Coating File Data Syntax
+The coating file consists of sections of data defining materials, tapers, and coatings. The data uses the following
+format and syntax. Each data section is described in detail in the text which follows.
+! Any line starting with the ! symbol is a comment line
+! For information on the MATE format see "The MATE data section" below.
+MATE <material name>
+wavelength real imaginary
+wavelength real imaginary
+....
+MATE <next material name>
+wavelength real imaginary
+wavelength real imaginary
+....
+! For information on the TAPR format see "The TAPR data section" below.
+TAPR <taper name>
+DX decenterx
+DY decentery
+AN rotation_angle (degrees)
+RT termnumber radialterm
+CT termnumber cosineterm
+PT termnumber polyterm
+....
+TAPR <next taper name>
+DX decenterx
+DY decentery
+AN rotation_angle (degrees)
+RT termnumber radialterm
+CT termnumber cosineterm
+PT termnumber polyterm
+....
+! For information on the COAT format see "The COAT data section" below.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1376
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Libraries Tab

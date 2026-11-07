@@ -1,0 +1,101 @@
+{
+  "version": "0.1.40",
+  "date": "2026-11-05",
+  "status": "implemented_native_acceptance_pending",
+  "source": "verification/development/BASE-01/probe/api-interfaces.json",
+  "settings_interface": {
+    "properties": [
+      {
+        "name": "IsHPCConfigured",
+        "type": "System.Boolean",
+        "can_read": true,
+        "can_write": false
+      },
+      {
+        "name": "NodeCount",
+        "type": "System.Int32",
+        "can_read": true,
+        "can_write": false
+      },
+      {
+        "name": "MaxNodeCount",
+        "type": "System.Int32",
+        "can_read": true,
+        "can_write": false
+      },
+      {
+        "name": "InstanceType",
+        "type": "ZOSAPI.Tools.HPCNodeSize",
+        "can_read": true,
+        "can_write": false
+      },
+      {
+        "name": "ThreadsPerTask",
+        "type": "System.Int32",
+        "can_read": true,
+        "can_write": false
+      },
+      {
+        "name": "ShutdownTimeTicks",
+        "type": "System.Int64",
+        "can_read": true,
+        "can_write": false
+      }
+    ],
+    "methods": []
+  },
+  "node_enum": {
+    "Default": 0,
+    "Tiny": 1,
+    "Small": 2,
+    "Medium": 3,
+    "Large": 4,
+    "XLarge": 5
+  },
+  "parent_methods": [
+    "ZOSAPI.Tools.IHPCSettings GetHPCSettingsFromPrefs()",
+    "ZOSAPI.Tools.IHPCSettings GetHPCSettingsCustom(Int32, ZOSAPI.Tools.HPCNodeSize)",
+    "ZOSAPI.Tools.RayTrace.INSCRayTrace OpenNSCRayTrace_HPC(ZOSAPI.Tools.IHPCSettings)",
+    "ZOSAPI.Tools.Tolerancing.ITolerancing OpenTolerancing_HPC(ZOSAPI.Tools.IHPCSettings)",
+    "ZOSAPI.Tools.Optimization.IGlobalOptimization OpenGlobalOptimization_HPC(ZOSAPI.Tools.IHPCSettings)",
+    "ZOSAPI.Tools.Optimization.IHammerOptimization OpenHammerOptimization_HPC(ZOSAPI.Tools.IHPCSettings)"
+  ],
+  "native": {
+    "status": "not_run",
+    "reason": "Existing initialization timeout; configured nodes, actual HPC license and receiver state unknown",
+    "next_action": "After initialization succeeds read IHPCSettings.IsHPCConfigured/NodeCount/MaxNodeCount/InstanceType/ThreadsPerTask; verify actual license/nodes on a minimal owned job. Run four serial minimal jobs; verify native setup/status/cancel, result files/paging, controlled numeric references, persisted model state and normal shutdown.",
+    "prepared_tests": "tests/test_hpc_live.py"
+  },
+  "implementation_next": "Define typed preferences/custom HPC selection, read-only settings query and existing NSC/tolerance/global/hammer factory adapters; preserve current tasks, cancellation, result, budget and close semantics.",
+  "implementation": {
+    "settings": "Typed preferences/custom selector; actual readonly configuration/node/instance/threads/ticks retained; custom adoption checked by node count and enum value",
+    "factories": "Existing NSC/tolerance/global/hammer entries select the exact native HPC factory; no fallback when HPC requested",
+    "execution": "Standard native tool tasks, poll/cancel/result/close; optimization budgets preserved",
+    "settings_readback": "HPC job settings checked before start; NSC detector clear occurs after adopted trace settings",
+    "errors": "Setup failure closes tool and retains original error if close also fails"
+  },
+  "ordinary": {
+    "passed": 1565,
+    "failures": 0,
+    "errors": 0,
+    "deselected": 523,
+    "focused_passed": 144,
+    "report": "verification/development/EXT-HPC/ordinary050-release.xml",
+    "focused_report": "verification/development/EXT-HPC/ordinary050-focused.xml",
+    "additional_checks": [
+      "Int32 node-count upper bound",
+      "Default instance explicitly remains unresolved when native enum is still Default"
+    ]
+  },
+  "release": {
+    "status": "passed",
+    "wheel": "wheels/zemax_standalone_mcp-0.1.40-py3-none-any.whl",
+    "install": "verification/development/EXT-HPC/wheel-install040-release",
+    "stdio": "verification/development/EXT-HPC/stdio-smoke050-release.json",
+    "commands": [
+      ".venv/Scripts/python.exe -m pip wheel . --no-deps --no-build-isolation --wheel-dir wheels",
+      ".venv/Scripts/python.exe -m pip install --no-deps --target verification/development/EXT-HPC/wheel-install040-release wheels/zemax_standalone_mcp-0.1.40-py3-none-any.whl",
+      ".venv/Scripts/python.exe -B tests/support/wheel_smoke050.py verification/development/EXT-HPC/wheel-install040-release verification/development/EXT-HPC/stdio-smoke050-release.json"
+    ]
+  }
+}

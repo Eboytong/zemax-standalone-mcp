@@ -1,0 +1,5 @@
+# 受控.NET回调
+
+ScalarCallback继承本机2024 R2公开APINetCallback。input为double，正常执行后output=2*input，fixture=ScalarCallback045，返回0；缺输入返回10，非有限输入返回11。
+
+通过tests/support/net_callback_fixture.py的build(folder)使用本机Framework64 csc编译，生成DLL和构建记录。原生探查入口为tests/test_net_callback_live.py，需先恢复CreateNewApplication。离线无宿主构造已复现NullReferenceException；编译和静态函数结果分别保留。

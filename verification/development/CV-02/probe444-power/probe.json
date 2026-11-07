@@ -1,0 +1,338 @@
+{
+  "operands": [
+    {
+      "name": "POWF",
+      "headers": [
+        {
+          "number": 1,
+          "header": "面",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 2,
+          "header": "波",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 3,
+          "header": "Hx",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 4,
+          "header": "Hy",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 5,
+          "header": "数据",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 6,
+          "header": "",
+          "type": "Double",
+          "active": false
+        },
+        {
+          "number": 7,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        },
+        {
+          "number": 8,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        }
+      ],
+      "queries": []
+    },
+    {
+      "name": "POWP",
+      "headers": [
+        {
+          "number": 1,
+          "header": "面",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 2,
+          "header": "波",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 3,
+          "header": "Hx",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 4,
+          "header": "Hy",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 5,
+          "header": "Px",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 6,
+          "header": "Py",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 7,
+          "header": "数据",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 8,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        }
+      ],
+      "queries": []
+    }
+  ],
+  "stage": "closed",
+  "before": {
+    "total": 1,
+    "operands": [
+      {
+        "operand": 1,
+        "type": "BLNK",
+        "target": "NaN",
+        "weight": "NaN",
+        "value": "NaN",
+        "contribution": "NaN",
+        "parameters": {},
+        "cells": {
+          "2": {
+            "column": 2,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "3": {
+            "column": 3,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "4": {
+            "column": 4,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "5": {
+            "column": 5,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "6": {
+            "column": 6,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "7": {
+            "column": 7,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "8": {
+            "column": 8,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "9": {
+            "column": 9,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          }
+        }
+      }
+    ],
+    "next_start": null,
+    "values_are_cached": true
+  },
+  "after": {
+    "total": 1,
+    "operands": [
+      {
+        "operand": 1,
+        "type": "BLNK",
+        "target": "NaN",
+        "weight": "NaN",
+        "value": "NaN",
+        "contribution": "NaN",
+        "parameters": {},
+        "cells": {
+          "2": {
+            "column": 2,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "3": {
+            "column": 3,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "4": {
+            "column": 4,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "5": {
+            "column": 5,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "6": {
+            "column": 6,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "7": {
+            "column": 7,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "8": {
+            "column": 8,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "9": {
+            "column": 9,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          }
+        }
+      }
+    ],
+    "next_start": null,
+    "values_are_cached": true
+  },
+  "disconnect": {
+    "ok": true,
+    "data": {
+      "connected": false,
+      "last_session": {
+        "session_id": "68a3b01f08d04d35bb98996e3f72ae4e",
+        "model_revision": 1,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-02\\probe444-power\\native\\68a3b01f08d04d35bb98996e3f72ae4e\\working_cf1dcab6.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-02\\probe444-power\\native\\68a3b01f08d04d35bb98996e3f72ae4e\\checkpoint_r1_disconnect_59d0ce25.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 1,
+          "session_id": "68a3b01f08d04d35bb98996e3f72ae4e"
+        }
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": null,
+      "model_revision": 1,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": null,
+      "opticstudio_build": null,
+      "license": null,
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "geometry": {
+        "state": "pending",
+        "model_revision": 1,
+        "session_id": null
+      }
+    },
+    "artifacts": []
+  }
+}

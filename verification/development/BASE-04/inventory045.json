@@ -1,0 +1,35 @@
+{
+  "version": "0.1.45",
+  "tool_count": 100,
+  "analysis_kind_count": 90,
+  "ledgers": {
+    "development-tasks": {
+      "rows": 34,
+      "states": {
+        "done": 6,
+        "implemented": 13,
+        "in_progress": 14,
+        "blocked": 1
+      }
+    },
+    "development-items": {
+      "rows": 165,
+      "states": {
+        "done": 39,
+        "implemented": 91,
+        "blocked": 35
+      }
+    },
+    "development-backlog": {
+      "rows": 164,
+      "states": {
+        "done": 15,
+        "baseline": 36,
+        "documented": 2,
+        "implemented": 51,
+        "blocked": 60
+      }
+    }
+  },
+  "remaining_gates": 237
+}

@@ -1,0 +1,341 @@
+{
+  "usage": "按当前对象类型和编号选择请求；替换任务ID及现有输入绝对路径，示例不包含实际故障案例。",
+  "requests": [
+    {
+      "name": "color_flux",
+      "tool": "get_detector_data",
+      "arguments": {
+        "request": {
+          "detector": 2,
+          "kind": "flux",
+          "color_channel": "radiometric_flux",
+          "width": 3,
+          "height": 5
+        }
+      }
+    },
+    {
+      "name": "color_xyz",
+      "tool": "get_detector_data",
+      "arguments": {
+        "request": {
+          "detector": 2,
+          "color_channel": "tristimulus_y"
+        }
+      }
+    },
+    {
+      "name": "spectral_bin_centroid",
+      "tool": "get_detector_data",
+      "arguments": {
+        "request": {
+          "detector": 2,
+          "kind": "spectral",
+          "spectral_wavelengths_um": [
+            0.45,
+            0.55,
+            0.65
+          ]
+        }
+      }
+    },
+    {
+      "name": "volume_region",
+      "tool": "get_detector_data",
+      "arguments": {
+        "request": {
+          "detector": 3,
+          "kind": "absorbed_density",
+          "x_start": 0,
+          "y_start": 0,
+          "z_start": 2,
+          "width": 10,
+          "height": 10,
+          "depth": 2
+        }
+      }
+    },
+    {
+      "name": "triangular_pixels",
+      "tool": "get_detector_data",
+      "arguments": {
+        "request": {
+          "detector": 2,
+          "kind": "flux",
+          "start": 200,
+          "count": 200
+        }
+      }
+    },
+    {
+      "name": "save_detector",
+      "tool": "save_detector_data",
+      "arguments": {
+        "request": {
+          "detector": 2,
+          "path": "C:\\Project\\Vibe_Zemax\\outputs\\detector.ddc"
+        }
+      }
+    },
+    {
+      "name": "replace_detector",
+      "tool": "load_detector_data",
+      "arguments": {
+        "request": {
+          "detector": 2,
+          "path": "C:\\Project\\Vibe_Zemax\\outputs\\detector.ddc",
+          "mode": "replace"
+        }
+      }
+    },
+    {
+      "name": "accumulate_detector",
+      "tool": "load_detector_data",
+      "arguments": {
+        "request": {
+          "detector": 2,
+          "path": "C:\\Project\\Vibe_Zemax\\outputs\\detector.ddc",
+          "mode": "accumulate"
+        }
+      }
+    },
+    {
+      "name": "bulk_dll_parameters",
+      "tool": "update_nsc_objects",
+      "arguments": {
+        "request": {
+          "changes": [
+            {
+              "object": 2,
+              "volume": {
+                "model": "DLLDefinedScattering",
+                "settings": {
+                  "DLL": "bulk_samp_1.DLL",
+                  "MeanPath": 2,
+                  "Angle": 10
+                },
+                "parameters": {
+                  "0": 1
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "wavefront_mapping",
+      "tool": "run_analysis",
+      "arguments": {
+        "request": {
+          "kind": "wavefront",
+          "field": 2,
+          "wavelength": 2,
+          "remove_tilt": false,
+          "use_exit_pupil": false,
+          "include_pupil_mapping": true
+        }
+      }
+    },
+    {
+      "name": "mapping_region",
+      "tool": "get_task_result",
+      "arguments": {
+        "task_id": "<completed-task-id>",
+        "grid": 0,
+        "x_start": 24,
+        "y_start": 24,
+        "width": 8,
+        "height": 8
+      }
+    },
+    {
+      "name": "text_beam_page",
+      "tool": "get_beam_file",
+      "arguments": {
+        "request": {
+          "path": "C:\\Project\\Vibe_Zemax\\outputs\\beam.zbf",
+          "start": 200,
+          "count": 200,
+          "include_coordinates": true
+        }
+      }
+    },
+    {
+      "name": "file_beam",
+      "tool": "run_pop",
+      "arguments": {
+        "request": {
+          "beam_type": "File",
+          "beam_file": "C:\\Project\\Vibe_Zemax\\outputs\\beam.zbf",
+          "beam_parameters": {},
+          "use_polarization": true,
+          "x_sampling": "S_64x64",
+          "y_sampling": "S_32x32",
+          "x_width": 0.64,
+          "y_width": 0.64
+        }
+      }
+    },
+    {
+      "name": "image_from_saved_data",
+      "tool": "export_analysis_image",
+      "arguments": {
+        "request": {
+          "task_id": "<completed-task-id>",
+          "path": "C:\\Project\\Vibe_Zemax\\outputs\\analysis.png",
+          "source": "data_plot",
+          "item": 0,
+          "width": 1200,
+          "height": 800
+        }
+      }
+    },
+    {
+      "name": "existing_native_image",
+      "tool": "export_analysis_image",
+      "arguments": {
+        "request": {
+          "task_id": "<layout-task-with-native-image>",
+          "path": "C:\\Project\\Vibe_Zemax\\outputs\\native_copy.png",
+          "source": "native"
+        }
+      }
+    },
+    {
+      "name": "offline_detector_report",
+      "tool": "export_evaluation_report",
+      "arguments": {
+        "detector_files": [
+          "C:\\Project\\Vibe_Zemax\\outputs\\saved_detector.json"
+        ],
+        "formats": [
+          "markdown",
+          "pdf"
+        ],
+        "include_charts": true,
+        "background": true
+      }
+    },
+    {
+      "name": "global_reference_surface",
+      "tool": "update_system_settings",
+      "arguments": {
+        "settings": {
+          "global_reference_surface": 1
+        }
+      }
+    },
+    {
+      "name": "file_beam_system_polarization",
+      "tool": "update_system_settings",
+      "arguments": {
+        "settings": {
+          "polarization": {
+            "unpolarized": false,
+            "jx": 1,
+            "jy": 0
+          }
+        }
+      }
+    },
+    {
+      "name": "dll_gaussian",
+      "tool": "run_pop",
+      "arguments": {
+        "request": {
+          "beam_type": "DLL",
+          "beam_file": "beamsamp1.DLL",
+          "beam_parameters": {
+            "0": 0.1,
+            "1": 0.2
+          },
+          "fiber_type": "DLL",
+          "fiber_file": "beamsamp1.DLL",
+          "fiber_parameters": {
+            "0": 0.1,
+            "1": 0.2
+          },
+          "x_sampling": "S_256x256",
+          "y_sampling": "S_256x256",
+          "x_width": 2,
+          "y_width": 2
+        }
+      }
+    },
+    {
+      "name": "dll_laguerre",
+      "tool": "run_pop",
+      "arguments": {
+        "request": {
+          "beam_type": "DLL",
+          "beam_file": "Laguerre beam.dll",
+          "beam_parameters": {
+            "0": 0,
+            "1": 1,
+            "2": 0.1,
+            "3": 0
+          },
+          "fiber_type": "DLL",
+          "fiber_file": "Laguerre beam.dll",
+          "fiber_parameters": {
+            "0": 0,
+            "1": 1,
+            "2": 0.1,
+            "3": 0
+          },
+          "x_sampling": "S_256x256",
+          "y_sampling": "S_256x256",
+          "x_width": 2,
+          "y_width": 2
+        }
+      }
+    },
+    {
+      "name": "dll_ince",
+      "tool": "run_pop",
+      "arguments": {
+        "request": {
+          "beam_type": "DLL",
+          "beam_file": "Ince-Gaussian-64.dll",
+          "beam_parameters": {
+            "0": 0.1,
+            "4": 0.1,
+            "5": 0,
+            "6": 2,
+            "7": 2
+          },
+          "fiber_type": "DLL",
+          "fiber_file": "Ince-Gaussian-64.dll",
+          "fiber_parameters": {
+            "0": 0.1,
+            "4": 0.1,
+            "5": 0,
+            "6": 2,
+            "7": 2
+          },
+          "x_sampling": "S_256x256",
+          "y_sampling": "S_256x256",
+          "x_width": 2,
+          "y_width": 2
+        }
+      }
+    },
+    {
+      "name": "rectangle_local_ex_component",
+      "tool": "update_nsc_objects",
+      "arguments": {
+        "request": {
+          "changes": [
+            {
+              "object": 2,
+              "data": {
+                "Polarization": 1
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

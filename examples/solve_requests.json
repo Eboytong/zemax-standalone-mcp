@@ -1,0 +1,99 @@
+{
+  "prerequisite": "Open the corresponding case baseline.zos linked from docs/solve-support.json before each independent request; geometry is in mm.",
+  "requests": [
+    {
+      "case": "Standard-f_number",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "replace_solves": true,
+            "solves": {
+              "radius": {
+                "mode": "f_number",
+                "f_number": 4
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "Standard-marginal_ray_height",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "replace_solves": true,
+            "solves": {
+              "thickness": {
+                "mode": "marginal_ray_height",
+                "height": 0.1,
+                "pupil_zone": 0.7
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "Standard-edge_thickness",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "replace_solves": true,
+            "solves": {
+              "thickness": {
+                "mode": "edge_thickness",
+                "thickness": 2,
+                "radial_height": 1
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "Standard-position",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "replace_solves": true,
+            "solves": {
+              "thickness": {
+                "mode": "position",
+                "source_surface": 1,
+                "length": 60
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "case": "CoordinateBreak-pickup_chief_ray-1",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 2,
+            "replace_solves": true,
+            "solves": {
+              "parameter_1": {
+                "mode": "pickup_chief_ray",
+                "field": 2,
+                "wavelength": 2
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

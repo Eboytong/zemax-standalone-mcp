@@ -1,0 +1,22 @@
+[
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "pupil_aberration_fan",
+        "field": 0,
+        "wavelength": 1,
+        "number_of_rays": 21
+      }
+    }
+  },
+  {
+    "tool": "get_task_result",
+    "arguments": {
+      "task_id": "<task_id>",
+      "series": 0,
+      "start": 0,
+      "count": 10
+    }
+  }
+]

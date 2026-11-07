@@ -1,0 +1,22 @@
+[
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "file_comparator",
+        "file1": "C:/optics/original.zos",
+        "file2": "C:/optics/changed.zos",
+        "file1_configuration": 1,
+        "file2_configuration": 2
+      }
+    }
+  },
+  {
+    "tool": "get_task_result",
+    "arguments": {
+      "task_id": "<task_id>",
+      "start": 0,
+      "count": 20
+    }
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "requests": [
+    {
+      "kind": "nsc_surface_sag",
+      "object_number": 2,
+      "face_number": 1,
+      "sampling": "S_129x129",
+      "data": "SurfaceSag",
+      "show_as": "FalseColor",
+      "remove_option": "None",
+      "width": 2
+    },
+    {
+      "kind": "nsc_surface_sag",
+      "object_number": 2,
+      "face_number": 2,
+      "show_as": "Contour",
+      "keep_zrd": true,
+      "zrd_filename": "surface_probe.zrd",
+      "width": 2
+    }
+  ]
+}

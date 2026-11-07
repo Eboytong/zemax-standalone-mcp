@@ -1,0 +1,14 @@
+The following data is being collected:
+• Ansys Zemax OpticStudio edition (Pro, Premium, or Enterprise)
+• Number of times that OpticStudio is launched
+• Total time running
+• Number of crashes
+• Number of files loaded
+• Types of analyses and tools that are being executed
+• Number of executions of each analysis or tool
+• Total time of how long each analysis or tool is being used
+This data is completely anonymous and cannot be linked to your name or license number.
+2.1.3. Scale Lens
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 185
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Setup Tab

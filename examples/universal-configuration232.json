@@ -1,0 +1,19 @@
+{
+  "model_conditions": "顺序系统；MCE第2行THIC控制曲面1；两个配置；第2配置活动",
+  "one_dimensional": {
+    "request": {
+      "kind": "universal_plot_1d", "category": "Configuration",
+      "configuration": 2, "operand_row": 2, "parameter": "THIC",
+      "start": 2, "stop": 4, "samples": 3,
+      "first_surface": 1, "last_surface": 1
+    }
+  },
+  "mixed_grid": {
+    "request": {
+      "kind": "universal_plot_2d",
+      "x": {"category": "Configuration", "configuration": 2, "operand_row": 2, "parameter": "THIC", "start": 2, "stop": 4, "samples": 5},
+      "y": {"surface": 2, "parameter": "Thickness", "start": 3, "stop": 5, "samples": 3},
+      "first_surface": 1, "last_surface": 2
+    }
+  }
+}

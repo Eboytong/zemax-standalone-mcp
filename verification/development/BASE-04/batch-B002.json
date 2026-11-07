@@ -1,0 +1,33 @@
+{
+  "baseline_release": "0.1.57",
+  "next_release": "0.1.58",
+  "batch_id": "B002",
+  "target": 10,
+  "completed_item_ids": [
+    "CV-01.SurfacePhaseSlope",
+    "CV-01.SurfacePhaseSlopeCross",
+    "CV-01.RMSFieldMap",
+    "CV-01.RMSLambdaDiagram",
+    "TO-01.SystemCheck",
+    "ED-01.SystemDataAnalysis",
+    "TO-01.ToleranceYield",
+    "TO-01.ToleranceHistogram",
+    "IM-01.GeometricImageAnalysis",
+    "CV-01.ZernikeCoefficientsVsField"
+  ],
+  "verification_state": "passed",
+  "evidence": [
+    "verification/development/CV-01/acceptance077.json",
+    "verification/development/CV-01/acceptance078.json",
+    "verification/development/CV-01/acceptance079.json",
+    "verification/development/TO-01/acceptance080.json",
+    "verification/development/ED-01/acceptance081.json",
+    "verification/development/TO-01/acceptance085.json",
+    "verification/development/IM-01/acceptance087.json",
+    "verification/development/CV-01/acceptance089.json"
+  ],
+  "counting": "Unique completed functional items; blocked probes, duplicate rows and historical evidence maintenance excluded.",
+  "current_item": "Ten unique completed items accepted on independently installed wheel.",
+  "previous_batch": "verification/development/BASE-04/batch-B001.json",
+  "release_evidence": "verification/development/BASE-04/release058.json"
+}

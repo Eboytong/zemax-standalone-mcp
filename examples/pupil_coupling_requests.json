@@ -1,0 +1,144 @@
+{
+  "rectangular_pupil": [
+    {
+      "tool": "connect"
+    },
+    {
+      "tool": "new_system"
+    },
+    {
+      "tool": "insert_surfaces",
+      "arguments": {
+        "at": 1
+      }
+    },
+    {
+      "tool": "update_system_settings",
+      "arguments": {
+        "settings": {
+          "aperture_value": 10,
+          "wavelengths": [
+            {
+              "wavelength_um": 0.55
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 1,
+            "thickness": 0,
+            "semi_diameter": 5,
+            "replace_solves": true
+          }
+        ]
+      }
+    },
+    {
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 1,
+            "aperture": {
+              "type": "RectangularAperture",
+              "x_half_width": 4,
+              "y_half_width": 3
+            }
+          },
+          {
+            "surface": 2,
+            "radius": -200,
+            "conic": -1,
+            "material": "MIRROR",
+            "thickness": -100,
+            "semi_diameter": 5,
+            "is_stop": true,
+            "replace_solves": true
+          }
+        ]
+      }
+    },
+    {
+      "tool": "run_analysis",
+      "arguments": {
+        "request": {
+          "kind": "huygens_mtf",
+          "field": 1,
+          "wavelength": 1,
+          "sampling": "S_256x256",
+          "image_sampling": "S_512x512",
+          "maximum_frequency": 50,
+          "use_polarization": false
+        }
+      }
+    }
+  ],
+  "tilted_gaussian": [
+    {
+      "tool": "connect"
+    },
+    {
+      "tool": "new_system"
+    },
+    {
+      "tool": "insert_surfaces",
+      "arguments": {
+        "at": 1
+      }
+    },
+    {
+      "tool": "update_system_settings",
+      "arguments": {
+        "settings": {
+          "aperture_value": 10,
+          "wavelengths": [
+            {
+              "wavelength_um": 0.55
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 1,
+            "thickness": 0,
+            "semi_diameter": 5,
+            "replace_solves": true
+          }
+        ]
+      }
+    },
+    {
+      "tool": "run_pop",
+      "arguments": {
+        "request": {
+          "end_surface": 2,
+          "beam_parameters": {
+            "0": 0.1,
+            "1": 0.06
+          },
+          "fiber_type": "GaussianWaist",
+          "fiber_parameters": {
+            "0": 0.08,
+            "1": 0.09
+          },
+          "fiber_tilt_x": 0.02,
+          "fiber_tilt_y": 0.02,
+          "x_sampling": "S_512x512",
+          "y_sampling": "S_512x512",
+          "x_width": 2,
+          "y_width": 2
+        }
+      }
+    }
+  ]
+}

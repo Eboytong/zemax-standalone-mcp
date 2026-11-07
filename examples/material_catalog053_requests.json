@@ -1,0 +1,24 @@
+[
+  {
+    "tool": "get_material_properties",
+    "arguments": {
+      "request": {
+        "catalog": "SCHOTT.AGF",
+        "material": "N-BK7"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "internal_transmission_vs_wavelength",
+        "catalog": "SCHOTT",
+        "glasses": [
+          "N-BK7"
+        ],
+        "thickness_mm": 10
+      }
+    }
+  }
+]

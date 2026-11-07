@@ -1,0 +1,37 @@
+[
+  {
+    "request": {
+      "kind": "extension_files",
+      "extension_role": "surface",
+      "count": 20
+    }
+  },
+  {
+    "request": {
+      "kind": "extension_files",
+      "extension_role": "user_analysis",
+      "count": 20
+    }
+  },
+  {
+    "request": {
+      "kind": "extension_files",
+      "extension_role": "user_operand",
+      "count": 20
+    }
+  },
+  {
+    "request": {
+      "kind": "extension_files",
+      "extension_role": "library",
+      "count": 20
+    }
+  },
+  {
+    "request": {
+      "kind": "extension_files",
+      "extension_role": "zpl",
+      "count": 20
+    }
+  }
+]

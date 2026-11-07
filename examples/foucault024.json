@@ -1,0 +1,19 @@
+{
+  "request": {
+    "kind": "foucault",
+    "field": 1,
+    "wavelength": 1,
+    "sampling": "S_64x64",
+    "intensity_scale": "Linear",
+    "show_as": "GreyScale",
+    "knife": "Horiz_Above",
+    "data": "Computed",
+    "row_column": 32,
+    "use_polarization": false,
+    "y_position": 0,
+    "decenter_x": 0,
+    "decenter_y": 0,
+    "scale_x": 1,
+    "scale_y": 1
+  }
+}

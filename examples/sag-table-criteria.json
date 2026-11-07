@@ -1,0 +1,11 @@
+{
+  "tool": "run_analysis",
+  "arguments": {
+    "request": {
+      "kind": "sag_table",
+      "surface": 1,
+      "best_fit_sphere": "MinimumRMSWithOffset",
+      "samples": 51
+    }
+  }
+}

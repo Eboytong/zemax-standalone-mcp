@@ -1,0 +1,42 @@
+{
+  "item_id": "EXT-EXPORT.CadMultipleConfigurations",
+  "execution_state": "implemented",
+  "date": "2026-11-06",
+  "interfaces": "IExportCAD.SetCurrentConfiguration/SetSingleConfiguration/SetConfigurationAllByFile/SetConfigurationAllByLayer/SetConfigurationAllAtOnce; Configuration getter",
+  "implemented": [
+    "typed mutually exclusive mode/number",
+    "native configuration encoding final readback",
+    "all-by-file owned output directory and full artifact/configuration mapping",
+    "STEP .stp and IGES .igs canonical filenames",
+    "close before collection, missing configuration diagnosis"
+  ],
+  "evidence": [
+    "outputs/runs/cad166_configurations_5d122081be/probe.json",
+    "outputs/runs/cad167_modes_55a329f9e2/probe.json",
+    "outputs/runs/cad169_multiple_577dae8470",
+    "outputs/runs/cad173_layers_9fcefe1beb/probe.json",
+    "outputs/runs/cad169_multiple_577c9f1966",
+    "verification/development/EXT-EXPORT/native172.xml",
+    "verification/development/EXT-EXPORT/ordinary172.xml",
+    "verification/development/EXT-EXPORT/native178-final.xml",
+    "outputs/runs/cad169_multiple_b6b16fcfb9"
+  ],
+  "checks": {
+    "ordinary_passed": 56,
+    "native172_passed": 4,
+    "volume_checks": 6,
+    "max_volume_error_mm3": 3.76991e-08,
+    "volume_tolerance": "1e-5 mm^3 + 1e-6*reference; OCP adaptive integration 1e-10",
+    "source_model": "settings/surfaces/configurations preserved after save/reload and every STEP mode; normal disconnect"
+  },
+  "remaining": [
+    "IGES AllByLayer LensLayer=10/RayLayer=20 adopted but output layer fields show 65535, not requested config-separated layers. STEP no layer-assignment entity found. Confirm exporter support or formal path; original outputs retained."
+  ],
+  "history": [
+    "ByFile .step fails with missing native temporary .STP; canonical .stp succeeds",
+    "native169/170: reference non-adaptive quadrature gave +0.0660764 mm3; adaptive quadrature resolves without changing numerical tolerance",
+    "ordinary169 fake tool already closed by task starter; assertion corrected; ordinary171 capability text retained native encoding detail"
+  ],
+  "batch": "B003 remains 7/10; incomplete item excluded",
+  "final_layer_diagnostic": "Both IGES layer modes return {65535} despite adopted LensLayer10; expected AllByLayer{10,11}, AllAtOnce{10}. Native diagnostic completes model preservation and disconnect, then xfails. Item remains implemented."
+}

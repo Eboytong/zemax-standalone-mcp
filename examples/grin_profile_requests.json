@@ -1,0 +1,14 @@
+{
+  "requests": [
+    {
+      "kind": "grin_profile",
+      "surface": 3,
+      "wavelength": 1,
+      "show_index_vs": "X",
+      "minimum_x": -2.0,
+      "maximum_x": 2.0,
+      "y_value": 0.0,
+      "z_value": 0.0
+    }
+  ]
+}

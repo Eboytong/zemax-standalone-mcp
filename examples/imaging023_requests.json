@@ -1,0 +1,79 @@
+[
+  {
+    "tool": "get_system_resources",
+    "arguments": {
+      "request": {
+        "kind": "image_simulation_files"
+      }
+    }
+  },
+  {
+    "tool": "get_system_resources",
+    "arguments": {
+      "request": {
+        "kind": "geometric_image_files"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "image_simulation",
+        "input_file": "point.IMA"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "geometric_image",
+        "input_file": "point.IMA"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "geometric_bitmap_image",
+        "input_file": "point.IMA"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "fft_line_edge_spread"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "geometric_line_edge_spread"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "extended_source_encircled_energy",
+        "image_name": "point.IMA"
+      }
+    }
+  },
+  {
+    "tool": "get_task_result",
+    "arguments": {
+      "task_id": "TASK_ID",
+      "series": 0,
+      "start": 0,
+      "count": 20
+    }
+  }
+]

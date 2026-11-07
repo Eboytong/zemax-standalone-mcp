@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="34.299" timestamp="2026-11-06T19:44:00.860242+08:00" hostname="tongeb"><testcase classname="tests.test_conversion_optical_reference_live" name="test_conversion_polarized_plane_reference[pure]" time="33.130"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError(&quot;('objects.rows[1].type_settings.NumberOfSpectralData', 3, 0)\nassert 3 == 0&quot;) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_conversion_optical_reference_live.py", line 140, in test_conversion_polarized_plane_reference
+  |     asyncio.run(execute('conversion277_'+mode,work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 58, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 60, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_conversion_optical_reference_live.py", line 131, in work
+      |     compare_saved(e,await e.call('get_nsc_objects',dict(request=dict(start=1,count=20,**selection))),objects_before)
+      |     ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_pure_conversion_reference_live.py", line 10, in compare_saved
+      |     for key,value in expected.items():compare_saved(e,actual[key],value,path+'.'+key)
+      |                                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_pure_conversion_reference_live.py", line 13, in compare_saved
+      |     for i,value in enumerate(expected):compare_saved(e,actual[i],value,f'{path}[{i}]')
+      |                                        ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_pure_conversion_reference_live.py", line 10, in compare_saved
+      |     for key,value in expected.items():compare_saved(e,actual[key],value,path+'.'+key)
+      |                                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_pure_conversion_reference_live.py", line 10, in compare_saved
+      |     for key,value in expected.items():compare_saved(e,actual[key],value,path+'.'+key)
+      |                                       ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_pure_conversion_reference_live.py", line 16, in compare_saved
+      |     else:assert actual==expected,(path,actual,expected)
+      |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      | AssertionError: ('objects.rows[1].type_settings.NumberOfSpectralData', 3, 0)
+      | assert 3 == 0
+      +------------------------------------</failure></testcase></testsuite></testsuites>

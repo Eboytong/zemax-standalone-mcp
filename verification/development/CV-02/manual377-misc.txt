@@ -1,0 +1,6 @@
+PAGE 979
+Click and drag the gray bars at the axis edges to increase or decrease the range of displayed data:
+Right clicking on a Classic chart invokes the following menu.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 979
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

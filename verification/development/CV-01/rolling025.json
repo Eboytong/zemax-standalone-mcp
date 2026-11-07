@@ -1,0 +1,12 @@
+{
+  "version": "0.1.26",
+  "date": "2026-11-05",
+  "work_package": "CV-01",
+  "completed_increment": "HuygensSurfaceMtf request, settings adapter, schema, documentation, tests and isolated wheel smoke",
+  "analysis_kind_count": 74,
+  "ordinary_tests": {"passed": 1313, "skipped": 500, "junit": "verification/development/CV-01/ordinary036.xml"},
+  "wheel": "wheels/zemax_standalone_mcp-0.1.26-py3-none-any.whl",
+  "stdio_smoke": "verification/development/CV-01/stdio-smoke036.json",
+  "native_runtime": {"status": "blocked", "evidence": "verification/development/BASE-04/connection019/supervisor.json", "reason": "OpticStudio initialization timed out after 180.526 seconds"},
+  "next_known_item": "CV-01.FullFieldSpot is blocked because the checked reflection inventory lacks a formal settings interface"
+}

@@ -1,0 +1,17 @@
+{
+  "date":"2026-11-05",
+  "kind":"runtime discovery; not functional completion",
+  "evidence":"verification/development/NS-04/runtime066/settings.json",
+  "observed":{
+    "NS-04.FileComparatorSettings":"Concrete AS_FileComparator exposes file/config selections and comparison sections. All properties and methods captured; next implement typed adapter and independent changed-file text reference.",
+    "NS-04.NSCObjectViewer":"AS_Default exposes base IAS_ only; SaveTo succeeds with 18448-byte binary CFG. No object selector readback through dedicated properties. Need documented ModifySettings keys and reliable selected-object/output readback.",
+    "NS-04.PartViewer":"AS_Default exposes base IAS_ only; SaveTo succeeds with 18448-byte binary CFG. Need documented file/part selection keys and output readback.",
+    "NS-04.PrescriptionDataSettings":"AS_Default base settings in this NSC system; formal CFG configuration and calculation/output remain unprobed.",
+    "NS-04.PrescriptionGraphic":"SettingsFirst factory returns null in the tested NSC mode; no analysis object was created or owned. Probe recorded downstream AttributeError; next inspect supported sequential factory/mode.",
+    "NS-04.SurfaceDataSettings":"SettingsFirst factory returns null in the tested NSC mode; next probe applicable sequential mode/factory."
+  },
+  "settings_writes":0,
+  "calculations":0,
+  "lifecycle":"Four created analyses closed successfully; two null factories owned no resource; disconnect succeeded.",
+  "next_action":"Implement FileComparatorSettings concrete interface; probe formal CFG keys and applicable modes for the five other entries. Discovery alone does not establish blocked or done status."
+}

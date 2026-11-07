@@ -1,0 +1,23 @@
+Configuration Select "All" to perform a calculation of the MTF based upon a coherent sum of the PSF at each
+wavelength across all configurations, or select the "Current" or any single configuration. Note the MTF is computed
+from the PSF, which is a coherent sum for the same wavelength in each configuration, followed by an incoherent
+sum of the resulting PSF's for different wavelengths. For this reason, each defined wavelength must be the same in
+all configurations.Wavelength and configuration weights may be used butthe wavelength values must be identical.
+See CWGT and WLWT in "Summary of multi- configuration operands" . This coherent sum also assumes that the
+image surface is located in the identical position in all configurations. If "All" is selected, and both focal and afocal
+mode configurations are defined, the Configuration setting will automatically be reset to "Current".
+Wavelength The wavelength number to be used in the calculation.
+Field The field number for which the calculation should be performed.
+Type Select the data to display, currently modulation is the only option.
+Use Polarization If checked, polarization is considered. See " Polarization (system explorer)" for information on
+defining the polarization state and how polarization is used by analysis features.
+Show As Choose grey scale or false color map as the display option.
+Type Choose modulation,real part, orimaginary part of eitherthe incoherent or coherent opticaltransferfunction.
+If a text listing is generated and either the real or the imaginary part is requested, both the real and the imaginary
+parts are listed for completeness.
+Discussion This feature is very similar to the Huygens MTF feature (see "Huygens MTF").
+3.2.5.10. Huygens MTF vs. Field
+Computes the Huygens MTF data as a function of field position, and displays the data in a graph.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 800
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

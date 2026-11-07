@@ -1,0 +1,413 @@
+{
+  "work_package": "CO-01",
+  "version": "0.1.28",
+  "items": [
+    "CO-01.DiffEfficiency2D",
+    "CO-01.DiffEfficiencyAngular",
+    "CO-01.DiffEfficiencyChromatic"
+  ],
+  "native_reflection_source": "verification/development/BASE-01/probe/api-interfaces.json",
+  "native_settings_interfaces": {
+    "ZOSAPI.Analysis.Settings.DiffractionEfficiency.IAS_DiffEfficiency2D": {
+      "properties": [
+        {
+          "name": "SampleSize",
+          "type": "ZOSAPI.Analysis.SampleSizes",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Surface",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Surface",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Field",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Field",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Wavelength",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Wavelength",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "MinWavelength",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MaxWavelength",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MinAngle",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MaxAngle",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "HologramObject",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AmbientObject",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "DetectorObject",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPositionX",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPositionY",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPositionZ",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcUnpolarized",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcXTitled",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPolJx",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPolJy",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPrePropagation",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "InsideOfObject",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    },
+    "ZOSAPI.Analysis.Settings.DiffractionEfficiency.IAS_DiffEfficiencyAngular": {
+      "properties": [
+        {
+          "name": "SampleSize",
+          "type": "ZOSAPI.Analysis.SampleSizes_Pow2Plus1",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Surface",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Surface",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Field",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Field",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Wavelength",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Wavelength",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "MinAngle",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MaxAngle",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "HologramObject",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AmbientObject",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "DetectorObject",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPositionX",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPositionY",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPositionZ",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcUnpolarized",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcXTitled",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPolJx",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPolJy",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPrePropagation",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "InsideOfObject",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    },
+    "ZOSAPI.Analysis.Settings.DiffractionEfficiency.IAS_DiffEfficiencyChromatic": {
+      "properties": [
+        {
+          "name": "SampleSize",
+          "type": "ZOSAPI.Analysis.SampleSizes_Pow2Plus1",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Surface",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Surface",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Field",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Field",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Wavelength",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Wavelength",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "MinWavelength",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MaxWavelength",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "HologramObject",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AmbientObject",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "DetectorObject",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPositionX",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPositionY",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPositionZ",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcUnpolarized",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcXTitled",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPolJx",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPolJy",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "srcPrePropagation",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "InsideOfObject",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    }
+  },
+  "sample_size_enums": {
+    "ZOSAPI.Analysis.SampleSizes": {
+      "S_32x32": 1,
+      "S_64x64": 2,
+      "S_128x128": 3,
+      "S_256x256": 4,
+      "S_512x512": 5,
+      "S_1024x1024": 6,
+      "S_2048x2048": 7,
+      "S_4096x4096": 8,
+      "S_8192x8192": 9,
+      "S_16384x16384": 10
+    },
+    "ZOSAPI.Analysis.SampleSizes_Pow2Plus1": {
+      "S_33": 1,
+      "S_65": 2,
+      "S_129": 3,
+      "S_257": 4,
+      "S_513": 5,
+      "S_1025": 6,
+      "S_2049": 7,
+      "S_4097": 8,
+      "S_8193": 9
+    }
+  },
+  "implementation": {
+    "request_models": "src/zemax_mcp/analysis_models.py",
+    "dispatch_and_setting_readback": "src/zemax_mcp/analyses.py",
+    "result_lifecycle": "standard general-analysis collector and owned task release"
+  },
+  "ordinary_checks": {
+    "command": ".venv\\Scripts\\python.exe -m pytest tests/test_diff_efficiency.py tests/test_coatings.py tests/test_files_and_analysis.py -q",
+    "result": "102 passed"
+  },
+  "native": {
+    "status": "blocked",
+    "startup_evidence": [
+      "verification/development/BASE-04/connection040.json",
+      "verification/development/BASE-04/connection019/supervisor.json"
+    ],
+    "observed": "Isolated ZOS-API initialization timed out after 180.578 seconds. No native analysis was launched in this run.",
+    "pending": [
+      "Runtime settings identity and write/readback",
+      "Controlled-model execution and result axes/units",
+      "Numeric reference comparison",
+      "Cancellation/failure cleanup and normal close receipt"
+    ],
+    "resume_condition": "Run the listed acceptance checks after ZOS-API initialization succeeds."
+  },
+  "stdio_smoke": "pending"
+}

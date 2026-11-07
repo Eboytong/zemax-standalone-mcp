@@ -1,0 +1,78 @@
+[
+  {
+    "tool": "get_lens_catalogs",
+    "arguments": {}
+  },
+  {
+    "tool": "run_lens_catalog_search",
+    "arguments": {
+      "request": {
+        "vendor": "THORLABS",
+        "efl_mm": {
+          "minimum": 20,
+          "maximum": 50
+        },
+        "epd_mm": {
+          "minimum": 5,
+          "maximum": 30
+        },
+        "max_results": 100
+      }
+    }
+  },
+  {
+    "tool": "run_catalog_lens",
+    "arguments": {
+      "request": {
+        "vendor": "THORLABS",
+        "lens_name": "REPLACE_WITH_DISCOVERED_NATIVE_NAME"
+      }
+    }
+  },
+  {
+    "tool": "run_catalog_lens",
+    "arguments": {
+      "request": {
+        "vendor": "THORLABS",
+        "lens_name": "REPLACE_WITH_DISCOVERED_NATIVE_NAME",
+        "action": "insert",
+        "at_surface": 1
+      }
+    }
+  },
+  {
+    "tool": "run_catalog_evaluation",
+    "arguments": {
+      "request": {
+        "candidates": [
+          {
+            "name": "BK7",
+            "materials": [
+              {
+                "surface": 1,
+                "material": "N-BK7",
+                "replace_solve": true
+              }
+            ]
+          },
+          {
+            "name": "F2",
+            "materials": [
+              {
+                "surface": 1,
+                "material": "N-F2",
+                "replace_solve": true
+              }
+            ]
+          }
+        ],
+        "evaluation": {
+          "merit": true
+        },
+        "common_settings": {
+          "aperture_value": 10
+        }
+      }
+    }
+  }
+]

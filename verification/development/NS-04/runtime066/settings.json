@@ -1,0 +1,855 @@
+{
+  "package": "NS-04",
+  "settings_writes": 0,
+  "calculations": 0,
+  "closed": true,
+  "items": [
+    {
+      "item_id": "NS-04.FileComparatorSettings",
+      "native_enum": "FileComparatorSettings",
+      "closed": true,
+      "runtime_settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_FileComparator",
+      "interfaces": [
+        "ZOSAPI.IZAPI_BaseObject",
+        "ZOSAPI.Analysis.Settings.IAS_",
+        "ZOSAPI.Analysis.Settings.IAS_FileComparator"
+      ],
+      "methods": [
+        "Boolean Equals(System.Object)",
+        "Boolean LoadFrom(System.String)",
+        "Boolean ModifySettings(System.String, System.String, System.String)",
+        "Boolean SaveTo(System.String)",
+        "Boolean get_File1SpecifyConfig()",
+        "Boolean get_File2SpecifyConfig()",
+        "Boolean get_IncludeCOCPoint()",
+        "Boolean get_IncludeCardinalPoints()",
+        "Boolean get_IncludeEdgeThickness()",
+        "Boolean get_IncludeElementVolume()",
+        "Boolean get_IncludeFNumbers()",
+        "Boolean get_IncludeFilesUsed()",
+        "Boolean get_IncludeGeneralData()",
+        "Boolean get_IncludeGlobalVertex()",
+        "Boolean get_IncludeIndexTCEData()",
+        "Boolean get_IncludeMeritFunction()",
+        "Boolean get_IncludeMultiConfigData()",
+        "Boolean get_IncludePOPSettings()",
+        "Boolean get_IncludeSolvesVariables()",
+        "Boolean get_IncludeSurfaceData()",
+        "Boolean get_IncludeSurfaceDetail()",
+        "Boolean get_IsActiveWindow()",
+        "Boolean get_IsValid()",
+        "Boolean get_ShowDifferencesOnly()",
+        "Int32 GetHashCode()",
+        "Int32 get_File1Config()",
+        "Int32 get_File2Config()",
+        "System.Object GetLifetimeService()",
+        "System.Object InitializeLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "System.String ToString()",
+        "System.String get_File1Name()",
+        "System.String get_File2Name()",
+        "System.Type GetType()",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void ClearAllIncludes()",
+        "Void Disconnect()",
+        "Void Load()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Reset()",
+        "Void Save()",
+        "Void SetAllIncludes()",
+        "Void Update()",
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "Void set_File1Config(Int32)",
+        "Void set_File1Name(System.String)",
+        "Void set_File1SpecifyConfig(Boolean)",
+        "Void set_File2Config(Int32)",
+        "Void set_File2Name(System.String)",
+        "Void set_File2SpecifyConfig(Boolean)",
+        "Void set_IncludeCOCPoint(Boolean)",
+        "Void set_IncludeCardinalPoints(Boolean)",
+        "Void set_IncludeEdgeThickness(Boolean)",
+        "Void set_IncludeElementVolume(Boolean)",
+        "Void set_IncludeFNumbers(Boolean)",
+        "Void set_IncludeFilesUsed(Boolean)",
+        "Void set_IncludeGeneralData(Boolean)",
+        "Void set_IncludeGlobalVertex(Boolean)",
+        "Void set_IncludeIndexTCEData(Boolean)",
+        "Void set_IncludeMeritFunction(Boolean)",
+        "Void set_IncludeMultiConfigData(Boolean)",
+        "Void set_IncludePOPSettings(Boolean)",
+        "Void set_IncludeSolvesVariables(Boolean)",
+        "Void set_IncludeSurfaceData(Boolean)",
+        "Void set_IncludeSurfaceDetail(Boolean)",
+        "Void set_IsValid(Boolean)",
+        "Void set_ShowDifferencesOnly(Boolean)",
+        "ZOSAPI.Analysis.DataID get_TheDataID()",
+        "ZOSAPI.Analysis.IMessages Verify()",
+        "ZOSAPI.IZAPI_BaseObject get_Parent()",
+        "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses get_Analysis()"
+      ],
+      "inherited_interface_methods": [
+        "Boolean LoadFrom(System.String)",
+        "Boolean ModifySettings(System.String, System.String, System.String)",
+        "Boolean SaveTo(System.String)",
+        "Boolean get_File1SpecifyConfig()",
+        "Boolean get_File2SpecifyConfig()",
+        "Boolean get_IncludeCOCPoint()",
+        "Boolean get_IncludeCardinalPoints()",
+        "Boolean get_IncludeEdgeThickness()",
+        "Boolean get_IncludeElementVolume()",
+        "Boolean get_IncludeFNumbers()",
+        "Boolean get_IncludeFilesUsed()",
+        "Boolean get_IncludeGeneralData()",
+        "Boolean get_IncludeGlobalVertex()",
+        "Boolean get_IncludeIndexTCEData()",
+        "Boolean get_IncludeMeritFunction()",
+        "Boolean get_IncludeMultiConfigData()",
+        "Boolean get_IncludePOPSettings()",
+        "Boolean get_IncludeSolvesVariables()",
+        "Boolean get_IncludeSurfaceData()",
+        "Boolean get_IncludeSurfaceDetail()",
+        "Boolean get_ShowDifferencesOnly()",
+        "Int32 get_File1Config()",
+        "Int32 get_File2Config()",
+        "System.String get_File1Name()",
+        "System.String get_File2Name()",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void ClearAllIncludes()",
+        "Void Disconnect()",
+        "Void Load()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Reset()",
+        "Void Save()",
+        "Void SetAllIncludes()",
+        "Void set_File1Config(Int32)",
+        "Void set_File1Name(System.String)",
+        "Void set_File1SpecifyConfig(Boolean)",
+        "Void set_File2Config(Int32)",
+        "Void set_File2Name(System.String)",
+        "Void set_File2SpecifyConfig(Boolean)",
+        "Void set_IncludeCOCPoint(Boolean)",
+        "Void set_IncludeCardinalPoints(Boolean)",
+        "Void set_IncludeEdgeThickness(Boolean)",
+        "Void set_IncludeElementVolume(Boolean)",
+        "Void set_IncludeFNumbers(Boolean)",
+        "Void set_IncludeFilesUsed(Boolean)",
+        "Void set_IncludeGeneralData(Boolean)",
+        "Void set_IncludeGlobalVertex(Boolean)",
+        "Void set_IncludeIndexTCEData(Boolean)",
+        "Void set_IncludeMeritFunction(Boolean)",
+        "Void set_IncludeMultiConfigData(Boolean)",
+        "Void set_IncludePOPSettings(Boolean)",
+        "Void set_IncludeSolvesVariables(Boolean)",
+        "Void set_IncludeSurfaceData(Boolean)",
+        "Void set_IncludeSurfaceDetail(Boolean)",
+        "Void set_ShowDifferencesOnly(Boolean)",
+        "ZOSAPI.Analysis.IMessages Verify()",
+        "ZOSAPI.IZAPI_BaseObject get_Parent()"
+      ],
+      "properties": [
+        {
+          "name": "File1Name",
+          "type": "System.String",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "File1SpecifyConfig",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "File1Config",
+          "type": "System.Int32",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "File2Name",
+          "type": "System.String",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "File2SpecifyConfig",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "File2Config",
+          "type": "System.Int32",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IncludeGeneralData",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IncludeSurfaceData",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IncludeSurfaceDetail",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IncludeEdgeThickness",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IncludeMultiConfigData",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IncludeSolvesVariables",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IncludeIndexTCEData",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IncludeGlobalVertex",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IncludeCOCPoint",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IncludeElementVolume",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IncludeFNumbers",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IncludeCardinalPoints",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IncludePOPSettings",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IncludeFilesUsed",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IncludeMeritFunction",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "ShowDifferencesOnly",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "Analysis",
+          "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses",
+          "readable": true,
+          "writable": false
+        },
+        {
+          "name": "TheDataID",
+          "type": "ZOSAPI.Analysis.DataID",
+          "readable": true,
+          "writable": false
+        },
+        {
+          "name": "IsValid",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IsActiveWindow",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": false
+        },
+        {
+          "name": "Parent",
+          "type": "ZOSAPI.IZAPI_BaseObject",
+          "readable": true,
+          "writable": false
+        }
+      ],
+      "enums": {},
+      "cfg_export": {
+        "api": "IAS_.SaveTo",
+        "returned": true,
+        "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\NS-04\\runtime066\\FileComparatorSettings.CFG",
+        "exists": true,
+        "bytes": 18448,
+        "contains_null_bytes": true,
+        "ascii_tokens": []
+      },
+      "cleanup_warnings": []
+    },
+    {
+      "item_id": "NS-04.NSCObjectViewer",
+      "native_enum": "NSCObjectViewer",
+      "closed": true,
+      "runtime_settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "interfaces": [
+        "ZOSAPI.IZAPI_BaseObject",
+        "ZOSAPI.Analysis.Settings.IAS_"
+      ],
+      "methods": [
+        "Boolean Equals(System.Object)",
+        "Boolean LoadFrom(System.String)",
+        "Boolean ModifySettings(System.String, System.String, System.String)",
+        "Boolean SaveTo(System.String)",
+        "Boolean get_IsActiveWindow()",
+        "Boolean get_IsValid()",
+        "Int32 GetHashCode()",
+        "System.Object GetLifetimeService()",
+        "System.Object InitializeLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "System.String ToString()",
+        "System.Type GetType()",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Disconnect()",
+        "Void Load()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Reset()",
+        "Void Save()",
+        "Void Update()",
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "Void set_IsValid(Boolean)",
+        "ZOSAPI.Analysis.DataID get_TheDataID()",
+        "ZOSAPI.Analysis.IMessages Verify()",
+        "ZOSAPI.IZAPI_BaseObject get_Parent()",
+        "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses get_Analysis()"
+      ],
+      "inherited_interface_methods": [
+        "Boolean LoadFrom(System.String)",
+        "Boolean ModifySettings(System.String, System.String, System.String)",
+        "Boolean SaveTo(System.String)",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Disconnect()",
+        "Void Load()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Reset()",
+        "Void Save()",
+        "ZOSAPI.Analysis.IMessages Verify()",
+        "ZOSAPI.IZAPI_BaseObject get_Parent()"
+      ],
+      "properties": [
+        {
+          "name": "Analysis",
+          "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses",
+          "readable": true,
+          "writable": false
+        },
+        {
+          "name": "TheDataID",
+          "type": "ZOSAPI.Analysis.DataID",
+          "readable": true,
+          "writable": false
+        },
+        {
+          "name": "IsValid",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IsActiveWindow",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": false
+        },
+        {
+          "name": "Parent",
+          "type": "ZOSAPI.IZAPI_BaseObject",
+          "readable": true,
+          "writable": false
+        }
+      ],
+      "enums": {},
+      "cfg_export": {
+        "api": "IAS_.SaveTo",
+        "returned": true,
+        "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\NS-04\\runtime066\\NSCObjectViewer.CFG",
+        "exists": true,
+        "bytes": 18448,
+        "contains_null_bytes": true,
+        "ascii_tokens": []
+      },
+      "cleanup_warnings": []
+    },
+    {
+      "item_id": "NS-04.PartViewer",
+      "native_enum": "PartViewer",
+      "closed": true,
+      "runtime_settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "interfaces": [
+        "ZOSAPI.IZAPI_BaseObject",
+        "ZOSAPI.Analysis.Settings.IAS_"
+      ],
+      "methods": [
+        "Boolean Equals(System.Object)",
+        "Boolean LoadFrom(System.String)",
+        "Boolean ModifySettings(System.String, System.String, System.String)",
+        "Boolean SaveTo(System.String)",
+        "Boolean get_IsActiveWindow()",
+        "Boolean get_IsValid()",
+        "Int32 GetHashCode()",
+        "System.Object GetLifetimeService()",
+        "System.Object InitializeLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "System.String ToString()",
+        "System.Type GetType()",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Disconnect()",
+        "Void Load()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Reset()",
+        "Void Save()",
+        "Void Update()",
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "Void set_IsValid(Boolean)",
+        "ZOSAPI.Analysis.DataID get_TheDataID()",
+        "ZOSAPI.Analysis.IMessages Verify()",
+        "ZOSAPI.IZAPI_BaseObject get_Parent()",
+        "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses get_Analysis()"
+      ],
+      "inherited_interface_methods": [
+        "Boolean LoadFrom(System.String)",
+        "Boolean ModifySettings(System.String, System.String, System.String)",
+        "Boolean SaveTo(System.String)",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Disconnect()",
+        "Void Load()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Reset()",
+        "Void Save()",
+        "ZOSAPI.Analysis.IMessages Verify()",
+        "ZOSAPI.IZAPI_BaseObject get_Parent()"
+      ],
+      "properties": [
+        {
+          "name": "Analysis",
+          "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses",
+          "readable": true,
+          "writable": false
+        },
+        {
+          "name": "TheDataID",
+          "type": "ZOSAPI.Analysis.DataID",
+          "readable": true,
+          "writable": false
+        },
+        {
+          "name": "IsValid",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IsActiveWindow",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": false
+        },
+        {
+          "name": "Parent",
+          "type": "ZOSAPI.IZAPI_BaseObject",
+          "readable": true,
+          "writable": false
+        }
+      ],
+      "enums": {},
+      "cfg_export": {
+        "api": "IAS_.SaveTo",
+        "returned": true,
+        "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\NS-04\\runtime066\\PartViewer.CFG",
+        "exists": true,
+        "bytes": 18448,
+        "contains_null_bytes": true,
+        "ascii_tokens": []
+      },
+      "cleanup_warnings": []
+    },
+    {
+      "item_id": "NS-04.PrescriptionDataSettings",
+      "native_enum": "PrescriptionDataSettings",
+      "closed": true,
+      "runtime_settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "interfaces": [
+        "ZOSAPI.IZAPI_BaseObject",
+        "ZOSAPI.Analysis.Settings.IAS_"
+      ],
+      "methods": [
+        "Boolean Equals(System.Object)",
+        "Boolean LoadFrom(System.String)",
+        "Boolean ModifySettings(System.String, System.String, System.String)",
+        "Boolean SaveTo(System.String)",
+        "Boolean get_IsActiveWindow()",
+        "Boolean get_IsValid()",
+        "Int32 GetHashCode()",
+        "System.Object GetLifetimeService()",
+        "System.Object InitializeLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "System.String ToString()",
+        "System.Type GetType()",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Disconnect()",
+        "Void Load()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Reset()",
+        "Void Save()",
+        "Void Update()",
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "Void set_IsValid(Boolean)",
+        "ZOSAPI.Analysis.DataID get_TheDataID()",
+        "ZOSAPI.Analysis.IMessages Verify()",
+        "ZOSAPI.IZAPI_BaseObject get_Parent()",
+        "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses get_Analysis()"
+      ],
+      "inherited_interface_methods": [
+        "Boolean LoadFrom(System.String)",
+        "Boolean ModifySettings(System.String, System.String, System.String)",
+        "Boolean SaveTo(System.String)",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Disconnect()",
+        "Void Load()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Reset()",
+        "Void Save()",
+        "ZOSAPI.Analysis.IMessages Verify()",
+        "ZOSAPI.IZAPI_BaseObject get_Parent()"
+      ],
+      "properties": [
+        {
+          "name": "Analysis",
+          "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses",
+          "readable": true,
+          "writable": false
+        },
+        {
+          "name": "TheDataID",
+          "type": "ZOSAPI.Analysis.DataID",
+          "readable": true,
+          "writable": false
+        },
+        {
+          "name": "IsValid",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IsActiveWindow",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": false
+        },
+        {
+          "name": "Parent",
+          "type": "ZOSAPI.IZAPI_BaseObject",
+          "readable": true,
+          "writable": false
+        }
+      ],
+      "enums": {},
+      "cfg_export": {
+        "api": "IAS_.SaveTo",
+        "returned": true,
+        "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\NS-04\\runtime066\\PrescriptionDataSettings.CFG",
+        "exists": true,
+        "bytes": 18448,
+        "contains_null_bytes": true,
+        "ascii_tokens": []
+      },
+      "cleanup_warnings": []
+    },
+    {
+      "item_id": "NS-04.PrescriptionGraphic",
+      "native_enum": "PrescriptionGraphic",
+      "closed": false,
+      "error": {
+        "type": "AttributeError",
+        "message": "'NoneType' object has no attribute 'GetSettings'"
+      }
+    },
+    {
+      "item_id": "NS-04.SurfaceDataSettings",
+      "native_enum": "SurfaceDataSettings",
+      "closed": false,
+      "error": {
+        "type": "AttributeError",
+        "message": "'NoneType' object has no attribute 'GetSettings'"
+      }
+    }
+  ],
+  "connect": {
+    "ok": true,
+    "data": {
+      "connected": true,
+      "native_system_status": "",
+      "native_startup": {
+        "events": [
+          {
+            "stage": "install_check",
+            "event": "started",
+            "timestamp": "2026-11-05T12:48:06.460+00:00",
+            "elapsed_seconds": 2.320000021427404e-05
+          },
+          {
+            "stage": "install_check",
+            "event": "completed",
+            "timestamp": "2026-11-05T12:48:06.460+00:00",
+            "elapsed_seconds": 0.0002459999996062834,
+            "duration_seconds": 0.00023399999918183312
+          },
+          {
+            "stage": "environment",
+            "event": "started",
+            "timestamp": "2026-11-05T12:48:06.460+00:00",
+            "elapsed_seconds": 0.00025379999897268135
+          },
+          {
+            "stage": "environment",
+            "event": "completed",
+            "timestamp": "2026-11-05T12:48:06.469+00:00",
+            "elapsed_seconds": 0.009787400000277557,
+            "duration_seconds": 0.00952289999986533
+          },
+          {
+            "stage": "clr_load",
+            "event": "started",
+            "timestamp": "2026-11-05T12:48:06.469+00:00",
+            "elapsed_seconds": 0.009801899999729358
+          },
+          {
+            "stage": "clr_load",
+            "event": "completed",
+            "timestamp": "2026-11-05T12:48:06.724+00:00",
+            "elapsed_seconds": 0.2640511999998125,
+            "duration_seconds": 0.25422489999982645
+          },
+          {
+            "stage": "nethelper_assembly",
+            "event": "started",
+            "timestamp": "2026-11-05T12:48:06.724+00:00",
+            "elapsed_seconds": 0.2640783000006195
+          },
+          {
+            "stage": "nethelper_assembly",
+            "event": "completed",
+            "timestamp": "2026-11-05T12:48:06.731+00:00",
+            "elapsed_seconds": 0.27141889999984414,
+            "duration_seconds": 0.007332499999392894
+          },
+          {
+            "stage": "zos_initialize",
+            "event": "started",
+            "timestamp": "2026-11-05T12:48:06.731+00:00",
+            "elapsed_seconds": 0.27143079999950714
+          },
+          {
+            "stage": "zos_initialize",
+            "event": "completed",
+            "timestamp": "2026-11-05T12:48:06.738+00:00",
+            "elapsed_seconds": 0.27800679999927524,
+            "duration_seconds": 0.006554899999173358
+          },
+          {
+            "stage": "api_assemblies",
+            "event": "started",
+            "timestamp": "2026-11-05T12:48:06.738+00:00",
+            "elapsed_seconds": 0.2780254999997851
+          },
+          {
+            "stage": "api_assemblies",
+            "event": "completed",
+            "timestamp": "2026-11-05T12:48:06.753+00:00",
+            "elapsed_seconds": 0.2936478999999963,
+            "duration_seconds": 0.015610600001309649
+          },
+          {
+            "stage": "connection_create",
+            "event": "started",
+            "timestamp": "2026-11-05T12:48:06.753+00:00",
+            "elapsed_seconds": 0.2936601999990671
+          },
+          {
+            "stage": "connection_create",
+            "event": "completed",
+            "timestamp": "2026-11-05T12:48:07.034+00:00",
+            "elapsed_seconds": 0.5746244999991177,
+            "duration_seconds": 0.2809455999995407
+          },
+          {
+            "stage": "application_create",
+            "event": "started",
+            "timestamp": "2026-11-05T12:48:07.034+00:00",
+            "elapsed_seconds": 0.5746438999995007
+          },
+          {
+            "stage": "application_create",
+            "event": "completed",
+            "timestamp": "2026-11-05T12:48:11.687+00:00",
+            "elapsed_seconds": 5.227483299999221,
+            "duration_seconds": 4.652824299999338
+          },
+          {
+            "stage": "license_check",
+            "event": "started",
+            "timestamp": "2026-11-05T12:48:11.687+00:00",
+            "elapsed_seconds": 5.227501999999731
+          },
+          {
+            "stage": "license_check",
+            "event": "completed",
+            "timestamp": "2026-11-05T12:48:11.689+00:00",
+            "elapsed_seconds": 5.2289992999994865,
+            "duration_seconds": 0.0014876000004733214
+          },
+          {
+            "stage": "primary_system",
+            "event": "started",
+            "timestamp": "2026-11-05T12:48:11.689+00:00",
+            "elapsed_seconds": 5.229013000000123
+          },
+          {
+            "stage": "primary_system",
+            "event": "completed",
+            "timestamp": "2026-11-05T12:48:11.690+00:00",
+            "elapsed_seconds": 5.230692099999942,
+            "duration_seconds": 0.0016692000008333707
+          }
+        ],
+        "observer_warnings": []
+      },
+      "active_task": null,
+      "running_tasks": [],
+      "task_index": {},
+      "recent_tasks": [],
+      "session_id": "c8a8fb024caf4a12b3c29c8cdc5d550f",
+      "model_revision": 0,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": "24.2.0",
+      "opticstudio_build": "240529",
+      "license": "PremiumEdition",
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "mode": "Sequential",
+      "configuration": 1,
+      "lens_units": "Millimeters",
+      "mtf_units": "CyclesPerMillimeter",
+      "geometry": {
+        "state": "pending",
+        "model_revision": 0,
+        "session_id": "c8a8fb024caf4a12b3c29c8cdc5d550f"
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": "c8a8fb024caf4a12b3c29c8cdc5d550f",
+      "model_revision": 0,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": "24.2.0",
+      "opticstudio_build": "240529",
+      "license": "PremiumEdition",
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "mode": "Sequential",
+      "configuration": 1,
+      "lens_units": "Millimeters",
+      "mtf_units": "CyclesPerMillimeter",
+      "geometry": {
+        "state": "pending",
+        "model_revision": 0,
+        "session_id": "c8a8fb024caf4a12b3c29c8cdc5d550f"
+      }
+    },
+    "artifacts": []
+  },
+  "disconnect": {
+    "ok": true,
+    "data": {
+      "connected": false,
+      "last_session": {
+        "session_id": "c8a8fb024caf4a12b3c29c8cdc5d550f",
+        "model_revision": 1,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\NS-04\\runtime066\\native\\c8a8fb024caf4a12b3c29c8cdc5d550f\\working_d8c3e887.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\NS-04\\runtime066\\native\\c8a8fb024caf4a12b3c29c8cdc5d550f\\checkpoint_r1_disconnect_b473b886.zos",
+        "requires_reconnect": false,
+        "mode": "NonSequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 1,
+          "session_id": "c8a8fb024caf4a12b3c29c8cdc5d550f"
+        }
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": null,
+      "model_revision": 1,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": null,
+      "opticstudio_build": null,
+      "license": null,
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "geometry": {
+        "state": "pending",
+        "model_revision": 1,
+        "session_id": null
+      }
+    },
+    "artifacts": []
+  }
+}

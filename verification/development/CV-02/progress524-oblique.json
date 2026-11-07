@@ -1,0 +1,377 @@
+{
+  "date": "2026-11-07",
+  "item_ids": [
+    "CV-02.PowerFieldMapSettings",
+    "CV-02.PowerPupilMapSettings"
+  ],
+  "state": "implemented",
+  "completion_count": 0,
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build240529 Premium",
+  "scope": "Independent off-axis Tangential/Sagittal power and EFL at spherical and Biconic vertex chief ray",
+  "input_source": "Owned N-BK7 refracting interface, stop at selected interface; wavelength.5875618um; incident Y angle20deg. Rx/Ry=50/50,100/50,50/100mm",
+  "request": "Two map kinds; Tangential/Sagittal x Power/EFL;3x3 grids. Field map widths2x40deg uses (0,20) sample; pupil map field2 uses center pupil.",
+  "actual_settings": "Each run oblique.json preserves complete request, native query arguments, task/context/configuration and results",
+  "reference": {
+    "index": "Official SCHOTT N-BK7 Nd via material property resource",
+    "geometry": "Vertex incoming plane wave20deg; outgoing angle from Snell sin(r)=sin(i)/n",
+    "tangential_efl": "n*Ry*cos(r)^2/(n*cos(r)-cos(i))",
+    "sagittal_efl": "n*Rx/(n*cos(r)-cos(i))",
+    "power": "1000/EFL_mm"
+  },
+  "tolerance": "2e-4 absolute +2e-5 relative; same as474/487",
+  "results": [
+    {
+      "run": "outputs/runs/power523_oblique_646b7fd442",
+      "conditions": {
+        "reference": "Oblique spherical refraction wavefront curvatures",
+        "refractive_index": 1.5168000345005883,
+        "incidence_degrees": 20,
+        "reference_efl_mm": {
+          "Tangential": 133.78826587428097,
+          "Sagittal": 140.9551026183507
+        },
+        "absolute_tolerance": 0.0002,
+        "relative_tolerance": 2e-05
+      },
+      "checks": [
+        {
+          "label": "power_field_map oblique Tangential EFL",
+          "actual": 133.78803814057144,
+          "expected": 133.78826587428097,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_field_map oblique Tangential Power",
+          "actual": 7.47450978352263,
+          "expected": 7.474497060449879,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_field_map oblique Sagittal EFL",
+          "actual": 140.95489960321177,
+          "expected": 140.9551026183507,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_field_map oblique Sagittal Power",
+          "actual": 7.094467824921314,
+          "expected": 7.094457606884901,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_pupil_map oblique Tangential EFL",
+          "actual": 133.78803814057144,
+          "expected": 133.78826587428097,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_pupil_map oblique Tangential Power",
+          "actual": 7.47450978352263,
+          "expected": 7.474497060449879,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_pupil_map oblique Sagittal EFL",
+          "actual": 140.95489960321177,
+          "expected": 140.9551026183507,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_pupil_map oblique Sagittal Power",
+          "actual": 7.094467824921314,
+          "expected": 7.094457606884901,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        }
+      ],
+      "maximum_error": 0.0002277337095222265
+    },
+    {
+      "run": "outputs/runs/power524_oblique_50_50_94c8a8d60b",
+      "conditions": {
+        "reference": "Oblique spherical refraction wavefront curvatures",
+        "refractive_index": 1.5168000345005883,
+        "incidence_degrees": 20,
+        "radius_x": 50,
+        "radius_y": 50,
+        "reference_efl_mm": {
+          "Tangential": 133.78826587428097,
+          "Sagittal": 140.9551026183507
+        },
+        "absolute_tolerance": 0.0002,
+        "relative_tolerance": 2e-05
+      },
+      "checks": [
+        {
+          "label": "power_field_map oblique Tangential EFL",
+          "actual": 133.78803814057144,
+          "expected": 133.78826587428097,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_field_map oblique Tangential Power",
+          "actual": 7.47450978352263,
+          "expected": 7.474497060449879,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_field_map oblique Sagittal EFL",
+          "actual": 140.9548996032118,
+          "expected": 140.9551026183507,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_field_map oblique Sagittal Power",
+          "actual": 7.0944678249213124,
+          "expected": 7.094457606884901,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_pupil_map oblique Tangential EFL",
+          "actual": 133.78803814057144,
+          "expected": 133.78826587428097,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_pupil_map oblique Tangential Power",
+          "actual": 7.47450978352263,
+          "expected": 7.474497060449879,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_pupil_map oblique Sagittal EFL",
+          "actual": 140.9548996032118,
+          "expected": 140.9551026183507,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_pupil_map oblique Sagittal Power",
+          "actual": 7.0944678249213124,
+          "expected": 7.094457606884901,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        }
+      ],
+      "maximum_error": 0.0002277337095222265
+    },
+    {
+      "run": "outputs/runs/power524_oblique_100_50_0a34343333",
+      "conditions": {
+        "reference": "Oblique spherical refraction wavefront curvatures",
+        "refractive_index": 1.5168000345005883,
+        "incidence_degrees": 20,
+        "radius_x": 100,
+        "radius_y": 50,
+        "reference_efl_mm": {
+          "Tangential": 133.78826587428097,
+          "Sagittal": 281.9102052367014
+        },
+        "absolute_tolerance": 0.0002,
+        "relative_tolerance": 2e-05
+      },
+      "checks": [
+        {
+          "label": "power_field_map oblique Tangential EFL",
+          "actual": 133.78803814057144,
+          "expected": 133.78826587428097,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_field_map oblique Tangential Power",
+          "actual": 7.47450978352263,
+          "expected": 7.474497060449879,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_field_map oblique Sagittal EFL",
+          "actual": 281.91009185506556,
+          "expected": 281.9102052367014,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_field_map oblique Sagittal Power",
+          "actual": 3.547230230105121,
+          "expected": 3.5472288034424504,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_pupil_map oblique Tangential EFL",
+          "actual": 133.78803814057144,
+          "expected": 133.78826587428097,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_pupil_map oblique Tangential Power",
+          "actual": 7.47450978352263,
+          "expected": 7.474497060449879,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_pupil_map oblique Sagittal EFL",
+          "actual": 281.91009185506556,
+          "expected": 281.9102052367014,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_pupil_map oblique Sagittal Power",
+          "actual": 3.547230230105121,
+          "expected": 3.5472288034424504,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        }
+      ],
+      "maximum_error": 0.0002277337095222265
+    },
+    {
+      "run": "outputs/runs/power524_oblique_50_100_8f1c60fe8d",
+      "conditions": {
+        "reference": "Oblique spherical refraction wavefront curvatures",
+        "refractive_index": 1.5168000345005883,
+        "incidence_degrees": 20,
+        "radius_x": 50,
+        "radius_y": 100,
+        "reference_efl_mm": {
+          "Tangential": 267.57653174856193,
+          "Sagittal": 140.9551026183507
+        },
+        "absolute_tolerance": 0.0002,
+        "relative_tolerance": 2e-05
+      },
+      "checks": [
+        {
+          "label": "power_field_map oblique Tangential EFL",
+          "actual": 267.5764178818344,
+          "expected": 267.57653174856193,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_field_map oblique Tangential Power",
+          "actual": 3.737250120605226,
+          "expected": 3.7372485302249396,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_field_map oblique Sagittal EFL",
+          "actual": 140.95491147736115,
+          "expected": 140.9551026183507,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_field_map oblique Sagittal Power",
+          "actual": 7.094467227277927,
+          "expected": 7.094457606884901,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_pupil_map oblique Tangential EFL",
+          "actual": 267.5764178818344,
+          "expected": 267.57653174856193,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_pupil_map oblique Tangential Power",
+          "actual": 3.737250120605226,
+          "expected": 3.7372485302249396,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_pupil_map oblique Sagittal EFL",
+          "actual": 140.95491147736115,
+          "expected": 140.9551026183507,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        },
+        {
+          "label": "power_pupil_map oblique Sagittal Power",
+          "actual": 7.094467227277927,
+          "expected": 7.094457606884901,
+          "atol": 0.0002,
+          "rtol": 2e-05,
+          "passed": true
+        }
+      ],
+      "maximum_error": 0.00019114098955697045
+    }
+  ],
+  "checks": {
+    "native523": "1passed,8 numeric checks",
+    "native524": "3passed,24 numeric checks",
+    "ordinary525": "107passed targeted SagTable/CAD/PowerMap/status"
+  },
+  "commands": [
+    ".venv/Scripts/python.exe -m pytest tests/test_power_map_oblique_live.py -q -s --run-zemax --junitxml=verification/development/CV-02/native523-oblique.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_power_map_oblique_live.py -q -s --run-zemax --junitxml=verification/development/CV-02/native524-oblique-biconic.xml"
+  ],
+  "retained_failure": {
+    "report": "verification/development/CV-02/native522-oblique.xml",
+    "reason": "Initial model retained image stop, so20deg reference ray was vignetted at selected sphere and mapped null. Fixed controlled model stop location, not tolerance or mask."
+  },
+  "lifecycle": "All successful control sessions finished task queries, preserved surfaces/settings and disconnected. Formal query composite opens no separate native analysis; batch ray tool owned/closed by trace flow.",
+  "conclusion": "Off-axis independent principal-direction reference now passes at vertex chief ray for spherical/biaxial cases. This does not validate off-center pupil nodes or native peripheral-ring validity semantics.",
+  "remaining": [
+    "PowerPupil off-center local curvature",
+    "Native peripheral-ring sample/radius and per-ray validity outlet",
+    "Formal zero-EFL meaning; native zero preserved"
+  ],
+  "next_action": "Run525 off-center pupil Coddington reference, then audit remaining map statement; keep implemented until complete scope."
+}

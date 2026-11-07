@@ -1,0 +1,6 @@
+{
+  "kind": "ima_bim_viewer",
+  "input_file": "sample.IMA",
+  "map_index": 1,
+  "method": "native_source_bitmap"
+}

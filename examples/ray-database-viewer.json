@@ -1,0 +1,8 @@
+{
+  "kind": "ray_database_viewer",
+  "path": "C:/data/trace.zrd",
+  "filter": "H3",
+  "start_ray": 0,
+  "start_segment": 0,
+  "max_segments": 10000
+}

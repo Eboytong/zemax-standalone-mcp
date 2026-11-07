@@ -1,0 +1,41 @@
+[
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "single_ray_trace",
+        "hy": 0.2,
+        "py": 0.5
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "cardinal_points",
+        "start_surface": 1,
+        "end_surface": 2
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "seidel_coefficients",
+        "wavelength": 1
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "grid_distortion",
+        "field_width": 10,
+        "aspect": 0.7
+      }
+    }
+  }
+]

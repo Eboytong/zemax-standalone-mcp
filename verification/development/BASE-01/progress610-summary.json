@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-07",
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "target_release": "0.1.62",
+  "tools": 100,
+  "analyses": 110,
+  "batch_completed": 5,
+  "batch_target": 10,
+  "new_completed": [],
+  "evidence": [
+    "verification/development/CV-01/progress610-coherent-pupil.json"
+  ],
+  "checks": {
+    "ordinary610_passed": 25,
+    "native604_diagnostic": 1,
+    "native605_diagnostic": 1,
+    "geometry608": "completed"
+  },
+  "remaining": {
+    "source_records": 130,
+    "distinct_ids": 122,
+    "canonical_functions": 120,
+    "historical_baseline_documented": 38
+  },
+  "lifecycle": "Nine analyses closed; final native sessions disconnected; no active task",
+  "release": "Pending10first completions; no0.1.62 build or full regression",
+  "next_action": "610确认批量OPD与原生波前相位一致，但正式相干OTF的内部采样/支持域不同；自相关跨出口在.005内。仍需独立光线到相干复瞳的坐标/幅度映射及采样定义，保留implemented；继续固定候补SagTable其他物理偏移/制造摘要的正式出口审计，有新依据再运行。"
+}

@@ -1,0 +1,16 @@
+{
+  "request": {
+    "kind": "configuration_matrix_spot",
+    "pattern": "Hexapolar",
+    "reference": "Centroid",
+    "show_scale": "ScaleBar",
+    "color_rays_by": "Config",
+    "ray_density": 6,
+    "direction_cosines": false,
+    "use_symbols": false,
+    "use_polarization": false,
+    "scatter_rays": false,
+    "show_airy_disk": false,
+    "ignore_lateral_color": false
+  }
+}

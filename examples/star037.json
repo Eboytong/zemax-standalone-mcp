@@ -1,0 +1,35 @@
+[
+  {
+    "tool": "get_star_data",
+    "arguments": {
+      "request": {
+        "surface": 1,
+        "include_points": true,
+        "count": 100
+      }
+    }
+  },
+  {
+    "tool": "run_star_operation",
+    "arguments": {
+      "request": {
+        "kind": "import_deformation",
+        "surface": 1,
+        "path": "C:\\FEA\\surface1.txt",
+        "coordinate_system": "local",
+        "length_unit": "Millimeters"
+      }
+    }
+  },
+  {
+    "tool": "run_star_operation",
+    "arguments": {
+      "request": {
+        "kind": "fit_deformation",
+        "surface": 1,
+        "apply": "enable",
+        "deformation_option": "DeformationWithRBMs"
+      }
+    }
+  }
+]

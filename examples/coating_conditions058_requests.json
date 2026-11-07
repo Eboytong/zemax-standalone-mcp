@@ -1,0 +1,38 @@
+{
+  "relative_film_setup": {
+    "tool": "update_system_settings",
+    "arguments": {
+      "settings": {
+        "wavelengths": [
+          {
+            "wavelength_um": 0.45
+          },
+          {
+            "wavelength_um": 0.55
+          },
+          {
+            "wavelength_um": 0.7
+          }
+        ],
+        "primary_wavelength": 2
+      }
+    }
+  },
+  "requests": [
+    {
+      "kind": "phase_vs_wavelength",
+      "surface": 1,
+      "angle": 45,
+      "minimum_wavelength_um": 0.6,
+      "maximum_wavelength_um": 0.7
+    },
+    {
+      "kind": "phase_vs_angle",
+      "surface": 1,
+      "wavelength": 2,
+      "minimum_angle": 0,
+      "maximum_angle": 70
+    }
+  ],
+  "conditions": "Relative thickness uses original primary .55 um, preserved in temporary scan copy. MIRROR material selects reflected phase. ReverseDirection is active only on NSC component surfaces."
+}

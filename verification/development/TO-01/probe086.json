@@ -1,0 +1,12 @@
+{
+  "item_id": "TO-01.QuickYield",
+  "state": "implemented",
+  "date": "2026-11-06",
+  "evidence": "verification/development/TO-01/native086-characterization.xml",
+  "run": "outputs/runs/quickyield086_reference_f27051ea2c",
+  "native": 0.24512342752844274,
+  "reference_conditions": "18 RMS references:3 wavelengths x Centroid/ChiefRay x GaussQuad3/5/10",
+  "observation": "At wavelength1, refs converge0.2153353906573 waves; ChiefRay and Centroid coincide on axis. None of18 references matches within original1e-5+1% tolerance.",
+  "next_action": "Probe QuickYield fitted wavefront/precision and field selection against controlled analytic aberration models; preserve original failed reference",
+  "counts_as_completed": false
+}

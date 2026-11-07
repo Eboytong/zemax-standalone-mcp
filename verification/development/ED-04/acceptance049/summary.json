@@ -1,0 +1,93 @@
+{
+  "version": "0.1.47",
+  "ordinary_passed": 1701,
+  "ordinary_report": "verification/development/BASE-04/ordinary049.xml",
+  "initial_report": "verification/development/ED-04/native049.xml",
+  "fix_report": "verification/development/ED-04/native049-fix.xml",
+  "wheel_report": "verification/development/BASE-04/wheel-native047.xml",
+  "wheel_passed": 4,
+  "runs": [
+    {
+      "evidence": "verification\\development\\ED-04\\acceptance049\\design_cooke020_quick_adjust_8105ac9499",
+      "disconnect": true,
+      "checks": []
+    },
+    {
+      "evidence": "verification\\development\\ED-04\\acceptance049\\design_cooke020_find_best_asphere_157d2cf863",
+      "disconnect": true,
+      "checks": []
+    },
+    {
+      "evidence": "verification\\development\\ED-04\\acceptance049\\design_cooke020_ray_aiming_wizard_3abf74fb79",
+      "disconnect": false,
+      "checks": []
+    },
+    {
+      "evidence": "verification\\development\\ED-04\\acceptance049\\design_cooke020_sequential_fadffacf96",
+      "disconnect": true,
+      "checks": []
+    },
+    {
+      "evidence": "verification\\development\\ED-04\\acceptance049\\design_nsc020_nsc_88e2cbdb39",
+      "disconnect": true,
+      "checks": []
+    },
+    {
+      "evidence": "verification\\development\\ED-04\\acceptance049\\design_nsc020_bitmap_41b667a1e8",
+      "disconnect": true,
+      "checks": []
+    },
+    {
+      "evidence": "verification\\development\\ED-04\\acceptance049\\design_nsc020_roadway_7caeb96a38",
+      "disconnect": true,
+      "checks": []
+    },
+    {
+      "evidence": "verification\\development\\ED-04\\acceptance049\\design_focus_apply049_5e0efd8583",
+      "disconnect": true,
+      "checks": [
+        {
+          "label": "QuickAdjust focus versus independent quadratic ray variance",
+          "actual": 47.35560260563906,
+          "expected": 47.35536453358475,
+          "atol": 0.01,
+          "rtol": 0,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "evidence": "verification\\development\\ED-04\\acceptance049\\catalog_selection021_b06f5d5bcd",
+      "disconnect": true,
+      "checks": [
+        {
+          "label": "selected efl_mm",
+          "actual": 18.86,
+          "expected": 18.86,
+          "atol": 1e-12,
+          "rtol": 1e-12,
+          "passed": true
+        },
+        {
+          "label": "selected epd_mm",
+          "actual": 4.4,
+          "expected": 4.4,
+          "atol": 1e-12,
+          "rtol": 1e-12,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "evidence": "verification\\development\\ED-04\\acceptance049\\catalog_candidates021_46e5227f67",
+      "disconnect": true,
+      "checks": []
+    }
+  ],
+  "fixed": "get_merit_function used a sequential-only guard; NSC wizard Apply modified MFE but result collection failed. Now reads MFE for any open model.",
+  "remaining": [
+    "RayAiming Cooke preview not terminal in 180s; controlled-model Apply not terminal in 90s; preserve timeout and investigate native completion/cancel behavior.",
+    "FindBestAsphere native merit decreased; independent candidate optimum reference remains.",
+    "Bitmap resources available (13 files), but Bitmap/Roadway only previewed; actual Apply required."
+  ]
+}

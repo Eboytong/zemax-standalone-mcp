@@ -1,0 +1,1105 @@
+{
+  "operands": [
+    {
+      "name": "GBPD",
+      "available": true,
+      "headers": [
+        {
+          "number": 1,
+          "header": "面",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 2,
+          "header": "波",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 3,
+          "header": "使用X",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 4,
+          "header": "W0",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 5,
+          "header": "S1toW",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 6,
+          "header": "M2 因子",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 7,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        },
+        {
+          "number": 8,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        }
+      ],
+      "parameters": [
+        2,
+        1,
+        1.0,
+        0.05,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "value": 0.003501394439196175
+    },
+    {
+      "name": "GBPP",
+      "available": true,
+      "headers": [
+        {
+          "number": 1,
+          "header": "面",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 2,
+          "header": "波",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 3,
+          "header": "使用X",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 4,
+          "header": "W0",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 5,
+          "header": "S1toW",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 6,
+          "header": "M2 因子",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 7,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        },
+        {
+          "number": 8,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        }
+      ],
+      "parameters": [
+        2,
+        1,
+        1.0,
+        0.05,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "value": 100.0
+    },
+    {
+      "name": "GBPR",
+      "available": true,
+      "headers": [
+        {
+          "number": 1,
+          "header": "面",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 2,
+          "header": "波",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 3,
+          "header": "使用X",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 4,
+          "header": "W0",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 5,
+          "header": "S1toW",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 6,
+          "header": "M2 因子",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 7,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        },
+        {
+          "number": 8,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        }
+      ],
+      "parameters": [
+        2,
+        1,
+        1.0,
+        0.05,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "value": 102.039174463035
+    },
+    {
+      "name": "GBPS",
+      "available": true,
+      "headers": [
+        {
+          "number": 1,
+          "header": "面",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 2,
+          "header": "波",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 3,
+          "header": "使用X",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 4,
+          "header": "W0",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 5,
+          "header": "S1toW",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 6,
+          "header": "M2 因子",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 7,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        },
+        {
+          "number": 8,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        }
+      ],
+      "parameters": [
+        2,
+        1,
+        1.0,
+        0.05,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "value": 0.35369285009345147
+    },
+    {
+      "name": "GBPW",
+      "available": true,
+      "headers": [
+        {
+          "number": 1,
+          "header": "面",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 2,
+          "header": "波",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 3,
+          "header": "使用X",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 4,
+          "header": "W0",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 5,
+          "header": "S1toW",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 6,
+          "header": "M2 因子",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 7,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        },
+        {
+          "number": 8,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        }
+      ],
+      "parameters": [
+        2,
+        1,
+        1.0,
+        0.05,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "value": 0.05
+    },
+    {
+      "name": "GBPZ",
+      "available": true,
+      "headers": [
+        {
+          "number": 1,
+          "header": "面",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 2,
+          "header": "波",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 3,
+          "header": "使用X",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 4,
+          "header": "W0",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 5,
+          "header": "S1toW",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 6,
+          "header": "M2 因子",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 7,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        },
+        {
+          "number": 8,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        }
+      ],
+      "parameters": [
+        2,
+        1,
+        1.0,
+        0.05,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "value": 14.279966607226331
+    },
+    {
+      "name": "GBSD",
+      "available": true,
+      "headers": [
+        {
+          "number": 1,
+          "header": "输入#",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 2,
+          "header": "输出#",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 3,
+          "header": "波",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 4,
+          "header": "视场",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 5,
+          "header": "面到束腰",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 6,
+          "header": "W0",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 7,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        },
+        {
+          "number": 8,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        }
+      ],
+      "parameters": [
+        1,
+        2,
+        1.0,
+        1.0,
+        0.0,
+        0.05,
+        0.0,
+        0.0
+      ],
+      "value": 0.003501394439175562
+    },
+    {
+      "name": "GBSP",
+      "available": true,
+      "headers": [
+        {
+          "number": 1,
+          "header": "输入#",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 2,
+          "header": "输出#",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 3,
+          "header": "波",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 4,
+          "header": "视场",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 5,
+          "header": "面到束腰",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 6,
+          "header": "W0",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 7,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        },
+        {
+          "number": 8,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        }
+      ],
+      "parameters": [
+        1,
+        2,
+        1.0,
+        1.0,
+        0.0,
+        0.05,
+        0.0,
+        0.0
+      ],
+      "value": 100.00000000057672
+    },
+    {
+      "name": "GBSR",
+      "available": true,
+      "headers": [
+        {
+          "number": 1,
+          "header": "输入#",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 2,
+          "header": "输出#",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 3,
+          "header": "波",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 4,
+          "header": "视场",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 5,
+          "header": "面到束腰",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 6,
+          "header": "W0",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 7,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        },
+        {
+          "number": 8,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        }
+      ],
+      "parameters": [
+        1,
+        2,
+        1.0,
+        1.0,
+        0.0,
+        0.05,
+        0.0,
+        0.0
+      ],
+      "value": 102.03917446364797
+    },
+    {
+      "name": "GBSS",
+      "available": true,
+      "headers": [
+        {
+          "number": 1,
+          "header": "输入#",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 2,
+          "header": "输出#",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 3,
+          "header": "波",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 4,
+          "header": "视场",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 5,
+          "header": "面到束腰",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 6,
+          "header": "W0",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 7,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        },
+        {
+          "number": 8,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        }
+      ],
+      "parameters": [
+        1,
+        2,
+        1.0,
+        1.0,
+        0.0,
+        0.05,
+        0.0,
+        0.0
+      ],
+      "value": 0.3536928500934514
+    },
+    {
+      "name": "GBSW",
+      "available": true,
+      "headers": [
+        {
+          "number": 1,
+          "header": "输入#",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 2,
+          "header": "输出#",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 3,
+          "header": "波",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 4,
+          "header": "视场",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 5,
+          "header": "面到束腰",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 6,
+          "header": "W0",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 7,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        },
+        {
+          "number": 8,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        }
+      ],
+      "parameters": [
+        1,
+        2,
+        1.0,
+        1.0,
+        0.0,
+        0.05,
+        0.0,
+        0.0
+      ],
+      "value": 0.050000000000294365
+    }
+  ],
+  "connect": {
+    "connected": true,
+    "native_system_status": "",
+    "native_startup": {
+      "events": [
+        {
+          "stage": "install_check",
+          "event": "started",
+          "timestamp": "2026-11-06T16:46:53.687+00:00",
+          "elapsed_seconds": 2.4000000848900527e-05
+        },
+        {
+          "stage": "install_check",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:46:53.687+00:00",
+          "elapsed_seconds": 0.0002733000001171604,
+          "duration_seconds": 0.00026079999952344224
+        },
+        {
+          "stage": "environment",
+          "event": "started",
+          "timestamp": "2026-11-06T16:46:53.687+00:00",
+          "elapsed_seconds": 0.00028200000087963417
+        },
+        {
+          "stage": "environment",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:46:53.697+00:00",
+          "elapsed_seconds": 0.01016929999968852,
+          "duration_seconds": 0.009877299999061506
+        },
+        {
+          "stage": "clr_load",
+          "event": "started",
+          "timestamp": "2026-11-06T16:46:53.697+00:00",
+          "elapsed_seconds": 0.010182800000620773
+        },
+        {
+          "stage": "clr_load",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:46:53.990+00:00",
+          "elapsed_seconds": 0.30289690000063274,
+          "duration_seconds": 0.29269530000237864
+        },
+        {
+          "stage": "nethelper_assembly",
+          "event": "started",
+          "timestamp": "2026-11-06T16:46:53.990+00:00",
+          "elapsed_seconds": 0.3029210000022431
+        },
+        {
+          "stage": "nethelper_assembly",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:46:53.998+00:00",
+          "elapsed_seconds": 0.310902500001248,
+          "duration_seconds": 0.007973100000526756
+        },
+        {
+          "stage": "zos_initialize",
+          "event": "started",
+          "timestamp": "2026-11-06T16:46:53.998+00:00",
+          "elapsed_seconds": 0.3109139000007417
+        },
+        {
+          "stage": "zos_initialize",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:46:54.006+00:00",
+          "elapsed_seconds": 0.3190467999993416,
+          "duration_seconds": 0.0081123000018124
+        },
+        {
+          "stage": "api_assemblies",
+          "event": "started",
+          "timestamp": "2026-11-06T16:46:54.006+00:00",
+          "elapsed_seconds": 0.31906720000188216
+        },
+        {
+          "stage": "api_assemblies",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:46:54.022+00:00",
+          "elapsed_seconds": 0.33555660000274656,
+          "duration_seconds": 0.01647880000018631
+        },
+        {
+          "stage": "connection_create",
+          "event": "started",
+          "timestamp": "2026-11-06T16:46:54.022+00:00",
+          "elapsed_seconds": 0.33557070000097156
+        },
+        {
+          "stage": "connection_create",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:46:54.327+00:00",
+          "elapsed_seconds": 0.6401638999996067,
+          "duration_seconds": 0.3045756999999867
+        },
+        {
+          "stage": "application_create",
+          "event": "started",
+          "timestamp": "2026-11-06T16:46:54.327+00:00",
+          "elapsed_seconds": 0.640183600000455
+        },
+        {
+          "stage": "application_create",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:46:59.265+00:00",
+          "elapsed_seconds": 5.577934100001585,
+          "duration_seconds": 4.937734899998759
+        },
+        {
+          "stage": "license_check",
+          "event": "started",
+          "timestamp": "2026-11-06T16:46:59.265+00:00",
+          "elapsed_seconds": 5.577953399999387
+        },
+        {
+          "stage": "license_check",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:46:59.266+00:00",
+          "elapsed_seconds": 5.5796880000016245,
+          "duration_seconds": 0.0017241000023204833
+        },
+        {
+          "stage": "primary_system",
+          "event": "started",
+          "timestamp": "2026-11-06T16:46:59.266+00:00",
+          "elapsed_seconds": 5.579703100000188
+        },
+        {
+          "stage": "primary_system",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:46:59.268+00:00",
+          "elapsed_seconds": 5.581450100002257,
+          "duration_seconds": 0.0017388999985996634
+        }
+      ],
+      "observer_warnings": []
+    },
+    "active_task": null,
+    "running_tasks": [],
+    "task_index": {},
+    "recent_tasks": [],
+    "session_id": "4f101398030a48a28d179ad2a7509f0b",
+    "model_revision": 0,
+    "source_file": null,
+    "working_file": null,
+    "opticstudio_version": "24.2.0",
+    "opticstudio_build": "240529",
+    "license": "PremiumEdition",
+    "checkpoint": null,
+    "requires_reconnect": false,
+    "mode": "Sequential",
+    "configuration": 1,
+    "lens_units": "Millimeters",
+    "mtf_units": "CyclesPerMillimeter",
+    "geometry": {
+      "state": "pending",
+      "model_revision": 0,
+      "session_id": "4f101398030a48a28d179ad2a7509f0b"
+    }
+  },
+  "merit_before": {
+    "total": 1,
+    "operands": [
+      {
+        "operand": 1,
+        "type": "BLNK",
+        "target": "NaN",
+        "weight": "NaN",
+        "value": "NaN",
+        "contribution": "NaN",
+        "parameters": {},
+        "cells": {
+          "2": {
+            "column": 2,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "3": {
+            "column": 3,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "4": {
+            "column": 4,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "5": {
+            "column": 5,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "6": {
+            "column": 6,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "7": {
+            "column": 7,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "8": {
+            "column": 8,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "9": {
+            "column": 9,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          }
+        }
+      }
+    ],
+    "next_start": null,
+    "values_are_cached": true
+  },
+  "merit_after": {
+    "total": 1,
+    "operands": [
+      {
+        "operand": 1,
+        "type": "BLNK",
+        "target": "NaN",
+        "weight": "NaN",
+        "value": "NaN",
+        "contribution": "NaN",
+        "parameters": {},
+        "cells": {
+          "2": {
+            "column": 2,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "3": {
+            "column": 3,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "4": {
+            "column": 4,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "5": {
+            "column": 5,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "6": {
+            "column": 6,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "7": {
+            "column": 7,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "8": {
+            "column": 8,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "9": {
+            "column": 9,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          }
+        }
+      }
+    ],
+    "next_start": null,
+    "values_are_cached": true
+  },
+  "disconnect": {
+    "ok": true,
+    "data": {
+      "connected": false,
+      "last_session": {
+        "session_id": "4f101398030a48a28d179ad2a7509f0b",
+        "model_revision": 3,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\WP-01\\operands352\\native\\4f101398030a48a28d179ad2a7509f0b\\working_1f9506e2.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\WP-01\\operands352\\native\\4f101398030a48a28d179ad2a7509f0b\\checkpoint_r3_disconnect_f383f172.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 3,
+          "session_id": "4f101398030a48a28d179ad2a7509f0b"
+        }
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": null,
+      "model_revision": 3,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": null,
+      "opticstudio_build": null,
+      "license": null,
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "geometry": {
+        "state": "pending",
+        "model_revision": 3,
+        "session_id": null
+      }
+    },
+    "artifacts": []
+  }
+}

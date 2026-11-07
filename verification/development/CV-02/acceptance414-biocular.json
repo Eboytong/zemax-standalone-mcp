@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-07",
+  "item_id": "CV-02.BiocularDipvergenceConvergence",
+  "state": "done",
+  "source_version": "0.1.60 plus B005 source",
+  "native_version": "24.2.0 build240529 PremiumEdition",
+  "scope": "All documented scan controls through typed BIOC/BIOD arguments; true STOP-launched left/right validation and matched-image residual; raw silent-zero handling; rows/series/paging/plot/config restoration/cancellation/reload and resource closure.",
+  "ordinary_passed": 106,
+  "ordinary_report": "verification/development/CV-02/ordinary414-biocular.xml",
+  "native_unique_cases": 3,
+  "native_reports": [
+    "verification/development/CV-02/native411-biocular-serial.xml",
+    "verification/development/CV-02/native412-clipped.xml"
+  ],
+  "numeric_checks": 307,
+  "max_absolute_error_mrad": 4.344098438302524e-05,
+  "preset_atol_mrad": 0.001,
+  "reference": "Native126-point six-offset worksheet, independent two-plane100/120mm matching, 2D cosine geometry, eye swap120/100mm, equal-eye zero, compensation identity.",
+  "run_folders": [
+    "outputs/runs/biocular406_planes_2f2f85e516",
+    "outputs/runs/biocular408_full_6cecfee221",
+    "outputs/runs/biocular412_clipped_1f333fc020"
+  ],
+  "probe": "verification/development/CV-02/probe410-clipping-isolated/probe.json",
+  "commands": [
+    ".venv/Scripts/python.exe -X utf8 tests/support/biocular_probe.py verification/development/CV-02/probe410-clipping-isolated clipping_only",
+    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_biocular_live.py --run-zemax -q --junitxml=verification/development/CV-02/native411-biocular-serial.xml",
+    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_biocular_live.py::test_biocular_eye_swap_and_clipped_zero_rejection --run-zemax -q --junitxml=verification/development/CV-02/native412-clipped.xml"
+  ],
+  "settings": "Explicit native BIOC/BIOD parameters and configuration readback; no AS_Default dialog mutation.",
+  "validation": "Independent native copies per eye, direct real rays from STOP center using requested and returned matched angles; pass status plus local image X/Y residual tolerance1e-5+1e-6*max absolute image coordinate in current lens units.",
+  "failure_behavior": "Native BIOC/BIOD silently return0 when clipped. Raw0 retained, failed validated samples expose null display values and original ray status/codes. All invalid raises NO_VALID_BIOCULAR_POINTS. Original failure retained on copy-close or config-restore failure, requires reconnect.",
+  "lifecycle": "All latest3 accepted sessions serial, normal disconnect, native_closed=true/forced=false. Validation copies close on success/error/cancel; config2, surfaces/solves/settings/MCE/MFE unchanged; PNG viewed; save/reload passed.",
+  "historical_issue": "Progress409 records accidental overlap of live407 and408. Probe410 isolated normally and current411 repeat is serial; old408 remains provisional historical evidence, not used for acceptance.",
+  "batch": "B0053/10; no concentrated gate/new wheel"
+}

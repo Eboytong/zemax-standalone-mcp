@@ -1,0 +1,25 @@
+Source Bitmap Settings
+Input File The name of the file for the source bitmap. The file may be in BMP, JPG, PNG, IMA, or BIM file formats. For
+a description of the IMA and BIM file formats see "The IMA format" and "The BIM format". The input files are stored
+in the <images> folder (see "Folders" ). IMA abd BIM files must have more than 1 but no more than 8,000 pixels in
+each direction,whileBMP, JPGandPNGfiles must have more than 1 and no more than 16,000 pixels in each direction.
+Field Height This value defines the full height in the y-axis of the source bitmap in field coordinates, which may be
+either lens units or degrees, depending upon the current field definition (heights or angles, respectively). If the field
+type is Real Image Height, the field type is automatically changed to Paraxial Image Height for this analysis. This
+avoids the problem ofReal ImageHeight masking the distortion in the image. The FieldHeight applies to the resulting
+bitmap after any oversampling, guard band, or rotation is applied.
+Oversampling Oversampling increases the pixel resolution of the source bitmap by copying one pixel into 2, 4, or
+more identical adjacent pixels. The purpose of this feature is to increase the number of pixels per field unit.
+Oversampling will be applied a factor of 2 at a time until the specified oversampling is achieved, as long as the
+maximum number of pixels in any direction will not exceed 16,000. This limit only applies to the oversampling
+feature, and not to the input file. Oversampling is applied to the image before any effects of the optical system are
+considered.
+Flip Source Flips the source bitmap left-right, top-bottom, or both. The source bitmap is flipped before any effects
+of the optical system are considered.
+Guard Band This feature increases the pixel resolution of the source bitmap by repeatedly doubling the number of
+pixels. This doubling only affects the analysis, while the original bitmap file remains unchanged. This results in a
+black "guard band" all around the original image. The purpose ofthis feature is to increase the number of pixels per
+field unit while adding a region around the desired image. This is particularly useful if the point spread function(s)
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 822
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

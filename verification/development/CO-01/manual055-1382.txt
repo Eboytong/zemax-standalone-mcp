@@ -1,0 +1,52 @@
+WAVE <wavelength 2 in micrometers> Rs Rp Ts Tp Ars Arp Ats Atp
+WAVE <wavelength 3 in micrometers> Rs Rp Ts Tp Ars Arp Ats Atp
+ANGL <next angle in degrees>
+WAVE <wavelength 1 in micrometers> Rs Rp Ts Tp Ars Arp Ats Atp
+WAVE <wavelength 2 in micrometers> Rs Rp Ts Tp Ars Arp Ats Atp
+WAVE <wavelength 3 in micrometers> Rs Rp Ts Tp Ars Arp Ats Atp
+...
+Table coatings are similar to IDEAL coatings, except the transmission and reflection may be a function of incident
+angle and wavelength and may be specified separately for S and P polarizations. For multiple discrete angles of
+incidence and wavelengths, four intensity values are defined: Rs, Rp, Ts, and Tp; for intensity reflection and
+transmission and the s and p subscripts indicate the polarization state. There are also four angles (in degrees)
+defined: Ars, Arp, Ats, and Atp;these values define the phase angle ofthe R and T values soOpticStudio can compute
+the real and imaginary parts of the transmission and reflection. The real part is proportional to the cosine of the
+angle, and the imaginary part is proportional to the sine of the angle. If the angles are omitted or zero the reflection
+or transmission is real and no phase change is introduced by the coating. The absorption is computed from A = 1 -
+R - T for each polarization state. If the substrate is not a mirror and the incident index is higher than the substrate
+index, the phase of reflection is changed by a factor of π .
+The primary purpose of the table model is to allow accurate ray tracing where the layer by layer prescription of the
+coating is not known or is unavailable because the coating vendor will not provide the design data.
+The syntax consists of the keyword TABLE followed by the name of the coating. Table coating names may be any
+user defined name up to 32 characters in length, with no special characters permitted. Note that spaces are not
+allowed. After the TABLE keyword, blocks of data are defined for each incident angle. After each angle definition, R
+and T values are defined for each wavelength in the table. An example syntax would be:
+TABLE MYTABLECOAT
+ANGL 0
+WAVE 0.35 0.014 0.014 0.986 0.986 0.0 0.0 0.0 0.0
+WAVE 0.70 0.013 0.013 0.987 0.987 0.0 0.0 0.0 0.0
+ANGL 5
+WAVE 0.35 0.015 0.015 0.985 0.985 0.0 0.0 0.0 0.0
+WAVE 0.70 0.012 0.012 0.988 0.988 0.0 0.0 0.0 0.0
+ANGL 45
+WAVE 0.35 0.065 0.070 0.935 0.930 0.0 0.0 0.0 0.0
+WAVE 0.70 0.062 0.065 0.938 0.935 0.0 0.0 0.0 0.0
+ANGL 80
+WAVE 0.35 0.600 0.600 0.400 0.400 0.0 0.0 0.0 0.0
+WAVE 0.70 0.600 0.600 0.400 0.400 0.0 0.0 0.0 0.0
+There are several very important points to note:
+Angles of incidence less than the smallest angle defined will use the smallest angle data. Angles of incidence greater
+than the largest angle defined will use the largest angle data. Other values are linearly interpolated in cosine of the
+angle space. Note OpticStudio interpolates but does not extrapolate. Angles must be listed in ascending order. If
+data for an angle of incidence of 0.0 degrees is defined, the S and P data should be identical, since S and P are
+indistinguishable at normal incidence.
+Angles of incidence are assumed to be in the incident media, and for coatings placed on refractive surfaces,thatthe
+incident media has a lower index of refraction than the substrate. For coatings placed on surfaces where the rays
+go from high index to low index (such as glass to air), the refracted angle in the low index media is used as the angle
+of incidence. OpticStudio assumes the phase of transmission is zero if no phase angles are defined. The phase data
+is angles measured in degrees if the data is provided. If the substrate is not a mirror and the incident index is higher
+than the substrate index, the phase of reflection is changed by a factor of π .
+Wavelengths in between wavelength data points will linearly interpolate in wavelength space.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1383
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Libraries Tab

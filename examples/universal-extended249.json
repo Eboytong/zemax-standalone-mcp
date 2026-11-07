@@ -1,0 +1,18 @@
+{
+  "conic": {"request": {
+    "kind": "universal_plot_1d", "surface": 1, "parameter": "Conic",
+    "start": 0.001, "stop": 0.003, "samples": 3,
+    "target": {"mode": "operand", "operand": "COVA", "parameters": [1]}
+  }},
+  "surface_parameter": {"request": {
+    "kind": "universal_plot_1d", "surface": 1, "parameter": "SurfaceParameter", "parameter_number": 1,
+    "start": 0.001, "stop": 0.003, "samples": 3,
+    "target": {"mode": "operand", "operand": "PMVA", "parameters": [1, 1]}
+  }},
+  "mixed_conditions": "模型的曲面2和4为NonSequential组，均包含物体1",
+  "mixed_group": {"request": {
+    "kind": "universal_plot_1d", "category": "NSC", "nsc_surface": 4, "object": 1,
+    "parameter": "XPosition", "start": 2, "stop": 4, "samples": 3,
+    "target": {"mode": "operand", "operand": "NPXV", "parameters": [4, 1, 0]}
+  }}
+}

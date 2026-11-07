@@ -1,0 +1,15 @@
+{
+  "tool": "run_analysis",
+  "arguments": {
+    "request": {
+      "kind": "grin_profile",
+      "surface": 2,
+      "wavelength": 1,
+      "show_index_vs": "Z",
+      "minimum_z": 0,
+      "maximum_z": 0.4,
+      "x_value": 0,
+      "y_value": 0
+    }
+  }
+}

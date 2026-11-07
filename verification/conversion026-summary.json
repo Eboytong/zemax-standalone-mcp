@@ -1,0 +1,40 @@
+{
+  "version": "0.1.16",
+  "date": "2026-11-05",
+  "package": "NS-01",
+  "state": "in_progress",
+  "implemented": [
+    "run_nsc_conversion: group and pure, checked settings, checkpoint, task lifecycle, before/after scene"
+  ],
+  "ordinary": {
+    "command": ".venv/Scripts/python.exe -B -m pytest -q -m \"not zemax\" --junitxml=verification/development/NS-01/ordinary026.xml",
+    "passed": 1125,
+    "native_deselected": 481,
+    "seconds": 20.73,
+    "new_tests": 22
+  },
+  "native": {
+    "state": "pending",
+    "prepared_tests": 3,
+    "file": "tests/test_conversion_live.py",
+    "reason": "BASE-04 180-second initialization timeout; no licensing/environment change confirmed",
+    "startup_evidence": "verification/development/BASE-04/connection019/supervisor.json",
+    "numeric_tolerance": {
+      "position": "1e-7 lens units + 1e-7 * reference",
+      "direction": "1e-7 absolute"
+    },
+    "actual_error": null,
+    "close": "not executed"
+  },
+  "release": {
+    "wheel": "wheels/zemax_standalone_mcp-0.1.16-py3-none-any.whl",
+    "installation": "outputs/wheel-release026",
+    "stdio": "passed",
+    "evidence": "verification/development/NS-01/wheel-smoke026.json"
+  },
+  "remaining": [
+    "native adoption, ray/object mapping, reload, cancellation and close",
+    "CriticalRayTracer runtime settings/input/result probe"
+  ],
+  "next": "NS-02 PathAnalysis"
+}

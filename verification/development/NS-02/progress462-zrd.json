@@ -1,0 +1,31 @@
+{
+  "item_id": "NS-02.RayDatabaseViewer",
+  "state": "done",
+  "source_version": "0.1.60",
+  "opticstudio": "24.2.0 build240529 PremiumEdition",
+  "native_probe": "verification/development/NS-02/probe456-viewer/probe.json",
+  "native_reports": [
+    "verification/development/NS-02/native461-reader.xml",
+    "verification/development/NS-02/native462-reader-cancel.xml"
+  ],
+  "ordinary_report": "verification/development/CV-02/ordinary462-candidates.xml",
+  "reference": {
+    "source": "owned NSC SourceRay, 1 W split over 3 analysis rays; DetectorRectangle at z=10",
+    "expected": "three rays, native segment positions/directions and 1/3 incident intensity",
+    "checks": 18,
+    "max_absolute_error": 0,
+    "atol": 1e-08,
+    "rtol": 1e-07
+  },
+  "lifecycle": [
+    "filter and next segment continuation",
+    "row pagination",
+    "invalid ZRD observed as successful empty result",
+    "cancel closes reader and permits subsequent read",
+    "save/reload preserves physical NSC fields and repeat result",
+    "disconnect"
+  ],
+  "formal_alternative": "OpenRayDatabaseReader; filter readback; RunAndWaitForCompletion and Succeeded; ray segment results; Close confirmed",
+  "native_limitation": "ZRDFile is write-only; malformed-content input returns successful empty result on this runtime",
+  "batch": "B0056/10"
+}

@@ -1,0 +1,6 @@
+[
+  {"tool":"run_analysis","arguments":{"request":{"kind":"relative_illumination"}}},
+  {"tool":"run_analysis","arguments":{"request":{"kind":"vignetting","ray_density":40}}},
+  {"tool":"run_analysis","arguments":{"request":{"kind":"footprint","surface":1}}},
+  {"tool":"run_analysis","arguments":{"request":{"kind":"fft_mtf_vs_field","frequencies":[10,30,50]}}}
+]

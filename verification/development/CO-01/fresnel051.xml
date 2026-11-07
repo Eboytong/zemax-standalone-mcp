@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="3" time="48.683" timestamp="2026-11-05T14:25:09.092342+08:00" hostname="tongeb"><testcase classname="tests.test_coatings_live" name="test_coating_bare_interface_fresnel[reflection]" time="18.450"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'completed': False, 'task': {'task_id': 'fa85953f893d43198ba9a55ae07c05ee', 'request_id': '35f85ddd7391483f9f1f9f6e50d3af9e', 'kind': 'analysis', 'state': 'failed', 'created_at': '2026-11-05T06:25:26.281645+00:00', 'finished_at': '2026-11-05T06:25:26.547542+00:00', 'progress': None, 'can_cancel': True, 'cancel_requested': False, 'settings': {'kind': 'reflection_vs_angle', 'requested': {'kind': 'reflection_vs_angle', 'surface': 1, 'wavelength': 1, 'minimum_angle': 0.0, 'maximum_angle': 60.0, 'reverse_direction': False, 'minimum_y': None, 'maximum_y': None}, 'native': {'ObjectNumber': 1, 'FaceNumber': 0, 'MinAngle': 0.0, 'MaxAngle': 60.0, 'MinY': 0.0, 'MaxY': 1.0, 'ReverseDirection': False, 'IsValid': True, 'IsActiveWindow': True, 'Wavelength': 1, 'Surface': 1}, 'evaluation_conditions': {'surface': 1, 'material': '1.50,50.0', 'coating': '无', 'configuration': 1, 'angle_unit': 'degrees', 'wavelength_unit': 'micrometers', 'coefficient_units': 'native labels/header; S/P field phase follows native convention'}}, 'context': {'session_id': '91a31ddf98e546e18a57b78eb59c17b6', 'model_revision': 6, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_reflection_2f2861a200\\91a31ddf98e546e18a57b78eb59c17b6\\working_3ec7c884.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_reflection_2f2861a200\\91a31ddf98e546e18a57b78eb59c17b6\\checkpoint_r5_surfaces_efc11e7a.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 6, 'session_id': '91a31ddf98e546e18a57b78eb59c17b6'}}, 'error': {'code': 'NATIVE_ERROR', 'message': &quot;'NoneType' object is not iterable&quot;}, 'close_attempted': True, 'result_path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_reflection_2f2861a200\\91a31ddf98e546e18a57b78eb59c17b6\\fa85953f893d43198ba9a55ae07c05ee.json', 'elapsed_seconds': 0.23}, 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_reflection_2f2861a200\\91a31ddf98e546e18a57b78eb59c17b6\\checkpoint_r5_surfaces_efc11e7a.zos', 'result_schema_version': 1, 'context': {'session_id': '91a31ddf98e546e18a57b78eb59c17b6', 'model_revision': 6, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_reflection_2f2861a200\\91a31ddf98e546e18a57b78eb59c17b6\\working_3ec7c884.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_reflection_2f2861a200\\91a31ddf98e546e18a57b78eb59c17b6\\checkpoint_r5_surfaces_efc11e7a.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 6, 'session_id': '91a31ddf98e546e18a57b78eb59c17b6'}}, 'artifacts': []}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_coatings_live.py", line 44, in test_coating_bare_interface_fresnel
+  |     asyncio.run(execute('coating024_fresnel_'+metric,work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_coatings_live.py", line 30, in work
+      |     result=await e.finish(await e.call('run_analysis',dict(request=dict(kind=metric+'_vs_angle',surface=1,minimum_angle=0,maximum_angle=60))))
+      |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 22, in finish
+      |     assert t["state"]=="succeeded",r
+      |            ^^^^^^^^^^^^^^^^^^^^^^^
+      | AssertionError: {'completed': False, 'task': {'task_id': 'fa85953f893d43198ba9a55ae07c05ee', 'request_id': '35f85ddd7391483f9f1f9f6e50d3af9e', 'kind': 'analysis', 'state': 'failed', 'created_at': '2026-11-05T06:25:26.281645+00:00', 'finished_at': '2026-11-05T06:25:26.547542+00:00', 'progress': None, 'can_cancel': True, 'cancel_requested': False, 'settings': {'kind': 'reflection_vs_angle', 'requested': {'kind': 'reflection_vs_angle', 'surface': 1, 'wavelength': 1, 'minimum_angle': 0.0, 'maximum_angle': 60.0, 'reverse_direction': False, 'minimum_y': None, 'maximum_y': None}, 'native': {'ObjectNumber': 1, 'FaceNumber': 0, 'MinAngle': 0.0, 'MaxAngle': 60.0, 'MinY': 0.0, 'MaxY': 1.0, 'ReverseDirection': False, 'IsValid': True, 'IsActiveWindow': True, 'Wavelength': 1, 'Surface': 1}, 'evaluation_conditions': {'surface': 1, 'material': '1.50,50.0', 'coating': '无', 'configuration': 1, 'angle_unit': 'degrees', 'wavelength_unit': 'micrometers', 'coefficient_units': 'native labels/header; S/P field phase follows native convention'}}, 'context': {'session_id': '91a31ddf98e546e18a57b78eb59c17b6', 'model_revision': 6, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_reflection_2f2861a200\\91a31ddf98e546e18a57b78eb59c17b6\\working_3ec7c884.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_reflection_2f2861a200\\91a31ddf98e546e18a57b78eb59c17b6\\checkpoint_r5_surfaces_efc11e7a.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 6, 'session_id': '91a31ddf98e546e18a57b78eb59c17b6'}}, 'error': {'code': 'NATIVE_ERROR', 'message': "'NoneType' object is not iterable"}, 'close_attempted': True, 'result_path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_reflection_2f2861a200\\91a31ddf98e546e18a57b78eb59c17b6\\fa85953f893d43198ba9a55ae07c05ee.json', 'elapsed_seconds': 0.23}, 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_reflection_2f2861a200\\91a31ddf98e546e18a57b78eb59c17b6\\checkpoint_r5_surfaces_efc11e7a.zos', 'result_schema_version': 1, 'context': {'session_id': '91a31ddf98e546e18a57b78eb59c17b6', 'model_revision': 6, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_reflection_2f2861a200\\91a31ddf98e546e18a57b78eb59c17b6\\working_3ec7c884.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_reflection_2f2861a200\\91a31ddf98e546e18a57b78eb59c17b6\\checkpoint_r5_surfaces_efc11e7a.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 6, 'session_id': '91a31ddf98e546e18a57b78eb59c17b6'}}, 'artifacts': []}
+      +------------------------------------</failure></testcase><testcase classname="tests.test_coatings_live" name="test_coating_bare_interface_fresnel[transmission]" time="14.452"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'completed': False, 'task': {'task_id': '7a389800ce7a4bc0a60d404aef78f7a8', 'request_id': '7f6f7f44af724032a8934478ac6107cf', 'kind': 'analysis', 'state': 'failed', 'created_at': '2026-11-05T06:25:40.788826+00:00', 'finished_at': '2026-11-05T06:25:41.063285+00:00', 'progress': None, 'can_cancel': True, 'cancel_requested': False, 'settings': {'kind': 'transmission_vs_angle', 'requested': {'kind': 'transmission_vs_angle', 'surface': 1, 'wavelength': 1, 'minimum_angle': 0.0, 'maximum_angle': 60.0, 'reverse_direction': False, 'minimum_y': None, 'maximum_y': None}, 'native': {'ObjectNumber': 1, 'FaceNumber': 0, 'MinAngle': 0.0, 'MaxAngle': 60.0, 'MinY': 0.0, 'MaxY': 1.0, 'ReverseDirection': False, 'IsValid': True, 'IsActiveWindow': True, 'Wavelength': 1, 'Surface': 1}, 'evaluation_conditions': {'surface': 1, 'material': '1.50,50.0', 'coating': '无', 'configuration': 1, 'angle_unit': 'degrees', 'wavelength_unit': 'micrometers', 'coefficient_units': 'native labels/header; S/P field phase follows native convention'}}, 'context': {'session_id': '60735ddad67249e9a002175bea8fa6e1', 'model_revision': 6, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_transmission_5a95dea403\\60735ddad67249e9a002175bea8fa6e1\\working_3be26622.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_transmission_5a95dea403\\60735ddad67249e9a002175bea8fa6e1\\checkpoint_r5_surfaces_0c4879c8.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 6, 'session_id': '60735ddad67249e9a002175bea8fa6e1'}}, 'error': {'code': 'NATIVE_ERROR', 'message': &quot;'NoneType' object is not iterable&quot;}, 'close_attempted': True, 'result_path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_transmission_5a95dea403\\60735ddad67249e9a002175bea8fa6e1\\7a389800ce7a4bc0a60d404aef78f7a8.json', 'elapsed_seconds': 0.22}, 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_transmission_5a95dea403\\60735ddad67249e9a002175bea8fa6e1\\checkpoint_r5_surfaces_0c4879c8.zos', 'result_schema_version': 1, 'context': {'session_id': '60735ddad67249e9a002175bea8fa6e1', 'model_revision': 6, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_transmission_5a95dea403\\60735ddad67249e9a002175bea8fa6e1\\working_3be26622.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_transmission_5a95dea403\\60735ddad67249e9a002175bea8fa6e1\\checkpoint_r5_surfaces_0c4879c8.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 6, 'session_id': '60735ddad67249e9a002175bea8fa6e1'}}, 'artifacts': []}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_coatings_live.py", line 44, in test_coating_bare_interface_fresnel
+  |     asyncio.run(execute('coating024_fresnel_'+metric,work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_coatings_live.py", line 30, in work
+      |     result=await e.finish(await e.call('run_analysis',dict(request=dict(kind=metric+'_vs_angle',surface=1,minimum_angle=0,maximum_angle=60))))
+      |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 22, in finish
+      |     assert t["state"]=="succeeded",r
+      |            ^^^^^^^^^^^^^^^^^^^^^^^
+      | AssertionError: {'completed': False, 'task': {'task_id': '7a389800ce7a4bc0a60d404aef78f7a8', 'request_id': '7f6f7f44af724032a8934478ac6107cf', 'kind': 'analysis', 'state': 'failed', 'created_at': '2026-11-05T06:25:40.788826+00:00', 'finished_at': '2026-11-05T06:25:41.063285+00:00', 'progress': None, 'can_cancel': True, 'cancel_requested': False, 'settings': {'kind': 'transmission_vs_angle', 'requested': {'kind': 'transmission_vs_angle', 'surface': 1, 'wavelength': 1, 'minimum_angle': 0.0, 'maximum_angle': 60.0, 'reverse_direction': False, 'minimum_y': None, 'maximum_y': None}, 'native': {'ObjectNumber': 1, 'FaceNumber': 0, 'MinAngle': 0.0, 'MaxAngle': 60.0, 'MinY': 0.0, 'MaxY': 1.0, 'ReverseDirection': False, 'IsValid': True, 'IsActiveWindow': True, 'Wavelength': 1, 'Surface': 1}, 'evaluation_conditions': {'surface': 1, 'material': '1.50,50.0', 'coating': '无', 'configuration': 1, 'angle_unit': 'degrees', 'wavelength_unit': 'micrometers', 'coefficient_units': 'native labels/header; S/P field phase follows native convention'}}, 'context': {'session_id': '60735ddad67249e9a002175bea8fa6e1', 'model_revision': 6, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_transmission_5a95dea403\\60735ddad67249e9a002175bea8fa6e1\\working_3be26622.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_transmission_5a95dea403\\60735ddad67249e9a002175bea8fa6e1\\checkpoint_r5_surfaces_0c4879c8.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 6, 'session_id': '60735ddad67249e9a002175bea8fa6e1'}}, 'error': {'code': 'NATIVE_ERROR', 'message': "'NoneType' object is not iterable"}, 'close_attempted': True, 'result_path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_transmission_5a95dea403\\60735ddad67249e9a002175bea8fa6e1\\7a389800ce7a4bc0a60d404aef78f7a8.json', 'elapsed_seconds': 0.22}, 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_transmission_5a95dea403\\60735ddad67249e9a002175bea8fa6e1\\checkpoint_r5_surfaces_0c4879c8.zos', 'result_schema_version': 1, 'context': {'session_id': '60735ddad67249e9a002175bea8fa6e1', 'model_revision': 6, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_transmission_5a95dea403\\60735ddad67249e9a002175bea8fa6e1\\working_3be26622.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_transmission_5a95dea403\\60735ddad67249e9a002175bea8fa6e1\\checkpoint_r5_surfaces_0c4879c8.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 6, 'session_id': '60735ddad67249e9a002175bea8fa6e1'}}, 'artifacts': []}
+      +------------------------------------</failure></testcase><testcase classname="tests.test_coatings_live" name="test_coating_bare_interface_fresnel[absorption]" time="14.576"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'completed': False, 'task': {'task_id': 'e3b7e540c7f14312a4bfdf388aca0c89', 'request_id': '9a099b391eaf44c6b3382bef48e45606', 'kind': 'analysis', 'state': 'failed', 'created_at': '2026-11-05T06:25:55.405393+00:00', 'finished_at': '2026-11-05T06:25:55.667501+00:00', 'progress': None, 'can_cancel': True, 'cancel_requested': False, 'settings': {'kind': 'absorption_vs_angle', 'requested': {'kind': 'absorption_vs_angle', 'surface': 1, 'wavelength': 1, 'minimum_angle': 0.0, 'maximum_angle': 60.0, 'reverse_direction': False, 'minimum_y': None, 'maximum_y': None}, 'native': {'ObjectNumber': 1, 'FaceNumber': 0, 'MinAngle': 0.0, 'MaxAngle': 60.0, 'MinY': 0.0, 'MaxY': 1.0, 'ReverseDirection': False, 'IsValid': True, 'IsActiveWindow': True, 'Wavelength': 1, 'Surface': 1}, 'evaluation_conditions': {'surface': 1, 'material': '1.50,50.0', 'coating': '无', 'configuration': 1, 'angle_unit': 'degrees', 'wavelength_unit': 'micrometers', 'coefficient_units': 'native labels/header; S/P field phase follows native convention'}}, 'context': {'session_id': '9cb8487fb8bb4d8cb79684b1305c88d6', 'model_revision': 6, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_absorption_67fcac70dc\\9cb8487fb8bb4d8cb79684b1305c88d6\\working_57d265b5.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_absorption_67fcac70dc\\9cb8487fb8bb4d8cb79684b1305c88d6\\checkpoint_r5_surfaces_86502dcb.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 6, 'session_id': '9cb8487fb8bb4d8cb79684b1305c88d6'}}, 'error': {'code': 'NATIVE_ERROR', 'message': &quot;'NoneType' object is not iterable&quot;}, 'close_attempted': True, 'result_path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_absorption_67fcac70dc\\9cb8487fb8bb4d8cb79684b1305c88d6\\e3b7e540c7f14312a4bfdf388aca0c89.json', 'elapsed_seconds': 0.224}, 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_absorption_67fcac70dc\\9cb8487fb8bb4d8cb79684b1305c88d6\\checkpoint_r5_surfaces_86502dcb.zos', 'result_schema_version': 1, 'context': {'session_id': '9cb8487fb8bb4d8cb79684b1305c88d6', 'model_revision': 6, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_absorption_67fcac70dc\\9cb8487fb8bb4d8cb79684b1305c88d6\\working_57d265b5.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_absorption_67fcac70dc\\9cb8487fb8bb4d8cb79684b1305c88d6\\checkpoint_r5_surfaces_86502dcb.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 6, 'session_id': '9cb8487fb8bb4d8cb79684b1305c88d6'}}, 'artifacts': []}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_coatings_live.py", line 44, in test_coating_bare_interface_fresnel
+  |     asyncio.run(execute('coating024_fresnel_'+metric,work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_coatings_live.py", line 30, in work
+      |     result=await e.finish(await e.call('run_analysis',dict(request=dict(kind=metric+'_vs_angle',surface=1,minimum_angle=0,maximum_angle=60))))
+      |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 22, in finish
+      |     assert t["state"]=="succeeded",r
+      |            ^^^^^^^^^^^^^^^^^^^^^^^
+      | AssertionError: {'completed': False, 'task': {'task_id': 'e3b7e540c7f14312a4bfdf388aca0c89', 'request_id': '9a099b391eaf44c6b3382bef48e45606', 'kind': 'analysis', 'state': 'failed', 'created_at': '2026-11-05T06:25:55.405393+00:00', 'finished_at': '2026-11-05T06:25:55.667501+00:00', 'progress': None, 'can_cancel': True, 'cancel_requested': False, 'settings': {'kind': 'absorption_vs_angle', 'requested': {'kind': 'absorption_vs_angle', 'surface': 1, 'wavelength': 1, 'minimum_angle': 0.0, 'maximum_angle': 60.0, 'reverse_direction': False, 'minimum_y': None, 'maximum_y': None}, 'native': {'ObjectNumber': 1, 'FaceNumber': 0, 'MinAngle': 0.0, 'MaxAngle': 60.0, 'MinY': 0.0, 'MaxY': 1.0, 'ReverseDirection': False, 'IsValid': True, 'IsActiveWindow': True, 'Wavelength': 1, 'Surface': 1}, 'evaluation_conditions': {'surface': 1, 'material': '1.50,50.0', 'coating': '无', 'configuration': 1, 'angle_unit': 'degrees', 'wavelength_unit': 'micrometers', 'coefficient_units': 'native labels/header; S/P field phase follows native convention'}}, 'context': {'session_id': '9cb8487fb8bb4d8cb79684b1305c88d6', 'model_revision': 6, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_absorption_67fcac70dc\\9cb8487fb8bb4d8cb79684b1305c88d6\\working_57d265b5.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_absorption_67fcac70dc\\9cb8487fb8bb4d8cb79684b1305c88d6\\checkpoint_r5_surfaces_86502dcb.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 6, 'session_id': '9cb8487fb8bb4d8cb79684b1305c88d6'}}, 'error': {'code': 'NATIVE_ERROR', 'message': "'NoneType' object is not iterable"}, 'close_attempted': True, 'result_path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_absorption_67fcac70dc\\9cb8487fb8bb4d8cb79684b1305c88d6\\e3b7e540c7f14312a4bfdf388aca0c89.json', 'elapsed_seconds': 0.224}, 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_absorption_67fcac70dc\\9cb8487fb8bb4d8cb79684b1305c88d6\\checkpoint_r5_surfaces_86502dcb.zos', 'result_schema_version': 1, 'context': {'session_id': '9cb8487fb8bb4d8cb79684b1305c88d6', 'model_revision': 6, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_absorption_67fcac70dc\\9cb8487fb8bb4d8cb79684b1305c88d6\\working_57d265b5.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_fresnel_absorption_67fcac70dc\\9cb8487fb8bb4d8cb79684b1305c88d6\\checkpoint_r5_surfaces_86502dcb.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 6, 'session_id': '9cb8487fb8bb4d8cb79684b1305c88d6'}}, 'artifacts': []}
+      +------------------------------------</failure></testcase></testsuite></testsuites>

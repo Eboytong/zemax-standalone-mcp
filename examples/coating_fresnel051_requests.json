@@ -1,0 +1,38 @@
+[
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "reflection_vs_angle",
+        "surface": 1,
+        "wavelength": 1,
+        "minimum_angle": 0,
+        "maximum_angle": 60
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "transmission_vs_angle",
+        "surface": 1,
+        "wavelength": 1,
+        "minimum_angle": 0,
+        "maximum_angle": 60
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "absorption_vs_angle",
+        "surface": 1,
+        "wavelength": 1,
+        "minimum_angle": 0,
+        "maximum_angle": 60
+      }
+    }
+  }
+]

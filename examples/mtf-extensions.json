@@ -1,0 +1,38 @@
+[
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "geometric_mtf_vs_field"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "huygens_mtf_vs_field"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "fft_mtf_map",
+        "x_field_width": 6,
+        "y_field_width": 4
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "geometric_mtf_map",
+        "x_field_width": 6,
+        "y_field_width": 4
+      }
+    }
+  }
+]

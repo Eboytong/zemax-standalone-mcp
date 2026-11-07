@@ -1,0 +1,68 @@
+{
+  "version": "0.1.51",
+  "ordinary_passed": 1719,
+  "ordinary_report": "verification/development/BASE-04/ordinary053.xml",
+  "native_scans_report": "verification/development/CO-01/scans053.xml",
+  "native_scans_passed": 13,
+  "initial_material_failures": 2,
+  "material_fix_report": "verification/development/MA-01/native053-final.xml",
+  "wheel_passed": 6,
+  "wheel_report": "verification/development/BASE-04/wheel-native051.xml",
+  "runs": [
+    {
+      "directory": "verification\\development\\MA-01\\acceptance053\\materials025_properties_ca6948ef69",
+      "checks": 6,
+      "all_passed": true,
+      "max_absolute_error": 0.0,
+      "closed": true
+    },
+    {
+      "directory": "verification\\development\\MA-01\\acceptance053\\materials025_thickness_7e0a78cb66",
+      "checks": 2,
+      "all_passed": true,
+      "max_absolute_error": 2.7755575615628914e-17,
+      "closed": true
+    },
+    {
+      "directory": "verification\\development\\MA-01\\acceptance053\\coating_spectrum053_reflection_3fca221713",
+      "checks": 30,
+      "all_passed": true,
+      "max_absolute_error": 1.5265566588595902e-16,
+      "closed": true
+    },
+    {
+      "directory": "verification\\development\\MA-01\\acceptance053\\coating_spectrum053_transmission_a71013d6d7",
+      "checks": 30,
+      "all_passed": true,
+      "max_absolute_error": 5.551115123125783e-16,
+      "closed": true
+    },
+    {
+      "directory": "verification\\development\\MA-01\\acceptance053\\coating_spectrum053_absorption_59ad59c3ac",
+      "checks": 30,
+      "all_passed": true,
+      "max_absolute_error": 4.664852869185521e-16,
+      "closed": true
+    },
+    {
+      "directory": "verification\\development\\MA-01\\acceptance053\\coating024_coating_listing_bc13e6afc3",
+      "checks": 0,
+      "all_passed": true,
+      "max_absolute_error": null,
+      "closed": true
+    }
+  ],
+  "fixes": [
+    "Native material catalog filenames and loaded catalog stems resolved case-insensitively with optional .AGF suffix; ambiguous names rejected; actual native identity returned.",
+    "Catalog scalar metadata reads unwrapped implementation instead of unavailable IsCancelling proxy property."
+  ],
+  "references": [
+    "Installed SCHOTT.AGF N-BK7 six Sellmeier coefficients versus native zero-based coefficient API, atol/rtol=1e-12.",
+    "Wavelength R/T/A at 45 degrees from local AGF Sellmeier and Fresnel; atol=1e-6,rtol=1e-5.",
+    "Internal transmission half-thickness versus catalog table power law, atol=1e-6,rtol=1e-5."
+  ],
+  "remaining": [
+    "Coating phase, retardance and diattenuation independent numerical references remain; structural scans alone do not close those items.",
+    "Diffraction efficiency needs native hologram model/settings/result acceptance."
+  ]
+}

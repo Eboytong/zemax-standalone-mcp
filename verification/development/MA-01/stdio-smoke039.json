@@ -1,0 +1,14 @@
+{
+  "version": "0.1.29",
+  "checks": [
+    "diff_efficiency_2d: installed schema and disconnected dispatch",
+    "diff_efficiency_angular: installed schema and disconnected dispatch",
+    "diff_efficiency_chromatic: installed schema and disconnected dispatch",
+    "grin_profile: installed schema and disconnected dispatch"
+  ],
+  "native": "pending BASE-04 startup recovery",
+  "analysis_kind_count": 79,
+  "tool_count": 95,
+  "stdio_closed": true,
+  "status": "passed"
+}

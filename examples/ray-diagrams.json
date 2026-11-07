@@ -1,0 +1,24 @@
+[
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "yybar_diagram",
+        "wavelength": 2,
+        "first_surface": 1,
+        "last_surface": 7,
+        "plot_scale": 0
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "incident_angle_vs_image_height",
+        "wavelength": 2,
+        "field_density": 21
+      }
+    }
+  }
+]

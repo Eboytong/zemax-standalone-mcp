@@ -1,0 +1,10 @@
+See "Reflectivity vs. Angle" for settings.
+Discussion The incident angle is measured in the medium prior to the specified surface.
+3.4.3.5. Phase vs. Angle (coatings, polarization and surface physics group)
+For sequential surfaces, this feature computes the S and P polarization phase for reflection (if the glass is MIRROR)
+orfortransmission (ifthe glass is notMIRROR) as a function ofincident angle. For non-sequential objects,this feature
+computes the S and P polarization phase forreflection (ifthe material is MIRROR) orfortransmission (ifthe material
+is not MIRROR) as a function of incident angle.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 935
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

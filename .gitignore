@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+build/
+dist/
+*.egg-info/
+outputs/
+archives/
+tmp/
+verification/
+wheels/*
+!wheels/zemax_standalone_mcp-0.1.61-py3-none-any.whl
+mcp.config.json

@@ -1,0 +1,1727 @@
+{
+  "assembly": "ZOSAPI_Interfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+  "interfaces": {
+    "ZOSAPI.Tools.IOpticalSystemTools": {
+      "properties": [
+        {
+          "name": "CurrentTool",
+          "type": "ZOSAPI.Tools.ISystemTool",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Progress",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Status",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "IsRunning",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Layouts",
+          "type": "ZOSAPI.Tools.ILayouts",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "LastError",
+          "type": "ZOSAPI.Analysis.IMessage",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "ZOSAPI.Tools.RayTrace.IBatchRayTrace OpenBatchRayTrace()",
+        "ZOSAPI.Tools.RayTrace.INSCRayTrace OpenNSCRayTrace()",
+        "ZOSAPI.Tools.General.IQuickAdjust OpenQuickAdjust()",
+        "ZOSAPI.Tools.General.IQuickFocus OpenQuickFocus()",
+        "ZOSAPI.Tools.RayTrace.ILightningTrace OpenLightningTrace()",
+        "ZOSAPI.Tools.OptimizationTools.IFindBestAsphere OpenFindBestAsphere()",
+        "ZOSAPI.Tools.OptimizationTools.IConvertAsphereType OpenConvertAsphereTypes()",
+        "ZOSAPI.Tools.Optimization.ILocalOptimization OpenLocalOptimization()",
+        "ZOSAPI.Tools.Optimization.IGlobalOptimization OpenGlobalOptimization()",
+        "ZOSAPI.Tools.Optimization.IHammerOptimization OpenHammerOptimization()",
+        "ZOSAPI.Tools.Tolerancing.ITolerancing OpenTolerancing()",
+        "ZOSAPI.Tools.General.IRestoreArchive OpenRestoreZAR()",
+        "ZOSAPI.Tools.General.ICreateArchive OpenCreateZAR()",
+        "ZOSAPI.Tools.General.IRestoreProject OpenRestoreProject()",
+        "ZOSAPI.Tools.General.ICreateProject OpenCreateProject()",
+        "ZOSAPI.Tools.General.IExportCAD OpenExportCAD()",
+        "ZOSAPI.Tools.General.IScale OpenScale()",
+        "ZOSAPI.Tools.IMFCalculator OpenMeritFunctionCalculator()",
+        "ZOSAPI.Tools.General.ILensCatalogs OpenLensCatalogs()",
+        "ZOSAPI.Tools.IConvertToNSCGroup OpenConvertToNSCGroup()",
+        "ZOSAPI.Tools.IDesignLockdown OpenDesignLockdown()",
+        "ZOSAPI.Tools.ICriticalRaysetGenerator OpenCriticalRaysetGenerator()",
+        "Boolean RemoveAllVariables()",
+        "Int32 SetAllRadiiVariable()",
+        "Int32 SetAllThicknessesVariable()",
+        "Double[] CreateDoubleVector(Int32)",
+        "Double[,] CreateDoubleMatrix(Int32, Int32)",
+        "ZOSAPI.Tools.RayTrace.IZRDReader OpenRayDatabaseReader()",
+        "ZOSAPI.Tools.General.IComputeRMSSpotSize OpenRMSSpotRadiusCalculator()",
+        "Double GetConversionToSystemUnits(ZOSAPI.SystemData.ZemaxSystemUnits)",
+        "Double GetConversionFromSystemUnits(ZOSAPI.SystemData.ZemaxSystemUnits)",
+        "ZOSAPI.Tools.IShadedModelVisualizationExport OpenShadedModelVisualizationExport()",
+        "ZOSAPI.Tools.IMaterialsCatalog OpenMaterialsCatalog()",
+        "ZOSAPI.Tools.Tolerancing.IQuickSensitivity OpenQuickSensitivity()",
+        "ZOSAPI.Tools.Tolerancing.IToleranceDataViewer OpenToleranceDataViewer()",
+        "ZOSAPI.Tools.General.IRayAimingWizard OpenRayAimingWizard()",
+        "ZOSAPI.Tools.IHPCSettings GetHPCSettingsFromPrefs()",
+        "ZOSAPI.Tools.IHPCSettings GetHPCSettingsCustom(Int32, ZOSAPI.Tools.HPCNodeSize)",
+        "ZOSAPI.Tools.RayTrace.INSCRayTrace OpenNSCRayTrace_HPC(ZOSAPI.Tools.IHPCSettings)",
+        "ZOSAPI.Tools.Tolerancing.ITolerancing OpenTolerancing_HPC(ZOSAPI.Tools.IHPCSettings)",
+        "ZOSAPI.Tools.Optimization.IGlobalOptimization OpenGlobalOptimization_HPC(ZOSAPI.Tools.IHPCSettings)",
+        "ZOSAPI.Tools.Optimization.IHammerOptimization OpenHammerOptimization_HPC(ZOSAPI.Tools.IHPCSettings)",
+        "ZOSAPI.Tools.General.IPointTools GetPointTools()",
+        "ZOSAPI.Tools.General.IHullTools GetHullTools()",
+        "ZOSAPI.Tools.IFileManager OpenFileManager()",
+        "ZOSAPI.Tools.FileManager.IConvertProjectToFileTool OpenProjectToFileConverter()",
+        "ZOSAPI.Tools.IExportToSpeosLensSystem OpenExportToSpeosLensSystem()",
+        "ZOSAPI.Tools.IExportToSpeosWhitebox OpenExportToSpeosWhitebox()",
+        "ZOSAPI.Tools.IAPIUtilities GetUtilities()"
+      ]
+    },
+    "ZOSAPI.Tools.ISystemTool": {
+      "properties": [
+        {
+          "name": "Progress",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Status",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "IsRunning",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "CanCancel",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "IsAsynchronous",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "IsFiniteDuration",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "IsValid",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Succeeded",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "ErrorMessage",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "Boolean Run()",
+        "Boolean RunAndWaitForCompletion()",
+        "Boolean WaitForCompletion()",
+        "Boolean Cancel()",
+        "Boolean Close()",
+        "ZOSAPI.Tools.RunStatus WaitWithTimeout(Double)",
+        "ZOSAPI.Tools.RunStatus RunAndWaitWithTimeout(Double)"
+      ]
+    },
+    "ZOSAPI.Tools.General.IQuickAdjust": {
+      "properties": [
+        {
+          "name": "AdjustSurface",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SurfaceParameter",
+          "type": "ZOSAPI.Tools.General.QuickAdjustType",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Criterion",
+          "type": "ZOSAPI.Tools.General.QuickAdjustCriterion",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "EvaluateSurface",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": [
+        "Void SetEvaluateSurfaceImage()"
+      ]
+    },
+    "ZOSAPI.Tools.General.IScale": {
+      "properties": [
+        {
+          "name": "ScaleFactor",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "FirstComponent",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "LastComponent",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ScaleToUnit",
+          "type": "ZOSAPI.Tools.General.ScaleToUnits",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ScaleByFactor",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ScaleByUnits",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "NumberOfComponents",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "System.String GetComponentAt(Int32)"
+      ]
+    },
+    "ZOSAPI.Tools.General.IRayAimingWizard": {
+      "properties": [],
+      "methods": [
+        "Void ApplyRecommendedSettings()",
+        "ZOSAPI.SystemData.ISDRayAimingData GetRecommendedSettings()"
+      ]
+    },
+    "ZOSAPI.Tools.OptimizationTools.IFindBestAsphere": {
+      "properties": [
+        {
+          "name": "FirstSurface",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "LastSurface",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AsphereType",
+          "type": "ZOSAPI.Tools.OptimizationTools.FindBestAsphereTypes",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "StartMeritFunction",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "BestMeritFunction",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "BestSurface",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": []
+    },
+    "ZOSAPI.Tools.OptimizationTools.IConvertAsphereType": {
+      "properties": [
+        {
+          "name": "Surface",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AsphereType",
+          "type": "ZOSAPI.Tools.OptimizationTools.ConvertAsphereTypes",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "NumberOfTerms",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ExcludeSecondOrderTerm",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AllowRadiusVariation",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AllowConicVariation",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ResidualRMSError",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "IsAutomatic",
+          "type": "System.Boolean",
+          "can_read": false,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    },
+    "ZOSAPI.Wizards.IWizard": {
+      "properties": [
+        {
+          "name": "Wizard",
+          "type": "ZOSAPI.Wizards.WizardType",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "Void OK()",
+        "Void Apply()",
+        "Void SaveSettings()",
+        "Void LoadSettings()",
+        "Void ResetSettings()",
+        "Void Initialize()"
+      ]
+    },
+    "ZOSAPI.Wizards.INSCWizard": {
+      "properties": [
+        {
+          "name": "IsNSCOptimizingWizard",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "IsNSCBitmapWizard",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "IsClearDataSettingsUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsRaytraceSettingsUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsSplitRaysUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsUsePolarizationUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsScatterRaysUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsIgnoreErrorsUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsUseLightningTraceUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsCriterionSettingsUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsMinimumFluxUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsOverwriteUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsTargetSettingsUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsColorTargetsUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsResampleDetectorUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ClearDetector",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Criterion",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseSource",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseDetector",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Boundary",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "StartAt",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Configuration",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "BitmapFile",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "RaySampling",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "EdgeSampling",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Target",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MinimumFlux",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "OverallWeight",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "TotalFlux",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "NumberOfSources",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfDetectors",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfCriterion",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfConfigurations",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfRaySamplings",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfEdgeSamplings",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfBoundaries",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "System.String GetSourceAt(Int32)",
+        "System.String GetDetectorAt(Int32)",
+        "System.String GetCriterionAt(Int32)",
+        "System.String GetConfigurationAt(Int32)",
+        "System.String GetRaySamplingAt(Int32)",
+        "System.String GetEdgeSamplingAt(Int32)",
+        "System.String GetBoundaryAt(Int32)"
+      ]
+    },
+    "ZOSAPI.Wizards.INSCOptimizationWizard": {
+      "properties": [
+        {
+          "name": "NSCSettings",
+          "type": "ZOSAPI.Wizards.INSCWizard",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "CommonSettings",
+          "type": "ZOSAPI.Wizards.IWizard",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": []
+    },
+    "ZOSAPI.Wizards.INSCBitmapWizard": {
+      "properties": [
+        {
+          "name": "NSCSettings",
+          "type": "ZOSAPI.Wizards.INSCWizard",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "CommonSettings",
+          "type": "ZOSAPI.Wizards.IWizard",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfBitmapFiles",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "System.String GetBitmapFileAt(Int32)",
+        "ZOSAPI.Wizards.IImageData GetPreviewImage()"
+      ]
+    },
+    "ZOSAPI.Wizards.IImageData": {
+      "properties": [
+        {
+          "name": "ImageName",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Width",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Height",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "BitsPerPixel",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Channels",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Stride",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "IsRGB",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "Byte[] GetRawData()",
+        "Void GetRawDataSafe(Int32, Int32, Int32, Byte[])",
+        "Byte[] GetPixels()",
+        "Void GetPixelsSafe(Int32, Int32, Int32, Byte[])"
+      ]
+    },
+    "ZOSAPI.Wizards.INSCRoadwayLightingWizard": {
+      "properties": [
+        {
+          "name": "CommonSettings",
+          "type": "ZOSAPI.Wizards.IWizard",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "IsNSCRoadwayLightingWizard",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "IsSplitRaysUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsScatterRaysUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsUsePolarizationUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsIgnoreErrorsUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Arrangement",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Origin",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "NumberOfLanes",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SurfaceClassification",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "RoadClass",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "StartAt",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Configuration",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MountingHeight",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "LongitudinalSpacing",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "LateralOffset",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "LaneWidth",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "OverallWeight",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "NumberOfOrigins",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfConfigurations",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfArrangements",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfClassifications",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfRoadClasses",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "System.String GetOriginAt(Int32)",
+        "System.String GetConfigurationAt(Int32)",
+        "System.String GetArrangementAt(Int32)",
+        "System.String GetClassificationAt(Int32)",
+        "System.String GetRoadClassAt(Int32)"
+      ]
+    },
+    "ZOSAPI.Wizards.ISEQOptimizationWizard": {
+      "properties": [
+        {
+          "name": "CommonSettings",
+          "type": "ZOSAPI.Wizards.IWizard",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "IsSEQOptimizationWizard",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "IsDeleteVignetteUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsGlassUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsAirUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsAssumeAxialSymmetryUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsIgnoreLateralColorUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsAddFavoriteOperandsUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsRelativeXWeightUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Type",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Data",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Reference",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "PupilIntegrationMethod",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Ring",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Arm",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Grid",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Configuration",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "StartAt",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Obscuration",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "GlassMin",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "GlassMax",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "GlassEdge",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AirMin",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AirMax",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AirEdge",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "RelativeXWeight",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "OverallWeight",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "NumberOfTypes",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfDataTypes",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfReferences",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfPupilIntegrationMethods",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfRings",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfArms",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfGrids",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberOfConfigurations",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "System.String GetTypeAt(Int32)",
+        "System.String GetDataTypeAt(Int32)",
+        "System.String GetReferenceAt(Int32)",
+        "System.String GetPupilIntegrationMethodAt(Int32)",
+        "System.String GetRingAt(Int32)",
+        "System.String GetArmAt(Int32)",
+        "System.String GetGridAt(Int32)",
+        "System.String GetConfigurationAt(Int32)"
+      ]
+    },
+    "ZOSAPI.Wizards.ISEQOptimizationWizard2": {
+      "properties": [
+        {
+          "name": "CommonSettings",
+          "type": "ZOSAPI.Wizards.IWizard",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Criterion",
+          "type": "ZOSAPI.Wizards.CriterionTypes",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SpatialFrequency",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "XSWeight",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "YTWeight",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Type",
+          "type": "ZOSAPI.Wizards.OptimizationTypes",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Reference",
+          "type": "ZOSAPI.Wizards.ReferenceTypes",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseGaussianQuadrature",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseRectangularArray",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Rings",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Arms",
+          "type": "ZOSAPI.Wizards.PupilArmsCount",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Obscuration",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "GridSizeNxN",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "DeleteVignetted",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseGlassBoundaryValues",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "GlassMin",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "GlassMax",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "GlassEdgeThickness",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseAirBoundaryValues",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AirMin",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AirMax",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AirEdgeThickness",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "StartAt",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "OverallWeight",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ConfigurationNumber",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseAllConfigurations",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "FieldNumber",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseAllFields",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AssumeAxialSymmetry",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IgnoreLateralColor",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AddFavoriteOperands",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsHighManufacturingYieldAvailable",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "OptimizeForBestNominalPerformance",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "OptimizeForManufacturingYield",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ManufacturingYieldWeight",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseMaximumDistortion",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MaxDistortionPct",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    },
+    "ZOSAPI.Wizards.IToleranceWizard": {
+      "properties": [
+        {
+          "name": "CommonSettings",
+          "type": "ZOSAPI.Wizards.IWizard",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "IsSEQToleranceWizard",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "IsSurfaceRadiusUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsSurfaceThicknessUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsSurfaceDecenterXUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsSurfaceDecenterYUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsSurfaceTiltXUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsSurfaceTiltYUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsSurfaceSandAIrregularityUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsSurfaceZernikeIrregularityUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsElementDecenterXUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsElementDecenterYUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsElementTiltXUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsElementTiltYUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsIndexUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsIndexAbbePercentageUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IsFocusCompensationUsed",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SurfaceRadiusUnitType",
+          "type": "ZOSAPI.Wizards.DefaultAndFringes",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SurfaceTiltXUnitType",
+          "type": "ZOSAPI.Wizards.DefaultAndDegrees",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SurfaceTiltYUnitType",
+          "type": "ZOSAPI.Wizards.DefaultAndDegrees",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "StartAt",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "StartAtSurface",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "StopAtSurface",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SurfaceRadius",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SurfaceRadiusFringes",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SurfaceThickness",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SurfaceDecenterX",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SurfaceDecenterY",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SurfaceTiltX",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SurfaceTiltXDegrees",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SurfaceTiltY",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SurfaceTiltYDegrees",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SurfaceSandAIrregularityFringes",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SurfaceZernikeIrregularityFringes",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ElementDecenterX",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ElementDecenterY",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ElementTiltXDegrees",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ElementTiltYDegrees",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Index",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IndexAbbePercentage",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "TestWavelength",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SurfaceRadiusPercent",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": [
+        "Void SelectTolerancePreset(ZOSAPI.Wizards.ToleranceVendor, ZOSAPI.Wizards.ToleranceGrade)"
+      ]
+    },
+    "ZOSAPI.Wizards.INSCToleranceWizard": {
+      "properties": [
+        {
+          "name": "ToleranceSettings",
+          "type": "ZOSAPI.Wizards.IToleranceWizard",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": []
+    },
+    "ZOSAPI.Wizards.ISEQToleranceWizard": {
+      "properties": [
+        {
+          "name": "ToleranceSettings",
+          "type": "ZOSAPI.Wizards.IToleranceWizard",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": []
+    },
+    "ZOSAPI.SystemData.ISDRayAimingData": {
+      "properties": [
+        {
+          "name": "RayAiming",
+          "type": "ZOSAPI.SystemData.RayAimingMethod",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Method",
+          "type": "ZOSAPI.SystemData.RayAimingType",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseRayAimingCache",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseRobustRayAiming",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ScalePupilShiftFactorsByField",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AutomaticallyCalculatePupilShiftsIsChecked",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseEnhancedRayAiming",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseAdvancedConvergence",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseFallBackSearchDuringCacheSetup",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "PupilShiftX",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "PupilShiftY",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "PupilShiftZ",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "PupilCompressX",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "PupilCompressY",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "NumStepsCacheSetup",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    }
+  },
+  "enums": {
+    "ZOSAPI.Tools.General.QuickAdjustType": {
+      "Radius": 0,
+      "Thickness": 1
+    },
+    "ZOSAPI.Tools.General.QuickAdjustCriterion": {
+      "SpotSizeRadial": 0,
+      "SpotSizeXOnly": 1,
+      "SpotSizeYOnly": 2,
+      "AngularRadial": 3,
+      "AngularXOnly": 4,
+      "AngularYOnly": 5
+    },
+    "ZOSAPI.Tools.General.ScaleToUnits": {
+      "Millimeters": 0,
+      "Centimeters": 1,
+      "Inches": 2,
+      "Meters": 3
+    },
+    "ZOSAPI.Tools.OptimizationTools.FindBestAsphereTypes": {
+      "Conic": 0,
+      "Polynomial_4thOrder": 1,
+      "Polynomial_6thOrder": 2,
+      "Polynomial_8thOrder": 3,
+      "Polynomial_10thOrder": 4,
+      "Polynomial_12thOrder": 5
+    },
+    "ZOSAPI.Tools.OptimizationTools.ConvertAsphereTypes": {
+      "EvenAsphere": 0,
+      "ExtendedAsphere": 1,
+      "QTypeAsphereType0": 2,
+      "QTypeAsphereType1": 3
+    },
+    "ZOSAPI.Wizards.CriterionTypes": {
+      "Wavefront": 0,
+      "Contrast": 1,
+      "Spot": 2,
+      "Angular": 3
+    },
+    "ZOSAPI.Wizards.OptimizationTypes": {
+      "RMS": 0,
+      "PTV": 1
+    },
+    "ZOSAPI.Wizards.ReferenceTypes": {
+      "Centroid": 0,
+      "ChiefRay": 1,
+      "Unreferenced": 2
+    },
+    "ZOSAPI.Wizards.PupilArmsCount": {
+      "Arms_6": 0,
+      "Arms_8": 1,
+      "Arms_10": 2,
+      "Arms_12": 3
+    },
+    "ZOSAPI.SystemData.RayAimingMethod": {
+      "Off": 0,
+      "Paraxial": 1,
+      "Real": 2
+    },
+    "ZOSAPI.SystemData.RayAimingType": {
+      "Heuristic": 0,
+      "Optimize": 1
+    }
+  },
+  "native_validation": "pending: same initialization timeout as BASE-04/connection019"
+}

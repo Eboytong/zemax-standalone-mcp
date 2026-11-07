@@ -1,0 +1,250 @@
+[
+  {
+    "cell": "semi_diameter",
+    "mode": "Maximum",
+    "fixed_first": false,
+    "before": "Fixed",
+    "data_type": "Maximum",
+    "set_status": "Success",
+    "immediate": "Maximum",
+    "update": "",
+    "after": {
+      "value": 7.288279086356739,
+      "solve": {
+        "type": "Maximum"
+      },
+      "writable": true,
+      "header": "净口径",
+      "available_solves": [
+        "Fixed",
+        "SurfacePickup",
+        "ZPLMacro",
+        "Automatic",
+        "Maximum"
+      ]
+    }
+  },
+  {
+    "cell": "semi_diameter",
+    "mode": "Maximum",
+    "fixed_first": true,
+    "before": "Fixed",
+    "data_type": "Maximum",
+    "set_status": "Success",
+    "immediate": "Maximum",
+    "update": "",
+    "after": {
+      "value": 7.288279086356739,
+      "solve": {
+        "type": "Maximum"
+      },
+      "writable": true,
+      "header": "净口径",
+      "available_solves": [
+        "Fixed",
+        "SurfacePickup",
+        "ZPLMacro",
+        "Automatic",
+        "Maximum"
+      ]
+    }
+  },
+  {
+    "cell": "mechanical_semi_diameter",
+    "mode": "SurfacePickup",
+    "fixed_first": false,
+    "before": "Automatic",
+    "data_type": "SurfacePickup",
+    "set_status": "Success",
+    "immediate": "Fixed",
+    "update": "",
+    "after": {
+      "value": 7.5,
+      "solve": {
+        "type": "Fixed"
+      },
+      "writable": true,
+      "header": "机械半直径",
+      "available_solves": [
+        "Fixed",
+        "SurfacePickup",
+        "ZPLMacro",
+        "Automatic"
+      ]
+    }
+  },
+  {
+    "cell": "mechanical_semi_diameter",
+    "mode": "SurfacePickup",
+    "fixed_first": true,
+    "before": "Fixed",
+    "data_type": "SurfacePickup",
+    "set_status": "Success",
+    "immediate": "Fixed",
+    "update": "",
+    "after": {
+      "value": 7.5,
+      "solve": {
+        "type": "Fixed"
+      },
+      "writable": true,
+      "header": "机械半直径",
+      "available_solves": [
+        "Fixed",
+        "SurfacePickup",
+        "ZPLMacro",
+        "Automatic"
+      ]
+    }
+  },
+  {
+    "cell": "chip_zone",
+    "mode": "SurfacePickup",
+    "fixed_first": false,
+    "before": "Automatic",
+    "data_type": "SurfacePickup",
+    "set_status": "Success",
+    "immediate": "Automatic",
+    "update": "",
+    "after": {
+      "value": 0.0,
+      "solve": {
+        "type": "Automatic"
+      },
+      "writable": true,
+      "header": "延伸区",
+      "available_solves": [
+        "Fixed",
+        "SurfacePickup",
+        "ZPLMacro",
+        "Automatic"
+      ]
+    }
+  },
+  {
+    "cell": "chip_zone",
+    "mode": "SurfacePickup",
+    "fixed_first": true,
+    "before": "Fixed",
+    "data_type": "SurfacePickup",
+    "set_status": "Success",
+    "immediate": "Automatic",
+    "update": "",
+    "after": {
+      "value": 0.0,
+      "solve": {
+        "type": "Automatic"
+      },
+      "writable": true,
+      "header": "延伸区",
+      "available_solves": [
+        "Fixed",
+        "SurfacePickup",
+        "ZPLMacro",
+        "Automatic"
+      ]
+    }
+  },
+  {
+    "cell": "mechanical_semi_diameter",
+    "mode": "ZPLMacro",
+    "fixed_first": false,
+    "before": "Automatic",
+    "data_type": "ZPLMacro",
+    "set_status": "Success",
+    "immediate": "Fixed",
+    "update": "",
+    "after": {
+      "value": 7.5,
+      "solve": {
+        "type": "Fixed"
+      },
+      "writable": true,
+      "header": "机械半直径",
+      "available_solves": [
+        "Fixed",
+        "SurfacePickup",
+        "ZPLMacro",
+        "Automatic"
+      ]
+    },
+    "error": "'NoneType' object has no attribute 'Macro'"
+  },
+  {
+    "cell": "mechanical_semi_diameter",
+    "mode": "ZPLMacro",
+    "fixed_first": true,
+    "before": "Fixed",
+    "data_type": "ZPLMacro",
+    "set_status": "Success",
+    "immediate": "Fixed",
+    "update": "",
+    "after": {
+      "value": 7.5,
+      "solve": {
+        "type": "Fixed"
+      },
+      "writable": true,
+      "header": "机械半直径",
+      "available_solves": [
+        "Fixed",
+        "SurfacePickup",
+        "ZPLMacro",
+        "Automatic"
+      ]
+    },
+    "error": "'NoneType' object has no attribute 'Macro'"
+  },
+  {
+    "cell": "chip_zone",
+    "mode": "ZPLMacro",
+    "fixed_first": false,
+    "before": "Automatic",
+    "data_type": "ZPLMacro",
+    "set_status": "Success",
+    "immediate": "ZPLMacro",
+    "update": "",
+    "after": {
+      "value": 0.0,
+      "solve": {
+        "type": "ZPLMacro",
+        "macro": ""
+      },
+      "writable": true,
+      "header": "延伸区",
+      "available_solves": [
+        "Fixed",
+        "SurfacePickup",
+        "ZPLMacro",
+        "Automatic"
+      ]
+    },
+    "macro": ""
+  },
+  {
+    "cell": "chip_zone",
+    "mode": "ZPLMacro",
+    "fixed_first": true,
+    "before": "Fixed",
+    "data_type": "ZPLMacro",
+    "set_status": "Success",
+    "immediate": "ZPLMacro",
+    "update": "",
+    "after": {
+      "value": 0.0,
+      "solve": {
+        "type": "ZPLMacro",
+        "macro": ""
+      },
+      "writable": true,
+      "header": "延伸区",
+      "available_solves": [
+        "Fixed",
+        "SurfacePickup",
+        "ZPLMacro",
+        "Automatic"
+      ]
+    },
+    "macro": ""
+  }
+]

@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-07",
+  "item_id": "EX-01.ZPLSolve",
+  "state": "done",
+  "source_version": "0.1.59",
+  "scope": "Native macro resource selection, typed name boundary, adopted solve and callback values, GridSag parameter9/10 replacement and save/reload, invalid resource/overlong name handling, model preservation and owned file cleanup",
+  "completion_count": 0,
+  "counting_reason": "Macro solve cells already accepted under ED-02 including parameter9/10 in acceptance047; EX-01 pending action was stale. Historical scope closure and name-boundary hardening do not add a new B004 function.",
+  "historical_evidence": [
+    "verification/development/ED-02/final-cases018/cases.json",
+    "verification/development/ED-02/grid-macros018/calls.json",
+    "verification/development/ED-02/acceptance047/summary.json"
+  ],
+  "ordinary_report": "verification/development/EX-01/ordinary348-related.xml",
+  "ordinary_passed": 162,
+  "native_report": "verification/development/EX-01/native347-final.xml",
+  "native_passed": 1,
+  "native_probe": [
+    "verification/development/EX-01/zpl342-direct/probe.json",
+    "verification/development/EX-01/zpl343-short-name/probe.json",
+    "verification/development/EX-01/zpl345-name-boundary/probe.json"
+  ],
+  "name_limit": {
+    "max_utf16_units": 31,
+    "extension_included": false,
+    "validated": "ASCII and Chinese BMP names:31 adopted,32 fell back Fixed although setter returned Success; supplementary-character unit counting covered by ordinary request checks"
+  },
+  "native_run": "outputs/runs/zpl339_gridsag_ab1148667b",
+  "checks": [
+    {
+      "label": "parameter_9 macro result 0.125",
+      "actual": 0.125,
+      "expected": 0.125,
+      "atol": 1e-10,
+      "rtol": 0,
+      "passed": true
+    },
+    {
+      "label": "parameter_9 reloaded macro result 0.125",
+      "actual": 0.125,
+      "expected": 0.125,
+      "atol": 1e-10,
+      "rtol": 0,
+      "passed": true
+    },
+    {
+      "label": "parameter_9 macro result 0.25",
+      "actual": 0.25,
+      "expected": 0.25,
+      "atol": 1e-10,
+      "rtol": 0,
+      "passed": true
+    },
+    {
+      "label": "parameter_9 reloaded macro result 0.25",
+      "actual": 0.25,
+      "expected": 0.25,
+      "atol": 1e-10,
+      "rtol": 0,
+      "passed": true
+    },
+    {
+      "label": "parameter_10 macro result 0.125",
+      "actual": 0.125,
+      "expected": 0.125,
+      "atol": 1e-10,
+      "rtol": 0,
+      "passed": true
+    },
+    {
+      "label": "parameter_10 reloaded macro result 0.125",
+      "actual": 0.125,
+      "expected": 0.125,
+      "atol": 1e-10,
+      "rtol": 0,
+      "passed": true
+    },
+    {
+      "label": "parameter_10 macro result 0.25",
+      "actual": 0.25,
+      "expected": 0.25,
+      "atol": 1e-10,
+      "rtol": 0,
+      "passed": true
+    },
+    {
+      "label": "parameter_10 reloaded macro result 0.25",
+      "actual": 0.25,
+      "expected": 0.25,
+      "atol": 1e-10,
+      "rtol": 0,
+      "passed": true
+    }
+  ],
+  "disconnect": true,
+  "close_receipt": {
+    "schema_version": 1,
+    "generation": null,
+    "session_id": null,
+    "started_at": "2026-11-06T15:40:46.482672+00:00",
+    "active_cancelled": false,
+    "forced": false,
+    "checkpoint": {
+      "attempted": false,
+      "path": null,
+      "ok": false,
+      "error": null
+    },
+    "was_connected": false,
+    "native": {
+      "attempted": true,
+      "closed": true,
+      "error": null
+    },
+    "closed_at": "2026-11-06T15:40:46.482732+00:00"
+  },
+  "historical_failures": [
+    "native339-gridsag.xml: long generated name silently rejected",
+    "native340-gridsag.xml: term-count activation did not resolve long-name rejection",
+    "zpl341-direct: private backend resource request wrapper corrected",
+    "native346-final.xml: test corrected to handle standard MCP parameter-rejection envelope"
+  ],
+  "resource_ownership": "Unique test macros removed after use; existing resource files preserved",
+  "remaining_native_limits": "Mechanical semi-diameter and chip-zone macro restrictions remain in their existing ED-02 entries; arbitrary macro execution is a separate operation"
+}

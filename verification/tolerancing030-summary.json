@@ -1,0 +1,54 @@
+{
+  "version": "0.1.20",
+  "date": "2026-11-05",
+  "work_packages": [
+    "WP-01",
+    "TO-01",
+    "GE-01",
+    "MF-01"
+  ],
+  "implemented": [
+    "run_analysis.quick_yield: typed settings for user field, wavelength, configuration, Monte Carlo count, pupil sampling, distribution, precision and compensator strategy",
+    "run_analysis.tolerance_yield: typed tolerance operand and system/native-listed tolerance file selection",
+    "run_analysis.tolerance_histogram: tolerance operand, finite increasing bounds, bin count and native result path",
+    "Existing POP receiver coupling and paged ZBF inspection reconciled against WP-01 ledger"
+  ],
+  "native_probe": "verification/development/WP-01/probe030.json",
+  "ordinary_tests": {
+    "targeted": "40 passed, 2 native skipped",
+    "full": "1270 passed, 497 skipped",
+    "full_evidence": "verification/development/TO-01/ordinary030.xml"
+  },
+  "native_tests_prepared": "tests/test_tolerance_special_analyses_live.py",
+  "native_execution": {
+    "status": "not_run",
+    "prior_blocker": "verification/development/BASE-04/connection019/supervisor.json reports initialization_timeout at 180.526 seconds",
+    "this_turn": "No native instance was launched. Release smoke ran with disconnected backend."
+  },
+  "release": {
+    "wheel": "wheels/zemax_standalone_mcp-0.1.20-py3-none-any.whl",
+    "isolated_install": "outputs/wheel-release030",
+    "stdio_smoke": "verification/development/WP-01/wheel-smoke030.json",
+    "status": "passed",
+    "tools": 95,
+    "analysis_kinds": 68,
+    "close": "stdio worker shutdown and restart history read passed"
+  },
+  "remaining": [
+    "Run QuickYield/ToleranceYield/ToleranceHistogram against a controlled licensed tolerance model; confirm result data mapping and native close.",
+    "Cross-check FiberCouplingSettings and BeamFileViewer native presentations against existing POP/ZBF readers.",
+    "Obtain runtime GetSettings, parameter definition, result access and close behavior for ParaxialGaussianBeam and SkewGaussianBeam.",
+    "Validate GE-01 against controlled lenses with known sag/material data and CAD wall-thickness constraints.",
+    "Run DesignLockdown and discover runtime settings/output; probe SagTable, element drawings, TestPlateList and PrescriptionGraphic settings and exports."
+  ],
+  "geometry_and_manufacturing": {
+    "geometry_probe": "verification/development/GE-01/probe030.json",
+    "manufacturing_probe": "verification/development/MF-01/probe030.json",
+    "native": "not_run: OpticStudio initialization previously timed out after 180.526 seconds",
+    "implemented_scope": [
+      "sequential geometry and engineering constraints have typed adapters and ordinary checks",
+      "DesignLockdown public entry and five writable settings found by reflection",
+      "five manufacturing analysis enums inventoried; runtime settings and result exports remain unknown"
+    ]
+  }
+}

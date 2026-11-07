@@ -1,0 +1,32 @@
+Ray Database Selects the ray data or path file to analyze.
+First/Last Ray Choose the ray range. To use all rays, set the First ray to 1 and the last ray to -1.
+Filter See The Filter String. Filters for PAF files must be specified during the Ray Trace and cannot be applied here.
+Generate Path Filters If selected, path filters for all possible paths are automatically generated.
+Relative Minimum Flux The relative flux is the amount of energy at the end of a branch relative to the starting
+energy at launch. If this value is less than the specified minimum, then the branch is added to the "uncategorized"
+sum.
+Sort Paths By Specify the arrangement of the paths. The options available are total ending flux, number of objects
+struck, number of branches, last object struck, number of unique objects struck, average optical path length, number
+of diffraction events.
+Discussion
+This feature reads all or some subset ofthe rays in the selected ZRD file and filters the rays according to the specified
+filter string, if any. Then,the path analysis tool extracts the path sequence of each ray branch to group them by their
+path sequence. The path sequences represent the order in which the ray interacted with the given object surfaces.
+For example,path1 fromthe screenshothas the following sequence: 1.0, 2.1/(0,*), 2.2, 5.0, 4.0. The sequence indicates
+that the ray branches started from source 1, traveled and interacted with object 2 face 1; at this face the diffraction
+order 0 in the x direction is generated, the "*" indicates that no diffraction order is generated in the y direction; the
+the ray branch interacts with object 2 face 2, continues to object 5 face 0, and is terminated at object 4 face 0.
+There is a maximum number of objects allowed in any one path sequence, and this limit is currently 100. All paths
+with more than this number of object interactions are considered to have the same path.
+All branches that have the same path sequence are grouped together. The flux (always in watts, regardless of the
+source units) at the end of the path is summed for all branches having the identical path sequence. The list of all
+possible paths is generated and sorted as described in the Sort Paths By section. This data is summarized in a report
+listing the path #, flux out, relative flux out as a percentage of the total flux in for all rays, the number of branches
+with that same path, and then the path sequence.
+Raybranches thatdonotfall intoanypathbecauseof aRelativeMinimumFlux requirement,orbecause themaximum
+number of unique paths (currently 10,000) is exceeded, are added to the catch-all "uncategorized" path.
+Only one ZRD file can be active with the Path Analysis feature at one time, however many path analysis windows
+can be open.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1023
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (non-sequential ui mode)

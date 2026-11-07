@@ -1,0 +1,77 @@
+{
+  "version": "0.1.7",
+  "work_package": "ED-01",
+  "state": "implemented",
+  "ordinary": {
+    "passed": 705,
+    "native_deselected": 433,
+    "log": "verification/property-pages017-ordinary.log"
+  },
+  "native": {
+    "passed": 11,
+    "log": "verification/property-pages017-release-native.log",
+    "evidence": {
+      "property_aperture_numeric": "outputs\\runs\\property_aperture_numeric_01f1024ae1",
+      "property_composite_numeric": "outputs\\runs\\property_composite_numeric_505bdd1071",
+      "property_pop_numeric": "outputs\\runs\\property_pop_numeric_6e94174b15",
+      "property_mirror_layout": "outputs\\runs\\property_mirror_layout_d2bd687f54",
+      "property_scatter_resources": "outputs\\runs\\property_scatter_resources_8b7c424586",
+      "property_preflight_state": "outputs\\runs\\property_preflight_state_08314ebec3",
+      "property_pages": "outputs\\runs\\property_pages_6fd898043d"
+    },
+    "numeric_checks": {
+      "property_aperture_numeric": {
+        "checks": 14,
+        "all_passed": true
+      },
+      "property_composite_numeric": {
+        "checks": 15,
+        "all_passed": true
+      },
+      "property_pop_numeric": {
+        "checks": 6,
+        "all_passed": true
+      },
+      "property_mirror_layout": {
+        "checks": 0,
+        "all_passed": true
+      },
+      "property_scatter_resources": {
+        "checks": 0,
+        "all_passed": true
+      },
+      "property_preflight_state": {
+        "checks": 0,
+        "all_passed": true
+      },
+      "property_pages": {
+        "checks": 0,
+        "all_passed": true
+      }
+    }
+  },
+  "wheel": "wheels/zemax_standalone_mcp-0.1.7-py3-none-any.whl",
+  "wheel_smoke": "verification/property-pages017-wheel-smoke.json",
+  "bsdf_diagnostic": "verification/property-pages017-bsdf-native.json",
+  "historical_failure": {
+    "auto_pop_256_evidence": "outputs/runs/property_pop_numeric_e3f84e60ff",
+    "radius_mm": 0.20291556989154308,
+    "reference_mm": 0.20161760352659483,
+    "relative_tolerance": 0.0005,
+    "resolution": "auto 1024 sampling meets unchanged tolerance"
+  },
+  "project_fix": {
+    "behavior": "stage project resource folders before working-copy relocation; keep checkpoints in project; stage project export resources before SaveAs",
+    "native_acceptance": "outputs\\runs\\property_scatter_resources_8b7c424586"
+  },
+  "blocked": {
+    "User": "native UILDEScatterData serialization exception; needs corrected native endpoint",
+    "BSDF": "native file list points to ABGF and filename assignment ignored; needs corrected native selector",
+    "ISScatterCatalog": "ISX data file and matching catalog entry required",
+    "FloatingAperture_to_None": "native returns success while retaining FloatingAperture; needs reliable formal reset"
+  },
+  "next_work_package": "ED-02",
+  "diagnostics": [
+    "FRU__delta_init remains recorded; root cause unresolved"
+  ]
+}

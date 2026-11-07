@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-07",
+  "state": "implemented",
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build240529 Premium",
+  "completion_count": 0,
+  "item_id": "CV-01.FullFieldSpot",
+  "scope": "Result coordinate metadata and native-radius validation; shared-reference formal definition audit",
+  "input_source": "Installed official user manual pages indexed714-716,718-719; simulated native SpotData only for new collector tests",
+  "formal_material": "verification/development/CV-01/manual529-standard-fullfield.json",
+  "implementation": [
+    "DirectionCosines reports dimensionless radii and reference coordinates; spatial mode retains micrometers/lens units",
+    "Negative RMS/GEO radius is INVALID_RESULT_DATA with original row; non-finite values retain original rejection"
+  ],
+  "request": "Existing full_field_spot request unchanged; fake collector cases field1 wave2 direction_cosines false/true",
+  "actual_settings": "Fake collector verifies selected wavelength identity; real settings evidence remains native074",
+  "checks": {
+    "ordinary532": "50passed before additional collector tests",
+    "ordinary533": "54passed including added collector cases"
+  },
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_full_field_spot.py tests/test_diffraction_reference.py tests/test_surface_mtf.py tests/test_quick_yield.py tests/test_development_status_report.py -q --junitxml=verification/development/BASE-01/ordinary533-targeted.xml",
+  "numerical_acceptance": "Open: no successful real FullFieldSpot output; fake results establish adapter behavior only",
+  "lifecycle": "No native session for metadata checks; prior native074 three failed tasks closed and disconnected",
+  "conclusion": "Manual confirms one shared reference, ChiefRay field1 and transverse-aberration magnification. It does not determine Centroid/Middle shared point or complete exaggerated-coordinate mapping.",
+  "next_action": "Need formal graph/dedicated export or fully attributed shared-reference/magnification contract before equivalent ray-trace replacement. Continue other B006 candidates."
+}

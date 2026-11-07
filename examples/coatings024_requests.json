@@ -1,0 +1,145 @@
+[
+  {
+    "tool": "get_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1,
+        "count": 10
+      }
+    }
+  },
+  {
+    "tool": "update_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1,
+        "use_layer_multiplier_and_offsets": true,
+        "layers": [
+          {
+            "layer": 1,
+            "thickness_multiplier": 0.95,
+            "thickness_status": {
+              "mode": "Variable"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "reflection_vs_angle",
+        "surface": 1
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "reflection_vs_wavelength",
+        "surface": 1
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "transmission_vs_angle",
+        "surface": 1
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "transmission_vs_wavelength",
+        "surface": 1
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "absorption_vs_angle",
+        "surface": 1
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "absorption_vs_wavelength",
+        "surface": 1
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "diattenuation_vs_angle",
+        "surface": 1
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "diattenuation_vs_wavelength",
+        "surface": 1
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "phase_vs_angle",
+        "surface": 1
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "phase_vs_wavelength",
+        "surface": 1
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "retardance_vs_angle",
+        "surface": 1
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "retardance_vs_wavelength",
+        "surface": 1
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "coating_listing"
+      }
+    }
+  }
+]

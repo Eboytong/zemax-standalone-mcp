@@ -1,0 +1,44 @@
+{
+  "calls": [
+    {
+      "tool": "run_analysis",
+      "arguments": {
+        "request": {
+          "kind": "full_field_aberration",
+          "field": 2,
+          "wavelength": 2,
+          "x_field_width": 2,
+          "y_field_width": 1,
+          "x_field_sampling": 7,
+          "y_field_sampling": 5,
+          "aberration_type": "Defocus",
+          "maximum_term": 15,
+          "pupil_sampling": "S_64x64",
+          "field_shape": "Elliptical",
+          "display": "Relative"
+        }
+      }
+    },
+    {
+      "tool": "get_task_result",
+      "arguments": {
+        "task_id": "<completed task id>",
+        "grid": 0,
+        "x_start": 1,
+        "y_start": 1,
+        "width": 4,
+        "height": 3
+      }
+    },
+    {
+      "tool": "export_analysis_image",
+      "arguments": {
+        "request": {
+          "task_id": "<completed task id>",
+          "path": "<absolute output directory>/full-field.png"
+        }
+      }
+    }
+  ],
+  "notes": "Connect/open lens, poll to terminal, read result, disconnect. Widths are native half extents about selected reference field; physical field units; results waves."
+}

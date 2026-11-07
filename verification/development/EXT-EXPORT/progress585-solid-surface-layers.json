@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-07",
+  "item_id": "EXT-EXPORT.CadMultipleConfigurations",
+  "state": "implemented",
+  "completion_count": 0,
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build240529 Premium",
+  "scope": "Controlled solid/surface IGES writer distinction; all-by-layer vs all-at-once; configuration preservation and close",
+  "input_source": "Owned N-BK7 plane cylinder radius2mm thickness2/4mm in two MCE THIC configurations",
+  "hypothesis": "IGES solid-body writer may use fixed65535 while surface writer adopts LensLayer and configuration layers",
+  "run": "outputs\\runs\\cad585_solid_surface_layers_661dd075b1",
+  "requests_and_actual_settings": "layers.json retains four requests, actual native getter readbacks, directory entity types/levels, task close receipts",
+  "expected": {
+    "all_by_layer": [
+      10,
+      11
+    ],
+    "all_at_once": [
+      10
+    ]
+  },
+  "cases": [
+    {
+      "surfaces_as_solids": true,
+      "configuration_mode": "all_by_layer",
+      "levels": [
+        65535
+      ],
+      "layer_adoption": false,
+      "entities": 67
+    },
+    {
+      "surfaces_as_solids": true,
+      "configuration_mode": "all_at_once",
+      "levels": [
+        65535
+      ],
+      "layer_adoption": false,
+      "entities": 67
+    },
+    {
+      "surfaces_as_solids": false,
+      "configuration_mode": "all_by_layer",
+      "levels": [
+        65535
+      ],
+      "layer_adoption": false,
+      "entities": 53
+    },
+    {
+      "surfaces_as_solids": false,
+      "configuration_mode": "all_at_once",
+      "levels": [
+        65535
+      ],
+      "layer_adoption": false,
+      "entities": 53
+    }
+  ],
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_cad_layer_modes_live.py --run-zemax -q -x --junitxml=verification/development/EXT-EXPORT/native585-solid-surface-layers.xml",
+  "native_diagnostic_pytest_passed": 1,
+  "numerical_layer_acceptance": false,
+  "reference": "IGES Directory Entry level field, retained per-entity raw types and levels; adopted LensLayer10 and two configurations expected10/11 for AllByLayer,10 for AllAtOnce",
+  "lifecycle": "Four tasks succeeded, tools explicitly closed without cleanup warnings; surfaces/solve/system/MFE/MCE unchanged each iteration and save/reload; final disconnect",
+  "disconnect_ok": true,
+  "conclusion": "All four cases report only65535. Solid-body versus surface writer does not resolve layer omission; known failure persists under both controls.",
+  "unblock_condition": "Formal native exporter path that emits requested geometry/configuration level assignments, or a confirmed upstream fix; keep source export and native adoption evidence distinct",
+  "next_action": "Retain implemented. CAD version limitations521 unchanged; continue MaterialModel/FullFieldSpot and B005 candidates with new formal conditions."
+}

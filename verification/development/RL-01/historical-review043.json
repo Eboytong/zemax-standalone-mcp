@@ -1,0 +1,103 @@
+{
+  "version": "0.1.43",
+  "historical_analyses": [
+    {
+      "summary": "verification\\basic-analyses-summary.json",
+      "checks_path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\basic_analyses_validation_a63f56e66a\\checks.json",
+      "check_count": 405,
+      "all_recorded_checks_passed": true,
+      "disconnect_response_ok": true,
+      "scope": [
+        "Cooke single ray vs batch",
+        "grid vs chief ray with aspect .7",
+        "Seidel surface sums",
+        "independent spherical Seidel S1",
+        "N-BK7 thick-lens ABCD for YZ/XZ",
+        "decentered global/local coordinates with explicit reference surface",
+        "grid data plot",
+        "normal disconnect"
+      ],
+      "rerun": false
+    },
+    {
+      "summary": "verification\\field-analyses-summary.json",
+      "checks_path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\field_diagnostics_b29cac302b\\checks.json",
+      "check_count": 985,
+      "all_recorded_checks_passed": true,
+      "disconnect_response_ok": true,
+      "scope": "Vignetting/Footprint native topic CFG adoption remains unverified; auto/ray_trace use native batch rays",
+      "rerun": false
+    },
+    {
+      "summary": "verification\\mtf-extensions-summary.json",
+      "checks_path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\mtf_extensions_da8998667e\\checks.json",
+      "check_count": 86,
+      "all_recorded_checks_passed": true,
+      "disconnect_response_ok": true,
+      "scope": "See original summary and calls for tested conditions",
+      "rerun": false
+    },
+    {
+      "summary": "verification\\rms-analyses-summary.json",
+      "checks_path": "outputs\\runs\\rms_validation_9275040909\\checks.json",
+      "check_count": 12,
+      "all_recorded_checks_passed": true,
+      "disconnect_response_ok": true,
+      "scope": [
+        "ThroughFocusSpot GetTextFile returned false; five planes use standard spot child analyses"
+      ],
+      "rerun": false
+    }
+  ],
+  "solve_cases": {
+    "source": "verification/development/ED-02/final-cases018/cases.json",
+    "persistence_passed": [
+      "marginal_ray_angle.radius",
+      "chief_ray_angle.radius",
+      "marginal_ray_normal.radius",
+      "chief_ray_normal.radius",
+      "aplanatic.radius",
+      "element_power.radius",
+      "concentric_surface.radius",
+      "concentric_radius.radius",
+      "optical_path_difference.thickness",
+      "compensator.thickness",
+      "center_of_curvature.thickness",
+      "pupil_position.thickness",
+      "material_model.material",
+      "material_offset.material",
+      "material_substitute.material",
+      "automatic.semi_diameter",
+      "maximum.semi_diameter",
+      "fixed.mechanical_semi_diameter",
+      "automatic.mechanical_semi_diameter",
+      "fixed.chip_zone",
+      "automatic.chip_zone",
+      "zpl_macro.radius",
+      "zpl_macro.thickness",
+      "zpl_macro.semi_diameter",
+      "zpl_macro.conic",
+      "zpl_macro.parameter_1",
+      "zpl_macro.parameter_2",
+      "zpl_macro.parameter_3",
+      "zpl_macro.parameter_4",
+      "zpl_macro.parameter_5",
+      "zpl_macro.parameter_6",
+      "zpl_macro.parameter_7",
+      "zpl_macro.parameter_8",
+      "zpl_macro.parameter_13",
+      "zpl_macro.parameter_14"
+    ],
+    "failed": [
+      "surface_pickup.mechanical_semi_diameter",
+      "surface_pickup.chip_zone",
+      "zpl_macro.mechanical_semi_diameter",
+      "zpl_macro.chip_zone",
+      "zpl_macro.parameter_9",
+      "zpl_macro.parameter_10"
+    ],
+    "scope": "Historical per-case results; material six-wavelength, Maximum differing configurations and GridSag9/10 remain separate operation gates"
+  },
+  "current_native_execution": 0,
+  "remaining_audit": "Complete original-scope checks for remaining historical done/baseline evidence, all blocked input/interface conditions and native acceptance before final goal completion."
+}

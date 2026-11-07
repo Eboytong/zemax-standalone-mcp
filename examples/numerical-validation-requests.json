@@ -1,0 +1,35 @@
+{
+  "usage": "各场景先加载对应验收目录中的模型。运行类工具返回task_id，等待get_task_status完成后读取get_task_result；这些请求不负责建立其他场景的模型。",
+  "scenarios": [
+    {
+      "model": "Cooke reference baseline",
+      "tool": "run_fft_mtf",
+      "arguments": {"field": 0, "wavelength": 0, "sampling": "S_64x64", "maximum_frequency": 50, "use_polarization": false}
+    },
+    {
+      "model": "imaging_cross_coma / coma.zos",
+      "tool": "run_analysis",
+      "arguments": {"request": {"kind": "huygens_psf", "field": 1, "wavelength": 1, "sampling": "S_256x256", "image_sampling": "S_256x256", "image_delta": 2, "normalize": true}}
+    },
+    {
+      "model": "noncircular_diffraction / rectangle.zos or annulus.zos",
+      "tool": "run_analysis",
+      "arguments": {"request": {"kind": "diffraction_encircled_energy", "field": 1, "wavelength": 1, "sampling": "S_256x256", "reference": "ChiefRay", "maximum_radius": 30}}
+    },
+    {
+      "model": "cie_integral / cie.zos; detector object index follows saved model",
+      "tool": "get_detector_data",
+      "arguments": {"request": {"detector": 4, "color_channel": "tristimulus_x", "width": 1, "height": 1}}
+    },
+    {
+      "model": "same-plane sequential model with 0.55um wavelength",
+      "tool": "run_pop",
+      "arguments": {"request": {"beam_type": "DLL", "beam_file": "Ince-Gaussian-64.dll", "beam_parameters": {"0": 0.1, "4": 0.05, "5": 0, "6": 2, "7": 2}, "x_sampling": "S_256x256", "y_sampling": "S_256x256", "x_width": 1, "y_width": 1}}
+    },
+    {
+      "model": "stat_mixture model with SEED/STAT/TTHI already configured",
+      "tool": "run_tolerance_analysis",
+      "arguments": {"request": {"mode": "monte_carlo", "samples": 128, "save_samples": 128, "compensation": "None", "sampling": 1, "cycles": 1, "distribution": "Uniform"}}
+    }
+  ]
+}

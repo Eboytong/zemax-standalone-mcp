@@ -1,0 +1,449 @@
+{
+  "source": "installed DLL inventory and local 2024 R2 manual",
+  "interfaces": {
+    "ZOSAPI.Tools.IInternalTransmissionParameter": {
+      "properties": [
+        {
+          "name": "Wavelength",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Transmission",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Thickness",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    },
+    "ZOSAPI.Tools.IInternalTransmissionData": {
+      "properties": [
+        {
+          "name": "NumberOfPoints",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "ZOSAPI.Tools.IInternalTransmissionParameter GetDataPoint(Int32)"
+      ]
+    },
+    "ZOSAPI.Tools.IInternalBirefringenceParameter": {
+      "properties": [
+        {
+          "name": "Wavelength",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "K",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "K11",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "K12",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    },
+    "ZOSAPI.Tools.IInternalBirefringenceData": {
+      "properties": [
+        {
+          "name": "NumberOfPoints",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "ZOSAPI.Tools.IInternalBirefringenceParameter GetDataPoint(Int32)"
+      ]
+    },
+    "ZOSAPI.Tools.IMaterialsCatalog": {
+      "properties": [
+        {
+          "name": "SelectedCatalog",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SelectedMaterial",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "NumberOfFitCoefficients",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "CatalogComment",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MaterialFormula",
+          "type": "ZOSAPI.Tools.MaterialFormulas",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MaterialStatus",
+          "type": "ZOSAPI.Tools.MaterialStatuses",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "D0",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "D1",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "D2",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "E0",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "E1",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Ltk",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "TCE",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Temp",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "p",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "dPgF",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MinimumWavelength",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MaximumWavelength",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "IgnoreThermalExpansion",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ExcludeSubstitution",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MetaMaterial",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MeltFreq",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Comment",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "RelCost",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "CR",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "FR",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SR",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "AR",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "PR",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Nd",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Vd",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "YoungsModulus",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "HasYoungsModulus",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "PoissonRatio",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "HasPoissonRatio",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "KnoopHardness",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "HasKnoopHardness",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "SpecificHeatCapacity",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "HasSpecificHeatCapacity",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "HeatConductivity",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "HasHeatConductivity",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "System.String[] GetAllCatalogs()",
+        "System.String[] GetAllMaterials()",
+        "System.String GetCoefficientName(Int32)",
+        "Double GetFitCoefficient(Int32)",
+        "Void SetFitCoefficient(Int32, Double)",
+        "Boolean SaveCatalog()",
+        "ZOSAPI.Tools.IInternalTransmissionData GetInternalTransmissionData()",
+        "ZOSAPI.Tools.IInternalBirefringenceData GetInternalBirefringenceData()"
+      ]
+    },
+    "ZOSAPI.Analysis.Settings.Materials.IAS_InternalTransmissionvsWavelength": {
+      "properties": [
+        {
+          "name": "Glass1",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Glass2",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Glass3",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Glass4",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MinimumWave",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MaximumWave",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MinimumTransmission",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MaximumTransmission",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Thickness",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    }
+  },
+  "enums": {
+    "ZOSAPI.Tools.MaterialFormulas": {
+      "Schott": 1,
+      "Sellmeier1": 2,
+      "Herzberger": 3,
+      "Sellmeier2": 4,
+      "Conrady": 5,
+      "Sellmeier3": 6,
+      "Handbook1": 7,
+      "Handbook2": 8,
+      "Sellmeier4": 9,
+      "Extended": 10,
+      "Sellmeier5": 11,
+      "Extended2": 12,
+      "Extended3": 13
+    },
+    "ZOSAPI.Tools.MaterialStatuses": {
+      "Standard": 0,
+      "Preferred": 1,
+      "Obsolete": 2,
+      "Special": 3,
+      "Melt": 4
+    }
+  },
+  "unavailable_settings": [
+    {
+      "analysis": "DispersionDiagram",
+      "settings_interfaces": [],
+      "condition": "runtime/official CFG settings and readback require restored native startup"
+    },
+    {
+      "analysis": "GlassMap",
+      "settings_interfaces": [],
+      "condition": "runtime/official CFG settings and readback require restored native startup"
+    },
+    {
+      "analysis": "AthermalGlassMap",
+      "settings_interfaces": [],
+      "condition": "runtime/official CFG settings and readback require restored native startup"
+    },
+    {
+      "analysis": "DispersionvsWavelength",
+      "settings_interfaces": [],
+      "condition": "runtime/official CFG settings and readback require restored native startup"
+    }
+  ],
+  "native_indices": "GetFitCoefficient/GetCoefficientName/GetDataPoint use zero-based indices in draft; native API adoption still pending"
+}

@@ -1,0 +1,21 @@
+{
+  "requests": [
+    {
+      "request": {
+        "kind": "surface_phase_slope",
+        "surface": 1,
+        "data_type": "PhaseSlopeX",
+        "sampling": "S_65x65"
+      }
+    },
+    {
+      "request": {
+        "kind": "surface_phase_slope_cross",
+        "surface": 1,
+        "data_type": "PhaseSlopeTangential",
+        "angle": 30,
+        "remove_power": true
+      }
+    }
+  ]
+}

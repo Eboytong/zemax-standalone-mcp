@@ -1,0 +1,6 @@
+[
+  {"tool":"run_analysis","arguments":{"request":{"kind":"power_field_map","surface":6,"wavelength":2,"x_field_width":10,"y_field_width":10,"x_points":7,"y_points":5}}},
+  {"tool":"run_analysis","arguments":{"request":{"kind":"power_pupil_map","surface":6,"field":1,"quantity":"EFL","data_type":"Tangential","x_points":7,"y_points":5}}},
+  {"tool":"run_analysis","arguments":{"request":{"kind":"power_field_map","surface":6,"wavelength":2,"x_field_width":10,"y_field_width":10,"x_points":7,"y_points":5,"use_tangent_of_field_angle":true}}},
+  {"tool":"run_analysis","arguments":{"request":{"kind":"power_pupil_map","surface":6,"field":1,"quantity":"EFL","offset":7,"x_points":3,"y_points":3}}}
+]

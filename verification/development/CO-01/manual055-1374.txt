@@ -1,0 +1,26 @@
+8.4.3. Defining Coatings
+For dielectric materials, the index of refraction is purely real, and therefore the imaginary part of the index is zero.
+For metals, the index of refraction is complex.
+There are two sign conventions in common use for the imaginary part of the index of refraction that comes with the
+phase propagation factor.
+For a wave propagating the positive z-direction, we can use:
+• E(z,t) = A cos(wt - kz) and n = n - iK
+• E(z,t) = A cos(-wt + kz) and n = n + iK
+where n is the usual index of refraction and k is the extinction coefficient.
+OpticStudio uses the 1st convention. For example, using the OpticStudio convention, the index of aluminum is
+approximately given by
+K is written as a negative value in the coatings.
+Note the extinction coefficientis negative using this convention fortypical absorbing materials. This choice of index
+sign convention is related to the sign convention used by the propagation phase factors, see "Propagation Phase
+Factors, pc, ps"
+For time-harmonic signals, this becomes:
+When z increases, the amplitude of the electric field will decrease.
+OpticStudio uses a text file format to define all coating data. The file may be of any valid file name. A sample file
+called COATING.DAT is supplied with OpticStudio, and COATING.DAT is the default coating file name for any new
+lens. Multiple coating files may be defined, and the name of the coating file use by any particular lens file is defined
+in the Files section of the System Explorer. It is highly recommended that any modifications to COATING.DAT be
+saved in a filewith a different name, so that subsequent updates toOpticStudiowill not overwrite the changes made
+to COATING.DAT.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1375
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Libraries Tab

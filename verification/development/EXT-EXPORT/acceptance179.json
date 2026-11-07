@@ -1,0 +1,69 @@
+{
+  "item_id": "EXT-EXPORT.PointCloud",
+  "execution_state": "done",
+  "date": "2026-11-06",
+  "environment": {
+    "opticstudio": "24.2.0",
+    "build": "240529",
+    "license": "PremiumEdition",
+    "python": "3.14"
+  },
+  "native_interfaces": [
+    "ILensDataEditor.CanExportPointCloud",
+    "ILensDataEditor.RunTool_ExportPointCloudFile",
+    "PointCloudFileFormat"
+  ],
+  "units": "selected surface local coordinates, current lens units; mm and cm tested after parent CoordinateBreak rotation/translation",
+  "sampling": "7 x 5 organized grid; center coordinates x=-5+10*(i+0.5)/7, y=-5+10*(j+0.5)/5; X varies fastest; r>5 invalid sag/normals NaN retained",
+  "reference": "plane z=0, n=(0,0,-1); sphere radius20: z=20-sqrt(400-x*x-y*y), n=(x/20,y/20,-sqrt(400-x*x-y*y)/20); original local model unaffected by parent transform",
+  "tolerance": "1e-8 + 1e-7*abs(reference)",
+  "runs": [
+    {
+      "path": "outputs/runs/point_cloud176_reference_f65c8f2d4d",
+      "exports": 12,
+      "numeric_checks": 1770,
+      "max_absolute_error": 1.8571428661573464e-07,
+      "copy_closed": true,
+      "disconnect": true
+    },
+    {
+      "path": "outputs/runs/point_cloud_ASCII_bcaf13c509",
+      "exports": 1,
+      "numeric_checks": 124,
+      "max_absolute_error": 0.0,
+      "copy_closed": true,
+      "disconnect": true
+    },
+    {
+      "path": "outputs/runs/point_cloud_Binary_a92de4805f",
+      "exports": 1,
+      "numeric_checks": 0,
+      "max_absolute_error": 0,
+      "copy_closed": true,
+      "disconnect": true
+    },
+    {
+      "path": "outputs/runs/point_cloud_CompressedBinary_45cc5a06d8",
+      "exports": 1,
+      "numeric_checks": 0,
+      "max_absolute_error": 0,
+      "copy_closed": true,
+      "disconnect": true
+    }
+  ],
+  "numeric_checks": 1894,
+  "tests": {
+    "ordinary": "verification/development/EXT-EXPORT/ordinary179.xml",
+    "ordinary_passed": 80,
+    "native": "verification/development/EXT-EXPORT/native178-final.xml",
+    "point_cloud_passed": 4,
+    "cad_layer_diagnostic_xfailed": 1
+  },
+  "lifecycle": "synchronous owned copy closed; source settings/surfaces/solve preserved after save/reload; no native cancellation interface",
+  "history": [
+    "native175 plane attempt failed on aperture-invalid NaN; independent mask adopted, finite-point tolerances unchanged",
+    "native176 all three formats, normals on/off and mm/cm controlled sphere pass; production now checks organized dimensions",
+    "native178 final point-cloud four passed; CAD layers separately xfailed with source closed"
+  ],
+  "batch": "B003 8/10; no wheel/full regression yet"
+}

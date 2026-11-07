@@ -1,0 +1,36 @@
+{
+  "child_pid": 30384,
+  "startup_budget_seconds": 180,
+  "cleanup_budget_seconds": 15,
+  "evidence_directory": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\BASE-04\\connection-20261105T052807-f269b612",
+  "exit_code": 0,
+  "state": "passed",
+  "child_alive": false,
+  "elapsed_seconds": 14.674396000000002,
+  "completed_stages": [
+    "install_check",
+    "environment",
+    "clr_load",
+    "nethelper_assembly",
+    "zos_initialize",
+    "api_assemblies",
+    "connection_create",
+    "application_create",
+    "license_check",
+    "primary_system",
+    "probe_connect",
+    "probe_new_system",
+    "probe_get_system_settings",
+    "application_close"
+  ],
+  "last_event": {
+    "stage": "application_close",
+    "event": "completed",
+    "timestamp": "2026-11-05T05:28:21.425+00:00",
+    "elapsed_seconds": 12.814651099999992,
+    "duration_seconds": 0.012750199999999268
+  },
+  "unfinished_stages": [],
+  "stdout_bytes": 55,
+  "stderr_bytes": 0
+}

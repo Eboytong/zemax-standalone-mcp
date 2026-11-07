@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-06",
+  "items": [
+    "CV-01.FftSurfaceMtf",
+    "CV-01.HuygensSurfaceMtf"
+  ],
+  "state": "implemented",
+  "ordinary": "verification/development/CV-01/ordinary090-final.xml",
+  "ordinary_passed": 25,
+  "huygens": {
+    "native": "verification/development/CV-01/native090-huygens-calibrated.xml",
+    "run": "outputs/runs/surface_mtf090_matched_d91e886ee9",
+    "comparisons": 19,
+    "tolerance": 0.005,
+    "max_slice_error": 0.0018245707674065526,
+    "fix": "v242 native minima put DC outside grid; preserve native_axes and center shifted OTF at Nx/2,Ny/2; native frequency steps retained",
+    "conditions": "Cooke field3 wave1; pupil/image256; explicit image_delta1um in both surface and single MTF",
+    "remaining": "ideal circular pupil reference, coherent/complex types, pagination/plot, state/cancel/reload"
+  },
+  "fft": {
+    "native": "verification/development/CV-01/native090-matched-sampling.xml",
+    "run": "outputs/runs/surface_mtf090_matched_78fb748014",
+    "tangential_errors_10_30_50": [
+      0.03980469668087794,
+      0.05153308521038294,
+      0.07465245674654403
+    ],
+    "comparison_tolerance": 0.005,
+    "remaining": "Off-axis tangential error persists from128 to256 sampling; establish PSF/OTF reference and native 1D/2D definitions before acceptance"
+  },
+  "history": [
+    "native090-huygens-explicit.xml: test closure variable shadowing fixed before actual explicit-delta comparison",
+    "Initial single Huygens control omitted explicit ImageDelta; corrected harness and matched settings"
+  ],
+  "batch": "B0030/10; no full regression or wheel build"
+}

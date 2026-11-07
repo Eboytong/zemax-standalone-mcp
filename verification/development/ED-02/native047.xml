@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="5" time="160.208" timestamp="2026-11-05T13:48:32.376478+08:00" hostname="tongeb"><testcase classname="tests.test_extended_solves_live" name="test_extended_solves_stdio" time="34.233"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_extended_solves_live" name="test_material_solves_numeric_stdio" time="15.262"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'label': 'model d index from Snell', 'actual': 1.6000019888117303, 'expected': 1.6, 'atol': 1e-06, 'rtol': 1e-07, 'passed': False}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_extended_solves_live.py", line 56, in test_material_solves_numeric_stdio
+  |     asyncio.run(execute("material_solves_numeric018",work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_extended_solves_live.py", line 46, in work
+      |     nd,nf,nc=await indices();e.check("model d index from Snell",nd,1.6,atol=1e-6);e.check("model Abbe from Snell",(nd-1)/(nf-nc),60,atol=1e-5)
+      |                              ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 30, in check
+      |     assert passed,self.checks[-1]
+      |            ^^^^^^
+      | AssertionError: {'label': 'model d index from Snell', 'actual': 1.6000019888117303, 'expected': 1.6, 'atol': 1e-06, 'rtol': 1e-07, 'passed': False}
+      +------------------------------------</failure></testcase><testcase classname="tests.test_extended_solves_live" name="test_automatic_dimensions_numeric_stdio" time="17.037"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_extended_solves_live" name="test_extended_solve_native_matrix" time="78.690"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_editor_extensions_live" name="test_editor_extensions_stdio" time="13.673"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError(&quot;assert [{'comment': ...': 0.02, ...}] == [{'comment': ...': 0.02, ...}]\n  \n  At index 0 diff: {'operand': 1, 'type': 'TTHI', 'parameters': {'1': 1, '2': 1}, 'minimum': -0.01, 'maximum': 0.03, 'nominal': 1.0, 'comment': 'first', 'ignore': True, 'inverse_protected': False, 'metadata': {'active': True, 'type_name': '1: TTHI', 'available_types': ['TOFF', 'TRAD', 'TCUR', 'TFRN', 'TTHI', 'TCON', 'TSDI', 'TSDX', 'TSDY', 'TSTX', 'TSTY', 'TIRX', 'TIRY', 'TIRR', 'TPAR', 'TEDX', 'TEDY', 'TETX', 'TETY', 'TETZ', 'TUDX', 'TUDY', 'TUTX', 'TUTY', 'TUTZ', 'TIND', 'TABB', 'TEXI', 'SAVE', 'COMP', 'CPAR', 'CMCO', 'STAT', 'TWAV', 'TNPS', 'TNPA', 'TMCO', 'TEZI', 'TCM...\n  \n  ...Full output truncated (2 lines hidden), use '-vv' to show&quot;) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_editor_extensions_live.py", line 46, in test_editor_extensions_stdio
+  |     asyncio.run(execute('editor_extensions019',work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_editor_extensions_live.py", line 45, in work
+      |     assert result['rows']==expected
+      | AssertionError: assert [{'comment': ...': 0.02, ...}] == [{'comment': ...': 0.02, ...}]
+      |   
+      |   At index 0 diff: {'operand': 1, 'type': 'TTHI', 'parameters': {'1': 1, '2': 1}, 'minimum': -0.01, 'maximum': 0.03, 'nominal': 1.0, 'comment': 'first', 'ignore': True, 'inverse_protected': False, 'metadata': {'active': True, 'type_name': '1: TTHI', 'available_types': ['TOFF', 'TRAD', 'TCUR', 'TFRN', 'TTHI', 'TCON', 'TSDI', 'TSDX', 'TSDY', 'TSTX', 'TSTY', 'TIRX', 'TIRY', 'TIRR', 'TPAR', 'TEDX', 'TEDY', 'TETX', 'TETY', 'TETZ', 'TUDX', 'TUDY', 'TUTX', 'TUTY', 'TUTZ', 'TIND', 'TABB', 'TEXI', 'SAVE', 'COMP', 'CPAR', 'CMCO', 'STAT', 'TWAV', 'TNPS', 'TNPA', 'TMCO', 'TEZI', 'TCM...
+      |   
+      |   ...Full output truncated (2 lines hidden), use '-vv' to show
+      +------------------------------------</failure></testcase></testsuite></testsuites>

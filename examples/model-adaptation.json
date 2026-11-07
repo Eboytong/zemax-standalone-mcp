@@ -1,0 +1,32 @@
+[
+  {
+    "tool": "run_analysis",
+    "arguments": {"request":{"kind":"wavefront","field":2,"wavelength":2,"sampling":"S_64x64","remove_tilt":true,"use_exit_pupil":true,"include_pupil_mapping":true}},
+    "prerequisite": "已打开受支持的规则圆形轴对称模型；波长2为主波长。返回任务，随后使用现有任务查询和区域读取。"
+  },
+  {
+    "tool": "get_detector_data",
+    "arguments": {"request":{"detector":2,"kind":"flux","include_geometry":true,"geometry_frame":"global","start":0,"count":200}},
+    "prerequisite": "当前模型为纯非序列，物体2为DetectorSurface。查询不修改设计。"
+  },
+  {
+    "tool": "get_surfaces",
+    "arguments": {"start":1,"count":1,"parameter_start":21,"parameter_count":234},
+    "prerequisite": "仅读取实际活动列；默认请求仍保留前20项。"
+  },
+  {
+    "tool": "get_nsc_objects",
+    "arguments": {"request":{"start":1,"count":1,"parameter_start":21,"parameter_count":230}},
+    "prerequisite": "只读查询；NCE参数编号上限250，每个模型的活动列分别判断。"
+  },
+  {
+    "tool": "update_surfaces",
+    "arguments": {"changes":[{"surface":1,"parameters":{"254":0.001},"replace_solves":true}]},
+    "prerequisite": "修改工作副本：先通过get_surfaces确认参数254活动且可写，并明确允许替换已有关系。"
+  },
+  {
+    "tool": "update_nsc_objects",
+    "arguments": {"request":{"changes":[{"object":1,"parameters":{"249":0.001},"replace_solves":true}]}},
+    "prerequisite": "修改工作副本：先设置ExtendedPolynomialSurface阶数，再确认参数249活动且可写。"
+  }
+]

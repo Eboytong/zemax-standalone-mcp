@@ -1,0 +1,10 @@
+See " Reflectivity vs. Wavelength " for settings
+3.4.3.11. Phase vs. Wavelength (coatings, polarization and surface physics
+group)
+For sequential surfaces, this feature computes the S and P polarization phase for reflection (if the glass is MIRROR)
+orfortransmission (ifthe glass is not MIRROR) as a function of incident wavelength. For non-sequential objects,this
+feature computes the S and P polarization phase for reflection (if the material is MIRROR) or for transmission (if the
+material is not MIRROR) as a function of incident wavelength.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 941
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

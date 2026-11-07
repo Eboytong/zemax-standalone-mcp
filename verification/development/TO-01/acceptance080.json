@@ -1,0 +1,15 @@
+{
+  "item_id": "TO-01.SystemCheck",
+  "state": "done",
+  "date": "2026-11-05",
+  "runtime": "verification/development/TO-01/runtime080/settings.json",
+  "native": "verification/development/TO-01/native080.xml",
+  "ordinary": "verification/development/TO-01/ordinary080.xml",
+  "ordinary_passed": 25,
+  "native_passed": 1,
+  "run": "outputs/runs/systemcheck080_b082c1a564",
+  "scope": "Native diagnostic report; empty Sequential and Cooke; zero aperture warning, native text, line paging, settings and surfaces preserved, close and disconnect",
+  "settings": "AS_Default/base IAS_; no business settings",
+  "limitations": "Native configuration scope retained in text; no severity parser or whole-model validity inference",
+  "full_gate": "B002; deferred until ten unique functional items"
+}

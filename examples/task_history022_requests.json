@@ -1,0 +1,61 @@
+[
+  {
+    "tool": "list_task_history",
+    "arguments": {
+      "request": {
+        "count": 20
+      }
+    }
+  },
+  {
+    "tool": "list_task_history",
+    "arguments": {
+      "request": {
+        "request_id": "REPLACE_WITH_RESPONSE_REQUEST_ID"
+      }
+    }
+  },
+  {
+    "tool": "get_request_status",
+    "arguments": {
+      "request": {
+        "request_id": "REPLACE_WITH_RESPONSE_REQUEST_ID"
+      }
+    }
+  },
+  {
+    "tool": "get_historical_result",
+    "arguments": {
+      "request": {
+        "session_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "task_id": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "start": 0,
+        "count": 20
+      }
+    }
+  },
+  {
+    "tool": "get_historical_result",
+    "arguments": {
+      "request": {
+        "session_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "task_id": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "series": 0,
+        "start": 10,
+        "count": 20
+      }
+    }
+  },
+  {
+    "tool": "get_historical_result",
+    "arguments": {
+      "request": {
+        "session_id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "task_id": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "grid": 0,
+        "width": 20,
+        "height": 20
+      }
+    }
+  }
+]

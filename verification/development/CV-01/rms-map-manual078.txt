@@ -1,0 +1,235 @@
+PAGE 7
+3.2.5.7. Huygens MTF................................................................................................................795
+3.2.5.8. Huygens Through Focus MTF.......................................................................................797
+3.2.5.9. Huygens Surface MTF...................................................................................................799
+3.2.5.10. Huygens MTF vs. Field................................................................................................800
+3.2.5.11. Geometric MTF...........................................................................................................801
+3.2.5.12. Geometric Through Focus MTF..................................................................................803
+3.2.5.13. Geometric MTF vs. Field.............................................................................................804
+3.2.5.14. Geometric MTF Map...................................................................................................806
+3.2.6. RMS..............................................................................................................................................807
+3.2.6.1. RMS vs. Field.................................................................................................................807
+3.2.6.2. RMS vs. Wavelength.....................................................................................................810
+3.2.6.3. RMS vs. Focus...............................................................................................................812
+3.2.6.4. RMS Field Map..............................................................................................................813
+3.2.7. Enclosed Energy..........................................................................................................................815
+3.2.7.1. Diffraction (enclosed energy)......................................................................................815
+3.2.7.2. Geometric.....................................................................................................................817
+3.2.7.3. Geometric Line/Edge Spread.......................................................................................818
+3.2.7.4. Extended Source..........................................................................................................819
+3.2.8. Extended Scene Analysis.............................................................................................................821
+3.2.8.1. Image Simulation.........................................................................................................821
+3.2.8.2. Geometric Image Analysis............................................................................................827
+3.2.8.3. Geometric Bitmap Image Analysis..............................................................................832
+3.2.8.4. Light Source Analysis...................................................................................................835
+3.2.8.5. Partially Coherent Image Analysis...............................................................................837
+3.2.8.6. Extended Diffraction Image Analysis...........................................................................844
+3.2.8.7. Relative Illumination....................................................................................................847
+3.2.8.8. IMA and BIM File Viewer...............................................................................................849
+3.2.8.9. Bitmap File Viewer........................................................................................................849
+3.3. Laser and Fibers Group..............................................................................................................................850
+3.3.1. Physical Optics Propagation.......................................................................................................851
+3.3.2. Orientation matrix in Prop report...............................................................................................856
+3.3.3. About Physical Optics Propagation............................................................................................857
+3.3.3.1. Diffraction Propagation...............................................................................................858
+3.3.3.2. The Pilot Beam.............................................................................................................863
+3.3.3.3. Sign Conventions for Phase Data................................................................................864
+3.3.3.4. Propagating In and Out of the Rayleigh Range...........................................................866
+3.3.3.5. Separation of X and Y Propagation..............................................................................866
+3.3.3.6. Comments about Point Spacing and Sampling..........................................................867
+3.3.3.7. Propagation Through Arbitrary Optical Surfaces.......................................................867
+3.3.3.8. Propagating Through Non-sequential Surfaces.........................................................868
+3.3.3.9. Accounting for Polarization.........................................................................................868
+3.3.3.10. Memory Requirements...............................................................................................869
+3.3.3.11. Defining the Initial Beam...........................................................................................869
+3.3.3.12. Using Random Values................................................................................................876
+Release 2024 R2 - © Ansys, Inc. All rights reserved. vii
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+Contents
+PAGE 811
+Ray Density If the method is Gaussian quadrature, then the ray density specifies the number of radial rays to be
+traced. The more rays traced, the greater the accuracy, although the computation time increases. The maximum
+number is 20 which is sufficient for pupil aberrations up to order 40. If the method is rectangular array, then the ray
+density indicates the grid size. Rays outside the circular entrance pupil are ignored. See the "Discussion" section for
+details.
+Wave Density The wave density is the number of points between the minimum and maximum defined wavelength
+at which the RMS/Strehl ratio is calculated, intermediate values are interpolated. A maximum of 100 points is
+allowed.
+PlotScale Sets the maximum vertical scale for the plot. Zero results in automatic scaling.
+Method Select eitherGaussianQuadrature (GQ) or Rectangular Array (RA). See "Comments about RMS computation
+methods".
+Data Selects wavefront error, spot radius, spot x-direction, spot y-direction, or Strehl ratio.
+ReferTo Select either chief ray or centroid. Both reference points subtract out wavefront piston. The centroid
+reference mode also subtracts out the tilt of the wavefront, which yields smaller RMS values.
+Use Dashes Selects either solid lines or dashed lines to differentiate the various curves.
+Field Select "All" to display data for all fields, select one field to display data for a single field.
+Show Diffraction Limit If checked, then a curve indicating the diffraction limited response will be drawn on the
+plot. For RMS radius, x, or y; the diffraction limit is assumed to be 1.22 times the working F/# on axis times the
+wavelength. The change in the diffraction limit due to changes in F/# with field are ignored. For Strehl ratio, 0.8 is
+used, and for RMS wavefront, 0.072 waves is used. These are all approximate indicators for convenience only; the
+actual meaning of "diffraction limited" may be open to interpretation.
+Use Polarization If checked, polarization is considered. See " Polarization (system explorer) " for information on
+defining the polarization state and how polarization is used by analysis features.
+Discussion This feature calculates the RMS error or Strehl ratio as a function of wavelength for each field position.
+The method of calculation is identicalto that described in "RMS vs. Field"; see that section for a detailed discussion.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 811
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+PAGE 813
+Data Selects either RMS wavefront error, RMS spot radius, RMS X-direction, RMS Y- direction, or Strehl ratio. Strehl
+ratio is only available for monochromatic calculations, and is computed using the method described in "Strehlratio
+approximation". For a polychromatic Strehl, see the "Huygens PSF".
+Use Dashes Selects either solid lines or dashed lines to differentiate the various curves.
+ReferTo Select either chief ray or centroid. For monochromatic calculations, the specified wavelength is used for
+reference. For polychromatic calculations, the primary wavelength is used for reference. Both reference points
+subtract out wavefront piston. The centroid reference mode also subtracts outthe tilt ofthe wavefront, which yields
+smaller RMS values.
+Wavelength Select "All" to display data for a polychromatic computation, select any one wavelength to plot
+monochromatic data.
+Min Focus The minimum value of the defocus to plot. Forfocal systems, the units are lens units. For afocal systems,
+the units are diopters.
+Max Focus The maximum value ofthe defocus to plot. Forfocal systems,the units are lens units. For afocal systems,
+the units are diopters.
+Show Diffraction Limit If checked, then a horizontal line indicating the diffraction limited response will be drawn
+on the plot. For RMS radius, x, or y; the diffraction limit is assumed to be 1.22 times the working F/# times the
+wavelength (primary wavelength if polychromatic) on axis. The change in the diffraction limit due to changes in F/#
+with field are ignored; a single value is used across the range of the plot. For Strehl ratio, 0.8 is used, and for RMS
+wavefront, 0.072 waves is used. These are all approximate indicators for convenience only; the actual meaning of
+"diffraction limited" may be open to interpretation.
+Use Polarization If checked, polarization is considered. See " Polarization (system explorer) " for information on
+defining the polarization state and how polarization is used by analysis features.
+Discussion This feature calculates the RMS error or Strehl ratio as a function of a change in focus position for each
+field position. The method of calculation is identical to that described in "RMS vs. Field"; see that section for a
+detailed discussion. OpticStudio adds the specified focus shift to the value of the thickness of the surface prior to
+the image surface. If the optical system has an odd number of mirrors, this surface normally would have a negative
+thickness, and therefore negative focus values move the image surface farther away from the last component. For
+systems with an even number of mirrors, then negative focus values move the image surface closer to the last
+component.
+3.2.6.4. RMS Field Map
+PlotsRMS radial, x, andy spotradius,RMSwavefront error,or Strehlratioas a functionoffieldpositionina rectangular
+map.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 813
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+PAGE 1779
+Ray Database Viewer 1019
+Ray Rotator 518
+Ray Splitting 382
+Ray Trace 1001
+Ray Trace Settings 597
+RayAimingMethod RayAiming 1655
+Rays and Spots 709
+RAYTRACE 1567
+Raytrace Analysis Group 1018
+RAYTRACEX 1567
+READ 1568
+READ_LOCALE 1569
+READNEXT 1570
+READNEXT_LOCALE 1570
+READSKIP 1571
+READSTRING 1571
+Real propagation 1761
+Rectangle 519
+Rectangular Array 1189
+Rectangular Compound Parabolic Concentrator 1427
+Rectangular Corner 519
+Rectangular Pipe 520
+Rectangular Pipe Grating 521
+Rectangular Roof 522
+Rectangular Torus Surface 522
+Rectangular Torus Volume 523
+Rectangular Volume 524
+Rectangular Volume Grating 526
+Reference OPD 141
+ReferenceOPDSetting ReferenceOPD 1654
+References on Lens Design 1748
+Reflect 1439
+Reflection vs. Angle (coatings, polarization and surface physics
+group 931
+Reflection vs. Angle (coatings, polarization group 1030
+Reflection vs. Wavelength (coatings, polarization and surface
+physics group 937
+Reflection vs. Wavelength (coatings, polarization group 1036
+Refraction and Reflection From NSC Objects 363
+Refresh List (zpl macros group 1474
+Relative Illumination 847
+Relative Illumination Operand 1118
+RELEASE 1572
+Reload All Objects 627
+Reload All Surfaces 337
+Reload Coating File 1373
+Reload Object 627
+Reload Surface 337
+RELOADOBJECTS 1572
+REM, !, 1572
+Remove All Apertures 348
+Remove All Variables 1193
+Remove All Variables (optimize tab, non-sequential 1239
+REMOVEVARIABLES (keywords 1573
+RENAMEFILE 1573
+Replace Vignetting With Apertures 349
+Replicate Object 629
+Report Graphic 948
+Reports Group (the analyze tab, non-sequential ui mode 1049
+Reports Group (the analyze tab, sequential ui mode 948
+Representation of the Electric Field 858
+Research Surveys 1743
+Reset Column Order (lens data editor toolbar 353
+Reset Column Order (multi-configuration editor toolbar 657
+Reset Column Order (nsc editor toolbar 637
+Reset Column Widths (lens data editor toolbar 353
+Reset Column Widths (multi-configuration editor toolbar 657
+Reset Column Widths (nsc editor toolbar 637
+Restricting Selected Glasses 1226
+Restrictions 336
+RESUMEUPDATES 1573
+Retardance vs. Angle (coatings, polarization and surface physics
+group 936
+Retardance vs. Angle (coatings, polarization group 1035
+Retardance vs. Wavelength (coatings, polarization and surface
+physics group 942
+Retardance vs. Wavelength (coatings, polarization group 1041
+Retrace Source Rays Upon File Open 156
+Retro Reflect 271
+RETURN 1573
+Reverse Elements 342
+Review of Polarization Concepts 127
+Revolve 1435
+REWIND 1574
+Ring 1437
+RMS 807
+RMS Field Map 813
+RMS vs. Field 807
+RMS vs. Focus 812
+RMS vs. Wavelength 810
+Roadway Lighting 1056
+Roadway Lighting Wizard (optimize tab, non-sequential 1238
+Rotate 1439
+Running Macros from the Command Line 1618
+S
+Sag Table 906, 1306
+Sagittal and Tangential 1761
+Sample GRIN DLLs 378
+Samples 885
+Save .ZBD File 77
+Save CAD Assembly/Part Properties 633
+Save Detector Data 1016
+Save Modified Part 633
+SAVE: Save Sensitivity Analysis Lenses 1275
+SAVEARCHIVE 1574
+SAVEDETECTOR (keywords 1574
+SAVELENS 1574
+SAVEMERIT (keywords 1575
+SAVETOLERANCE (keywords 1575
+SAVEWINDOW 1575
+Saving and Loading Detector Data 395
+Scale 1438
+Scale Lens 185
+SCATTER 1576
+Scatter Function Viewer 1393
+Scatter Models 365
+Scatter Polar Plot 1396
+Scatter To 609
+Scattering (non-sequential overview 365
+Scattering (surface properties 315
+Index

@@ -1,0 +1,47 @@
+{
+  "model": {
+    "surface_type": "Hologram1",
+    "construction_points_mm": [
+      [
+        0,
+        -100,
+        -200
+      ],
+      [
+        0,
+        100,
+        -200
+      ]
+    ],
+    "volume_hologram": true,
+    "thickness_mm": 0.01,
+    "index": 1.5,
+    "modulation": 0.02,
+    "construction_wavelength_um": 0.55,
+    "field_angle_y_degrees": 26.56505117707799,
+    "consider_fresnel": false
+  },
+  "requests": [
+    {
+      "kind": "diff_efficiency_angular",
+      "surface": 1,
+      "min_angle": 20.16505117707799,
+      "max_angle": 32.96505117707799
+    },
+    {
+      "kind": "diff_efficiency_chromatic",
+      "surface": 1,
+      "min_wavelength": 0.45,
+      "max_wavelength": 0.65
+    },
+    {
+      "kind": "diff_efficiency_2d",
+      "surface": 1,
+      "min_angle": 20.16505117707799,
+      "max_angle": 32.96505117707799,
+      "min_wavelength": 0.45,
+      "max_wavelength": 0.65
+    }
+  ],
+  "dll_condition": "Installed sequential us_hologram_kogelnik.dll P result differs from internal Kogelnik reference; returned native data retain numeric_limitations. See acceptance059.json."
+}

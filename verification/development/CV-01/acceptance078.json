@@ -1,0 +1,49 @@
+{
+  "item_id": "CV-01.RMSFieldMap",
+  "date": "2026-11-05",
+  "state": "done",
+  "native_interface": "verification/development/CV-01/rms-field-map031.json",
+  "native_numeric": "verification/development/CV-01/native078-rms-map-final.xml: numeric case passed; recovery case discovered native minimum clamp",
+  "native_lifecycle": "verification/development/CV-01/native078-rms-map-lifecycle-final.xml: passed after minimum-bound correction",
+  "numeric_run": "outputs/runs/rmsmap078_44f9924f8e",
+  "lifecycle_run": "outputs/runs/rmsmap078_cancel_6fc7c4403b",
+  "ordinary": "verification/development/CV-01/ordinary078-delivery.xml",
+  "ordinary_passed": 131,
+  "fixes": [
+    "Skip generic SampleSize; native RMS map uses RayDensity.",
+    "Native axes are offsets from the selected field; expose physical coordinates and retain native_axes.",
+    "Native spot values are lens units; convert to micrometers, retain original unit and scale.",
+    "Final combination and selectors rechecked; reject unsupported diffraction-limit line.",
+    "Native clamps dimensions below5 at execution despite successful settings readback; typed dimensions now5..101."
+  ],
+  "numeric": {
+    "checks": 53,
+    "grid": "7x5; center(3,10)degrees; half widths(4,2)degrees",
+    "sampling": "128x128 native and rectangular pupil reference; rays chunked8192",
+    "spot_comparisons": 18,
+    "spot_tolerance": "0.05 micrometers + 1% reference",
+    "spot_max_error": 0.04877219795770138,
+    "opd_comparisons": 3,
+    "opd_tolerance": "1e-5 waves + 1% reference",
+    "opd_max_error": 0.002526329636042546,
+    "centroid_wavefront": "unit, native adoption and controlled <10waves range; independent OPD comparison uses ChiefRay",
+    "strehl": "native enum adoption and controlled [0,1] range",
+    "convergence": "64x64 endpoints: error0.0052886 waves/1.56%;65point boundary lattice error0.00388/1.14%.128x128 max relative difference0.55%; tolerances unchanged."
+  },
+  "output": "8PNG; native text; grid paging; source/settings preservation; save/reload; GaussQuad5; wavelength0/polarization/vignetting options; even6x8 grid adopted",
+  "cancellation": {
+    "started_running": true,
+    "state": "cancelled",
+    "closed": true
+  },
+  "history": [
+    "native078-rms-map.xml",
+    "native078-rms-map-fixed.xml",
+    "native078-rms-map-axes.xml",
+    "native078-rms-map-units.xml",
+    "native078-rms-map-quadrature.xml",
+    "native078-rms-map-final.xml"
+  ],
+  "sampling_probe": "outputs/runs/rmsmap078_sampling_34b419c3ff/sampling.json",
+  "full_gate": "B0023/10; deferred until ten unique completed items"
+}

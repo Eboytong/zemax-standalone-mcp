@@ -1,0 +1,17 @@
+{
+  "requests": [
+    {
+      "kind": "tolerance_yield",
+      "operand": 0,
+      "tolerance_file": "owned_run.ztd"
+    },
+    {
+      "kind": "tolerance_histogram",
+      "operand": 1,
+      "tolerance_file": "owned_run.ztd",
+      "minimum": 3.25,
+      "maximum": 3.27,
+      "bins": 20
+    }
+  ]
+}

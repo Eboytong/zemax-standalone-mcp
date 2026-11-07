@@ -1,0 +1,22 @@
+{
+  "model_conditions": "顺序模型；曲面1为CoordinateBreak，MCE第6行为PRAM控制曲面1参数1，配置2存在",
+  "scan": {"request": {
+    "kind": "universal_plot_1d", "category": "Configuration",
+    "parameter": "ConfigurationValue", "mce_operand": "PRAM",
+    "configuration": 2, "operand_row": 6, "start": 0.1, "stop": 0.3, "samples": 3,
+    "target": {"mode": "operand", "operand": "PMVA", "parameters": [1, 1]}
+  }},
+  "multi_configuration_merit_setup": {
+    "mode": "replace",
+    "operands": [
+      {"type": "CONF", "parameters": {"2": 2}},
+      {"type": "TTHI", "parameters": {"2": 1, "3": 1}, "target": 0, "weight": 1},
+      {"type": "PMVA", "parameters": {"2": 1, "3": 1}, "target": 0, "weight": 1}
+    ]
+  },
+  "tce": {"request": {
+    "kind": "universal_plot_1d", "surface": 1, "parameter": "TCE",
+    "start": 10, "stop": 30, "samples": 3,
+    "target": {"mode": "operand", "operand": "TCVA", "parameters": [1]}
+  }}
+}

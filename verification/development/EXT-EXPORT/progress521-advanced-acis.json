@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-07",
+  "item_id": "EXT-EXPORT.CadSettings",
+  "state": "implemented",
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build240529 Premium",
+  "scope": "ASAT/ASAB actual native output declaration and close path",
+  "input_source": "Owned two-plane N-BK7 cylinder with2mm thickness/2mm semi-diameter; original surfaces/system snapshot retained",
+  "request": [
+    {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\cad521_advanced_acis_0ee39e58ce\\current.asat",
+      "format": "ASAT",
+      "end": 2,
+      "file_version": "Current"
+    },
+    {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\cad521_advanced_acis_0ee39e58ce\\current.asab",
+      "format": "ASAB",
+      "end": 2,
+      "file_version": "Current"
+    }
+  ],
+  "actual_settings": "Task settings in declarations.json; formal IExportCAD FileType/FileVersion getters accepted before native Run",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_cad_advanced_acis_live.py -q -s --run-zemax --junitxml=verification/development/EXT-EXPORT/native521-advanced-acis.xml",
+  "run": "outputs/runs/cad521_advanced_acis_0ee39e58ce",
+  "result": [
+    {
+      "format": "ASAT",
+      "state": "failed",
+      "error": {
+        "code": "TASK_START_FAILED",
+        "message": "Unsupported export format",
+        "details": {
+          "task_id": "39d6ff5e6e1f4633a2b3b05d28e3a1cd",
+          "command": "run_cad_export",
+          "partial_changes_possible": false
+        }
+      },
+      "close_attempted": true,
+      "cleanup_warnings": null
+    },
+    {
+      "format": "ASAB",
+      "state": "failed",
+      "error": {
+        "code": "TASK_START_FAILED",
+        "message": "Unsupported export format",
+        "details": {
+          "task_id": "059d015b446b4900b045ca325dbcd52c",
+          "command": "run_cad_export",
+          "partial_changes_possible": false
+        }
+      },
+      "close_attempted": true,
+      "cleanup_warnings": null
+    }
+  ],
+  "checks": "Native5211diagnostic passed; both requested native exports rejected, no file header/geometry to inspect",
+  "retained_failure": {
+    "report": "verification/development/EXT-EXPORT/native520-advanced-acis.xml",
+    "reason": "Probe assumed initial task dispatch would succeed; corrected to collect initial refusal task and continue second format."
+  },
+  "lifecycle": "Both failed task native owners closed without cleanup warnings; source surfaces/system settings retained and session disconnected",
+  "conclusion": "ASAT/ASAB are listed by enum and their settings getters adopt Current, but this installed exporter raises Unsupported export format before output. This matches existing cad_formats capability records; do not parse a nonexistent file or claim version validation.",
+  "unblock_condition": "A formal installed exporter/version/license capability that actually writes ASAT/ASAB; then inspect declarations and cross-check geometry/version. SAT/SAB requested version mismatch500 remains separate.",
+  "next_action": "Keep CadSettings implemented; retain existing capability reasons. Continue MaterialModel/FullFieldSpot and PowerMap off-axis controls; no identical unsupported-format rerun without a changed condition."
+}

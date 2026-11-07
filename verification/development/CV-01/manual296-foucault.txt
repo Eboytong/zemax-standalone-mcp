@@ -1,0 +1,103 @@
+directions. If this box is unchecked, then instead the plot will be scaled to circular entrance pupil coordinates, no
+matter how distorted the exit pupil may actually be.
+If Beam 1 is "reference" then the configuration of Beam 2 is used to determine the pupil shape, otherwise the
+configuration of Beam 1 is used. If both Beam 1 and Beam 2 are defined by different configurations, the shape of
+Beam 1 is used, and no attempt is made to confirm that the pupils are the same shape. If the pupil shapes are different
+for the two configurations, this feature cannot accurately predict the interferogram.
+ConsiderPathLengthDifference If unchecked, the interferogram is computed assuming the phase at the center
+of each beam is zero, resulting in a "dark" fringe at the center. No attempt is made to determine the phases of the
+two beams with respect to each other.
+If checked, the difference between the total optical path length of the chief rays in each beam configuration is
+considered. This setting will alter the phase of the entire interferogram, but will not change the shape of the fringe
+pattern. For example, if the path difference is exactly one-half wave, dark fringes will become bright and bright will
+become dark. The optical path length of the chief rays from object to image surface is used, even if the fringes are
+not localized at the image surface. This assumption is only valid if the fringes are localized on a plane that is the
+same distance from the image surfaces in each configuration. If a reference beam is selected rather than a beam
+from a configuration, the optical path length for the reference beam is assumed to be zero.
+ContourFormat The contour format string. For a discussion of the contour format string syntax, see "The Contour
+Format String".
+SubapertureData:Sx,Sy,Sr Defines a subaperture of the pupil to compute the interferogram data for. See
+"Subaperture computations" for details.
+Discussion
+This feature works by computing two pupil maps, one each from beams 1 and 2. The phase (or OPD) of these two
+pupil maps is subtracted, and then optionally some linear phase is added as a function of the x and y pupil coordinate
+to simulate tilt fringes. The individual beams may be OPD as computed for any one configuration, or a "reference"
+beam which has identically zero OPD may be selected.
+Interferometers may be simulated by modeling the two paths through the system using two configurations, and
+then computing the interferogram of the two resulting beams. The accuracy of this approach is limited by some
+simplifying assumptions:
+• Any lateral shift or magnification difference between the two beams is ignored; it is assumed that the pupils
+perfectly overlap at the exit pupil.
+• Any differences in transmission are ignored; so the two OPD values at any one point in the pupil are assumed to
+be of equal value in intensity and the phase can be subtracted to yield the net phase difference.
+3.2.3.4.FoucaultAnalysis(Wavefront)
+Generates and displays Foucault knife-edge shadowgrams.
+755Release 2024 R2 - © Ansys, Inc. All rights reserved.
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+Sampling The size of the ray grid used to sample the pupil. The sampling may be 32x32, 64x64, etc. Although higher
+sampling yields more accurate data, calculation times increase.
+Type Selects either linear or logarithmic display of the data.
+ShowAs Choose surface, contour map, grey scale, false color map, or cross section as the display option.
+Wavelength The wavelength is the wavelength number to be used in the calculation.
+Field The field number for which the calculation should be performed.
+Row/Column When "Show As" is selected to be a cross section, this control defines the row or column number to
+display.
+Knife Choose Horizontal Above, Horizontal Below, Vertical Left, or Vertical Right. The Vertical Left knife blocks out
+all the light near focus from the knife position coordinate left; that is, towards negative x coordinates. The Vertical
+Right blocks all light from the knife position rightward. The Horizontal Above blocks all light from the knife position
+up, and Horizontal Below blocks all light from the knife position down. The terms left, right, up and down refer to
+the -x, +x, +y, and -y directions in the local coordinate system of the image surface.
+Position The position in micrometers relative to the chief ray of the knife. The coordinate is assumed to be in X or
+Y depending upon whether an X or Y knife is selected.
+Data The computed shadowgram, the reference shadowgram, or the difference between the two may be selected.
+See the discussion for details.
+UsePolarization If checked, polarization is considered. See "Polarization (system explorer)" for information on
+defining the polarization state and how polarization is used by analysis features.
+Reference The name of the bitmap reference image file.
+DecenterX/Y The decenter in X or Y of the reference shadowgram image relative to the computed shadowgram
+image. The units are relative to the full width or height of the reference shadowgram image. For example, an X
+Decenterof 0.25 will shift the referenceimage relativeto the computedimage by 25% of the full width of the reference
+image.
+756Release 2024 R2 - © Ansys, Inc. All rights reserved.
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+ScaleX/Y The scale factor in X or Y of the reference shadowgram image pixels relative to the computed shadowgram
+image pixels.
+Discussion
+This feature simulates the placement of either an X- or Y- oriented knife edge at the image surface; then computes
+the resulting shadowgram after propagating the vignetted beam back to the near field. The method of calculation
+involves computing the diffraction based complex amplitude PSF at focus via the FFT method; then a portion of the
+complex amplitude is vignetted by the simulated knife edge, and the remaining complex amplitude is propagated
+back to the near field. The shadowgram calculated this way is called the "computed" shadowgram for this feature.
+This feature also allows the import of either a bitmap file of a reference or measured shadowgram. The reference
+shadowgram may be displayed for convenient check of orientation.
+The difference between the computed and reference shadowgram may be displayed. OpticStudio computes the
+RMS difference between the computed and reference shadowgrams, and this RMS difference may be optimized
+using the FOUC operanddescribedin the chapter"Optimization".Optimizingthe RMS differencepermitsquantitative
+determination of the aberrations present in the beam that created the measured shadowgram. When calculating
+the difference between the computed and reference shadowgram, the two images must be registered together to
+overlap correctly. The decenter x/y and scale x/y controls are used for registering the two images.
+3.2.3.5.ContrastLossMap
+This feature visualizes contrast loss across the pupil using Moore-Elliott method.
+757Release 2024 R2 - © Ansys, Inc. All rights reserved.
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+Sampling The size of the grid used to sample the pupil.
+Frequency The spatial frequency (see "MTF Units") for which the data is plotted. When zero, the frequency will be
+set to 5% of the cutoff frequency for the chosen field and wavelength.
+Normalize If this box is checked, all circles are scaled so that the maximum value in the plot is displayed at the
+maximum allowed circle size.
+Wavelength The wavelength number to be used in the calculation.
+Field The field number for which the calculation is performed.
+ShowOPD If this optionis checked,wavefrontinformationis shownon the plot usinga smallindicator.See Discussion
+below.
+Discussion
+This feature displays contrast loss across the pupil using the Moore-Elliott method at a specific spatial frequency.
+The contrast loss distribution indicates which region in the pupil contributes the most to a poor MTF, and can be
+used to better evaluate the needed changes to improve the optical performance. For each sample point on the pupil,
+a circle with optionally a small indicator is shown to suggest the amount of the contrast loss and wavefront
+information.
+758Release 2024 R2 - © Ansys, Inc. All rights reserved.
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

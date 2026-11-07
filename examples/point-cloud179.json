@@ -1,0 +1,10 @@
+{
+  "request": {
+    "surface": 2,
+    "path": "C:/ZemaxOutput/surface.pcd",
+    "x_sampling": 7,
+    "y_sampling": 5,
+    "include_surface_normals": true,
+    "format": "CompressedBinary"
+  }
+}

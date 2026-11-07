@@ -1,0 +1,513 @@
+{
+  "date": "2026-11-07",
+  "item_id": "MF-01.SagTable",
+  "aliases": [
+    "MA-01.SagTable"
+  ],
+  "state": "implemented",
+  "completion_count": 0,
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build240529 Premium",
+  "scope": "Expose formal DSAG Data9/Data10 for RMS criteria; preserve raw coordinate convention and manufacturing gap",
+  "formal_definition": "Installed2024R2 manual042.txt lines44911–44965; DSAG Data9 BFS radius,Data10 BFS vertex Z offset. Formal row614 establishes columns Surf,unused,Data,Samp,Off-axis,Remove,BFS,unused.",
+  "inputs": "Owned signed EvenAspheric z=±.0126*r²,semi5mm; ZernikeFringeSag z=.0126*r²+piston,piston0/±.003mm; current configuration",
+  "requests": "Existing sag_table best_fit_sphere MinimumRMS/MinimumRMSWithOffset; request schema unchanged. Actual queries and native headers retained below.",
+  "actual_settings": {
+    "operand_cells": "verification/development/MF-01/probe614-operand-cells/metadata.json",
+    "direct_queries": "verification/development/MF-01/probe615-dsag-offset/queries.json",
+    "piston": "verification/development/MF-01/probe621-piston-offset/piston.json",
+    "stdio": [
+      "outputs/runs/sag587_criteria_1_be7d41e8d1",
+      "outputs/runs/sag587_criteria_-1_b6f1db7c76"
+    ]
+  },
+  "production": {
+    "result": "native_bfs_fit: raw radius,vertex_z_offset,formal parameter identity and SSAG curve_radius_check",
+    "offset": "summary manufacturing offset unchanged; raw DSAG sign/vertex-reference conversion remains unconfirmed",
+    "reverse": "No production DSAG BFS3 query: installed DSAG documentation lists0–2; direct3 diagnostic retained separately",
+    "failures": "Native original error/arguments retained; cancellation preserves completed radius; radius discrepancy retains raw values and failed consistency flag"
+  },
+  "commands": [
+    ".venv/Scripts/python.exe -X utf8 tests/support/sag_offset_outlets611.py verification/development/MF-01/probe612-sag-outlets",
+    ".venv/Scripts/python.exe -X utf8 tests/support/sag_operand614.py verification/development/MF-01/probe614-operand-cells",
+    ".venv/Scripts/python.exe -X utf8 tests/support/sag_dsag613.py verification/development/MF-01/probe615-dsag-offset",
+    ".venv/Scripts/python.exe -m pytest tests/test_sag_criteria_live.py --run-zemax -x -q --junitxml=verification/development/MF-01/native617-dsag.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_sag_table.py tests/test_sag_fit.py tests/test_surface_slopes.py tests/test_development_status_report.py -q --junitxml=verification/development/MF-01/ordinary620-final.xml",
+    ".venv/Scripts/python.exe -X utf8 tests/support/sag_piston618.py verification/development/MF-01/probe621-piston-offset"
+  ],
+  "tolerance": {
+    "radius_absolute": 5e-06,
+    "raw_opposite_sign_offset": "1e-8mm+1e-6relative on EvenAspheric control",
+    "rows": "1e-8+1e-6relative unchanged"
+  },
+  "comparisons": [
+    {
+      "sign": 1,
+      "criterion": "MinimumRMS",
+      "sampling": 1,
+      "radius": 39.80078212526673,
+      "native_offset": 0.0,
+      "independent_additive_sphere_offset": 0.0,
+      "radius_error": 9.814868917601416e-10,
+      "opposite_sign_offset_error": 0.0,
+      "scope": "EvenAspheric control only; algebraic sign comparison does not establish manufacturing equivalence"
+    },
+    {
+      "sign": 1,
+      "criterion": "MinimumRMS",
+      "sampling": 3,
+      "radius": 39.80078212526673,
+      "native_offset": 0.0,
+      "independent_additive_sphere_offset": 0.0,
+      "radius_error": 9.814868917601416e-10,
+      "opposite_sign_offset_error": 0.0,
+      "scope": "EvenAspheric control only; algebraic sign comparison does not establish manufacturing equivalence"
+    },
+    {
+      "sign": 1,
+      "criterion": "MinimumRMSWithOffset",
+      "sampling": 1,
+      "radius": 39.840039682665214,
+      "native_offset": -0.0002083725004988426,
+      "independent_additive_sphere_offset": 0.00020837252184727607,
+      "radius_error": 5.378943512823753e-09,
+      "opposite_sign_offset_error": 2.1348433464811814e-11,
+      "scope": "EvenAspheric control only; algebraic sign comparison does not establish manufacturing equivalence"
+    },
+    {
+      "sign": 1,
+      "criterion": "MinimumRMSWithOffset",
+      "sampling": 3,
+      "radius": 39.840039682665214,
+      "native_offset": -0.0002083725004988426,
+      "independent_additive_sphere_offset": 0.00020837252184727607,
+      "radius_error": 5.378943512823753e-09,
+      "opposite_sign_offset_error": 2.1348433464811814e-11,
+      "scope": "EvenAspheric control only; algebraic sign comparison does not establish manufacturing equivalence"
+    },
+    {
+      "sign": -1,
+      "criterion": "MinimumRMS",
+      "sampling": 1,
+      "radius": -39.80078212526673,
+      "native_offset": 0.0,
+      "independent_additive_sphere_offset": 0.0,
+      "radius_error": 9.814868917601416e-10,
+      "opposite_sign_offset_error": 0.0,
+      "scope": "EvenAspheric control only; algebraic sign comparison does not establish manufacturing equivalence"
+    },
+    {
+      "sign": -1,
+      "criterion": "MinimumRMS",
+      "sampling": 3,
+      "radius": -39.80078212526673,
+      "native_offset": 0.0,
+      "independent_additive_sphere_offset": 0.0,
+      "radius_error": 9.814868917601416e-10,
+      "opposite_sign_offset_error": 0.0,
+      "scope": "EvenAspheric control only; algebraic sign comparison does not establish manufacturing equivalence"
+    },
+    {
+      "sign": -1,
+      "criterion": "MinimumRMSWithOffset",
+      "sampling": 1,
+      "radius": -39.840039683137455,
+      "native_offset": 0.00020837250272411276,
+      "independent_additive_sphere_offset": -0.00020837252184731755,
+      "radius_error": 4.90671681063759e-09,
+      "opposite_sign_offset_error": 1.9123204782938233e-11,
+      "scope": "EvenAspheric control only; algebraic sign comparison does not establish manufacturing equivalence"
+    },
+    {
+      "sign": -1,
+      "criterion": "MinimumRMSWithOffset",
+      "sampling": 3,
+      "radius": -39.840039683137455,
+      "native_offset": 0.00020837250272411276,
+      "independent_additive_sphere_offset": -0.00020837252184731755,
+      "radius_error": 4.90671681063759e-09,
+      "opposite_sign_offset_error": 1.9123204782938233e-11,
+      "scope": "EvenAspheric control only; algebraic sign comparison does not establish manufacturing equivalence"
+    }
+  ],
+  "maximum_radius_error": 5.378943512823753e-09,
+  "maximum_opposite_sign_offset_error": 2.1348433464811814e-11,
+  "piston_cases": [
+    {
+      "piston": 0.0,
+      "vertex_sag": 0.0,
+      "queries": [
+        {
+          "operand": "BFSD",
+          "arguments": [
+            1,
+            2,
+            0,
+            5,
+            0,
+            0,
+            0,
+            0
+          ],
+          "value": 0.0
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            9,
+            1,
+            0,
+            2,
+            0,
+            0
+          ],
+          "value": 39.8401000907035
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            10,
+            1,
+            0,
+            2,
+            0,
+            0
+          ],
+          "value": -5.248517264298932e-07
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            9,
+            1,
+            0,
+            2,
+            1,
+            0
+          ],
+          "value": 39.80075131949389
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            10,
+            1,
+            0,
+            2,
+            1,
+            0
+          ],
+          "value": 0.0
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            9,
+            1,
+            0,
+            2,
+            2,
+            0
+          ],
+          "value": 39.840001302599156
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            10,
+            1,
+            0,
+            2,
+            2,
+            0
+          ],
+          "value": -0.00020827449928608065
+        }
+      ],
+      "closed": true,
+      "preserved": true
+    },
+    {
+      "piston": 0.003,
+      "vertex_sag": 0.003,
+      "queries": [
+        {
+          "operand": "BFSD",
+          "arguments": [
+            1,
+            2,
+            0,
+            5,
+            0,
+            0,
+            0,
+            0
+          ],
+          "value": 0.0
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            9,
+            1,
+            0,
+            2,
+            0,
+            0
+          ],
+          "value": 39.84009984211472
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            10,
+            1,
+            0,
+            2,
+            0,
+            0
+          ],
+          "value": -0.0030005248529655984
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            9,
+            1,
+            0,
+            2,
+            1,
+            0
+          ],
+          "value": 39.2439438542662
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            10,
+            1,
+            0,
+            2,
+            1,
+            0
+          ],
+          "value": 0.0
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            9,
+            1,
+            0,
+            2,
+            2,
+            0
+          ],
+          "value": 39.84000130363633
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            10,
+            1,
+            0,
+            2,
+            2,
+            0
+          ],
+          "value": -0.0032082745037776013
+        }
+      ],
+      "closed": true,
+      "preserved": true
+    },
+    {
+      "piston": -0.003,
+      "vertex_sag": -0.003,
+      "queries": [
+        {
+          "operand": "BFSD",
+          "arguments": [
+            1,
+            2,
+            0,
+            5,
+            0,
+            0,
+            0,
+            0
+          ],
+          "value": -0.0030000031307268753
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            9,
+            1,
+            0,
+            2,
+            0,
+            0
+          ],
+          "value": 39.84012882766822
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            10,
+            1,
+            0,
+            2,
+            0,
+            0
+          ],
+          "value": 0.002999246010700222
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            9,
+            1,
+            0,
+            2,
+            1,
+            0
+          ],
+          "value": 40.37376808221666
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            10,
+            1,
+            0,
+            2,
+            1,
+            0
+          ],
+          "value": 0.0
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            9,
+            1,
+            0,
+            2,
+            2,
+            0
+          ],
+          "value": 39.840001303951375
+        },
+        {
+          "operand": "DSAG",
+          "arguments": [
+            1,
+            0,
+            10,
+            1,
+            0,
+            2,
+            2,
+            0
+          ],
+          "value": 0.0027917254945267057
+        }
+      ],
+      "closed": true,
+      "preserved": true
+    }
+  ],
+  "results": {
+    "ordinary620_passed": 75,
+    "native617_passed": 2,
+    "numerical_checks": 410,
+    "all_checks_passed": true,
+    "sampling": "All Data9/10 values identical at sampling1/3 in615",
+    "outlet612": "Six SurfaceSag/SurfaceSagCross settings/readbacks and results completed; no separate physical offset field; SurfaceSag grid center0",
+    "piston": "WithOffset raw offset responds with opposite sign to known vertex piston. Same nominal paraboloid on Zernike has radius39.8400013026 vsEvenAspheric39.8400396827; discrepancy3.8380e-5mm exceeds5e-6. Native fit source/scope must be retained."
+  },
+  "lifecycle": {
+    "outlet612_all_closed": true,
+    "outlet612_disconnect": true,
+    "operand614": "Owned metadata copy closed;disconnect successful",
+    "query615_preserved": true,
+    "query615_disconnect": true,
+    "stdio617": "Both sessions disconnected;6 query tasks and6 native reference analyses succeeded; native reference tools close_attempted, no cleanup warnings; rows/page/PNG and save/reload checks passed;surfaces/solve/settings/MFE/MCE retained",
+    "piston621_all_closed": true,
+    "piston621_preserved": true,
+    "piston621_disconnect": true
+  },
+  "retained_failures": [
+    {
+      "path": "verification/development/MF-01/probe611-sag-outlets/outlets.json",
+      "reason": "Probe used nonexistent HeaderData.NumberOfLines after native run;finally closed/disconnected;612 iterates formal Lines"
+    },
+    {
+      "path": "verification/development/MF-01/probe613-dsag-offset/queries.json",
+      "reason": "Initial probe omitted inactive second slot;Data/Samp shifted. Values are not valid Data9/10 evidence.614 formal cell headers then615 corrected arguments;613 source preserved/disconnected."
+    }
+  ],
+  "conclusion": "Formal auxiliary data now available through run_analysis; physical manufacturing conversion and complete reverse summaries remain unresolved. Whole common function staysimplemented, B0065/10.",
+  "next_action": "622已接入RMS的DSAG原始半径/Z偏移及SSAG一致性，617正负stdio通过。621已知piston证明原始值含顶点基准且符号相反，同形Zernike拟合半径亦不同。需明确DSAG到SagTable制造偏移的符号/基准及面型适用合同、反向摘要，保持implemented；继续固定候补中取得新正式依据的条目。",
+  "retained_text_comparison": [
+    {
+      "piston": 0.0,
+      "reported_lines": [
+        "最佳拟合球面半径       \t:   3.984004E+01.",
+        "最佳拟合球面顶点偏移   \t:   0.000000E+00."
+      ]
+    },
+    {
+      "piston": 0.003,
+      "reported_lines": [
+        "最佳拟合球面半径       \t:   3.946718E+01.",
+        "最佳拟合球面顶点偏移   \t:   0.000000E+00."
+      ]
+    },
+    {
+      "piston": -0.003,
+      "reported_lines": [
+        "最佳拟合球面半径       \t:   3.984004E+01.",
+        "最佳拟合球面顶点偏移   \t:  -3.000003E-03."
+      ]
+    }
+  ],
+  "retained_text_conclusion": "Default SagTable text and BFSD agree: piston+.003 still reports manufacturing offset0 and changes radius to39.46718; piston-.003 reports offset-.003000003. DSAG BFS0 instead changes its offset oppositely with piston while radius stays near39.8401. Thus the outlets use materially different vertex/fitting conventions for these controls; keep raw auxiliary data separate.",
+  "image_observation": "Viewed617 MinimumRMSWithOffset deviation PNG: labeled LocalY/mm axis,finite continuous curve,legible legend; peak nearY3.5mm. Other exports retain lifecycle tests."
+}

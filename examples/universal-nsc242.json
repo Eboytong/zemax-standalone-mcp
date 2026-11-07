@@ -1,0 +1,14 @@
+{
+  "model_conditions": "纯NonSequential，物体1为Rectangle；对象坐标相对其参考对象，角度为度",
+  "position": {"request": {
+    "kind": "universal_plot_1d", "category": "NSC", "object": 1,
+    "parameter": "XPosition", "start": 2, "stop": 4, "samples": 3,
+    "target": {"mode": "operand", "operand": "NPXV", "parameters": [1, 1, 0]}
+  }},
+  "parameter_grid": {"request": {
+    "kind": "universal_plot_2d",
+    "x": {"category": "NSC", "object": 1, "parameter": "ObjectParameter", "parameter_number": 1, "start": 2, "stop": 6, "samples": 5},
+    "y": {"category": "NSC", "object": 1, "parameter": "ObjectParameter", "parameter_number": 2, "start": 3, "stop": 5, "samples": 3},
+    "target": {"mode": "operand", "operand": "NPVA", "parameters": [1, 1, 1]}
+  }}
+}

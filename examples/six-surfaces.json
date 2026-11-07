@@ -1,0 +1,190 @@
+[
+  {
+    "tool": "update_surfaces",
+    "arguments": {
+      "changes": [
+        {
+          "surface": 2,
+          "surface_type": "OddAsphere",
+          "parameters": {
+            "1": 0,
+            "2": 0.001,
+            "3": -0.0002,
+            "8": 1e-05
+          },
+          "semi_diameter": 4,
+          "replace_solves": true,
+          "radius": 50,
+          "conic": -0.3
+        }
+      ]
+    },
+    "prerequisite": "工作副本已有内部曲面2；设置会修改模型及关系。面型：OddAsphere"
+  },
+  {
+    "tool": "update_surfaces",
+    "arguments": {
+      "changes": [
+        {
+          "surface": 2,
+          "surface_type": "Biconic",
+          "parameters": {
+            "1": 30,
+            "2": -0.7
+          },
+          "semi_diameter": 4,
+          "replace_solves": true,
+          "radius": 50,
+          "conic": -0.3
+        }
+      ]
+    },
+    "prerequisite": "工作副本已有内部曲面2；设置会修改模型及关系。面型：Biconic"
+  },
+  {
+    "tool": "update_surfaces",
+    "arguments": {
+      "changes": [
+        {
+          "surface": 2,
+          "surface_type": "Conjugate",
+          "parameters": {
+            "1": 0,
+            "2": 0,
+            "3": -30,
+            "4": 0,
+            "5": 0,
+            "6": -50
+          },
+          "semi_diameter": 4,
+          "replace_solves": true,
+          "material": "MIRROR",
+          "thickness": -5
+        }
+      ]
+    },
+    "prerequisite": "工作副本已有内部曲面2；设置会修改模型及关系。面型：Conjugate"
+  },
+  {
+    "tool": "update_surfaces",
+    "arguments": {
+      "changes": [
+        {
+          "surface": 2,
+          "surface_type": "ABCD",
+          "parameters": {
+            "1": 1,
+            "2": 0,
+            "3": -0.01,
+            "4": 1,
+            "5": 1,
+            "6": 0,
+            "7": -0.02,
+            "8": 1
+          },
+          "semi_diameter": 4,
+          "replace_solves": true
+        }
+      ]
+    },
+    "prerequisite": "工作副本已有内部曲面2；设置会修改模型及关系。面型：ABCD"
+  },
+  {
+    "tool": "update_surfaces",
+    "arguments": {
+      "changes": [
+        {
+          "surface": 2,
+          "surface_type": "RetroReflect",
+          "parameters": {},
+          "semi_diameter": 4,
+          "replace_solves": true,
+          "material": "MIRROR",
+          "thickness": -5
+        }
+      ]
+    },
+    "prerequisite": "工作副本已有内部曲面2；设置会修改模型及关系。面型：RetroReflect"
+  },
+  {
+    "tool": "update_surfaces",
+    "arguments": {
+      "changes": [
+        {
+          "surface": 2,
+          "surface_type": "JonesMatrix",
+          "parameters": {
+            "1": 1,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "5": 0,
+            "6": 0,
+            "7": 0,
+            "8": 1
+          },
+          "semi_diameter": 4,
+          "replace_solves": true
+        }
+      ]
+    },
+    "prerequisite": "工作副本已有内部曲面2；设置会修改模型及关系。面型：JonesMatrix"
+  },
+  {
+    "tool": "update_surfaces",
+    "arguments": {
+      "changes": [
+        {
+          "surface": 2,
+          "surface_type": "ExtendedAsphere",
+          "parameters": {
+            "13": 30,
+            "14": 2,
+            "15": 0.001,
+            "21": -0.002
+          },
+          "replace_solves": true
+        }
+      ]
+    },
+    "prerequisite": "工作副本已有内部曲面2；先启用阶数再写系数；ExtendedAsphere"
+  },
+  {
+    "tool": "update_surfaces",
+    "arguments": {
+      "changes": [
+        {
+          "surface": 2,
+          "surface_type": "ExtendedOddAsphere",
+          "parameters": {
+            "13": 30,
+            "14": 2,
+            "15": 0.001,
+            "21": -0.002
+          },
+          "replace_solves": true
+        }
+      ]
+    },
+    "prerequisite": "工作副本已有内部曲面2；先启用阶数再写系数；ExtendedOddAsphere"
+  },
+  {
+    "tool": "update_surfaces",
+    "arguments": {
+      "changes": [
+        {
+          "surface": 2,
+          "surface_type": "ExtendedPolynomial",
+          "parameters": {
+            "13": 30,
+            "14": 2,
+            "15": 0.001,
+            "21": -0.002
+          },
+          "replace_solves": true
+        }
+      ]
+    },
+    "prerequisite": "工作副本已有内部曲面2；先启用阶数再写系数；ExtendedPolynomial"
+  }
+]

@@ -1,0 +1,735 @@
+{
+  "analyses": [
+    {
+      "tool": "connect"
+    },
+    {
+      "tool": "open_lens",
+      "arguments": {
+        "path": "$LENS"
+      }
+    },
+    {
+      "id": "psf",
+      "tool": "run_analysis",
+      "arguments": {
+        "request": {
+          "kind": "fft_psf",
+          "sampling": "S_64x64"
+        }
+      }
+    },
+    {
+      "id": "zernike",
+      "tool": "run_analysis",
+      "arguments": {
+        "request": {
+          "kind": "zernike_standard",
+          "maximum_terms": 22
+        }
+      }
+    },
+    {
+      "id": "report",
+      "tool": "export_evaluation_report",
+      "arguments": {
+        "task_ids": [
+          "$TASK:psf",
+          "$TASK:zernike"
+        ],
+        "background": true
+      }
+    }
+  ],
+  "files": [
+    {
+      "tool": "connect"
+    },
+    {
+      "tool": "open_lens",
+      "arguments": {
+        "path": "$LENS"
+      }
+    },
+    {
+      "tool": "copy_system",
+      "arguments": {
+        "request": {
+          "path": "$OUTPUT/independent.zos"
+        }
+      }
+    },
+    {
+      "tool": "save_merit_function",
+      "arguments": {
+        "request": {
+          "path": "$OUTPUT/design.mf"
+        }
+      }
+    },
+    {
+      "tool": "get_external_dependencies",
+      "arguments": {
+        "request": {
+          "count": 200
+        }
+      }
+    },
+    {
+      "id": "archive",
+      "tool": "create_archive",
+      "arguments": {
+        "request": {
+          "path": "$OUTPUT/design.zar"
+        }
+      }
+    },
+    {
+      "id": "restored",
+      "tool": "load_archive",
+      "arguments": {
+        "request": {
+          "path": "$OUTPUT/design.zar",
+          "output_directory": "$OUTPUT/restored"
+        }
+      }
+    }
+  ],
+  "nsc": [
+    {
+      "tool": "connect"
+    },
+    {
+      "tool": "new_system",
+      "arguments": {
+        "mode": "NonSequential"
+      }
+    },
+    {
+      "tool": "insert_nsc_objects",
+      "arguments": {
+        "request": {
+          "at": 1
+        }
+      }
+    },
+    {
+      "tool": "update_nsc_objects",
+      "arguments": {
+        "request": {
+          "changes": [
+            {
+              "object": 1,
+              "object_type": "SourceRay",
+              "data": {
+                "NumberOfAnalysisRays": 10,
+                "ZCosine": 1
+              }
+            },
+            {
+              "object": 2,
+              "object_type": "DetectorRectangle",
+              "z": 10,
+              "data": {
+                "NumberXPixels": 8,
+                "NumberYPixels": 8
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "trace",
+      "tool": "run_nsc_ray_trace",
+      "arguments": {
+        "request": {
+          "random_seed": 42,
+          "save_zrd": "$OUTPUT/trace.zrd"
+        }
+      }
+    },
+    {
+      "tool": "get_detector_data",
+      "arguments": {
+        "request": {
+          "detector": 2
+        }
+      }
+    },
+    {
+      "id": "replay",
+      "tool": "run_zrd_replay",
+      "arguments": {
+        "request": {
+          "path": "$OUTPUT/trace.zrd",
+          "detector": 2,
+          "filter": "H2"
+        }
+      }
+    }
+  ],
+  "pop": [
+    {
+      "tool": "connect"
+    },
+    {
+      "tool": "new_system"
+    },
+    {
+      "tool": "insert_surfaces",
+      "arguments": {
+        "at": 1
+      }
+    },
+    {
+      "tool": "update_system_settings",
+      "arguments": {
+        "settings": {
+          "aperture_value": 10,
+          "wavelengths": [
+            {
+              "wavelength_um": 0.55
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 1,
+            "thickness": 100,
+            "semi_diameter": 10,
+            "replace_solves": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "propagation",
+      "tool": "run_pop",
+      "arguments": {
+        "request": {
+          "end_surface": 2,
+          "beam_parameters": {
+            "0": 0.1,
+            "1": 0.1
+          },
+          "x_sampling": "S_256x256",
+          "y_sampling": "S_256x256",
+          "x_width": 2,
+          "y_width": 2
+        }
+      }
+    },
+    {
+      "tool": "get_task_result",
+      "arguments": {
+        "task_id": "$TASK:propagation",
+        "grid": 0,
+        "width": 8,
+        "height": 8
+      }
+    }
+  ],
+  "tolerance": [
+    {
+      "tool": "connect"
+    },
+    {
+      "tool": "open_lens",
+      "arguments": {
+        "path": "$LENS"
+      }
+    },
+    {
+      "tool": "update_tolerances",
+      "arguments": {
+        "request": {
+          "mode": "replace",
+          "operands": [
+            {
+              "type": "SEED",
+              "param1": 42
+            },
+            {
+              "type": "TTHI",
+              "param1": 1,
+              "param2": 2,
+              "minimum": -0.01,
+              "maximum": 0.01
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "mc",
+      "tool": "run_tolerance_analysis",
+      "arguments": {
+        "request": {
+          "mode": "monte_carlo",
+          "samples": 3,
+          "save_samples": 2,
+          "compensation": "None"
+        }
+      }
+    },
+    {
+      "tool": "summarize_tolerance_results",
+      "arguments": {
+        "request": {
+          "task_id": "$TASK:mc",
+          "criterion_column": 0,
+          "threshold": 0.02,
+          "unit": "Millimeters"
+        }
+      }
+    }
+  ],
+  "layouts": [
+    {
+      "tool": "connect"
+    },
+    {
+      "tool": "open_lens",
+      "arguments": {
+        "path": "$LENS"
+      }
+    },
+    {
+      "id": "layout",
+      "tool": "run_layout_export",
+      "arguments": {
+        "request": {
+          "kind": "cross_section",
+          "path": "$OUTPUT/layout.png",
+          "width": 1200,
+          "height": 800
+        }
+      }
+    },
+    {
+      "tool": "export_evaluation_report",
+      "arguments": {
+        "task_ids": [
+          "$TASK:layout"
+        ],
+        "formats": [
+          "markdown",
+          "pdf"
+        ],
+        "background": true
+      }
+    }
+  ],
+  "nsc_polar": [
+    {
+      "tool": "connect"
+    },
+    {
+      "tool": "new_system",
+      "arguments": {
+        "mode": "NonSequential"
+      }
+    },
+    {
+      "tool": "insert_nsc_objects",
+      "arguments": {
+        "request": {
+          "at": 1,
+          "count": 1
+        }
+      }
+    },
+    {
+      "tool": "update_system_settings",
+      "arguments": {
+        "settings": {
+          "wavelengths": [
+            {
+              "wavelength_um": 0.55
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool": "update_nsc_objects",
+      "arguments": {
+        "request": {
+          "changes": [
+            {
+              "object": 1,
+              "object_type": "SourceRay",
+              "replace_solves": true,
+              "data": {
+                "NumberOfAnalysisRays": 1,
+                "Power": 1,
+                "WaveNumber": 1,
+                "XCosine": 0.2620026302293849,
+                "YCosine": 0.21984631039295416,
+                "ZCosine": 0.9396926207859084
+              }
+            },
+            {
+              "object": 2,
+              "object_type": "DetectorPolar",
+              "replace_solves": true,
+              "material": "ABSORB",
+              "data": {
+                "MaxAngle": 180,
+                "RadialSize": 10,
+                "NumberPPixels": 181,
+                "NumberAPixels": 36
+              },
+              "type_settings": {
+                "UsePixelInterpolation": false
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool": "run_nsc_ray_trace",
+      "arguments": {
+        "request": {
+          "save_zrd": "$OUTPUT/polar.zrd",
+          "random_seed": 42
+        }
+      },
+      "id": "polar"
+    },
+    {
+      "tool": "get_detector_data",
+      "arguments": {
+        "request": {
+          "detector": 2
+        }
+      }
+    },
+    {
+      "tool": "get_detector_data",
+      "arguments": {
+        "request": {
+          "detector": 2,
+          "kind": "intensity",
+          "x_start": 20,
+          "y_start": 4,
+          "width": 1,
+          "height": 1
+        }
+      }
+    },
+    {
+      "tool": "save_lens_as",
+      "arguments": {
+        "path": "$OUTPUT/model.zos"
+      }
+    },
+    {
+      "tool": "export_evaluation_report",
+      "arguments": {
+        "task_ids": [
+          "$TASK:polar"
+        ],
+        "title": "非序列探测器评估"
+      }
+    }
+  ],
+  "nsc_coherent": [
+    {
+      "tool": "connect"
+    },
+    {
+      "tool": "new_system",
+      "arguments": {
+        "mode": "NonSequential"
+      }
+    },
+    {
+      "tool": "insert_nsc_objects",
+      "arguments": {
+        "request": {
+          "at": 1,
+          "count": 2
+        }
+      }
+    },
+    {
+      "tool": "update_system_settings",
+      "arguments": {
+        "settings": {
+          "wavelengths": [
+            {
+              "wavelength_um": 0.55
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool": "update_nsc_objects",
+      "arguments": {
+        "request": {
+          "changes": [
+            {
+              "object": 1,
+              "object_type": "SourceRay",
+              "replace_solves": true,
+              "data": {
+                "NumberOfAnalysisRays": 1,
+                "Power": 0.5,
+                "ZCosine": 1,
+                "WaveNumber": 1
+              },
+              "sources": {
+                "RandomPolarization": false,
+                "Jx": 1,
+                "Jy": 0,
+                "CoherenceLength": 0,
+                "InitialPhaseDeg": 0
+              }
+            },
+            {
+              "object": 2,
+              "object_type": "SourceRay",
+              "replace_solves": true,
+              "data": {
+                "NumberOfAnalysisRays": 1,
+                "Power": 0.5,
+                "ZCosine": 1,
+                "WaveNumber": 1
+              },
+              "sources": {
+                "RandomPolarization": false,
+                "Jx": 1,
+                "Jy": 0,
+                "CoherenceLength": 0,
+                "InitialPhaseDeg": 90
+              }
+            },
+            {
+              "object": 3,
+              "object_type": "DetectorRectangle",
+              "z": 10,
+              "material": "ABSORB",
+              "replace_solves": true,
+              "data": {
+                "NumberXPixels": 8,
+                "NumberYPixels": 8,
+                "XHalfWidth": 2,
+                "YHalfWidth": 2
+              },
+              "type_settings": {
+                "UsePixelInterpolation": false,
+                "NormalizeCoherentPower": false
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool": "run_nsc_ray_trace",
+      "arguments": {
+        "request": {
+          "save_zrd": "$OUTPUT/coherent.zrd",
+          "random_seed": 42,
+          "use_polarization": true
+        }
+      },
+      "id": "coherent"
+    },
+    {
+      "tool": "get_detector_data",
+      "arguments": {
+        "request": {
+          "detector": 3,
+          "kind": "coherent",
+          "coherent_type": "Real"
+        }
+      }
+    },
+    {
+      "tool": "get_detector_data",
+      "arguments": {
+        "request": {
+          "detector": 3,
+          "kind": "coherent",
+          "coherent_type": "Imaginary"
+        }
+      }
+    },
+    {
+      "tool": "get_detector_data",
+      "arguments": {
+        "request": {
+          "detector": 3,
+          "kind": "coherent",
+          "coherent_type": "Amplitude"
+        }
+      }
+    },
+    {
+      "tool": "get_detector_data",
+      "arguments": {
+        "request": {
+          "detector": 3,
+          "kind": "coherent",
+          "coherent_type": "Power"
+        }
+      }
+    },
+    {
+      "tool": "save_lens_as",
+      "arguments": {
+        "path": "$OUTPUT/model.zos"
+      }
+    },
+    {
+      "tool": "export_evaluation_report",
+      "arguments": {
+        "task_ids": [
+          "$TASK:coherent"
+        ],
+        "title": "非序列探测器评估"
+      }
+    }
+  ],
+  "nsc_reference": [
+    {
+      "tool": "connect"
+    },
+    {
+      "tool": "new_system",
+      "arguments": {
+        "mode": "NonSequential"
+      }
+    },
+    {
+      "tool": "insert_nsc_objects",
+      "arguments": {
+        "request": {
+          "at": 1,
+          "count": 3
+        }
+      }
+    },
+    {
+      "tool": "update_system_settings",
+      "arguments": {
+        "settings": {
+          "wavelengths": [
+            {
+              "wavelength_um": 0.55
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool": "update_nsc_objects",
+      "arguments": {
+        "request": {
+          "changes": [
+            {
+              "object": 1,
+              "object_type": "NullObject",
+              "x": 1,
+              "y": 2,
+              "z": 3,
+              "tilt_x": 5,
+              "tilt_y": -7,
+              "tilt_z": 11,
+              "replace_solves": true
+            },
+            {
+              "object": 2,
+              "object_type": "SourceRay",
+              "ref_object": 1,
+              "replace_solves": true,
+              "data": {
+                "NumberOfAnalysisRays": 1,
+                "Power": 1,
+                "ZCosine": 1
+              }
+            },
+            {
+              "object": 3,
+              "object_type": "Rectangle",
+              "ref_object": 1,
+              "z": 10,
+              "tilt_y": 45,
+              "material": "MIRROR",
+              "replace_solves": true,
+              "data": {
+                "XHalfWidth": 5,
+                "YHalfWidth": 5
+              }
+            },
+            {
+              "object": 4,
+              "object_type": "DetectorRectangle",
+              "ref_object": 1,
+              "x": -10,
+              "z": 10,
+              "tilt_y": -90,
+              "material": "ABSORB",
+              "replace_solves": true,
+              "data": {
+                "NumberXPixels": 8,
+                "NumberYPixels": 8,
+                "XHalfWidth": 2,
+                "YHalfWidth": 2
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool": "get_nsc_objects",
+      "arguments": {
+        "request": {}
+      }
+    },
+    {
+      "tool": "run_nsc_ray_trace",
+      "arguments": {
+        "request": {
+          "save_zrd": "$OUTPUT/reflection.zrd",
+          "random_seed": 42
+        }
+      },
+      "id": "reference"
+    },
+    {
+      "tool": "get_detector_data",
+      "arguments": {
+        "request": {
+          "detector": 4
+        }
+      }
+    },
+    {
+      "tool": "save_lens_as",
+      "arguments": {
+        "path": "$OUTPUT/model.zos"
+      }
+    },
+    {
+      "tool": "export_evaluation_report",
+      "arguments": {
+        "task_ids": [
+          "$TASK:reference"
+        ],
+        "title": "非序列探测器评估"
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+[
+  {"tool":"run_nsc_conversion","arguments":{"request":{"mode":"group","first_surface":1,"last_surface":4}}},
+  {"tool":"run_nsc_conversion","arguments":{"request":{"mode":"pure","create_sources_and_detectors":true,"overfill_factor":1.2}}},
+  {"tool":"get_nsc_objects","arguments":{"request":{"start":1,"count":20,"nsc_surface":1}}}
+]

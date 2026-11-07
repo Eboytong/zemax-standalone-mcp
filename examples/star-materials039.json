@@ -1,0 +1,16 @@
+{
+  "request": {
+    "catalog": "SCHOTT",
+    "material": "N-BK7",
+    "star_samples": [
+      {
+        "wavelength_um": 0.5875618,
+        "environment_pressure_atm": 1,
+        "environment_temperature_c": 20,
+        "material_pressure_atm": 1,
+        "material_temperature_c": 35,
+        "delta_temperature_c": 0.01
+      }
+    ]
+  }
+}

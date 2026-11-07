@@ -1,0 +1,49 @@
+{
+  "item_id": "CV-02.IMABIMFileViewer",
+  "state": "done",
+  "source_version": "0.1.60",
+  "formal_alternative": "ImageSimulation.ShowAs=SourceBitmap;explicit InputFile final readback",
+  "native_reports": [
+    "verification/development/CV-02/native449-ima-source.xml",
+    "verification/development/CV-02/native450-ima-source-reference.xml",
+    "verification/development/CV-02/native451-binary-source.xml",
+    "verification/development/CV-02/native452-normalization.xml",
+    "verification/development/CV-02/native454-viewer.xml",
+    "verification/development/CV-02/native455-viewer-final.xml"
+  ],
+  "latest_run": "outputs/runs/ima449_source_6ddbc18652",
+  "reference": {
+    "samples": 590,
+    "atol": 0,
+    "rtol": 0,
+    "formats": [
+      "text IMA",
+      "binary IMA",
+      "BIM"
+    ],
+    "checks": [
+      "three binary IMA planes map R/G/B invariant to system wavelength",
+      "BIM float64 bottom-left",
+      "zero input",
+      "selected 2/4 layer conversion",
+      "paging",
+      "export",
+      "cancel/reuse/reload",
+      "resource cleanup"
+    ],
+    "max_absolute_error": 0
+  },
+  "source": "native OutputFile BMP,8-bit display RGB",
+  "input_cleanup": true,
+  "remaining": [],
+  "related_correction": "GeometricImage.Source Uniform/Lambertian selects angular source distribution,not source image display",
+  "batch": "B0055/10",
+  "latest_runs": [
+    "outputs/runs/ima451_binary_44dd5a3e11",
+    "outputs/runs/ima452_normalization_ae0bd61ce6",
+    "outputs/runs/viewer454_acceptance_15649ade03",
+    "outputs/runs/viewer455_planes_083c0a88d4"
+  ],
+  "interface_limit": "Dedicated viewer AS_Default lacks typed file/channel selectors; formal ImageSimulation SourceBitmap plus documented full-precision plane reader covers the declared viewer scope. Dedicated window selection remains separately recorded.",
+  "ordinary_report": "verification/development/CV-02/ordinary455-final.xml"
+}

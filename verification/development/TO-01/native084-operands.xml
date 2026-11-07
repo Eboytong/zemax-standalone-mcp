@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="0.728" timestamp="2026-11-05T23:52:30.525218+08:00" hostname="tongeb"><testcase classname="" name="tests.test_tolerance_special_analyses_live" time="0.000"><error message="collection failure">tests\test_tolerance_special_analyses_live.py:29: in &lt;module&gt;
+    asyncio.run(execute("tolerance-special-analyses", work))
+                                                      ^^^^
+E   NameError: name 'work' is not defined</error></testcase></testsuite></testsuites>

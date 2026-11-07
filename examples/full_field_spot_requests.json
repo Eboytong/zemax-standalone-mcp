@@ -1,0 +1,17 @@
+[
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "full_field_spot",
+        "field": 0,
+        "wavelength": 0,
+        "reference": "ChiefRay",
+        "exaggerate": 3
+      }
+    }
+  },
+  {
+    "observed_limit": "RESULT_UNAVAILABLE on v242 Cooke; see docs/full-field-spot.md"
+  }
+]

@@ -1,0 +1,76 @@
+{
+  "date": "2026-11-06",
+  "item_id": "CV-01.FullFieldAberration",
+  "state": "implemented",
+  "source_version": "0.1.59",
+  "native_version": "24.2.0 build240529",
+  "license": "PremiumEdition",
+  "commands": [
+    ".venv/Scripts/python.exe -m pytest tests/test_full_field_aberration_live.py --run-zemax -q --junitxml=verification/development/CV-01/native292-full-field.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_full_field_aberration.py tests/test_zernike_reference.py tests/test_surface_mtf.py tests/test_plotting_units.py -q --junitxml=verification/development/CV-01/ordinary292.xml"
+  ],
+  "ordinary_passed": 25,
+  "native_passed": 1,
+  "run": "outputs/runs/full_field288_2a1d8ac6f5",
+  "numerical_reference": {
+    "source": "96x96 uniform unit-disk normalized real-ray OPD fitted independently to explicit orthonormal Standard Zernike1-15",
+    "fields": [
+      [
+        0,
+        0
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        -2
+      ]
+    ],
+    "pupil_samples": 96,
+    "maximum_term": 15,
+    "atol_waves": 0.0001,
+    "rtol": 0.01,
+    "checks": 12,
+    "failed_checks": 0,
+    "max_error": 0.0001781143120826445
+  },
+  "findings": [
+    "Defocus=Standard coefficient4; PrimaryAstigmatism=hypot5,6; PrimaryComa=hypot7,8; SpecifiedTerm5 signed output matches independent OPD fit.",
+    "Non-square7x5 raw Values are rows increasing physical Y. Native formatted text lists descending Y; coefficient5 sign independently resolves orientation.",
+    "Native XFieldWidth4/YFieldWidth2 produces x[-4,+4],y[-2,+2], endpoints; these settings are half extents in this installed interface. Native text incorrectly repeats X width for Y; raw settings/grid retained.",
+    "At only zero system field defined, nonzero requested field-grid locations became invalid. With off-axis system field restored Relative/Average give full rectangles; Elliptical Absolute masks16 of35 grid points.",
+    "Relative/Average observed at nearzero term5 mean; validate nonzero Defocus mean before generalizing display formulas."
+  ],
+  "implementation": "Dedicated describe_full_field annotates axis/value units, Standard coefficient identity, native axes and dimensions, preserving raw values and invalid points.",
+  "disconnect": true,
+  "close_receipt": {
+    "schema_version": 1,
+    "generation": null,
+    "session_id": null,
+    "started_at": "2026-11-06T12:30:18.610830+00:00",
+    "active_cancelled": false,
+    "forced": false,
+    "checkpoint": {
+      "attempted": false,
+      "path": null,
+      "ok": false,
+      "error": null
+    },
+    "was_connected": false,
+    "native": {
+      "attempted": true,
+      "closed": true,
+      "error": null
+    },
+    "closed_at": "2026-11-06T12:30:18.610864+00:00"
+  },
+  "remaining": "Nonzero-mean Relative/Average definitions; elliptical mask checks; field/reference selection, finite field units; page/plot, failure/cancel/reuse/reload lifecycle and docs examples/schema review.",
+  "history": [
+    "native288/289: typed four-mode outlets and single-field Standard/Fringe diagnostic",
+    "native290: independent OPD coefficient probe",
+    "native291: 12 coefficient checks pass; zero-only source field caused invalid variant locations, preserved original output"
+  ],
+  "batch": "B0042/10; parent not completed"
+}

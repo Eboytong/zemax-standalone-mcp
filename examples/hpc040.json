@@ -1,0 +1,65 @@
+[
+  {
+    "tool": "get_hpc_settings",
+    "arguments": {
+      "request": {
+        "mode": "preferences"
+      }
+    }
+  },
+  {
+    "tool": "get_hpc_settings",
+    "arguments": {
+      "request": {
+        "mode": "custom",
+        "node_count": 2,
+        "instance_type": "Small"
+      }
+    }
+  },
+  {
+    "tool": "run_nsc_ray_trace",
+    "arguments": {
+      "request": {
+        "random_seed": 42,
+        "hpc": {
+          "mode": "preferences"
+        }
+      }
+    }
+  },
+  {
+    "tool": "run_tolerance_analysis",
+    "arguments": {
+      "request": {
+        "mode": "monte_carlo",
+        "samples": 4,
+        "hpc": {
+          "mode": "preferences"
+        }
+      }
+    }
+  },
+  {
+    "tool": "run_global_optimization",
+    "arguments": {
+      "request": {
+        "runtime_seconds": 2,
+        "hpc": {
+          "mode": "preferences"
+        }
+      }
+    }
+  },
+  {
+    "tool": "run_hammer_optimization",
+    "arguments": {
+      "request": {
+        "runtime_seconds": 2,
+        "hpc": {
+          "mode": "preferences"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,46 @@
+MAT0 0.25 0 0
+MAT1 0.25 0 0
+MAT2 0.50 0 0
+MAT3 0.25 0 0
+MAT1 0.25 0 0
+MAT2 0.50 0 0
+MAT3 0.25 0 0
+MAT1 0.25 0 0
+MAT2 0.50 0 0
+MAT3 0.25 0 0
+MAT4 0.25 0 0
+Note the sequence of layers with materials MAT1, MAT2, and MAT3 is repeated 3 times. This is a perfectly acceptable
+syntax, however, 11 text lines and 11 layers are required to define the coating. A shorthand syntax that replicates
+the layers is available using the loop_index parameter. The loop_index integer parameter is set to the number of
+times a group of layers is to be repeated. The loop_index must be set at BOTH the first AND the last layer (this is to
+indicate the range oflayers, andOpticStudio also reads the coatingdata inbothdirections, asdescribedin a following
+section). The coating above could be written as:
+COAT 1GROUP
+MAT0 0.25 0 0
+MAT1 0.25 0 3
+MAT2 0.50 0 0
+MAT3 0.25 0 3
+MAT4 0.25 0 0
+Note the "3" parameter appears on both the first and third layers listed. This syntax not only saves typing, itreduces
+the chance of careless typing errors, eases editing, and conserves the total number of layers; which is limited for
+each coating definition (see the section "Limits on the amount of coating data" later in this section). The coating
+above only requires 5 "layers" to define, although there are physically 11 layers modeled.
+There are some important points regarding the use of the loop_index:
+There are no limits on the number of different groups that may be defined, or on how many layers each group
+contains, as long as the total number of lines under the COAT heading does not exceed the maximum number of
+allowed layers, defined below.
+A loop_index of zero is the same as a loop_index of 1; that is, zero does not mean do not include a group at all!
+Loops may not be nested, nor may they overlap.
+8.4.3.7. Defining Simple Ideal Coatings
+The COAT keyword also may be used to define simple ideal coatings. The syntax is
+I.transmission
+where transmission is numerical data. For example, the command
+COAT I.75
+will create a coating named I.75 which transmits 75% of the ray energy. Ideal coatings defined in this way transmit
+the specified fraction of light, and reflect the rest, independent of the ray wavelength, angle of incidence, incident
+material, or substrate material. Note this type of ideal coating has no absorption, and the transmission must be less
+than 1.0 and greater than 0.0. If the ray total internal reflects, the reflected intensity factor is assumed to be 1.0. For
+a more general ideal coating, see the IDEAL and IDEAL2 coating definitions which follow.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1381
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Libraries Tab

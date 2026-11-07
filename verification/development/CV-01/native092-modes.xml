@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="6" time="346.609" timestamp="2026-11-06T01:30:18.932165+08:00" hostname="tongeb"><testcase classname="tests.test_surface_mtf_modes_live" name="test_surface_mtf_circular_pupil_and_complex_identity[fft-128-256-10]" time="11.299"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError(&quot;[{'actual': 0.6219384887175784, 'atol': 0.005, 'expected': 0.6276397277764232, 'label': 'circular pupil incoherent fft...': 0.38512808158676654, 'atol': 0.005, 'expected': 0.39445575205498973, 'label': 'circular pupil incoherent fft', ...}]\nassert not [{'actual': 0.6219384887175784, 'atol': 0.005, 'expected': 0.6276397277764232, 'label': 'circular pupil incoherent fft...': 0.38512808158676654, 'atol': 0.005, 'expected': 0.39445575205498973, 'label': 'circular pupil incoherent fft', ...}]&quot;) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_surface_mtf_modes_live.py", line 46, in test_surface_mtf_circular_pupil_and_complex_identity
+  |     asyncio.run(execute(f'surface_mtf092_{family}_{pupil}_{image}_{delta}',work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_surface_mtf_modes_live.py", line 45, in work
+      |     assert not failures,failures
+      | AssertionError: [{'actual': 0.6219384887175784, 'atol': 0.005, 'expected': 0.6276397277764232, 'label': 'circular pupil incoherent fft...': 0.38512808158676654, 'atol': 0.005, 'expected': 0.39445575205498973, 'label': 'circular pupil incoherent fft', ...}]
+      | assert not [{'actual': 0.6219384887175784, 'atol': 0.005, 'expected': 0.6276397277764232, 'label': 'circular pupil incoherent fft...': 0.38512808158676654, 'atol': 0.005, 'expected': 0.39445575205498973, 'label': 'circular pupil incoherent fft', ...}]
+      +------------------------------------</failure></testcase><testcase classname="tests.test_surface_mtf_modes_live" name="test_surface_mtf_circular_pupil_and_complex_identity[fft-256-256-10]" time="15.442"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError(&quot;[{'actual': 0.1834956635122588, 'atol': 0.005, 'expected': 0.1888391116717572, 'label': 'circular pupil incoherent fft', ...}]\nassert not [{'actual': 0.1834956635122588, 'atol': 0.005, 'expected': 0.1888391116717572, 'label': 'circular pupil incoherent fft', ...}]&quot;) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_surface_mtf_modes_live.py", line 46, in test_surface_mtf_circular_pupil_and_complex_identity
+  |     asyncio.run(execute(f'surface_mtf092_{family}_{pupil}_{image}_{delta}',work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_surface_mtf_modes_live.py", line 45, in work
+      |     assert not failures,failures
+      | AssertionError: [{'actual': 0.1834956635122588, 'atol': 0.005, 'expected': 0.1888391116717572, 'label': 'circular pupil incoherent fft', ...}]
+      | assert not [{'actual': 0.1834956635122588, 'atol': 0.005, 'expected': 0.1888391116717572, 'label': 'circular pupil incoherent fft', ...}]
+      +------------------------------------</failure></testcase><testcase classname="tests.test_surface_mtf_modes_live" name="test_surface_mtf_circular_pupil_and_complex_identity[fft-512-256-10]" time="32.370"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_surface_mtf_modes_live" name="test_surface_mtf_circular_pupil_and_complex_identity[huygens-256-256-10]" time="24.738"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError(&quot;[{'actual': 0.8153229434434657, 'atol': 0.005, 'expected': 0.8084986442937958, 'label': 'circular pupil incoherent huy... 0.6266189896660245, 'atol': 0.005, 'expected': 0.6214568812316937, 'label': 'circular pupil incoherent huygens', ...}]\nassert not [{'actual': 0.8153229434434657, 'atol': 0.005, 'expected': 0.8084986442937958, 'label': 'circular pupil incoherent huy... 0.6266189896660245, 'atol': 0.005, 'expected': 0.6214568812316937, 'label': 'circular pupil incoherent huygens', ...}]&quot;) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_surface_mtf_modes_live.py", line 46, in test_surface_mtf_circular_pupil_and_complex_identity
+  |     asyncio.run(execute(f'surface_mtf092_{family}_{pupil}_{image}_{delta}',work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_surface_mtf_modes_live.py", line 45, in work
+      |     assert not failures,failures
+      | AssertionError: [{'actual': 0.8153229434434657, 'atol': 0.005, 'expected': 0.8084986442937958, 'label': 'circular pupil incoherent huy... 0.6266189896660245, 'atol': 0.005, 'expected': 0.6214568812316937, 'label': 'circular pupil incoherent huygens', ...}]
+      | assert not [{'actual': 0.8153229434434657, 'atol': 0.005, 'expected': 0.8084986442937958, 'label': 'circular pupil incoherent huy... 0.6266189896660245, 'atol': 0.005, 'expected': 0.6214568812316937, 'label': 'circular pupil incoherent huygens', ...}]
+      +------------------------------------</failure></testcase><testcase classname="tests.test_surface_mtf_modes_live" name="test_surface_mtf_circular_pupil_and_complex_identity[huygens-256-512-5]" time="62.859"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError(&quot;[{'actual': 0.8153234778725804, 'atol': 0.005, 'expected': 0.8088705325774975, 'label': 'circular pupil incoherent huygens', ...}]\nassert not [{'actual': 0.8153234778725804, 'atol': 0.005, 'expected': 0.8088705325774975, 'label': 'circular pupil incoherent huygens', ...}]&quot;) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_surface_mtf_modes_live.py", line 46, in test_surface_mtf_circular_pupil_and_complex_identity
+  |     asyncio.run(execute(f'surface_mtf092_{family}_{pupil}_{image}_{delta}',work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_surface_mtf_modes_live.py", line 45, in work
+      |     assert not failures,failures
+      | AssertionError: [{'actual': 0.8153234778725804, 'atol': 0.005, 'expected': 0.8088705325774975, 'label': 'circular pupil incoherent huygens', ...}]
+      | assert not [{'actual': 0.8153234778725804, 'atol': 0.005, 'expected': 0.8088705325774975, 'label': 'circular pupil incoherent huygens', ...}]
+      +------------------------------------</failure></testcase><testcase classname="tests.test_surface_mtf_modes_live" name="test_surface_mtf_circular_pupil_and_complex_identity[huygens-512-512-5]" time="199.384"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError(&quot;[{'actual': 0.8153979271746893, 'atol': 0.005, 'expected': 0.8088705325774975, 'label': 'circular pupil incoherent huygens', ...}]\nassert not [{'actual': 0.8153979271746893, 'atol': 0.005, 'expected': 0.8088705325774975, 'label': 'circular pupil incoherent huygens', ...}]&quot;) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_surface_mtf_modes_live.py", line 46, in test_surface_mtf_circular_pupil_and_complex_identity
+  |     asyncio.run(execute(f'surface_mtf092_{family}_{pupil}_{image}_{delta}',work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_surface_mtf_modes_live.py", line 45, in work
+      |     assert not failures,failures
+      | AssertionError: [{'actual': 0.8153979271746893, 'atol': 0.005, 'expected': 0.8088705325774975, 'label': 'circular pupil incoherent huygens', ...}]
+      | assert not [{'actual': 0.8153979271746893, 'atol': 0.005, 'expected': 0.8088705325774975, 'label': 'circular pupil incoherent huygens', ...}]
+      +------------------------------------</failure></testcase></testsuite></testsuites>

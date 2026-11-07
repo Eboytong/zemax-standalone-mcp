@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zemax-standalone-mcp"
+version = "0.1.61"
+description = "Local Windows MCP server for OpticStudio Standalone"
+requires-python = ">=3.14,<3.15"
+dependencies = ["mcp==2.3.0", "pythonnet==3.2.1", "pywin32==312"]
+
+[project.optional-dependencies]
+test = ["pytest==9.0.3"]
+report-test = ["pypdfium2==5.14.0"]
+reports = ["matplotlib==3.11.2", "reportlab==5.1.0"]
+geometry = ["cadquery-ocp==8.0.1.1.0", "cadquery-ocp-proxy==8.0.1.1.0", "vtk==9.6.2"]
+
+[project.scripts]
+zemax-mcp = "zemax_mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+zemax_mcp = ["resources/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["zemax: serial integration tests requiring the local OpticStudio installation and license"]
+
+

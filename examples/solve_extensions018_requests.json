@@ -1,0 +1,795 @@
+{
+  "version": "0.1.8",
+  "baseline": "Open independent Cooke 40 degree field.zos before each request. Maximum requires a second configuration. Macro cases use the owned fixtures prepared by tests/support/solve_cases018.py; discover installed names first. Parameter fixtures follow that helper.",
+  "discovery": {
+    "tool": "get_system_resources",
+    "arguments": {
+      "request": {
+        "kind": "solve_macros",
+        "surface": 6,
+        "cell": "radius",
+        "start": 0,
+        "count": 20
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "marginal_ray_angle.radius",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "radius": {
+                "mode": "marginal_ray_angle",
+                "angle": -0.1
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "chief_ray_angle.radius",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "radius": {
+                "mode": "chief_ray_angle",
+                "angle": 0.1
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "marginal_ray_normal.radius",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "radius": {
+                "mode": "marginal_ray_normal"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "chief_ray_normal.radius",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "radius": {
+                "mode": "chief_ray_normal"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "aplanatic.radius",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "radius": {
+                "mode": "aplanatic"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "element_power.radius",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "radius": {
+                "mode": "element_power",
+                "power": 0.02
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "concentric_surface.radius",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "radius": {
+                "mode": "concentric_surface",
+                "source_surface": 1
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "concentric_radius.radius",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "radius": {
+                "mode": "concentric_radius",
+                "source_surface": 1
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "optical_path_difference.thickness",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "thickness": {
+                "mode": "optical_path_difference",
+                "opd": 0,
+                "pupil_zone": 0.7
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "compensator.thickness",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "thickness": {
+                "mode": "compensator",
+                "source_surface": 1,
+                "sum": 20
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "center_of_curvature.thickness",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "thickness": {
+                "mode": "center_of_curvature",
+                "source_surface": 1
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "pupil_position.thickness",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "thickness": {
+                "mode": "pupil_position"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "material_model.material",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 1,
+            "solves": {
+              "material": {
+                "mode": "material_model",
+                "index_nd": 1.6,
+                "abbe_vd": 60,
+                "dpgf": 0.001,
+                "vary_index": true,
+                "vary_abbe": false,
+                "vary_dpgf": true
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "material_offset.material",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 1,
+            "solves": {
+              "material": {
+                "mode": "material_offset",
+                "nd_offset": 0.001,
+                "vd_offset": 1
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "material_substitute.material",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 1,
+            "solves": {
+              "material": {
+                "mode": "material_substitute",
+                "catalog": "SCHOTT"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "automatic.semi_diameter",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "semi_diameter": {
+                "mode": "automatic"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "maximum.semi_diameter",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "semi_diameter": {
+                "mode": "maximum"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "fixed.mechanical_semi_diameter",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "mechanical_semi_diameter": {
+                "mode": "fixed"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "automatic.mechanical_semi_diameter",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "mechanical_semi_diameter": {
+                "mode": "automatic"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "surface_pickup.mechanical_semi_diameter",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "mechanical_semi_diameter": {
+                "mode": "surface_pickup",
+                "source_surface": 1
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "failed"
+    },
+    {
+      "id": "fixed.chip_zone",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "chip_zone": {
+                "mode": "fixed"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "automatic.chip_zone",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "chip_zone": {
+                "mode": "automatic"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "surface_pickup.chip_zone",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "chip_zone": {
+                "mode": "surface_pickup",
+                "source_surface": 1
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "failed"
+    },
+    {
+      "id": "zpl_macro.radius",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "radius": {
+                "mode": "zpl_macro",
+                "macro": "ED02_CONSTANT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "zpl_macro.thickness",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "thickness": {
+                "mode": "zpl_macro",
+                "macro": "ED02_CONSTANT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "zpl_macro.semi_diameter",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "semi_diameter": {
+                "mode": "zpl_macro",
+                "macro": "ED02_CONSTANT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "zpl_macro.mechanical_semi_diameter",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "mechanical_semi_diameter": {
+                "mode": "zpl_macro",
+                "macro": "ED02_CONSTANT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "failed"
+    },
+    {
+      "id": "zpl_macro.chip_zone",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "chip_zone": {
+                "mode": "zpl_macro",
+                "macro": "ED02_CONSTANT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "failed"
+    },
+    {
+      "id": "zpl_macro.conic",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "conic": {
+                "mode": "zpl_macro",
+                "macro": "ED02_CONSTANT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "zpl_macro.parameter_1",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "parameter_1": {
+                "mode": "zpl_macro",
+                "macro": "ED02_CONSTANT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "zpl_macro.parameter_2",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "parameter_2": {
+                "mode": "zpl_macro",
+                "macro": "ED02_CONSTANT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "zpl_macro.parameter_3",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "parameter_3": {
+                "mode": "zpl_macro",
+                "macro": "ED02_CONSTANT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "zpl_macro.parameter_4",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "parameter_4": {
+                "mode": "zpl_macro",
+                "macro": "ED02_CONSTANT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "zpl_macro.parameter_5",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "parameter_5": {
+                "mode": "zpl_macro",
+                "macro": "ED02_CONSTANT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "zpl_macro.parameter_6",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "parameter_6": {
+                "mode": "zpl_macro",
+                "macro": "ED02_CONSTANT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "zpl_macro.parameter_7",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "parameter_7": {
+                "mode": "zpl_macro",
+                "macro": "ED02_CONSTANT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "zpl_macro.parameter_8",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "parameter_8": {
+                "mode": "zpl_macro",
+                "macro": "ED02_CONSTANT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "zpl_macro.parameter_9",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "parameter_9": {
+                "mode": "zpl_macro",
+                "macro": "ED02_CONSTANT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "failed"
+    },
+    {
+      "id": "zpl_macro.parameter_10",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "parameter_10": {
+                "mode": "zpl_macro",
+                "macro": "ED02_CONSTANT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "failed"
+    },
+    {
+      "id": "zpl_macro.parameter_13",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "parameter_13": {
+                "mode": "zpl_macro",
+                "macro": "ED02_COUNT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    },
+    {
+      "id": "zpl_macro.parameter_14",
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 6,
+            "solves": {
+              "parameter_14": {
+                "mode": "zpl_macro",
+                "macro": "ED02_COUNT018"
+              }
+            },
+            "replace_solves": true
+          }
+        ]
+      },
+      "state": "persistence_passed"
+    }
+  ]
+}

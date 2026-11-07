@@ -1,0 +1,23 @@
+[
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "nsc_geometric_mtf",
+        "detector": 2
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "nsc_geometric_mtf",
+        "detector": 2,
+        "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\rays.zrd",
+        "filter": "H2",
+        "maximum_frequency": 0.5
+      }
+    }
+  }
+]

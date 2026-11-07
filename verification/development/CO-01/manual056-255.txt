@@ -1,0 +1,27 @@
+2.3.1.2.49. Hologram 2
+The hologram 2 surface is very similar to the hologram 1 surface. The key difference is that the hologram 1 surface
+assumes both construction beams either diverge from or converge to the construction points,whereas the hologram
+2 surface assumes one construction beam converges to one construction point, and the other construction beam
+diverges from the other construction point. Which beam is first or second does not matter due to reciprocity. The
+parameter data is the same for both hologram 1 and hologram 2 surfaces.
+Shown below are plots explaining how the beam's convergence and divergence are taken by Hologram 1 and 2.
+Note that the rays in orange represent diverging beams and the rays in green represent converging beams. We can
+seeHologram1 takes thepoint sources asbothbeingdivergent,whichis identicaltothe casewherebothconstruction
+beams converge toward the construction points due to reciprocity. On the other hand, Hologram 2 takes the two
+point sources as one divergent and one convergent. Which point source is divergent or convergent does not matter
+due to reciprocity.
+PARAMETER DEFINITIONS FOR HOLOGRAM 2 SURFACES (Par 14-21 only used available Par 13 ≠ 0)
+Parameter # Definition
+1 X coordinate for first construction beam, Construct X1
+2 Y coordinate for first construction beam, Construct Y1
+3 Z coordinate for first construction beam, Construct Z1
+4 X coordinate for second construction beam, Construct X2
+5 Y coordinate for second construction beam, Construct Y2
+6 Z coordinate for second construction beam, Construct Z2
+7 Construction Wavelength, λc
+8 Diffract Order, m
+13 Volume Hologram? (0 for false, 1 for true)
+14 Hologram Thickness (only used for efficiency calculations not ray-tracing)
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 256
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Setup Tab

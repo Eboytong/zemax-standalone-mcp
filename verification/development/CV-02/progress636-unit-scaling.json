@@ -1,0 +1,227 @@
+{
+  "date": "2026-11-07",
+  "item_ids": [
+    "CV-02.PowerFieldMapSettings",
+    "CV-02.PowerPupilMapSettings"
+  ],
+  "state": "implemented",
+  "completion_count": 0,
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build240529 Premium",
+  "scope": "Independentphysicalunit scaling and degenerate-native-zero result preservation; same physical spherical/planarinterface",
+  "input": "OwnedN-BK7interfaceR50mm/plane,wave.5875618um;MM/CMmodels:radius50/5,thickness50/5,semi8/.8,aperture10/1;currentconfiguration",
+  "reference": {
+    "nd": 1.5168000345005883,
+    "efl_mm": 146.74921954739744,
+    "formula": "EFL=n*R/(n-1);Power=1000/EFL_mm",
+    "tolerance": "EFL physical2e-4mm+2e-5relative;Power2e-4diopters+2e-5relative;original gates retained"
+  },
+  "commands": [
+    ".venv/Scripts/python.exe -m pytest tests/test_power_map_units_live.py --run-zemax -x -q --junitxml=verification/development/CV-02/native634-units.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_power_maps.py tests/test_grin_profile.py -q --junitxml=verification/development/CV-02/ordinary636-power-grin.xml"
+  ],
+  "actual_settings": "outputs/runs/power634_units_2ffb26dbe1/units.json",
+  "results": [
+    {
+      "unit": "Millimeters",
+      "radius_mm": 50.0,
+      "kind": "power_field_map",
+      "quantity": "Power",
+      "center": 6.814355276657183,
+      "value_unit": "diopters"
+    },
+    {
+      "unit": "Millimeters",
+      "radius_mm": 50.0,
+      "kind": "power_field_map",
+      "quantity": "EFL",
+      "center": 146.7490260488084,
+      "value_unit": "Millimeters"
+    },
+    {
+      "unit": "Millimeters",
+      "radius_mm": 50.0,
+      "kind": "power_pupil_map",
+      "quantity": "Power",
+      "center": 6.814355276657183,
+      "value_unit": "diopters"
+    },
+    {
+      "unit": "Millimeters",
+      "radius_mm": 50.0,
+      "kind": "power_pupil_map",
+      "quantity": "EFL",
+      "center": 146.7490260488084,
+      "value_unit": "Millimeters"
+    },
+    {
+      "unit": "Millimeters",
+      "radius_mm": 0.0,
+      "kind": "power_field_map",
+      "quantity": "Power",
+      "center": 0.0,
+      "value_unit": "diopters"
+    },
+    {
+      "unit": "Millimeters",
+      "radius_mm": 0.0,
+      "kind": "power_field_map",
+      "quantity": "EFL",
+      "center": 0.0,
+      "value_unit": "Millimeters"
+    },
+    {
+      "unit": "Millimeters",
+      "radius_mm": 0.0,
+      "kind": "power_pupil_map",
+      "quantity": "Power",
+      "center": 0.0,
+      "value_unit": "diopters"
+    },
+    {
+      "unit": "Millimeters",
+      "radius_mm": 0.0,
+      "kind": "power_pupil_map",
+      "quantity": "EFL",
+      "center": 0.0,
+      "value_unit": "Millimeters"
+    },
+    {
+      "unit": "Centimeters",
+      "radius_mm": 50.0,
+      "kind": "power_field_map",
+      "quantity": "Power",
+      "center": 6.814355276657184,
+      "value_unit": "diopters"
+    },
+    {
+      "unit": "Centimeters",
+      "radius_mm": 50.0,
+      "kind": "power_field_map",
+      "quantity": "EFL",
+      "center": 14.674902604880838,
+      "value_unit": "Centimeters"
+    },
+    {
+      "unit": "Centimeters",
+      "radius_mm": 50.0,
+      "kind": "power_pupil_map",
+      "quantity": "Power",
+      "center": 6.814355276657184,
+      "value_unit": "diopters"
+    },
+    {
+      "unit": "Centimeters",
+      "radius_mm": 50.0,
+      "kind": "power_pupil_map",
+      "quantity": "EFL",
+      "center": 14.674902604880838,
+      "value_unit": "Centimeters"
+    },
+    {
+      "unit": "Centimeters",
+      "radius_mm": 0.0,
+      "kind": "power_field_map",
+      "quantity": "Power",
+      "center": 0.0,
+      "value_unit": "diopters"
+    },
+    {
+      "unit": "Centimeters",
+      "radius_mm": 0.0,
+      "kind": "power_field_map",
+      "quantity": "EFL",
+      "center": 0.0,
+      "value_unit": "Centimeters"
+    },
+    {
+      "unit": "Centimeters",
+      "radius_mm": 0.0,
+      "kind": "power_pupil_map",
+      "quantity": "Power",
+      "center": 0.0,
+      "value_unit": "diopters"
+    },
+    {
+      "unit": "Centimeters",
+      "radius_mm": 0.0,
+      "kind": "power_pupil_map",
+      "quantity": "EFL",
+      "center": 0.0,
+      "value_unit": "Centimeters"
+    }
+  ],
+  "checks": [
+    {
+      "label": "power_field_mapMillimetersPower",
+      "actual": 6.814355276657183,
+      "expected": 6.814346291477328,
+      "atol": 0.0002,
+      "rtol": 2e-05,
+      "passed": true
+    },
+    {
+      "label": "power_field_mapMillimetersEFL",
+      "actual": 146.7490260488084,
+      "expected": 146.74921954739744,
+      "atol": 0.0002,
+      "rtol": 2e-05,
+      "passed": true
+    },
+    {
+      "label": "power_pupil_mapMillimetersPower",
+      "actual": 6.814355276657183,
+      "expected": 6.814346291477328,
+      "atol": 0.0002,
+      "rtol": 2e-05,
+      "passed": true
+    },
+    {
+      "label": "power_pupil_mapMillimetersEFL",
+      "actual": 146.7490260488084,
+      "expected": 146.74921954739744,
+      "atol": 0.0002,
+      "rtol": 2e-05,
+      "passed": true
+    },
+    {
+      "label": "power_field_mapCentimetersPower",
+      "actual": 6.814355276657184,
+      "expected": 6.814346291477328,
+      "atol": 0.0002,
+      "rtol": 2e-05,
+      "passed": true
+    },
+    {
+      "label": "power_field_mapCentimetersEFL",
+      "actual": 14.674902604880838,
+      "expected": 14.674921954739744,
+      "atol": 2e-05,
+      "rtol": 2e-05,
+      "passed": true
+    },
+    {
+      "label": "power_pupil_mapCentimetersPower",
+      "actual": 6.814355276657184,
+      "expected": 6.814346291477328,
+      "atol": 0.0002,
+      "rtol": 2e-05,
+      "passed": true
+    },
+    {
+      "label": "power_pupil_mapCentimetersEFL",
+      "actual": 14.674902604880838,
+      "expected": 14.674921954739744,
+      "atol": 2e-05,
+      "rtol": 2e-05,
+      "passed": true
+    }
+  ],
+  "native634_passed": 1,
+  "ordinary636_passed": 46,
+  "scope_acceptance": true,
+  "lifecycle": "16composite query tasks succeeded; batch-ray child tools closed,no cleanupwarnings;1x1grid pagingpassed;4save/reload comparisons retainedsurfaces/solve/settings/MFE;stdio disconnected",
+  "remaining": "Ringrays/statusnotexposed;zeroEFLnativevalue0stillretainedwithoutinterpretingasmathematicalinfinity. Wholedeclaredscope staysimplemented.",
+  "next_action": "634已完成毫米/厘米等物理模型16分析：Power不变，EFL按单位缩放，平面原始零值、区域分页及保存重载通过。完整两条仍implemented，需原生周边环节点/状态及零EFL正式语义；复用596/634，不重复相同单位或缩孔径控制。"
+}

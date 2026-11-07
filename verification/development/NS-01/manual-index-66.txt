@@ -1,0 +1,50 @@
+centered aboutthatfield's centroid atthe image plane. Note thatthis setting will automatically convert all surfaces
+in the Lens Data Editor.
+Save New System As... (Retain your Original File: When the system is converted to non-sequential mode, it can
+be saved under a new file name. Otherwise,the currentfile will be overwritten in memory with the newly converted
+non-sequential data and ifthe new file is saved,then the old file will be overwritten on disk and cannot be restored.
+The default file path is "<the current file name>-NONSEQ.zmx". This default location is the same as the currently
+open file.
+1.5.1.1. Converting sequential surfaces to non-sequential objects
+This feature converts a rangeof sequential surfaces inthe LensDataEditorintoa groupofnon-sequential components.
+Don't assume this featureperfectly converts your sequential surfacedata; carefully check thenon-sequential
+conversion results before doing any important analysis.See the sequential " Critical Rayset Generator " tool
+and the non-sequential " Critical Ray Tracer " tool.
+The feature works by the following algorithm:
+1. First aNon-SequentialComponent surface andadummy exitport surface are inserted.The exitportispositioned
+to coincide with the last surface in the defined range.
+2. The range of surfaces is converted into either the corresponding NSC surface objects (for standalone surfaces
+and mirrorswith zero substrate thickness) orNSCobjects (for pairs of surfaceswith a material between, or mirrors
+with non-zero substrate thickness).
+3. Coordinate breaks are replacedwith null objectswith equivalentrotations; and subsequent objectswillreference
+the null objects.
+4. The original surfaces are then deleted.
+5. If the "Convert file to non-sequential mode" box is checked, then the file is placed in non-sequential mode, and
+any surfaces outside the selected range are deleted.
+6. If the "Add Sources & Detectors" box is checked, then each sequential field in the Field Data Editor is converted
+to a non-sequential Source Ellipse. The parameters of the Source Ellipses are calculated using the sequential
+field locations and Entrance Pupil Diameter.
+7. In addition, the centroid location at the IMAGE surface is calculated for each sequential field, using the Spot
+Diagram analysis. Detector Rectangles are inserted at these centroid locations with comments corresponding
+to each field number. TheDetector Rectangles are the same size as the default display width ofthe SpotDiagram
+analysis with "Show Airy Disk" checked-on.
+a. For focal systems with a flat image plane, each field point's Detector Rectangle lies in the same XY plane
+(assuming the Z axis is the optical axis). For most systems,theseDetectorRectangles are small andseparated
+in X & Y so that the Detector Rectangles do not overlap. If the Detectors do overlap, then the nesting rule will
+be followed (See "Object Placement") and some detectors may not see all of the rays. In this case, the user
+will need to manually adjust the locations of the detectors, most likely along the optical axis, such that the
+detectors are separated by more than the "Glue Distance" in the System Explorer.
+b. Although curved IMAGE surfaces are not converted into curved detectors, the positions of the Detector
+Rectangles are calculated using the surface sag and normal angles at the centroid of each field.
+c. When"AfocalImageSpace" is checked-onintheSystemExplorer,weassume thatthe raysarenearly collimated
+at the IMAGE surface in the Lens Data Editor. This typically means that the RMS spot size (in um) is large, so
+the Detector Rectangles for each field point will also be large, and thus are likely to overlap. Therefore,
+Detector Rectangles for Afocal systems will be offset slightly along the optical axis, by values just larger than
+the "Glue Distance" in the System Explorer. This offset should not significantly change the results if the rays
+are nearly collimated.
+8. A Detector Color is also added, and is located slightly after the Detector Rectangle(s). It is offset by a distance
+just larger than the "Glue Distance" in the System Explorer. The size of the Detector Color is determined by the
+default display width of the sequential Full Field Spot Diagram analysis.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 67
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The File Tab

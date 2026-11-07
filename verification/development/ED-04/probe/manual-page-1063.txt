@@ -1,0 +1,32 @@
+Settings:
+AdjustSurface Selects the surface to adjust.
+Radius/Thickness Selects either Radius or Thickness to adjust.
+Criterion Selects the best focus criterion. All criterion use the image centroid for a reference.
+EvaluateSurface Selects the surface atwhich to evaluate the criterion.Note the criterion is evaluatedafterrefraction
+into the specified surface for angular criterion.
+Discussion:
+This feature adjusts any radius or thickness to minimize the RMS aberration at any subsequent surface. The RMS is
+always computed as a polychromatic average over the field, using the defined fields, wavelengths, and weights.
+Note RMS angular data is computed afterrefraction into the specified evaluation surface. This tool can remain open
+on the desktop while other editing or work is done. Click on the "Adjust" button to recompute the best focus data.
+5.1.3. Slider
+The Slideris available in theManual Adjustment section oftheOptimize tab. The slider control is used to interactively
+adjust any system or surface parameter while viewing any analysis window.
+Settings:
+Type Select either the surface, system, configuration, or NSC data group.
+Parameter Selectthe parameterto modify. The available selections include radius, curvature,thickness, conic, and
+parameter values if surface data are chosen. For system parameters, the selections include the system aperture,
+field and wavelength data, apodization factor, temperature, and pressure. For configuration data, all
+multi-configuration operands are listed. For NSC data, object position and parameter data are listed.
+Surface The surface number for the data to be modified if the data is associated with a surface. This field is used for
+the configuration number if configuration data is selected. If NSC data is selected, this field is used for the object
+number.
+WindowSelect either "All" or any specific analysis window to update when the slideris adjusted. See the discussion.
+Start /Stop Value The beginning and ending range of the data corresponding to the extreme limits of the slider
+control.
+Animate /Stop Automatically increments the data over the defined range, and updates the selected windows in a
+continuous loop. Press "Stop" (the animate button changes to a "Stop" when animation is running) to terminate
+the animation.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1063
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Optimize Tab (sequential ui mode)

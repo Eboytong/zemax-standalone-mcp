@@ -1,0 +1,354 @@
+{
+  "items": [
+    {
+      "name": "M45cf3f99e8edXXX",
+      "characters": 16,
+      "utf16_units": 16,
+      "cp936_bytes": 16,
+      "listed": true,
+      "requested_readback": "M45cf3f99e8edXXX",
+      "solve_valid": true,
+      "native_return": "Success",
+      "actual_solve": "ZPLMacro",
+      "actual_value": 0.125
+    },
+    {
+      "name": "M6e1a570d5adeXXXXXXX",
+      "characters": 20,
+      "utf16_units": 20,
+      "cp936_bytes": 20,
+      "listed": true,
+      "requested_readback": "M6e1a570d5adeXXXXXXX",
+      "solve_valid": true,
+      "native_return": "Success",
+      "actual_solve": "ZPLMacro",
+      "actual_value": 0.125
+    },
+    {
+      "name": "M8640ae35563cXXXXXXXXXXX",
+      "characters": 24,
+      "utf16_units": 24,
+      "cp936_bytes": 24,
+      "listed": true,
+      "requested_readback": "M8640ae35563cXXXXXXXXXXX",
+      "solve_valid": true,
+      "native_return": "Success",
+      "actual_solve": "ZPLMacro",
+      "actual_value": 0.125
+    },
+    {
+      "name": "M6d1f7db5b9f7XXXXXXXXXXXXXXX",
+      "characters": 28,
+      "utf16_units": 28,
+      "cp936_bytes": 28,
+      "listed": true,
+      "requested_readback": "M6d1f7db5b9f7XXXXXXXXXXXXXXX",
+      "solve_valid": true,
+      "native_return": "Success",
+      "actual_solve": "ZPLMacro",
+      "actual_value": 0.125
+    },
+    {
+      "name": "M499f45ff6500XXXXXXXXXXXXXXXXX",
+      "characters": 30,
+      "utf16_units": 30,
+      "cp936_bytes": 30,
+      "listed": true,
+      "requested_readback": "M499f45ff6500XXXXXXXXXXXXXXXXX",
+      "solve_valid": true,
+      "native_return": "Success",
+      "actual_solve": "ZPLMacro",
+      "actual_value": 0.125
+    },
+    {
+      "name": "Mf649a5aa6fddXXXXXXXXXXXXXXXXXX",
+      "characters": 31,
+      "utf16_units": 31,
+      "cp936_bytes": 31,
+      "listed": true,
+      "requested_readback": "Mf649a5aa6fddXXXXXXXXXXXXXXXXXX",
+      "solve_valid": true,
+      "native_return": "Success",
+      "actual_solve": "ZPLMacro",
+      "actual_value": 0.125
+    },
+    {
+      "name": "M121ca9f4cbc5XXXXXXXXXXXXXXXXXXX",
+      "characters": 32,
+      "utf16_units": 32,
+      "cp936_bytes": 32,
+      "listed": true,
+      "requested_readback": "M121ca9f4cbc5XXXXXXXXXXXXXXXXXXX",
+      "solve_valid": true,
+      "native_return": "Success",
+      "actual_solve": "Fixed",
+      "actual_value": 0.0
+    },
+    {
+      "name": "M0688d43bb612XXXXXXXXXXXXXXXXXXXX",
+      "characters": 33,
+      "utf16_units": 33,
+      "cp936_bytes": 33,
+      "listed": true,
+      "requested_readback": "M0688d43bb612XXXXXXXXXXXXXXXXXXXX",
+      "solve_valid": true,
+      "native_return": "Success",
+      "actual_solve": "Fixed",
+      "actual_value": 0.0
+    },
+    {
+      "name": "M209cf5bcf4beXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "characters": 38,
+      "utf16_units": 38,
+      "cp936_bytes": 38,
+      "listed": true,
+      "requested_readback": "M209cf5bcf4beXXXXXXXXXXXXXXXXXXXXXXXXX",
+      "solve_valid": true,
+      "native_return": "Success",
+      "actual_solve": "Fixed",
+      "actual_value": 0.0
+    },
+    {
+      "name": "宏76d7f9",
+      "characters": 7,
+      "utf16_units": 7,
+      "cp936_bytes": 8,
+      "listed": true,
+      "requested_readback": "宏76d7f9",
+      "solve_valid": true,
+      "native_return": "Success",
+      "actual_solve": "ZPLMacro",
+      "actual_value": 0.125
+    },
+    {
+      "name": "宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏437341",
+      "characters": 31,
+      "utf16_units": 31,
+      "cp936_bytes": 56,
+      "listed": true,
+      "requested_readback": "宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏437341",
+      "solve_valid": true,
+      "native_return": "Success",
+      "actual_solve": "ZPLMacro",
+      "actual_value": 0.125
+    },
+    {
+      "name": "宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏7148af",
+      "characters": 32,
+      "utf16_units": 32,
+      "cp936_bytes": 58,
+      "listed": true,
+      "requested_readback": "宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏宏7148af",
+      "solve_valid": true,
+      "native_return": "Success",
+      "actual_solve": "Fixed",
+      "actual_value": 0.0
+    }
+  ],
+  "connect": {
+    "connected": true,
+    "native_system_status": "",
+    "native_startup": {
+      "events": [
+        {
+          "stage": "install_check",
+          "event": "started",
+          "timestamp": "2026-11-06T15:29:28.462+00:00",
+          "elapsed_seconds": 2.4999997549457476e-05
+        },
+        {
+          "stage": "install_check",
+          "event": "completed",
+          "timestamp": "2026-11-06T15:29:28.462+00:00",
+          "elapsed_seconds": 0.00026869999783230014,
+          "duration_seconds": 0.00025649999952293
+        },
+        {
+          "stage": "environment",
+          "event": "started",
+          "timestamp": "2026-11-06T15:29:28.462+00:00",
+          "elapsed_seconds": 0.0002772999978333246
+        },
+        {
+          "stage": "environment",
+          "event": "completed",
+          "timestamp": "2026-11-06T15:29:28.473+00:00",
+          "elapsed_seconds": 0.011430599999584956,
+          "duration_seconds": 0.011138899997604312
+        },
+        {
+          "stage": "clr_load",
+          "event": "started",
+          "timestamp": "2026-11-06T15:29:28.473+00:00",
+          "elapsed_seconds": 0.011446900000009919
+        },
+        {
+          "stage": "clr_load",
+          "event": "completed",
+          "timestamp": "2026-11-06T15:29:28.744+00:00",
+          "elapsed_seconds": 0.2824648999994679,
+          "duration_seconds": 0.27099530000123195
+        },
+        {
+          "stage": "nethelper_assembly",
+          "event": "started",
+          "timestamp": "2026-11-06T15:29:28.744+00:00",
+          "elapsed_seconds": 0.2824884000001475
+        },
+        {
+          "stage": "nethelper_assembly",
+          "event": "completed",
+          "timestamp": "2026-11-06T15:29:28.752+00:00",
+          "elapsed_seconds": 0.28999800000019604,
+          "duration_seconds": 0.007499199997255346
+        },
+        {
+          "stage": "zos_initialize",
+          "event": "started",
+          "timestamp": "2026-11-06T15:29:28.752+00:00",
+          "elapsed_seconds": 0.29001249999782885
+        },
+        {
+          "stage": "zos_initialize",
+          "event": "completed",
+          "timestamp": "2026-11-06T15:29:28.759+00:00",
+          "elapsed_seconds": 0.2971983999996155,
+          "duration_seconds": 0.007163500002207002
+        },
+        {
+          "stage": "api_assemblies",
+          "event": "started",
+          "timestamp": "2026-11-06T15:29:28.759+00:00",
+          "elapsed_seconds": 0.29726129999835393
+        },
+        {
+          "stage": "api_assemblies",
+          "event": "completed",
+          "timestamp": "2026-11-06T15:29:28.775+00:00",
+          "elapsed_seconds": 0.3131869999997434,
+          "duration_seconds": 0.015916399999696296
+        },
+        {
+          "stage": "connection_create",
+          "event": "started",
+          "timestamp": "2026-11-06T15:29:28.775+00:00",
+          "elapsed_seconds": 0.313197699997545
+        },
+        {
+          "stage": "connection_create",
+          "event": "completed",
+          "timestamp": "2026-11-06T15:29:29.056+00:00",
+          "elapsed_seconds": 0.5942998999998963,
+          "duration_seconds": 0.2810824000007415
+        },
+        {
+          "stage": "application_create",
+          "event": "started",
+          "timestamp": "2026-11-06T15:29:29.056+00:00",
+          "elapsed_seconds": 0.594322299999476
+        },
+        {
+          "stage": "application_create",
+          "event": "completed",
+          "timestamp": "2026-11-06T15:29:33.951+00:00",
+          "elapsed_seconds": 5.488802600000781,
+          "duration_seconds": 4.894464900000457
+        },
+        {
+          "stage": "license_check",
+          "event": "started",
+          "timestamp": "2026-11-06T15:29:33.951+00:00",
+          "elapsed_seconds": 5.48882070000036
+        },
+        {
+          "stage": "license_check",
+          "event": "completed",
+          "timestamp": "2026-11-06T15:29:33.952+00:00",
+          "elapsed_seconds": 5.490351799999189,
+          "duration_seconds": 0.0015215999992506113
+        },
+        {
+          "stage": "primary_system",
+          "event": "started",
+          "timestamp": "2026-11-06T15:29:33.952+00:00",
+          "elapsed_seconds": 5.490364799999952
+        },
+        {
+          "stage": "primary_system",
+          "event": "completed",
+          "timestamp": "2026-11-06T15:29:33.954+00:00",
+          "elapsed_seconds": 5.49210949999906,
+          "duration_seconds": 0.0017365999992762227
+        }
+      ],
+      "observer_warnings": []
+    },
+    "active_task": null,
+    "running_tasks": [],
+    "task_index": {},
+    "recent_tasks": [],
+    "session_id": "33babc5098e34671b4da03046d0366fc",
+    "model_revision": 0,
+    "source_file": null,
+    "working_file": null,
+    "opticstudio_version": "24.2.0",
+    "opticstudio_build": "240529",
+    "license": "PremiumEdition",
+    "checkpoint": null,
+    "requires_reconnect": false,
+    "mode": "Sequential",
+    "configuration": 1,
+    "lens_units": "Millimeters",
+    "mtf_units": "CyclesPerMillimeter",
+    "geometry": {
+      "state": "pending",
+      "model_revision": 0,
+      "session_id": "33babc5098e34671b4da03046d0366fc"
+    }
+  },
+  "disconnect": {
+    "ok": true,
+    "data": {
+      "connected": false,
+      "last_session": {
+        "session_id": "33babc5098e34671b4da03046d0366fc",
+        "model_revision": 2,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\EX-01\\zpl345-name-boundary\\native\\33babc5098e34671b4da03046d0366fc\\working_3a479398.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\EX-01\\zpl345-name-boundary\\native\\33babc5098e34671b4da03046d0366fc\\checkpoint_r2_disconnect_b2c98b63.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 2,
+          "session_id": "33babc5098e34671b4da03046d0366fc"
+        }
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": null,
+      "model_revision": 2,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": null,
+      "opticstudio_build": null,
+      "license": null,
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "geometry": {
+        "state": "pending",
+        "model_revision": 2,
+        "session_id": null
+      }
+    },
+    "artifacts": []
+  }
+}

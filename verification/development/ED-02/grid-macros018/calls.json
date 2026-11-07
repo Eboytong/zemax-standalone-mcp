@@ -1,0 +1,36 @@
+[
+  {
+    "tool": "connect",
+    "args": null,
+    "response": {
+      "ok": false,
+      "data": null,
+      "error": {
+        "code": "INVALID_LICENSE",
+        "message": "当前许可不能使用 ZOS-API。",
+        "details": {
+          "command": "connect",
+          "partial_changes_possible": false
+        }
+      },
+      "warnings": [],
+      "context": {
+        "session_id": null,
+        "model_revision": 0,
+        "source_file": null,
+        "working_file": null,
+        "opticstudio_version": null,
+        "opticstudio_build": null,
+        "license": null,
+        "checkpoint": null,
+        "requires_reconnect": false,
+        "geometry": {
+          "state": "pending",
+          "model_revision": 0,
+          "session_id": null
+        }
+      },
+      "artifacts": []
+    }
+  }
+]

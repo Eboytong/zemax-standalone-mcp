@@ -1,0 +1,24 @@
+Field Size This value defines the full width of the square image file in field coordinates, which may be either lens
+units or degrees, depending upon the currentfield definition (heights or angles,respectively). Note that when using
+"field angle" as the field type the square IMA file is inherently distorted; see the discussion below for details.
+ImageSize If "Show" is selected as a spot diagram, this value sets the size of the scale bar which is superimposed
+on the image. It has no effect on the actual size of the image. The image size is set by the object scale and the
+magnification and aberrations of the system. The default may not be acceptable to see the desired portion of the
+image.
+If "Show" is selected as any other option, this value sets the size of the detector used to capture rays. Rays landing
+outside of the image size are ignored, and are not included in the total detected rays, which will decrease the
+computed efficiency.
+Parity The "Even" setting leaves the object as it would appear when viewed looking down the negative Z axis in
+object space. The parity can be set to "Odd" which reverses the object from top to bottom.
+Rotation The rotation can be set to any angle in degrees. The algorithm actually rotates the object before tracing
+the rays, so this feature can be used to switch from tangential to sagittal orientation of bar targets, for example.
+Rays x 1000 This setting determines approximately how many rays will be traced. The number of rays traced is
+approximately 1000 times the specified value. The reason the number of rays is only approximate is because the
+distribution of rays over the pixels in the image must be uniform. For example, if there are 1500 pixels in an image
+file, then at least 1500 rays will be traced, even if a value of 1 is selected. The distribution of rays at each wavelength
+is in proportion to the wavelength weights.
+Show Choose surface plot, contour map, grey scale, false color map, spot diagram, cross x, or cross y as the display
+option.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 828
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

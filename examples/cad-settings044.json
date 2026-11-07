@@ -1,0 +1,15 @@
+{
+  "tool": "run_cad_export",
+  "arguments": {
+    "request": {
+      "path": "C:/ZemaxOutput/lens.stl",
+      "format": "STL",
+      "start": 1,
+      "end": 2,
+      "configuration": 1,
+      "export_dummy_surfaces": true,
+      "dummy_thickness": 0.1,
+      "angular_tolerance": "High"
+    }
+  }
+}

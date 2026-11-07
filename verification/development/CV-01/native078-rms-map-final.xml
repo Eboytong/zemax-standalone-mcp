@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="2" time="61.685" timestamp="2026-11-05T22:27:18.211637+08:00" hostname="tongeb"><testcase classname="tests.test_rms_map_reference_live" name="test_rms_map_native_quadrature" time="49.932"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_rms_map_reference_live" name="test_rms_map_failure_cancel_recovery" time="11.229"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'completed': False, 'task': {'task_id': '0d109bd39d8244ac8ed25e19f54386ed', 'request_id': '45030e7337df44c1887fa205fe2e3a99', 'kind': 'analysis', 'state': 'failed', 'created_at': '2026-11-05T14:28:17.719359+00:00', 'finished_at': '2026-11-05T14:28:17.818178+00:00', 'progress': None, 'can_cancel': True, 'cancel_requested': False, 'settings': {'kind': 'rms_field_map', 'requested': {'wavelength': 1, 'data_type': 'SpotRadius', 'reference': 'Centroid', 'method': 'GaussQuad', 'sampling': None, 'rings': 5, 'use_polarization': False, 'show_diffraction_limit': False, 'kind': 'rms_field_map', 'field': 1, 'surface': None, 'x_field_sampling': 3, 'y_field_sampling': 3, 'x_field_size': 1.0, 'y_field_size': 1.0, 'show_as': 'FalseColor', 'remove_vignetting_factors': True}, 'native': {'Data': 'SpotRadius', 'MethodType': 'GaussQuad', 'RayDensity': 'RayDens_5', 'ReferTo': 'Centroid', 'ShowAs': 'FalseColor', 'UsePolarization': False, 'RemoveVignettingFactors': True, 'X_FieldSampling': 3, 'Y_FieldSampling': 3, 'X_FieldSize': 1.0, 'Y_FieldSize': 1.0, 'PlotScale': 0.0, 'ContourFormat': '', 'IsValid': True, 'IsActiveWindow': True, 'Field': 1, 'Wavelength': 1, 'Surface': 0}}, 'context': {'session_id': '676081840b68474f88a8a4abeb20f352', 'model_revision': 1, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\rmsmap078_cancel_502e300074\\676081840b68474f88a8a4abeb20f352\\working_e6a993a5.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': None, 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 1, 'session_id': '676081840b68474f88a8a4abeb20f352'}}, 'error': {'code': 'INVALID_RESULT_DATA', 'message': 'RMS Field Map grid size differs from requested sampling.', 'details': {'expected_x': 3, 'expected_y': 3, 'actual_x': 5, 'actual_y': 5}}, 'close_attempted': True, 'result_path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\rmsmap078_cancel_502e300074\\676081840b68474f88a8a4abeb20f352\\0d109bd39d8244ac8ed25e19f54386ed.json', 'elapsed_seconds': 0.077}, 'checkpoint': None, 'result_schema_version': 1, 'context': {'session_id': '676081840b68474f88a8a4abeb20f352', 'model_revision': 1, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\rmsmap078_cancel_502e300074\\676081840b68474f88a8a4abeb20f352\\working_e6a993a5.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': None, 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 1, 'session_id': '676081840b68474f88a8a4abeb20f352'}}, 'artifacts': []}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_rms_map_reference_live.py", line 100, in test_rms_map_failure_cancel_recovery
+  |     asyncio.run(execute('rmsmap078_cancel',work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_rms_map_reference_live.py", line 97, in work
+      |     await e.finish(await e.call('run_analysis',dict(request=dict(kind='rms_field_map',x_field_sampling=3,y_field_sampling=3,method='GaussQuad',rings=5))))
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 22, in finish
+      |     assert t["state"]=="succeeded",r
+      |            ^^^^^^^^^^^^^^^^^^^^^^^
+      | AssertionError: {'completed': False, 'task': {'task_id': '0d109bd39d8244ac8ed25e19f54386ed', 'request_id': '45030e7337df44c1887fa205fe2e3a99', 'kind': 'analysis', 'state': 'failed', 'created_at': '2026-11-05T14:28:17.719359+00:00', 'finished_at': '2026-11-05T14:28:17.818178+00:00', 'progress': None, 'can_cancel': True, 'cancel_requested': False, 'settings': {'kind': 'rms_field_map', 'requested': {'wavelength': 1, 'data_type': 'SpotRadius', 'reference': 'Centroid', 'method': 'GaussQuad', 'sampling': None, 'rings': 5, 'use_polarization': False, 'show_diffraction_limit': False, 'kind': 'rms_field_map', 'field': 1, 'surface': None, 'x_field_sampling': 3, 'y_field_sampling': 3, 'x_field_size': 1.0, 'y_field_size': 1.0, 'show_as': 'FalseColor', 'remove_vignetting_factors': True}, 'native': {'Data': 'SpotRadius', 'MethodType': 'GaussQuad', 'RayDensity': 'RayDens_5', 'ReferTo': 'Centroid', 'ShowAs': 'FalseColor', 'UsePolarization': False, 'RemoveVignettingFactors': True, 'X_FieldSampling': 3, 'Y_FieldSampling': 3, 'X_FieldSize': 1.0, 'Y_FieldSize': 1.0, 'PlotScale': 0.0, 'ContourFormat': '', 'IsValid': True, 'IsActiveWindow': True, 'Field': 1, 'Wavelength': 1, 'Surface': 0}}, 'context': {'session_id': '676081840b68474f88a8a4abeb20f352', 'model_revision': 1, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\rmsmap078_cancel_502e300074\\676081840b68474f88a8a4abeb20f352\\working_e6a993a5.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': None, 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 1, 'session_id': '676081840b68474f88a8a4abeb20f352'}}, 'error': {'code': 'INVALID_RESULT_DATA', 'message': 'RMS Field Map grid size differs from requested sampling.', 'details': {'expected_x': 3, 'expected_y': 3, 'actual_x': 5, 'actual_y': 5}}, 'close_attempted': True, 'result_path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\rmsmap078_cancel_502e300074\\676081840b68474f88a8a4abeb20f352\\0d109bd39d8244ac8ed25e19f54386ed.json', 'elapsed_seconds': 0.077}, 'checkpoint': None, 'result_schema_version': 1, 'context': {'session_id': '676081840b68474f88a8a4abeb20f352', 'model_revision': 1, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\rmsmap078_cancel_502e300074\\676081840b68474f88a8a4abeb20f352\\working_e6a993a5.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': None, 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 1, 'session_id': '676081840b68474f88a8a4abeb20f352'}}, 'artifacts': []}
+      +------------------------------------</failure></testcase></testsuite></testsuites>

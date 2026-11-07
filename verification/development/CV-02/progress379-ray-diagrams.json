@@ -1,0 +1,141 @@
+{
+  "date": "2026-11-07",
+  "item_ids": [
+    "CV-02.YYbarDiagram",
+    "CV-02.IncidentAnglevsImageHeight"
+  ],
+  "state": "in_progress",
+  "completion_count": 0,
+  "source_version": "0.1.60 plus B005 source",
+  "native_version": "24.2.0 build240529 PremiumEdition",
+  "evidence": [
+    "verification/development/CV-02/probe377-paraxial-diagrams/probe.json",
+    "verification/development/CV-02/probe378-ray-operands/probe.json",
+    "verification/development/CV-02/probe379-primary-ray-operands/probe.json"
+  ],
+  "official_references": [
+    "https://ansyshelp.ansys.com/public/Views/Secured/Zemax/v242/en/OpticStudio_User_Guide/OpticStudio_Help/topics/Y_Ybar_Drawing.html",
+    "https://ansyshelp.ansys.com/public/Views/Secured/Zemax/v242/en/OpticStudio_User_Guide/OpticStudio_Help/topics/Incident_Angle_vs_Image_Height.html"
+  ],
+  "result": "Both native settings AS_Default, structured arrays empty, GetTextFile true. Formal operand parameter headers confirmed. Native default text is primary wavelength2=.55um, not wave1=.48um. Matching wave2 removes differences.",
+  "checks": [
+    {
+      "label": "chief",
+      "surface": 1,
+      "actual": -4.190082498977961,
+      "expected": -4.190082499,
+      "atol": 5e-09,
+      "passed": true
+    },
+    {
+      "label": "marginal",
+      "surface": 1,
+      "actual": 5.0,
+      "expected": 5.0,
+      "atol": 5e-09,
+      "passed": true
+    },
+    {
+      "label": "chief",
+      "surface": 2,
+      "actual": -3.221041185083847,
+      "expected": -3.221041185,
+      "atol": 5e-09,
+      "passed": true
+    },
+    {
+      "label": "marginal",
+      "surface": 2,
+      "actual": 4.71597373330086,
+      "expected": 4.715973733,
+      "atol": 5e-09,
+      "passed": true
+    },
+    {
+      "label": "chief",
+      "surface": 7,
+      "actual": 18.12478379279611,
+      "expected": 18.12478379,
+      "atol": 5e-09,
+      "passed": true
+    },
+    {
+      "label": "marginal",
+      "surface": 7,
+      "actual": 0.0207299812392705,
+      "expected": 0.02072998124,
+      "atol": 5e-09,
+      "passed": true
+    },
+    {
+      "label": "chief image height",
+      "hy": 0,
+      "actual": 0.0,
+      "expected": 0.0,
+      "atol": 1e-05,
+      "passed": true
+    },
+    {
+      "label": "chief image height",
+      "hy": 0.5,
+      "actual": 8.781964631080607,
+      "expected": 8.781965,
+      "atol": 1e-05,
+      "passed": true
+    },
+    {
+      "label": "chief image height",
+      "hy": 1,
+      "actual": 18.1360272446397,
+      "expected": 18.13603,
+      "atol": 1e-05,
+      "passed": true
+    },
+    {
+      "label": "signed image angle",
+      "hy": 0,
+      "py": -1,
+      "actual": 5.764364939991754,
+      "expected": 5.764365,
+      "atol": 1e-06,
+      "passed": true
+    },
+    {
+      "label": "signed image angle",
+      "hy": 0,
+      "py": 1,
+      "actual": -5.764364939991754,
+      "expected": -5.764365,
+      "atol": 1e-06,
+      "passed": true
+    },
+    {
+      "label": "signed image angle",
+      "hy": 0.5,
+      "py": 0,
+      "actual": 9.71337302140038,
+      "expected": 9.713373,
+      "atol": 1e-06,
+      "passed": true
+    },
+    {
+      "label": "signed image angle",
+      "hy": 1,
+      "py": 0,
+      "actual": 18.985491725785952,
+      "expected": 18.985492,
+      "atol": 1e-06,
+      "passed": true
+    }
+  ],
+  "numeric_checks_passed": 13,
+  "models": "Installed Cooke 40 degree field.zos, current configuration",
+  "lifecycle": "All native analyses closed; sessions normally disconnected; surfaces/system/MFE before-after preserved.",
+  "remaining": [
+    "Typed requests for all documented settings and explicit wavelength identity",
+    "YYbar equal-axis/plot-scale and surface annotations",
+    "Incident-angle field-density scan using exact chief height; ray validity and clipping information",
+    "Controlled independent references; paging/plot/failure/cancel/reload/lifecycle; docs/schema"
+  ],
+  "next_action": "Implement YYbar first using formal PARY or normalized paraxial trace with first/last surface, wavelength and scale. Then incident-angle scan using native true-ray coordinates/directions plus ray validity. Keep AS_Default settings limitation explicit."
+}

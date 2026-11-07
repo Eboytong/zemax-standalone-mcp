@@ -1,0 +1,61 @@
+{
+  "item_id": "EX-01.UniversalPlot1D",
+  "execution_state": "implemented",
+  "date": "2026-11-06",
+  "native_probe": "outputs/runs/universal199_cvva_91ea621431/probe.json",
+  "typed_operands": [
+    "TTHI",
+    "CVVA"
+  ],
+  "implemented": "CVVA surface-specific parameter validation, native text identity, reciprocal lens units; independent1/r and curvature response; original error preserved on copy cleanup failure",
+  "tests": {
+    "ordinary": "verification/development/EX-01/ordinary201.xml",
+    "ordinary_passed": 110,
+    "native": "verification/development/EX-01/native200.xml",
+    "native_passed": 5
+  },
+  "runs": [
+    {
+      "path": "outputs/runs/universal197_Thickness_cd6cc75039",
+      "numeric_checks": 5,
+      "max_absolute_error": 0.0,
+      "close_confirmed": true,
+      "disconnect": true
+    },
+    {
+      "path": "outputs/runs/universal197_Radius_9de269ec9c",
+      "numeric_checks": 5,
+      "max_absolute_error": 0.0,
+      "close_confirmed": true,
+      "disconnect": true
+    },
+    {
+      "path": "outputs/runs/universal197_Curvature_d23eba56fb",
+      "numeric_checks": 5,
+      "max_absolute_error": 0.0,
+      "close_confirmed": true,
+      "disconnect": true
+    },
+    {
+      "path": "outputs/runs/universal200_cvva_Radius_7a524904b0",
+      "numeric_checks": 3,
+      "max_absolute_error": 3.333333331578814e-08,
+      "close_confirmed": true,
+      "disconnect": true
+    },
+    {
+      "path": "outputs/runs/universal200_cvva_Curvature_2192d64853",
+      "numeric_checks": 3,
+      "max_absolute_error": 0.0,
+      "close_confirmed": true,
+      "disconnect": true
+    }
+  ],
+  "tolerance": "1e-8 + 1e-7*abs(reference); native text has six-digit scientific precision; CVVA reference radius2/3/4 and curvature2/3/4",
+  "remaining": [
+    "Other variable categories and general operands/merit-line identity contracts",
+    "2D typed adapter and actual grid coordinates",
+    "save/reload, failure/cancel and broader independent response acceptance"
+  ],
+  "batch": "B0038/10; partial implementation excluded"
+}

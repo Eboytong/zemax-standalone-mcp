@@ -1,0 +1,3703 @@
+[
+  {
+    "tool": "connect",
+    "arguments": null,
+    "response": {
+      "ok": true,
+      "data": {
+        "connected": true,
+        "native_system_status": "",
+        "native_startup": {
+          "events": [
+            {
+              "stage": "install_check",
+              "event": "started",
+              "timestamp": "2026-11-05T06:45:37.895+00:00",
+              "elapsed_seconds": 3.329999981360743e-05
+            },
+            {
+              "stage": "install_check",
+              "event": "completed",
+              "timestamp": "2026-11-05T06:45:37.896+00:00",
+              "elapsed_seconds": 0.000993699999526143,
+              "duration_seconds": 0.0009620000000722939
+            },
+            {
+              "stage": "environment",
+              "event": "started",
+              "timestamp": "2026-11-05T06:45:37.896+00:00",
+              "elapsed_seconds": 0.0010174999997616396
+            },
+            {
+              "stage": "environment",
+              "event": "completed",
+              "timestamp": "2026-11-05T06:45:37.919+00:00",
+              "elapsed_seconds": 0.023885300000074494,
+              "duration_seconds": 0.022853399999803514
+            },
+            {
+              "stage": "clr_load",
+              "event": "started",
+              "timestamp": "2026-11-05T06:45:37.919+00:00",
+              "elapsed_seconds": 0.02391170000009879
+            },
+            {
+              "stage": "clr_load",
+              "event": "completed",
+              "timestamp": "2026-11-05T06:45:38.435+00:00",
+              "elapsed_seconds": 0.5405620000001363,
+              "duration_seconds": 0.5166317999992316
+            },
+            {
+              "stage": "nethelper_assembly",
+              "event": "started",
+              "timestamp": "2026-11-05T06:45:38.436+00:00",
+              "elapsed_seconds": 0.540589799999907
+            },
+            {
+              "stage": "nethelper_assembly",
+              "event": "completed",
+              "timestamp": "2026-11-05T06:45:38.448+00:00",
+              "elapsed_seconds": 0.5533897999994224,
+              "duration_seconds": 0.012787200000275334
+            },
+            {
+              "stage": "zos_initialize",
+              "event": "started",
+              "timestamp": "2026-11-05T06:45:38.448+00:00",
+              "elapsed_seconds": 0.5534084999999322
+            },
+            {
+              "stage": "zos_initialize",
+              "event": "completed",
+              "timestamp": "2026-11-05T06:45:38.464+00:00",
+              "elapsed_seconds": 0.5693449999998847,
+              "duration_seconds": 0.01591290000033041
+            },
+            {
+              "stage": "api_assemblies",
+              "event": "started",
+              "timestamp": "2026-11-05T06:45:38.464+00:00",
+              "elapsed_seconds": 0.5693733999996766
+            },
+            {
+              "stage": "api_assemblies",
+              "event": "completed",
+              "timestamp": "2026-11-05T06:45:38.492+00:00",
+              "elapsed_seconds": 0.5974599000001035,
+              "duration_seconds": 0.028071499999896332
+            },
+            {
+              "stage": "connection_create",
+              "event": "started",
+              "timestamp": "2026-11-05T06:45:38.492+00:00",
+              "elapsed_seconds": 0.597479399999429
+            },
+            {
+              "stage": "connection_create",
+              "event": "completed",
+              "timestamp": "2026-11-05T06:45:39.065+00:00",
+              "elapsed_seconds": 1.1698238999997557,
+              "duration_seconds": 0.5723210000005565
+            },
+            {
+              "stage": "application_create",
+              "event": "started",
+              "timestamp": "2026-11-05T06:45:39.065+00:00",
+              "elapsed_seconds": 1.169850000000224
+            },
+            {
+              "stage": "application_create",
+              "event": "completed",
+              "timestamp": "2026-11-05T06:45:45.830+00:00",
+              "elapsed_seconds": 7.935402399999475,
+              "duration_seconds": 6.765531399999418
+            },
+            {
+              "stage": "license_check",
+              "event": "started",
+              "timestamp": "2026-11-05T06:45:45.830+00:00",
+              "elapsed_seconds": 7.935432899999796
+            },
+            {
+              "stage": "license_check",
+              "event": "completed",
+              "timestamp": "2026-11-05T06:45:45.832+00:00",
+              "elapsed_seconds": 7.937124299999596,
+              "duration_seconds": 0.0016824999993332312
+            },
+            {
+              "stage": "primary_system",
+              "event": "started",
+              "timestamp": "2026-11-05T06:45:45.832+00:00",
+              "elapsed_seconds": 7.93714110000019
+            },
+            {
+              "stage": "primary_system",
+              "event": "completed",
+              "timestamp": "2026-11-05T06:45:45.834+00:00",
+              "elapsed_seconds": 7.939194300000054,
+              "duration_seconds": 0.0020455999992918805
+            }
+          ],
+          "observer_warnings": []
+        },
+        "active_task": null,
+        "running_tasks": [],
+        "task_index": {},
+        "recent_tasks": [],
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 0,
+        "source_file": null,
+        "working_file": null,
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": null,
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 0,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        }
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 0,
+        "source_file": null,
+        "working_file": null,
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": null,
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 0,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "9cef58bc7bb742409e644db064003837"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "open_lens",
+    "arguments": {
+      "path": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos"
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "source_units": "Watts",
+        "source_unit_prefix": "None",
+        "analysis_units": "WattsPerCMSq",
+        "analysis_unit_prefix": "None",
+        "afocal_image_space": false,
+        "aperture": {
+          "type": "EntrancePupilDiameter",
+          "value": 10.0
+        },
+        "field_type": "Angle",
+        "field_normalization": "Radial",
+        "fields": [
+          {
+            "number": 1,
+            "x": 0.0,
+            "y": 0.0,
+            "weight": 1.0,
+            "vdx": 0.0,
+            "vdy": 0.0,
+            "vcx": 0.0,
+            "vcy": 0.0,
+            "van": 0.0
+          },
+          {
+            "number": 2,
+            "x": 0.0,
+            "y": 14.0,
+            "weight": 1.0,
+            "vdx": 0.0,
+            "vdy": 0.0,
+            "vcx": 0.0,
+            "vcy": 0.0,
+            "van": 0.0
+          },
+          {
+            "number": 3,
+            "x": 0.0,
+            "y": 20.0,
+            "weight": 1.0,
+            "vdx": 0.0,
+            "vdy": 0.0,
+            "vcx": 0.0,
+            "vcy": 0.0,
+            "van": 0.0
+          }
+        ],
+        "wavelength_unit": "micrometers (environmental air reference)",
+        "wavelengths": [
+          {
+            "number": 1,
+            "wavelength_um": 0.48,
+            "weight": 0.800000012,
+            "primary": false
+          },
+          {
+            "number": 2,
+            "wavelength_um": 0.55,
+            "weight": 1.0,
+            "primary": true
+          },
+          {
+            "number": 3,
+            "wavelength_um": 0.65,
+            "weight": 0.800000012,
+            "primary": false
+          }
+        ],
+        "temperature_c": 20.0,
+        "pressure_atm": 1.0,
+        "adjust_index_to_environment": false,
+        "afocal_mode_units": "Milliradians",
+        "settings_activity": {
+          "apodization_factor_is_used": false
+        },
+        "author": "",
+        "aperture_options": {
+          "apodization_type": "Uniform",
+          "apodization_factor": 0.0,
+          "semi_diameter_margin": 0.0,
+          "semi_diameter_margin_pct": 0.0,
+          "telecentric_object_space": false,
+          "afocal_image_space": false,
+          "iterate_solves_when_updating": false,
+          "fast_semi_diameters": true,
+          "check_grin_apertures": false
+        },
+        "advanced": {
+          "reference_opd": "ExitPupil",
+          "paraxial_rays": "IgnoreCoordinateBreaks",
+          "f_num_method": "TracingRays",
+          "dont_print_coordinate_break_data": false,
+          "turn_off_threading": false,
+          "opd_modulo_2pi": false,
+          "include_calculated_data_in_session_file": true,
+          "include_tolerance_data_in_session_file": true,
+          "huygens_integral_method": "Auto"
+        },
+        "global_reference_surface": 1,
+        "material_catalogs": [
+          "SCHOTT"
+        ],
+        "polarization": {
+          "unpolarized": true,
+          "jx": 0.0,
+          "jy": 1.0,
+          "x_phase": 0.0,
+          "y_phase": 0.0,
+          "method": "XAxisMethod",
+          "convert_thin_film_phase": true
+        },
+        "ray_aiming": {
+          "mode": "Off",
+          "method": "Heuristic",
+          "cache": true,
+          "robust": false,
+          "scale_pupil_shift_by_field": false,
+          "auto_pupil_shift": true,
+          "enhanced": false,
+          "advanced_convergence": false,
+          "fallback_search": false,
+          "pupil_shift_x": 0.0,
+          "pupil_shift_y": 0.0,
+          "pupil_shift_z": 0.0,
+          "pupil_compress_x": 0.0,
+          "pupil_compress_y": 0.0,
+          "cache_steps": 10
+        },
+        "files": {
+          "coating_file": "COATING.DAT",
+          "scatter_profile": "SCATTER_PROFILE.DAT",
+          "abg_file": "ABG_DATA.DAT",
+          "gradium_profile": "PROFILE.GRD"
+        },
+        "title": "A SIMPLE COOKE TRIPLET.",
+        "notes": "Notes...\r\n \r\n ",
+        "surface_count": 8,
+        "native_system_status": "",
+        "first_order": {
+          "effective_focal_length": 49.99999950000002,
+          "paraxial_working_f_number": 4.999999950000002,
+          "real_working_f_number": 4.978219667181909,
+          "paraxial_image_height": 18.19851153132502,
+          "paraxial_magnification": 0.0
+        }
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 1,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b3a5f4ab.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": null,
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 1,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "27559b0c45384b74b3c42bea25f7b59e"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_system_resources",
+    "arguments": {
+      "request": {
+        "kind": "coatings",
+        "surface": 1
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "kind": "coatings",
+        "items": [
+          "无",
+          "NULL",
+          "AR",
+          "WAR",
+          "HEAR1",
+          "HEAR2",
+          "GAP",
+          "COPPER",
+          "GOLD",
+          "METAL",
+          "METAL2",
+          "SILVER",
+          "AIR0010",
+          "ETALON",
+          "FP",
+          "I.0",
+          "I.05",
+          "I.50",
+          "I.95",
+          "I.98",
+          "I.99",
+          "I.995",
+          "I.99999999",
+          "AR_400-700_1L",
+          "AR_400-700_3L",
+          "AR_400-700_4L",
+          "AR_400-900_12L",
+          "COLD_MIRROR_0DEG",
+          "COLD_MIRROR_45DEG_A",
+          "COLD_MIRROR_45DEG_B",
+          "CUBE_BS_500-600_99L",
+          "CUBE_BS_500-600_148L",
+          "CUBE_BS_460-640_316L",
+          "CUBE_POL_45DEG_21L",
+          "PROTECTED_AL",
+          "ENHANCED_AL",
+          "PROTECTED_SILVER",
+          "HR_400-700_81L",
+          "HR_405-840_101L",
+          "HR_633_21L",
+          "IR_BLOCKER_45L",
+          "SPLIT",
+          "ABSORB",
+          "PASS_P",
+          "PASS45",
+          "BEAMSPLIT",
+          "RGPASS",
+          "BLUENOTCH",
+          "AR_TAPR",
+          "BEAMSPLIT",
+          "LPO_BBVIS_620_923",
+          "LPO_BBVIS_458_607",
+          "LPO_BBAR380TO1000_487",
+          "LPO_BBAR380TO1000_698",
+          "LPO_BBAR380TO1000_744",
+          "LPO_V@355_ND458",
+          "LPO_V@532_ND458",
+          "LPO_V@1540_ND517",
+          "LPO_V@1064_ND517",
+          "LPO_V@1064_ND458",
+          "LPO_V@1540_ND458",
+          "LPO_HEBBARVIS_ND458_572",
+          "LPO_HEBBARVIS_ND607_647",
+          "LPO_HEBBARVIS_672_846",
+          "LPO_SINGLELAYERMGF2@509",
+          "LPO_SINGLELAYERMGF2@780",
+          "LPO_SINGLELAYERMGF2@633",
+          "ZEC_MF550",
+          "ZEC_HEA717",
+          "ZEC_NIRI517",
+          "ZEC_TELECOMNIR517",
+          "ZEC_UVAR",
+          "NIRII",
+          "ZEC_NIRIIHIGH",
+          "ZEC_HEA460",
+          "ZEC_HEA517",
+          "ZEC_HEA673",
+          "VISNIR",
+          "ZEC_UVVIS",
+          "ZEC_HEA613",
+          "THOR1053",
+          "THOR1064",
+          "THOR1310",
+          "THOR1550",
+          "THOR2020",
+          "THOR266",
+          "THOR308",
+          "THOR355",
+          "THOR405",
+          "THOR488",
+          "THOR514",
+          "THOR532",
+          "THOR546",
+          "THOR633",
+          "THOR670",
+          "THOR780",
+          "THOR808",
+          "THOR830",
+          "THOR980",
+          "THORA",
+          "THORASLAH64",
+          "THORAU",
+          "THORB",
+          "THORBSLAH64",
+          "THORC",
+          "THORC10",
+          "THORC11",
+          "THORC13",
+          "THORC14",
+          "THORC15",
+          "THORC3",
+          "THORC5",
+          "THORC6",
+          "THORC7",
+          "THORC8",
+          "THORCSLAH64",
+          "THORDBD2",
+          "THORDCAF2",
+          "THORDINFRASIL",
+          "THORDZNSE",
+          "THORE03",
+          "THORE3GE",
+          "THORE3ZNSE",
+          "THOREBAF2",
+          "THOREBD2",
+          "THOREGE",
+          "THORESI",
+          "THORFBD2",
+          "THORFGE",
+          "THORFZNSE",
+          "THORGZNSE",
+          "THORK04",
+          "THORK08",
+          "THORK12",
+          "THORK14",
+          "THORMGF2",
+          "THORMGF2P",
+          "THORNECAF2",
+          "THORUV",
+          "THORYAG",
+          "ZEC_E02",
+          "ZEC_MF825",
+          "ZEC_NIRI589",
+          "ZEC_NIRI673",
+          "ZEC_NIRI785",
+          "ZEC_VISNIR517",
+          "ZEC_VISNIR673",
+          "ZEC_VISNIR785",
+          "ZEC_V266_FS",
+          "ZEC_V355_FS",
+          "ZEC_V405_BK7",
+          "ZEC_V405_SF11",
+          "ZEC_V405_SF5",
+          "ZEC_V532_BK7",
+          "ZEC_V532_SF11",
+          "ZEC_V532_SF5",
+          "ZEC_V785_BK7",
+          "ZEC_V785_SF11",
+          "ZEC_V785_SF5",
+          "ZEC_V633_BK7",
+          "ZEC_V633_SF11",
+          "ZEC_V633_SF5",
+          "ZEC_V980_BK7",
+          "ZEC_V980_SF5",
+          "ZEC_V980_SF11",
+          "ZEC_V1064_BK7",
+          "ZEC_V1064_SF11",
+          "ZEC_V1064_SF5",
+          "ZEC_V1310_BK7",
+          "ZEC_V1310_SF5",
+          "ZEC_V1310_SF11",
+          "ZEC_V1550_BK7",
+          "ZEC_V1550_SF5",
+          "ZEC_V1550_SF11",
+          "ZEC_YAGBBAR785",
+          "ZEC_YAGBBAR517",
+          "ZEC_VISEXT785",
+          "ZEC_VISEXT517",
+          "ZEC_UV_266_355",
+          "ZEC_V532_IAD",
+          "ZEC_VIS_BROAD_633NM",
+          "ZEC_NIR_BROAD_785NM",
+          "ZEC_V1064_IAD",
+          "OPTIMAX-SLMGF2",
+          "OPTIMAX-V355-1_46",
+          "OPTIMAX-V532-1_52",
+          "OPTIMAX-V633-1_7",
+          "OPTIMAX-V633-1_8",
+          "OPTIMAX-V633-1_46",
+          "OPTIMAX-V633-1_52",
+          "OPTIMAX-V633-1_62",
+          "OPTIMAX-V1064-1_46",
+          "OPTIMAX-VISBBAR-1_7",
+          "OPTIMAX-VISBBAR-1_8",
+          "OPTIMAX-VISBBAR-1_46",
+          "OPTIMAX-VISBBAR-1_52",
+          "OPTIMAX-VISBBAR-1_62",
+          "OPTIMAX-XBBAR-1_7",
+          "OPTIMAX-XBBAR-1_8",
+          "OPTIMAX-XBBAR-1_46"
+        ],
+        "total": 260,
+        "next_start": 200
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 1,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b3a5f4ab.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": null,
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 1,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "295b6865bbb54d93a391c445361a25f8"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "update_surfaces",
+    "arguments": {
+      "changes": [
+        {
+          "surface": 1,
+          "coating": "无"
+        }
+      ]
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surfaces": [
+          {
+            "surface": 1,
+            "surface_type": "Standard",
+            "comment": "",
+            "is_object": false,
+            "is_image": false,
+            "is_stop": false,
+            "cells": {
+              "radius": {
+                "value": 22.013592508427536,
+                "solve": {
+                  "type": "Variable"
+                },
+                "writable": true,
+                "header": "曲率半径",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "MarginalRayAngle",
+                  "ChiefRayAngle",
+                  "MarginalRayNormal",
+                  "ChiefRayNormal",
+                  "Aplanatic",
+                  "ElementPower",
+                  "CocentricSurface",
+                  "CocentricSurface",
+                  "CocentricRadius",
+                  "CocentricRadius",
+                  "FNumber"
+                ]
+              },
+              "thickness": {
+                "value": 3.25895583,
+                "solve": {
+                  "type": "Variable"
+                },
+                "writable": true,
+                "header": "厚度",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "MarginalRayHeight",
+                  "ChiefRayHeight",
+                  "EdgeThickness",
+                  "OpticalPathDifference",
+                  "Position",
+                  "Compensator",
+                  "CenterOfCurvature",
+                  "PupilPosition"
+                ]
+              },
+              "material": {
+                "value": "SK16",
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "材料",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "MaterialSubstitute",
+                  "MaterialOffset",
+                  "MaterialModel"
+                ]
+              },
+              "semi_diameter": {
+                "value": 9.5,
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "净口径",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "Automatic",
+                  "Maximum"
+                ]
+              },
+              "conic": {
+                "value": 0.0,
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "圆锥系数",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup",
+                  "ZPLMacro"
+                ]
+              },
+              "tce": {
+                "value": "Infinity",
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": false,
+                "header": "TCE x 1E-6",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup"
+                ]
+              },
+              "mechanical_semi_diameter": {
+                "value": 9.5,
+                "solve": {
+                  "type": "Automatic"
+                },
+                "writable": true,
+                "header": "机械半直径",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "Automatic"
+                ]
+              },
+              "chip_zone": {
+                "value": 0.0,
+                "solve": {
+                  "type": "Automatic"
+                },
+                "writable": true,
+                "header": "延伸区",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "Automatic"
+                ]
+              }
+            },
+            "properties": {
+              "property_activity": {
+                "has_mirror_settings": false,
+                "can_be_stop": true,
+                "can_be_gcr": false
+              },
+              "scattering": {
+                "type": "None"
+              },
+              "drawing": {
+                "hide_rays_to_this_surface": false,
+                "skip_rays_to_this_surface": false,
+                "do_not_draw_this_surface": false,
+                "do_not_draw_edges_from_this_surface": false,
+                "draw_local_axis": false,
+                "draw_edges_as": "Squared",
+                "mirror_substrate": "Curved",
+                "mirror_thickness": 0.0
+              },
+              "type_properties": {
+                "surface_color": "Default",
+                "surface_opacity": "P100",
+                "row_color": "Default",
+                "ignore_surface": false,
+                "surface_cannot_be_hyperhemispheric": false
+              },
+              "composite": {
+                "is_composite_surface": false
+              },
+              "physical_optics": {
+                "use_rays_to_propagate_to_next_surface": false,
+                "do_not_rescale_beam_size_using_ray_data": false,
+                "use_angular_spectrum_propagator": false,
+                "draw_this_lens_on_shaded_model": false,
+                "re_compute_pilot_beam_parameters": false,
+                "use_xaxis_reference": false,
+                "resample_after_refraction": false,
+                "auto_resample": false,
+                "x_sampling": "S32",
+                "y_sampling": "S32",
+                "x_width": 1.0,
+                "y_width": 1.0,
+                "output_pilot_radius": "BestFit",
+                "x_radius": 0.0,
+                "y_radius": 0.0
+              },
+              "disable_clear_semi_diameter_margins": false,
+              "surface_file": null,
+              "coating": "无",
+              "material_catalog": "SCHOTT.AGF",
+              "mechanical": {
+                "mechanical_semi_diameter": {
+                  "value": 9.5,
+                  "solve": "Automatic"
+                },
+                "chip_zone": {
+                  "value": 0.0,
+                  "solve": "Automatic"
+                }
+              },
+              "aperture": {
+                "type": "FloatingAperture",
+                "pickup_from": null
+              },
+              "tilt_decenter": {
+                "before_order": "Decenter_Tilt",
+                "before_decenter_x": 0.0,
+                "before_decenter_y": 0.0,
+                "before_tilt_x": 0.0,
+                "before_tilt_y": 0.0,
+                "before_tilt_z": 0.0,
+                "after_order": "Decenter_Tilt",
+                "after_decenter_x": 0.0,
+                "after_decenter_y": 0.0,
+                "after_tilt_x": 0.0,
+                "after_tilt_y": 0.0,
+                "after_tilt_z": 0.0,
+                "after_mode": "Explicit"
+              }
+            }
+          }
+        ]
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 2,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b3a5f4ab.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r1_surfaces_0f1555cd.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 2,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "a3e0c4803bcd42ac8e2a98d90d8e999e"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surface": 1,
+        "coating": "无",
+        "use_layer_multiplier_and_offsets": false,
+        "total": 0,
+        "rows": [],
+        "next_start": null,
+        "definitions": {
+          "thickness_multiplier": "dimensionless multiplier",
+          "index_offset": "dimensionless refractive index increment",
+          "extinction_offset": "dimensionless extinction coefficient increment"
+        },
+        "source": "ILDECoatingData/ILDECoatingSettings",
+        "activity_source": "UseLayerMultiplierAndOffsets; no per-layer IsActive property in installed interface"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 2,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b3a5f4ab.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r1_surfaces_0f1555cd.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 2,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "47aa4913b6074cad8011582be55dfab4"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surface": 1,
+        "coating": "无",
+        "use_layer_multiplier_and_offsets": false,
+        "total": 0,
+        "rows": [],
+        "next_start": null,
+        "definitions": {
+          "thickness_multiplier": "dimensionless multiplier",
+          "index_offset": "dimensionless refractive index increment",
+          "extinction_offset": "dimensionless extinction coefficient increment"
+        },
+        "source": "ILDECoatingData/ILDECoatingSettings",
+        "activity_source": "UseLayerMultiplierAndOffsets; no per-layer IsActive property in installed interface"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 2,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b3a5f4ab.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r1_surfaces_0f1555cd.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 2,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "2a2d3fc1c4d148c69785d1fbeae87ea8"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "update_surfaces",
+    "arguments": {
+      "changes": [
+        {
+          "surface": 1,
+          "coating": "NULL"
+        }
+      ]
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surfaces": [
+          {
+            "surface": 1,
+            "surface_type": "Standard",
+            "comment": "",
+            "is_object": false,
+            "is_image": false,
+            "is_stop": false,
+            "cells": {
+              "radius": {
+                "value": 22.013592508427536,
+                "solve": {
+                  "type": "Variable"
+                },
+                "writable": true,
+                "header": "曲率半径",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "MarginalRayAngle",
+                  "ChiefRayAngle",
+                  "MarginalRayNormal",
+                  "ChiefRayNormal",
+                  "Aplanatic",
+                  "ElementPower",
+                  "CocentricSurface",
+                  "CocentricSurface",
+                  "CocentricRadius",
+                  "CocentricRadius",
+                  "FNumber"
+                ]
+              },
+              "thickness": {
+                "value": 3.25895583,
+                "solve": {
+                  "type": "Variable"
+                },
+                "writable": true,
+                "header": "厚度",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "MarginalRayHeight",
+                  "ChiefRayHeight",
+                  "EdgeThickness",
+                  "OpticalPathDifference",
+                  "Position",
+                  "Compensator",
+                  "CenterOfCurvature",
+                  "PupilPosition"
+                ]
+              },
+              "material": {
+                "value": "SK16",
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "材料",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "MaterialSubstitute",
+                  "MaterialOffset",
+                  "MaterialModel"
+                ]
+              },
+              "semi_diameter": {
+                "value": 9.5,
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "净口径",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "Automatic",
+                  "Maximum"
+                ]
+              },
+              "conic": {
+                "value": 0.0,
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "圆锥系数",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup",
+                  "ZPLMacro"
+                ]
+              },
+              "tce": {
+                "value": "Infinity",
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": false,
+                "header": "TCE x 1E-6",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup"
+                ]
+              },
+              "mechanical_semi_diameter": {
+                "value": 9.5,
+                "solve": {
+                  "type": "Automatic"
+                },
+                "writable": true,
+                "header": "机械半直径",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "Automatic"
+                ]
+              },
+              "chip_zone": {
+                "value": 0.0,
+                "solve": {
+                  "type": "Automatic"
+                },
+                "writable": true,
+                "header": "延伸区",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "Automatic"
+                ]
+              }
+            },
+            "properties": {
+              "property_activity": {
+                "has_mirror_settings": false,
+                "can_be_stop": true,
+                "can_be_gcr": false
+              },
+              "scattering": {
+                "type": "None"
+              },
+              "drawing": {
+                "hide_rays_to_this_surface": false,
+                "skip_rays_to_this_surface": false,
+                "do_not_draw_this_surface": false,
+                "do_not_draw_edges_from_this_surface": false,
+                "draw_local_axis": false,
+                "draw_edges_as": "Squared",
+                "mirror_substrate": "Curved",
+                "mirror_thickness": 0.0
+              },
+              "type_properties": {
+                "surface_color": "Default",
+                "surface_opacity": "P100",
+                "row_color": "Default",
+                "ignore_surface": false,
+                "surface_cannot_be_hyperhemispheric": false
+              },
+              "composite": {
+                "is_composite_surface": false
+              },
+              "physical_optics": {
+                "use_rays_to_propagate_to_next_surface": false,
+                "do_not_rescale_beam_size_using_ray_data": false,
+                "use_angular_spectrum_propagator": false,
+                "draw_this_lens_on_shaded_model": false,
+                "re_compute_pilot_beam_parameters": false,
+                "use_xaxis_reference": false,
+                "resample_after_refraction": false,
+                "auto_resample": false,
+                "x_sampling": "S32",
+                "y_sampling": "S32",
+                "x_width": 1.0,
+                "y_width": 1.0,
+                "output_pilot_radius": "BestFit",
+                "x_radius": 0.0,
+                "y_radius": 0.0
+              },
+              "disable_clear_semi_diameter_margins": false,
+              "surface_file": null,
+              "coating": "NULL",
+              "material_catalog": "SCHOTT.AGF",
+              "mechanical": {
+                "mechanical_semi_diameter": {
+                  "value": 9.5,
+                  "solve": "Automatic"
+                },
+                "chip_zone": {
+                  "value": 0.0,
+                  "solve": "Automatic"
+                }
+              },
+              "aperture": {
+                "type": "FloatingAperture",
+                "pickup_from": null
+              },
+              "tilt_decenter": {
+                "before_order": "Decenter_Tilt",
+                "before_decenter_x": 0.0,
+                "before_decenter_y": 0.0,
+                "before_tilt_x": 0.0,
+                "before_tilt_y": 0.0,
+                "before_tilt_z": 0.0,
+                "after_order": "Decenter_Tilt",
+                "after_decenter_x": 0.0,
+                "after_decenter_y": 0.0,
+                "after_tilt_x": 0.0,
+                "after_tilt_y": 0.0,
+                "after_tilt_z": 0.0,
+                "after_mode": "Explicit"
+              }
+            }
+          }
+        ]
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 3,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b3a5f4ab.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r2_surfaces_1ab572c3.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 3,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "930902cdd61b4fd099f3bea6ff65b49a"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surface": 1,
+        "coating": "NULL",
+        "use_layer_multiplier_and_offsets": false,
+        "total": 1,
+        "rows": [
+          {
+            "layer": 1,
+            "thickness_multiplier": 1.0,
+            "index_offset": 0.0,
+            "extinction_offset": 0.0,
+            "thickness_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            }
+          }
+        ],
+        "next_start": null,
+        "definitions": {
+          "thickness_multiplier": "dimensionless multiplier",
+          "index_offset": "dimensionless refractive index increment",
+          "extinction_offset": "dimensionless extinction coefficient increment"
+        },
+        "source": "ILDECoatingData/ILDECoatingSettings",
+        "activity_source": "UseLayerMultiplierAndOffsets; no per-layer IsActive property in installed interface"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 3,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b3a5f4ab.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r2_surfaces_1ab572c3.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 3,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "9bc104029640439f9632c0ab4995312a"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surface": 1,
+        "coating": "NULL",
+        "use_layer_multiplier_and_offsets": false,
+        "total": 1,
+        "rows": [
+          {
+            "layer": 1,
+            "thickness_multiplier": 1.0,
+            "index_offset": 0.0,
+            "extinction_offset": 0.0,
+            "thickness_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            }
+          }
+        ],
+        "next_start": null,
+        "definitions": {
+          "thickness_multiplier": "dimensionless multiplier",
+          "index_offset": "dimensionless refractive index increment",
+          "extinction_offset": "dimensionless extinction coefficient increment"
+        },
+        "source": "ILDECoatingData/ILDECoatingSettings",
+        "activity_source": "UseLayerMultiplierAndOffsets; no per-layer IsActive property in installed interface"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 3,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b3a5f4ab.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r2_surfaces_1ab572c3.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 3,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "8e1f7f74e329407f83838b03824b11db"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "update_surfaces",
+    "arguments": {
+      "changes": [
+        {
+          "surface": 1,
+          "coating": "AR"
+        }
+      ]
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surfaces": [
+          {
+            "surface": 1,
+            "surface_type": "Standard",
+            "comment": "",
+            "is_object": false,
+            "is_image": false,
+            "is_stop": false,
+            "cells": {
+              "radius": {
+                "value": 22.013592508427536,
+                "solve": {
+                  "type": "Variable"
+                },
+                "writable": true,
+                "header": "曲率半径",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "MarginalRayAngle",
+                  "ChiefRayAngle",
+                  "MarginalRayNormal",
+                  "ChiefRayNormal",
+                  "Aplanatic",
+                  "ElementPower",
+                  "CocentricSurface",
+                  "CocentricSurface",
+                  "CocentricRadius",
+                  "CocentricRadius",
+                  "FNumber"
+                ]
+              },
+              "thickness": {
+                "value": 3.25895583,
+                "solve": {
+                  "type": "Variable"
+                },
+                "writable": true,
+                "header": "厚度",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "MarginalRayHeight",
+                  "ChiefRayHeight",
+                  "EdgeThickness",
+                  "OpticalPathDifference",
+                  "Position",
+                  "Compensator",
+                  "CenterOfCurvature",
+                  "PupilPosition"
+                ]
+              },
+              "material": {
+                "value": "SK16",
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "材料",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "MaterialSubstitute",
+                  "MaterialOffset",
+                  "MaterialModel"
+                ]
+              },
+              "semi_diameter": {
+                "value": 9.5,
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "净口径",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "Automatic",
+                  "Maximum"
+                ]
+              },
+              "conic": {
+                "value": 0.0,
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "圆锥系数",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup",
+                  "ZPLMacro"
+                ]
+              },
+              "tce": {
+                "value": "Infinity",
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": false,
+                "header": "TCE x 1E-6",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup"
+                ]
+              },
+              "mechanical_semi_diameter": {
+                "value": 9.5,
+                "solve": {
+                  "type": "Automatic"
+                },
+                "writable": true,
+                "header": "机械半直径",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "Automatic"
+                ]
+              },
+              "chip_zone": {
+                "value": 0.0,
+                "solve": {
+                  "type": "Automatic"
+                },
+                "writable": true,
+                "header": "延伸区",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "Automatic"
+                ]
+              }
+            },
+            "properties": {
+              "property_activity": {
+                "has_mirror_settings": false,
+                "can_be_stop": true,
+                "can_be_gcr": false
+              },
+              "scattering": {
+                "type": "None"
+              },
+              "drawing": {
+                "hide_rays_to_this_surface": false,
+                "skip_rays_to_this_surface": false,
+                "do_not_draw_this_surface": false,
+                "do_not_draw_edges_from_this_surface": false,
+                "draw_local_axis": false,
+                "draw_edges_as": "Squared",
+                "mirror_substrate": "Curved",
+                "mirror_thickness": 0.0
+              },
+              "type_properties": {
+                "surface_color": "Default",
+                "surface_opacity": "P100",
+                "row_color": "Default",
+                "ignore_surface": false,
+                "surface_cannot_be_hyperhemispheric": false
+              },
+              "composite": {
+                "is_composite_surface": false
+              },
+              "physical_optics": {
+                "use_rays_to_propagate_to_next_surface": false,
+                "do_not_rescale_beam_size_using_ray_data": false,
+                "use_angular_spectrum_propagator": false,
+                "draw_this_lens_on_shaded_model": false,
+                "re_compute_pilot_beam_parameters": false,
+                "use_xaxis_reference": false,
+                "resample_after_refraction": false,
+                "auto_resample": false,
+                "x_sampling": "S32",
+                "y_sampling": "S32",
+                "x_width": 1.0,
+                "y_width": 1.0,
+                "output_pilot_radius": "BestFit",
+                "x_radius": 0.0,
+                "y_radius": 0.0
+              },
+              "disable_clear_semi_diameter_margins": false,
+              "surface_file": null,
+              "coating": "AR",
+              "material_catalog": "SCHOTT.AGF",
+              "mechanical": {
+                "mechanical_semi_diameter": {
+                  "value": 9.5,
+                  "solve": "Automatic"
+                },
+                "chip_zone": {
+                  "value": 0.0,
+                  "solve": "Automatic"
+                }
+              },
+              "aperture": {
+                "type": "FloatingAperture",
+                "pickup_from": null
+              },
+              "tilt_decenter": {
+                "before_order": "Decenter_Tilt",
+                "before_decenter_x": 0.0,
+                "before_decenter_y": 0.0,
+                "before_tilt_x": 0.0,
+                "before_tilt_y": 0.0,
+                "before_tilt_z": 0.0,
+                "after_order": "Decenter_Tilt",
+                "after_decenter_x": 0.0,
+                "after_decenter_y": 0.0,
+                "after_tilt_x": 0.0,
+                "after_tilt_y": 0.0,
+                "after_tilt_z": 0.0,
+                "after_mode": "Explicit"
+              }
+            }
+          }
+        ]
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 4,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b3a5f4ab.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r3_surfaces_90dc81c8.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 4,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "d6c33e83a54448cf880b98895ba2d219"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surface": 1,
+        "coating": "AR",
+        "use_layer_multiplier_and_offsets": false,
+        "total": 1,
+        "rows": [
+          {
+            "layer": 1,
+            "thickness_multiplier": 1.0,
+            "index_offset": 0.0,
+            "extinction_offset": 0.0,
+            "thickness_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            }
+          }
+        ],
+        "next_start": null,
+        "definitions": {
+          "thickness_multiplier": "dimensionless multiplier",
+          "index_offset": "dimensionless refractive index increment",
+          "extinction_offset": "dimensionless extinction coefficient increment"
+        },
+        "source": "ILDECoatingData/ILDECoatingSettings",
+        "activity_source": "UseLayerMultiplierAndOffsets; no per-layer IsActive property in installed interface"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 4,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b3a5f4ab.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r3_surfaces_90dc81c8.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 4,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "a0f6809518a046589adf310a84cf1a75"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surface": 1,
+        "coating": "AR",
+        "use_layer_multiplier_and_offsets": false,
+        "total": 1,
+        "rows": [
+          {
+            "layer": 1,
+            "thickness_multiplier": 1.0,
+            "index_offset": 0.0,
+            "extinction_offset": 0.0,
+            "thickness_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            }
+          }
+        ],
+        "next_start": null,
+        "definitions": {
+          "thickness_multiplier": "dimensionless multiplier",
+          "index_offset": "dimensionless refractive index increment",
+          "extinction_offset": "dimensionless extinction coefficient increment"
+        },
+        "source": "ILDECoatingData/ILDECoatingSettings",
+        "activity_source": "UseLayerMultiplierAndOffsets; no per-layer IsActive property in installed interface"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 4,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b3a5f4ab.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r3_surfaces_90dc81c8.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 4,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "151d808123ce4c77bb5dae5cc3719a3f"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "update_surfaces",
+    "arguments": {
+      "changes": [
+        {
+          "surface": 1,
+          "coating": "WAR"
+        }
+      ]
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surfaces": [
+          {
+            "surface": 1,
+            "surface_type": "Standard",
+            "comment": "",
+            "is_object": false,
+            "is_image": false,
+            "is_stop": false,
+            "cells": {
+              "radius": {
+                "value": 22.013592508427536,
+                "solve": {
+                  "type": "Variable"
+                },
+                "writable": true,
+                "header": "曲率半径",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "MarginalRayAngle",
+                  "ChiefRayAngle",
+                  "MarginalRayNormal",
+                  "ChiefRayNormal",
+                  "Aplanatic",
+                  "ElementPower",
+                  "CocentricSurface",
+                  "CocentricSurface",
+                  "CocentricRadius",
+                  "CocentricRadius",
+                  "FNumber"
+                ]
+              },
+              "thickness": {
+                "value": 3.25895583,
+                "solve": {
+                  "type": "Variable"
+                },
+                "writable": true,
+                "header": "厚度",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "MarginalRayHeight",
+                  "ChiefRayHeight",
+                  "EdgeThickness",
+                  "OpticalPathDifference",
+                  "Position",
+                  "Compensator",
+                  "CenterOfCurvature",
+                  "PupilPosition"
+                ]
+              },
+              "material": {
+                "value": "SK16",
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "材料",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "MaterialSubstitute",
+                  "MaterialOffset",
+                  "MaterialModel"
+                ]
+              },
+              "semi_diameter": {
+                "value": 9.5,
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "净口径",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "Automatic",
+                  "Maximum"
+                ]
+              },
+              "conic": {
+                "value": 0.0,
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "圆锥系数",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup",
+                  "ZPLMacro"
+                ]
+              },
+              "tce": {
+                "value": "Infinity",
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": false,
+                "header": "TCE x 1E-6",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup"
+                ]
+              },
+              "mechanical_semi_diameter": {
+                "value": 9.5,
+                "solve": {
+                  "type": "Automatic"
+                },
+                "writable": true,
+                "header": "机械半直径",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "Automatic"
+                ]
+              },
+              "chip_zone": {
+                "value": 0.0,
+                "solve": {
+                  "type": "Automatic"
+                },
+                "writable": true,
+                "header": "延伸区",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "Automatic"
+                ]
+              }
+            },
+            "properties": {
+              "property_activity": {
+                "has_mirror_settings": false,
+                "can_be_stop": true,
+                "can_be_gcr": false
+              },
+              "scattering": {
+                "type": "None"
+              },
+              "drawing": {
+                "hide_rays_to_this_surface": false,
+                "skip_rays_to_this_surface": false,
+                "do_not_draw_this_surface": false,
+                "do_not_draw_edges_from_this_surface": false,
+                "draw_local_axis": false,
+                "draw_edges_as": "Squared",
+                "mirror_substrate": "Curved",
+                "mirror_thickness": 0.0
+              },
+              "type_properties": {
+                "surface_color": "Default",
+                "surface_opacity": "P100",
+                "row_color": "Default",
+                "ignore_surface": false,
+                "surface_cannot_be_hyperhemispheric": false
+              },
+              "composite": {
+                "is_composite_surface": false
+              },
+              "physical_optics": {
+                "use_rays_to_propagate_to_next_surface": false,
+                "do_not_rescale_beam_size_using_ray_data": false,
+                "use_angular_spectrum_propagator": false,
+                "draw_this_lens_on_shaded_model": false,
+                "re_compute_pilot_beam_parameters": false,
+                "use_xaxis_reference": false,
+                "resample_after_refraction": false,
+                "auto_resample": false,
+                "x_sampling": "S32",
+                "y_sampling": "S32",
+                "x_width": 1.0,
+                "y_width": 1.0,
+                "output_pilot_radius": "BestFit",
+                "x_radius": 0.0,
+                "y_radius": 0.0
+              },
+              "disable_clear_semi_diameter_margins": false,
+              "surface_file": null,
+              "coating": "WAR",
+              "material_catalog": "SCHOTT.AGF",
+              "mechanical": {
+                "mechanical_semi_diameter": {
+                  "value": 9.5,
+                  "solve": "Automatic"
+                },
+                "chip_zone": {
+                  "value": 0.0,
+                  "solve": "Automatic"
+                }
+              },
+              "aperture": {
+                "type": "FloatingAperture",
+                "pickup_from": null
+              },
+              "tilt_decenter": {
+                "before_order": "Decenter_Tilt",
+                "before_decenter_x": 0.0,
+                "before_decenter_y": 0.0,
+                "before_tilt_x": 0.0,
+                "before_tilt_y": 0.0,
+                "before_tilt_z": 0.0,
+                "after_order": "Decenter_Tilt",
+                "after_decenter_x": 0.0,
+                "after_decenter_y": 0.0,
+                "after_tilt_x": 0.0,
+                "after_tilt_y": 0.0,
+                "after_tilt_z": 0.0,
+                "after_mode": "Explicit"
+              }
+            }
+          }
+        ]
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 5,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b3a5f4ab.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r4_surfaces_32868c53.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 5,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "e253db61f22e4faa892976ba37fbfc46"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surface": 1,
+        "coating": "WAR",
+        "use_layer_multiplier_and_offsets": false,
+        "total": 2,
+        "rows": [
+          {
+            "layer": 1,
+            "thickness_multiplier": 1.0,
+            "index_offset": 0.0,
+            "extinction_offset": 0.0,
+            "thickness_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            }
+          },
+          {
+            "layer": 2,
+            "thickness_multiplier": 1.0,
+            "index_offset": 0.0,
+            "extinction_offset": 0.0,
+            "thickness_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            }
+          }
+        ],
+        "next_start": null,
+        "definitions": {
+          "thickness_multiplier": "dimensionless multiplier",
+          "index_offset": "dimensionless refractive index increment",
+          "extinction_offset": "dimensionless extinction coefficient increment"
+        },
+        "source": "ILDECoatingData/ILDECoatingSettings",
+        "activity_source": "UseLayerMultiplierAndOffsets; no per-layer IsActive property in installed interface"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 5,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b3a5f4ab.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r4_surfaces_32868c53.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 5,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "f920c311720e48e18aa4958dbbe2a96e"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surface": 1,
+        "coating": "WAR",
+        "use_layer_multiplier_and_offsets": false,
+        "total": 2,
+        "rows": [
+          {
+            "layer": 1,
+            "thickness_multiplier": 1.0,
+            "index_offset": 0.0,
+            "extinction_offset": 0.0,
+            "thickness_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            }
+          },
+          {
+            "layer": 2,
+            "thickness_multiplier": 1.0,
+            "index_offset": 0.0,
+            "extinction_offset": 0.0,
+            "thickness_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            }
+          }
+        ],
+        "next_start": null,
+        "definitions": {
+          "thickness_multiplier": "dimensionless multiplier",
+          "index_offset": "dimensionless refractive index increment",
+          "extinction_offset": "dimensionless extinction coefficient increment"
+        },
+        "source": "ILDECoatingData/ILDECoatingSettings",
+        "activity_source": "UseLayerMultiplierAndOffsets; no per-layer IsActive property in installed interface"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 5,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b3a5f4ab.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r4_surfaces_32868c53.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 5,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "e4081ab1ea074ee0badf6d2bbc89c227"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "update_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1,
+        "use_layer_multiplier_and_offsets": true,
+        "layers": [
+          {
+            "layer": 1,
+            "thickness_multiplier": 0.9,
+            "index_offset": 0.01,
+            "extinction_offset": 0.001,
+            "thickness_status": {
+              "mode": "Variable"
+            },
+            "index_status": {
+              "mode": "Variable"
+            },
+            "extinction_status": {
+              "mode": "Variable"
+            }
+          }
+        ]
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surface": 1,
+        "completed_layers": [
+          1
+        ],
+        "before": {
+          "1": {
+            "layer": 1,
+            "thickness_multiplier": 1.0,
+            "index_offset": 0.0,
+            "extinction_offset": 0.0,
+            "thickness_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            }
+          },
+          "2": {
+            "layer": 2,
+            "thickness_multiplier": 1.0,
+            "index_offset": 0.0,
+            "extinction_offset": 0.0,
+            "thickness_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            }
+          }
+        },
+        "after": [
+          {
+            "layer": 1,
+            "thickness_multiplier": 0.9,
+            "index_offset": 0.01,
+            "extinction_offset": 0.001,
+            "thickness_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            }
+          }
+        ],
+        "use_layer_multiplier_and_offsets": true,
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r5_coating_layers_fa8aaa1e.zos"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 6,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b3a5f4ab.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r5_coating_layers_fa8aaa1e.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 6,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "a732fae18c704e999608e95343efe87b"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "save_lens_as",
+    "arguments": {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\layers.zos"
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\layers.zos",
+        "artifacts": [
+          {
+            "kind": "lens",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\layers.zos"
+          }
+        ]
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 6,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b3a5f4ab.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r5_coating_layers_fa8aaa1e.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 6,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "3d312951e4304273a04077298226c590"
+      },
+      "artifacts": [
+        {
+          "kind": "lens",
+          "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\layers.zos"
+        }
+      ]
+    }
+  },
+  {
+    "tool": "open_lens",
+    "arguments": {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\layers.zos"
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "source_units": "Watts",
+        "source_unit_prefix": "None",
+        "analysis_units": "WattsPerCMSq",
+        "analysis_unit_prefix": "None",
+        "afocal_image_space": false,
+        "aperture": {
+          "type": "EntrancePupilDiameter",
+          "value": 10.0
+        },
+        "field_type": "Angle",
+        "field_normalization": "Radial",
+        "fields": [
+          {
+            "number": 1,
+            "x": 0.0,
+            "y": 0.0,
+            "weight": 1.0,
+            "vdx": 0.0,
+            "vdy": 0.0,
+            "vcx": 0.0,
+            "vcy": 0.0,
+            "van": 0.0
+          },
+          {
+            "number": 2,
+            "x": 0.0,
+            "y": 14.0,
+            "weight": 1.0,
+            "vdx": 0.0,
+            "vdy": 0.0,
+            "vcx": 0.0,
+            "vcy": 0.0,
+            "van": 0.0
+          },
+          {
+            "number": 3,
+            "x": 0.0,
+            "y": 20.0,
+            "weight": 1.0,
+            "vdx": 0.0,
+            "vdy": 0.0,
+            "vcx": 0.0,
+            "vcy": 0.0,
+            "van": 0.0
+          }
+        ],
+        "wavelength_unit": "micrometers (environmental air reference)",
+        "wavelengths": [
+          {
+            "number": 1,
+            "wavelength_um": 0.48,
+            "weight": 0.800000012,
+            "primary": false
+          },
+          {
+            "number": 2,
+            "wavelength_um": 0.55,
+            "weight": 1.0,
+            "primary": true
+          },
+          {
+            "number": 3,
+            "wavelength_um": 0.65,
+            "weight": 0.800000012,
+            "primary": false
+          }
+        ],
+        "temperature_c": 20.0,
+        "pressure_atm": 1.0,
+        "adjust_index_to_environment": false,
+        "afocal_mode_units": "Milliradians",
+        "settings_activity": {
+          "apodization_factor_is_used": false
+        },
+        "author": "",
+        "aperture_options": {
+          "apodization_type": "Uniform",
+          "apodization_factor": 0.0,
+          "semi_diameter_margin": 0.0,
+          "semi_diameter_margin_pct": 0.0,
+          "telecentric_object_space": false,
+          "afocal_image_space": false,
+          "iterate_solves_when_updating": false,
+          "fast_semi_diameters": true,
+          "check_grin_apertures": false
+        },
+        "advanced": {
+          "reference_opd": "ExitPupil",
+          "paraxial_rays": "IgnoreCoordinateBreaks",
+          "f_num_method": "TracingRays",
+          "dont_print_coordinate_break_data": false,
+          "turn_off_threading": false,
+          "opd_modulo_2pi": false,
+          "include_calculated_data_in_session_file": true,
+          "include_tolerance_data_in_session_file": true,
+          "huygens_integral_method": "Auto"
+        },
+        "global_reference_surface": 1,
+        "material_catalogs": [
+          "SCHOTT"
+        ],
+        "polarization": {
+          "unpolarized": true,
+          "jx": 0.0,
+          "jy": 1.0,
+          "x_phase": 0.0,
+          "y_phase": 0.0,
+          "method": "XAxisMethod",
+          "convert_thin_film_phase": true
+        },
+        "ray_aiming": {
+          "mode": "Off",
+          "method": "Heuristic",
+          "cache": true,
+          "robust": false,
+          "scale_pupil_shift_by_field": false,
+          "auto_pupil_shift": true,
+          "enhanced": false,
+          "advanced_convergence": false,
+          "fallback_search": false,
+          "pupil_shift_x": 0.0,
+          "pupil_shift_y": 0.0,
+          "pupil_shift_z": 0.0,
+          "pupil_compress_x": 0.0,
+          "pupil_compress_y": 0.0,
+          "cache_steps": 10
+        },
+        "files": {
+          "coating_file": "COATING.DAT",
+          "scatter_profile": "SCATTER_PROFILE.DAT",
+          "abg_file": "ABG_DATA.DAT",
+          "gradium_profile": "PROFILE.GRD"
+        },
+        "title": "A SIMPLE COOKE TRIPLET.",
+        "notes": "Notes...\r\n \r\n ",
+        "surface_count": 8,
+        "native_system_status": "",
+        "first_order": {
+          "effective_focal_length": 49.99999950000002,
+          "paraxial_working_f_number": 4.999999950000002,
+          "real_working_f_number": 4.978219667181909,
+          "paraxial_image_height": 18.19851153132502,
+          "paraxial_magnification": 0.0
+        }
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 7,
+        "source_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\layers.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_f57fb8ba.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r6_before_open_72ff3dcc.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 7,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "12f4f314a33c4e459da3596843041272"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1,
+        "count": 1
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surface": 1,
+        "coating": "WAR",
+        "use_layer_multiplier_and_offsets": true,
+        "total": 2,
+        "rows": [
+          {
+            "layer": 1,
+            "thickness_multiplier": 0.9,
+            "index_offset": 0.01,
+            "extinction_offset": 0.001,
+            "thickness_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            }
+          }
+        ],
+        "next_start": 2,
+        "definitions": {
+          "thickness_multiplier": "dimensionless multiplier",
+          "index_offset": "dimensionless refractive index increment",
+          "extinction_offset": "dimensionless extinction coefficient increment"
+        },
+        "source": "ILDECoatingData/ILDECoatingSettings",
+        "activity_source": "UseLayerMultiplierAndOffsets; no per-layer IsActive property in installed interface"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 7,
+        "source_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\layers.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_f57fb8ba.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r6_before_open_72ff3dcc.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 7,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "cad37518da6e4bd58869855492612926"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "update_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1,
+        "layers": [
+          {
+            "layer": 2,
+            "thickness_status": {
+              "mode": "Pickup",
+              "layer": 1
+            },
+            "index_status": {
+              "mode": "Pickup",
+              "layer": 1
+            },
+            "extinction_status": {
+              "mode": "Pickup",
+              "layer": 1
+            }
+          }
+        ]
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surface": 1,
+        "completed_layers": [
+          2
+        ],
+        "before": {
+          "1": {
+            "layer": 1,
+            "thickness_multiplier": 0.9,
+            "index_offset": 0.01,
+            "extinction_offset": 0.001,
+            "thickness_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            }
+          },
+          "2": {
+            "layer": 2,
+            "thickness_multiplier": 1.0,
+            "index_offset": 0.0,
+            "extinction_offset": 0.0,
+            "thickness_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            }
+          }
+        },
+        "after": [
+          {
+            "layer": 2,
+            "thickness_multiplier": 0.9,
+            "index_offset": 0.01,
+            "extinction_offset": 0.001,
+            "thickness_status": {
+              "mode": "Pickup",
+              "pickup_from": 1
+            },
+            "index_status": {
+              "mode": "Pickup",
+              "pickup_from": 1
+            },
+            "extinction_status": {
+              "mode": "Pickup",
+              "pickup_from": 1
+            }
+          }
+        ],
+        "use_layer_multiplier_and_offsets": true,
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r7_coating_layers_950d00bc.zos"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 8,
+        "source_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\layers.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_f57fb8ba.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r7_coating_layers_950d00bc.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 8,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "033df77ef2754966b361bc409b3e7f8f"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "save_lens_as",
+    "arguments": {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\pickup.zos"
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\pickup.zos",
+        "artifacts": [
+          {
+            "kind": "lens",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\pickup.zos"
+          }
+        ]
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 8,
+        "source_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\layers.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_f57fb8ba.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r7_coating_layers_950d00bc.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 8,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "279d3123c8d145599a8b1b731a8296f1"
+      },
+      "artifacts": [
+        {
+          "kind": "lens",
+          "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\pickup.zos"
+        }
+      ]
+    }
+  },
+  {
+    "tool": "open_lens",
+    "arguments": {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\pickup.zos"
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "source_units": "Watts",
+        "source_unit_prefix": "None",
+        "analysis_units": "WattsPerCMSq",
+        "analysis_unit_prefix": "None",
+        "afocal_image_space": false,
+        "aperture": {
+          "type": "EntrancePupilDiameter",
+          "value": 10.0
+        },
+        "field_type": "Angle",
+        "field_normalization": "Radial",
+        "fields": [
+          {
+            "number": 1,
+            "x": 0.0,
+            "y": 0.0,
+            "weight": 1.0,
+            "vdx": 0.0,
+            "vdy": 0.0,
+            "vcx": 0.0,
+            "vcy": 0.0,
+            "van": 0.0
+          },
+          {
+            "number": 2,
+            "x": 0.0,
+            "y": 14.0,
+            "weight": 1.0,
+            "vdx": 0.0,
+            "vdy": 0.0,
+            "vcx": 0.0,
+            "vcy": 0.0,
+            "van": 0.0
+          },
+          {
+            "number": 3,
+            "x": 0.0,
+            "y": 20.0,
+            "weight": 1.0,
+            "vdx": 0.0,
+            "vdy": 0.0,
+            "vcx": 0.0,
+            "vcy": 0.0,
+            "van": 0.0
+          }
+        ],
+        "wavelength_unit": "micrometers (environmental air reference)",
+        "wavelengths": [
+          {
+            "number": 1,
+            "wavelength_um": 0.48,
+            "weight": 0.800000012,
+            "primary": false
+          },
+          {
+            "number": 2,
+            "wavelength_um": 0.55,
+            "weight": 1.0,
+            "primary": true
+          },
+          {
+            "number": 3,
+            "wavelength_um": 0.65,
+            "weight": 0.800000012,
+            "primary": false
+          }
+        ],
+        "temperature_c": 20.0,
+        "pressure_atm": 1.0,
+        "adjust_index_to_environment": false,
+        "afocal_mode_units": "Milliradians",
+        "settings_activity": {
+          "apodization_factor_is_used": false
+        },
+        "author": "",
+        "aperture_options": {
+          "apodization_type": "Uniform",
+          "apodization_factor": 0.0,
+          "semi_diameter_margin": 0.0,
+          "semi_diameter_margin_pct": 0.0,
+          "telecentric_object_space": false,
+          "afocal_image_space": false,
+          "iterate_solves_when_updating": false,
+          "fast_semi_diameters": true,
+          "check_grin_apertures": false
+        },
+        "advanced": {
+          "reference_opd": "ExitPupil",
+          "paraxial_rays": "IgnoreCoordinateBreaks",
+          "f_num_method": "TracingRays",
+          "dont_print_coordinate_break_data": false,
+          "turn_off_threading": false,
+          "opd_modulo_2pi": false,
+          "include_calculated_data_in_session_file": true,
+          "include_tolerance_data_in_session_file": true,
+          "huygens_integral_method": "Auto"
+        },
+        "global_reference_surface": 1,
+        "material_catalogs": [
+          "SCHOTT"
+        ],
+        "polarization": {
+          "unpolarized": true,
+          "jx": 0.0,
+          "jy": 1.0,
+          "x_phase": 0.0,
+          "y_phase": 0.0,
+          "method": "XAxisMethod",
+          "convert_thin_film_phase": true
+        },
+        "ray_aiming": {
+          "mode": "Off",
+          "method": "Heuristic",
+          "cache": true,
+          "robust": false,
+          "scale_pupil_shift_by_field": false,
+          "auto_pupil_shift": true,
+          "enhanced": false,
+          "advanced_convergence": false,
+          "fallback_search": false,
+          "pupil_shift_x": 0.0,
+          "pupil_shift_y": 0.0,
+          "pupil_shift_z": 0.0,
+          "pupil_compress_x": 0.0,
+          "pupil_compress_y": 0.0,
+          "cache_steps": 10
+        },
+        "files": {
+          "coating_file": "COATING.DAT",
+          "scatter_profile": "SCATTER_PROFILE.DAT",
+          "abg_file": "ABG_DATA.DAT",
+          "gradium_profile": "PROFILE.GRD"
+        },
+        "title": "A SIMPLE COOKE TRIPLET.",
+        "notes": "Notes...\r\n \r\n ",
+        "surface_count": 8,
+        "native_system_status": "",
+        "first_order": {
+          "effective_focal_length": 49.99999950000002,
+          "paraxial_working_f_number": 4.999999950000002,
+          "real_working_f_number": 4.978219667181909,
+          "paraxial_image_height": 18.19851153132502,
+          "paraxial_magnification": 0.0
+        }
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 9,
+        "source_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\pickup.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b80a9601.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r8_before_open_3c09dfb6.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 9,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "4e2477d8523b4a7d8be34cb20e34ed71"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1,
+        "start": 2,
+        "count": 1
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surface": 1,
+        "coating": "WAR",
+        "use_layer_multiplier_and_offsets": true,
+        "total": 2,
+        "rows": [
+          {
+            "layer": 2,
+            "thickness_multiplier": 0.9,
+            "index_offset": 0.01,
+            "extinction_offset": 0.001,
+            "thickness_status": {
+              "mode": "Pickup",
+              "pickup_from": 1
+            },
+            "index_status": {
+              "mode": "Pickup",
+              "pickup_from": 1
+            },
+            "extinction_status": {
+              "mode": "Pickup",
+              "pickup_from": 1
+            }
+          }
+        ],
+        "next_start": null,
+        "definitions": {
+          "thickness_multiplier": "dimensionless multiplier",
+          "index_offset": "dimensionless refractive index increment",
+          "extinction_offset": "dimensionless extinction coefficient increment"
+        },
+        "source": "ILDECoatingData/ILDECoatingSettings",
+        "activity_source": "UseLayerMultiplierAndOffsets; no per-layer IsActive property in installed interface"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 9,
+        "source_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\pickup.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b80a9601.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r8_before_open_3c09dfb6.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 9,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "ebf00aeb5ecb4c7e96cc1e909f78e7ef"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "update_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1,
+        "use_layer_multiplier_and_offsets": false
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surface": 1,
+        "completed_layers": [],
+        "before": {
+          "1": {
+            "layer": 1,
+            "thickness_multiplier": 0.9,
+            "index_offset": 0.01,
+            "extinction_offset": 0.001,
+            "thickness_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            }
+          },
+          "2": {
+            "layer": 2,
+            "thickness_multiplier": 0.9,
+            "index_offset": 0.01,
+            "extinction_offset": 0.001,
+            "thickness_status": {
+              "mode": "Pickup",
+              "pickup_from": 1
+            },
+            "index_status": {
+              "mode": "Pickup",
+              "pickup_from": 1
+            },
+            "extinction_status": {
+              "mode": "Pickup",
+              "pickup_from": 1
+            }
+          }
+        },
+        "after": [],
+        "use_layer_multiplier_and_offsets": false,
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r9_coating_layers_dd4b3a91.zos"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 10,
+        "source_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\pickup.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b80a9601.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r9_coating_layers_dd4b3a91.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 10,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "42d3d4e5f1ab4bdea97e4beb009599eb"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1,
+        "count": 2
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surface": 1,
+        "coating": "WAR",
+        "use_layer_multiplier_and_offsets": false,
+        "total": 2,
+        "rows": [
+          {
+            "layer": 1,
+            "thickness_multiplier": 0.9,
+            "index_offset": 0.01,
+            "extinction_offset": 0.001,
+            "thickness_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            }
+          },
+          {
+            "layer": 2,
+            "thickness_multiplier": 0.9,
+            "index_offset": 0.01,
+            "extinction_offset": 0.001,
+            "thickness_status": {
+              "mode": "Pickup",
+              "pickup_from": 1
+            },
+            "index_status": {
+              "mode": "Pickup",
+              "pickup_from": 1
+            },
+            "extinction_status": {
+              "mode": "Pickup",
+              "pickup_from": 1
+            }
+          }
+        ],
+        "next_start": null,
+        "definitions": {
+          "thickness_multiplier": "dimensionless multiplier",
+          "index_offset": "dimensionless refractive index increment",
+          "extinction_offset": "dimensionless extinction coefficient increment"
+        },
+        "source": "ILDECoatingData/ILDECoatingSettings",
+        "activity_source": "UseLayerMultiplierAndOffsets; no per-layer IsActive property in installed interface"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 10,
+        "source_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\pickup.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b80a9601.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r9_coating_layers_dd4b3a91.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 10,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "4f6d9dcea61d4ed1bd96ca4f7b2d882b"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "update_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1,
+        "use_layer_multiplier_and_offsets": true,
+        "layers": [
+          {
+            "layer": 2,
+            "thickness_multiplier": 0.8,
+            "index_offset": 0.02,
+            "extinction_offset": 0.002,
+            "thickness_status": {
+              "mode": "Fixed"
+            },
+            "index_status": {
+              "mode": "Fixed"
+            },
+            "extinction_status": {
+              "mode": "Fixed"
+            }
+          }
+        ]
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surface": 1,
+        "completed_layers": [
+          2
+        ],
+        "before": {
+          "1": {
+            "layer": 1,
+            "thickness_multiplier": 0.9,
+            "index_offset": 0.01,
+            "extinction_offset": 0.001,
+            "thickness_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Variable",
+              "pickup_from": null
+            }
+          },
+          "2": {
+            "layer": 2,
+            "thickness_multiplier": 0.9,
+            "index_offset": 0.01,
+            "extinction_offset": 0.001,
+            "thickness_status": {
+              "mode": "Pickup",
+              "pickup_from": 1
+            },
+            "index_status": {
+              "mode": "Pickup",
+              "pickup_from": 1
+            },
+            "extinction_status": {
+              "mode": "Pickup",
+              "pickup_from": 1
+            }
+          }
+        },
+        "after": [
+          {
+            "layer": 2,
+            "thickness_multiplier": 0.8,
+            "index_offset": 0.02,
+            "extinction_offset": 0.002,
+            "thickness_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            }
+          }
+        ],
+        "use_layer_multiplier_and_offsets": true,
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r10_coating_layers_81ca3748.zos"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 11,
+        "source_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\pickup.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b80a9601.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r10_coating_layers_81ca3748.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 11,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "f0bd4bc0a86d463fb399bcc611211bed"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "save_lens_as",
+    "arguments": {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\fixed.zos"
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\fixed.zos",
+        "artifacts": [
+          {
+            "kind": "lens",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\fixed.zos"
+          }
+        ]
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 11,
+        "source_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\pickup.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_b80a9601.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r10_coating_layers_81ca3748.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 11,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "1542894c155e477a89539d4566d7e53d"
+      },
+      "artifacts": [
+        {
+          "kind": "lens",
+          "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\fixed.zos"
+        }
+      ]
+    }
+  },
+  {
+    "tool": "open_lens",
+    "arguments": {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\fixed.zos"
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "source_units": "Watts",
+        "source_unit_prefix": "None",
+        "analysis_units": "WattsPerCMSq",
+        "analysis_unit_prefix": "None",
+        "afocal_image_space": false,
+        "aperture": {
+          "type": "EntrancePupilDiameter",
+          "value": 10.0
+        },
+        "field_type": "Angle",
+        "field_normalization": "Radial",
+        "fields": [
+          {
+            "number": 1,
+            "x": 0.0,
+            "y": 0.0,
+            "weight": 1.0,
+            "vdx": 0.0,
+            "vdy": 0.0,
+            "vcx": 0.0,
+            "vcy": 0.0,
+            "van": 0.0
+          },
+          {
+            "number": 2,
+            "x": 0.0,
+            "y": 14.0,
+            "weight": 1.0,
+            "vdx": 0.0,
+            "vdy": 0.0,
+            "vcx": 0.0,
+            "vcy": 0.0,
+            "van": 0.0
+          },
+          {
+            "number": 3,
+            "x": 0.0,
+            "y": 20.0,
+            "weight": 1.0,
+            "vdx": 0.0,
+            "vdy": 0.0,
+            "vcx": 0.0,
+            "vcy": 0.0,
+            "van": 0.0
+          }
+        ],
+        "wavelength_unit": "micrometers (environmental air reference)",
+        "wavelengths": [
+          {
+            "number": 1,
+            "wavelength_um": 0.48,
+            "weight": 0.800000012,
+            "primary": false
+          },
+          {
+            "number": 2,
+            "wavelength_um": 0.55,
+            "weight": 1.0,
+            "primary": true
+          },
+          {
+            "number": 3,
+            "wavelength_um": 0.65,
+            "weight": 0.800000012,
+            "primary": false
+          }
+        ],
+        "temperature_c": 20.0,
+        "pressure_atm": 1.0,
+        "adjust_index_to_environment": false,
+        "afocal_mode_units": "Milliradians",
+        "settings_activity": {
+          "apodization_factor_is_used": false
+        },
+        "author": "",
+        "aperture_options": {
+          "apodization_type": "Uniform",
+          "apodization_factor": 0.0,
+          "semi_diameter_margin": 0.0,
+          "semi_diameter_margin_pct": 0.0,
+          "telecentric_object_space": false,
+          "afocal_image_space": false,
+          "iterate_solves_when_updating": false,
+          "fast_semi_diameters": true,
+          "check_grin_apertures": false
+        },
+        "advanced": {
+          "reference_opd": "ExitPupil",
+          "paraxial_rays": "IgnoreCoordinateBreaks",
+          "f_num_method": "TracingRays",
+          "dont_print_coordinate_break_data": false,
+          "turn_off_threading": false,
+          "opd_modulo_2pi": false,
+          "include_calculated_data_in_session_file": true,
+          "include_tolerance_data_in_session_file": true,
+          "huygens_integral_method": "Auto"
+        },
+        "global_reference_surface": 1,
+        "material_catalogs": [
+          "SCHOTT"
+        ],
+        "polarization": {
+          "unpolarized": true,
+          "jx": 0.0,
+          "jy": 1.0,
+          "x_phase": 0.0,
+          "y_phase": 0.0,
+          "method": "XAxisMethod",
+          "convert_thin_film_phase": true
+        },
+        "ray_aiming": {
+          "mode": "Off",
+          "method": "Heuristic",
+          "cache": true,
+          "robust": false,
+          "scale_pupil_shift_by_field": false,
+          "auto_pupil_shift": true,
+          "enhanced": false,
+          "advanced_convergence": false,
+          "fallback_search": false,
+          "pupil_shift_x": 0.0,
+          "pupil_shift_y": 0.0,
+          "pupil_shift_z": 0.0,
+          "pupil_compress_x": 0.0,
+          "pupil_compress_y": 0.0,
+          "cache_steps": 10
+        },
+        "files": {
+          "coating_file": "COATING.DAT",
+          "scatter_profile": "SCATTER_PROFILE.DAT",
+          "abg_file": "ABG_DATA.DAT",
+          "gradium_profile": "PROFILE.GRD"
+        },
+        "title": "A SIMPLE COOKE TRIPLET.",
+        "notes": "Notes...\r\n \r\n ",
+        "surface_count": 8,
+        "native_system_status": "",
+        "first_order": {
+          "effective_focal_length": 49.99999950000002,
+          "paraxial_working_f_number": 4.999999950000002,
+          "real_working_f_number": 4.978219667181909,
+          "paraxial_image_height": 18.19851153132502,
+          "paraxial_magnification": 0.0
+        }
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 12,
+        "source_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\fixed.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_1f724a02.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r11_before_open_b063e275.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 12,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "f04331e2afb34ffabbfd7e4139838365"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_coating_layers",
+    "arguments": {
+      "request": {
+        "surface": 1,
+        "start": 2,
+        "count": 1
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surface": 1,
+        "coating": "WAR",
+        "use_layer_multiplier_and_offsets": true,
+        "total": 2,
+        "rows": [
+          {
+            "layer": 2,
+            "thickness_multiplier": 0.8,
+            "index_offset": 0.02,
+            "extinction_offset": 0.002,
+            "thickness_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "index_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            },
+            "extinction_status": {
+              "mode": "Fixed",
+              "pickup_from": null
+            }
+          }
+        ],
+        "next_start": null,
+        "definitions": {
+          "thickness_multiplier": "dimensionless multiplier",
+          "index_offset": "dimensionless refractive index increment",
+          "extinction_offset": "dimensionless extinction coefficient increment"
+        },
+        "source": "ILDECoatingData/ILDECoatingSettings",
+        "activity_source": "UseLayerMultiplierAndOffsets; no per-layer IsActive property in installed interface"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+        "model_revision": 12,
+        "source_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\fixed.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_1f724a02.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r11_before_open_b063e275.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 12,
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+        },
+        "request_id": "2234a6a59fc54b659569e4699146b798"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "disconnect",
+    "arguments": null,
+    "response": {
+      "ok": true,
+      "data": {
+        "connected": false,
+        "last_session": {
+          "session_id": "0170aa4382b542dba1e4ec8777d42d33",
+          "model_revision": 12,
+          "source_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\fixed.zos",
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\working_1f724a02.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\coating024_layers_758af21bf4\\0170aa4382b542dba1e4ec8777d42d33\\checkpoint_r12_disconnect_a3b990e3.zos",
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 12,
+            "session_id": "0170aa4382b542dba1e4ec8777d42d33"
+          }
+        }
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": null,
+        "model_revision": 12,
+        "source_file": null,
+        "working_file": null,
+        "opticstudio_version": null,
+        "opticstudio_build": null,
+        "license": null,
+        "checkpoint": null,
+        "requires_reconnect": false,
+        "geometry": {
+          "state": "pending",
+          "model_revision": 12,
+          "session_id": null
+        },
+        "request_id": "1d3fb16f46ac47d39c00ad29b96f89f4"
+      },
+      "artifacts": []
+    }
+  }
+]

@@ -1,0 +1,2557 @@
+{
+  "calls": [
+    {
+      "tool": "connect",
+      "arguments": null,
+      "response": {
+        "ok": true,
+        "data": {
+          "connected": true,
+          "native_system_status": "",
+          "native_startup": {
+            "events": [
+              {
+                "stage": "install_check",
+                "event": "started",
+                "timestamp": "2026-11-06T11:27:03.199+00:00",
+                "elapsed_seconds": 6.010000015521655e-05
+              },
+              {
+                "stage": "install_check",
+                "event": "completed",
+                "timestamp": "2026-11-06T11:27:03.200+00:00",
+                "elapsed_seconds": 0.0008961000003182562,
+                "duration_seconds": 0.0008613999998487998
+              },
+              {
+                "stage": "environment",
+                "event": "started",
+                "timestamp": "2026-11-06T11:27:03.200+00:00",
+                "elapsed_seconds": 0.0009207000002788845
+              },
+              {
+                "stage": "environment",
+                "event": "completed",
+                "timestamp": "2026-11-06T11:27:03.284+00:00",
+                "elapsed_seconds": 0.08460009999998874,
+                "duration_seconds": 0.08365970000068046
+              },
+              {
+                "stage": "clr_load",
+                "event": "started",
+                "timestamp": "2026-11-06T11:27:03.284+00:00",
+                "elapsed_seconds": 0.08463080000001355
+              },
+              {
+                "stage": "clr_load",
+                "event": "completed",
+                "timestamp": "2026-11-06T11:27:03.923+00:00",
+                "elapsed_seconds": 0.7241177999994761,
+                "duration_seconds": 0.6394664999997985
+              },
+              {
+                "stage": "nethelper_assembly",
+                "event": "started",
+                "timestamp": "2026-11-06T11:27:03.923+00:00",
+                "elapsed_seconds": 0.7241465999995853
+              },
+              {
+                "stage": "nethelper_assembly",
+                "event": "completed",
+                "timestamp": "2026-11-06T11:27:03.936+00:00",
+                "elapsed_seconds": 0.7366786000002321,
+                "duration_seconds": 0.012520100000074308
+              },
+              {
+                "stage": "zos_initialize",
+                "event": "started",
+                "timestamp": "2026-11-06T11:27:03.936+00:00",
+                "elapsed_seconds": 0.73669609999979
+              },
+              {
+                "stage": "zos_initialize",
+                "event": "completed",
+                "timestamp": "2026-11-06T11:27:03.969+00:00",
+                "elapsed_seconds": 0.7699234000001525,
+                "duration_seconds": 0.03320309999980964
+              },
+              {
+                "stage": "api_assemblies",
+                "event": "started",
+                "timestamp": "2026-11-06T11:27:03.969+00:00",
+                "elapsed_seconds": 0.769950400000198
+              },
+              {
+                "stage": "api_assemblies",
+                "event": "completed",
+                "timestamp": "2026-11-06T11:27:04.006+00:00",
+                "elapsed_seconds": 0.806350900000325,
+                "duration_seconds": 0.03638630000023113
+              },
+              {
+                "stage": "connection_create",
+                "event": "started",
+                "timestamp": "2026-11-06T11:27:04.006+00:00",
+                "elapsed_seconds": 0.8063696999997774
+              },
+              {
+                "stage": "connection_create",
+                "event": "completed",
+                "timestamp": "2026-11-06T11:27:04.863+00:00",
+                "elapsed_seconds": 1.6640152999998463,
+                "duration_seconds": 0.857592399999703
+              },
+              {
+                "stage": "application_create",
+                "event": "started",
+                "timestamp": "2026-11-06T11:27:04.863+00:00",
+                "elapsed_seconds": 1.6640618999999788
+              },
+              {
+                "stage": "application_create",
+                "event": "completed",
+                "timestamp": "2026-11-06T11:27:14.353+00:00",
+                "elapsed_seconds": 11.153676599999926,
+                "duration_seconds": 9.489581499999986
+              },
+              {
+                "stage": "license_check",
+                "event": "started",
+                "timestamp": "2026-11-06T11:27:14.353+00:00",
+                "elapsed_seconds": 11.153718200000185
+              },
+              {
+                "stage": "license_check",
+                "event": "completed",
+                "timestamp": "2026-11-06T11:27:14.357+00:00",
+                "elapsed_seconds": 11.157678499999747,
+                "duration_seconds": 0.003926999999748659
+              },
+              {
+                "stage": "primary_system",
+                "event": "started",
+                "timestamp": "2026-11-06T11:27:14.357+00:00",
+                "elapsed_seconds": 11.157721300000048
+              },
+              {
+                "stage": "primary_system",
+                "event": "completed",
+                "timestamp": "2026-11-06T11:27:14.364+00:00",
+                "elapsed_seconds": 11.164764199999809,
+                "duration_seconds": 0.007010700000137149
+              }
+            ],
+            "observer_warnings": []
+          },
+          "active_task": null,
+          "running_tasks": [],
+          "task_index": {},
+          "recent_tasks": [],
+          "session_id": "f7a73bb6720749bd80f03296de6c1db6",
+          "model_revision": 0,
+          "source_file": null,
+          "working_file": null,
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": null,
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 0,
+            "session_id": "f7a73bb6720749bd80f03296de6c1db6"
+          }
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": "f7a73bb6720749bd80f03296de6c1db6",
+          "model_revision": 0,
+          "source_file": null,
+          "working_file": null,
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": null,
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 0,
+            "session_id": "f7a73bb6720749bd80f03296de6c1db6"
+          }
+        },
+        "artifacts": []
+      }
+    },
+    {
+      "tool": "new_system",
+      "arguments": null,
+      "response": {
+        "ok": true,
+        "data": {
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "source_units": "Watts",
+          "source_unit_prefix": "None",
+          "analysis_units": "WattsPerCMSq",
+          "analysis_unit_prefix": "None",
+          "afocal_image_space": false,
+          "aperture": {
+            "type": "EntrancePupilDiameter",
+            "value": 0.0
+          },
+          "field_type": "Angle",
+          "field_normalization": "Radial",
+          "fields": [
+            {
+              "number": 1,
+              "x": 0.0,
+              "y": 0.0,
+              "weight": 1.0,
+              "vdx": 0.0,
+              "vdy": 0.0,
+              "vcx": 0.0,
+              "vcy": 0.0,
+              "van": 0.0
+            }
+          ],
+          "wavelength_unit": "micrometers (environmental air reference)",
+          "wavelengths": [
+            {
+              "number": 1,
+              "wavelength_um": 0.55,
+              "weight": 1.0,
+              "primary": true
+            }
+          ],
+          "temperature_c": 20.0,
+          "pressure_atm": 1.0,
+          "adjust_index_to_environment": false,
+          "afocal_mode_units": "Milliradians",
+          "settings_activity": {
+            "apodization_factor_is_used": false
+          },
+          "author": "",
+          "aperture_options": {
+            "apodization_type": "Uniform",
+            "apodization_factor": 0.0,
+            "semi_diameter_margin": 0.0,
+            "semi_diameter_margin_pct": 0.0,
+            "telecentric_object_space": false,
+            "afocal_image_space": false,
+            "iterate_solves_when_updating": false,
+            "fast_semi_diameters": true,
+            "check_grin_apertures": false
+          },
+          "advanced": {
+            "reference_opd": "ExitPupil",
+            "paraxial_rays": "IgnoreCoordinateBreaks",
+            "f_num_method": "TracingRays",
+            "dont_print_coordinate_break_data": false,
+            "turn_off_threading": false,
+            "opd_modulo_2pi": false,
+            "include_calculated_data_in_session_file": true,
+            "include_tolerance_data_in_session_file": true,
+            "huygens_integral_method": "Auto"
+          },
+          "global_reference_surface": 1,
+          "material_catalogs": [
+            "SCHOTT"
+          ],
+          "polarization": {
+            "unpolarized": true,
+            "jx": 0.0,
+            "jy": 1.0,
+            "x_phase": 0.0,
+            "y_phase": 0.0,
+            "method": "XAxisMethod",
+            "convert_thin_film_phase": true
+          },
+          "ray_aiming": {
+            "mode": "Off",
+            "method": "Heuristic",
+            "cache": true,
+            "robust": false,
+            "scale_pupil_shift_by_field": false,
+            "auto_pupil_shift": true,
+            "enhanced": false,
+            "advanced_convergence": false,
+            "fallback_search": false,
+            "pupil_shift_x": 0.0,
+            "pupil_shift_y": 0.0,
+            "pupil_shift_z": 0.0,
+            "pupil_compress_x": 0.0,
+            "pupil_compress_y": 0.0,
+            "cache_steps": 10
+          },
+          "files": {
+            "coating_file": "COATING.DAT",
+            "scatter_profile": "SCATTER_PROFILE.DAT",
+            "abg_file": "ABG_DATA.DAT",
+            "gradium_profile": "PROFILE.GRD"
+          },
+          "title": "",
+          "notes": "",
+          "surface_count": 3,
+          "native_system_status": "",
+          "first_order": {
+            "effective_focal_length": 10000000000.0,
+            "paraxial_working_f_number": 10000.0,
+            "real_working_f_number": 10000.0,
+            "paraxial_image_height": 0.0,
+            "paraxial_magnification": 0.0
+          }
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": "f7a73bb6720749bd80f03296de6c1db6",
+          "model_revision": 1,
+          "source_file": null,
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\ED-04\\ray-aiming276\\native\\f7a73bb6720749bd80f03296de6c1db6\\working_5bc57232.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": null,
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 1,
+            "session_id": "f7a73bb6720749bd80f03296de6c1db6"
+          }
+        },
+        "artifacts": []
+      }
+    },
+    {
+      "tool": "insert_surfaces",
+      "arguments": {
+        "at": 1,
+        "count": 2
+      },
+      "response": {
+        "ok": true,
+        "data": {
+          "inserted_at": 1,
+          "count": 2,
+          "total": 5
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": "f7a73bb6720749bd80f03296de6c1db6",
+          "model_revision": 2,
+          "source_file": null,
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\ED-04\\ray-aiming276\\native\\f7a73bb6720749bd80f03296de6c1db6\\working_5bc57232.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\ED-04\\ray-aiming276\\native\\f7a73bb6720749bd80f03296de6c1db6\\checkpoint_r1_insert_d1652df6.zos",
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 2,
+            "session_id": "f7a73bb6720749bd80f03296de6c1db6"
+          }
+        },
+        "artifacts": []
+      }
+    },
+    {
+      "tool": "update_system_settings",
+      "arguments": {
+        "aperture_value": 2,
+        "wavelengths": [
+          {
+            "wavelength_um": 0.55
+          }
+        ]
+      },
+      "response": {
+        "ok": true,
+        "data": {
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "source_units": "Watts",
+          "source_unit_prefix": "None",
+          "analysis_units": "WattsPerCMSq",
+          "analysis_unit_prefix": "None",
+          "afocal_image_space": false,
+          "aperture": {
+            "type": "EntrancePupilDiameter",
+            "value": 2.0
+          },
+          "field_type": "Angle",
+          "field_normalization": "Radial",
+          "fields": [
+            {
+              "number": 1,
+              "x": 0.0,
+              "y": 0.0,
+              "weight": 1.0,
+              "vdx": 0.0,
+              "vdy": 0.0,
+              "vcx": 0.0,
+              "vcy": 0.0,
+              "van": 0.0
+            }
+          ],
+          "wavelength_unit": "micrometers (environmental air reference)",
+          "wavelengths": [
+            {
+              "number": 1,
+              "wavelength_um": 0.55,
+              "weight": 1.0,
+              "primary": true
+            }
+          ],
+          "temperature_c": 20.0,
+          "pressure_atm": 1.0,
+          "adjust_index_to_environment": false,
+          "afocal_mode_units": "Milliradians",
+          "settings_activity": {
+            "apodization_factor_is_used": false
+          },
+          "author": "",
+          "aperture_options": {
+            "apodization_type": "Uniform",
+            "apodization_factor": 0.0,
+            "semi_diameter_margin": 0.0,
+            "semi_diameter_margin_pct": 0.0,
+            "telecentric_object_space": false,
+            "afocal_image_space": false,
+            "iterate_solves_when_updating": false,
+            "fast_semi_diameters": true,
+            "check_grin_apertures": false
+          },
+          "advanced": {
+            "reference_opd": "ExitPupil",
+            "paraxial_rays": "IgnoreCoordinateBreaks",
+            "f_num_method": "TracingRays",
+            "dont_print_coordinate_break_data": false,
+            "turn_off_threading": false,
+            "opd_modulo_2pi": false,
+            "include_calculated_data_in_session_file": true,
+            "include_tolerance_data_in_session_file": true,
+            "huygens_integral_method": "Auto"
+          },
+          "global_reference_surface": 3,
+          "material_catalogs": [
+            "SCHOTT"
+          ],
+          "polarization": {
+            "unpolarized": true,
+            "jx": 0.0,
+            "jy": 1.0,
+            "x_phase": 0.0,
+            "y_phase": 0.0,
+            "method": "XAxisMethod",
+            "convert_thin_film_phase": true
+          },
+          "ray_aiming": {
+            "mode": "Off",
+            "method": "Heuristic",
+            "cache": true,
+            "robust": false,
+            "scale_pupil_shift_by_field": false,
+            "auto_pupil_shift": true,
+            "enhanced": false,
+            "advanced_convergence": false,
+            "fallback_search": false,
+            "pupil_shift_x": 0.0,
+            "pupil_shift_y": 0.0,
+            "pupil_shift_z": 0.0,
+            "pupil_compress_x": 0.0,
+            "pupil_compress_y": 0.0,
+            "cache_steps": 10
+          },
+          "files": {
+            "coating_file": "COATING.DAT",
+            "scatter_profile": "SCATTER_PROFILE.DAT",
+            "abg_file": "ABG_DATA.DAT",
+            "gradium_profile": "PROFILE.GRD"
+          },
+          "title": "",
+          "notes": ""
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": "f7a73bb6720749bd80f03296de6c1db6",
+          "model_revision": 3,
+          "source_file": null,
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\ED-04\\ray-aiming276\\native\\f7a73bb6720749bd80f03296de6c1db6\\working_5bc57232.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\ED-04\\ray-aiming276\\native\\f7a73bb6720749bd80f03296de6c1db6\\checkpoint_r2_settings_8e36fe91.zos",
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 3,
+            "session_id": "f7a73bb6720749bd80f03296de6c1db6"
+          }
+        },
+        "artifacts": []
+      }
+    },
+    {
+      "tool": "update_surfaces",
+      "arguments": {
+        "changes": [
+          {
+            "surface": 1,
+            "radius": 50,
+            "thickness": 5,
+            "material": "N-BK7",
+            "semi_diameter": 2,
+            "replace_solves": true
+          },
+          {
+            "surface": 2,
+            "radius": -50,
+            "thickness": 47,
+            "semi_diameter": 2,
+            "replace_solves": true
+          }
+        ]
+      },
+      "response": {
+        "ok": true,
+        "data": {
+          "surfaces": [
+            {
+              "surface": 1,
+              "surface_type": "Standard",
+              "comment": "",
+              "is_object": false,
+              "is_image": false,
+              "is_stop": false,
+              "cells": {
+                "radius": {
+                  "value": 50.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "曲率半径",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "MarginalRayAngle",
+                    "ChiefRayAngle",
+                    "MarginalRayNormal",
+                    "ChiefRayNormal",
+                    "Aplanatic",
+                    "ElementPower",
+                    "CocentricSurface",
+                    "CocentricSurface",
+                    "CocentricRadius",
+                    "CocentricRadius",
+                    "FNumber"
+                  ]
+                },
+                "thickness": {
+                  "value": 5.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "厚度",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "MarginalRayHeight",
+                    "ChiefRayHeight",
+                    "EdgeThickness",
+                    "OpticalPathDifference",
+                    "Position",
+                    "Compensator",
+                    "CenterOfCurvature",
+                    "PupilPosition"
+                  ]
+                },
+                "material": {
+                  "value": "N-BK7",
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "材料",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "MaterialSubstitute",
+                    "MaterialOffset",
+                    "MaterialModel"
+                  ]
+                },
+                "semi_diameter": {
+                  "value": 2.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "净口径",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic",
+                    "Maximum"
+                  ]
+                },
+                "conic": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "圆锥系数",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro"
+                  ]
+                },
+                "tce": {
+                  "value": "Infinity",
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": false,
+                  "header": "TCE x 1E-6",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup"
+                  ]
+                },
+                "mechanical_semi_diameter": {
+                  "value": 2.0,
+                  "solve": {
+                    "type": "Automatic"
+                  },
+                  "writable": true,
+                  "header": "机械半直径",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic"
+                  ]
+                },
+                "chip_zone": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Automatic"
+                  },
+                  "writable": true,
+                  "header": "延伸区",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic"
+                  ]
+                }
+              },
+              "properties": {
+                "property_activity": {
+                  "has_mirror_settings": false,
+                  "can_be_stop": true,
+                  "can_be_gcr": true
+                },
+                "scattering": {
+                  "type": "None"
+                },
+                "drawing": {
+                  "hide_rays_to_this_surface": false,
+                  "skip_rays_to_this_surface": false,
+                  "do_not_draw_this_surface": false,
+                  "do_not_draw_edges_from_this_surface": false,
+                  "draw_local_axis": false,
+                  "draw_edges_as": "Squared",
+                  "mirror_substrate": "Curved",
+                  "mirror_thickness": 0.0
+                },
+                "type_properties": {
+                  "surface_color": "Default",
+                  "surface_opacity": "P100",
+                  "row_color": "Default",
+                  "ignore_surface": false,
+                  "surface_cannot_be_hyperhemispheric": false
+                },
+                "composite": {
+                  "is_composite_surface": false
+                },
+                "physical_optics": {
+                  "use_rays_to_propagate_to_next_surface": false,
+                  "do_not_rescale_beam_size_using_ray_data": false,
+                  "use_angular_spectrum_propagator": false,
+                  "draw_this_lens_on_shaded_model": false,
+                  "re_compute_pilot_beam_parameters": false,
+                  "use_xaxis_reference": false,
+                  "resample_after_refraction": false,
+                  "auto_resample": false,
+                  "x_sampling": "S32",
+                  "y_sampling": "S32",
+                  "x_width": 1.0,
+                  "y_width": 1.0,
+                  "output_pilot_radius": "BestFit",
+                  "x_radius": 0.0,
+                  "y_radius": 0.0
+                },
+                "disable_clear_semi_diameter_margins": false,
+                "surface_file": null,
+                "coating": "",
+                "material_catalog": "SCHOTT.AGF",
+                "mechanical": {
+                  "mechanical_semi_diameter": {
+                    "value": 2.0,
+                    "solve": "Automatic"
+                  },
+                  "chip_zone": {
+                    "value": 0.0,
+                    "solve": "Automatic"
+                  }
+                },
+                "aperture": {
+                  "type": "FloatingAperture",
+                  "pickup_from": null
+                },
+                "tilt_decenter": {
+                  "before_order": "Decenter_Tilt",
+                  "before_decenter_x": 0.0,
+                  "before_decenter_y": 0.0,
+                  "before_tilt_x": 0.0,
+                  "before_tilt_y": 0.0,
+                  "before_tilt_z": 0.0,
+                  "after_order": "Decenter_Tilt",
+                  "after_decenter_x": 0.0,
+                  "after_decenter_y": 0.0,
+                  "after_tilt_x": 0.0,
+                  "after_tilt_y": 0.0,
+                  "after_tilt_z": 0.0,
+                  "after_mode": "Explicit"
+                }
+              }
+            },
+            {
+              "surface": 2,
+              "surface_type": "Standard",
+              "comment": "",
+              "is_object": false,
+              "is_image": false,
+              "is_stop": false,
+              "cells": {
+                "radius": {
+                  "value": -50.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "曲率半径",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "MarginalRayAngle",
+                    "ChiefRayAngle",
+                    "MarginalRayNormal",
+                    "ChiefRayNormal",
+                    "Aplanatic",
+                    "ElementPower",
+                    "CocentricSurface",
+                    "CocentricSurface",
+                    "CocentricRadius",
+                    "CocentricRadius",
+                    "FNumber"
+                  ]
+                },
+                "thickness": {
+                  "value": 47.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "厚度",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "MarginalRayHeight",
+                    "ChiefRayHeight",
+                    "EdgeThickness",
+                    "OpticalPathDifference",
+                    "Position",
+                    "Compensator",
+                    "CenterOfCurvature",
+                    "PupilPosition"
+                  ]
+                },
+                "material": {
+                  "value": "",
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "材料",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "MaterialSubstitute",
+                    "MaterialOffset",
+                    "MaterialModel"
+                  ]
+                },
+                "semi_diameter": {
+                  "value": 2.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "净口径",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic",
+                    "Maximum"
+                  ]
+                },
+                "conic": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "圆锥系数",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro"
+                  ]
+                },
+                "tce": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "TCE x 1E-6",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup"
+                  ]
+                },
+                "mechanical_semi_diameter": {
+                  "value": 2.0,
+                  "solve": {
+                    "type": "Automatic"
+                  },
+                  "writable": true,
+                  "header": "机械半直径",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic"
+                  ]
+                },
+                "chip_zone": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Automatic"
+                  },
+                  "writable": true,
+                  "header": "延伸区",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic"
+                  ]
+                }
+              },
+              "properties": {
+                "property_activity": {
+                  "has_mirror_settings": false,
+                  "can_be_stop": true,
+                  "can_be_gcr": true
+                },
+                "scattering": {
+                  "type": "None"
+                },
+                "drawing": {
+                  "hide_rays_to_this_surface": false,
+                  "skip_rays_to_this_surface": false,
+                  "do_not_draw_this_surface": false,
+                  "do_not_draw_edges_from_this_surface": false,
+                  "draw_local_axis": false,
+                  "draw_edges_as": "Squared",
+                  "mirror_substrate": "Curved",
+                  "mirror_thickness": 0.0
+                },
+                "type_properties": {
+                  "surface_color": "Default",
+                  "surface_opacity": "P100",
+                  "row_color": "Default",
+                  "ignore_surface": false,
+                  "surface_cannot_be_hyperhemispheric": false
+                },
+                "composite": {
+                  "is_composite_surface": false
+                },
+                "physical_optics": {
+                  "use_rays_to_propagate_to_next_surface": false,
+                  "do_not_rescale_beam_size_using_ray_data": false,
+                  "use_angular_spectrum_propagator": false,
+                  "draw_this_lens_on_shaded_model": false,
+                  "re_compute_pilot_beam_parameters": false,
+                  "use_xaxis_reference": false,
+                  "resample_after_refraction": false,
+                  "auto_resample": false,
+                  "x_sampling": "S32",
+                  "y_sampling": "S32",
+                  "x_width": 1.0,
+                  "y_width": 1.0,
+                  "output_pilot_radius": "BestFit",
+                  "x_radius": 0.0,
+                  "y_radius": 0.0
+                },
+                "disable_clear_semi_diameter_margins": false,
+                "surface_file": null,
+                "coating": "",
+                "material_catalog": null,
+                "mechanical": {
+                  "mechanical_semi_diameter": {
+                    "value": 2.0,
+                    "solve": "Automatic"
+                  },
+                  "chip_zone": {
+                    "value": 0.0,
+                    "solve": "Automatic"
+                  }
+                },
+                "aperture": {
+                  "type": "FloatingAperture",
+                  "pickup_from": null
+                },
+                "tilt_decenter": {
+                  "before_order": "Decenter_Tilt",
+                  "before_decenter_x": 0.0,
+                  "before_decenter_y": 0.0,
+                  "before_tilt_x": 0.0,
+                  "before_tilt_y": 0.0,
+                  "before_tilt_z": 0.0,
+                  "after_order": "Decenter_Tilt",
+                  "after_decenter_x": 0.0,
+                  "after_decenter_y": 0.0,
+                  "after_tilt_x": 0.0,
+                  "after_tilt_y": 0.0,
+                  "after_tilt_z": 0.0,
+                  "after_mode": "Explicit"
+                }
+              }
+            }
+          ]
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": "f7a73bb6720749bd80f03296de6c1db6",
+          "model_revision": 4,
+          "source_file": null,
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\ED-04\\ray-aiming276\\native\\f7a73bb6720749bd80f03296de6c1db6\\working_5bc57232.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\ED-04\\ray-aiming276\\native\\f7a73bb6720749bd80f03296de6c1db6\\checkpoint_r3_surfaces_0fe81058.zos",
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 4,
+            "session_id": "f7a73bb6720749bd80f03296de6c1db6"
+          }
+        },
+        "artifacts": []
+      }
+    },
+    {
+      "tool": "get_surfaces",
+      "arguments": null,
+      "response": {
+        "ok": true,
+        "data": {
+          "total": 5,
+          "surfaces": [
+            {
+              "surface": 0,
+              "surface_type": "Standard",
+              "comment": "",
+              "is_object": true,
+              "is_image": false,
+              "is_stop": false,
+              "cells": {
+                "radius": {
+                  "value": "Infinity",
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "曲率半径",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "MarginalRayAngle",
+                    "ChiefRayAngle",
+                    "MarginalRayNormal",
+                    "ChiefRayNormal",
+                    "Aplanatic",
+                    "ElementPower",
+                    "CocentricSurface",
+                    "CocentricSurface",
+                    "CocentricRadius",
+                    "CocentricRadius",
+                    "FNumber"
+                  ]
+                },
+                "thickness": {
+                  "value": "Infinity",
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "厚度",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "MarginalRayHeight",
+                    "ChiefRayHeight",
+                    "EdgeThickness",
+                    "OpticalPathDifference",
+                    "Position",
+                    "Compensator",
+                    "CenterOfCurvature",
+                    "PupilPosition"
+                  ]
+                },
+                "material": {
+                  "value": "",
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "材料",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "MaterialSubstitute",
+                    "MaterialOffset",
+                    "MaterialModel"
+                  ]
+                },
+                "semi_diameter": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Automatic"
+                  },
+                  "writable": true,
+                  "header": "净口径",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic",
+                    "Maximum"
+                  ]
+                },
+                "conic": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "圆锥系数",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro"
+                  ]
+                },
+                "tce": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "TCE x 1E-6",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup"
+                  ]
+                },
+                "mechanical_semi_diameter": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Automatic"
+                  },
+                  "writable": true,
+                  "header": "机械半直径",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic"
+                  ]
+                },
+                "chip_zone": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Automatic"
+                  },
+                  "writable": true,
+                  "header": "延伸区",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic"
+                  ]
+                }
+              },
+              "properties": {
+                "property_activity": {
+                  "has_mirror_settings": false,
+                  "can_be_stop": false,
+                  "can_be_gcr": true
+                },
+                "scattering": {
+                  "type": "None"
+                },
+                "drawing": {
+                  "hide_rays_to_this_surface": false,
+                  "skip_rays_to_this_surface": false,
+                  "do_not_draw_this_surface": false,
+                  "do_not_draw_edges_from_this_surface": false,
+                  "draw_local_axis": false,
+                  "draw_edges_as": "Squared",
+                  "mirror_substrate": "Curved",
+                  "mirror_thickness": 0.0
+                },
+                "type_properties": {
+                  "surface_color": "Default",
+                  "surface_opacity": "P100",
+                  "row_color": "Default",
+                  "ignore_surface": false,
+                  "surface_cannot_be_hyperhemispheric": false
+                },
+                "composite": {
+                  "is_composite_surface": false
+                },
+                "physical_optics": {
+                  "use_rays_to_propagate_to_next_surface": false,
+                  "do_not_rescale_beam_size_using_ray_data": false,
+                  "use_angular_spectrum_propagator": false,
+                  "draw_this_lens_on_shaded_model": false,
+                  "re_compute_pilot_beam_parameters": false,
+                  "use_xaxis_reference": false,
+                  "resample_after_refraction": false,
+                  "auto_resample": false,
+                  "x_sampling": "S32",
+                  "y_sampling": "S32",
+                  "x_width": 1.0,
+                  "y_width": 1.0,
+                  "output_pilot_radius": "BestFit",
+                  "x_radius": 0.0,
+                  "y_radius": 0.0
+                },
+                "disable_clear_semi_diameter_margins": false,
+                "surface_file": null,
+                "coating": "",
+                "material_catalog": null,
+                "mechanical": {
+                  "mechanical_semi_diameter": {
+                    "value": 0.0,
+                    "solve": "Automatic"
+                  },
+                  "chip_zone": {
+                    "value": 0.0,
+                    "solve": "Automatic"
+                  }
+                },
+                "aperture": {
+                  "type": "None",
+                  "pickup_from": null
+                },
+                "tilt_decenter": {
+                  "before_order": "Decenter_Tilt",
+                  "before_decenter_x": 0.0,
+                  "before_decenter_y": 0.0,
+                  "before_tilt_x": 0.0,
+                  "before_tilt_y": 0.0,
+                  "before_tilt_z": 0.0,
+                  "after_order": "Decenter_Tilt",
+                  "after_decenter_x": 0.0,
+                  "after_decenter_y": 0.0,
+                  "after_tilt_x": 0.0,
+                  "after_tilt_y": 0.0,
+                  "after_tilt_z": 0.0,
+                  "after_mode": "Explicit"
+                }
+              }
+            },
+            {
+              "surface": 1,
+              "surface_type": "Standard",
+              "comment": "",
+              "is_object": false,
+              "is_image": false,
+              "is_stop": false,
+              "cells": {
+                "radius": {
+                  "value": 50.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "曲率半径",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "MarginalRayAngle",
+                    "ChiefRayAngle",
+                    "MarginalRayNormal",
+                    "ChiefRayNormal",
+                    "Aplanatic",
+                    "ElementPower",
+                    "CocentricSurface",
+                    "CocentricSurface",
+                    "CocentricRadius",
+                    "CocentricRadius",
+                    "FNumber"
+                  ]
+                },
+                "thickness": {
+                  "value": 5.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "厚度",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "MarginalRayHeight",
+                    "ChiefRayHeight",
+                    "EdgeThickness",
+                    "OpticalPathDifference",
+                    "Position",
+                    "Compensator",
+                    "CenterOfCurvature",
+                    "PupilPosition"
+                  ]
+                },
+                "material": {
+                  "value": "N-BK7",
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "材料",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "MaterialSubstitute",
+                    "MaterialOffset",
+                    "MaterialModel"
+                  ]
+                },
+                "semi_diameter": {
+                  "value": 2.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "净口径",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic",
+                    "Maximum"
+                  ]
+                },
+                "conic": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "圆锥系数",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro"
+                  ]
+                },
+                "tce": {
+                  "value": "Infinity",
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": false,
+                  "header": "TCE x 1E-6",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup"
+                  ]
+                },
+                "mechanical_semi_diameter": {
+                  "value": 2.0,
+                  "solve": {
+                    "type": "Automatic"
+                  },
+                  "writable": true,
+                  "header": "机械半直径",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic"
+                  ]
+                },
+                "chip_zone": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Automatic"
+                  },
+                  "writable": true,
+                  "header": "延伸区",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic"
+                  ]
+                }
+              },
+              "properties": {
+                "property_activity": {
+                  "has_mirror_settings": false,
+                  "can_be_stop": true,
+                  "can_be_gcr": true
+                },
+                "scattering": {
+                  "type": "None"
+                },
+                "drawing": {
+                  "hide_rays_to_this_surface": false,
+                  "skip_rays_to_this_surface": false,
+                  "do_not_draw_this_surface": false,
+                  "do_not_draw_edges_from_this_surface": false,
+                  "draw_local_axis": false,
+                  "draw_edges_as": "Squared",
+                  "mirror_substrate": "Curved",
+                  "mirror_thickness": 0.0
+                },
+                "type_properties": {
+                  "surface_color": "Default",
+                  "surface_opacity": "P100",
+                  "row_color": "Default",
+                  "ignore_surface": false,
+                  "surface_cannot_be_hyperhemispheric": false
+                },
+                "composite": {
+                  "is_composite_surface": false
+                },
+                "physical_optics": {
+                  "use_rays_to_propagate_to_next_surface": false,
+                  "do_not_rescale_beam_size_using_ray_data": false,
+                  "use_angular_spectrum_propagator": false,
+                  "draw_this_lens_on_shaded_model": false,
+                  "re_compute_pilot_beam_parameters": false,
+                  "use_xaxis_reference": false,
+                  "resample_after_refraction": false,
+                  "auto_resample": false,
+                  "x_sampling": "S32",
+                  "y_sampling": "S32",
+                  "x_width": 1.0,
+                  "y_width": 1.0,
+                  "output_pilot_radius": "BestFit",
+                  "x_radius": 0.0,
+                  "y_radius": 0.0
+                },
+                "disable_clear_semi_diameter_margins": false,
+                "surface_file": null,
+                "coating": "",
+                "material_catalog": "SCHOTT.AGF",
+                "mechanical": {
+                  "mechanical_semi_diameter": {
+                    "value": 2.0,
+                    "solve": "Automatic"
+                  },
+                  "chip_zone": {
+                    "value": 0.0,
+                    "solve": "Automatic"
+                  }
+                },
+                "aperture": {
+                  "type": "FloatingAperture",
+                  "pickup_from": null
+                },
+                "tilt_decenter": {
+                  "before_order": "Decenter_Tilt",
+                  "before_decenter_x": 0.0,
+                  "before_decenter_y": 0.0,
+                  "before_tilt_x": 0.0,
+                  "before_tilt_y": 0.0,
+                  "before_tilt_z": 0.0,
+                  "after_order": "Decenter_Tilt",
+                  "after_decenter_x": 0.0,
+                  "after_decenter_y": 0.0,
+                  "after_tilt_x": 0.0,
+                  "after_tilt_y": 0.0,
+                  "after_tilt_z": 0.0,
+                  "after_mode": "Explicit"
+                }
+              }
+            },
+            {
+              "surface": 2,
+              "surface_type": "Standard",
+              "comment": "",
+              "is_object": false,
+              "is_image": false,
+              "is_stop": false,
+              "cells": {
+                "radius": {
+                  "value": -50.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "曲率半径",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "MarginalRayAngle",
+                    "ChiefRayAngle",
+                    "MarginalRayNormal",
+                    "ChiefRayNormal",
+                    "Aplanatic",
+                    "ElementPower",
+                    "CocentricSurface",
+                    "CocentricSurface",
+                    "CocentricRadius",
+                    "CocentricRadius",
+                    "FNumber"
+                  ]
+                },
+                "thickness": {
+                  "value": 47.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "厚度",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "MarginalRayHeight",
+                    "ChiefRayHeight",
+                    "EdgeThickness",
+                    "OpticalPathDifference",
+                    "Position",
+                    "Compensator",
+                    "CenterOfCurvature",
+                    "PupilPosition"
+                  ]
+                },
+                "material": {
+                  "value": "",
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "材料",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "MaterialSubstitute",
+                    "MaterialOffset",
+                    "MaterialModel"
+                  ]
+                },
+                "semi_diameter": {
+                  "value": 2.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "净口径",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic",
+                    "Maximum"
+                  ]
+                },
+                "conic": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "圆锥系数",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro"
+                  ]
+                },
+                "tce": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "TCE x 1E-6",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup"
+                  ]
+                },
+                "mechanical_semi_diameter": {
+                  "value": 2.0,
+                  "solve": {
+                    "type": "Automatic"
+                  },
+                  "writable": true,
+                  "header": "机械半直径",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic"
+                  ]
+                },
+                "chip_zone": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Automatic"
+                  },
+                  "writable": true,
+                  "header": "延伸区",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic"
+                  ]
+                }
+              },
+              "properties": {
+                "property_activity": {
+                  "has_mirror_settings": false,
+                  "can_be_stop": true,
+                  "can_be_gcr": true
+                },
+                "scattering": {
+                  "type": "None"
+                },
+                "drawing": {
+                  "hide_rays_to_this_surface": false,
+                  "skip_rays_to_this_surface": false,
+                  "do_not_draw_this_surface": false,
+                  "do_not_draw_edges_from_this_surface": false,
+                  "draw_local_axis": false,
+                  "draw_edges_as": "Squared",
+                  "mirror_substrate": "Curved",
+                  "mirror_thickness": 0.0
+                },
+                "type_properties": {
+                  "surface_color": "Default",
+                  "surface_opacity": "P100",
+                  "row_color": "Default",
+                  "ignore_surface": false,
+                  "surface_cannot_be_hyperhemispheric": false
+                },
+                "composite": {
+                  "is_composite_surface": false
+                },
+                "physical_optics": {
+                  "use_rays_to_propagate_to_next_surface": false,
+                  "do_not_rescale_beam_size_using_ray_data": false,
+                  "use_angular_spectrum_propagator": false,
+                  "draw_this_lens_on_shaded_model": false,
+                  "re_compute_pilot_beam_parameters": false,
+                  "use_xaxis_reference": false,
+                  "resample_after_refraction": false,
+                  "auto_resample": false,
+                  "x_sampling": "S32",
+                  "y_sampling": "S32",
+                  "x_width": 1.0,
+                  "y_width": 1.0,
+                  "output_pilot_radius": "BestFit",
+                  "x_radius": 0.0,
+                  "y_radius": 0.0
+                },
+                "disable_clear_semi_diameter_margins": false,
+                "surface_file": null,
+                "coating": "",
+                "material_catalog": null,
+                "mechanical": {
+                  "mechanical_semi_diameter": {
+                    "value": 2.0,
+                    "solve": "Automatic"
+                  },
+                  "chip_zone": {
+                    "value": 0.0,
+                    "solve": "Automatic"
+                  }
+                },
+                "aperture": {
+                  "type": "FloatingAperture",
+                  "pickup_from": null
+                },
+                "tilt_decenter": {
+                  "before_order": "Decenter_Tilt",
+                  "before_decenter_x": 0.0,
+                  "before_decenter_y": 0.0,
+                  "before_tilt_x": 0.0,
+                  "before_tilt_y": 0.0,
+                  "before_tilt_z": 0.0,
+                  "after_order": "Decenter_Tilt",
+                  "after_decenter_x": 0.0,
+                  "after_decenter_y": 0.0,
+                  "after_tilt_x": 0.0,
+                  "after_tilt_y": 0.0,
+                  "after_tilt_z": 0.0,
+                  "after_mode": "Explicit"
+                }
+              }
+            },
+            {
+              "surface": 3,
+              "surface_type": "Standard",
+              "comment": "",
+              "is_object": false,
+              "is_image": false,
+              "is_stop": true,
+              "cells": {
+                "radius": {
+                  "value": "Infinity",
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "曲率半径",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "MarginalRayAngle",
+                    "ChiefRayAngle",
+                    "MarginalRayNormal",
+                    "ChiefRayNormal",
+                    "Aplanatic",
+                    "ElementPower",
+                    "CocentricSurface",
+                    "CocentricSurface",
+                    "CocentricRadius",
+                    "CocentricRadius",
+                    "FNumber"
+                  ]
+                },
+                "thickness": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "厚度",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "MarginalRayHeight",
+                    "ChiefRayHeight",
+                    "EdgeThickness",
+                    "OpticalPathDifference",
+                    "Position",
+                    "Compensator",
+                    "CenterOfCurvature",
+                    "PupilPosition"
+                  ]
+                },
+                "material": {
+                  "value": "",
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "材料",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "MaterialSubstitute",
+                    "MaterialOffset",
+                    "MaterialModel"
+                  ]
+                },
+                "semi_diameter": {
+                  "value": 0.0070411560581413735,
+                  "solve": {
+                    "type": "Automatic"
+                  },
+                  "writable": true,
+                  "header": "净口径",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic",
+                    "Maximum"
+                  ]
+                },
+                "conic": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "圆锥系数",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro"
+                  ]
+                },
+                "tce": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "TCE x 1E-6",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup"
+                  ]
+                },
+                "mechanical_semi_diameter": {
+                  "value": 0.0070411560581413735,
+                  "solve": {
+                    "type": "Automatic"
+                  },
+                  "writable": true,
+                  "header": "机械半直径",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic"
+                  ]
+                },
+                "chip_zone": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Automatic"
+                  },
+                  "writable": true,
+                  "header": "延伸区",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic"
+                  ]
+                }
+              },
+              "properties": {
+                "property_activity": {
+                  "has_mirror_settings": false,
+                  "can_be_stop": false,
+                  "can_be_gcr": false
+                },
+                "scattering": {
+                  "type": "None"
+                },
+                "drawing": {
+                  "hide_rays_to_this_surface": false,
+                  "skip_rays_to_this_surface": false,
+                  "do_not_draw_this_surface": false,
+                  "do_not_draw_edges_from_this_surface": false,
+                  "draw_local_axis": false,
+                  "draw_edges_as": "Squared",
+                  "mirror_substrate": "Curved",
+                  "mirror_thickness": 0.0
+                },
+                "type_properties": {
+                  "surface_color": "Default",
+                  "surface_opacity": "P100",
+                  "row_color": "Default",
+                  "ignore_surface": false,
+                  "surface_cannot_be_hyperhemispheric": false
+                },
+                "composite": {
+                  "is_composite_surface": false
+                },
+                "physical_optics": {
+                  "use_rays_to_propagate_to_next_surface": false,
+                  "do_not_rescale_beam_size_using_ray_data": false,
+                  "use_angular_spectrum_propagator": false,
+                  "draw_this_lens_on_shaded_model": false,
+                  "re_compute_pilot_beam_parameters": false,
+                  "use_xaxis_reference": false,
+                  "resample_after_refraction": false,
+                  "auto_resample": false,
+                  "x_sampling": "S32",
+                  "y_sampling": "S32",
+                  "x_width": 1.0,
+                  "y_width": 1.0,
+                  "output_pilot_radius": "BestFit",
+                  "x_radius": 0.0,
+                  "y_radius": 0.0
+                },
+                "disable_clear_semi_diameter_margins": false,
+                "surface_file": null,
+                "coating": "",
+                "material_catalog": null,
+                "mechanical": {
+                  "mechanical_semi_diameter": {
+                    "value": 0.0070411560581413735,
+                    "solve": "Automatic"
+                  },
+                  "chip_zone": {
+                    "value": 0.0,
+                    "solve": "Automatic"
+                  }
+                },
+                "aperture": {
+                  "type": "None",
+                  "pickup_from": null
+                },
+                "tilt_decenter": {
+                  "before_order": "Decenter_Tilt",
+                  "before_decenter_x": 0.0,
+                  "before_decenter_y": 0.0,
+                  "before_tilt_x": 0.0,
+                  "before_tilt_y": 0.0,
+                  "before_tilt_z": 0.0,
+                  "after_order": "Decenter_Tilt",
+                  "after_decenter_x": 0.0,
+                  "after_decenter_y": 0.0,
+                  "after_tilt_x": 0.0,
+                  "after_tilt_y": 0.0,
+                  "after_tilt_z": 0.0,
+                  "after_mode": "Explicit"
+                }
+              }
+            },
+            {
+              "surface": 4,
+              "surface_type": "Standard",
+              "comment": "",
+              "is_object": false,
+              "is_image": true,
+              "is_stop": false,
+              "cells": {
+                "radius": {
+                  "value": "Infinity",
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "曲率半径",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "MarginalRayAngle",
+                    "ChiefRayAngle",
+                    "MarginalRayNormal",
+                    "ChiefRayNormal",
+                    "Aplanatic",
+                    "ElementPower",
+                    "CocentricSurface",
+                    "CocentricSurface",
+                    "CocentricRadius",
+                    "CocentricRadius",
+                    "FNumber"
+                  ]
+                },
+                "thickness": {
+                  "value": "Infinity",
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": false,
+                  "header": "厚度",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "MarginalRayHeight",
+                    "ChiefRayHeight",
+                    "EdgeThickness",
+                    "OpticalPathDifference",
+                    "Position",
+                    "Compensator",
+                    "CenterOfCurvature",
+                    "PupilPosition"
+                  ]
+                },
+                "material": {
+                  "value": "",
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "材料",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "MaterialSubstitute",
+                    "MaterialOffset",
+                    "MaterialModel"
+                  ]
+                },
+                "semi_diameter": {
+                  "value": 0.0070411560581413735,
+                  "solve": {
+                    "type": "Automatic"
+                  },
+                  "writable": true,
+                  "header": "净口径",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic",
+                    "Maximum"
+                  ]
+                },
+                "conic": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "圆锥系数",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro"
+                  ]
+                },
+                "tce": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "TCE x 1E-6",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup"
+                  ]
+                },
+                "mechanical_semi_diameter": {
+                  "value": 0.0070411560581413735,
+                  "solve": {
+                    "type": "Automatic"
+                  },
+                  "writable": true,
+                  "header": "机械半直径",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic"
+                  ]
+                },
+                "chip_zone": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Automatic"
+                  },
+                  "writable": true,
+                  "header": "延伸区",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic"
+                  ]
+                }
+              },
+              "properties": {
+                "property_activity": {
+                  "has_mirror_settings": false,
+                  "can_be_stop": false,
+                  "can_be_gcr": true
+                },
+                "scattering": {
+                  "type": "None"
+                },
+                "drawing": {
+                  "hide_rays_to_this_surface": false,
+                  "skip_rays_to_this_surface": false,
+                  "do_not_draw_this_surface": false,
+                  "do_not_draw_edges_from_this_surface": false,
+                  "draw_local_axis": false,
+                  "draw_edges_as": "Squared",
+                  "mirror_substrate": "Curved",
+                  "mirror_thickness": 0.0
+                },
+                "type_properties": {
+                  "surface_color": "Default",
+                  "surface_opacity": "P100",
+                  "row_color": "Default",
+                  "ignore_surface": false,
+                  "surface_cannot_be_hyperhemispheric": false
+                },
+                "composite": {
+                  "is_composite_surface": false
+                },
+                "physical_optics": {
+                  "use_rays_to_propagate_to_next_surface": false,
+                  "do_not_rescale_beam_size_using_ray_data": false,
+                  "use_angular_spectrum_propagator": false,
+                  "draw_this_lens_on_shaded_model": false,
+                  "re_compute_pilot_beam_parameters": false,
+                  "use_xaxis_reference": false,
+                  "resample_after_refraction": false,
+                  "auto_resample": false,
+                  "x_sampling": "S32",
+                  "y_sampling": "S32",
+                  "x_width": 1.0,
+                  "y_width": 1.0,
+                  "output_pilot_radius": "BestFit",
+                  "x_radius": 0.0,
+                  "y_radius": 0.0
+                },
+                "disable_clear_semi_diameter_margins": false,
+                "surface_file": null,
+                "coating": "",
+                "material_catalog": null,
+                "mechanical": {
+                  "mechanical_semi_diameter": {
+                    "value": 0.0070411560581413735,
+                    "solve": "Automatic"
+                  },
+                  "chip_zone": {
+                    "value": 0.0,
+                    "solve": "Automatic"
+                  }
+                },
+                "aperture": {
+                  "type": "None",
+                  "pickup_from": null
+                },
+                "tilt_decenter": {
+                  "before_order": "Decenter_Tilt",
+                  "before_decenter_x": 0.0,
+                  "before_decenter_y": 0.0,
+                  "before_tilt_x": 0.0,
+                  "before_tilt_y": 0.0,
+                  "before_tilt_z": 0.0,
+                  "after_order": "Decenter_Tilt",
+                  "after_decenter_x": 0.0,
+                  "after_decenter_y": 0.0,
+                  "after_tilt_x": 0.0,
+                  "after_tilt_y": 0.0,
+                  "after_tilt_z": 0.0,
+                  "after_mode": "Explicit"
+                }
+              }
+            }
+          ],
+          "parameter_start": 1,
+          "parameter_count": 20,
+          "next_start": null,
+          "units": "Millimeters"
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": "f7a73bb6720749bd80f03296de6c1db6",
+          "model_revision": 4,
+          "source_file": null,
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\ED-04\\ray-aiming276\\native\\f7a73bb6720749bd80f03296de6c1db6\\working_5bc57232.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\ED-04\\ray-aiming276\\native\\f7a73bb6720749bd80f03296de6c1db6\\checkpoint_r3_surfaces_0fe81058.zos",
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 4,
+            "session_id": "f7a73bb6720749bd80f03296de6c1db6"
+          }
+        },
+        "artifacts": []
+      }
+    },
+    {
+      "tool": "get_system_settings",
+      "arguments": null,
+      "response": {
+        "ok": true,
+        "data": {
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "source_units": "Watts",
+          "source_unit_prefix": "None",
+          "analysis_units": "WattsPerCMSq",
+          "analysis_unit_prefix": "None",
+          "afocal_image_space": false,
+          "aperture": {
+            "type": "EntrancePupilDiameter",
+            "value": 2.0
+          },
+          "field_type": "Angle",
+          "field_normalization": "Radial",
+          "fields": [
+            {
+              "number": 1,
+              "x": 0.0,
+              "y": 0.0,
+              "weight": 1.0,
+              "vdx": 0.0,
+              "vdy": 0.0,
+              "vcx": 0.0,
+              "vcy": 0.0,
+              "van": 0.0
+            }
+          ],
+          "wavelength_unit": "micrometers (environmental air reference)",
+          "wavelengths": [
+            {
+              "number": 1,
+              "wavelength_um": 0.55,
+              "weight": 1.0,
+              "primary": true
+            }
+          ],
+          "temperature_c": 20.0,
+          "pressure_atm": 1.0,
+          "adjust_index_to_environment": false,
+          "afocal_mode_units": "Milliradians",
+          "settings_activity": {
+            "apodization_factor_is_used": false
+          },
+          "author": "",
+          "aperture_options": {
+            "apodization_type": "Uniform",
+            "apodization_factor": 0.0,
+            "semi_diameter_margin": 0.0,
+            "semi_diameter_margin_pct": 0.0,
+            "telecentric_object_space": false,
+            "afocal_image_space": false,
+            "iterate_solves_when_updating": false,
+            "fast_semi_diameters": true,
+            "check_grin_apertures": false
+          },
+          "advanced": {
+            "reference_opd": "ExitPupil",
+            "paraxial_rays": "IgnoreCoordinateBreaks",
+            "f_num_method": "TracingRays",
+            "dont_print_coordinate_break_data": false,
+            "turn_off_threading": false,
+            "opd_modulo_2pi": false,
+            "include_calculated_data_in_session_file": true,
+            "include_tolerance_data_in_session_file": true,
+            "huygens_integral_method": "Auto"
+          },
+          "global_reference_surface": 3,
+          "material_catalogs": [
+            "SCHOTT"
+          ],
+          "polarization": {
+            "unpolarized": true,
+            "jx": 0.0,
+            "jy": 1.0,
+            "x_phase": 0.0,
+            "y_phase": 0.0,
+            "method": "XAxisMethod",
+            "convert_thin_film_phase": true
+          },
+          "ray_aiming": {
+            "mode": "Off",
+            "method": "Heuristic",
+            "cache": true,
+            "robust": false,
+            "scale_pupil_shift_by_field": false,
+            "auto_pupil_shift": true,
+            "enhanced": false,
+            "advanced_convergence": false,
+            "fallback_search": false,
+            "pupil_shift_x": 0.0,
+            "pupil_shift_y": 0.0,
+            "pupil_shift_z": 0.0,
+            "pupil_compress_x": 0.0,
+            "pupil_compress_y": 0.0,
+            "cache_steps": 10
+          },
+          "files": {
+            "coating_file": "COATING.DAT",
+            "scatter_profile": "SCATTER_PROFILE.DAT",
+            "abg_file": "ABG_DATA.DAT",
+            "gradium_profile": "PROFILE.GRD"
+          },
+          "title": "",
+          "notes": ""
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": "f7a73bb6720749bd80f03296de6c1db6",
+          "model_revision": 4,
+          "source_file": null,
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\ED-04\\ray-aiming276\\native\\f7a73bb6720749bd80f03296de6c1db6\\working_5bc57232.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\ED-04\\ray-aiming276\\native\\f7a73bb6720749bd80f03296de6c1db6\\checkpoint_r3_surfaces_0fe81058.zos",
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 4,
+            "session_id": "f7a73bb6720749bd80f03296de6c1db6"
+          }
+        },
+        "artifacts": []
+      }
+    },
+    {
+      "tool": "get_merit_function",
+      "arguments": null,
+      "response": {
+        "ok": true,
+        "data": {
+          "total": 1,
+          "operands": [
+            {
+              "operand": 1,
+              "type": "BLNK",
+              "target": "NaN",
+              "weight": "NaN",
+              "value": "NaN",
+              "contribution": "NaN",
+              "parameters": {},
+              "cells": {
+                "2": {
+                  "column": 2,
+                  "header": " ",
+                  "data_type": "String",
+                  "active": false,
+                  "writable": false,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "3": {
+                  "column": 3,
+                  "header": " ",
+                  "data_type": "String",
+                  "active": false,
+                  "writable": false,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "4": {
+                  "column": 4,
+                  "header": " ",
+                  "data_type": "String",
+                  "active": false,
+                  "writable": false,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "5": {
+                  "column": 5,
+                  "header": " ",
+                  "data_type": "String",
+                  "active": false,
+                  "writable": false,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "6": {
+                  "column": 6,
+                  "header": " ",
+                  "data_type": "String",
+                  "active": false,
+                  "writable": false,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "7": {
+                  "column": 7,
+                  "header": " ",
+                  "data_type": "String",
+                  "active": false,
+                  "writable": false,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "8": {
+                  "column": 8,
+                  "header": " ",
+                  "data_type": "String",
+                  "active": false,
+                  "writable": false,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "9": {
+                  "column": 9,
+                  "header": " ",
+                  "data_type": "String",
+                  "active": false,
+                  "writable": false,
+                  "unit": null,
+                  "unit_source": null
+                }
+              }
+            }
+          ],
+          "next_start": null,
+          "values_are_cached": true
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": "f7a73bb6720749bd80f03296de6c1db6",
+          "model_revision": 4,
+          "source_file": null,
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\ED-04\\ray-aiming276\\native\\f7a73bb6720749bd80f03296de6c1db6\\working_5bc57232.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\ED-04\\ray-aiming276\\native\\f7a73bb6720749bd80f03296de6c1db6\\checkpoint_r3_surfaces_0fe81058.zos",
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 4,
+            "session_id": "f7a73bb6720749bd80f03296de6c1db6"
+          }
+        },
+        "artifacts": []
+      }
+    }
+  ],
+  "cases": [
+    {
+      "baseline": "controlled",
+      "before": {
+        "IsAsynchronous": true,
+        "IsFiniteDuration": true,
+        "IsRunning": false,
+        "CanCancel": true,
+        "Succeeded": false,
+        "Progress": 0,
+        "Status": null,
+        "ErrorMessage": null
+      },
+      "ray_before": {
+        "RayAiming": "Off",
+        "Method": "Heuristic",
+        "UseRayAimingCache": true,
+        "UseRobustRayAiming": false,
+        "ScalePupilShiftFactorsByField": false,
+        "AutomaticallyCalculatePupilShiftsIsChecked": true,
+        "UseEnhancedRayAiming": false,
+        "UseAdvancedConvergence": false,
+        "UseFallBackSearchDuringCacheSetup": false,
+        "PupilShiftX": 0.0,
+        "PupilShiftY": 0.0,
+        "PupilShiftZ": 0.0,
+        "PupilCompressX": 0.0,
+        "PupilCompressY": 0.0,
+        "NumStepsCacheSetup": 10
+      },
+      "run_status": "TimedOut",
+      "run_elapsed_seconds": 15.061087099999895,
+      "after_wait": {
+        "IsAsynchronous": true,
+        "IsFiniteDuration": true,
+        "IsRunning": true,
+        "CanCancel": true,
+        "Succeeded": false,
+        "Progress": 0,
+        "Status": null,
+        "ErrorMessage": null
+      },
+      "cancel_accepted": true,
+      "cancel_wait_status": "TimedOut",
+      "after_cancel": {
+        "IsAsynchronous": true,
+        "IsFiniteDuration": true,
+        "IsRunning": true,
+        "CanCancel": true,
+        "Succeeded": false,
+        "Progress": 0,
+        "Status": null,
+        "ErrorMessage": null
+      },
+      "ray_after": {
+        "RayAiming": "Off",
+        "Method": "Heuristic",
+        "UseRayAimingCache": true,
+        "UseRobustRayAiming": false,
+        "ScalePupilShiftFactorsByField": false,
+        "AutomaticallyCalculatePupilShiftsIsChecked": true,
+        "UseEnhancedRayAiming": false,
+        "UseAdvancedConvergence": false,
+        "UseFallBackSearchDuringCacheSetup": false,
+        "PupilShiftX": 0.0,
+        "PupilShiftY": 0.0,
+        "PupilShiftZ": 0.0,
+        "PupilCompressX": 0.0,
+        "PupilCompressY": 0.0,
+        "NumStepsCacheSetup": 10
+      },
+      "close_confirmed": false,
+      "close_details": {
+        "close_attempted": true,
+        "cleanup_warnings": [
+          "原生 Close 返回 false；资源释放未确认。"
+        ]
+      }
+    }
+  ],
+  "wait_seconds": 10,
+  "formal_methods": [
+    "RunAndWaitWithTimeout",
+    "WaitWithTimeout",
+    "Cancel",
+    "Close"
+  ],
+  "disconnect": {
+    "ok": true,
+    "data": {
+      "connected": false,
+      "last_session": {
+        "session_id": "f7a73bb6720749bd80f03296de6c1db6",
+        "model_revision": 4,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\ED-04\\ray-aiming276\\native\\f7a73bb6720749bd80f03296de6c1db6\\working_5bc57232.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\ED-04\\ray-aiming276\\native\\f7a73bb6720749bd80f03296de6c1db6\\checkpoint_r3_surfaces_0fe81058.zos",
+        "requires_reconnect": true,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 4,
+          "session_id": "f7a73bb6720749bd80f03296de6c1db6"
+        }
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": null,
+      "model_revision": 4,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": null,
+      "opticstudio_build": null,
+      "license": null,
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "geometry": {
+        "state": "pending",
+        "model_revision": 4,
+        "session_id": null
+      }
+    },
+    "artifacts": []
+  }
+}

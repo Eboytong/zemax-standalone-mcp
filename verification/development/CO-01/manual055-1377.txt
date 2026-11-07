@@ -1,0 +1,30 @@
+If two or more wavelengths are defined for a material, then for wavelengths shorter than the shortest defined
+wavelength, the shortest wavelength data is used. For wavelengths longer than the longest defined wavelength,
+the longest wavelength data is used. For wavelengths in between, linear interpolation is used.
+8.4.3.4. The TAPR Data Section
+Syntax:
+TAPR <taper name>
+DX decenterx
+DY decentery
+AN rotation_angle (degrees)
+RT termnumber radialterm
+CT termnumber cosineterm
+PT termnumber polyterm
+....
+Normally, OpticStudio assumes the coating thickness is uniform across the entire optical surface. Because of the
+way some optical coatings are applied, a thin film coating may have a thickness that varies over the optical surface.
+A tapered coating is defined by applying a taper function which computes a dimensionless coefficient to multiply
+the nominal coating thickness. Any layer of any coating may have a taper applied, and each layer may have a different
+taper. The form of the taper may be a radial polynomial, a cosine function, or a general polynomial in the x and y
+directions. The various models may all be used simultaneously, and the taperfunction may optionally be decentered
+and rotated.
+The effective coating thickness is:
+where d is the nominal coating thickness and fr, fc, and fp are the radial, cosine, and polynomial taper factors,
+respectively. The taperfactors are functions ofthe decentered and rotated coordinates (x', y'), which are computed
+from the local surface coordinates using these expressions:
+where θ is the taper function rotation angle specified in degrees. The radial coordinate is then defined as:
+The radial taper factor is defined as:
+The cosine taper factor is defined as:
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1378
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Libraries Tab

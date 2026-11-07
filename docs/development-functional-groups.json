@@ -1,0 +1,21 @@
+{
+  "groups": [
+    {
+      "canonical_item_id": "MF-01.SagTable",
+      "aliases": [
+        "MA-01.SagTable"
+      ],
+      "native_enum": "SagTable",
+      "reason": "Same installed analysis ID, runtime AS_Default probe and settings/result contract"
+    },
+    {
+      "canonical_item_id": "MA-01.GradiumProfile",
+      "aliases": [
+        "CV-02.GradiumProfile"
+      ],
+      "native_enum": "GradiumProfile",
+      "reason": "Same installed analysis ID and material-dependent settings/result contract"
+    }
+  ],
+  "counting": "Implement once, share evidence/status across aliases, count canonical_item_id once per batch."
+}

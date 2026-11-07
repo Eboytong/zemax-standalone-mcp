@@ -1,0 +1,25 @@
+{
+  "current_detector": {
+    "request": {
+      "kind": "nsc_geometric_mtf",
+      "detector": 4,
+      "frequencies": [0, 0.037, 0.1, 0.3, 0.625]
+    }
+  },
+  "zrd_replay": {
+    "request": {
+      "kind": "nsc_geometric_mtf",
+      "detector": 4,
+      "path": "C:/Users/tonge/Desktop/Zemax_MCP/outputs/input.zrd",
+      "filter": "H4",
+      "frequencies": [0, 0.037, 0.1, 0.3, 0.625]
+    }
+  },
+  "native_display_curve": {
+    "request": {
+      "kind": "nsc_geometric_mtf",
+      "detector": 4,
+      "maximum_frequency": 0.625
+    }
+  }
+}

@@ -1,0 +1,18 @@
+Wavelength The wavelength number to be used in the calculation.
+Field The field number for which the calculation should be performed.
+Type Select X or Y cross sections, either linear, logarithmic, phase, real part, or imaginary part. X cross sections are
+called rows, and Y cross sections are called columns.
+Use Polarization If checked, polarization is considered. See " Polarization (system explorer) for information on
+defining the polarization state and how polarization is used by analysis features.
+Normalize If checked, the peak intensity will be normalized to unity. Otherwise, the peak intensity is normalized to
+the peak of the unaberrated PSF (the Strehl ratio).
+Discussion The cross sections are taken directly from the PSF data. Because the PSF is computed directly from the
+phase in the exit pupil, the orientation of the coordinate system may not be correct in all cases. What constitutes
+positive x or y may not agree with data presented in image space coordinates such as the spot diagram.
+Note: Also see the discussion section of the FFT PSF. Those comments also apply to this feature.
+3.2.4.3. FFT Line/Edge Spread
+This feature plots the edge or line spread functions based upon a computation and integration of the diffraction
+FFT PSF.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 781
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

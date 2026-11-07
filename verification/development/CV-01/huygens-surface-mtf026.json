@@ -1,0 +1,30 @@
+{
+  "version": "0.1.26",
+  "date": "2026-11-05",
+  "item_id": "CV-01.HuygensSurfaceMtf",
+  "native_api": {
+    "reflection_source": "verification/development/BASE-01/probe/api-interfaces.json",
+    "analysis_id": "ZOSAPI.Analysis.AnalysisIDM.HuygensSurfaceMtf (26)",
+    "settings_interface": "ZOSAPI.Analysis.Settings.Mtf.IAS_HuygensSurfaceMtf",
+    "writable_properties": ["ImageSampleSize", "PupilSampleSize", "ShowAs", "Type", "UsePolarization", "ImageDelta", "Configuration"],
+    "readonly_properties": ["Field", "Wavelength"],
+    "enums": {
+      "SurfaceMtfTypes": ["MTF_Incoherent", "Real_Incoherent", "Imaginary_Incoherent", "MTF_Coherent", "Real_Coherent", "Imaginary_Coherent"],
+      "HuygensSurfaceMftShowAsTypes": ["GreyScale", "InverseGreyScale", "FalseColor", "InverseFalseColor"]
+    },
+    "native_execution": "pending",
+    "blocker": "BASE-04/connection019/supervisor.json: initialization timeout after 180.526 seconds",
+    "unlock_condition": "run matching FFT/Huygens Surface MTF on a controlled Cooke model; verify settings, curve/grid data and tool closure"
+  },
+  "implementation": {
+    "entry": "run_analysis",
+    "kind": "huygens_surface_mtf",
+    "settings_verification": "generic native setter/readback plus current multi-configuration index",
+    "result_path": "standard native analysis task and general text/series/grid collector",
+    "resource_close": "standard analysis task lifecycle"
+  },
+  "ordinary_tests": {"focused": "8 passed", "full_suite": "1313 passed, 500 skipped", "junit": "verification/development/CV-01/ordinary036.xml"},
+  "release": {"wheel": "wheels/zemax_standalone_mcp-0.1.26-py3-none-any.whl", "isolated_install": "outputs/wheel-release036", "stdio_smoke": "verification/development/CV-01/stdio-smoke036.json", "stdio_status": "passed; 95 tools, 74 analysis kinds; typed request dispatched; worker closed"},
+  "documentation": ["docs/huygens-surface-mtf.md", "docs/tool-schemas.json", "docs/tools.md"],
+  "numerical_reference": "pending native same-condition comparison against FFT Surface MTF"
+}

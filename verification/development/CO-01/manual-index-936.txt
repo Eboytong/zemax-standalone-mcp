@@ -1,0 +1,9 @@
+See "Reflectivity vs. Angle" for settings.
+Discussion The incident angle is measured in the medium prior to the specified surface.
+3.4.3.7. Reflection vs. Wavelength (coatings, polarization and surface physics
+group)
+Computes the S, P, and average polarization intensity coefficients forreflection forthe specified surface as a function
+of incident wavelength.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 937
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

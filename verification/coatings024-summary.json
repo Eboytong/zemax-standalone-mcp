@@ -1,0 +1,331 @@
+{
+  "version": "0.1.14",
+  "date": "2026-11-05",
+  "work_package": "CO-01",
+  "status": "implemented",
+  "tools": 92,
+  "analysis_kinds": 60,
+  "ordinary": {
+    "passed": 1070,
+    "new_tests": 70,
+    "native_deselected": 476,
+    "seconds": 20.89,
+    "evidence": "verification/development/CO-01/ordinary024.xml",
+    "development_failure": "one new fake-read timing test initially failed; fixture trigger corrected to begin after target commit; native code unchanged for that failure"
+  },
+  "native": {
+    "status": "not_run",
+    "environment": "OpticStudio 2024 R2; Python 3.14.6; sequential current configuration",
+    "actual_settings": null,
+    "license": "not established",
+    "reason": "prior 180s CreateNewApplication initialization timeout; no environment change observed",
+    "evidence": "verification/development/BASE-04/connection019/supervisor.json",
+    "prepared_tests": "tests/test_coatings_live.py",
+    "prepared_count": 17,
+    "instance": "none started",
+    "numeric_reference": {
+      "fresnel": "uncoated air to model glass nd=1.5 at d-line; reflection/transmission/absorption vs incidence",
+      "atol": 1e-06,
+      "rtol": 1e-05,
+      "errors": null
+    },
+    "remaining": [
+      "actual RTA settings/labels/scales",
+      "layer index and solve adoption/persistence",
+      "complex thin-film independent matrix reference",
+      "reverse incidence and phase/retardance signs",
+      "optimization and cancellation/close native workflow"
+    ]
+  },
+  "release": {
+    "status": "passed",
+    "wheel": "wheels/zemax_standalone_mcp-0.1.14-py3-none-any.whl",
+    "install": "outputs/wheel-release024",
+    "smoke": "verification/development/CO-01/wheel-smoke024.json",
+    "stdio_closed": true
+  },
+  "corrected": "0.1.13 TaskResult.series internal model existed, MCP server signature omitted it; 0.1.14 signature fixed and inspected over actual stdio",
+  "other_probes": {
+    "PO_01": "verification/development/PO-01/probe024.json",
+    "IM_01_bitmap": "official GBM CFG keys found at manual index1543; runtime adoption/readback pending"
+  },
+  "items": [
+    {
+      "item_id": "CO-01.ReflectionvsAngle",
+      "status": "implemented",
+      "request": {
+        "kind": "reflection_vs_angle",
+        "surface": 1,
+        "wavelength": 1,
+        "minimum_angle": 0,
+        "maximum_angle": 89,
+        "reverse_direction": false,
+        "minimum_y": null,
+        "maximum_y": null
+      },
+      "interface": "IAS_RTA_Angle",
+      "probe": "verification/development/CO-01/probe024.json",
+      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "actual_settings": null,
+      "native_results": null,
+      "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
+    },
+    {
+      "item_id": "CO-01.ReflectionvsWavelength",
+      "status": "implemented",
+      "request": {
+        "kind": "reflection_vs_wavelength",
+        "surface": 1,
+        "angle": 0,
+        "minimum_wavelength_um": 0.4,
+        "maximum_wavelength_um": 0.7,
+        "reverse_direction": false,
+        "minimum_y": null,
+        "maximum_y": null
+      },
+      "interface": "IAS_RTA_Wavelength",
+      "probe": "verification/development/CO-01/probe024.json",
+      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "actual_settings": null,
+      "native_results": null,
+      "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
+    },
+    {
+      "item_id": "CO-01.TransmissionvsAngle",
+      "status": "implemented",
+      "request": {
+        "kind": "transmission_vs_angle",
+        "surface": 1,
+        "wavelength": 1,
+        "minimum_angle": 0,
+        "maximum_angle": 89,
+        "reverse_direction": false,
+        "minimum_y": null,
+        "maximum_y": null
+      },
+      "interface": "IAS_RTA_Angle",
+      "probe": "verification/development/CO-01/probe024.json",
+      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "actual_settings": null,
+      "native_results": null,
+      "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
+    },
+    {
+      "item_id": "CO-01.TransmissionvsWavelength",
+      "status": "implemented",
+      "request": {
+        "kind": "transmission_vs_wavelength",
+        "surface": 1,
+        "angle": 0,
+        "minimum_wavelength_um": 0.4,
+        "maximum_wavelength_um": 0.7,
+        "reverse_direction": false,
+        "minimum_y": null,
+        "maximum_y": null
+      },
+      "interface": "IAS_RTA_Wavelength",
+      "probe": "verification/development/CO-01/probe024.json",
+      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "actual_settings": null,
+      "native_results": null,
+      "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
+    },
+    {
+      "item_id": "CO-01.AbsorptionvsAngle",
+      "status": "implemented",
+      "request": {
+        "kind": "absorption_vs_angle",
+        "surface": 1,
+        "wavelength": 1,
+        "minimum_angle": 0,
+        "maximum_angle": 89,
+        "reverse_direction": false,
+        "minimum_y": null,
+        "maximum_y": null
+      },
+      "interface": "IAS_RTA_Angle",
+      "probe": "verification/development/CO-01/probe024.json",
+      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "actual_settings": null,
+      "native_results": null,
+      "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
+    },
+    {
+      "item_id": "CO-01.AbsorptionvsWavelength",
+      "status": "implemented",
+      "request": {
+        "kind": "absorption_vs_wavelength",
+        "surface": 1,
+        "angle": 0,
+        "minimum_wavelength_um": 0.4,
+        "maximum_wavelength_um": 0.7,
+        "reverse_direction": false,
+        "minimum_y": null,
+        "maximum_y": null
+      },
+      "interface": "IAS_RTA_Wavelength",
+      "probe": "verification/development/CO-01/probe024.json",
+      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "actual_settings": null,
+      "native_results": null,
+      "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
+    },
+    {
+      "item_id": "CO-01.DiattenuationvsAngle",
+      "status": "implemented",
+      "request": {
+        "kind": "diattenuation_vs_angle",
+        "surface": 1,
+        "wavelength": 1,
+        "minimum_angle": 0,
+        "maximum_angle": 89,
+        "reverse_direction": false,
+        "minimum_y": null,
+        "maximum_y": null
+      },
+      "interface": "IAS_RTA_Angle",
+      "probe": "verification/development/CO-01/probe024.json",
+      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "actual_settings": null,
+      "native_results": null,
+      "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
+    },
+    {
+      "item_id": "CO-01.DiattenuationvsWavelength",
+      "status": "implemented",
+      "request": {
+        "kind": "diattenuation_vs_wavelength",
+        "surface": 1,
+        "angle": 0,
+        "minimum_wavelength_um": 0.4,
+        "maximum_wavelength_um": 0.7,
+        "reverse_direction": false,
+        "minimum_y": null,
+        "maximum_y": null
+      },
+      "interface": "IAS_RTA_Wavelength",
+      "probe": "verification/development/CO-01/probe024.json",
+      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "actual_settings": null,
+      "native_results": null,
+      "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
+    },
+    {
+      "item_id": "CO-01.PhasevsAngle",
+      "status": "implemented",
+      "request": {
+        "kind": "phase_vs_angle",
+        "surface": 1,
+        "wavelength": 1,
+        "minimum_angle": 0,
+        "maximum_angle": 89,
+        "reverse_direction": false,
+        "minimum_y": null,
+        "maximum_y": null
+      },
+      "interface": "IAS_RTA_Angle",
+      "probe": "verification/development/CO-01/probe024.json",
+      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "actual_settings": null,
+      "native_results": null,
+      "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
+    },
+    {
+      "item_id": "CO-01.PhasevsWavelength",
+      "status": "implemented",
+      "request": {
+        "kind": "phase_vs_wavelength",
+        "surface": 1,
+        "angle": 0,
+        "minimum_wavelength_um": 0.4,
+        "maximum_wavelength_um": 0.7,
+        "reverse_direction": false,
+        "minimum_y": null,
+        "maximum_y": null
+      },
+      "interface": "IAS_RTA_Wavelength",
+      "probe": "verification/development/CO-01/probe024.json",
+      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "actual_settings": null,
+      "native_results": null,
+      "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
+    },
+    {
+      "item_id": "CO-01.RetardancevsAngle",
+      "status": "implemented",
+      "request": {
+        "kind": "retardance_vs_angle",
+        "surface": 1,
+        "wavelength": 1,
+        "minimum_angle": 0,
+        "maximum_angle": 89,
+        "reverse_direction": false,
+        "minimum_y": null,
+        "maximum_y": null
+      },
+      "interface": "IAS_RTA_Angle",
+      "probe": "verification/development/CO-01/probe024.json",
+      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "actual_settings": null,
+      "native_results": null,
+      "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
+    },
+    {
+      "item_id": "CO-01.RetardancevsWavelength",
+      "status": "implemented",
+      "request": {
+        "kind": "retardance_vs_wavelength",
+        "surface": 1,
+        "angle": 0,
+        "minimum_wavelength_um": 0.4,
+        "maximum_wavelength_um": 0.7,
+        "reverse_direction": false,
+        "minimum_y": null,
+        "maximum_y": null
+      },
+      "interface": "IAS_RTA_Wavelength",
+      "probe": "verification/development/CO-01/probe024.json",
+      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "actual_settings": null,
+      "native_results": null,
+      "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
+    },
+    {
+      "item_id": "CO-01.CoatingListing",
+      "status": "implemented",
+      "request": {
+        "kind": "coating_listing"
+      },
+      "interface": "generic inherited settings; current coating text listing",
+      "probe": "verification/development/CO-01/probe024.json",
+      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "actual_settings": null,
+      "native_results": null,
+      "resource_close": "existing analysis owner on settings failure and terminal state; actual native execution pending"
+    },
+    {
+      "item_id": "CO-01.LayerRead",
+      "status": "implemented",
+      "probe": "ILDECoatingData / ILDECoatingSettings",
+      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "actual_settings": null,
+      "remaining": "multilayer fixture and formal native layer indices, numerical offsets, optimizer and persistence"
+    },
+    {
+      "item_id": "CO-01.LayerEdit",
+      "status": "implemented",
+      "probe": "ILDECoatingData / ILDECoatingSettings",
+      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "actual_settings": null,
+      "remaining": "multilayer fixture and formal native layer indices, numerical offsets, optimizer and persistence"
+    },
+    {
+      "item_id": "CO-01.LayerSolve",
+      "status": "implemented",
+      "probe": "ILDECoatingData / ILDECoatingSettings",
+      "ordinary": "verification/development/CO-01/ordinary024.xml",
+      "actual_settings": null,
+      "remaining": "multilayer fixture and formal native layer indices, numerical offsets, optimizer and persistence"
+    }
+  ]
+}

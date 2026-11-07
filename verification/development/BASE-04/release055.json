@@ -1,0 +1,18 @@
+{
+  "version": "0.1.55",
+  "wheel": "wheels/zemax_standalone_mcp-0.1.55-py3-none-any.whl",
+  "installation": "verification\\development\\BASE-04\\wheel-install055-release",
+  "ordinary_passed": 1779,
+  "ordinary_skipped_native": 564,
+  "ordinary_evidence": "verification\\development\\BASE-01\\ordinary058-final.xml",
+  "native_wheel_passed": 4,
+  "native_wheel_evidence": "verification\\development\\BASE-04\\native-wheel055-release.xml",
+  "native_runs": [
+    "outputs/runs/coating_relative058_260e5d9a08/calls.json",
+    "outputs/runs/coating_mirror058_a8c76f3096/calls.json",
+    "outputs/runs/coating_cancel058_324279268d/calls.json",
+    "outputs/runs/coating_reference057_3421af0470/calls.json"
+  ],
+  "scope": "Coating primary preservation, reflected MIRROR phase labels, inactive reverse guard and early-copy close result handling; 1090 independent numerical comparisons, active native cancellation, pagination/PNG, persistence and close.",
+  "remaining": "NSC object/face selection and reverse media reference; three diffraction-efficiency gates; other ledger work packages remain active."
+}

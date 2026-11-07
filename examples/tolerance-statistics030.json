@@ -1,0 +1,23 @@
+[
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "tolerance_yield",
+        "operand": 0
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "tolerance_histogram",
+        "operand": 0,
+        "minimum": -0.02,
+        "maximum": 0.02,
+        "bins": 20
+      }
+    }
+  }
+]

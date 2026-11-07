@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="15" time="237.993" timestamp="2026-11-05T14:49:19.940033+08:00" hostname="tongeb"><testcase classname="tests.test_coatings_live" name="test_coating_scan_native[reflection_vs_angle]" time="13.669"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_coatings_live" name="test_coating_scan_native[reflection_vs_wavelength]" time="17.067"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_coatings_live" name="test_coating_scan_native[transmission_vs_angle]" time="14.569"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_coatings_live" name="test_coating_scan_native[transmission_vs_wavelength]" time="17.755"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_coatings_live" name="test_coating_scan_native[absorption_vs_angle]" time="18.418"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_coatings_live" name="test_coating_scan_native[absorption_vs_wavelength]" time="18.162"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_coatings_live" name="test_coating_scan_native[diattenuation_vs_angle]" time="16.949"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_coatings_live" name="test_coating_scan_native[diattenuation_vs_wavelength]" time="15.804"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_coatings_live" name="test_coating_scan_native[phase_vs_angle]" time="14.988"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_coatings_live" name="test_coating_scan_native[phase_vs_wavelength]" time="15.782"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_coatings_live" name="test_coating_scan_native[retardance_vs_angle]" time="15.407"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_coatings_live" name="test_coating_scan_native[retardance_vs_wavelength]" time="16.223"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_coatings_live" name="test_coating_scan_native[coating_listing]" time="14.364"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_materials_live" name="test_material_properties_and_transmission_native" time="13.411"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'ok': False, 'data': None, 'error': {'code': 'INVALID_RESOURCE', 'message': '材料资源名称不存在或不唯一。', 'details': {'resource': 'material catalog', 'requested': 'SCHOTT', 'available': ['AMTIR.AGF', 'ANGSTROMLINK.AGF', 'APEL.AGF', 'ARCHER.AGF', 'ARTON.AGF', 'AUER-LIGHTING.AGF', 'BIREFRINGENT.AGF', 'CDGM.AGF', 'CDGM2409.AGF', 'CORNING.AGF', 'DELO.AGF', 'DOWSIL_MS.AGF', 'GBJ.AGF', 'HERAEUS.AGF', 'HIKARI.AGF', 'HOYA.AGF', 'INFRARED.AGF', 'IRPHOTONICS.AGF', 'ISUZU.AGF', 'KOPPGLASS.AGF', 'LACROIX.AGF', 'LIGHTPATH.AGF', 'LUXEXCEL.AGF', 'LZOS.AGF', 'MICRO_RESIST_TECHNOLOGY.AGF', 'MISC.AGF', 'NHG.AGF', 'NHG2501.AGF', 'NIHON_KESSHO_KOGAKU.AGF', 'NIKON.AGF', 'NIKON-HIKARI.AGF', 'OHARA.AGF', 'OPTIMAX.AGF', 'OPTOTUNE.AGF', 'OSAKAGASCHEMICAL.AGF', 'PILKINGTON.AGF', 'PLASTIC2020.AGF', 'PRECIOSA.AGF', 'RAD_HARD.AGF', 'REDWAVE_IR.AGF', 'RPO.AGF', 'SABIC_THERMO_OPTICAL_POLYMERS.AGF', 'SCHOTT.AGF', 'SCHOTT_IRG.AGF', 'SUMITA.AGF', 'TEIJIN.AGF', 'TOPAS.AGF', 'UMICORE.AGF', 'ZEON.AGF'], 'command': 'get_material_properties', 'partial_changes_possible': False}}, 'warnings': [], 'context': {'session_id': '0cae12939b1c417d8b58c5d25d47c171', 'model_revision': 5, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\materials025_properties_9886abe684\\0cae12939b1c417d8b58c5d25d47c171\\working_4806ee20.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\materials025_properties_9886abe684\\0cae12939b1c417d8b58c5d25d47c171\\checkpoint_r4_settings_df5af837.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 5, 'session_id': '0cae12939b1c417d8b58c5d25d47c171'}, 'request_id': '7141171978104de1b3bb0ca4fc999d00'}, 'artifacts': []}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_materials_live.py", line 20, in test_material_properties_and_transmission_native
+  |     asyncio.run(execute('materials025_properties',work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_materials_live.py", line 12, in work
+      |     data=await e.call('get_material_properties',dict(request=dict(catalog='SCHOTT',material='N-BK7')))
+      |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 14, in call
+      |     if okay:assert r and r["ok"],r
+      |                    ^^^^^^^^^^^^^
+      | AssertionError: {'ok': False, 'data': None, 'error': {'code': 'INVALID_RESOURCE', 'message': '材料资源名称不存在或不唯一。', 'details': {'resource': 'material catalog', 'requested': 'SCHOTT', 'available': ['AMTIR.AGF', 'ANGSTROMLINK.AGF', 'APEL.AGF', 'ARCHER.AGF', 'ARTON.AGF', 'AUER-LIGHTING.AGF', 'BIREFRINGENT.AGF', 'CDGM.AGF', 'CDGM2409.AGF', 'CORNING.AGF', 'DELO.AGF', 'DOWSIL_MS.AGF', 'GBJ.AGF', 'HERAEUS.AGF', 'HIKARI.AGF', 'HOYA.AGF', 'INFRARED.AGF', 'IRPHOTONICS.AGF', 'ISUZU.AGF', 'KOPPGLASS.AGF', 'LACROIX.AGF', 'LIGHTPATH.AGF', 'LUXEXCEL.AGF', 'LZOS.AGF', 'MICRO_RESIST_TECHNOLOGY.AGF', 'MISC.AGF', 'NHG.AGF', 'NHG2501.AGF', 'NIHON_KESSHO_KOGAKU.AGF', 'NIKON.AGF', 'NIKON-HIKARI.AGF', 'OHARA.AGF', 'OPTIMAX.AGF', 'OPTOTUNE.AGF', 'OSAKAGASCHEMICAL.AGF', 'PILKINGTON.AGF', 'PLASTIC2020.AGF', 'PRECIOSA.AGF', 'RAD_HARD.AGF', 'REDWAVE_IR.AGF', 'RPO.AGF', 'SABIC_THERMO_OPTICAL_POLYMERS.AGF', 'SCHOTT.AGF', 'SCHOTT_IRG.AGF', 'SUMITA.AGF', 'TEIJIN.AGF', 'TOPAS.AGF', 'UMICORE.AGF', 'ZEON.AGF'], 'command': 'get_material_properties', 'partial_changes_possible': False}}, 'warnings': [], 'context': {'session_id': '0cae12939b1c417d8b58c5d25d47c171', 'model_revision': 5, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\materials025_properties_9886abe684\\0cae12939b1c417d8b58c5d25d47c171\\working_4806ee20.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\materials025_properties_9886abe684\\0cae12939b1c417d8b58c5d25d47c171\\checkpoint_r4_settings_df5af837.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 5, 'session_id': '0cae12939b1c417d8b58c5d25d47c171'}, 'request_id': '7141171978104de1b3bb0ca4fc999d00'}, 'artifacts': []}
+      +------------------------------------</failure></testcase><testcase classname="tests.test_materials_live" name="test_material_thickness_beer_lambert" time="13.663"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'ok': False, 'data': None, 'error': {'code': 'INVALID_RESOURCE', 'message': '材料资源名称不存在或不唯一。', 'details': {'resource': 'material catalog', 'requested': 'SCHOTT', 'available': ['AMTIR.AGF', 'ANGSTROMLINK.AGF', 'APEL.AGF', 'ARCHER.AGF', 'ARTON.AGF', 'AUER-LIGHTING.AGF', 'BIREFRINGENT.AGF', 'CDGM.AGF', 'CDGM2409.AGF', 'CORNING.AGF', 'DELO.AGF', 'DOWSIL_MS.AGF', 'GBJ.AGF', 'HERAEUS.AGF', 'HIKARI.AGF', 'HOYA.AGF', 'INFRARED.AGF', 'IRPHOTONICS.AGF', 'ISUZU.AGF', 'KOPPGLASS.AGF', 'LACROIX.AGF', 'LIGHTPATH.AGF', 'LUXEXCEL.AGF', 'LZOS.AGF', 'MICRO_RESIST_TECHNOLOGY.AGF', 'MISC.AGF', 'NHG.AGF', 'NHG2501.AGF', 'NIHON_KESSHO_KOGAKU.AGF', 'NIKON.AGF', 'NIKON-HIKARI.AGF', 'OHARA.AGF', 'OPTIMAX.AGF', 'OPTOTUNE.AGF', 'OSAKAGASCHEMICAL.AGF', 'PILKINGTON.AGF', 'PLASTIC2020.AGF', 'PRECIOSA.AGF', 'RAD_HARD.AGF', 'REDWAVE_IR.AGF', 'RPO.AGF', 'SABIC_THERMO_OPTICAL_POLYMERS.AGF', 'SCHOTT.AGF', 'SCHOTT_IRG.AGF', 'SUMITA.AGF', 'TEIJIN.AGF', 'TOPAS.AGF', 'UMICORE.AGF', 'ZEON.AGF'], 'command': 'get_material_properties', 'partial_changes_possible': False}}, 'warnings': [], 'context': {'session_id': 'd2cb8bafa2f14003bf71461314bb41c0', 'model_revision': 5, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\materials025_thickness_e44c38bc4d\\d2cb8bafa2f14003bf71461314bb41c0\\working_2f1f0fe9.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\materials025_thickness_e44c38bc4d\\d2cb8bafa2f14003bf71461314bb41c0\\checkpoint_r4_settings_71da4789.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 5, 'session_id': 'd2cb8bafa2f14003bf71461314bb41c0'}, 'request_id': '42a9d2be28504c7bb4f45e04c8621242'}, 'artifacts': []}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_materials_live.py", line 35, in test_material_thickness_beer_lambert
+  |     asyncio.run(execute('materials025_thickness',work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_materials_live.py", line 27, in work
+      |     table=(await e.call('get_material_properties',dict(request=dict(catalog='SCHOTT',material='N-BK7'))))['internal_transmission']
+      |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 14, in call
+      |     if okay:assert r and r["ok"],r
+      |                    ^^^^^^^^^^^^^
+      | AssertionError: {'ok': False, 'data': None, 'error': {'code': 'INVALID_RESOURCE', 'message': '材料资源名称不存在或不唯一。', 'details': {'resource': 'material catalog', 'requested': 'SCHOTT', 'available': ['AMTIR.AGF', 'ANGSTROMLINK.AGF', 'APEL.AGF', 'ARCHER.AGF', 'ARTON.AGF', 'AUER-LIGHTING.AGF', 'BIREFRINGENT.AGF', 'CDGM.AGF', 'CDGM2409.AGF', 'CORNING.AGF', 'DELO.AGF', 'DOWSIL_MS.AGF', 'GBJ.AGF', 'HERAEUS.AGF', 'HIKARI.AGF', 'HOYA.AGF', 'INFRARED.AGF', 'IRPHOTONICS.AGF', 'ISUZU.AGF', 'KOPPGLASS.AGF', 'LACROIX.AGF', 'LIGHTPATH.AGF', 'LUXEXCEL.AGF', 'LZOS.AGF', 'MICRO_RESIST_TECHNOLOGY.AGF', 'MISC.AGF', 'NHG.AGF', 'NHG2501.AGF', 'NIHON_KESSHO_KOGAKU.AGF', 'NIKON.AGF', 'NIKON-HIKARI.AGF', 'OHARA.AGF', 'OPTIMAX.AGF', 'OPTOTUNE.AGF', 'OSAKAGASCHEMICAL.AGF', 'PILKINGTON.AGF', 'PLASTIC2020.AGF', 'PRECIOSA.AGF', 'RAD_HARD.AGF', 'REDWAVE_IR.AGF', 'RPO.AGF', 'SABIC_THERMO_OPTICAL_POLYMERS.AGF', 'SCHOTT.AGF', 'SCHOTT_IRG.AGF', 'SUMITA.AGF', 'TEIJIN.AGF', 'TOPAS.AGF', 'UMICORE.AGF', 'ZEON.AGF'], 'command': 'get_material_properties', 'partial_changes_possible': False}}, 'warnings': [], 'context': {'session_id': 'd2cb8bafa2f14003bf71461314bb41c0', 'model_revision': 5, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\materials025_thickness_e44c38bc4d\\d2cb8bafa2f14003bf71461314bb41c0\\working_2f1f0fe9.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\materials025_thickness_e44c38bc4d\\d2cb8bafa2f14003bf71461314bb41c0\\checkpoint_r4_settings_71da4789.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 5, 'session_id': 'd2cb8bafa2f14003bf71461314bb41c0'}, 'request_id': '42a9d2be28504c7bb4f45e04c8621242'}, 'artifacts': []}
+      +------------------------------------</failure></testcase></testsuite></testsuites>

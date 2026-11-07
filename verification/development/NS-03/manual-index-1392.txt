@@ -1,0 +1,32 @@
+Delete Deletes the displayed ABg data entry.
+Reload Loads from the last saved data file the ABg data; eliminating any changes made since the last save.
+Sort Sorts in ascending order by angle the displayed data. The data is automatically sorted whenever the catalog
+is saved or loaded.
+Report Sends the data to a text window which may then be printed.
+Rename Prompts for a new name for the ABg data.
+Discussion
+ABg data values are used to define scattering properties of both sequential and non-sequential surfaces. Each
+OpticStudio lens filesmay use a separate ABgdata catalog ifdesired. The ABgdata file usedis specifiedinthe System
+Explorer > Files > ABg Data File. The selected ABg catalog only may be edited from within OpticStudio using the ABg
+Scatter Data Catalog dialog box. Please note that the maximum number of profiles in a catalog is 100.
+For a theoretical discussion of ABg scattering; see "ABg model scattering" in the user's manual.
+The integral ofthe ABg distribution function overthe unit vector circle thatrepresents physically possible scattering
+ray directions determines the total integrated scatter, orfraction to scatter. This integral is automatically computed
+by OpticStudio when required; to view this integral press the TIS button. The TIS must be less than 1.0; otherwise
+conservation of energy may not be preserved and the scattering will not be correct.
+Wavelength scaling of ABg data
+If a referencewavelength otherthanzero isdefined,thenthe A andBcoefficients are scaledaccording to the following
+relations:
+and,
+where λ is the wavelength being traced and the unsubscripted A, B, and g parameters are measured atthe reference
+wavelength, λref.
+When using the ABg scatter models,OpticStudio can only scatterlight using ABg parameters scaled forwave-lengths
+defined in the System WavelengthsDialog box. If youwish to define a broadband source via a Source Color spectrum
+(e.g. Tristimulus XYZ), and the ABg data varies strongly with wavelength, then you need to defined a reasonable
+number of System Wavelengths to span the bandwidth of the source. For an arbitrary wavelength being traced,
+OpticStudio will use the closest System Wavelength to determine the ABg coefficients and scatter distribution. This
+is the only situation in which System Wavelengths need to be defined when using a Source Color model.
+8.5.2. Scatter Function Viewer
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1393
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Libraries Tab

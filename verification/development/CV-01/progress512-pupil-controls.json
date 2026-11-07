@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-07",
+  "item_id": "CV-01.FftSurfaceMtf",
+  "state": "implemented",
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build240529 Premium",
+  "input_source": "Official Cooke 40 degree field.zos; unchanged current configuration",
+  "tolerance": "0.005 absolute; unchanged",
+  "scope": "Single-variable independent meridional F numbers and primary-wavelength control",
+  "commands": [
+    ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_anisotropic_reference_live.py -q -s --run-zemax --junitxml=verification/development/CV-01/native511-anisotropic.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_pupil_reference_live.py -k primary -q -s --run-zemax --junitxml=verification/development/CV-01/native512-primary.xml"
+  ],
+  "request": {
+    "anisotropic": "Same wave1 pupil as509; five newly traced chief/marginal rays per field",
+    "primary": {
+      "kind": "fft_surface_mtf",
+      "field": 3,
+      "wavelength": 2,
+      "sampling": "S_256x256",
+      "use_polarization": false
+    }
+  },
+  "actual_settings": [
+    "outputs/runs/surface_mtf510_anisotropic_613142e471/anisotropic.json",
+    "outputs/runs/surface_mtf512_primary_89cacce054/autocorrelation.json"
+  ],
+  "reference": "F numbers from chief/marginal direction cross products, fx spacing=1/(lambda*Fs*254), fy spacing=1/(lambda*Ft*254); primary control changes wavelength only",
+  "results": {
+    "anisotropic": [
+      {
+        "field": 1,
+        "sagittal_f_number": 4.980055646297169,
+        "tangential_f_number": 4.980055646297169,
+        "maximum_error": 0.0050296654638873894
+      },
+      {
+        "field": 3,
+        "sagittal_f_number": 5.2852824832755285,
+        "tangential_f_number": 5.6914782762408676,
+        "maximum_error": 0.1218626255205372
+      }
+    ],
+    "primary": [
+      {
+        "field": 3,
+        "maximum_errors": {
+          "paraxial": 0.21795740001382655,
+          "real": 0.22121062062777083,
+          "native_cutoff": 0.1727231529469607
+        }
+      }
+    ]
+  },
+  "checks": "Native511 and512 each1 diagnostic test passed; numerical hypotheses remain outside original threshold",
+  "retained_failure": {
+    "evidence": "verification/development/CV-01/native510-anisotropic.xml",
+    "run": "outputs/runs/surface_mtf510_anisotropic_9148006a62",
+    "reason": "Test incorrectly required close_attempted on composite batch-ray parent; corrected to succeeded/no cleanup warnings. Formal trace tool closes in trace-flow finally; no product change."
+  },
+  "lifecycle": "511 five-ray batches succeeded;512 native analysis closed; baseline surfaces/settings preserved and stdio disconnected in successful runs.510 harness exited on assertion; no successful disconnect recorded for that run.",
+  "conclusion": "Anisotropic field3 error .121862626; primary field3 paraxial .217957400. Neither two-axis F numbers nor primary-wave selection resolves the residual.",
+  "next_action": "Return to exit/apparent-pupil sampling and reference-sphere geometry; continue fixed queue until distinguishing native definition is available."
+}

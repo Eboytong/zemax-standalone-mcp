@@ -1,0 +1,57 @@
+[
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "path_analysis",
+        "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\rays.zrd",
+        "sort_by": "NumberOfUniqueObjectsStruck"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "critical_ray_trace",
+        "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\reference.CRS"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "nsc_single_ray_trace",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "l": 0,
+        "m": 0,
+        "n": 1
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "nsc_single_ray_trace",
+        "reference_object": 2,
+        "x": 0.2,
+        "y": -0.3,
+        "z": -10,
+        "use_polarization": true,
+        "max_segments": 100
+      }
+    }
+  },
+  {
+    "tool": "get_task_result",
+    "arguments": {
+      "task_id": "<returned task id>",
+      "start": 0,
+      "count": 20
+    }
+  }
+]

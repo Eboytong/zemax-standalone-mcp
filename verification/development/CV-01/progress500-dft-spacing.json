@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-07",
+  "item_id": "CV-01.FftPsfLineEdgeSpread",
+  "state": "implemented",
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build240529 Premium",
+  "scope": "Test independently selected 2N zero-padded DFT display spacing instead of PSF auto-grid spacing",
+  "input_source": "Owned mirror R=-200mm, conic=-1, aperture10mm, wavelength.55um, image thickness-100/-100.02mm, pupil64/128",
+  "hypothesis": "If discrepancy comes only from PSF-derived display spacing, half-width=N*lambda_um*abs(image_distance_mm)/(2*diameter_mm) should resolve it.",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_fft_spread_coherent_live.py -k dft_knots -q -s --run-zemax --junitxml=verification/development/CV-01/native500-dft-knots.xml",
+  "results": [
+    {
+      "run": "outputs/runs/fft_spread500_coherent_dft_knots_64_0db2fb57e8",
+      "conditions": {
+        "intensity_atol": 0.005,
+        "reference": "Scalar Fraunhofer sum at native physical positions; complex pupil slice from independent OPD batch rays",
+        "pupil_size": 64,
+        "plot_sampling": "dft_knots",
+        "pupil_center": 32,
+        "pupil_radius": 32,
+        "wavelength_um": 0.55,
+        "pupil_radius_mm": 5,
+        "reference_distance_mm": "absolute image distance",
+        "interpolation": "native original knots, every second text sample; no fitted coordinate scale"
+      },
+      "checks": [
+        {
+          "label": "-100 coherent pupil slice",
+          "actual": 0.006259929127548747,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": false
+        },
+        {
+          "label": "-100.02 coherent pupil slice",
+          "actual": 0.006093067889693715,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": false
+        }
+      ]
+    },
+    {
+      "run": "outputs/runs/fft_spread500_coherent_dft_knots_128_1d941086ad",
+      "conditions": {
+        "intensity_atol": 0.005,
+        "reference": "Scalar Fraunhofer sum at native physical positions; complex pupil slice from independent OPD batch rays",
+        "pupil_size": 128,
+        "plot_sampling": "dft_knots",
+        "pupil_center": 64,
+        "pupil_radius": 64,
+        "wavelength_um": 0.55,
+        "pupil_radius_mm": 5,
+        "reference_distance_mm": "absolute image distance",
+        "interpolation": "native original knots, every second text sample; no fitted coordinate scale"
+      },
+      "checks": [
+        {
+          "label": "-100 coherent pupil slice",
+          "actual": 0.005797966244510344,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": false
+        },
+        {
+          "label": "-100.02 coherent pupil slice",
+          "actual": 0.005891249369564755,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": false
+        }
+      ]
+    }
+  ],
+  "tolerance": "0.005 intensity absolute; unchanged",
+  "conclusion": "Both64 and128 fail:64 errors.0062599291/.0060930679;128 errors.0057979662/.0058912494. Replacing display spacing alone does not resolve independent pupil reference.",
+  "lifecycle": "Each test completed both defocus conditions and disconnected before reporting numerical failures; raw task settings/results retained.",
+  "next_action": "Separate native pupil node/edge weighting and exit-pupil projection with controlled amplitude pupils; retain prior physical-coordinate and500 failed references."
+}

@@ -1,0 +1,105 @@
+{
+  "version": "0.1.57",
+  "date": "2026-11-05",
+  "batch_id": "B001",
+  "wheel": "wheels/zemax_standalone_mcp-0.1.57-py3-none-any.whl",
+  "installation": "verification/development/BASE-04/wheel-install057-b001",
+  "ordinary_passed": 1843,
+  "ordinary_skipped_native": 587,
+  "ordinary_evidence": "verification/development/BASE-01/ordinary076-b001.xml",
+  "native_test_cases_completed": 14,
+  "native_wheel_evidence": "verification/development/BASE-04/native-wheel057-b001.xml",
+  "native_test_cases": [
+    {
+      "classname": "tests.test_best_asphere_reference_live",
+      "name": "test_best_conic_matches_independent_candidates",
+      "time": "55.611"
+    },
+    {
+      "classname": "tests.test_nsc_path_live",
+      "name": "test_critical_controlled_pass_fail_and_model_restoration",
+      "time": "15.250"
+    },
+    {
+      "classname": "tests.test_nsc_paths_reference_live",
+      "name": "test_single_reference_frame_polarization_and_truncation",
+      "time": "15.272"
+    },
+    {
+      "classname": "tests.test_object_data_live",
+      "name": "test_native_detector_region_matches_full[False]",
+      "time": "15.591"
+    },
+    {
+      "classname": "tests.test_object_data_live",
+      "name": "test_native_detector_region_matches_full[True]",
+      "time": "10.697"
+    },
+    {
+      "classname": "tests.test_object_data_live",
+      "name": "test_large_native_detector_region_without_full_read",
+      "time": "8.840"
+    },
+    {
+      "classname": "tests.test_facets_probe_live",
+      "name": "test_controlled_stl_facet_probe",
+      "time": "8.906"
+    },
+    {
+      "classname": "tests.test_nsc_sag_numeric_live",
+      "name": "test_nsc_surface_sag_numeric_and_zrd",
+      "time": "17.069"
+    },
+    {
+      "classname": "tests.test_nsc_sag_numeric_live",
+      "name": "test_nsc_sag_cancellation_preserves_model",
+      "time": "22.086"
+    },
+    {
+      "classname": "tests.test_comparator_live",
+      "name": "test_file_comparator_reference",
+      "time": "17.955"
+    },
+    {
+      "classname": "tests.test_comparator_live",
+      "name": "test_file_comparator_configurations_and_selection",
+      "time": "14.639"
+    },
+    {
+      "classname": "tests.test_pupil_aberration_live",
+      "name": "test_pupil_aberration_planar_stop_reference",
+      "time": "21.083"
+    },
+    {
+      "classname": "tests.test_slope_reference_live",
+      "name": "test_surface_slope_sphere_reference",
+      "time": "69.766"
+    },
+    {
+      "classname": "tests.test_slope_reference_live",
+      "name": "test_surface_slopes_failure_cancel_recovery",
+      "time": "15.451"
+    }
+  ],
+  "schema_evidence": "verification/development/BASE-04/stdio057-schema/summary.json",
+  "tool_count": 100,
+  "analysis_kind_count": 94,
+  "completed_item_ids": [
+    "ED-04.FindBestAsphere",
+    "NS-02.CriticalRayTracer",
+    "NS-02.NSCSingleRayTrace",
+    "NS-04.DetectorRegions",
+    "NS-04.NSCSurfaceSag",
+    "NS-04.ObjectFacets",
+    "NS-04.FileComparatorSettings",
+    "CV-01.PupilAberrationFan",
+    "CV-01.SurfaceSlope",
+    "CV-01.SurfaceSlopeCross"
+  ],
+  "scope": "Independent installation: serial real stdio, modeling, numeric references, results/paging, PNG, save/reload, failure/cancel/reuse, resource close and disconnect across the ten completed items.",
+  "known_limitations": [
+    "FullFieldSpot settings/execution/close accepted; all native numeric/text result outlets empty; remains implemented.",
+    "Prior numeric/resource/interface blockers retain their individual ledger states."
+  ],
+  "startup_warning": "FRU__delta_init persists in successful sessions; lifecycle investigation remains open."
+}

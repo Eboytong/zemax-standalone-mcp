@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-07",
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build240529 Premium",
+  "state": "implemented",
+  "completion_count": 0,
+  "item_ids": [
+    "CV-02.PowerFieldMapSettings",
+    "CV-02.PowerPupilMapSettings"
+  ],
+  "scope": "Controlled aperture shrink while retaining a passing central reference ray",
+  "input_source": "Owned R50mm N-BK7 single interface/stop, thickness50mm, EPD10mm, wavelength.5875618um",
+  "request": "POWF/POWP center Power/EFL,3x3 grids; aperture None/.1/.001/.00001mm; direct normalized Px0..0.5",
+  "actual_settings": "outputs/runs/power593_aperture_ring_b221d6b297/ring-diagnostic.json",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_power_map_aperture_ring_live.py --run-zemax -x -q --junitxml=verification/development/CV-02/native593-aperture-ring.xml",
+  "result": "Center Power6.814355276657183D and EFL146.7490260488084mm remain equal across four apertures. Explicit tested peripheral rays vignette as aperture shrinks; center passes.",
+  "reference": "Known geometric ray intercepts0,.000005,.00005,.0005,.005,.05,.5,2.5mm compared with aperture radii",
+  "tolerance": "Discrete pass/vignette identities; no new power tolerance",
+  "checks": "1 diagnostic pytest passed; no claim of native ring numerical acceptance",
+  "native_ring_acceptance": false,
+  "conclusion": "Finite center results persist with the specifically tested peripheral rays clipped. Native ring nodes/radius remain unexposed, so this experiment does not determine their clipping state.",
+  "lifecycle": "All queries completed; child trace tools closed; source settings/surfaces/solve/MFE retained each iteration and after reload; stdio disconnect succeeded",
+  "next_action": "Need formal ring-node/radius/status identity to classify peripheral native validity; retain explicit central-only mask scope."
+}

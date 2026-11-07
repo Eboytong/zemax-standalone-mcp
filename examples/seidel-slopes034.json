@@ -1,0 +1,31 @@
+[
+  {
+    "request": {
+      "kind": "seidel_diagram"
+    }
+  },
+  {
+    "request": {
+      "kind": "surface_slope",
+      "surface": 1
+    }
+  },
+  {
+    "request": {
+      "kind": "surface_slope_cross",
+      "surface": 1
+    }
+  },
+  {
+    "request": {
+      "kind": "surface_phase_slope",
+      "surface": 1
+    }
+  },
+  {
+    "request": {
+      "kind": "surface_phase_slope_cross",
+      "surface": 1
+    }
+  }
+]

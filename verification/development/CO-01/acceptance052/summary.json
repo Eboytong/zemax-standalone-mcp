@@ -1,0 +1,77 @@
+{
+  "version": "0.1.50",
+  "ordinary_passed": 1712,
+  "ordinary_report": "verification/development/BASE-04/ordinary052-final.xml",
+  "wheel_passed": 2,
+  "wheel_report": "verification/development/BASE-04/wheel-native050-final.xml",
+  "independent_installation": "verification/development/BASE-04/wheel-install050-final",
+  "original_run": "outputs\\runs\\coating024_layers_758af21bf4",
+  "checks": [
+    {
+      "label": "layer multiplier",
+      "actual": 0.9,
+      "expected": 0.9,
+      "atol": 1e-12,
+      "rtol": 1e-12,
+      "passed": true
+    },
+    {
+      "label": "reloaded index offset",
+      "actual": 0.01,
+      "expected": 0.01,
+      "atol": 1e-12,
+      "rtol": 1e-12,
+      "passed": true
+    },
+    {
+      "label": "reloaded extinction offset",
+      "actual": 0.001,
+      "expected": 0.001,
+      "atol": 1e-12,
+      "rtol": 1e-12,
+      "passed": true
+    },
+    {
+      "label": "reloaded multiplier",
+      "actual": 0.9,
+      "expected": 0.9,
+      "atol": 1e-12,
+      "rtol": 1e-12,
+      "passed": true
+    },
+    {
+      "label": "fixed thickness_multiplier",
+      "actual": 0.8,
+      "expected": 0.8,
+      "atol": 1e-12,
+      "rtol": 1e-12,
+      "passed": true
+    },
+    {
+      "label": "fixed index_offset",
+      "actual": 0.02,
+      "expected": 0.02,
+      "atol": 1e-12,
+      "rtol": 1e-12,
+      "passed": true
+    },
+    {
+      "label": "fixed extinction_offset",
+      "actual": 0.002,
+      "expected": 0.002,
+      "atol": 1e-12,
+      "rtol": 1e-12,
+      "passed": true
+    }
+  ],
+  "closed": true,
+  "coverage": [
+    "WAR two-layer native coating; disabled read flag restored and revision unchanged",
+    "Combined enable and all three parameter edits",
+    "Thickness/index/extinction Variable, Pickup and Fixed states with save/reload",
+    "Zero-layer coating avoids unavailable enable switch",
+    "Ordinary injected read/restore failure preserves original error, reconnect and partial-change status"
+  ],
+  "cfg_probe": "verification/development/PO-01/runtime052/settings.json",
+  "cfg_summary": "Five IAS_.SaveTo calls returned true; five 18448-byte binary CFG files retained; all analyses/application closed. No parameter keys confirmed."
+}

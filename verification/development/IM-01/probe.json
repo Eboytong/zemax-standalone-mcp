@@ -1,0 +1,303 @@
+{
+  "source": "installed ZOSAPI_Interfaces.dll static reflection",
+  "interfaces": {
+    "ZOSAPI.Analysis.Settings.ExtendedScene.IAS_ImageSimulation": {
+      "properties": [
+        {
+          "name": "InputFile",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "FieldHeight",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "FlipSource",
+          "type": "ZOSAPI.Analysis.Settings.ExtendedScene.ISFlipTypes",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "RotationSource",
+          "type": "ZOSAPI.Analysis.Settings.Rotations",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Oversampling",
+          "type": "ZOSAPI.Analysis.Settings.ExtendedScene.ISSamplings",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "GuardBand",
+          "type": "ZOSAPI.Analysis.Settings.ExtendedScene.ISSamplings",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Field",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Field",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "PupilSampling",
+          "type": "ZOSAPI.Analysis.SampleSizes",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ImageSampling",
+          "type": "ZOSAPI.Analysis.SampleSizes",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Aberrations",
+          "type": "ZOSAPI.Analysis.Settings.ExtendedScene.ISAberrationTypes",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "PSFXPoints",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "PSFYPoints",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UsePolarization",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ApplyFixedApertures",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseRelativeIllumination",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ShowAs",
+          "type": "ZOSAPI.Analysis.Settings.ExtendedScene.ISShowAsTypes",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Reference",
+          "type": "ZOSAPI.Analysis.Settings.ReferenceGia",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "FlipImage",
+          "type": "ZOSAPI.Analysis.Settings.ExtendedScene.ISFlipTypes",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "PixelSize",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "XPixels",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "YPixels",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SuppressFrame",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "OutputFile",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": [
+        "Void SetWavelengthRGB()",
+        "Void SetWavelength123()",
+        "Void SetWavelengthNumber(Int32)",
+        "Boolean GetWavelengthRGB()",
+        "Boolean GetWavelength123()",
+        "Int32 GetWavelengthNumber()",
+        "System.String[] GetInputFileNames()"
+      ]
+    },
+    "ZOSAPI.Analysis.Settings.ExtendedScene.IAS_GeometricImageAnalysis": {
+      "properties": [
+        {
+          "name": "Wavelength",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Wavelength",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Field",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Field",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Surface",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Surface",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "FieldSize",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ImageSize",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "File",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Rotation",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "RaysX1000",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ShowAs",
+          "type": "ZOSAPI.Analysis.GiaShowAsTypes",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Source",
+          "type": "ZOSAPI.Analysis.Settings.SourceGia",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "NumberOfPixels",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "NA",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "TotalWatts",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Parity",
+          "type": "ZOSAPI.Analysis.Settings.Parity",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Reference",
+          "type": "ZOSAPI.Analysis.Settings.ReferenceGia",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseSymbols",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UsePolarization",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "RemoveVignettingFactors",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ScatterRays",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "DeleteVignetted",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UsePixelInterpolation",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SaveAsBIMFile",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "RowColumnNumber",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": [
+        "Boolean UseColumnRowCenter()",
+        "System.String[] GetFileNames()"
+      ]
+    }
+  },
+  "status": "probe_complete_native_adoption_pending"
+}

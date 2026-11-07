@@ -1,0 +1,26 @@
+Vendor Lists the available stock lens vendors. Each vendor name is the name of the file which contains the stock
+lenses available from that vendor. The vendor files must be placed in the <data>\Stockcat folder (see "Folders" in
+the user's manual).
+Use Effective Focal Length If checked, then the specified effective focal length range is used as part of the search
+criteria, otherwise, any value will be accepted.
+Focal Length Min/Max Used to define the range of acceptable effective focal lengths in millimeters.
+Use Entrance Pupil Diameter If checked, then the specified entrance pupil diameter range is used as part of the
+search criteria, otherwise, any value will be accepted.
+Diameter Min/Max Used to define the range of acceptable entrance pupil diameters in millimeters.
+Equi-, Bi-, Plano-, Meniscus If any of these options are checked, then the search will be limited to lenses meeting
+atleast one ofthe selectedcriteria. For example, ifbothEqui- andBi- are selected,thenbothequiconvex/equiconcave
+and biconvex/biconcave lenses will be included.
+Spherical , GRIN, Aspheric,Toroidal If any of these options are checked, then the search will be limited to lenses
+meeting at least one of the selected criteria. The "Spherical" category is also used as "other" for lenses which are
+not gradient index, aspheric, or toroidal.
+# Elements Selects the number of elements allowed in lenses that meetthe search criteria.Choose "Any #" to include
+all lenses in the search.
+Search Results Lists all lens files in the specified catalog which match the current search criteria.
+Search Causes a new search to be conducted for lenses in the specified vendor file based upon the current search
+criteria.
+Load Loads the currently selected lens file into the Lens Data Editor, and updates all windows to display data for
+the newly loaded lens.
+Insert Inserts the currently selected lens file to the existing lens.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1364
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Libraries Tab

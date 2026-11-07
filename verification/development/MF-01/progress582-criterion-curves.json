@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-07",
+  "item_id": "MF-01.SagTable",
+  "aliases": [
+    "MA-01.SagTable"
+  ],
+  "state": "implemented",
+  "completion_count": 0,
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build240529 Premium",
+  "scope": "Typed full-aperture MinimumRMS/MinimumRMSWithOffset and reversed MinimumVolume sphere curves through formal SSAG; default BFSD unchanged",
+  "input_source": "Owned positive/negative EvenAspheric R±40, conic-1, parameter1 ±.0001, semi5mm; z=±.0126*r²",
+  "requests": "tests/test_sag_criteria_live.py; examples/sag-table-criteria.json; run calls.json retains every request and final native task settings",
+  "actual_settings": "SSAG Remove2/BFS1,2,3 arguments retained; separately configured SurfaceSlopeCross criterion/ReverseDirection readback and native radius report cross-check",
+  "execution": "Four native GetSag/SSAG points (0,.2,.5,1)*semi; constrained sphere reconstruction residual1e-10+1e-9relative; analytic full-row sphere and raw SSLP slope",
+  "units": "lens units for positions/radius; reciprocal lens units for curvature; dimensionless slope",
+  "reference": "Independent signed parabolic sag and slope, sphere analytic formula, separately configured native report radius",
+  "tolerance": {
+    "row": "1e-8+1e-6*reference unchanged",
+    "report_radius": "5e-6 absolute display-rounding tolerance retained from425"
+  },
+  "commands": [
+    ".venv/Scripts/python.exe -m pytest tests/test_sag_table.py tests/test_sag_fit.py tests/test_surface_slopes.py -q --junitxml=verification/development/MF-01/ordinary580-criteria.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_sag_criteria_live.py tests/test_sag_table_live.py --run-zemax -x -q --junitxml=verification/development/MF-01/native582-criteria-regression.xml"
+  ],
+  "ordinary_passed": 68,
+  "native_passed": 7,
+  "runs": [
+    {
+      "run": "outputs\\runs\\sag582_criteria_-1_030b02c55c",
+      "checks": 201,
+      "all_passed": true,
+      "maximum_row_error": 8.715250743307479e-15,
+      "maximum_report_radius_error": 3.6021791061102704e-07,
+      "disconnected": true
+    },
+    {
+      "run": "outputs\\runs\\sag582_criteria_1_defc6f164c",
+      "checks": 201,
+      "all_passed": true,
+      "maximum_row_error": 8.715250743307479e-15,
+      "maximum_report_radius_error": 4.1107049497668413e-07,
+      "disconnected": true
+    }
+  ],
+  "lifecycle": "Native query-only composite tasks completed; separate slope analyses closed; rows and deviation-series PNG export passed, PNG viewed; source surfaces/solve/system/MFE/MCE unchanged before and after save/reload; all582 sessions disconnected",
+  "failures_retained": [
+    "ordinary576 closure variable shadowed existing GetSag alternate output; fixed577",
+    "native578 test selected text instead of native_text artifact; stdio exited before explicit disconnect",
+    "native579 corrected artifact kind but test used UTF8 for native UTF16 file; explicit disconnect",
+    "native580 test expected native-tool close_attempted on query-only composite; corrected resource assertion; explicit disconnect",
+    "native581 all positive numeric checks passed, final save re-used existing filename without overwrite; corrected to separate after.zos; explicit disconnect"
+  ],
+  "limitations": [
+    "Full-aperture only for new criteria; explicit radius ranges rejected",
+    "Manufacturing vertex_offset/removal_depth null and manufacturing_state unavailable; data_piston remains a separate numerical quantity",
+    "SSLP BFS3 historical reverse-sphere mismatch bypassed by analytic slope from SSAG-reconstructed curvature",
+    "Dedicated SagTable settings AS_Default/CFG false remains374; full manufacturing-offset contract outstanding"
+  ],
+  "next_action": "Keep both aliases implemented and B0065/10; obtain formal physical-offset/full manufacturing contract. Continue fixed CAD/MaterialModel/FullFieldSpot/B005 queue when conditions provide new evidence."
+}

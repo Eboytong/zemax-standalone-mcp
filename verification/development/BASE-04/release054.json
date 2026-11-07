@@ -1,0 +1,16 @@
+{
+  "version": "0.1.54",
+  "wheel": "wheels/zemax_standalone_mcp-0.1.54-py3-none-any.whl",
+  "installation": "verification/development/BASE-04/wheel-install054-release",
+  "ordinary_passed": 1776,
+  "ordinary_skipped_native": 561,
+  "ordinary_evidence": "verification/development/BASE-01/ordinary057-delivery.xml",
+  "native_wheel_passed": 2,
+  "native_wheel_evidence": "verification/development/BASE-04/native-wheel054-release.xml",
+  "native_runs": [
+    "outputs/runs/coating_reference057_7afaaaeb92/calls.json",
+    "outputs/runs/diff_efficiency056_probe_4197bf447e/calls.json"
+  ],
+  "scope": "Zero-based native coating wavelength mapping; 24 coating scans and 600 independent single-film comparisons; three diffraction analyses and 192 comparisons; paging, PNG, settings preservation, task close and disconnect.",
+  "remaining": "MIRROR labels/basis, relative film thickness, NSC-only reverse setting activity and cancellation/failure; other ledger gates remain active."
+}

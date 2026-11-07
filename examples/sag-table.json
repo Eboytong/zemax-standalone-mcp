@@ -1,0 +1,12 @@
+{
+  "tool": "run_analysis",
+  "arguments": {
+    "request": {
+      "kind": "sag_table",
+      "surface": 2,
+      "minimum_radius": 0,
+      "maximum_radius": 5,
+      "samples": 51
+    }
+  }
+}

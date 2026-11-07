@@ -1,0 +1,14 @@
+{
+  "request": {
+    "kind": "geometric_image",
+    "input_file": "point.IMA",
+    "wavelength": 1,
+    "field_size": 1,
+    "image_size": 3,
+    "number_of_pixels": 65,
+    "rays_x1000": 100,
+    "reference": "Vertex",
+    "parity": "Even",
+    "rotation": 90
+  }
+}

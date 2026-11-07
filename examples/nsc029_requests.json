@@ -1,0 +1,60 @@
+[
+  {
+    "tool": "update_nsc_objects",
+    "arguments": {
+      "request": {
+        "nsc_surface": 6,
+        "changes": [
+          {
+            "object": 1,
+            "type_settings": {
+              "ObjectIsADetector": true
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "tool": "get_nsc_object_geometry",
+    "arguments": {
+      "request": {
+        "nsc_surface": 6,
+        "object": 1,
+        "start": 0,
+        "count": 100,
+        "frame": "global"
+      }
+    }
+  },
+  {
+    "tool": "get_detector_data",
+    "arguments": {
+      "request": {
+        "detector": 2,
+        "read_mode": "region",
+        "x_start": 100,
+        "y_start": 25,
+        "width": 64,
+        "height": 32,
+        "kind": "flux"
+      }
+    }
+  },
+  {
+    "tool": "get_detector_data",
+    "arguments": {
+      "request": {
+        "detector": 3,
+        "read_mode": "region",
+        "x_start": 4,
+        "y_start": 8,
+        "z_start": 12,
+        "width": 32,
+        "height": 32,
+        "depth": 8,
+        "kind": "absorbed_flux"
+      }
+    }
+  }
+]

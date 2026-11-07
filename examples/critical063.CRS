@@ -1,0 +1,4 @@
+2 4 20261105 4 0 0 0
+! X Y Z L M N intensity wavelength field type Xtarget Ytarget Ztarget Ltarget Mtarget Ntarget
+0 0 0 0 0 1 1 .55 0 7 0 0 10 0 0 1
+0 0 0 0 0 1 1 .55 0 7 1 0 10 0 0 1

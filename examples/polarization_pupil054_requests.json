@@ -1,0 +1,35 @@
+[
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "polarization_pupil_map",
+        "surface": 1,
+        "field": 1,
+        "wavelength": 1,
+        "sampling": 5,
+        "jx": 1,
+        "jy": 1,
+        "x_phase": 0,
+        "y_phase": 90
+      }
+    }
+  },
+  {
+    "tool": "get_task_result",
+    "arguments": {
+      "task_id": "<task_id>",
+      "start": 0,
+      "count": 10
+    }
+  },
+  {
+    "tool": "export_analysis_image",
+    "arguments": {
+      "request": {
+        "task_id": "<task_id>",
+        "path": "C:/Users/tonge/Desktop/Zemax_MCP/outputs/pupil.png"
+      }
+    }
+  }
+]

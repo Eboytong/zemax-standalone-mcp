@@ -1,0 +1,53 @@
+{
+  "version": "0.1.8",
+  "status": "implemented",
+  "environment": {
+    "python": "3.14.6",
+    "opticstudio": "24.2.0 build240529",
+    "license_during_successful_runs": "PremiumEdition",
+    "historical_connection": "INVALID_LICENSE and initialization timeout",
+    "current_connection": "PremiumEdition; successful native0.1.59 material validation recorded in acceptance275.json"
+  },
+  "discovery": {
+    "surface_types": 81,
+    "distinct_lde_solve_names": 27,
+    "new_request_modes": 18,
+    "evidence": "verification\\development\\ED-02\\all-types\\probe.json"
+  },
+  "item_states": {
+    "done": 36,
+    "implemented": 1,
+    "blocked": 9
+  },
+  "pending": [
+    "MaterialModel native fitted Nd/Abbe discrepancy; actual GetIndex anchors in material-diagnostic271/anchors.json; original tolerances retained."
+  ],
+  "reference": "docs/solve-extensions.md",
+  "evidence": "verification/solve-extensions018-summary.json",
+  "native": {
+    "matrix_cases": 41,
+    "persistence_passed": 35,
+    "numeric_checks_passed": 27,
+    "closed": true
+  },
+  "limits": [
+    "Mechanical half diameter SurfacePickup/ZPLMacro falls back Fixed.",
+    "Chip Zone SurfacePickup falls back Automatic; ZPLMacro loses macro name."
+  ],
+  "ordinary": {
+    "passed": 781,
+    "native_deselected": 437,
+    "duration_seconds": 15.14,
+    "evidence": "verification/development/ED-02/ordinary-final.xml"
+  },
+  "updated_on": "2026-11-06",
+  "validation_as_of_source_version": "0.1.59",
+  "latest_validation": {
+    "item_id": "ED-02.MaterialOffset.Material",
+    "execution_state": "done",
+    "evidence": "verification/development/ED-02/acceptance275.json",
+    "numeric_checks": 399,
+    "old_abbe_reference_corrected": "documented model difference, including catalog dPgF; original tolerances retained",
+    "boundary": "Local v242 model difference includes0.3um;0.29um catalog-valid case uses constant offset"
+  }
+}

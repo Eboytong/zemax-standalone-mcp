@@ -1,0 +1,6 @@
+[
+  {"tool":"get_system_resources","arguments":{"request":{"kind":"test_plate_files","start":0,"count":20}}},
+  {"tool":"run_analysis","arguments":{"request":{"kind":"test_plate_list","method":"native"}}},
+  {"tool":"run_analysis","arguments":{"request":{"kind":"test_plate_list","catalog_file":"Applied.tpd","method":"auto"}}},
+  {"tool":"run_analysis","arguments":{"request":{"kind":"test_plate_list","catalog_file":"Applied.tpd","method":"file"}}}
+]

@@ -1,0 +1,48 @@
+5 Unused/c/Rotation R
+6 OPD Mode (0 for default, 1-4 to set manually)
+HologramThickness (onlyusedfor efficiency calculations
+not ray-tracing)
+7
+8 Average refractive index of the hologram emulsion, n
+9 Modulation of the refractive index, dn
+Shrinkage (0 for no shrinkage, else scale ofthickness e.g.
+0.98 is 2% shrinkage)
+10
+Index Shift (change of average refractive index after
+developing)
+11
+12 Consider Fresnel? (0 for false, 1 for true)
+13 Maximum term number (up to 240; shape 1 & 4 only)
+Normalization radius (allray-intercept points are divided
+by this number to determine the x and y coordinates for
+polynomial evaluation; shape 1 & 4 only)
+14
+15-254 Polynomial terms (shape 1 & 4 only)
+2.3.1.2.58. Paraxial (sequential surfaces, lens data editor)
+The paraxial surface acts as an ideal thin lens. Two parameters are required to model the paraxial surface: the focal
+lengthandtheOPDmode.The focal lengthis thatwhichwouldbemeasuredinair(unity index) althoughtheparaxial
+model will supportimaging into a non-unity index medium. Ifthe focal length is zero the paraxial lens has no optical
+power. The OPD mode indicates how OpticStudio should calculate the optical path difference for rays refracted by
+the paraxial lens. Although the ray tracing through paraxial lenses is well defined (see below), computing the OPD
+is more difficult, especially in the presence of significant aberrations, as discussed below.
+Setting the OPD Mode
+Mode = 0 is very fast and accurate in most cases if the aberrations are not severe. If the Mode = 0, then the OPD
+computation is based upon the conjugate positions computed by tracing a real parabasal ray. This is preferred for
+axial optical systems with modest aberrations.
+Mode = 1 integrates the actual phase introduced by the surface for each ray traced. Mode = 1 is substantially slower
+than the other modes, but is generally the most accurate. If the aberrations in the optical spaces on either side of
+the paraxial lens are large, the paraxial lens OPD computation cannot assume that the lens is working at fixed
+conjugates for all incoming rays. For these systems, the OPD mode should be set to 1. Mode = 1 can also be used to
+check if one of the other modes is accurate. If the same OPD results are produced by Mode = 1 as another mode,
+then the other mode may be used as it will generally compute the OPD much faster.
+Mode = 2 assumes that the lens is used at infinite conjugates regardless of the actual conjugates. This option will
+return incorrect results if the incoming beam is not reasonably collimated.
+Mode = 3 is similarto Mode = 0, except paraxialratherthan realrays are used. Mode = 3 is only valid for systems with
+modest aberrations that are well described by first order optical theory.
+For maximum OPD computation accuracy, the working F/# of the paraxial lens should be no faster than about F/4,
+regardless of the OPD mode selected.
+To model systems with collimated output, consider using Afocal ImageSpace ratherthan a paraxial lens; see
+"Afocal ImageSpace"
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 264
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Setup Tab

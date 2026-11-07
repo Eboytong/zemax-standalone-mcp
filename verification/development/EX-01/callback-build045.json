@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:/Windows/Microsoft.NET/Framework64/v4.0.30319/csc.exe",
+    "/nologo",
+    "/target:library",
+    "/platform:x64",
+    "/out:C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\EX-01\\net-callback045.dll",
+    "/reference:C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\ZOSAPI_Interfaces.dll",
+    "/reference:C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\ZOSAPI.dll",
+    "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\tests\\fixtures\\net_callback\\ScalarCallback.cs"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "output": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\EX-01\\net-callback045.dll",
+  "callback_type": "ZemaxMcp.Fixtures.ScalarCallback",
+  "native_host_execution": "not attempted"
+}

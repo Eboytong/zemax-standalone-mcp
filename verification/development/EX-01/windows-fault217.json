@@ -1,0 +1,117 @@
+[
+  {
+    "TimeCreated": "2026-11-06T11:22:11.7571273+08:00",
+    "Id": 1000,
+    "Message": "出错应用程序名称： OpticStudio.exe，版本： 24.5.29.0，时间戳： 0x6657c7b3\r\n出错模块名称： ZemaxCore.dll， 版本： 24.5.29.0，时间戳： 0x6657c78d\r\n异常代码： 0xc0000005\r\n错误偏移： 0x00000000007e233f\r\n出错进程 ID： 0x30E0\r\n出错应用程序开始时间： 0x1DD6D9E0002980D\r\nFaulting 应用程序路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\OpticStudio.exe\r\nFaulting 模块路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\ZemaxCore.dll\r\nReport ID： e44a9aac-640f-46e4-bbad-4a553c2d11ac\r\nFaulting 包全名： \r\nFaulting 程序包相对应用程序 ID：  个"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:22:11.3125246+08:00",
+    "Id": 1026,
+    "Message": "应用程序: OpticStudio.exe\nFramework 版本: v4.0.30319\n说明: 由于未经处理的异常，进程终止。\n异常信息: System.AccessViolationException\n   在 <Module>.Optical_System.Close(Optical_System*, Int32)\n   在 ZemaxEngine.Feature.Close(Int32)\n   在 ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses.CloseAnalysis(Int32)\n   在 System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr, System.Object[], System.Object, System.Object[] ByRef)\n   在 System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)\n   在 System.Runtime.Remoting.Messaging.ServerObjectTerminatorSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)\n   在 System.Runtime.Remoting.Messaging.ServerContextTerminatorSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)\n   在 System.Runtime.Remoting.Channels.CrossContextChannel.SyncProcessMessageCallback(System.Object[])\n   在 System.Runtime.Remoting.Channels.ChannelServices.DispatchMessage(System.Runtime.Remoting.Channels.IServerChannelSinkStack, System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage ByRef)\n   在 System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(System.Runtime.Remoting.Channels.IServerChannelSinkStack, System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Channels.ITransportHeaders, System.IO.Stream, System.Runtime.Remoting.Messaging.IMessage ByRef, System.Runtime.Remoting.Channels.ITransportHeaders ByRef, System.IO.Stream ByRef)\n   在 System.Runtime.Remoting.Channels.Ipc.IpcServerTransportSink.ServiceRequest(System.Object)\n   在 System.Runtime.Remoting.Channels.SocketHandler.ProcessRequestNow()\n   在 System.Runtime.Remoting.Channels.SocketHandler.BeginReadMessageCallback(System.IAsyncResult)\n   在 System.Threading._IOCompletionCallback.PerformIOCompletionCallback(UInt32, UInt32, System.Threading.NativeOverlapped*)\n\n"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:21:56.7426285+08:00",
+    "Id": 1000,
+    "Message": "出错应用程序名称： OpticStudio.exe，版本： 24.5.29.0，时间戳： 0x6657c7b3\r\n出错模块名称： ntdll.dll， 版本： 10.0.26100.9711，时间戳： 0x5fd39a05\r\n异常代码： 0xc0000374\r\n错误偏移： 0x0000000000118095\r\n出错进程 ID： 0x1310\r\n出错应用程序开始时间： 0x1DD6D9DF64548BD\r\nFaulting 应用程序路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\OpticStudio.exe\r\nFaulting 模块路径： C:\\Windows\\SYSTEM32\\ntdll.dll\r\nReport ID： beb88ba5-c89c-4a27-8e80-c90c34717ed4\r\nFaulting 包全名： \r\nFaulting 程序包相对应用程序 ID：  个"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:21:06.889072+08:00",
+    "Id": 1000,
+    "Message": "出错应用程序名称： OpticStudio.exe，版本： 24.5.29.0，时间戳： 0x6657c7b3\r\n出错模块名称： ntdll.dll， 版本： 10.0.26100.9711，时间戳： 0x5fd39a05\r\n异常代码： 0xc0000374\r\n错误偏移： 0x0000000000118095\r\n出错进程 ID： 0x51CC\r\n出错应用程序开始时间： 0x1DD6D9DD797F04E\r\nFaulting 应用程序路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\OpticStudio.exe\r\nFaulting 模块路径： C:\\Windows\\SYSTEM32\\ntdll.dll\r\nReport ID： 6dd7c440-b36a-4ce7-bc0a-9b870604937d\r\nFaulting 包全名： \r\nFaulting 程序包相对应用程序 ID：  个"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:20:53.9351421+08:00",
+    "Id": 1000,
+    "Message": "出错应用程序名称： OpticStudio.exe，版本： 24.5.29.0，时间戳： 0x6657c7b3\r\n出错模块名称： ntdll.dll， 版本： 10.0.26100.9711，时间戳： 0x5fd39a05\r\n异常代码： 0xc0000374\r\n错误偏移： 0x0000000000118095\r\n出错进程 ID： 0x6844\r\n出错应用程序开始时间： 0x1DD6D9DCF04D4EF\r\nFaulting 应用程序路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\OpticStudio.exe\r\nFaulting 模块路径： C:\\Windows\\SYSTEM32\\ntdll.dll\r\nReport ID： c48625b4-8908-41d3-8e82-58035c99963a\r\nFaulting 包全名： \r\nFaulting 程序包相对应用程序 ID：  个"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:19:48.7495345+08:00",
+    "Id": 1000,
+    "Message": "出错应用程序名称： OpticStudio.exe，版本： 24.5.29.0，时间戳： 0x6657c7b3\r\n出错模块名称： ntdll.dll， 版本： 10.0.26100.9711，时间戳： 0x5fd39a05\r\n异常代码： 0xc0000374\r\n错误偏移： 0x0000000000118095\r\n出错进程 ID： 0x58E0\r\n出错应用程序开始时间： 0x1DD6D9DA8BBA316\r\nFaulting 应用程序路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\OpticStudio.exe\r\nFaulting 模块路径： C:\\Windows\\SYSTEM32\\ntdll.dll\r\nReport ID： ed09cf9d-1a87-4633-8baf-d28c32dccc37\r\nFaulting 包全名： \r\nFaulting 程序包相对应用程序 ID：  个"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:19:38.7984378+08:00",
+    "Id": 1000,
+    "Message": "出错应用程序名称： OpticStudio.exe，版本： 24.5.29.0，时间戳： 0x6657c7b3\r\n出错模块名称： ntdll.dll， 版本： 10.0.26100.9711，时间戳： 0x5fd39a05\r\n异常代码： 0xc0000374\r\n错误偏移： 0x0000000000118095\r\n出错进程 ID： 0x53E4\r\n出错应用程序开始时间： 0x1DD6D9DA4BE783A\r\nFaulting 应用程序路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\OpticStudio.exe\r\nFaulting 模块路径： C:\\Windows\\SYSTEM32\\ntdll.dll\r\nReport ID： 0148936e-3e9c-4a53-b726-6c4db50a6b48\r\nFaulting 包全名： \r\nFaulting 程序包相对应用程序 ID：  个"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:19:23.8091158+08:00",
+    "Id": 1000,
+    "Message": "出错应用程序名称： OpticStudio.exe，版本： 24.5.29.0，时间戳： 0x6657c7b3\r\n出错模块名称： ZemaxCore.dll， 版本： 24.5.29.0，时间戳： 0x6657c78d\r\n异常代码： 0xc0000005\r\n错误偏移： 0x00000000007e233f\r\n出错进程 ID： 0x6B70\r\n出错应用程序开始时间： 0x1DD6D9D98F9A4C3\r\nFaulting 应用程序路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\OpticStudio.exe\r\nFaulting 模块路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\ZemaxCore.dll\r\nReport ID： d76ae259-2d1b-47e6-92b3-55214b71c9c0\r\nFaulting 包全名： \r\nFaulting 程序包相对应用程序 ID：  个"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:19:23.3560928+08:00",
+    "Id": 1026,
+    "Message": "应用程序: OpticStudio.exe\nFramework 版本: v4.0.30319\n说明: 由于未经处理的异常，进程终止。\n异常信息: System.AccessViolationException\n   在 <Module>.Optical_System.Close(Optical_System*, Int32)\n   在 ZemaxEngine.Feature.Close(Int32)\n   在 ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses.CloseAnalysis(Int32)\n   在 System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr, System.Object[], System.Object, System.Object[] ByRef)\n   在 System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)\n   在 System.Runtime.Remoting.Messaging.ServerObjectTerminatorSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)\n   在 System.Runtime.Remoting.Messaging.ServerContextTerminatorSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)\n   在 System.Runtime.Remoting.Channels.CrossContextChannel.SyncProcessMessageCallback(System.Object[])\n   在 System.Runtime.Remoting.Channels.ChannelServices.DispatchMessage(System.Runtime.Remoting.Channels.IServerChannelSinkStack, System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage ByRef)\n   在 System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(System.Runtime.Remoting.Channels.IServerChannelSinkStack, System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Channels.ITransportHeaders, System.IO.Stream, System.Runtime.Remoting.Messaging.IMessage ByRef, System.Runtime.Remoting.Channels.ITransportHeaders ByRef, System.IO.Stream ByRef)\n   在 System.Runtime.Remoting.Channels.Ipc.IpcServerTransportSink.ServiceRequest(System.Object)\n   在 System.Runtime.Remoting.Channels.SocketHandler.ProcessRequestNow()\n   在 System.Runtime.Remoting.Channels.SocketHandler.BeginReadMessageCallback(System.IAsyncResult)\n   在 System.Threading._IOCompletionCallback.PerformIOCompletionCallback(UInt32, UInt32, System.Threading.NativeOverlapped*)\n\n"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:19:13.2043678+08:00",
+    "Id": 1000,
+    "Message": "出错应用程序名称： OpticStudio.exe，版本： 24.5.29.0，时间戳： 0x6657c7b3\r\n出错模块名称： ZemaxCore.dll， 版本： 24.5.29.0，时间戳： 0x6657c78d\r\n异常代码： 0xc0000005\r\n错误偏移： 0x00000000007e233f\r\n出错进程 ID： 0x2600\r\n出错应用程序开始时间： 0x1DD6D9D948EC76B\r\nFaulting 应用程序路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\OpticStudio.exe\r\nFaulting 模块路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\ZemaxCore.dll\r\nReport ID： 43b6fe02-8908-4528-9270-00598a63fd60\r\nFaulting 包全名： \r\nFaulting 程序包相对应用程序 ID：  个"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:19:12.8477208+08:00",
+    "Id": 1026,
+    "Message": "应用程序: OpticStudio.exe\nFramework 版本: v4.0.30319\n说明: 由于未经处理的异常，进程终止。\n异常信息: System.AccessViolationException\n   在 <Module>.Optical_System.Destroy(Optical_System*)\n   在 ZemaxEngine.OpSysMan.!OpSysMan()\n   在 ZemaxEngine.OpSysMan.Dispose(Boolean)\n\n"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:18:25.6180842+08:00",
+    "Id": 1000,
+    "Message": "出错应用程序名称： OpticStudio.exe，版本： 24.5.29.0，时间戳： 0x6657c7b3\r\n出错模块名称： ntdll.dll， 版本： 10.0.26100.9711，时间戳： 0x5fd39a05\r\n异常代码： 0xc0000005\r\n错误偏移： 0x00000000000088d4\r\n出错进程 ID： 0x3B90\r\n出错应用程序开始时间： 0x1DD6D9D76607639\r\nFaulting 应用程序路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\OpticStudio.exe\r\nFaulting 模块路径： C:\\Windows\\SYSTEM32\\ntdll.dll\r\nReport ID： 15921e67-3452-4e15-bd68-e79a9f81e15d\r\nFaulting 包全名： \r\nFaulting 程序包相对应用程序 ID：  个"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:18:25.2878101+08:00",
+    "Id": 1026,
+    "Message": "应用程序: OpticStudio.exe\nFramework 版本: v4.0.30319\n说明: 由于未经处理的异常，进程终止。\n异常信息: 异常代码为 c0000005，异常地址为 00007FFC2BA288D4\n"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:18:01.6739887+08:00",
+    "Id": 1000,
+    "Message": "出错应用程序名称： OpticStudio.exe，版本： 24.5.29.0，时间戳： 0x6657c7b3\r\n出错模块名称： ntdll.dll， 版本： 10.0.26100.9711，时间戳： 0x5fd39a05\r\n异常代码： 0xc0000374\r\n错误偏移： 0x0000000000118095\r\n出错进程 ID： 0x7BE4\r\n出错应用程序开始时间： 0x1DD6D9D6971DCFE\r\nFaulting 应用程序路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\OpticStudio.exe\r\nFaulting 模块路径： C:\\Windows\\SYSTEM32\\ntdll.dll\r\nReport ID： 7612ff2f-0b44-4e6f-b40b-cdf53f9742af\r\nFaulting 包全名： \r\nFaulting 程序包相对应用程序 ID：  个"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:16:09.0857094+08:00",
+    "Id": 1000,
+    "Message": "出错应用程序名称： OpticStudio.exe，版本： 24.5.29.0，时间戳： 0x6657c7b3\r\n出错模块名称： ZemaxCore.dll， 版本： 24.5.29.0，时间戳： 0x6657c78d\r\n异常代码： 0xc0000005\r\n错误偏移： 0x00000000007e233f\r\n出错进程 ID： 0x6DC8\r\n出错应用程序开始时间： 0x1DD6D9D27082C2E\r\nFaulting 应用程序路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\OpticStudio.exe\r\nFaulting 模块路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\ZemaxCore.dll\r\nReport ID： 20eb92d1-b114-402a-a290-f049fd5ae04d\r\nFaulting 包全名： \r\nFaulting 程序包相对应用程序 ID：  个"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:16:08.7379861+08:00",
+    "Id": 1026,
+    "Message": "应用程序: OpticStudio.exe\nFramework 版本: v4.0.30319\n说明: 由于未经处理的异常，进程终止。\n异常信息: System.AccessViolationException\n   在 <Module>.Optical_System.Close(Optical_System*, Int32)\n   在 ZemaxEngine.Feature.Close(Int32)\n   在 ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses.CloseAnalysis(Int32)\n   在 System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr, System.Object[], System.Object, System.Object[] ByRef)\n   在 System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)\n   在 System.Runtime.Remoting.Messaging.ServerObjectTerminatorSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)\n   在 System.Runtime.Remoting.Messaging.ServerContextTerminatorSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)\n   在 System.Runtime.Remoting.Channels.CrossContextChannel.SyncProcessMessageCallback(System.Object[])\n   在 System.Runtime.Remoting.Channels.ChannelServices.DispatchMessage(System.Runtime.Remoting.Channels.IServerChannelSinkStack, System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage ByRef)\n   在 System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(System.Runtime.Remoting.Channels.IServerChannelSinkStack, System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Channels.ITransportHeaders, System.IO.Stream, System.Runtime.Remoting.Messaging.IMessage ByRef, System.Runtime.Remoting.Channels.ITransportHeaders ByRef, System.IO.Stream ByRef)\n   在 System.Runtime.Remoting.Channels.Ipc.IpcServerTransportSink.ServiceRequest(System.Object)\n   在 System.Runtime.Remoting.Channels.SocketHandler.ProcessRequestNow()\n   在 System.Runtime.Remoting.Channels.SocketHandler.BeginReadMessageCallback(System.IAsyncResult)\n   在 System.Threading._IOCompletionCallback.PerformIOCompletionCallback(UInt32, UInt32, System.Threading.NativeOverlapped*)\n\n"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:14:56.6257436+08:00",
+    "Id": 1000,
+    "Message": "出错应用程序名称： OpticStudio.exe，版本： 24.5.29.0，时间戳： 0x6657c7b3\r\n出错模块名称： ZemaxCore.dll， 版本： 24.5.29.0，时间戳： 0x6657c78d\r\n异常代码： 0xc0000005\r\n错误偏移： 0x00000000007e233f\r\n出错进程 ID： 0x7DD8\r\n出错应用程序开始时间： 0x1DD6D9CFAD7DE24\r\nFaulting 应用程序路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\OpticStudio.exe\r\nFaulting 模块路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\ZemaxCore.dll\r\nReport ID： 19c9f6ec-511a-47b8-b60d-312994857ce1\r\nFaulting 包全名： \r\nFaulting 程序包相对应用程序 ID：  个"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:14:56.1949358+08:00",
+    "Id": 1026,
+    "Message": "应用程序: OpticStudio.exe\nFramework 版本: v4.0.30319\n说明: 由于未经处理的异常，进程终止。\n异常信息: System.AccessViolationException\n   在 <Module>.Optical_System.Close(Optical_System*, Int32)\n   在 ZemaxEngine.Feature.Close(Int32)\n   在 ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses.CloseAnalysis(Int32)\n   在 System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr, System.Object[], System.Object, System.Object[] ByRef)\n   在 System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)\n   在 System.Runtime.Remoting.Messaging.ServerObjectTerminatorSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)\n   在 System.Runtime.Remoting.Messaging.ServerContextTerminatorSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)\n   在 System.Runtime.Remoting.Channels.CrossContextChannel.SyncProcessMessageCallback(System.Object[])\n   在 System.Runtime.Remoting.Channels.ChannelServices.DispatchMessage(System.Runtime.Remoting.Channels.IServerChannelSinkStack, System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage ByRef)\n   在 System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(System.Runtime.Remoting.Channels.IServerChannelSinkStack, System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Channels.ITransportHeaders, System.IO.Stream, System.Runtime.Remoting.Messaging.IMessage ByRef, System.Runtime.Remoting.Channels.ITransportHeaders ByRef, System.IO.Stream ByRef)\n   在 System.Runtime.Remoting.Channels.Ipc.IpcServerTransportSink.ServiceRequest(System.Object)\n   在 System.Runtime.Remoting.Channels.SocketHandler.ProcessRequestNow()\n   在 System.Runtime.Remoting.Channels.SocketHandler.BeginReadMessageCallback(System.IAsyncResult)\n   在 System.Threading._IOCompletionCallback.PerformIOCompletionCallback(UInt32, UInt32, System.Threading.NativeOverlapped*)\n\n"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:13:30.717952+08:00",
+    "Id": 1000,
+    "Message": "出错应用程序名称： OpticStudio.exe，版本： 24.5.29.0，时间戳： 0x6657c7b3\r\n出错模块名称： ntdll.dll， 版本： 10.0.26100.9711，时间戳： 0x5fd39a05\r\n异常代码： 0xc0000374\r\n错误偏移： 0x0000000000118095\r\n出错进程 ID： 0xDFC\r\n出错应用程序开始时间： 0x1DD6D9CC87A437B\r\nFaulting 应用程序路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\OpticStudio.exe\r\nFaulting 模块路径： C:\\Windows\\SYSTEM32\\ntdll.dll\r\nReport ID： 3e578049-92b8-4fc5-8e82-e7d1d4136299\r\nFaulting 包全名： \r\nFaulting 程序包相对应用程序 ID：  个"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:12:35.6459548+08:00",
+    "Id": 1000,
+    "Message": "出错应用程序名称： OpticStudio.exe，版本： 24.5.29.0，时间戳： 0x6657c7b3\r\n出错模块名称： ZemaxCore.dll， 版本： 24.5.29.0，时间戳： 0x6657c78d\r\n异常代码： 0xc0000005\r\n错误偏移： 0x00000000007e233f\r\n出错进程 ID： 0x50C8\r\n出错应用程序开始时间： 0x1DD6D9CA723FF18\r\nFaulting 应用程序路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\OpticStudio.exe\r\nFaulting 模块路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\ZemaxCore.dll\r\nReport ID： d51a8ead-e948-44ac-8379-4c8a29291352\r\nFaulting 包全名： \r\nFaulting 程序包相对应用程序 ID：  个"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:12:35.1945217+08:00",
+    "Id": 1026,
+    "Message": "应用程序: OpticStudio.exe\nFramework 版本: v4.0.30319\n说明: 由于未经处理的异常，进程终止。\n异常信息: System.AccessViolationException\n   在 <Module>.Optical_System.Close(Optical_System*, Int32)\n   在 ZemaxEngine.Feature.Close(Int32)\n   在 ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses.CloseAnalysis(Int32)\n   在 System.Runtime.Remoting.Messaging.StackBuilderSink._PrivateProcessMessage(IntPtr, System.Object[], System.Object, System.Object[] ByRef)\n   在 System.Runtime.Remoting.Messaging.StackBuilderSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)\n   在 System.Runtime.Remoting.Messaging.ServerObjectTerminatorSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)\n   在 System.Runtime.Remoting.Messaging.ServerContextTerminatorSink.SyncProcessMessage(System.Runtime.Remoting.Messaging.IMessage)\n   在 System.Runtime.Remoting.Channels.CrossContextChannel.SyncProcessMessageCallback(System.Object[])\n   在 System.Runtime.Remoting.Channels.ChannelServices.DispatchMessage(System.Runtime.Remoting.Channels.IServerChannelSinkStack, System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Messaging.IMessage ByRef)\n   在 System.Runtime.Remoting.Channels.BinaryServerFormatterSink.ProcessMessage(System.Runtime.Remoting.Channels.IServerChannelSinkStack, System.Runtime.Remoting.Messaging.IMessage, System.Runtime.Remoting.Channels.ITransportHeaders, System.IO.Stream, System.Runtime.Remoting.Messaging.IMessage ByRef, System.Runtime.Remoting.Channels.ITransportHeaders ByRef, System.IO.Stream ByRef)\n   在 System.Runtime.Remoting.Channels.Ipc.IpcServerTransportSink.ServiceRequest(System.Object)\n   在 System.Runtime.Remoting.Channels.SocketHandler.ProcessRequestNow()\n   在 System.Runtime.Remoting.Channels.SocketHandler.BeginReadMessageCallback(System.IAsyncResult)\n   在 System.Threading._IOCompletionCallback.PerformIOCompletionCallback(UInt32, UInt32, System.Threading.NativeOverlapped*)\n\n"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:11:10.1232286+08:00",
+    "Id": 1000,
+    "Message": "出错应用程序名称： OpticStudio.exe，版本： 24.5.29.0，时间戳： 0x6657c7b3\r\n出错模块名称： ntdll.dll， 版本： 10.0.26100.9711，时间戳： 0x5fd39a05\r\n异常代码： 0xc0000374\r\n错误偏移： 0x0000000000118095\r\n出错进程 ID： 0x7FA4\r\n出错应用程序开始时间： 0x1DD6D9C73712085\r\nFaulting 应用程序路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\OpticStudio.exe\r\nFaulting 模块路径： C:\\Windows\\SYSTEM32\\ntdll.dll\r\nReport ID： c9546271-c4df-4a9e-8202-8ebdfa6d213d\r\nFaulting 包全名： \r\nFaulting 程序包相对应用程序 ID：  个"
+  },
+  {
+    "TimeCreated": "2026-11-06T11:08:00.3017887+08:00",
+    "Id": 1000,
+    "Message": "出错应用程序名称： OpticStudio.exe，版本： 24.5.29.0，时间戳： 0x6657c7b3\r\n出错模块名称： ntdll.dll， 版本： 10.0.26100.9711，时间戳： 0x5fd39a05\r\n异常代码： 0xc0000374\r\n错误偏移： 0x0000000000118095\r\n出错进程 ID： 0xD40\r\n出错应用程序开始时间： 0x1DD6D9C03FC3114\r\nFaulting 应用程序路径： C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\OpticStudio.exe\r\nFaulting 模块路径： C:\\Windows\\SYSTEM32\\ntdll.dll\r\nReport ID： 4b05fb36-2586-4744-a6a9-fc52050c6f21\r\nFaulting 包全名： \r\nFaulting 程序包相对应用程序 ID：  个"
+  }
+]

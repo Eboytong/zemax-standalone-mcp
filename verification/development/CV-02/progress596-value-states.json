@@ -1,0 +1,148 @@
+{
+  "date": "2026-11-07",
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build240529 Premium",
+  "state": "implemented",
+  "completion_count": 0,
+  "item_ids": [
+    "CV-02.PowerFieldMapSettings",
+    "CV-02.PowerPupilMapSettings"
+  ],
+  "scope": "Expose native query, raw-zero and central-only valid-mask identities without changing numeric results",
+  "input_source": "Owned planar and R50mm N-BK7 interface/stop, wavelength.5875618um, EPD10mm",
+  "request": [
+    {
+      "kind": "power_field_map",
+      "surface": 1,
+      "quantity": "Power",
+      "offset": 7,
+      "x_points": 3,
+      "y_points": 3,
+      "x_field_width": 2,
+      "y_field_width": 2
+    },
+    {
+      "kind": "power_field_map",
+      "surface": 1,
+      "quantity": "EFL",
+      "offset": 7,
+      "x_points": 3,
+      "y_points": 3,
+      "x_field_width": 2,
+      "y_field_width": 2
+    },
+    {
+      "kind": "power_pupil_map",
+      "surface": 1,
+      "quantity": "Power",
+      "offset": 7,
+      "x_points": 3,
+      "y_points": 3
+    },
+    {
+      "kind": "power_pupil_map",
+      "surface": 1,
+      "quantity": "EFL",
+      "offset": 7,
+      "x_points": 3,
+      "y_points": 3
+    },
+    {
+      "kind": "power_field_map",
+      "surface": 1,
+      "quantity": "Power",
+      "offset": 7,
+      "x_points": 3,
+      "y_points": 3,
+      "x_field_width": 2,
+      "y_field_width": 2
+    },
+    {
+      "kind": "power_field_map",
+      "surface": 1,
+      "quantity": "EFL",
+      "offset": 7,
+      "x_points": 3,
+      "y_points": 3,
+      "x_field_width": 2,
+      "y_field_width": 2
+    },
+    {
+      "kind": "power_pupil_map",
+      "surface": 1,
+      "quantity": "Power",
+      "offset": 7,
+      "x_points": 3,
+      "y_points": 3
+    },
+    {
+      "kind": "power_pupil_map",
+      "surface": 1,
+      "quantity": "EFL",
+      "offset": 7,
+      "x_points": 3,
+      "y_points": 3
+    }
+  ],
+  "actual_settings": "outputs/runs/power596_value_states_3749cf01db/value-states.json",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_power_map_value_states_live.py --run-zemax -x -q --junitxml=verification/development/CV-02/native596-value-states.xml",
+  "result": "Eight analyses: planar rawzero preserved with offset7 for both quantities/maps; curved model nonzero results retain identity; rows and grid pagination passed.",
+  "implementation": [
+    "native_ring_validity and valid_mask_scope",
+    "raw_value_state and native_query_status per row",
+    "native_zero_count and invalid_reference_ray_count per grid",
+    "zero_interpretation for rawzero independent of offset"
+  ],
+  "reference": "Retained single-interface reference6.814355276657183D/146.7490260488084mm and exact native planar rawzero identity",
+  "tolerance": "Curved center2e-4 absolute+2e-5 relative; exact discrete zero/status/paging identity",
+  "checks": [
+    {
+      "label": "power_field_map Power",
+      "actual": 6.814355276657183,
+      "expected": 6.814355276657183,
+      "atol": 0.0002,
+      "rtol": 2e-05,
+      "passed": true
+    },
+    {
+      "label": "power_field_map EFL",
+      "actual": 146.7490260488084,
+      "expected": 146.7490260488084,
+      "atol": 0.0002,
+      "rtol": 2e-05,
+      "passed": true
+    },
+    {
+      "label": "power_pupil_map Power",
+      "actual": 6.814355276657183,
+      "expected": 6.814355276657183,
+      "atol": 0.0002,
+      "rtol": 2e-05,
+      "passed": true
+    },
+    {
+      "label": "power_pupil_map EFL",
+      "actual": 146.7490260488084,
+      "expected": 146.7490260488084,
+      "atol": 0.0002,
+      "rtol": 2e-05,
+      "passed": true
+    }
+  ],
+  "maximum_numeric_error": 0.0,
+  "ordinary": {
+    "report": "verification/development/BASE-01/ordinary597-targeted.xml",
+    "passed": 71
+  },
+  "task_state": "Eight parents succeeded; child batch owners closed; no cleanup warnings",
+  "lifecycle": "Real stdio connected/disconnected; source surfaces/solve/settings/MFE retained; separate before/after saves reloaded for both models",
+  "retained_failure": {
+    "report": "verification/development/CV-02/native595-value-states.xml",
+    "run": "outputs/runs/power595_value_states_74485fa4c4",
+    "reason": "Test supplied offset/limit instead of public start/count paging arguments; page defaulted to all rows.596 uses actual public arguments; production paging unchanged.",
+    "disconnect": "Explicit disconnect succeeded before failed stdio context exited"
+  },
+  "conclusion": "New metadata contract passed ordinary/native checks. Whole feature remains implemented: peripheral ring validity and native zero-EFL definition still require formal evidence.",
+  "next_action": "Use explicit scopes and raw states in consumers. Obtain formal native ring and zero-EFL definitions before full completion."
+}

@@ -1,0 +1,25 @@
+[
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "paraxial_gaussian_beam",
+        "m2": 4,
+        "waist_radius": 0.05,
+        "surface_1_to_waist": -10
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "skew_gaussian_beam",
+        "field": 2,
+        "waist_radius_x": 0.05,
+        "waist_radius_y": 0.08,
+        "start_surface": 1
+      }
+    }
+  }
+]

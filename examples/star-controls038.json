@@ -1,0 +1,61 @@
+[
+  {
+    "request": {
+      "kind": "rigid_body",
+      "surface": 1,
+      "enabled": true,
+      "reference_point": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    }
+  },
+  {
+    "request": {
+      "kind": "coordinate_transform",
+      "surface": 1,
+      "rotation_matrix": [
+        0,
+        -1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "enabled": true
+    }
+  },
+  {
+    "request": {
+      "kind": "define_component",
+      "first_surface": 1,
+      "last_surface": 2
+    }
+  },
+  {
+    "request": {
+      "kind": "thermal_controls",
+      "surface": 1,
+      "working_wavelength": 1
+    }
+  },
+  {
+    "request": {
+      "kind": "volume_controls",
+      "surface": 1,
+      "data_kind": "temperature",
+      "grin_step": 0.1
+    }
+  },
+  {
+    "request": {
+      "kind": "update_mode",
+      "mode": "Suspended",
+      "manual_update": true
+    }
+  }
+]

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="1.048" timestamp="2026-11-07T19:30:26.045868+08:00" hostname="tongeb"><testcase classname="" name="tests.test_surface_mtf_phase_identity_live" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Users\tonge\Desktop\Zemax_MCP\tests\test_surface_mtf_phase_identity_live.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_surface_mtf_phase_identity_live.py:9: in &lt;module&gt;
+    from support.surface_mtf_angular536 import interpolate
+tests\support\surface_mtf_angular536.py:9: in &lt;module&gt;
+    from diffraction_reference import pupil_autocorrelation
+E   ModuleNotFoundError: No module named 'diffraction_reference'</error></testcase></testsuite></testsuites>

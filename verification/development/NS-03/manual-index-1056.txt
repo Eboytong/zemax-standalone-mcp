@@ -1,0 +1,32 @@
+Mounting Height The distance in lens units from the roadway to the lamp origin.
+Arrangement The arrangement of lamps. Choose single side, double side, or staggered.
+LongitudinalSpacing The spacing between lamps in lens units along the direction of the roadway. For single and
+double side arrangements,this is the spacingbetweentwoadjacentlampsonthe same sideofthe road. For staggered
+arrangement, this is the spacing along the road of adjacent lamps on opposite sides of the road. The spacing of
+adjacent lamps on the same side of the roadway would, therefore, be two times the spacing.
+Lateral Offset The lateral lamp offset in lens units. This is the transverse lamp position, relative to the edge of the
+roadway. This value can be positive or negative.
+Origin The object that represents the origin of the lamp coordinate system.
+Number of Lanes The number of lanes on the roadway.
+Lane Width The width of each lane in the roadway in lens units.
+Surface Classification The road surface classification. This corresponds to the specularity of the road surface.
+Currently R1, R2, R3, and R4 are supported.
+Road Class The roadway class. This determines the specifications required to have a passing roadway. Currently
+ME1, ME2, ME3A, ME3B, ME3C, ME3D, ME4A, ME4B, ME5, ME6, CE0, CE1, CE2, CE3, CE4, and CE5 are supported.
+Discussion
+This analysis computes roadway lighting data according to CIE 140-2000 "Road Lighting Calculations". A quick
+indication as to whether the lamp passes the specifications dictated by the defined road class is provided along
+with the calculated value. While all settings are defined in system units, the computed data is always returned in
+units of meters and lumens, per the specification.
+There are two methods intended forthe usage of this analysis. This first is to simply analyze an existing lamp whose
+far-field intensity is defined in a *.IES or *.LDT file. In this case the far-field data file should be specified as the origin
+object in the settings and OpticStudio will only account for that source in the computation. The second is for the
+userto define sources and geometries associatedwith the roadway lamp in the system; no other objects or detectors
+should existin the system.OpticStudio willtrace analysis rays from all defined sources and compute the data based
+upon the far-field intensity pattern. In both scenarios the calculation is done assuming the origin object's local x-axis
+is the longitudinal direction (along the roadway), and the local y-axis is the transverse direction (across the roadway).
+Note that some IES/LDT files have data defined assuming differentlamp orientations. Make sure to confirm this and
+rotate the source, if necessary, before using this analysis.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1057
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (non-sequential ui mode)

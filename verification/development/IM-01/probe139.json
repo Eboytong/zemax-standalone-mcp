@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-06",
+  "item": "IM-01.ImageSimulation",
+  "state": "implemented",
+  "findings": [
+    "Installed manual documents Output File BMP/JPG/PNG in Images folder",
+    "Current configure clears OutputFile; collector only reads series/grid/scatter/text",
+    "Native no-array outlet therefore has no enabled file outlet in current adapter"
+  ],
+  "evidence": [
+    "verification/development/IM-01/manual-page-824.txt",
+    "src/zemax_mcp/imaging.py: configure/collect_imaging",
+    "verification/development/IM-01/acceptance050/summary.json"
+  ],
+  "next_action": "Probe native OutputFile absolute path versus unique basename under Images with controlled owned resources; read back settings and exact produced location. Then collect native output as artifact/RGB with explicit rendered pixel units and retained physical conditions; verify asymmetric source orientation.",
+  "constraints": [
+    "Do not infer radiometric power from display RGB",
+    "Confirm filename/path behavior on installed v242 before enabling production output",
+    "Keep failed no-array records; normal close and cleanup of owned probe resources required"
+  ],
+  "native_execution_this_probe": false
+}

@@ -1,0 +1,22 @@
+{
+  "nsc": {
+    "request": {
+      "path": "C:/ZemaxOutput/nsc.step",
+      "format": "STEP",
+      "start": 2,
+      "end": 2,
+      "number_of_rays": 0,
+      "scatter_nsc_rays": true,
+      "split_nsc_rays": true,
+      "use_polarization": true
+    }
+  },
+  "acis_current": {
+    "request": {
+      "path": "C:/ZemaxOutput/design.sat",
+      "format": "SAT",
+      "file_version": "Current",
+      "end": 2
+    }
+  }
+}

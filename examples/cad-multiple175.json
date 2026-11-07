@@ -1,0 +1,20 @@
+{
+  "all_by_file": {
+    "request": {
+      "path": "C:/ZemaxOutput/design.step",
+      "format": "STEP",
+      "configuration_mode": "all_by_file",
+      "end": 2
+    }
+  },
+  "all_by_layer": {
+    "request": {
+      "path": "C:/ZemaxOutput/design.igs",
+      "format": "IGES",
+      "configuration_mode": "all_by_layer",
+      "lens_layer": 10,
+      "ray_layer": 20,
+      "end": 2
+    }
+  }
+}

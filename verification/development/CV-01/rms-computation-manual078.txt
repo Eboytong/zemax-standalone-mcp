@@ -1,0 +1,269 @@
+PAGE 807
+The GMTF is computed at the center of the pixel and the GMTF is assumed to have that value over the entire region
+of the pixel for display purposes.
+MTF Data Choose Tangential, Sagittal, or average GMTF to be displayed.
+Reference Field This control selects the field number that corresponds to the center of the map. The value zero
+refers to the center of the object (hx = 0, hy = 0), even if no field point is defined there.
+Show As Choose grey scale or false color map as the display option.
+Scatter Rays If checked, rays will be statistically scattered at ray-surface intercepts that have defined scattering
+properties. See "Scattering (surface properties)"
+RemoveVignetting Factors If checked, vignetting factors are automatically removed. See "Comment about
+vignetting factors".
+Discussion See the "Geometric MTF" for details. This feature computes the GMTF at each field point on a 2D grid. If
+the total number of points is large, the computation time may become quite large. See also the "FFT MTF Map".
+Comment about vignetting factors
+Vignetting factors determine the size and shape of the pupil as seen from different field points (see "Vignetting
+factors" for a full discussion). Because this analysis feature needs to trace rays at arbitrary intermediate field points
+where no specific vignetting factors are defined, the use of vignetting factors is not recommended. If "Remove
+Vignetting Factors" is checked on (the default), any defined vignetting factors will automatically be replaced with
+surface apertures forthis computation. The surface aperture method is generally more accurate than the vignetting
+factor method when the pupil is overfilled with light. The resulting data may be different between the two methods.
+In some cases, particularlywhere the vignetting factors are being used to define the shape ofthe source beam rather
+than the apertures of the optics, it may be required to use the defined vignetting factors. In this case, check the
+"Remove Vignetting Factors" box off. OpticStudio will then use the closest defined field to determine the vignetting
+factors to use for an arbitrary field point.
+3.2.6. RMS
+Provides the Root-Mean-Square (RMS) performance data as a function or field, wavelength and defocus
+3.2.6.1. RMS vs. Field
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 807
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+PAGE 808
+Plots RMS radial, x, and y spot radius, RMS wavefront error, or Strehl ratio as a function of field angle.
+Ray Density If the method is Gaussian quadrature, then the ray density specifies the number of radial rays to be
+traced. The more rays traced, the greater the accuracy, although the computation time increases. The maximum
+number is 20 which is sufficient for pupil aberrations up to order 40. If the method is rectangular array, then the ray
+density indicates the grid size. Rays outside the circular entrance pupil are ignored. See the "Discussion" section for
+details.
+FieldDensity The field density is the number of points between zero degrees and the maximum field angle specified
+at which the RMS/Strehl ratio is calculated, intermediate values are interpolated. A maximum of 100 field points is
+allowed.
+PlotScale Sets the maximum vertical scale for the plot. Zero results in automatic scaling.
+Method Select eitherGaussianQuadrature (GQ) or Rectangular Array (RA). See "Comments about RMS computation
+methods".
+Data Selects either wavefront error, spotradius, spot x-direction, spot y-direction, or Strehlratio. Strehlratio is only
+available for monochromatic calculations, and is computed using the method described in "Strehl ratio
+approximation" on page 206. For a polychromatic Strehl, see the "Huygens PSF".
+ReferTo Select either chief ray or centroid. For monochromatic calculations, the specified wavelength is used for
+reference. For polychromatic calculations, the primary wavelength is used for reference. Both reference points
+subtract out wavefront piston. The centroid reference mode also subtracts outthe tilt ofthe wavefront, which yields
+smaller RMS values.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 808
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+PAGE 809
+Orientation Select +y, -y, +x, or -x field direction. Note the data will only be computed to the limits of the defined
+fields in the selected direction.
+Use Dashes Selects either solid lines or dashed lines to differentiate the various curves.
+WavelengthSelect "All" todisplaydata for eachwavelengthandapolychromatic computation, anyonewavelength
+to display monochromatic data, "Poly Only" which only displays the polychromatic data, or "All With No Poly" to
+display all monochromatic data without the polychromatic data. Strehl ratio can only be computed for a single
+wavelength.
+Show Diffraction Limit If checked, then a horizontal line indicating the diffraction limited response will be drawn
+on the plot. For RMS radius, x, or y; the diffraction limit is assumed to be 1.22 times the working F/# on axis times
+the wavelength (primary wavelength if polychromatic). The change in the diffraction limit due to changes in F/#
+with field are ignored; a single value is used across the range of the plot. For Strehl ratio, 0.8 is used, and for RMS
+wavefront, 0.072 waves is used. These are all approximate indicators for convenience only; the actual meaning of
+"diffraction limited" may be open to interpretation.
+Use Polarization If checked, polarization is considered. See " Polarization (system explorer) " for information on
+defining the polarization state and how polarization is used by analysis features.
+RemoveVignetting Factors If checked, vignetting factors are automatically removed. See "Comment about
+vignetting factors".
+Discussion
+This feature calculates the RMS error or Strehl ratio as a function of field angle for each wavelength.
+Comments about RMScomputation methods
+Two different methods of calculation are available; either Gaussian Quadrature (GQ), or Rectangular Array (RA). For
+GQ, the rays traced are arranged in a radial pattern with an optimal weighting to estimate the RMS with a minimum
+number of rays. The method is described in G. W. Forbes, "Optical system assessment for design: numerical ray
+tracing in the Gaussian pupil", J. Opt. Soc. Am. A, Vol. 5, No. 11, p1943 (1988). Although the method is very efficient,
+the algorithm is not accurate if some ofthe rays are clipped due to surface apertures. To compute theRMSwavefront
+in systems with surface apertures requires the use of the RA method, and a larger number of rays for sufficient
+accuracy. For more information see "Selecting the pupil integration method".
+Comments about RMS wavefront computations
+For RMS wavefront computations, OpticStudio always subtracts out a reference sphere.
+• When referenced to the centroid, OpticStudio computes a mean shifted, tilted reference sphere. RMS wavefront
+error with the mean subtracted is computed as follows:
+where Wn
+is the OPD at a given point in the pupil and wn
+is the weighting at that point in the pupil. The correction
+method is described in M. Rimmer, "Analysis of Perturbed Lens Systems", AppliedOptics Vol. 9,No. 3, p533 (1970).
+The raw, uncorrectedOPD values do not accountforthe possible shiftin image centroid location due to any coma
+that may be present. So this method is more accurate than the RMS wavefront computations when reference to
+Chief Ray. This same method is used when computing RMS wavefront referenced to the centroid by the default
+merit function.
+• When reference to Chief Ray, the reference sphere is a sphere centered on the chief ray - image surface intercept
+point.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 809
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+PAGE 810
+• If a polychromatic computation is done, the RMS polychromatic is done for all wavelengths at the same time and
+for all the pupil.The RMS polychromatic is computed as
+follows: where
+º OPD i,j is the Optical Path Difference of each ray at each wavelength. The OPD value will be a different value
+depending on the Reference (Centroid, Chief Ray).
+º w i,j is the weight of each ray at each wavelength
+º i is the indexing of the field and pupil position of each ray
+º j is the indexing of the wavelength used to trace each ray
+Again, this same method is used when computing RMS wavefront "Ignore Lateral Color" unticked by the default
+merit function, as all wavelengths will refer to the reference sphere generated for the primary wavelength.
+3.2.6.2. RMS vs. Wavelength
+Plots RMS radial, x, and y spot radius, RMS wavefront error, or Strehl ratio as a function of wavelength.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 810
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+PAGE 811
+Ray Density If the method is Gaussian quadrature, then the ray density specifies the number of radial rays to be
+traced. The more rays traced, the greater the accuracy, although the computation time increases. The maximum
+number is 20 which is sufficient for pupil aberrations up to order 40. If the method is rectangular array, then the ray
+density indicates the grid size. Rays outside the circular entrance pupil are ignored. See the "Discussion" section for
+details.
+Wave Density The wave density is the number of points between the minimum and maximum defined wavelength
+at which the RMS/Strehl ratio is calculated, intermediate values are interpolated. A maximum of 100 points is
+allowed.
+PlotScale Sets the maximum vertical scale for the plot. Zero results in automatic scaling.
+Method Select eitherGaussianQuadrature (GQ) or Rectangular Array (RA). See "Comments about RMS computation
+methods".
+Data Selects wavefront error, spot radius, spot x-direction, spot y-direction, or Strehl ratio.
+ReferTo Select either chief ray or centroid. Both reference points subtract out wavefront piston. The centroid
+reference mode also subtracts out the tilt of the wavefront, which yields smaller RMS values.
+Use Dashes Selects either solid lines or dashed lines to differentiate the various curves.
+Field Select "All" to display data for all fields, select one field to display data for a single field.
+Show Diffraction Limit If checked, then a curve indicating the diffraction limited response will be drawn on the
+plot. For RMS radius, x, or y; the diffraction limit is assumed to be 1.22 times the working F/# on axis times the
+wavelength. The change in the diffraction limit due to changes in F/# with field are ignored. For Strehl ratio, 0.8 is
+used, and for RMS wavefront, 0.072 waves is used. These are all approximate indicators for convenience only; the
+actual meaning of "diffraction limited" may be open to interpretation.
+Use Polarization If checked, polarization is considered. See " Polarization (system explorer) " for information on
+defining the polarization state and how polarization is used by analysis features.
+Discussion This feature calculates the RMS error or Strehl ratio as a function of wavelength for each field position.
+The method of calculation is identicalto that described in "RMS vs. Field"; see that section for a detailed discussion.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 811
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+PAGE 812
+Thewavelength range isdeterminedby theminimumandmaximumwavelengthsdefinedon thewavelengthsdialog
+box.
+3.2.6.3. RMS vs. Focus
+Plots RMS radial, x, and y spot radius, RMS wavefront error, or Strehl ratio as a function of focus change.
+Ray Density If the method is Gaussian quadrature, then the ray density specifies the number of radial rays to be
+traced. The more rays traced, the greater the accuracy, although the computation time increases. The maximum
+number is 20 which is sufficient for pupil aberrations up to order 40. If the method is rectangular array, then the ray
+density indicates the grid size. Rays outside the circular entrance pupil are ignored. See the "Discussion" section for
+details.
+Focus Density The focus density is the number of points between the minimum and maximum focus shift specified
+atwhich theRMS/Strehlratio is calculated, intermediate values are interpolated. Amaximumof 100points is allowed.
+PlotScale Sets the maximum vertical scale for the plot. Zero results in automatic scaling.
+Method Select eitherGaussianQuadrature (GQ) or Rectangular Array (RA). See "Comments about RMS computation
+methods".
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 812
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+PAGE 813
+Data Selects either RMS wavefront error, RMS spot radius, RMS X-direction, RMS Y- direction, or Strehl ratio. Strehl
+ratio is only available for monochromatic calculations, and is computed using the method described in "Strehlratio
+approximation". For a polychromatic Strehl, see the "Huygens PSF".
+Use Dashes Selects either solid lines or dashed lines to differentiate the various curves.
+ReferTo Select either chief ray or centroid. For monochromatic calculations, the specified wavelength is used for
+reference. For polychromatic calculations, the primary wavelength is used for reference. Both reference points
+subtract out wavefront piston. The centroid reference mode also subtracts outthe tilt ofthe wavefront, which yields
+smaller RMS values.
+Wavelength Select "All" to display data for a polychromatic computation, select any one wavelength to plot
+monochromatic data.
+Min Focus The minimum value of the defocus to plot. Forfocal systems, the units are lens units. For afocal systems,
+the units are diopters.
+Max Focus The maximum value ofthe defocus to plot. Forfocal systems,the units are lens units. For afocal systems,
+the units are diopters.
+Show Diffraction Limit If checked, then a horizontal line indicating the diffraction limited response will be drawn
+on the plot. For RMS radius, x, or y; the diffraction limit is assumed to be 1.22 times the working F/# times the
+wavelength (primary wavelength if polychromatic) on axis. The change in the diffraction limit due to changes in F/#
+with field are ignored; a single value is used across the range of the plot. For Strehl ratio, 0.8 is used, and for RMS
+wavefront, 0.072 waves is used. These are all approximate indicators for convenience only; the actual meaning of
+"diffraction limited" may be open to interpretation.
+Use Polarization If checked, polarization is considered. See " Polarization (system explorer) " for information on
+defining the polarization state and how polarization is used by analysis features.
+Discussion This feature calculates the RMS error or Strehl ratio as a function of a change in focus position for each
+field position. The method of calculation is identical to that described in "RMS vs. Field"; see that section for a
+detailed discussion. OpticStudio adds the specified focus shift to the value of the thickness of the surface prior to
+the image surface. If the optical system has an odd number of mirrors, this surface normally would have a negative
+thickness, and therefore negative focus values move the image surface farther away from the last component. For
+systems with an even number of mirrors, then negative focus values move the image surface closer to the last
+component.
+3.2.6.4. RMS Field Map
+PlotsRMS radial, x, andy spotradius,RMSwavefront error,or Strehlratioas a functionoffieldpositionina rectangular
+map.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 813
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+PAGE 814
+Ray Density If the method is Gaussian quadrature, then the ray density specifies the number of radial rays to be
+traced. The more rays traced, the greater the accuracy, although the computation time increases. The maximum
+number is 20 which is sufficient for pupil aberrations up to order 40. If the method is rectangular array, then the ray
+density indicates the grid size. Rays outside the circular entrance pupil are ignored. See the "Discussion" section for
+details.
+Data Selects wavefront error, spot radius, spot x-direction, spot y-direction, or Strehl ratio. If the method selected
+is rectangular array, then a rough estimate of the PTV is also available as one of the Data options. Note that PTV
+depends upon just two points in the pupil, and forthis reason it is difficult to obtain the exact PTV withoutresorting
+to high sampling and long computation times. Both Strehl Ratio and PTV require a single wavelength to be selected;
+polychromatic computations are not supported.
+Method Select eitherGaussianQuadrature (GQ) or Rectangular Array (RA). See "Comments about RMS computation
+methods".
+PlotScale Sets the maximum vertical scale for the plot. Zero results in automatic scaling.
+Wavelength Select "All" to display polychromatic data, or select any one wavelength to display monochromatic
+data. Strehl Ratio and PTV Wavefront can only be computed for a single wavelength.
+Field Selects the reference field. The rectangular field of view will be centered on the selected field point.
+ReferTo Select either chief ray or centroid. Both reference points subtract out wavefront piston. The centroid
+reference mode also subtracts out the tilt of the wavefront, which yields smaller RMS values.
+Show As Choose surface plot, contour map, grey scale, or false color map as the display option.
+Surface Selects the surface at which the data is to be evaluated. This is useful for evaluating intermediate images.
+See "Evaluating results at intermediate surfaces".
+Contour Format The contour format string. For a discussion of the contour format string syntax, see "The Contour
+Format String".
+X/Y Field Size The half-field width in the X or Y directions in field units. Note this field of view is centered on the
+reference field selected by the "Field" setting above.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 814
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+PAGE 815
+X/Y Field Sampling The number of points in the X or Y directions used to sample the Data.
+Use Polarization If checked, polarization is considered.
+See " Polarization (system explorer) " for information on defining the polarization state and how polarization is
+used by analysis features.
+RemoveVignetting Factors If checked, vignetting factors are automatically removed. See "Comment about
+vignetting factors".
+Discussion This feature calculates the RMS error or Strehl ratio as a function of field position. The method of
+calculation is identical to that described in "RMS vs. Field"; see that section for a detailed discussion.
+3.2.7. Enclosed Energy
+Shows the fractional energy enclosed within circular and slit regions on the specified surface.
+3.2.7.1. Diffraction (enclosed energy)
+Encircled energy diagram. This is the percentage of total energy enclosed as a function of distance from either the
+chief ray or the image centroid at the image of a point object.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 815
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+PAGE 816
+Sampling The size of the ray grid used to sample the pupil. The sampling may be 32x32, 64x64, etc. Although higher
+sampling yields more accurate data, calculation times increase.
+Type The analysis type option specifies how the encircled energy is calculated; either encircled (radial), X-only,
+Y-only, or ensquared.
+Maximum Distance This setting overrides the default scaling. The units are micrometers. To choose the default
+scaling option, enter zero.
+Use Dashes Selects either solid lines or dashed lines to differentiate the various curves.
+ReferTo Select chief ray, centroid, or vertex as the reference point. Vertex refers to the coordinates (0, 0) on the
+image surface. This option will only return meaningful data if the diffraction image at all selected fields is within the
+maximumdistanceofthe vertex.Whenvertex is selected,OpticStudioisunable todetectifthe sampling is sufficient,
+so some care should be taken to set the sampling high enough for accurate results.
+Surface Selects the surface at which the data is to be evaluated. This is useful for evaluating intermediate images.
+See "Evaluating results at intermediate surfaces".
+Wavelength The wavelength number to be used in the calculation.
+Field The field number for which the calculation should be performed.
+Show Diffraction Limit If checked, the diffraction limited results are computed and displayed. See the discussion
+below.
+Use Huygens PSF If checked, the more accurate but slower Huygens PSF method is used to compute the PSF. This
+option should always be used if the image surface is tilted, or if the chief ray is not close to normal to the image
+surface.
+ImageSampling If "Use Huygens PSF" is checked, this control allows a user selectable image sampling grid. The
+default setting will select a grid that is 2X larger in each direction than the pupil sampling grid.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 816
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

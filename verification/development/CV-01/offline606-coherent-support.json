@@ -1,0 +1,47 @@
+{
+  "hypothesis": "Coherent support separates clipping from coordinate rescaling; phase independently interpolated from retained direct OPD",
+  "native_execution": false,
+  "source": "outputs\\runs\\surface_mtf605_coherent_pupil_7586b33dfc",
+  "independent_phase_source": "outputs\\runs\\surface_mtf512_primary_89cacce054",
+  "ellipse": {
+    "a": 127.0,
+    "b_constraints": [
+      104.41840833875978,
+      103.33402739726972
+    ],
+    "compatible": false,
+    "nominal_b_control": 103.87621786801475,
+    "mask_mismatch": 148,
+    "scope": "Native support rejects a centered ellipse when lower constraint exceeds upper; midpoint is a rejected-geometry control, not a reconstructed pupil. No phase/MTF fit."
+  },
+  "comparisons": [
+    {
+      "mapping": "entrance_clipped",
+      "phase_sign": 1,
+      "samples": 40379,
+      "max_wrapped_phase_error": 0.4988969754067326,
+      "rms_wrapped_phase_error": 0.2070773194044618
+    },
+    {
+      "mapping": "entrance_clipped",
+      "phase_sign": -1,
+      "samples": 40379,
+      "max_wrapped_phase_error": 0.49998323404454387,
+      "rms_wrapped_phase_error": 0.26789688854503957
+    },
+    {
+      "mapping": "ellipse_normalized",
+      "phase_sign": 1,
+      "samples": 37397,
+      "max_wrapped_phase_error": 0.46262978266461735,
+      "rms_wrapped_phase_error": 0.1755412093508469
+    },
+    {
+      "mapping": "ellipse_normalized",
+      "phase_sign": -1,
+      "samples": 37397,
+      "max_wrapped_phase_error": 0.49997681751867296,
+      "rms_wrapped_phase_error": 0.2706108408736395
+    }
+  ]
+}

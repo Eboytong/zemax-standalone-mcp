@@ -1,0 +1,228 @@
+{
+  "date": "2026-11-07",
+  "item": "MF-01.TestPlateList",
+  "state": "implemented",
+  "version": "0.1.60 source B005",
+  "runtime": "OpticStudio24.2.0 build240529 PremiumEdition, Python3.14",
+  "public_entries": [
+    "run_analysis.request.kind=test_plate_list",
+    "get_system_resources.request.kind=test_plate_files"
+  ],
+  "source_analysis_count": 106,
+  "released_analysis_count": 100,
+  "batch": "B0054/10",
+  "native_probe": "verification/development/MF-01/probe427-viewers/probe.json",
+  "manual": "verification/development/MF-01/manual428-viewers.txt",
+  "implementation": "src/zemax_mcp/test_plates.py",
+  "examples": "examples/test-plates.json",
+  "schema": "docs/tool-schemas.json",
+  "commands": [
+    ".venv\\Scripts\\python.exe -X utf8 tests/support/manufacturing_viewer_probe.py verification/development/MF-01/probe427-viewers",
+    ".venv\\Scripts\\python.exe -X utf8 -m pytest tests/test_test_plates.py tests/test_sag_table.py tests/test_analysis_scenarios.py -q --junitxml=verification/development/MF-01/ordinary434-plates.xml",
+    ".venv\\Scripts\\python.exe -X utf8 -m pytest tests/test_test_plates_live.py -q --run-zemax --junitxml=verification/development/MF-01/native435-plates-final.xml"
+  ],
+  "ordinary": {
+    "passed": 102,
+    "evidence": "verification/development/MF-01/ordinary434-plates.xml"
+  },
+  "native": {
+    "passed": 2,
+    "skipped": 0,
+    "failed": 0,
+    "evidence": "verification/development/MF-01/native435-plates-final.xml",
+    "conditions": [
+      "outputs/runs/plates429_native_cc55b5b63b",
+      "outputs/runs/plates433_lifecycle_fe7c7a1844"
+    ],
+    "dimension_checks": 1799,
+    "maximum_error": 0.0,
+    "all_passed": true,
+    "native_catalog_rows": 899,
+    "atol_mm": 5.00001e-05,
+    "rtol": 0,
+    "coverage": [
+      "native active catalog vs independently decoded TPD vendor rows",
+      "plate identities and CC/CX availability",
+      "rows paging",
+      "explicit catalog mismatch/native refusal",
+      "auto documented-file fallback with reason",
+      "owned three-code resource and full precision",
+      "missing resource and malformed nonfinite row",
+      "20000-row cancellation and reuse",
+      "surface/system/configuration/MFE preservation",
+      "save/reload and reuse",
+      "serial stdio disconnect and formal close"
+    ]
+  },
+  "remaining": [
+    "Native catalog selection with adopted value readback; AS_Default has no business setting. Current native method refuses mismatched catalog, file path explicit in actual_settings."
+  ],
+  "related_probes": {
+    "TestPlateList": {
+      "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "counts": {
+        "NumberOfDataSeries": 0,
+        "NumberOfDataGrids": 0,
+        "NumberOfDataSeriesRgb": 0,
+        "NumberOfDataGridsRgb": 0,
+        "NumberOfDataScatterPoints": 0,
+        "NumberOfDataScatterPointsRgb": 0,
+        "NumberOfRayData": 0,
+        "NumberOfMessages": 0
+      },
+      "text_exported": true,
+      "closed": true
+    },
+    "ZemaxElementDrawing": {
+      "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "counts": {
+        "NumberOfDataSeries": 0,
+        "NumberOfDataGrids": 0,
+        "NumberOfDataSeriesRgb": 0,
+        "NumberOfDataGridsRgb": 0,
+        "NumberOfDataScatterPoints": 0,
+        "NumberOfDataScatterPointsRgb": 0,
+        "NumberOfRayData": 0,
+        "NumberOfMessages": 0
+      },
+      "text_exported": false,
+      "closed": true
+    },
+    "BitmapFileViewer": {
+      "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "counts": {
+        "NumberOfDataSeries": 0,
+        "NumberOfDataGrids": 0,
+        "NumberOfDataSeriesRgb": 0,
+        "NumberOfDataGridsRgb": 0,
+        "NumberOfDataScatterPoints": 0,
+        "NumberOfDataScatterPointsRgb": 0,
+        "NumberOfRayData": 0,
+        "NumberOfMessages": 0
+      },
+      "text_exported": false,
+      "closed": true
+    },
+    "IMABIMFileViewer": {
+      "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "counts": {
+        "NumberOfDataSeries": 0,
+        "NumberOfDataGrids": 0,
+        "NumberOfDataSeriesRgb": 0,
+        "NumberOfDataGridsRgb": 0,
+        "NumberOfDataScatterPoints": 0,
+        "NumberOfDataScatterPointsRgb": 0,
+        "NumberOfRayData": 0,
+        "NumberOfMessages": 0
+      },
+      "text_exported": true,
+      "closed": true
+    },
+    "GradiumProfile": {
+      "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "counts": {
+        "NumberOfDataSeries": 0,
+        "NumberOfDataGrids": 0,
+        "NumberOfDataSeriesRgb": 0,
+        "NumberOfDataGridsRgb": 0,
+        "NumberOfDataScatterPoints": 0,
+        "NumberOfDataScatterPointsRgb": 0,
+        "NumberOfRayData": 0,
+        "NumberOfMessages": 0
+      },
+      "text_exported": true,
+      "closed": true
+    },
+    "BeamFileViewer": {
+      "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "counts": {
+        "NumberOfDataSeries": 0,
+        "NumberOfDataGrids": 1,
+        "NumberOfDataSeriesRgb": 0,
+        "NumberOfDataGridsRgb": 0,
+        "NumberOfDataScatterPoints": 0,
+        "NumberOfDataScatterPointsRgb": 0,
+        "NumberOfRayData": 0,
+        "NumberOfMessages": 0
+      },
+      "text_exported": true,
+      "closed": true
+    }
+  },
+  "resources": {
+    "gradium_profiles": [
+      "PROFILE.GRD"
+    ],
+    "beam_viewer": "32x32 zero grid but native text says no file; not accepted as a valid beam",
+    "ima_viewer": "default7x7 text; lens file path in header does not identify image input"
+  },
+  "closure": [
+    {
+      "folder": "outputs/runs/plates429_native_cc55b5b63b",
+      "receipt": {
+        "schema_version": 1,
+        "generation": null,
+        "session_id": null,
+        "started_at": "2026-11-07T03:21:04.082589+00:00",
+        "active_cancelled": false,
+        "forced": false,
+        "checkpoint": {
+          "attempted": false,
+          "path": null,
+          "ok": false,
+          "error": null
+        },
+        "was_connected": false,
+        "native": {
+          "attempted": true,
+          "closed": true,
+          "error": null
+        },
+        "closed_at": "2026-11-07T03:21:04.082612+00:00"
+      }
+    },
+    {
+      "folder": "outputs/runs/plates433_lifecycle_fe7c7a1844",
+      "receipt": {
+        "schema_version": 1,
+        "generation": null,
+        "session_id": null,
+        "started_at": "2026-11-07T03:21:13.629518+00:00",
+        "active_cancelled": false,
+        "forced": false,
+        "checkpoint": {
+          "attempted": false,
+          "path": null,
+          "ok": false,
+          "error": null
+        },
+        "was_connected": false,
+        "native": {
+          "attempted": true,
+          "closed": true,
+          "error": null
+        },
+        "closed_at": "2026-11-07T03:21:13.629539+00:00"
+      }
+    }
+  ],
+  "historical_failures": [
+    {
+      "evidence": "verification/development/MF-01/probe426-viewers/probe.json",
+      "reason": "probe omitted required resource kind; stopped before topic execution; session disconnected"
+    },
+    {
+      "evidence": "verification/development/MF-01/native429-plates.xml",
+      "reason": "native tests skipped without --run-zemax; no execution evidence"
+    },
+    {
+      "evidence": "verification/development/MF-01/native430-plates.xml",
+      "reason": "test used flat public resource request; corrected wrapper and paging arguments; native shutdown receipt closed=true"
+    }
+  ],
+  "capability_metadata_check": {
+    "evidence": "verification/development/MF-01/native436-capabilities.xml",
+    "folder": "outputs\\runs\\plates429_native_26eaec05b2",
+    "scope": "public get_capabilities exposes methods, units, resource kind and unconfirmed native selection; related native catalog regression"
+  }
+}

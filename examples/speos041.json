@@ -1,0 +1,5 @@
+[
+  {"tool":"run_speos_export","arguments":{"request":{"kind":"lens_system","path":"C:\\ZemaxOutput\\lens.optdistortion","sensor_width":10,"sensor_height":8,"x_sampling":11,"y_sampling":7}}},
+  {"tool":"run_speos_export","arguments":{"request":{"kind":"lens_system","path":"C:\\ZemaxOutput\\radial.optdistortion","sensor_width":10,"sensor_height":8,"assume_radial_symmetry":true,"sample_points":21}}},
+  {"tool":"run_speos_export","arguments":{"request":{"kind":"whitebox","output_directory":"C:\\ZemaxOutput\\whitebox_new"}}}
+]

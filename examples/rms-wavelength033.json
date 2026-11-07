@@ -1,0 +1,10 @@
+{
+  "request": {
+    "kind": "rms_vs_wavelength",
+    "field": 0,
+    "data_type": "SpotRadius",
+    "method": "RectArray",
+    "sampling": "S_256x256",
+    "wavelength_density": 20
+  }
+}

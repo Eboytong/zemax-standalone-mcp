@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-07",
+  "packages": {
+    "done": 8,
+    "implemented": 10,
+    "in_progress": 15,
+    "blocked": 1
+  },
+  "operations": {
+    "done": 92,
+    "implemented": 24,
+    "blocked": 51,
+    "pending": 5
+  },
+  "analyses": {
+    "done": 63,
+    "baseline": 36,
+    "documented": 2,
+    "implemented": 15,
+    "in_progress": 28,
+    "blocked": 10,
+    "pending": 10
+  },
+  "source_record_count": 143,
+  "canonical_group_count": 132,
+  "gate": "B0053/10",
+  "queue": "docs/development-queue.json"
+}

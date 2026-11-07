@@ -1,0 +1,221 @@
+{
+  "item_ids": [
+    "EX-01.UniversalPlot1D",
+    "EX-01.UniversalPlot2D"
+  ],
+  "execution_state": "done",
+  "date": "2026-11-06",
+  "environment": "OpticStudio24.2.0 build240529 Premium/Python3.14; actual connect and requests in run calls.json",
+  "contract": {
+    "axes": [
+      "Sequential Surface Radius/Curvature/Thickness/Conic/TCE/numbered parameters",
+      "Sequential System aperture/apodization/temperature/pressure/indexed fields/wavelengths",
+      "Sequential numeric ConfigurationValue with expected MCE type; THIC/CRVT aliases",
+      "Pure/mixed NSC positions/tilts/numeric object parameters, dynamic group categories"
+    ],
+    "targets": [
+      "Legacy TTHI/CVVA",
+      "Installed numeric merit operands with8 explicit slots and active-parameter readback",
+      "Whole merit or selected MFE line; explicit CONF scope recorded"
+    ],
+    "outputs": [
+      "1D native text parsed to rows/series",
+      "2D ascending values[y][x] endpoint grids",
+      "Units or explicit null/native-metadata limitation",
+      "Native messages/settings/model context and artifacts",
+      "Pagination and saved-data PNG"
+    ]
+  },
+  "checks": {
+    "ordinary": "verification/development/EX-01/ordinary261-final.xml",
+    "ordinary_passed": 334,
+    "native": "verification/development/EX-01/native261-final.xml",
+    "native_passed": 17,
+    "native_skipped": 0,
+    "numeric_checks": 471,
+    "task_states": {
+      "succeeded": 71,
+      "cancelled": 2,
+      "failed": 2
+    }
+  },
+  "lifecycle": "75 native tasks: success/cancel/failed-result paths, close confirmation, source preservation, revision/solve/configuration/active NSC group, save/reload, same-session reuse; fault-injection tests cover calculation report/start/settings/parse/close errors.",
+  "tolerance": "Per-check fixed references and tolerances in checks.json; default1e-8 +1e-7*abs(reference); six-digit native text coordinate/parameter adoption tolerance5e-7.",
+  "supporting": [
+    "verification/development/EX-01/progress217.json",
+    "verification/development/EX-01/progress224.json",
+    "verification/development/EX-01/progress228.json",
+    "verification/development/EX-01/progress232.json",
+    "verification/development/EX-01/progress236.json",
+    "verification/development/EX-01/progress242.json",
+    "verification/development/EX-01/progress249.json",
+    "verification/development/EX-01/native259.xml"
+  ],
+  "discoveries": [
+    "WAVE/XFIE/YFIE native Param1 is zero-based; native axis header one-based; both identities preserved",
+    "Out-of-range wave99 can silently use an existing ray wavelength despite header99; active wave/field/surface index checks now run before analysis",
+    "Multi-configuration MFE replacement needs an explicit initial CONF; writing now preserves omitted structural fields and rereads final rows/values"
+  ],
+  "limitations": [
+    "2D native Surface display close fault remains independently reproduced; supported execution uses GreyScale and native internal copies.",
+    "Non-numeric/resource MCE cells are rejected; unknown physical units are null with provenance; callers use native operand/model definitions.",
+    "Native BLNK dummy report parameter is not confirmed by active metadata; task fails closed, source and session remain reusable."
+  ],
+  "runs": [
+    {
+      "path": "outputs\\runs\\universal197_Thickness_d3cbb39349",
+      "numeric_checks": 5,
+      "max_absolute_error": 0.0,
+      "task_states": {
+        "succeeded": 1
+      },
+      "disconnect": true
+    },
+    {
+      "path": "outputs\\runs\\universal197_Radius_e6decc2138",
+      "numeric_checks": 5,
+      "max_absolute_error": 0.0,
+      "task_states": {
+        "succeeded": 1
+      },
+      "disconnect": true
+    },
+    {
+      "path": "outputs\\runs\\universal197_Curvature_dc96a194b6",
+      "numeric_checks": 5,
+      "max_absolute_error": 0.0,
+      "task_states": {
+        "succeeded": 1
+      },
+      "disconnect": true
+    },
+    {
+      "path": "outputs\\runs\\universal200_cvva_Radius_f2556525aa",
+      "numeric_checks": 3,
+      "max_absolute_error": 3.333333331578814e-08,
+      "task_states": {
+        "succeeded": 1
+      },
+      "disconnect": true
+    },
+    {
+      "path": "outputs\\runs\\universal200_cvva_Curvature_b1f1403bc4",
+      "numeric_checks": 3,
+      "max_absolute_error": 0.0,
+      "task_states": {
+        "succeeded": 1
+      },
+      "disconnect": true
+    },
+    {
+      "path": "outputs\\runs\\universal206_TTHI_645b709311",
+      "numeric_checks": 15,
+      "max_absolute_error": 0.0,
+      "task_states": {
+        "succeeded": 1
+      },
+      "disconnect": true
+    },
+    {
+      "path": "outputs\\runs\\universal206_CVVA_2dae9da241",
+      "numeric_checks": 15,
+      "max_absolute_error": 0.0,
+      "task_states": {
+        "succeeded": 1
+      },
+      "disconnect": true
+    },
+    {
+      "path": "outputs\\runs\\universal224_system_a304d2383e",
+      "numeric_checks": 24,
+      "max_absolute_error": 0.0,
+      "task_states": {
+        "succeeded": 8
+      },
+      "disconnect": true
+    },
+    {
+      "path": "outputs\\runs\\universal227_system_grid_b209b72115",
+      "numeric_checks": 120,
+      "max_absolute_error": 0.0,
+      "task_states": {
+        "succeeded": 8
+      },
+      "disconnect": true
+    },
+    {
+      "path": "outputs\\runs\\universal231_configuration_3c2694c362",
+      "numeric_checks": 24,
+      "max_absolute_error": 0.0,
+      "task_states": {
+        "succeeded": 4
+      },
+      "disconnect": true
+    },
+    {
+      "path": "outputs\\runs\\universal235_targets_604ce9289e",
+      "numeric_checks": 54,
+      "max_absolute_error": 0.0,
+      "task_states": {
+        "succeeded": 6
+      },
+      "disconnect": true
+    },
+    {
+      "path": "outputs\\runs\\universal238_nsc_a5c5adad0a",
+      "numeric_checks": 54,
+      "max_absolute_error": 0.0,
+      "task_states": {
+        "succeeded": 10
+      },
+      "disconnect": true
+    },
+    {
+      "path": "outputs\\runs\\universal239_cancel_c8c7dfec92",
+      "numeric_checks": 6,
+      "max_absolute_error": 3.333333331578814e-09,
+      "task_states": {
+        "cancelled": 2,
+        "succeeded": 2
+      },
+      "disconnect": true
+    },
+    {
+      "path": "outputs\\runs\\universal247_surface_a3c852b973",
+      "numeric_checks": 48,
+      "max_absolute_error": 0.0,
+      "task_states": {
+        "succeeded": 8
+      },
+      "disconnect": true
+    },
+    {
+      "path": "outputs\\runs\\universal247_mixed_52c5a1218f",
+      "numeric_checks": 42,
+      "max_absolute_error": 0.0,
+      "task_states": {
+        "succeeded": 6
+      },
+      "disconnect": true
+    },
+    {
+      "path": "outputs\\runs\\universal253_mce_ac6a139908",
+      "numeric_checks": 42,
+      "max_absolute_error": 0.0,
+      "task_states": {
+        "succeeded": 10
+      },
+      "disconnect": true
+    },
+    {
+      "path": "outputs\\runs\\universal259_recovery_0b6b4dee12",
+      "numeric_checks": 6,
+      "max_absolute_error": 3.333333331578814e-09,
+      "task_states": {
+        "failed": 2,
+        "succeeded": 2
+      },
+      "disconnect": true
+    }
+  ]
+}

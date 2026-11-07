@@ -1,0 +1,43 @@
+error referenced to the centroid decreases. However, it is always best to re-optimize a final design with the various
+merit functions to verify which one provides the best performance for the system being designed. For example, the
+RMS wavefront centroid reference often yields better low frequency MTF response, but worse medial frequency
+response, than the RMS chief ray reference optimization does.
+Notes on PTV Merit Functions
+For PTV merit functions, the merit function numerical value is proportional but not equal to the actual PTV of the
+aberration. The merit function will however minimize the PTV when the merit function is minimized.
+PTV merit function for spot size may not exactly optimize the geometric spot size, which is shown as "GEO" in Spot
+Diagram window. The PTV merit function for spot size will optimize the approximate geometric area of the spot. In
+contrast, the GEO output from the Spot diagram is the maximum distance of any of the rays sampled from the
+selected reference point. These are two different metrics representing the geometric size ofthe spot. In generalthey
+will have a strong correlation, but optimizing for one of them will not necessarily produce the optimum value for
+the other.
+5.2.2.2. Optimization Function Criteria
+Wavefront The aberration measured in waves. See "Comments about RMS wavefront computations" section in
+RMS vs. Field.
+ContrastOptimizes theMTFofthe systemusing theMoore-ElliottContrastmethod, alsocalledContrastOptimization.
+See the "Optimizing for MTF" for more information about the Moore-Elliott Contrast method.
+Spot: Computes both the x and y extent of the transverse ray aberrations in image space. The x and y components
+are considered separately, and both are optimized together. The signs of the aberrations are retained, which yields
+better derivatives for optimization. Alternatively, if both X Weight and Y Weightinput are setto 0, computes the spot
+size based on radial transverse ray aberration.
+Angular Computes both the x and y extent of the angular aberrations in image space. The x and y components are
+considered separately, and both are optimized together. The signs of the aberrations are retained, which yields
+better derivatives for optimization. Intended for afocal systems. See "Afocal Image Space"
+5.2.2.3. Optimization Function Reference Points
+Centroid The RMS or PTV computation of the data is referenced to the centroid of all the data coming from that
+fieldpoint.Centroidreferenceisgenerallypreferred,especially forwavefrontoptimization.Forwavefrontoptimization,
+reference to the centroid subtracts out the mean wavefront over the entire pupil, x-tilt, and y-tilt, none of which
+degrade image quality. Centroid reference also yields more meaningful results when coma is present, since coma
+shifts the image centroid away from the chief ray location. If the data is wavefront, the operand used is OPDX.
+Chief TheRMS orPTV computation ofthe data is referenced to the chiefray atthe primarywavelength. Forwavefront
+optimization,reference to the chiefray subtracts outthe mean wavefront overthe entire pupil, but not x-tilt or y-tilt.
+Note the exact point at which the OPD is defined to be zero is arbitrary; this is the reason the chief ray reference
+subtracts out the mean wavefront. If the data is wavefront, the operand used is OPDM.
+Unreferenced This option is only available if the data is wavefront. If the wavefront is unreferenced, then the OPD
+data with respect to the chief ray is used without subtracting the mean wavefront or tilt. If the data is wavefront,
+the operand used is OPDC.
+5.2.2.4. Optimization Function Distortion and Color
+Max Distortion (%) specifies an upper bound for the distortion value. See DIMX operand.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1187
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Optimize Tab (sequential ui mode)

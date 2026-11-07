@@ -1,0 +1,33 @@
+{
+  "requests": [
+    {
+      "kind": "diff_efficiency_2d",
+      "field": 1,
+      "wavelength": 1,
+      "sample_size": "S_64x64",
+      "surface": 1,
+      "min_angle": -5,
+      "max_angle": 5,
+      "min_wavelength": 0.45,
+      "max_wavelength": 0.65
+    },
+    {
+      "kind": "diff_efficiency_angular",
+      "field": 1,
+      "wavelength": 1,
+      "sample_size": "S_65",
+      "surface": 1,
+      "min_angle": -5,
+      "max_angle": 5
+    },
+    {
+      "kind": "diff_efficiency_chromatic",
+      "field": 1,
+      "wavelength": 1,
+      "sample_size": "S_65",
+      "surface": 1,
+      "min_wavelength": 0.45,
+      "max_wavelength": 0.65
+    }
+  ]
+}

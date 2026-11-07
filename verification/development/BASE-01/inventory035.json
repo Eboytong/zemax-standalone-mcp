@@ -1,0 +1,36 @@
+{
+  "version": "0.1.35",
+  "date": "2026-11-05",
+  "tools": 95,
+  "analysis_kinds": 90,
+  "backlog": {
+    "total": 164,
+    "states": {
+      "done": 15,
+      "baseline": 36,
+      "documented": 2,
+      "implemented": 51,
+      "blocked": 60
+    }
+  },
+  "operation_items": {
+    "total": 111,
+    "states": {
+      "done": 39,
+      "implemented": 52,
+      "blocked": 20
+    }
+  },
+  "packages": {
+    "total": 34,
+    "states": {
+      "implemented": 10,
+      "done": 5,
+      "in_progress": 12,
+      "blocked": 1,
+      "pending": 6
+    }
+  },
+  "next_action": "Continue EX-01 operation-level discovery and conditional package splitting; preserve native acceptance gate and run only after initialization state changes.",
+  "goal_status": "active; full objective not complete"
+}

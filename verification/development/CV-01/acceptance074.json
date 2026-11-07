@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-05",
+  "item_id": "CV-01.FullFieldSpot",
+  "state": "implemented",
+  "run": "outputs/runs/full_field074_a57fad6d20",
+  "native_evidence": "verification\\development\\CV-01\\native074-final.xml",
+  "ordinary_evidence": "verification\\development\\CV-01\\ordinary074-full-field.xml",
+  "settings": "AS_Spot concrete interface, final actual settings and selectors retained",
+  "diagnostic": "3 settings combinations terminal failed RESULT_UNAVAILABLE; GetTextFile false, SpotData null, data-series/grids/scatter/RGB counts zero; closed, source surfaces preserved and disconnect success",
+  "numerical_acceptance": "open; no available native result data",
+  "next_action": "formal graphics/dedicated data export, or explicitly attributed shared-reference ray-trace fallback",
+  "historical_failures": [
+    "native074-full-field.xml EXPORT_FAILED",
+    "native074-pupil-full-field.xml retained raw outlet failure"
+  ],
+  "completion_count": 0
+}

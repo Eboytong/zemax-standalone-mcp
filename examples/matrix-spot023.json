@@ -1,0 +1,11 @@
+{
+  "request": {
+    "kind": "matrix_spot",
+    "pattern": "Hexapolar",
+    "reference": "Centroid",
+    "show_scale": "ScaleBar",
+    "color_rays_by": "Wavelength",
+    "ray_density": 6,
+    "use_polarization": false
+  }
+}

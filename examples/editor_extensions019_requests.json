@@ -1,0 +1,142 @@
+{
+  "prerequisite": "Connected sequential working model. Requests below are ordered; MFE/MCE standalone inserts and copies use native default rows. Each file path is an absolute output path chosen by the caller.",
+  "requests": [
+    {
+      "tool": "update_tolerances",
+      "arguments": {
+        "request": {
+          "mode": "replace",
+          "operands": [
+            {
+              "type": "TTHI",
+              "param1": 1,
+              "param2": 1,
+              "minimum": -0.01,
+              "maximum": 0.01,
+              "comment": "baseline"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool": "update_tolerances",
+      "arguments": {
+        "request": {
+          "mode": "update",
+          "updates": [
+            {
+              "operand": 1,
+              "maximum": 0.02,
+              "ignore": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool": "update_tolerances",
+      "arguments": {
+        "request": {
+          "mode": "insert",
+          "at": 1,
+          "operands": [
+            {
+              "type": "TTHI",
+              "param1": 1,
+              "param2": 1,
+              "minimum": -0.01,
+              "maximum": 0.01
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool": "update_tolerances",
+      "arguments": {
+        "request": {
+          "mode": "delete",
+          "operand_numbers": [
+            2
+          ]
+        }
+      }
+    },
+    {
+      "tool": "get_tolerances",
+      "arguments": {
+        "request": {
+          "start": 1,
+          "count": 10,
+          "include_metadata": true
+        }
+      }
+    },
+    {
+      "tool": "get_editor_metadata",
+      "arguments": {
+        "request": {
+          "editor": "TDE",
+          "operand": 1,
+          "column_start": 0,
+          "column_count": 3
+        }
+      }
+    },
+    {
+      "tool": "insert_editor_rows",
+      "arguments": {
+        "request": {
+          "editor": "MFE",
+          "at": 1,
+          "operand_type": "REAY"
+        }
+      }
+    },
+    {
+      "tool": "copy_editor_rows",
+      "arguments": {
+        "request": {
+          "editor": "MFE",
+          "start": 1,
+          "count": 1,
+          "at": 2
+        }
+      }
+    },
+    {
+      "tool": "insert_editor_rows",
+      "arguments": {
+        "request": {
+          "editor": "MCE",
+          "at": 1,
+          "operand_type": "THIC"
+        }
+      }
+    },
+    {
+      "tool": "copy_editor_rows",
+      "arguments": {
+        "request": {
+          "editor": "MCE",
+          "start": 1,
+          "count": 1,
+          "at": 2
+        }
+      }
+    },
+    {
+      "tool": "save_tolerance_file",
+      "arguments": {
+        "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\editor_example.tol"
+      }
+    },
+    {
+      "tool": "load_tolerance_file",
+      "arguments": {
+        "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\editor_example.tol"
+      }
+    }
+  ]
+}

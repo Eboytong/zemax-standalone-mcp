@@ -1,0 +1,7 @@
+Stock Parts Group (Non-sequential UI Mode).
+These are the stock parts tools.
+8.2.1. Lens Catalogs
+Used to search for a particular lens from or browse through the stock lens catalogs.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1363
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Libraries Tab

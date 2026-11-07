@@ -1,0 +1,13 @@
+See "Reflectivity vs. Wavelength" for settings
+3.4.4. Diffraction Efficiency Analyses (sequential ui mode)
+Graphs of Diffraction Efficiency for Sequential mode volume hologram surfaces. These are calculated using the
+Kogelnikapproximationmethodforthickholograms.Formoreinformationabout calculationmethods, seeCalculation
+assumptions andlimitations. Thediffractionefficiency isdeterminedby tracing a ray fromthe objectto the specified
+surface and calculating the transmission rate. The polarization state of the traced ray is determined by the settings
+in System Explorer...Polarization.
+These analyses can be used with Hologram 1, Hologram 2, Toroidal Hologram, and Optically Fabricated Hologram
+surface types when they are set up as a volume hologram. Details of how to set the volume hologram parameters
+are in the respective Surface type help files.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 943
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

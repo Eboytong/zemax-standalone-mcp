@@ -1,0 +1,21 @@
+Sampling The size of the ray grid used to sample the pupil. The sampling may be 32x32, 64x64, etc. Although higher
+sampling yields more accurate data, calculation times increase.
+Max Radius The maximum radius setting overrides the default scaling. The units are micrometers. To choose the
+default scaling option, enter zero.
+Surface Selects the surface at which the data is to be evaluated. This is useful for evaluating intermediate images.
+See "Evaluating results at intermediate surfaces".
+Wavelength The wavelength number to be used in the calculation.
+Field The field number to be used in the calculation.
+Type The type option specifies which data is displayed on the graph; line and edge, line only, or edge only.
+Use Polarization If checked, polarization is considered. See " Polarization (system explorer)" for information on
+defining the polarization state and how polarization is used by analysis features.
+Discussion The line response function (or line spread function, LSF) is the cross section of the intensity pattern of
+the image of a line object. The edge spread function (ESF) is the cross section of the intensity pattern of the image
+of an edge (a semi-infinite plane). The X- or Y-orientation refers to the direction ofthe line or edge. The X- orientation
+means the line or edge is parallel to the X-axis. The Y-orientation means the line or edge is parallel to the Y-axis. The
+zero coordinate is referenced to the chief ray. This is a geometric calculation. See also "FFT Line/ Edge Spread".
+3.2.7.4. Extended Source
+Computes encircled energy using an extended source similar to the geometric image analysis feature.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 819
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

@@ -1,0 +1,23 @@
+{
+  "version": "0.1.43",
+  "change_type": "documentation_and_acceptance_evidence_review",
+  "new_native_execution": 0,
+  "release_reused": "wheels/zemax_standalone_mcp-0.1.43-py3-none-any.whl",
+  "results": {
+    "baseline_or_documented_rows_with_sources": 38,
+    "historical_successful_analysis_requests_validated_against_current_models": 42,
+    "done_solve_rows_matched_to_persistence_passed_cases": 30,
+    "property_native_groups_reviewed": 7,
+    "historical_mirror_images_viewed": 3,
+    "implemented_or_blocked_gates_preserved": 234,
+    "additional_implemented_rows_citations_restored": 3
+  },
+  "evidence": [
+    "baseline-review043.json",
+    "solve-done-review043.json",
+    "property-done-review043.json",
+    "historical-review043.json",
+    "remaining-gates043.json"
+  ],
+  "remaining": "Review remaining blocked formal-interface/resource evidence against original declared scope, then restore native initialization for pending setting/numeric/reload/close acceptance."
+}

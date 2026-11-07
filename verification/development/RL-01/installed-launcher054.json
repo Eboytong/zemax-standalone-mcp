@@ -1,0 +1,13 @@
+{
+  "version": "0.1.44",
+  "selected_package_directory": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\RL-01\\wheel-install044",
+  "native_connection_attempted": false,
+  "isolated_boot": [
+    "-I",
+    "-B",
+    "-c"
+  ],
+  "tool_count": 100,
+  "status": "passed",
+  "stdio_closed": true
+}

@@ -1,0 +1,241 @@
+{
+  "item_id": "CV-01.RMSLambdaDiagram",
+  "version": "0.1.33",
+  "date": "2026-11-05",
+  "status": "implemented",
+  "request": {
+    "request": {
+      "kind": "rms_vs_wavelength",
+      "field": 0,
+      "data_type": "SpotRadius",
+      "method": "RectArray",
+      "sampling": "S_256x256",
+      "wavelength_density": 20
+    }
+  },
+  "probe": {
+    "source": "verification/development/BASE-01/probe/api-interfaces.json",
+    "interface": {
+      "properties": [
+        {
+          "name": "Field",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Field",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "RayDensity",
+          "type": "ZOSAPI.Analysis.Settings.RMS.RayDensities",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "WaveDensity",
+          "type": "ZOSAPI.Analysis.Settings.RMS.WaveDensities",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Data",
+          "type": "ZOSAPI.Analysis.Settings.RMS.RMSField.DataType",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ReferTo",
+          "type": "ZOSAPI.Analysis.Settings.RMS.ReferTo",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Method",
+          "type": "ZOSAPI.Analysis.Settings.RMS.Method",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseDashes",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ShowDiffractionLimit",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UsePolarization",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "PlotScale",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    },
+    "factory": "IA_ New_RMSLambdaDiagram()",
+    "enums": {
+      "ZOSAPI.Analysis.Settings.RMS.Method": {
+        "GaussQuad": 0,
+        "RectArray": 1
+      },
+      "ZOSAPI.Analysis.Settings.RMS.FieldDensities": {
+        "FieldDens_5": 1,
+        "FieldDens_10": 2,
+        "FieldDens_15": 3,
+        "FieldDens_20": 4,
+        "FieldDens_25": 5,
+        "FieldDens_30": 6,
+        "FieldDens_35": 7,
+        "FieldDens_40": 8,
+        "FieldDens_45": 9,
+        "FieldDens_50": 10,
+        "FieldDens_55": 11,
+        "FieldDens_60": 12,
+        "FieldDens_65": 13,
+        "FieldDens_70": 14,
+        "FieldDens_75": 15,
+        "FieldDens_80": 16,
+        "FieldDens_85": 17,
+        "FieldDens_90": 18,
+        "FieldDens_95": 19,
+        "FieldDens_100": 20
+      },
+      "ZOSAPI.Analysis.Settings.RMS.FocusDensities": {
+        "FocusDens_5": 1,
+        "FocusDens_10": 2,
+        "FocusDens_15": 3,
+        "FocusDens_20": 4,
+        "FocusDens_25": 5,
+        "FocusDens_30": 6,
+        "FocusDens_35": 7,
+        "FocusDens_40": 8,
+        "FocusDens_45": 9,
+        "FocusDens_50": 10,
+        "FocusDens_55": 11,
+        "FocusDens_60": 12,
+        "FocusDens_65": 13,
+        "FocusDens_70": 14,
+        "FocusDens_75": 15,
+        "FocusDens_80": 16,
+        "FocusDens_85": 17,
+        "FocusDens_90": 18,
+        "FocusDens_95": 19,
+        "FocusDens_100": 20
+      },
+      "ZOSAPI.Analysis.Settings.RMS.WaveDensities": {
+        "WaveDens_5": 1,
+        "WaveDens_10": 2,
+        "WaveDens_15": 3,
+        "WaveDens_20": 4,
+        "WaveDens_25": 5,
+        "WaveDens_30": 6,
+        "WaveDens_35": 7,
+        "WaveDens_40": 8,
+        "WaveDens_45": 9,
+        "WaveDens_50": 10,
+        "WaveDens_55": 11,
+        "WaveDens_60": 12,
+        "WaveDens_65": 13,
+        "WaveDens_70": 14,
+        "WaveDens_75": 15,
+        "WaveDens_80": 16,
+        "WaveDens_85": 17,
+        "WaveDens_90": 18,
+        "WaveDens_95": 19,
+        "WaveDens_100": 20
+      },
+      "ZOSAPI.Analysis.Settings.RMS.RayDensities": {
+        "RayDens_1": 1,
+        "RayDens_32x32": 1,
+        "RayDens_64x64": 2,
+        "RayDens_2": 2,
+        "RayDens_128x128": 3,
+        "RayDens_3": 3,
+        "RayDens_256x256": 4,
+        "RayDens_4": 4,
+        "RayDens_5": 5,
+        "RayDens_512x512": 5,
+        "RayDens_1024x1024": 6,
+        "RayDens_6": 6,
+        "RayDens_2048x2048": 7,
+        "RayDens_7": 7,
+        "RayDens_4096x4096": 8,
+        "RayDens_8": 8,
+        "RayDens_8192x8192": 9,
+        "RayDens_9": 9,
+        "RayDens_10": 10,
+        "RayDens_16384x16384": 10,
+        "RayDens_11": 11,
+        "RayDens_12": 12,
+        "RayDens_13": 13,
+        "RayDens_14": 14,
+        "RayDens_15": 15,
+        "RayDens_16": 16,
+        "RayDens_17": 17,
+        "RayDens_18": 18,
+        "RayDens_19": 19,
+        "RayDens_20": 20
+      },
+      "ZOSAPI.Analysis.Settings.RMS.ReferTo": {
+        "ChiefRay": 0,
+        "Centroid": 1
+      },
+      "ZOSAPI.Analysis.Settings.RMS.Orientations": {
+        "Plus_Y": 0,
+        "Minus_Y": 1,
+        "Plus_X": 2,
+        "Minus_X": 3
+      },
+      "ZOSAPI.Analysis.Settings.RMS.RMSField.DataType": {
+        "Wavefront": 0,
+        "SpotRadius": 1,
+        "Spot_X": 2,
+        "Spot_Y": 3,
+        "StrehlRation": 4
+      },
+      "ZOSAPI.Analysis.Settings.RMS.RMSFieldMap.DataType": {
+        "Wavefront": 0,
+        "SpotRadius": 1,
+        "Spot_X": 2,
+        "Spot_Y": 3,
+        "StrehlRation": 4,
+        "PTWavefront": 5
+      }
+    }
+  },
+  "implementation": {
+    "settings": "settings-first factory; Field Set/Get and checked_setting write/readback; dedicated WaveDensity; StrehlRation alias mapped by enum value",
+    "result": "Native wavelength series, units and labels, text, standard paging/plots/reports",
+    "lifecycle": "Existing native analysis owner, cancel and close; ordinary setup rejection releases ownership"
+  },
+  "ordinary": {
+    "passed": 1393,
+    "failures": 0,
+    "errors": 0,
+    "deselected": 501,
+    "report": "verification/development/CV-01/ordinary043.xml"
+  },
+  "native": {
+    "status": "not_run",
+    "reason": "BASE-04 initialization timed out at 180.578 seconds; no environment change recorded",
+    "next_action": "After startup recovery execute tests/test_rms_wavelength_live.py; validate readback, wavelength range and units, all fields, numeric RMS references, persistence and successful/failed/cancelled closure",
+    "numeric_tolerances": {
+      "spot_um": "0.05 + 0.01 * reference",
+      "chief_ray_wavefront_waves": "1e-5 + 0.01 * reference"
+    }
+  },
+  "release": {
+    "status": "passed",
+    "wheel": "wheels/zemax_standalone_mcp-0.1.33-py3-none-any.whl",
+    "independent_install": "verification/development/CV-01/wheel-install033",
+    "stdio_smoke": "verification/development/CV-01/stdio-smoke043.json"
+  }
+}

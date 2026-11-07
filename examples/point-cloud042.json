@@ -1,0 +1,1 @@
+{"tool":"export_point_cloud","arguments":{"request":{"surface":1,"path":"C:\\ZemaxOutput\\surface.pcd","x_sampling":21,"y_sampling":15,"include_surface_normals":true,"format":"ASCII"}}}

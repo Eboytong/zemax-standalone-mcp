@@ -1,0 +1,11 @@
+{
+  "request": {
+    "kind": "contrast_loss",
+    "field": 1,
+    "wavelength": 1,
+    "sampling": "S_41x41",
+    "frequency": 50,
+    "normalize": true,
+    "show_opd": false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-07",
+  "item_id": "MA-01.GradiumProfile",
+  "aliases": [
+    "CV-02.GradiumProfile"
+  ],
+  "state": "in_progress",
+  "completion_count": 0,
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build240529 Premium",
+  "hypothesis": "GRIN display approximation vs native refractive-index evaluation separated using formal LDE.GetIndex at five Gradium vertex offsets",
+  "source": "User PROFILE.GRD G14SFN/GSF; SGRIN.DAT; owned plane Gradium surface with delta_z1..2, thickness1, step.01, wavelengths .58756/.55um",
+  "documentation": "Installed2024R2 manual page index241 formula visually inspected; manual583-sgrin.json; GRADIUM formula244/245 retained437",
+  "formula": "n(w)^2=n_ref^2+sum(K_i*(w^2-w_ref^2)/(w^2-L_i)); K_i,L_i polynomials in n_ref; w_ref=.58756um",
+  "command": ".venv/Scripts/python.exe -X utf8 tests/support/gradium_vertex_probe584.py verification/development/MA-01/probe584-vertex-index",
+  "requests_and_actual": "probe584-vertex-index/probe.json retains all typed setup calls and source system/curve readbacks; each copy DeltaZ/RefN and GetIndex return2 recorded",
+  "reference": "GRD polynomial and independent SGRIN dispersion evaluation, original atol1e-10+rtol1e-9",
+  "native_reference_max_error": 3.3448140479563904e-08,
+  "second_wavelength_max_error": 3.625994171585489e-08,
+  "native_curve_match": "Five native GetIndex reference-wave values exactly equal retained GrinProfile441 outputs at same offsets",
+  "numerical_acceptance": false,
+  "lifecycle": {
+    "copy_closed": true,
+    "surfaces_preserved": true,
+    "settings_preserved": true,
+    "disconnect_ok": true
+  },
+  "conclusion": "Error persists in formal GetIndex and at second wavelength; diagram-only hypothesis rejected. No numeric tolerance changed and no completion counted.",
+  "unblock_condition": "Resolve runtime common index evaluation/precision against documented GRD/SGRIN formula, then finish reverse profiles/offset/range/capping/selector and lifecycle coverage",
+  "next_action": "Retain original441 101-point failure and584 controls; proceed fixed queue without repeating unchanged step-size or diagram-only hypotheses."
+}

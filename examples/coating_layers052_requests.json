@@ -1,0 +1,35 @@
+{
+  "baseline": "Sequential model with WAR coating on surface 1; dimensionless multiplier and refractive/extinction offsets",
+  "requests": [
+    {
+      "tool": "update_coating_layers",
+      "arguments": {
+        "request": {
+          "surface": 1,
+          "use_layer_multiplier_and_offsets": true,
+          "layers": [
+            {
+              "layer": 1,
+              "thickness_multiplier": 0.9,
+              "index_offset": 0.01,
+              "extinction_offset": 0.001,
+              "thickness_status": {
+                "mode": "Variable"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool": "get_coating_layers",
+      "arguments": {
+        "request": {
+          "surface": 1,
+          "start": 1,
+          "count": 2
+        }
+      }
+    }
+  ]
+}

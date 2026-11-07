@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="2" time="42.155" timestamp="2026-11-07T18:13:35.480270+08:00" hostname="tongeb"><testcase classname="tests.test_quick_yield_solve_reference_live" name="test_quick_yield_selected_wavelength_solve_reference[dynamic_radius]" time="27.959"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_quick_yield_solve_reference_live" name="test_quick_yield_selected_wavelength_solve_reference[fixed_radius]" time="13.638"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'ok': False, 'data': None, 'error': {'code': 'SOLVE_PROTECTED', 'message': '修改会影响现有 solve/pickup；请显式允许替换。', 'details': {'solve': 'MarginalRayAngle', 'header': '曲率半径', 'command': 'update_surfaces', 'partial_changes_possible': False}}, 'warnings': [], 'context': {'session_id': '9659f165e97d4165be74c3691c998aae', 'model_revision': 1, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\quickyield570_solve_reference_True_1a51785751\\9659f165e97d4165be74c3691c998aae\\working_98a280b2.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': None, 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 1, 'session_id': '9659f165e97d4165be74c3691c998aae'}, 'request_id': '862b9c7157384bcdb63e24872de3761f'}, 'artifacts': []}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_quick_yield_solve_reference_live.py", line 62, in test_quick_yield_selected_wavelength_solve_reference
+  |     asyncio.run(execute('quickyield570_solve_reference_'+str(fixed),work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 58, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 60, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_quick_yield_solve_reference_live.py", line 27, in work
+      |     await e.call('update_surfaces',dict(changes=[dict(surface=6,
+      |         solves=dict(radius=dict(mode='fixed')))]))
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 14, in call
+      |     if okay:assert r and r["ok"],r
+      |                    ^^^^^^^^^^^^^
+      | AssertionError: {'ok': False, 'data': None, 'error': {'code': 'SOLVE_PROTECTED', 'message': '修改会影响现有 solve/pickup；请显式允许替换。', 'details': {'solve': 'MarginalRayAngle', 'header': '曲率半径', 'command': 'update_surfaces', 'partial_changes_possible': False}}, 'warnings': [], 'context': {'session_id': '9659f165e97d4165be74c3691c998aae', 'model_revision': 1, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\quickyield570_solve_reference_True_1a51785751\\9659f165e97d4165be74c3691c998aae\\working_98a280b2.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': None, 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 1, 'session_id': '9659f165e97d4165be74c3691c998aae'}, 'request_id': '862b9c7157384bcdb63e24872de3761f'}, 'artifacts': []}
+      +------------------------------------</failure></testcase></testsuite></testsuites>

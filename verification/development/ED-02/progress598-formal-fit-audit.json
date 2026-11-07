@@ -1,0 +1,135 @@
+{
+  "date": "2026-11-07",
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build240529 Premium",
+  "state": "implemented",
+  "completion_count": 0,
+  "item_id": "ED-02.MaterialModel.Material",
+  "scope": "Audit stored installed-DLL reflection for a formal temporary MaterialModel coefficient outlet",
+  "input_source": "verification/development/BASE-01/probe/api-interfaces.json;src/zemax_mcp/materials.py;tests/support/material_reference.py",
+  "request": "Existing typed MaterialModel request unchanged; no new native execution",
+  "actual_settings": "Retained native271 requests/readbacks in material-diagnostic271/anchors.json",
+  "command": "Inspect ISolveMaterialModel, IMaterialsCatalog and MaterialFormulas in stored public-DLL reflection",
+  "solve_interface": {
+    "properties": [
+      {
+        "name": "IndexNd",
+        "type": "System.Double",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "VaryIndex",
+        "type": "System.Boolean",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "AbbeVd",
+        "type": "System.Double",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "VaryAbbe",
+        "type": "System.Boolean",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "dPgF",
+        "type": "System.Double",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "VarydPgF",
+        "type": "System.Boolean",
+        "can_read": true,
+        "can_write": true
+      }
+    ],
+    "methods": []
+  },
+  "catalog_properties": [
+    "SelectedCatalog",
+    "SelectedMaterial",
+    "NumberOfFitCoefficients",
+    "CatalogComment",
+    "MaterialFormula",
+    "MaterialStatus",
+    "D0",
+    "D1",
+    "D2",
+    "E0",
+    "E1",
+    "Ltk",
+    "TCE",
+    "Temp",
+    "p",
+    "dPgF",
+    "MinimumWavelength",
+    "MaximumWavelength",
+    "IgnoreThermalExpansion",
+    "ExcludeSubstitution",
+    "MetaMaterial",
+    "MeltFreq",
+    "Comment",
+    "RelCost",
+    "CR",
+    "FR",
+    "SR",
+    "AR",
+    "PR",
+    "Nd",
+    "Vd",
+    "YoungsModulus",
+    "HasYoungsModulus",
+    "PoissonRatio",
+    "HasPoissonRatio",
+    "KnoopHardness",
+    "HasKnoopHardness",
+    "SpecificHeatCapacity",
+    "HasSpecificHeatCapacity",
+    "HeatConductivity",
+    "HasHeatConductivity"
+  ],
+  "catalog_methods": [
+    "System.String[] GetAllCatalogs()",
+    "System.String[] GetAllMaterials()",
+    "System.String GetCoefficientName(Int32)",
+    "Double GetFitCoefficient(Int32)",
+    "Void SetFitCoefficient(Int32, Double)",
+    "Boolean SaveCatalog()",
+    "ZOSAPI.Tools.IInternalTransmissionData GetInternalTransmissionData()",
+    "ZOSAPI.Tools.IInternalBirefringenceData GetInternalBirefringenceData()"
+  ],
+  "formulas": {
+    "Schott": 1,
+    "Sellmeier1": 2,
+    "Herzberger": 3,
+    "Sellmeier2": 4,
+    "Conrady": 5,
+    "Sellmeier3": 6,
+    "Handbook1": 7,
+    "Handbook2": 8,
+    "Sellmeier4": 9,
+    "Extended": 10,
+    "Sellmeier5": 11,
+    "Extended2": 12,
+    "Extended3": 13
+  },
+  "result": "Solve interface has Nd/Abbe/dPgF and Vary flags only, no coefficient methods. Catalog coefficients belong to a selected catalog material; no temporary ModelGlass selector appears in these audited interfaces.",
+  "reference": "Official precise d/F/C wavelengths and retained direct GetIndex results527",
+  "tolerance": "Original Abbe1e-5 absolute+1e-7 relative unchanged",
+  "error": {
+    "requested_vd": 60,
+    "exact_line_vd": 60.02418808120307,
+    "rounded_line_vd": 59.99988524798575
+  },
+  "numerical_acceptance": false,
+  "lifecycle": "Read-only audit of stored reflection; no native session",
+  "conclusion": "These audited interfaces do not supply the missing temporary model coefficients; original fit-definition discrepancy remains.",
+  "next_action": "Obtain a formal temporary MaterialModel dispersion/coefficient definition or supported readback; then predict exact-line index/Abbe under original tolerance. Continue other candidates."
+}

@@ -1,0 +1,25 @@
+{
+  "system": {
+    "settings": {
+      "author": "ED-01",
+      "aperture_options": {
+        "apodization_type": "Gaussian",
+        "apodization_factor": 1
+      }
+    }
+  },
+  "surface": {
+    "changes": [
+      {
+        "surface": 1,
+        "drawing": {
+          "draw_local_axis": true
+        },
+        "scattering": {
+          "type": "Lambertian",
+          "scatter_fraction": 0.1
+        }
+      }
+    ]
+  }
+}

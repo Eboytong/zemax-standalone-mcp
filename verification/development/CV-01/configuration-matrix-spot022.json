@@ -1,0 +1,67 @@
+{
+  "version": "0.1.22",
+  "date": "2026-11-05",
+  "item_id": "CV-01.ConfigurationMatrixSpot",
+  "native_api": {
+    "probe": "verification/development/BASE-01/probe/api-interfaces.json",
+    "analysis_id": "ZOSAPI.Analysis.AnalysisIDM.ConfigurationMatrixSpot",
+    "settings_interface": "ZOSAPI.Analysis.Settings.Spot.IAS_Spot",
+    "native_execution": "not_run",
+    "blocker": "BASE-04/connection019/supervisor.json: initialization_timeout after 180.526 seconds",
+    "unlock_condition": "successful native startup, create a two-configuration controlled model, run analysis, inspect setting adoption, matrix axes/data and close",
+    "native_writable_properties_discovered": [
+      "Pattern",
+      "ReferTo",
+      "ShowScale",
+      "ColorRaysBy",
+      "RayDensity",
+      "DirectionCosines",
+      "UseSymbols",
+      "UsePolarization",
+      "ScatterRays",
+      "ShowAiryDisk",
+      "IgnoreLateralColor",
+      "PlotScale",
+      "DeltaFocus",
+      "Exaggerate",
+      "Configuration"
+    ],
+    "adapter_properties": [
+      "Pattern",
+      "ReferTo",
+      "ShowScale",
+      "ColorRaysBy",
+      "RayDensity",
+      "DirectionCosines",
+      "UseSymbols",
+      "UsePolarization",
+      "ScatterRays",
+      "ShowAiryDisk",
+      "IgnoreLateralColor"
+    ]
+  },
+  "implementation": {
+    "entry": "run_analysis",
+    "kind": "configuration_matrix_spot",
+    "files": [
+      "src/zemax_mcp/analysis_models.py",
+      "src/zemax_mcp/analyses.py"
+    ],
+    "result_path": "standard native analysis task, native text and structured series/grid collector"
+  },
+  "ordinary_tests": {
+    "targeted": "25 passed across ConfigurationMatrixSpot, FftSurfaceMtf and field analysis request checks",
+    "configuration_matrix_file": "tests/test_configuration_matrix_spot.py",
+    "live_case": "tests/test_configuration_matrix_spot_live.py",
+    "live_case_status": "prepared, skipped unless --run-zemax",
+    "schema": "docs/tool-schemas.json contains typed request"
+  },
+  "documentation": [
+    "docs/configuration-matrix-spot.md",
+    "examples/configuration-matrix-spot022.json",
+    "docs/tools.md",
+    "能力说明.md"
+  ],
+  "resource_close": "owned by standard analysis lifecycle; live runtime close check pending",
+  "output_semantics": "native matrix axes and result series require live result inspection"
+}

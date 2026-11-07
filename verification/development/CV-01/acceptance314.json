@@ -1,0 +1,201 @@
+{
+  "date": "2026-11-06",
+  "item_id": "CV-01.ContrastLoss",
+  "state": "done",
+  "source_version": "0.1.59",
+  "native_version": "24.2.0 build240529",
+  "scope": "Typed native settings/readback; four grids identified from descriptions; independent phase and Moore-Elliott two-ray loss, automatic frequency, pair-pupil masks, display toggles, selection/paging/PNG/failure/cancel/reuse/reload/closure",
+  "ordinary_report": "verification/development/CV-01/ordinary313-related.xml",
+  "ordinary_passed": 59,
+  "native_reports": [
+    "verification/development/CV-01/native313-contrast-reference.xml",
+    "verification/development/CV-01/native314-final.xml"
+  ],
+  "tolerances": {
+    "loss_atol": 0.005,
+    "phase_atol_degrees": 1e-05
+  },
+  "reference": {
+    "loss": ".5*(1-cos(2*pi*(OPDplus-OPDminus)))",
+    "phase": "central OPD*360 degrees",
+    "half_shear": "frequency*wavelength_mm*real_working_f_number; 0 frequency gives .05",
+    "pupil_validity": "both displaced pupil rays must be within unit circle",
+    "normalization": "Normalize and ShowOPD change display, not raw grid values"
+  },
+  "manual": "verification/development/CV-01/manual311-contrast.txt;verification/development/CV-01/contrast-page311.png",
+  "runs": [
+    {
+      "path": "outputs/runs/contrast_loss311_b573b66cc9",
+      "checks": [],
+      "disconnect": true,
+      "close_receipt": {
+        "schema_version": 1,
+        "generation": null,
+        "session_id": null,
+        "started_at": "2026-11-06T13:27:53.978741+00:00",
+        "active_cancelled": false,
+        "forced": false,
+        "checkpoint": {
+          "attempted": false,
+          "path": null,
+          "ok": false,
+          "error": null
+        },
+        "was_connected": false,
+        "native": {
+          "attempted": true,
+          "closed": true,
+          "error": null
+        },
+        "closed_at": "2026-11-06T13:27:53.978776+00:00"
+      }
+    },
+    {
+      "path": "outputs/runs/contrast_loss312_reference_9da177eff3",
+      "checks": [
+        {
+          "label": "Tangential phase degrees",
+          "actual": 1.3622880601360521e-11,
+          "expected": 0,
+          "atol": 1e-05,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "Tangential Moore-Elliott contrast loss",
+          "actual": 1.3322676295501878e-15,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "Sagittal phase degrees",
+          "actual": 1.3622880601360521e-11,
+          "expected": 0,
+          "atol": 1e-05,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "Sagittal Moore-Elliott contrast loss",
+          "actual": 1.3322676295501878e-15,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        }
+      ],
+      "disconnect": true,
+      "close_receipt": {
+        "schema_version": 1,
+        "generation": null,
+        "session_id": null,
+        "started_at": "2026-11-06T13:29:15.293198+00:00",
+        "active_cancelled": false,
+        "forced": false,
+        "checkpoint": {
+          "attempted": false,
+          "path": null,
+          "ok": false,
+          "error": null
+        },
+        "was_connected": false,
+        "native": {
+          "attempted": true,
+          "closed": true,
+          "error": null
+        },
+        "closed_at": "2026-11-06T13:29:15.293271+00:00"
+      }
+    },
+    {
+      "path": "outputs/runs/contrast_loss312_reference_1fdcf07378",
+      "checks": [
+        {
+          "label": "Tangential phase degrees",
+          "actual": 6.813216657519661e-12,
+          "expected": 0,
+          "atol": 1e-05,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "Tangential Moore-Elliott contrast loss",
+          "actual": 2.3203661214665772e-14,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "Sagittal phase degrees",
+          "actual": 6.813216657519661e-12,
+          "expected": 0,
+          "atol": 1e-05,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "Sagittal Moore-Elliott contrast loss",
+          "actual": 2.3203661214665772e-14,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        }
+      ],
+      "disconnect": true,
+      "close_receipt": {
+        "schema_version": 1,
+        "generation": null,
+        "session_id": null,
+        "started_at": "2026-11-06T13:29:33.699189+00:00",
+        "active_cancelled": false,
+        "forced": false,
+        "checkpoint": {
+          "attempted": false,
+          "path": null,
+          "ok": false,
+          "error": null
+        },
+        "was_connected": false,
+        "native": {
+          "attempted": true,
+          "closed": true,
+          "error": null
+        },
+        "closed_at": "2026-11-06T13:29:33.699238+00:00"
+      }
+    },
+    {
+      "path": "outputs/runs/contrast_loss314_lifecycle_3fc04e21ca",
+      "checks": [],
+      "disconnect": true,
+      "close_receipt": {
+        "schema_version": 1,
+        "generation": null,
+        "session_id": null,
+        "started_at": "2026-11-06T13:29:55.725777+00:00",
+        "active_cancelled": false,
+        "forced": false,
+        "checkpoint": {
+          "attempted": false,
+          "path": null,
+          "ok": false,
+          "error": null
+        },
+        "was_connected": false,
+        "native": {
+          "attempted": true,
+          "closed": true,
+          "error": null
+        },
+        "closed_at": "2026-11-06T13:29:55.725815+00:00"
+      }
+    }
+  ],
+  "max_loss_error": 2.3203661214665772e-14,
+  "max_phase_error_degrees": 1.3622880601360521e-11,
+  "image_viewed": "outputs/runs/contrast_loss314_lifecycle_3fc04e21ca/contrast-loss.png"
+}
