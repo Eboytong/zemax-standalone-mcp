@@ -4,7 +4,7 @@
   "completed_count": 5,
   "target": 10,
   "new_complete_count": 0,
-  "evidence": ".local/evidence/development/MF-01/progress622-dsag-fit.json",
+  "evidence": "verification/development/MF-01/progress622-dsag-fit.json",
   "ordinary_passed": 75,
   "native_stdio_passed": 2,
   "active_native_session": null,

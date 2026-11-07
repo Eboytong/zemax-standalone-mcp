@@ -28,4 +28,4 @@ RMS随视场默认Plus_Y、密度20、移除渐晕因子开启；随焦移默认
 
 RMS与ThroughFocusSpot及其标准光斑子任务使用New_Analysis_SettingsFirst创建，先设置后计算。原有其他分析的创建路径保持现有实现。
 
-验收入口：tests/test_rms_analyses.py、tests/test_rms_analyses_live.py。覆盖五面独立对照、矩形瞳采样RMS/OPD、焦移传播参考、GaussQuad、多色与偏振、镜面负厚度和取消恢复。Centroid波前及Strehl执行原生采用检查，独立波前参考使用ChiefRay。记录见verification/rms-analyses-summary.json。
+验收入口：tests/unit/test_rms_analyses.py、tests/native/test_rms_analyses_live.py。覆盖五面独立对照、矩形瞳采样RMS/OPD、焦移传播参考、GaussQuad、多色与偏振、镜面负厚度和取消恢复。Centroid波前及Strehl执行原生采用检查，独立波前参考使用ChiefRay。记录见development/evidence/rms-analyses-summary.json。

@@ -1,3 +1,4 @@
+from zemax_mcp.config import PROJECT_ROOT
 """Serial SettingsFirst discovery; no analysis calculations or settings writes."""
 import argparse
 import csv
@@ -6,7 +7,7 @@ from pathlib import Path
 import sys
 import re
 
-ROOT=Path(__file__).resolve().parents[2]
+ROOT=PROJECT_ROOT
 sys.path.insert(0,str(ROOT/'src'))
 from zemax_mcp.backend import Backend
 from zemax_mcp.config import Config
@@ -15,7 +16,7 @@ from zemax_mcp.data import unwrap
 
 def run(package,folder,save_cfg=False,mode=None,include_active=False,items=None):
     folder=Path(folder).resolve();folder.mkdir(parents=True,exist_ok=False)
-    rows=[r for r in csv.DictReader((ROOT/'docs/development-backlog.csv').open(encoding='utf-8-sig'))
+    rows=[r for r in csv.DictReader((ROOT/'development/ledgers/analyses.csv').open(encoding='utf-8-sig'))
           if r['work_package']==package and (r['native_enum'] in items if items else r['execution_state'] in ({'blocked','pending','in_progress'} if include_active else {'blocked','pending'}))]
     backend=Backend(Config(Config.from_env().install_dir,folder/'native'))
     record=dict(package=package,settings_writes=0,calculations=0,closed=False,items=[])

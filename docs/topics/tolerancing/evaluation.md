@@ -42,15 +42,15 @@ OPD 默认关闭，仅真实光线终止于像面时可开启，采用 CurrentAn
 
 `export_evaluation_report(task_ids,title)` 从已取得的数据生成 Markdown、JSON、CSV。报告保留基线、实际配置、软件版本、失败项、恢复状态和子分析任务引用，不重跑 Zemax。任务编号仅在当前服务进程中有效，文件会持续保留。
 
-非序列累计功率表保存 trace_conditions 中各历史任务的状态、错误和追迹选项。导出时自动收集相关已结束任务，包含失败和取消项；关联任务不存在或尚未结束时，以 unavailable_trace_tasks 标明缺口并保留表内快照。model_matches_history 只核对模型，mixed_conditions 和 complete 还考虑追迹选项及历史状态，解释见[非序列数值条件](nonsequential-validation.md)。
+非序列累计功率表保存 trace_conditions 中各历史任务的状态、错误和追迹选项。导出时自动收集相关已结束任务，包含失败和取消项；关联任务不存在或尚未结束时，以 unavailable_trace_tasks 标明缺口并保留表内快照。model_matches_history 只核对模型，mixed_conditions 和 complete 还考虑追迹选项及历史状态，解释见[非序列数值条件](../nonsequential/nonsequential-validation.md)。
 
-报告会读取关联的分析结果，支持 include_charts=true、formats=["markdown","pdf"]，建议同时 background=true。网格区域、扩展追迹、多结构、优化与专项分析的请求和约定见 [专项工具](extended-tools.md)。
+报告会读取关联的分析结果，支持 include_charts=true、formats=["markdown","pdf"]，建议同时 background=true。网格区域、扩展追迹、多结构、优化与专项分析的请求和约定见 [专项工具](../propagation/extended-tools.md)。
 
 ## 运行示例和验证
 
 ```powershell
-& '.\.venv\Scripts\python.exe' -B examples/evaluate_design.py
-& '.\.venv\Scripts\python.exe' -B -m pytest tests/test_evaluation.py -q -p no:cacheprovider
+& '.\.venv\Scripts\python.exe' -B examples/workflows/evaluate_design.py
+& '.\.venv\Scripts\python.exe' -B -m pytest tests/unit/test_evaluation.py -q -p no:cacheprovider
 ```
 
 普通测试覆盖参数、插值、分页、扫描失败继续、取消和恢复失败。真实stdio、Cooke扫描、追迹分块及REAX/REAY数值依据见验收索引（历史参考）。示例会修改工作设计并生成输出，运行前确认输入；GUI对照范围以对应验收记录为准。

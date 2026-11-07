@@ -1,0 +1,778 @@
+{
+  "operands": [
+    {
+      "name": "BIOC",
+      "available": true,
+      "headers": [
+        {
+          "number": 1,
+          "header": "左",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 2,
+          "header": "右",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 3,
+          "header": "波",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 4,
+          "header": "用余弦",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 5,
+          "header": "Xang",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 6,
+          "header": "Yang",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 7,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        },
+        {
+          "number": 8,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        }
+      ],
+      "queries": [
+        {
+          "arguments": [
+            1,
+            2,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "value": 0.0
+        },
+        {
+          "arguments": [
+            1,
+            2,
+            1.0,
+            0.0,
+            10.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "value": -28.637809087061697
+        },
+        {
+          "arguments": [
+            1,
+            2,
+            1.0,
+            0.0,
+            0.0,
+            10.0,
+            0.0,
+            0.0
+          ],
+          "value": 0.0
+        },
+        {
+          "arguments": [
+            1,
+            2,
+            1.0,
+            0.0,
+            -10.0,
+            5.0,
+            0.0,
+            0.0
+          ],
+          "value": 28.63780637458142
+        }
+      ]
+    },
+    {
+      "name": "BIOD",
+      "available": true,
+      "headers": [
+        {
+          "number": 1,
+          "header": "左",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 2,
+          "header": "右",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 3,
+          "header": "波",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 4,
+          "header": "用余弦",
+          "type": "Integer",
+          "active": true
+        },
+        {
+          "number": 5,
+          "header": "Xang",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 6,
+          "header": "Yang",
+          "type": "Double",
+          "active": true
+        },
+        {
+          "number": 7,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        },
+        {
+          "number": 8,
+          "header": " ",
+          "type": "Double",
+          "active": false
+        }
+      ],
+      "queries": [
+        {
+          "arguments": [
+            1,
+            2,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "value": 0.0
+        },
+        {
+          "arguments": [
+            1,
+            2,
+            1.0,
+            0.0,
+            10.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "value": 0.0
+        },
+        {
+          "arguments": [
+            1,
+            2,
+            1.0,
+            0.0,
+            0.0,
+            10.0,
+            0.0,
+            0.0
+          ],
+          "value": -28.637809087061697
+        },
+        {
+          "arguments": [
+            1,
+            2,
+            1.0,
+            0.0,
+            -10.0,
+            5.0,
+            0.0,
+            0.0
+          ],
+          "value": -14.488019864801293
+        }
+      ]
+    }
+  ],
+  "analyses": [],
+  "stage": "return get_merit_function",
+  "connect": {
+    "connected": true,
+    "native_system_status": "",
+    "native_startup": {
+      "events": [
+        {
+          "stage": "install_check",
+          "event": "started",
+          "timestamp": "2026-11-07T02:42:24.420+00:00",
+          "elapsed_seconds": 2.4900000425986946e-05
+        },
+        {
+          "stage": "install_check",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:42:24.421+00:00",
+          "elapsed_seconds": 0.0003297000002930872,
+          "duration_seconds": 0.00031599999783793464
+        },
+        {
+          "stage": "environment",
+          "event": "started",
+          "timestamp": "2026-11-07T02:42:24.421+00:00",
+          "elapsed_seconds": 0.00033909999910974875
+        },
+        {
+          "stage": "environment",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:42:24.429+00:00",
+          "elapsed_seconds": 0.009016899995913263,
+          "duration_seconds": 0.008667800000694115
+        },
+        {
+          "stage": "clr_load",
+          "event": "started",
+          "timestamp": "2026-11-07T02:42:24.429+00:00",
+          "elapsed_seconds": 0.00902969999879133
+        },
+        {
+          "stage": "clr_load",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:42:24.671+00:00",
+          "elapsed_seconds": 0.2505020999960834,
+          "duration_seconds": 0.24145690000295872
+        },
+        {
+          "stage": "nethelper_assembly",
+          "event": "started",
+          "timestamp": "2026-11-07T02:42:24.671+00:00",
+          "elapsed_seconds": 0.25052229999710107
+        },
+        {
+          "stage": "nethelper_assembly",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:42:24.678+00:00",
+          "elapsed_seconds": 0.25778559999889694,
+          "duration_seconds": 0.0072575000012875535
+        },
+        {
+          "stage": "zos_initialize",
+          "event": "started",
+          "timestamp": "2026-11-07T02:42:24.678+00:00",
+          "elapsed_seconds": 0.25779509999847505
+        },
+        {
+          "stage": "zos_initialize",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:42:24.684+00:00",
+          "elapsed_seconds": 0.2637743999948725,
+          "duration_seconds": 0.0059636000005411915
+        },
+        {
+          "stage": "api_assemblies",
+          "event": "started",
+          "timestamp": "2026-11-07T02:42:24.684+00:00",
+          "elapsed_seconds": 0.2637904000002891
+        },
+        {
+          "stage": "api_assemblies",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:42:24.698+00:00",
+          "elapsed_seconds": 0.2779238000002806,
+          "duration_seconds": 0.014124000001174863
+        },
+        {
+          "stage": "connection_create",
+          "event": "started",
+          "timestamp": "2026-11-07T02:42:24.698+00:00",
+          "elapsed_seconds": 0.27793409999867436
+        },
+        {
+          "stage": "connection_create",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:42:24.953+00:00",
+          "elapsed_seconds": 0.5324565999981132,
+          "duration_seconds": 0.254504900003667
+        },
+        {
+          "stage": "application_create",
+          "event": "started",
+          "timestamp": "2026-11-07T02:42:24.953+00:00",
+          "elapsed_seconds": 0.5324753999957466
+        },
+        {
+          "stage": "application_create",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:42:29.475+00:00",
+          "elapsed_seconds": 5.055011199998262,
+          "duration_seconds": 4.522520500002429
+        },
+        {
+          "stage": "license_check",
+          "event": "started",
+          "timestamp": "2026-11-07T02:42:29.475+00:00",
+          "elapsed_seconds": 5.055029799994372
+        },
+        {
+          "stage": "license_check",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:42:29.477+00:00",
+          "elapsed_seconds": 5.0569135999976425,
+          "duration_seconds": 0.0018682000008993782
+        },
+        {
+          "stage": "primary_system",
+          "event": "started",
+          "timestamp": "2026-11-07T02:42:29.477+00:00",
+          "elapsed_seconds": 5.056933299994853
+        },
+        {
+          "stage": "primary_system",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:42:29.479+00:00",
+          "elapsed_seconds": 5.058427399999346,
+          "duration_seconds": 0.0014892999970470555
+        }
+      ],
+      "observer_warnings": []
+    },
+    "active_task": null,
+    "running_tasks": [],
+    "task_index": {},
+    "recent_tasks": [],
+    "session_id": "7e127a50fcfd4baca46e2edd20aff3ff",
+    "model_revision": 0,
+    "source_file": null,
+    "working_file": null,
+    "opticstudio_version": "24.2.0",
+    "opticstudio_build": "240529",
+    "license": "PremiumEdition",
+    "checkpoint": null,
+    "requires_reconnect": false,
+    "mode": "Sequential",
+    "configuration": 1,
+    "lens_units": "Millimeters",
+    "mtf_units": "CyclesPerMillimeter",
+    "geometry": {
+      "state": "pending",
+      "model_revision": 0,
+      "session_id": "7e127a50fcfd4baca46e2edd20aff3ff"
+    }
+  },
+  "merit_before": {
+    "total": 1,
+    "operands": [
+      {
+        "operand": 1,
+        "type": "BLNK",
+        "target": "NaN",
+        "weight": "NaN",
+        "value": "NaN",
+        "contribution": "NaN",
+        "parameters": {},
+        "cells": {
+          "2": {
+            "column": 2,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "3": {
+            "column": 3,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "4": {
+            "column": 4,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "5": {
+            "column": 5,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "6": {
+            "column": 6,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "7": {
+            "column": 7,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "8": {
+            "column": 8,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "9": {
+            "column": 9,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          }
+        }
+      }
+    ],
+    "next_start": null,
+    "values_are_cached": true
+  },
+  "clipped_queries": [
+    {
+      "operand": "BIOC",
+      "value": 0.0
+    },
+    {
+      "operand": "BIOD",
+      "value": 0.0
+    }
+  ],
+  "mfe_properties": [
+    {
+      "name": "RowToOperandOffset",
+      "type": "System.Int32"
+    },
+    {
+      "name": "NumberOfOperands",
+      "type": "System.Int32"
+    },
+    {
+      "name": "FirstColumn",
+      "type": "ZOSAPI.Editors.MFE.MeritColumn"
+    },
+    {
+      "name": "LastColumn",
+      "type": "ZOSAPI.Editors.MFE.MeritColumn"
+    },
+    {
+      "name": "MeritFunctionDirectory",
+      "type": "System.String"
+    },
+    {
+      "name": "Type",
+      "type": "ZemaxUI.Editors.Utilities.EditorWindowType"
+    },
+    {
+      "name": "MinColumn",
+      "type": "System.Int32"
+    },
+    {
+      "name": "MaxColumn",
+      "type": "System.Int32"
+    },
+    {
+      "name": "NumberOfRows",
+      "type": "System.Int32"
+    },
+    {
+      "name": "NSCOptimizationWizard",
+      "type": "ZOSAPI.Wizards.INSCOptimizationWizard"
+    },
+    {
+      "name": "SEQOptimizationWizard",
+      "type": "ZOSAPI.Wizards.ISEQOptimizationWizard"
+    },
+    {
+      "name": "NSCBitmapWizard",
+      "type": "ZOSAPI.Wizards.INSCBitmapWizard"
+    },
+    {
+      "name": "NSCRoadwayLightingWizard",
+      "type": "ZOSAPI.Wizards.INSCRoadwayLightingWizard"
+    },
+    {
+      "name": "SEQOptimizationWizard2",
+      "type": "ZOSAPI.Wizards.ISEQOptimizationWizard2"
+    },
+    {
+      "name": "Editor",
+      "type": "ZOSAPI.Editors.EditorType"
+    },
+    {
+      "name": "Parent",
+      "type": "ZOSAPI.IZAPI_BaseObject"
+    }
+  ],
+  "merit_after": {
+    "total": 2,
+    "operands": [
+      {
+        "operand": 1,
+        "type": "CONF",
+        "target": "Infinity",
+        "weight": "Infinity",
+        "value": "Infinity",
+        "contribution": "Infinity",
+        "parameters": {
+          "2": {
+            "column": 2,
+            "header": "结构#",
+            "data_type": "Integer",
+            "active": true,
+            "writable": true,
+            "unit": null,
+            "unit_source": null,
+            "value": 1
+          }
+        },
+        "cells": {
+          "2": {
+            "column": 2,
+            "header": "结构#",
+            "data_type": "Integer",
+            "active": true,
+            "writable": true,
+            "unit": null,
+            "unit_source": null
+          },
+          "3": {
+            "column": 3,
+            "header": " ",
+            "data_type": "Integer",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "4": {
+            "column": 4,
+            "header": " ",
+            "data_type": "Double",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "5": {
+            "column": 5,
+            "header": " ",
+            "data_type": "Double",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "6": {
+            "column": 6,
+            "header": " ",
+            "data_type": "Double",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "7": {
+            "column": 7,
+            "header": " ",
+            "data_type": "Double",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "8": {
+            "column": 8,
+            "header": " ",
+            "data_type": "Double",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "9": {
+            "column": 9,
+            "header": " ",
+            "data_type": "Double",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          }
+        }
+      },
+      {
+        "operand": 2,
+        "type": "BLNK",
+        "target": "NaN",
+        "weight": "NaN",
+        "value": "NaN",
+        "contribution": "NaN",
+        "parameters": {},
+        "cells": {
+          "2": {
+            "column": 2,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "3": {
+            "column": 3,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "4": {
+            "column": 4,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "5": {
+            "column": 5,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "6": {
+            "column": 6,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "7": {
+            "column": 7,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "8": {
+            "column": 8,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          },
+          "9": {
+            "column": 9,
+            "header": " ",
+            "data_type": "String",
+            "active": false,
+            "writable": false,
+            "unit": null,
+            "unit_source": null
+          }
+        }
+      }
+    ],
+    "next_start": null,
+    "values_are_cached": true
+  },
+  "disconnect": {
+    "ok": true,
+    "data": {
+      "connected": false,
+      "last_session": {
+        "session_id": "7e127a50fcfd4baca46e2edd20aff3ff",
+        "model_revision": 5,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-02\\probe410-clipping-isolated\\native\\7e127a50fcfd4baca46e2edd20aff3ff\\working_b10fbd76.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-02\\probe410-clipping-isolated\\native\\7e127a50fcfd4baca46e2edd20aff3ff\\checkpoint_r5_disconnect_ec9ae0e3.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 5,
+          "session_id": "7e127a50fcfd4baca46e2edd20aff3ff"
+        }
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": null,
+      "model_revision": 5,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": null,
+      "opticstudio_build": null,
+      "license": null,
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "geometry": {
+        "state": "pending",
+        "model_revision": 5,
+        "session_id": null
+      }
+    },
+    "artifacts": []
+  }
+}

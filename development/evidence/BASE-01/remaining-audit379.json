@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-07",
+  "packages": {
+    "done": 8,
+    "implemented": 10,
+    "in_progress": 15,
+    "blocked": 1
+  },
+  "operations": {
+    "done": 92,
+    "implemented": 24,
+    "blocked": 51,
+    "pending": 5
+  },
+  "analyses": {
+    "done": 60,
+    "baseline": 36,
+    "documented": 2,
+    "implemented": 15,
+    "in_progress": 29,
+    "blocked": 10,
+    "pending": 12
+  },
+  "source_record_count": 146,
+  "canonical_group_count": 135,
+  "gate": "B0050/10; SagTable implemented; YYbar/incident-angle in progress",
+  "queue": "docs/development-queue.json"
+}

@@ -1,0 +1,340 @@
+{
+  "environment": "Windows x64 / OpticStudio 2024 R2 / API24.2.0 / build240529",
+  "tool_count": 74,
+  "boundary": "Only these planned models; unsuccessful planned routes are deferred without scope expansion",
+  "models": {
+    "imaging": {
+      "cooke_fields_deg": [
+        0,
+        14,
+        20
+      ],
+      "wavelengths_um": [
+        0.486,
+        0.55,
+        0.644
+      ],
+      "powers": [
+        0.2,
+        0.5,
+        0.3
+      ],
+      "singlet_fields_deg": [
+        0,
+        5
+      ],
+      "singlet": {
+        "front_radius_mm": 50,
+        "rear_radius_mm": null,
+        "thickness_mm": 5,
+        "semi_diameter_mm": 5
+      },
+      "noncircular": [
+        "rectangle",
+        "annulus"
+      ],
+      "phase_waves": 0.2,
+      "phases": [
+        "spherical",
+        "coma",
+        "astigmatism",
+        "defocus"
+      ],
+      "sampling": [
+        256,
+        512,
+        1024
+      ],
+      "cooke_output_grid": {
+        "sampling": "S_512x512",
+        "step_um": 0.5,
+        "refinement": "pupil sampling256/512/1024; output grid fixed"
+      },
+      "noncircular_output_grid": {
+        "sampling": "S_256x256",
+        "step_um": 0.5
+      }
+    },
+    "surfaces": {
+      "types": [
+        "BINARY_2",
+        "BINARY_3",
+        "BIRE_OUT",
+        "BIRE__IN",
+        "CHEBYSHV",
+        "COORDBRK",
+        "DGRATING",
+        "EVENASPH",
+        "FZERNSAG",
+        "GRID_SAG",
+        "GRINSU11",
+        "GRINSUR1",
+        "GRINSUR9",
+        "HOLOGRM2",
+        "IRREGULA",
+        "NONSEQCO",
+        "PARAXIAL",
+        "PARAX_XY",
+        "STANDARD",
+        "TILTSURF",
+        "TOROIDAL",
+        "USERSURF"
+      ],
+      "preserve_13_native_rejections": true,
+      "preserve_hologram2_guard": true
+    },
+    "fluorescence": {
+      "model": "outputs/wavelength_detector_pairs_20261025/minimal/model.zos",
+      "database": "outputs/wavelength_detector_pairs_20261025/minimal/rays.zrd",
+      "new_path": "GUI ZRDPLAYBACK only",
+      "intervals_um": [
+        [
+          0.4,
+          0.8
+        ],
+        [
+          0.65,
+          0.675
+        ],
+        [
+          0.525,
+          0.55
+        ],
+        [
+          0.55,
+          0.575
+        ],
+        [
+          0.8,
+          0.825
+        ]
+      ],
+      "no_computed_filter_fallback": true
+    },
+    "coherence": {
+      "coherence_lengths_mm": [
+        0.005,
+        0.01,
+        0.02
+      ],
+      "path_ratios": [
+        0,
+        0.25,
+        0.5,
+        1,
+        1.5,
+        2
+      ],
+      "rays": 10000,
+      "seed": 42,
+      "power_W": [
+        0.25,
+        0.75
+      ],
+      "polarization_angles_deg": [
+        0,
+        45,
+        90
+      ],
+      "phases_deg": [
+        0,
+        30,
+        60,
+        90,
+        120,
+        150,
+        180,
+        210,
+        240,
+        270,
+        300,
+        330,
+        360
+      ],
+      "detector_flags": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "scatter": {
+      "cone_half_angles_deg": [
+        10,
+        45,
+        90
+      ],
+      "mean_paths_mm": [
+        2,
+        4
+      ],
+      "two_region_lengths_mm": [
+        3,
+        3
+      ],
+      "rays": 10000,
+      "seed": 42,
+      "event_bins": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        ">=5"
+      ]
+    },
+    "pop": {
+      "modes": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          4,
+          0,
+          0
+        ],
+        [
+          4,
+          2,
+          0
+        ],
+        [
+          4,
+          2,
+          1
+        ],
+        [
+          4,
+          4,
+          0
+        ],
+        [
+          4,
+          4,
+          1
+        ]
+      ],
+      "w0_mm": 0.1,
+      "f0_mm": [
+        0.05,
+        0.1
+      ],
+      "propagation_rayleigh_lengths": [
+        0,
+        0.5,
+        1
+      ],
+      "physical_plane_tilts_deg": [
+        0,
+        -5,
+        5,
+        -15,
+        15
+      ],
+      "axes": [
+        "X",
+        "Y"
+      ],
+      "offset_mm": [
+        0,
+        0.025
+      ]
+    },
+    "thermal": {
+      "radii_mm": [
+        50,
+        -70
+      ],
+      "nominal_gap_mm": 10,
+      "mechanical_semidiameter_mm": 3,
+      "mount_CTE_ppm": [
+        0,
+        50,
+        100
+      ],
+      "temperatures_C": [
+        -20,
+        19.99,
+        20,
+        20.01,
+        60
+      ],
+      "rotations_deg": {
+        "Ry": 5,
+        "Rx": -3
+      }
+    },
+    "tolerance": {
+      "compensation": [
+        "None",
+        "ParaxialFocus",
+        "OptimizeAll_DLS",
+        "OptimizeAll_OD"
+      ],
+      "COMP_half_ranges_mm": [
+        0.0001,
+        0.01
+      ],
+      "perturbations_mm": [
+        0,
+        -0.01,
+        0.01,
+        -0.1,
+        0.1,
+        -0.5,
+        0.5
+      ],
+      "cycles": [
+        5,
+        10,
+        30
+      ],
+      "seed": 42,
+      "saved_samples": 8
+    }
+  },
+  "criteria": {
+    "rtol": 1e-07,
+    "atol": 1e-08,
+    "MTF_absolute": 0.02,
+    "PSF_EE_absolute": 0.025,
+    "reference_refinement": 0.005,
+    "POP_absolute": 0.005,
+    "random_standard_errors": 6
+  },
+  "excluded": [
+    "default exit-pupil full mapping",
+    "reverse radiance",
+    "generic native analysis bitmap",
+    "new thermoelastic solver",
+    "new runtime dependencies",
+    "FRU lifecycle repetitions"
+  ]
+}

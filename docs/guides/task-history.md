@@ -37,8 +37,8 @@
 
 ## 检查与证据
 
-`tests/test_history.py`包含23项普通检查，覆盖请求边界、版本0、重启读取、当前/历史优先级、损坏记录、关闭警告、失败任务、曲线/网格分页、原始请求错误、进程中断未知状态及忙碌请求查询。
+`tests/unit/test_history.py`包含23项普通检查，覆盖请求边界、版本0、重启读取、当前/历史优先级、损坏记录、关闭警告、失败任务、曲线/网格分页、原始请求错误、进程中断未知状态及忙碌请求查询。
 
-`tests/test_history_stdio.py`实际启动并关闭两代stdio工作进程，检查请求回执、历史发现、结果分页、重启读取及未连接状态。数据来自明确的历史夹具，原生光学任务仍沿用各功能包验收记录。
+`tests/unit/test_history_stdio.py`实际启动并关闭两代stdio工作进程，检查请求回执、历史发现、结果分页、重启读取及未连接状态。数据来自明确的历史夹具，原生光学任务仍沿用各功能包验收记录。
 
-全量结果：`.local/evidence/development/BASE-03/ordinary022-final.xml`，950通过、450原生未执行，18.73秒。首次回归发现目录创建语义变化，现已保持既有错误行为；原始失败保留在ordinary022.xml。安装包stdio检查及汇总见`verification/task-history022-summary.json`。
+全量结果：`.local/evidence/development/BASE-03/ordinary022-final.xml`，950通过、450原生未执行，18.73秒。首次回归发现目录创建语义变化，现已保持既有错误行为；原始失败保留在ordinary022.xml。安装包stdio检查及汇总见`development/evidence/task-history022-summary.json`。

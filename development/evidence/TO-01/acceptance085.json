@@ -1,0 +1,49 @@
+{
+  "items": [
+    "TO-01.ToleranceYield",
+    "TO-01.ToleranceHistogram"
+  ],
+  "state": "done",
+  "date": "2026-11-06",
+  "source": "0.1.57 plus B002 source",
+  "runtime": "verification/development/WP-01/probe030.json",
+  "ordinary": "verification/development/TO-01/ordinary085-delivery.xml",
+  "ordinary_passed": 66,
+  "native": [
+    "verification/development/TO-01/native084-delivery.xml",
+    "verification/development/TO-01/native085-final.xml",
+    "verification/development/TO-01/native085-mixed-tails.xml"
+  ],
+  "runs": [
+    "outputs/runs/tolerance_edges085_77dd82a526",
+    "outputs/runs/tolerance_edges085_db15785103",
+    "outputs/runs/tolerance-special-analyses_4fdc4ce54e",
+    "outputs/runs/tolerance-special-analyses_eb087d6829"
+  ],
+  "scope": "Native ZTD stored-value distributions; public zero-based to native one-based columns; final settings, CDF/count references, tail counters, sample counts, series units, paging/PNG, save/reload, error/reuse, source preservation and close",
+  "numeric": {
+    "cdf_atol": 1e-08,
+    "cdf_rtol": 1e-07,
+    "bin_center_atol": 1e-10,
+    "bin_center_rtol": 1e-10,
+    "mixed_tail_counts": {
+      "underflow": 4,
+      "in_range": 8,
+      "overflow": 4,
+      "total": 16
+    },
+    "failed_trials": {
+      "requested": 8,
+      "traceable": 3,
+      "failed": 5,
+      "sentinel": 9000000000.0,
+      "cdf_interior_percent": 37.5
+    }
+  },
+  "semantics": "Native distributions include stored failed-criterion sentinels. Trial-status-aware manufacturing statistics are exposed by summarize_tolerance_results.",
+  "history": [
+    "native085-edges.xml: series-only counts omitted native text overflow; fixed structured counters and conservation"
+  ],
+  "cancellation": "Short native report calculations; completed-task reuse/close checked, shared task cancellation mechanism retained",
+  "batch": "B0028/10; no full regression or wheel per item"
+}

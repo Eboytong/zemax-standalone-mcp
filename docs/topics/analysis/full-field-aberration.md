@@ -16,4 +16,4 @@
 
 声明范围已完成，证据 `.local/evidence/development/CV-01/acceptance295.json`。非零离焦验证Relative为逐点绝对值减去有效采样点算术均值，Average为同均值常量且保留原掩码。椭圆7×5中16个无效点与椭圆外掩码逐点一致。
 
-参考视场2/波长2的中心为实际视场(0,14°)，与相同条件单视场Standard离焦系数对照通过；ObjectHeight有限物距系统的厘米坐标及范围通过。4×3分页、PNG导出及查看、越界拒绝后复用、运行取消及关闭、取消后复用、保存重载及曲面/solve/配置/MFE保持通过。相关普通20项，原生3项通过，均正常断连关闭。完整例子见 `../examples/full-field-aberration295.json`；请求schema继续沿用 `tool-schemas.json`。
+参考视场2/波长2的中心为实际视场(0,14°)，与相同条件单视场Standard离焦系数对照通过；ObjectHeight有限物距系统的厘米坐标及范围通过。4×3分页、PNG导出及查看、越界拒绝后复用、运行取消及关闭、取消后复用、保存重载及曲面/solve/配置/MFE保持通过。相关普通20项，原生3项通过，均正常断连关闭。完整例子见 `../examples/requests/full-field-aberration295.json`；请求schema继续沿用 `tool-schemas.json`。

@@ -1,0 +1,152 @@
+[
+  {
+    "name": "segmentNumber",
+    "type": "System.Int32",
+    "out": false
+  },
+  {
+    "name": "segmentLevel",
+    "type": "System.Int32&",
+    "out": true
+  },
+  {
+    "name": "segmentParent",
+    "type": "System.Int32&",
+    "out": true
+  },
+  {
+    "name": "hitObj",
+    "type": "System.Int32&",
+    "out": true
+  },
+  {
+    "name": "hitFace",
+    "type": "System.Int32&",
+    "out": true
+  },
+  {
+    "name": "insideOf",
+    "type": "System.Int32&",
+    "out": true
+  },
+  {
+    "name": "status",
+    "type": "ZOSAPI.Tools.RayTrace.RayStatus&",
+    "out": true
+  },
+  {
+    "name": "x",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "y",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "z",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "l",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "m",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "n",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "exr",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "exi",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "eyr",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "eyi",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "ezr",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "ezi",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "intensity",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "pathLength",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "xybin",
+    "type": "System.Int32&",
+    "out": true
+  },
+  {
+    "name": "lmbin",
+    "type": "System.Int32&",
+    "out": true
+  },
+  {
+    "name": "xNorm",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "yNorm",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "zNorm",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "index",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "startingPhase",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "phaseOf",
+    "type": "System.Double&",
+    "out": true
+  },
+  {
+    "name": "phaseAt",
+    "type": "System.Double&",
+    "out": true
+  }
+]

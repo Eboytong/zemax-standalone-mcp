@@ -1,0 +1,77 @@
+{
+  "item_ids": [
+    "EX-01.UniversalPlot1D",
+    "EX-01.UniversalPlot2D"
+  ],
+  "date": "2026-11-06",
+  "execution_state": "implemented",
+  "native_version": "OpticStudio2024 R2 build240529 Premium; actual connect in calls.json",
+  "probes": [
+    "outputs/runs/universal243_mixed_8f6030e0fa/probe.json",
+    "outputs/runs/universal244_surface_bd5f67a868/probe.json",
+    "outputs/runs/universal245_surface_targets_15a322d171/probe.json",
+    "outputs/runs/universal246_mixed_categories_d545f573a9/probe.json",
+    "outputs/runs/universal247_surface_confirm_0ee1582bfa/probe.json"
+  ],
+  "discoveries": [
+    "Mixed CATEGORY=3+zero-based NSC group ordinal in LDE; ActiveSurface alone does not select the scan group. Category3/4 map to groups2/4; out-of-range5 fell back to Surface.",
+    "Surface Conic native index4; surface parameter n uses n+6. Index3 falls back to Radius; index6 reports Parameter0, not exposed as numbered parameter.",
+    "Installed COVA is the conic-value operand; CCVA absent from installed enum and raw native CFG produces cannot-compute report.",
+    "CoordinateBreak Conic is inactive: raw native accepted header yet COVA stayed0; typed preflight rejects inactive property."
+  ],
+  "changes": [
+    "Explicit mixed nsc_surface and dynamic category mapping in1D/2D; preflight metadata group always restored",
+    "Restore failure preserves original operation error and requests reconnect; no active-group mutation during analysis",
+    "Conic and numbered SurfaceParameter1..254; activity, writable, solve, numeric type and integer-sampling checks",
+    "COVA dimensionless; CoordinateBreak parameter1/2 lens length and3/4/5 degrees; PMVA/NPVA units resolved from target copy metadata where confirmed",
+    "Fix PNG plotting with null units, retain null in result and show unit reference text; colorbar falls back to value label"
+  ],
+  "checks": {
+    "ordinary": "ordinary248.xml",
+    "ordinary_passed": 247,
+    "native": "native248.xml",
+    "native_passed": 2,
+    "expanded_mixed": "native249.xml",
+    "expanded_mixed_passed": 1,
+    "pure_nsc_regression": "native250-pure-regression.xml",
+    "pure_nsc_regression_passed": 1,
+    "earlier_nsc_regression": "native247.xml (NSC passed; Surface PNG failed then fixed)"
+  },
+  "commands": [
+    ".venv/Scripts/python.exe -m pytest tests/test_universal_surface_live.py tests/test_universal_mixed_live.py -q --run-zemax --junitxml=verification/development/EX-01/native248.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_universal_mixed_live.py -q --run-zemax --junitxml=verification/development/EX-01/native249.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_universal_nsc_live.py -q --run-zemax --junitxml=verification/development/EX-01/native250-pure-regression.xml"
+  ],
+  "runs": [
+    {
+      "path": "outputs\\runs\\universal247_surface_7e2e925c09",
+      "numeric_checks": 45,
+      "max_absolute_error": 0.0,
+      "successful_closed_tasks": 7,
+      "disconnect": true
+    },
+    {
+      "path": "outputs\\runs\\universal247_mixed_b21942c3a9",
+      "numeric_checks": 42,
+      "max_absolute_error": 0.0,
+      "successful_closed_tasks": 6,
+      "disconnect": true
+    }
+  ],
+  "tolerance": "atol1e-8 + rtol1e-7*abs(reference)",
+  "references": "COVA equals requested conic; PMVA equals selected parameter; NPXV/NPVA equal local position/Rectangle half-width; two unit-weight zero-target NPXV merit=sqrt((x^2+y^2)/2).",
+  "lifecycle": "Saved/reloaded EvenAspheric, CoordinateBreak and two-group mixed baselines; surfaces/solve/system/object/active group/model revision preserved;13 successful closed tasks; grid pagination and PNG; disconnect",
+  "visual_inspection": "outputs/runs/universal247_surface_7e2e925c09/EvenAspheric.png: ascending5-column response, coordinates, unknown-unit labels and PMVA colorbar visible",
+  "historical_failure": "native247 Surface PNG IMAGE_EXPORT_FAILED from null x_unit concatenation; original calls/log retained. Both corrected Surface cases passed native248.",
+  "remaining": [
+    "Other numeric MCE operand axes",
+    "Additional native operand families/unit definitions and native calculation-failure/recovery acceptance"
+  ],
+  "batch": "B0038/10; partial scopes excluded",
+  "pure_nsc_regression": {
+    "path": "outputs\\runs\\universal238_nsc_31fd43817a",
+    "numeric_checks": 54,
+    "max_absolute_error": 0.0,
+    "disconnect": true
+  }
+}

@@ -3,7 +3,7 @@
   "date": "2026-11-05",
   "item_id": "CV-01.FftSurfaceMtf",
   "native_api": {
-    "probe": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+    "probe": "verification/development/BASE-01/probe/api-interfaces.json",
     "analysis_id": "ZOSAPI.Analysis.AnalysisIDM.FftSurfaceMtf",
     "settings_interface": "ZOSAPI.Analysis.Settings.Mtf.IAS_FftSurfaceMtf",
     "writable_properties": [
@@ -30,7 +30,7 @@
   "ordinary_tests": {
     "targeted": "14 passed",
     "full": "1277 passed, 498 skipped",
-    "junit": ".local/evidence/development/CV-01/ordinary031.xml"
+    "junit": "verification/development/CV-01/ordinary031.xml"
   },
   "documentation": [
     "docs/fft-surface-mtf.md",
@@ -44,7 +44,7 @@
     "version": "0.1.21",
     "wheel": "wheels/zemax_standalone_mcp-0.1.21-py3-none-any.whl",
     "isolated_install": "outputs/wheel-release031",
-    "stdio": ".local/evidence/development/CV-01/stdio-smoke031.json",
+    "stdio": "verification/development/CV-01/stdio-smoke031.json",
     "status": "passed",
     "tools": 95,
     "analysis_kinds": 69,

@@ -4,7 +4,7 @@
 
 压缩包共232.74 MiB；净释放约1361.63 MiB（不含Git开销）。
 
-原路径、原因、归档包和ZIP成员见[逐文件索引](history-archive-index.json)。压缩包位于archives/2026-11-07，保存在本机且未纳入Git。
+原路径、原因、归档包和ZIP成员见[逐文件索引](index.json)。压缩包位于archives/2026-11-07，保存在本机且未纳入Git。
 
 恢复：在索引中搜索original_path，用Python zipfile将对应member解压到项目根目录；目标已存在时先选择独立目录，保留当前文件。历史文档可在独立目录阅读。
 

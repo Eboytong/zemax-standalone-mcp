@@ -4,7 +4,7 @@
   "date": "2026-11-05",
   "status": "implemented_native_acceptance_pending",
   "probe": {
-    "source": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+    "source": "verification/development/BASE-01/probe/api-interfaces.json",
     "assembly": "ZOSAPI_Interfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
     "interface": "ZOSAPI.Analysis.Settings.RMS.IAS_RMSFieldMap",
     "analysis_factory": [

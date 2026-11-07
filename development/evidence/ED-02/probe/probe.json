@@ -1,0 +1,1838 @@
+{
+  "surfaces": [
+    {
+      "type": "Standard",
+      "cells": {
+        "RadiusCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayAngle",
+            "ChiefRayAngle",
+            "MarginalRayNormal",
+            "ChiefRayNormal",
+            "Aplanatic",
+            "ElementPower",
+            "CocentricSurface",
+            "CocentricRadius",
+            "FNumber"
+          ]
+        },
+        "ThicknessCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayHeight",
+            "ChiefRayHeight",
+            "EdgeThickness",
+            "OpticalPathDifference",
+            "Position",
+            "Compensator",
+            "CenterOfCurvature",
+            "PupilPosition"
+          ]
+        },
+        "MaterialCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "MaterialSubstitute",
+            "MaterialOffset",
+            "MaterialModel"
+          ]
+        },
+        "SemiDiameterCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic",
+            "Maximum"
+          ]
+        },
+        "MechanicalSemiDiameterCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ChipZoneCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ConicCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "TCECell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup"
+          ]
+        }
+      }
+    },
+    {
+      "type": "EvenAspheric",
+      "cells": {
+        "RadiusCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayAngle",
+            "ChiefRayAngle",
+            "MarginalRayNormal",
+            "ChiefRayNormal",
+            "Aplanatic",
+            "ElementPower",
+            "CocentricSurface",
+            "CocentricRadius",
+            "FNumber"
+          ]
+        },
+        "ThicknessCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayHeight",
+            "ChiefRayHeight",
+            "EdgeThickness",
+            "OpticalPathDifference",
+            "Position",
+            "Compensator",
+            "CenterOfCurvature",
+            "PupilPosition"
+          ]
+        },
+        "MaterialCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "MaterialSubstitute",
+            "MaterialOffset",
+            "MaterialModel"
+          ]
+        },
+        "SemiDiameterCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic",
+            "Maximum"
+          ]
+        },
+        "MechanicalSemiDiameterCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ChipZoneCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ConicCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "TCECell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup"
+          ]
+        },
+        "parameter_1": {
+          "active": true,
+          "read_only": false,
+          "header": "2阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_2": {
+          "active": true,
+          "read_only": false,
+          "header": "4阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_3": {
+          "active": true,
+          "read_only": false,
+          "header": "6阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_4": {
+          "active": true,
+          "read_only": false,
+          "header": "8阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_5": {
+          "active": true,
+          "read_only": false,
+          "header": "10阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_6": {
+          "active": true,
+          "read_only": false,
+          "header": "12阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_7": {
+          "active": true,
+          "read_only": false,
+          "header": "14阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_8": {
+          "active": true,
+          "read_only": false,
+          "header": "16阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        }
+      }
+    },
+    {
+      "type": "OddAsphere",
+      "cells": {
+        "RadiusCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayAngle",
+            "ChiefRayAngle",
+            "MarginalRayNormal",
+            "ChiefRayNormal",
+            "Aplanatic",
+            "ElementPower",
+            "CocentricSurface",
+            "CocentricRadius",
+            "FNumber"
+          ]
+        },
+        "ThicknessCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayHeight",
+            "ChiefRayHeight",
+            "EdgeThickness",
+            "OpticalPathDifference",
+            "Position",
+            "Compensator",
+            "CenterOfCurvature",
+            "PupilPosition"
+          ]
+        },
+        "MaterialCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "MaterialSubstitute",
+            "MaterialOffset",
+            "MaterialModel"
+          ]
+        },
+        "SemiDiameterCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic",
+            "Maximum"
+          ]
+        },
+        "MechanicalSemiDiameterCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ChipZoneCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ConicCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "TCECell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup"
+          ]
+        },
+        "parameter_1": {
+          "active": true,
+          "read_only": false,
+          "header": "1阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_2": {
+          "active": true,
+          "read_only": false,
+          "header": "2阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_3": {
+          "active": true,
+          "read_only": false,
+          "header": "3阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_4": {
+          "active": true,
+          "read_only": false,
+          "header": "4阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_5": {
+          "active": true,
+          "read_only": false,
+          "header": "5阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_6": {
+          "active": true,
+          "read_only": false,
+          "header": "6阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_7": {
+          "active": true,
+          "read_only": false,
+          "header": "7阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_8": {
+          "active": true,
+          "read_only": false,
+          "header": "8阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        }
+      }
+    },
+    {
+      "type": "Toroidal",
+      "cells": {
+        "RadiusCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayAngle",
+            "ChiefRayAngle",
+            "MarginalRayNormal",
+            "ChiefRayNormal",
+            "Aplanatic",
+            "ElementPower",
+            "CocentricSurface",
+            "CocentricRadius",
+            "FNumber"
+          ]
+        },
+        "ThicknessCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayHeight",
+            "ChiefRayHeight",
+            "EdgeThickness",
+            "OpticalPathDifference",
+            "Position",
+            "Compensator",
+            "CenterOfCurvature",
+            "PupilPosition"
+          ]
+        },
+        "MaterialCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "MaterialSubstitute",
+            "MaterialOffset",
+            "MaterialModel"
+          ]
+        },
+        "SemiDiameterCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic",
+            "Maximum"
+          ]
+        },
+        "MechanicalSemiDiameterCell": {
+          "active": true,
+          "read_only": true,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ChipZoneCell": {
+          "active": true,
+          "read_only": true,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ConicCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "TCECell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup"
+          ]
+        },
+        "parameter_1": {
+          "active": true,
+          "read_only": false,
+          "header": "旋转半径",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_2": {
+          "active": true,
+          "read_only": false,
+          "header": "2阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_3": {
+          "active": true,
+          "read_only": false,
+          "header": "4阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_4": {
+          "active": true,
+          "read_only": false,
+          "header": "6阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_5": {
+          "active": true,
+          "read_only": false,
+          "header": "8阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_6": {
+          "active": true,
+          "read_only": false,
+          "header": "10阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_7": {
+          "active": true,
+          "read_only": false,
+          "header": "12阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_8": {
+          "active": true,
+          "read_only": false,
+          "header": "14阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_13": {
+          "active": true,
+          "read_only": false,
+          "header": "最大项数 #",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_14": {
+          "active": true,
+          "read_only": false,
+          "header": "归一化半径",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        }
+      }
+    },
+    {
+      "type": "Biconic",
+      "cells": {
+        "RadiusCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayAngle",
+            "ChiefRayAngle",
+            "MarginalRayNormal",
+            "ChiefRayNormal",
+            "Aplanatic",
+            "ElementPower",
+            "CocentricSurface",
+            "CocentricRadius",
+            "FNumber"
+          ]
+        },
+        "ThicknessCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayHeight",
+            "ChiefRayHeight",
+            "EdgeThickness",
+            "OpticalPathDifference",
+            "Position",
+            "Compensator",
+            "CenterOfCurvature",
+            "PupilPosition"
+          ]
+        },
+        "MaterialCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "MaterialSubstitute",
+            "MaterialOffset",
+            "MaterialModel"
+          ]
+        },
+        "SemiDiameterCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic",
+            "Maximum"
+          ]
+        },
+        "MechanicalSemiDiameterCell": {
+          "active": true,
+          "read_only": true,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ChipZoneCell": {
+          "active": true,
+          "read_only": true,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ConicCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "TCECell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup"
+          ]
+        },
+        "parameter_1": {
+          "active": true,
+          "read_only": false,
+          "header": "X 半径",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_2": {
+          "active": true,
+          "read_only": false,
+          "header": "X 二次曲线",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        }
+      }
+    },
+    {
+      "type": "Paraxial",
+      "cells": {
+        "RadiusCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayAngle",
+            "ChiefRayAngle",
+            "MarginalRayNormal",
+            "ChiefRayNormal",
+            "Aplanatic",
+            "ElementPower",
+            "CocentricSurface",
+            "CocentricRadius",
+            "FNumber"
+          ]
+        },
+        "ThicknessCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayHeight",
+            "ChiefRayHeight",
+            "EdgeThickness",
+            "OpticalPathDifference",
+            "Position",
+            "Compensator",
+            "CenterOfCurvature",
+            "PupilPosition"
+          ]
+        },
+        "MaterialCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "MaterialSubstitute",
+            "MaterialOffset",
+            "MaterialModel"
+          ]
+        },
+        "SemiDiameterCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic",
+            "Maximum"
+          ]
+        },
+        "MechanicalSemiDiameterCell": {
+          "active": true,
+          "read_only": true,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ChipZoneCell": {
+          "active": true,
+          "read_only": true,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ConicCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "TCECell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup"
+          ]
+        },
+        "parameter_1": {
+          "active": true,
+          "read_only": false,
+          "header": "焦距",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_2": {
+          "active": true,
+          "read_only": false,
+          "header": "光程差模式",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        }
+      }
+    },
+    {
+      "type": "CoordinateBreak",
+      "cells": {
+        "RadiusCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayAngle",
+            "ChiefRayAngle",
+            "MarginalRayNormal",
+            "ChiefRayNormal",
+            "Aplanatic",
+            "ElementPower",
+            "CocentricSurface",
+            "CocentricRadius",
+            "FNumber"
+          ]
+        },
+        "ThicknessCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayHeight",
+            "ChiefRayHeight",
+            "EdgeThickness",
+            "OpticalPathDifference",
+            "Position",
+            "Compensator",
+            "CenterOfCurvature",
+            "PupilPosition"
+          ]
+        },
+        "MaterialCell": {
+          "active": true,
+          "read_only": true,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "MaterialSubstitute",
+            "MaterialOffset",
+            "MaterialModel"
+          ]
+        },
+        "SemiDiameterCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic",
+            "Maximum"
+          ]
+        },
+        "MechanicalSemiDiameterCell": {
+          "active": true,
+          "read_only": true,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ChipZoneCell": {
+          "active": true,
+          "read_only": true,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ConicCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "TCECell": {
+          "active": true,
+          "read_only": true,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup"
+          ]
+        },
+        "parameter_1": {
+          "active": true,
+          "read_only": false,
+          "header": "偏心X：",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "PickupChiefRay"
+          ]
+        },
+        "parameter_2": {
+          "active": true,
+          "read_only": false,
+          "header": "偏心Y：",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "PickupChiefRay"
+          ]
+        },
+        "parameter_3": {
+          "active": true,
+          "read_only": false,
+          "header": "倾斜X",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "PickupChiefRay"
+          ]
+        },
+        "parameter_4": {
+          "active": true,
+          "read_only": false,
+          "header": "倾斜Y",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "PickupChiefRay"
+          ]
+        },
+        "parameter_5": {
+          "active": true,
+          "read_only": false,
+          "header": "倾斜Z",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_6": {
+          "active": true,
+          "read_only": false,
+          "header": "顺序",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        }
+      }
+    },
+    {
+      "type": "GridSag",
+      "cells": {
+        "RadiusCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayAngle",
+            "ChiefRayAngle",
+            "MarginalRayNormal",
+            "ChiefRayNormal",
+            "Aplanatic",
+            "ElementPower",
+            "CocentricSurface",
+            "CocentricRadius",
+            "FNumber"
+          ]
+        },
+        "ThicknessCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayHeight",
+            "ChiefRayHeight",
+            "EdgeThickness",
+            "OpticalPathDifference",
+            "Position",
+            "Compensator",
+            "CenterOfCurvature",
+            "PupilPosition"
+          ]
+        },
+        "MaterialCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "MaterialSubstitute",
+            "MaterialOffset",
+            "MaterialModel"
+          ]
+        },
+        "SemiDiameterCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic",
+            "Maximum"
+          ]
+        },
+        "MechanicalSemiDiameterCell": {
+          "active": true,
+          "read_only": true,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ChipZoneCell": {
+          "active": true,
+          "read_only": true,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ConicCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "TCECell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup"
+          ]
+        },
+        "parameter_1": {
+          "active": true,
+          "read_only": false,
+          "header": "2阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_2": {
+          "active": true,
+          "read_only": false,
+          "header": "4阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_3": {
+          "active": true,
+          "read_only": false,
+          "header": "6阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_4": {
+          "active": true,
+          "read_only": false,
+          "header": "8阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_5": {
+          "active": true,
+          "read_only": false,
+          "header": "10阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_6": {
+          "active": true,
+          "read_only": false,
+          "header": "12阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_7": {
+          "active": true,
+          "read_only": false,
+          "header": "14阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_8": {
+          "active": true,
+          "read_only": false,
+          "header": "16阶项",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_9": {
+          "active": true,
+          "read_only": false,
+          "header": "ZernikeX偏心",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_10": {
+          "active": true,
+          "read_only": false,
+          "header": "ZernikeY偏心",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_13": {
+          "active": true,
+          "read_only": false,
+          "header": "最大项数 #",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_14": {
+          "active": true,
+          "read_only": false,
+          "header": "归一化半径",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        }
+      }
+    },
+    {
+      "type": "GridPhase",
+      "cells": {
+        "RadiusCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayAngle",
+            "ChiefRayAngle",
+            "MarginalRayNormal",
+            "ChiefRayNormal",
+            "Aplanatic",
+            "ElementPower",
+            "CocentricSurface",
+            "CocentricRadius",
+            "FNumber"
+          ]
+        },
+        "ThicknessCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayHeight",
+            "ChiefRayHeight",
+            "EdgeThickness",
+            "OpticalPathDifference",
+            "Position",
+            "Compensator",
+            "CenterOfCurvature",
+            "PupilPosition"
+          ]
+        },
+        "MaterialCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "MaterialSubstitute",
+            "MaterialOffset",
+            "MaterialModel"
+          ]
+        },
+        "SemiDiameterCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic",
+            "Maximum"
+          ]
+        },
+        "MechanicalSemiDiameterCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ChipZoneCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ConicCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "TCECell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup"
+          ]
+        },
+        "parameter_1": {
+          "active": true,
+          "read_only": false,
+          "header": "剪切距离",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_2": {
+          "active": true,
+          "read_only": false,
+          "header": "插值",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        }
+      }
+    },
+    {
+      "type": "ExtendedAsphere",
+      "cells": {
+        "RadiusCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayAngle",
+            "ChiefRayAngle",
+            "MarginalRayNormal",
+            "ChiefRayNormal",
+            "Aplanatic",
+            "ElementPower",
+            "CocentricSurface",
+            "CocentricRadius",
+            "FNumber"
+          ]
+        },
+        "ThicknessCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro",
+            "MarginalRayHeight",
+            "ChiefRayHeight",
+            "EdgeThickness",
+            "OpticalPathDifference",
+            "Position",
+            "Compensator",
+            "CenterOfCurvature",
+            "PupilPosition"
+          ]
+        },
+        "MaterialCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "MaterialSubstitute",
+            "MaterialOffset",
+            "MaterialModel"
+          ]
+        },
+        "SemiDiameterCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic",
+            "Maximum"
+          ]
+        },
+        "MechanicalSemiDiameterCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ChipZoneCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "SurfacePickup",
+            "ZPLMacro",
+            "Automatic"
+          ]
+        },
+        "ConicCell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "TCECell": {
+          "active": true,
+          "read_only": false,
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup"
+          ]
+        },
+        "parameter_13": {
+          "active": true,
+          "read_only": false,
+          "header": "最大项数 #",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        },
+        "parameter_14": {
+          "active": true,
+          "read_only": false,
+          "header": "归一化半径",
+          "available": [
+            "Fixed",
+            "Variable",
+            "SurfacePickup",
+            "ZPLMacro"
+          ]
+        }
+      }
+    }
+  ],
+  "closed": true,
+  "enums": {
+    "None": 0,
+    "Fixed": 1,
+    "Variable": 2,
+    "SurfacePickup": 3,
+    "ZPLMacro": 4,
+    "MarginalRayAngle": 5,
+    "MarginalRayHeight": 6,
+    "ChiefRayAngle": 7,
+    "MarginalRayNormal": 8,
+    "ChiefRayNormal": 9,
+    "Aplanatic": 10,
+    "ElementPower": 11,
+    "CocentricSurface": 12,
+    "ConcentricSurface": 12,
+    "CocentricRadius": 13,
+    "ConcentricRadius": 13,
+    "FNumber": 14,
+    "ChiefRayHeight": 15,
+    "EdgeThickness": 16,
+    "OpticalPathDifference": 17,
+    "Position": 18,
+    "Compensator": 19,
+    "CenterOfCurvature": 20,
+    "PupilPosition": 21,
+    "MaterialSubstitute": 22,
+    "MaterialOffset": 23,
+    "MaterialModel": 24,
+    "Automatic": 25,
+    "Maximum": 26,
+    "PickupChiefRay": 27,
+    "ObjectPickup": 28,
+    "ConfigPickup": 29,
+    "ThermalPickup": 30,
+    "MarginPercent": 31,
+    "CA_fill": 32,
+    "DIA_fill": 33,
+    "DuplicateSag": 34,
+    "InvertSag": 35,
+    "FieldPickup": 10000
+  },
+  "interfaces": {
+    "ISolveData": {
+      "IsValid": "System.Boolean",
+      "Type": "ZOSAPI.Editors.SolveType",
+      "_S_None": "ZOSAPI.Editors.ISolveNone",
+      "_S_Fixed": "ZOSAPI.Editors.ISolveFixed",
+      "_S_Variable": "ZOSAPI.Editors.ISolveVariable",
+      "_S_SurfacePickup": "ZOSAPI.Editors.ISolveSurfacePickup",
+      "_S_ZPLMacro": "ZOSAPI.Editors.ISolveZPLMacro",
+      "_S_MarginalRayAngle": "ZOSAPI.Editors.ISolveMarginalRayAngle",
+      "_S_MarginalRayHeight": "ZOSAPI.Editors.ISolveMarginalRayHeight",
+      "_S_ChiefRayAngle": "ZOSAPI.Editors.ISolveChiefRayAngle",
+      "_S_MarginalRayNormal": "ZOSAPI.Editors.ISolveMarginalRayNormal",
+      "_S_ChiefRayNormal": "ZOSAPI.Editors.ISolveChiefRayNormal",
+      "_S_Aplanatic": "ZOSAPI.Editors.ISolveAplanatic",
+      "_S_ElementPower": "ZOSAPI.Editors.ISolveElementPower",
+      "_S_CocentricSurface": "ZOSAPI.Editors.ISolveCocentricSurface",
+      "_S_CocentricRadius": "ZOSAPI.Editors.ISolveCocentricRadius",
+      "_S_FNumber": "ZOSAPI.Editors.ISolveFNumber",
+      "_S_ChiefRayHeight": "ZOSAPI.Editors.ISolveChiefRayHeight",
+      "_S_EdgeThickness": "ZOSAPI.Editors.ISolveEdgeThickness",
+      "_S_OpticalPathDifference": "ZOSAPI.Editors.ISolveOpticalPathDifference",
+      "_S_Position": "ZOSAPI.Editors.ISolvePosition",
+      "_S_Compensator": "ZOSAPI.Editors.ISolveCompensator",
+      "_S_CenterOfCurvature": "ZOSAPI.Editors.ISolveCenterOfCurvature",
+      "_S_PupilPosition": "ZOSAPI.Editors.ISolvePupilPosition",
+      "_S_MaterialModel": "ZOSAPI.Editors.ISolveMaterialModel",
+      "_S_MaterialSubstitute": "ZOSAPI.Editors.ISolveMaterialSubstitute",
+      "_S_MaterialOffset": "ZOSAPI.Editors.ISolveMaterialOffset",
+      "_S_Automatic": "ZOSAPI.Editors.ISolveAutomatic",
+      "_S_Maximum": "ZOSAPI.Editors.ISolveMaximum",
+      "_S_PickupChiefRay": "ZOSAPI.Editors.ISolvePickupChiefRay",
+      "_S_ObjectPickup": "ZOSAPI.Editors.ISolveObjectPickup",
+      "_S_ConfigPickup": "ZOSAPI.Editors.ISolveConfigPickup",
+      "_S_ThermalPickup": "ZOSAPI.Editors.ISolveThermalPickup",
+      "_S_FieldPickup": "ZOSAPI.Editors.ISolveFieldPickup",
+      "_S_DuplicateSag": "ZOSAPI.Editors.ISolveDuplicateSag",
+      "_S_InvertSag": "ZOSAPI.Editors.ISolveInvertSag"
+    },
+    "ISolveNone": {},
+    "ISolveFixed": {},
+    "ISolveVariable": {},
+    "ISolveSurfacePickup": {
+      "Surface": "System.Int32",
+      "ScaleFactor": "System.Double",
+      "SupportsScale": "System.Boolean",
+      "Offset": "System.Double",
+      "SupportsOffset": "System.Boolean",
+      "Column": "ZOSAPI.Editors.LDE.SurfaceColumn"
+    },
+    "ISolveZPLMacro": {
+      "Macro": "System.String"
+    },
+    "ISolveMarginalRayAngle": {
+      "Angle": "System.Double"
+    },
+    "ISolveMarginalRayHeight": {
+      "Height": "System.Double",
+      "PupilZone": "System.Double"
+    },
+    "ISolveChiefRayAngle": {
+      "Angle": "System.Double"
+    },
+    "ISolveMarginalRayNormal": {},
+    "ISolveChiefRayNormal": {},
+    "ISolveAplanatic": {},
+    "ISolveElementPower": {
+      "Power": "System.Double"
+    },
+    "ISolveCocentricSurface": {
+      "AboutSurface": "System.Int32"
+    },
+    "ISolveCocentricRadius": {
+      "WithSurface": "System.Int32"
+    },
+    "ISolveFNumber": {
+      "FNumber": "System.Double"
+    },
+    "ISolveChiefRayHeight": {
+      "Height": "System.Double"
+    },
+    "ISolveEdgeThickness": {
+      "Thickness": "System.Double",
+      "RadialHeight": "System.Double"
+    },
+    "ISolveOpticalPathDifference": {
+      "OPD": "System.Double",
+      "PupilZone": "System.Double"
+    },
+    "ISolvePosition": {
+      "FromSurface": "System.Int32",
+      "Length": "System.Double"
+    },
+    "ISolveCompensator": {
+      "RefSurface": "System.Int32",
+      "Sum": "System.Double"
+    },
+    "ISolveCenterOfCurvature": {
+      "RefSurface": "System.Int32"
+    },
+    "ISolvePupilPosition": {},
+    "ISolveMaterialModel": {
+      "IndexNd": "System.Double",
+      "VaryIndex": "System.Boolean",
+      "AbbeVd": "System.Double",
+      "VaryAbbe": "System.Boolean",
+      "dPgF": "System.Double",
+      "VarydPgF": "System.Boolean"
+    },
+    "ISolveMaterialSubstitute": {
+      "Catalog": "System.String"
+    },
+    "ISolveMaterialOffset": {
+      "NdOffset": "System.Double",
+      "VdOffset": "System.Double"
+    },
+    "ISolveAutomatic": {},
+    "ISolveMaximum": {},
+    "ISolvePickupChiefRay": {
+      "Field": "System.Int32",
+      "Wavelength": "System.Int32"
+    },
+    "ISolveObjectPickup": {
+      "Object": "System.Int32",
+      "ScaleFactor": "System.Double",
+      "SupportsScale": "System.Boolean",
+      "Offset": "System.Double",
+      "SupportsOffset": "System.Boolean",
+      "Column": "ZOSAPI.Editors.NCE.ObjectColumn"
+    },
+    "ISolveConfigPickup": {
+      "Operand": "System.Int32",
+      "ScaleFactor": "System.Double",
+      "SupportsScale": "System.Boolean",
+      "Offset": "System.Double",
+      "Configuration": "System.Int32",
+      "SupportsOffset": "System.Boolean"
+    },
+    "ISolveThermalPickup": {
+      "Configuration": "System.Int32"
+    },
+    "ISolveFieldPickup": {
+      "Field": "System.Int32",
+      "ScaleFactor": "System.Double",
+      "Offset": "System.Double",
+      "Column": "ZOSAPI.SystemData.FieldColumn"
+    },
+    "ISolveDuplicateSag": {
+      "Surface": "System.Int32"
+    },
+    "ISolveInvertSag": {
+      "Surface": "System.Int32"
+    }
+  },
+  "version": "24.2.0",
+  "license": "PremiumEdition",
+  "macros": [
+    "CENTROID",
+    "CHILD",
+    "CodeV to OpticStudio Converter",
+    "DEMO1",
+    "DEMO2",
+    "EDGESAG",
+    "Element Data Listing",
+    "EXAM1",
+    "EXAM2",
+    "Example for creating and reading text files",
+    "FF_TEST",
+    "FIFTHORD",
+    "GLOBAL",
+    "Open_seq_files",
+    "PARENT",
+    "phases",
+    "PLOT_TEST",
+    "PLOT2D_TEST",
+    "POLDEMO2",
+    "Polygon",
+    "SAG_DIFFERENCE",
+    "SYSTEM",
+    "Wavefront Aberrations from Sasian",
+    "wavelength_replay",
+    "Zernike",
+    "ZOOMEDGE",
+    "Zoomgmtf",
+    "ZPL03"
+  ]
+}

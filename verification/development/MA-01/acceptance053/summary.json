@@ -1,13 +1,13 @@
 {
   "version": "0.1.51",
   "ordinary_passed": 1719,
-  "ordinary_report": ".local/evidence/development/BASE-04/ordinary053.xml",
-  "native_scans_report": ".local/evidence/development/CO-01/scans053.xml",
+  "ordinary_report": "verification/development/BASE-04/ordinary053.xml",
+  "native_scans_report": "verification/development/CO-01/scans053.xml",
   "native_scans_passed": 13,
   "initial_material_failures": 2,
-  "material_fix_report": ".local/evidence/development/MA-01/native053-final.xml",
+  "material_fix_report": "verification/development/MA-01/native053-final.xml",
   "wheel_passed": 6,
-  "wheel_report": ".local/evidence/development/BASE-04/wheel-native051.xml",
+  "wheel_report": "verification/development/BASE-04/wheel-native051.xml",
   "runs": [
     {
       "directory": "verification\\development\\MA-01\\acceptance053\\materials025_properties_ca6948ef69",

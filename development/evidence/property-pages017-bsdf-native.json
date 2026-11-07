@@ -1,0 +1,26 @@
+[
+  {
+    "kind": "ABgFile",
+    "requested": "ED01.ABGF",
+    "native_list": [
+      "ED01.ABGF",
+      "无"
+    ],
+    "detached_readback": "ED01.ABGF",
+    "apply_return": true,
+    "actual_type": "ABgFile",
+    "actual_filename": "ED01.ABGF"
+  },
+  {
+    "kind": "BSDF",
+    "requested": "BrownVinyl.bsdf",
+    "native_list": [
+      "ED01.ABGF",
+      "无"
+    ],
+    "detached_readback": "ED01.ABGF",
+    "apply_return": true,
+    "actual_type": "BSDF",
+    "actual_filename": "ED01.ABGF"
+  }
+]

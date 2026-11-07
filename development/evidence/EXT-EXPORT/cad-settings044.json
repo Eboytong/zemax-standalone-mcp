@@ -1,0 +1,273 @@
+{
+  "version": "0.1.44",
+  "item_id": "EXT-EXPORT.CadSettings",
+  "execution_state": "implemented",
+  "source": "existing installed v242 public DLL reflection and local manual; no native application started",
+  "interface": {
+    "properties": [
+      {
+        "name": "FirstSurface",
+        "type": "System.Int32",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "LastSurface",
+        "type": "System.Int32",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "CanChangeSurface",
+        "type": "System.Boolean",
+        "can_read": true,
+        "can_write": false
+      },
+      {
+        "name": "FirstObject",
+        "type": "System.Int32",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "LastObject",
+        "type": "System.Int32",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "SequentialSettingsEnabled",
+        "type": "System.Boolean",
+        "can_read": true,
+        "can_write": false
+      },
+      {
+        "name": "RayPattern",
+        "type": "ZOSAPI.Tools.General.RayPatternType",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "NumberOfRays",
+        "type": "System.Int32",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "Wavelength",
+        "type": "System.Int32",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "Field",
+        "type": "System.Int32",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "DeleteVignetted",
+        "type": "System.Boolean",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "RayLayer",
+        "type": "System.Int32",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "LensLayer",
+        "type": "System.Int32",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "DummyThickness",
+        "type": "System.Double",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "SplineSegments",
+        "type": "ZOSAPI.Tools.General.SplineSegmentsType",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "FileType",
+        "type": "ZOSAPI.Tools.General.CADFileType",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "Tolerance",
+        "type": "ZOSAPI.Tools.General.CADToleranceType",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "AngularTolerance",
+        "type": "ZOSAPI.Tools.General.CADAngularToleranceType",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "Configuration",
+        "type": "System.Int32",
+        "can_read": true,
+        "can_write": false
+      },
+      {
+        "name": "ExportDummySurfaces",
+        "type": "System.Boolean",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "SurfacesAsSolids",
+        "type": "System.Boolean",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "ScatterNSCRays",
+        "type": "System.Boolean",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "SplitNSCRays",
+        "type": "System.Boolean",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "UsePolarization",
+        "type": "System.Boolean",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "OutputFileName",
+        "type": "System.String",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "AutoNameFaces",
+        "type": "System.Boolean",
+        "can_read": true,
+        "can_write": true
+      },
+      {
+        "name": "FileVersion",
+        "type": "ZOSAPI.Tools.General.ACISExportVersion",
+        "can_read": true,
+        "can_write": true
+      }
+    ],
+    "methods": [
+      "Void SetWavelengthAll()",
+      "Void SetFieldAll()",
+      "Void SetSingleConfiguration(Int32)",
+      "Void SetCurrentConfiguration()",
+      "Void SetConfigurationAllByLayer()",
+      "Void SetConfigurationAllByFile()",
+      "Void SetConfigurationAllAtOnce()"
+    ]
+  },
+  "enums": {
+    "ZOSAPI.Tools.General.RayPatternType": {
+      "XYFan": 0,
+      "XFan": 1,
+      "YFan": 2,
+      "Ring": 3,
+      "List": 4,
+      "Random": 5,
+      "Grid": 6,
+      "SolidRing": 7
+    },
+    "ZOSAPI.Tools.General.SplineSegmentsType": {
+      "N_016": 0,
+      "N_032": 1,
+      "N_064": 2,
+      "N_128": 3,
+      "N_256": 4,
+      "N_512": 5
+    },
+    "ZOSAPI.Tools.General.CADToleranceType": {
+      "N_TenEMinus4": 0,
+      "N_TenEMinus5": 1,
+      "N_TenEMinus6": 2,
+      "N_TenEMinus7": 3
+    },
+    "ZOSAPI.Tools.General.CADAngularToleranceType": {
+      "Low": 0,
+      "Medium": 1,
+      "High": 2,
+      "Presentation": 3
+    },
+    "ZOSAPI.Tools.General.ACISExportVersion": {
+      "Current": 0,
+      "V25": 1,
+      "V26": 2,
+      "V27": 3,
+      "V28": 4,
+      "V29": 5,
+      "V30": 6
+    }
+  },
+  "manual": {
+    "path": "verification/development/EXT-EXPORT/manual042.txt",
+    "pages": [
+      46,
+      47
+    ],
+    "topics": [
+      "ray patterns and solid beams",
+      "dummy thickness",
+      "STL angular tolerance",
+      "configuration and layers"
+    ]
+  },
+  "implemented": [
+    "13 optional typed CAD settings",
+    "scalar and enum final readback",
+    "single configuration selection without MCE mutation",
+    "setup and cleanup original errors retained",
+    "close before output existence check",
+    "shared task/result/artifact lifecycle"
+  ],
+  "outputs": [
+    "task.settings.requested",
+    "task.settings.checked_fields",
+    "native scalar settings",
+    "CAD artifact path",
+    "task.close_attempted and cleanup_warnings"
+  ],
+  "checks": {
+    "targeted": "tests/test_cad_adoption.py: 45 passed",
+    "ordinary": "verification/development/RL-01/ordinary054.xml",
+    "native": "not executed; three new format-setting cases prepared in tests/test_cad_formats_live.py"
+  },
+  "native_conditions": {
+    "input": "Cooke 40 degree field.zos; STEP/STL/SAT exporters and API license",
+    "runtime": "OpticStudio initialization must complete; previous bounded attempt timed out after 180.578 seconds",
+    "remaining": "actual settings, geometry content, configuration/solve persistence, normal native Close"
+  },
+  "unimplemented_configuration_modes": {
+    "methods": [
+      "SetConfigurationAllByLayer",
+      "SetConfigurationAllByFile",
+      "SetConfigurationAllAtOnce"
+    ],
+    "reason": "not included in this increment; all-file output discovery and native Configuration encoding must be established before typed multi-configuration settings",
+    "operation_item": "EXT-EXPORT.CadMultipleConfigurations"
+  },
+  "commands": [
+    ".venv/Scripts/python.exe -B -m pytest -q tests/test_cad_adoption.py",
+    ".venv/Scripts/python.exe -B -m pytest -q -m \"not zemax\" --junitxml=verification/development/RL-01/ordinary054.xml"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "item_id": "IM-01.GeometricImageAnalysis",
+  "state": "implemented",
+  "date": "2026-11-06",
+  "native": "verification/development/IM-01/native086-delivery.xml",
+  "native_passed": 1,
+  "ordinary": "verification/development/IM-01/ordinary086-delivery.xml",
+  "ordinary_passed": 64,
+  "run": "outputs/runs/geoimage086_c75360074d",
+  "model": "Paraxial f100mm at stop1; image100mm downstream; monochromatic0.55um; asymmetric IMA pixel(22,10) of33x33; field width1degree; output65x65 over3mm",
+  "fix": "Native geometric grids use left/top pixel edges with positive step and top-down rows; convert to pixel centers and reverse rows to increasing local Y, retain native_axes and units",
+  "reference": {
+    "centroid_x": 0.3173336564554377,
+    "centroid_y": -0.3173336564554377,
+    "centroid_tolerance_mm": 0.046153846153846156,
+    "power_watts": 1,
+    "power_atol": 1e-08,
+    "power_rtol": 1e-07
+  },
+  "verified": "asymmetric axes, power integral, grid paging, PNG, source preservation and close",
+  "history": [
+    "native086-ideal-probe.xml",
+    "native086-ideal-fields.xml",
+    "native086-ideal-stop.xml",
+    "ordinary086.xml",
+    "ordinary086-final.xml"
+  ],
+  "remaining": "rotation/parity, saved model and cancellation/recovery checks; native inputs and prepared variants retained",
+  "batch": "B0028/10; no full gate"
+}

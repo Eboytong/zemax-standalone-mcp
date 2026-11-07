@@ -6,12 +6,12 @@
   "native_version": "24.2.0 build240529",
   "license": "PremiumEdition",
   "commands": [
-    ".venv/Scripts/python.exe -m pytest tests/test_full_field_aberration_live.py --run-zemax -q --junitxml=.local/evidence/development/CV-01/native292-full-field.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_full_field_aberration.py tests/test_zernike_reference.py tests/test_surface_mtf.py tests/test_plotting_units.py -q --junitxml=.local/evidence/development/CV-01/ordinary292.xml"
+    ".venv/Scripts/python.exe -m pytest tests/test_full_field_aberration_live.py --run-zemax -q --junitxml=verification/development/CV-01/native292-full-field.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_full_field_aberration.py tests/test_zernike_reference.py tests/test_surface_mtf.py tests/test_plotting_units.py -q --junitxml=verification/development/CV-01/ordinary292.xml"
   ],
   "ordinary_passed": 25,
   "native_passed": 1,
-  "run": ".local/runs/full_field288_2a1d8ac6f5",
+  "run": "outputs/runs/full_field288_2a1d8ac6f5",
   "numerical_reference": {
     "source": "96x96 uniform unit-disk normalized real-ray OPD fitted independently to explicit orthonormal Standard Zernike1-15",
     "fields": [

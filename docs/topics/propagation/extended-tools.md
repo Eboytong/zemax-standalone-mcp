@@ -124,7 +124,7 @@ TEMP、PRES 使用本机原生操作数。热工况应启用 `adjust_index_to_en
 
 `new_system(mode="NonSequential")` 创建纯非序列系统。对象插入逐项确认原生返回对象和对象总数；失败时停止后续插入，错误详情包含已确认 inserted、当前 total、observed_change 和失败位置 failed_at。对象编号从 1 开始；get/insert/update/delete/copy_nsc_objects 使用 request 包装。对象类型及文件从本机列表选择。类型参数 data、sources、type_settings 和 diffraction 使用返回的原生标量字段名。
 
-顺序系统内的混合组件通过 `request.nsc_surface` 选择；上述五个对象入口可读取和编辑该组对象，操作后恢复编辑器原活动组。对象编号与参考关系属于所选组，组入口坐标、恢复保护及请求示例见[混合模式对象组](nonsequential-validation.md#混合模式的对象组)。
+顺序系统内的混合组件通过 `request.nsc_surface` 选择；上述五个对象入口可读取和编辑该组对象，操作后恢复编辑器原活动组。对象编号与参考关系属于所选组，组入口坐标、恢复保护及请求示例见[混合模式对象组](../nonsequential/nonsequential-validation.md#混合模式的对象组)。
 
 faces 按原生零起始面号设置 coating、scatter_model、settings、number_of_rays；volume 设置原生体物理模型和标量参数；spectrum 设置 SourceColorMode 和参数。只读或未知字段拒绝，不执行任意代码。DLLDefinedScattering 的 volume.parameters 使用零基参数编号，写入检查原生返回及回读；其他数组和复杂模型按明确适配范围使用。
 
@@ -134,15 +134,15 @@ faces 按原生零起始面号设置 coating、scatter_model、settings、number
 
 `run_nsc_ray_trace` 默认 detector_policy=clear，累积必须用 accumulate。split_rays 需要 use_polarization=true。可设置 scatter_rays、ignore_errors、number_of_cores、random_seed、save_zrd、filter。追迹结果记录完成状态及接口提供的总能量、错误与阈值终止数据；不能由这些字段推断全部损失类别。
 
-`clear_detectors(detector=0)` 清空全部，正编号按对象编号清空指定探测器。`get_detector_data` 对 DetectorRectangle 支持 flux/irradiance/intensity/coherent，对 DetectorPolar 支持 flux/intensity；区域最多100×100，相干结果须指定 coherent_type。Polar 行为方位角、列为极角，返回角度中心、边界和立体角；按 value_unit/value_unit_prefix 解释数值。各探测器分别记录清空、累积、修订、配置、追迹选项和历史任务状态；跨修订、混合选项、失败/取消贡献或未知来源的数据不标为完整独立结果。累计功率报告保存这些历史条件并收集相关已结束任务。坐标、相干归一化及示例见[非序列数值条件](nonsequential-validation.md)。
+`clear_detectors(detector=0)` 清空全部，正编号按对象编号清空指定探测器。`get_detector_data` 对 DetectorRectangle 支持 flux/irradiance/intensity/coherent，对 DetectorPolar 支持 flux/intensity；区域最多100×100，相干结果须指定 coherent_type。Polar 行为方位角、列为极角，返回角度中心、边界和立体角；按 value_unit/value_unit_prefix 解释数值。各探测器分别记录清空、累积、修订、配置、追迹选项和历史任务状态；跨修订、混合选项、失败/取消贡献或未知来源的数据不标为完整独立结果。累计功率报告保存这些历史条件并收集相关已结束任务。坐标、相干归一化及示例见[非序列数值条件](../nonsequential/nonsequential-validation.md)。
 
 `read_zrd` 接收 path、filter、start_ray、start_segment、max_segments，返回逐分段表和 summary.next_read。光线/分段位置从 0 开始，分块最多 100000 段。
 
-过滤字符串执行前回读；summary.actual_filter与filter_scope说明实际设置和整条路径选择语义。X_WAVERANGE采用微米及闭区间，非转换光线已有边界和分页依据；记录的sample_3荧光ZRD细分仍有原生差异，wavelength_filter_validation明确该限制。源头WlUM不能代替转换后波长。详见[原生波长区间过滤](nonsequential-validation.md#原生波长区间过滤)。
+过滤字符串执行前回读；summary.actual_filter与filter_scope说明实际设置和整条路径选择语义。X_WAVERANGE采用微米及闭区间，非转换光线已有边界和分页依据；记录的sample_3荧光ZRD细分仍有原生差异，wavelength_filter_validation明确该限制。源头WlUM不能代替转换后波长。详见[原生波长区间过滤](../nonsequential/nonsequential-validation.md#原生波长区间过滤)。
 
 `run_zrd_replay` 通过 Detector Viewer 读取受控的工作副本，指定 path、detector、filter、data_type；显示结果与当前探测器累积分别保存。保存过滤、读取过滤和回放过滤是三个独立设置。回放数据依赖与原始追迹一致的对象和探测器定义。
 
-回放同时返回native_replay_summary，提供原生文本明确标注的总功率、显示精度和可取得的撞击数；单位或格式无法确认时返回不可提取原因，原始文本与网格保留。DataType的同值枚举别名按值核对，调用名称保存在settings.requested_data_type。详见[回放功率与追迹完整状态](nonsequential-validation.md#回放功率与追迹完整状态)。
+回放同时返回native_replay_summary，提供原生文本明确标注的总功率、显示精度和可取得的撞击数；单位或格式无法确认时返回不可提取原因，原始文本与网格保留。DataType的同值枚举别名按值核对，调用名称保存在settings.requested_data_type。详见[回放功率与追迹完整状态](../nonsequential/nonsequential-validation.md#回放功率与追迹完整状态)。
 
 ## POP、光束与耦合
 
@@ -178,4 +178,4 @@ faces 按原生零起始面号设置 coating、scatter_model、settings、number
 
 以上用于 export_evaluation_report。报告读取已保存任务及关联分析，输出 Markdown、完整 JSON、逐行/曲线/网格 CSV、图表和 PDF。PDF 和图表建议 background=true，复用任务查询与取消。最多关联 1000 个任务，超出时缩小结果集合。PDF 每任务预览前 200 行，显示总行数、展示行数、省略行数及完整 JSON/CSV 位置；逐行内容保留 values 和其他字段。PDF artifact 的 row_previews 返回相同的截断元数据，values 的列定义取自 summary.columns。报告生成不调用 Zemax。
 
-图表/PDF 使用项目 reports 可选依赖；PDF 渲染测试使用 report-test。完整参数类型和本机选项由 MCP tools/list 与 get_capabilities 返回。当前证据及验收条件见 [能力与验收](capabilities.md)。
+图表/PDF 使用项目 reports 可选依赖；PDF 渲染测试使用 report-test。完整参数类型和本机选项由 MCP tools/list 与 get_capabilities 返回。当前证据及验收条件见 [能力与验收](../../reference/capabilities.md)。

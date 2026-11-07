@@ -1,0 +1,11 @@
+{
+  "source": "C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\ZOS-API\\Help\\ZOS-API.chm",
+  "target": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\EX-01\\api-help045",
+  "pid": 8244,
+  "action": "extract installed API help for formal callback contract",
+  "exit_code": 0,
+  "elapsed_seconds": 0.18289200001163408,
+  "extracted_file_count": 0,
+  "state": "no_extracted_pages",
+  "fallback": "Official 2024 R2 developer reference plus installed DLL reflection"
+}

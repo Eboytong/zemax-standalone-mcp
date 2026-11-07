@@ -1,0 +1,25 @@
+The Scale Lens tool is available in the System section of the Setup tab.
+This feature will scale the entire lens by the specified factor. This is useful for scaling an existing design to a new
+focal length, for example. Wavelengths are not scaled. The scale lens feature may also be used to change the units
+from mm to inches, or other combinations of unit types.
+Settings:
+Scale by factor If selected, then a scale factor may be entered directly.
+FirstSurface The first surface of the range when scale by factor is selected.
+LastSurface The last surface of the range when scale by factor is selected.
+Scale by units If selected, then the lens will be converted by the selected units.
+Scaling of data is performed based upon the units of measure forthe data. Ifthe scale factoris X,then data measured
+in lens units of length will be scaled by the factor X.Data measured in units of lens units squared (such as millimeters
+squared) will be scaled by X squared. Some polynomial coefficients, such as those on the Even Aspheric surface,
+haveunits that change fromtermto term, andOpticStudio accounts forthiswhenscaling thedata.Otherparameters,
+such as the conic constant, are dimensionless, and are therefore not scaled.
+OpticStudio will generally scale all lens data in the Lens Data Editor and the Non-sequential Component Editor
+correctly. OpticStudio also will scale almost all of the data in the Merit Function Editor, the Multi- Configuration
+Editor, and the Tolerance Data Editor correctly as well.
+OpticStudio will not attempt to scale some types of data, even though scaling would be appropriate forthose types
+of data. These exceptions are for data items such as the multi-configuration operands PRAM and NPAR, that modify
+general parameter data of surfaces or objects, orthe parameter data of user-defined DLL surfaces or objects. These
+data items should be scaled manually, if required. In addition, OpticStudio will not attempt to scale the size of a
+CAD Part or CAD Assembly object. These objects should be scaled in the original creating program, if required.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 186
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Setup Tab

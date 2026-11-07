@@ -10,12 +10,12 @@
   "batch_target": 10,
   "new_completed": [],
   "evidence": [
-    ".local/evidence/development/CV-01/progress591-formal-outlets.json",
-    ".local/evidence/development/CV-02/progress593-aperture-ring.json",
-    ".local/evidence/development/CV-02/progress596-value-states.json",
-    ".local/evidence/development/ED-02/progress598-formal-fit-audit.json",
-    ".local/evidence/development/CV-02/progress600-image-interface-review.json",
-    ".local/evidence/development/BASE-01/ledger-recovery600.json"
+    "verification/development/CV-01/progress591-formal-outlets.json",
+    "verification/development/CV-02/progress593-aperture-ring.json",
+    "verification/development/CV-02/progress596-value-states.json",
+    "verification/development/ED-02/progress598-formal-fit-audit.json",
+    "verification/development/CV-02/progress600-image-interface-review.json",
+    "verification/development/BASE-01/ledger-recovery600.json"
   ],
   "checks": {
     "ordinary592": 42,

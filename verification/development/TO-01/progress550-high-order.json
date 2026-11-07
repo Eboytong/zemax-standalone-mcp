@@ -13,8 +13,8 @@
   "reference": "Independent256 radial uniform-area midpoint nodes r=sqrt((j+.5)/256), population RMS of formal batch-ray OPD after piston subtraction; same-condition GaussQuad10 cross-check",
   "tolerance": "1e-5 waves +1%*reference; unchanged",
   "commands": [
-    ".venv/Scripts/python.exe -m pytest tests/test_quick_yield_high_order_live.py -q -s --run-zemax --junitxml=.local/evidence/development/TO-01/native549-high-order.xml (initial r6/r8-only implementation)",
-    ".venv/Scripts/python.exe -m pytest tests/test_quick_yield_high_order_live.py -k orders10_12 -q -s --run-zemax --junitxml=.local/evidence/development/TO-01/native550-higher-order.xml"
+    ".venv/Scripts/python.exe -m pytest tests/test_quick_yield_high_order_live.py -q -s --run-zemax --junitxml=verification/development/TO-01/native549-high-order.xml (initial r6/r8-only implementation)",
+    ".venv/Scripts/python.exe -m pytest tests/test_quick_yield_high_order_live.py -k orders10_12 -q -s --run-zemax --junitxml=verification/development/TO-01/native550-higher-order.xml"
   ],
   "reproducible_commands": [
     ".venv/Scripts/python.exe -m pytest tests/test_quick_yield_high_order_live.py -k orders6_8 -q -s --run-zemax",

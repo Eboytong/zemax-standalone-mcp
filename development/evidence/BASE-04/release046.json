@@ -1,0 +1,33 @@
+{
+  "version": "0.1.46",
+  "wheel": "wheels/zemax_standalone_mcp-0.1.46-py3-none-any.whl",
+  "build_command": ".venv/Scripts/python.exe -B -m pip wheel --no-deps --no-build-isolation . --wheel-dir wheels",
+  "install_command": ".venv/Scripts/python.exe -B -m pip install --no-deps --target verification/development/BASE-04/wheel-install046 wheels/zemax_standalone_mcp-0.1.46-py3-none-any.whl",
+  "build_note": "python -m build unavailable; pip wheel build succeeded",
+  "installation": "verification\\development\\BASE-04\\wheel-install046",
+  "ordinary": {
+    "passed": 1700,
+    "not_selected_native": 539,
+    "report": "verification\\development\\BASE-04\\ordinary046.xml"
+  },
+  "native_installed_wheel": {
+    "tests": 5,
+    "passed": 5,
+    "report": "verification\\development\\BASE-04\\wheel-native046.xml",
+    "transport": "real stdio with -I isolated server importing independent target installation",
+    "coverage": [
+      "14 resource roles and pagination/model state",
+      "STEP/STL/SAT setting adoption, output file and Close",
+      "POP numerical grids, power, beam radius and save/reload"
+    ]
+  },
+  "evidence": "verification\\development\\BASE-04\\reboot046.json",
+  "remaining": [
+    {
+      "item": "EX-01.NETCallback",
+      "result": "LoadNETCallback returned null",
+      "execution": "Execute and callback Dispose not reached; application closed",
+      "evidence": "outputs/runs/net_callback_contract_85db66cbb5/callback-contract.json"
+    }
+  ]
+}

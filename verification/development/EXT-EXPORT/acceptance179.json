@@ -19,7 +19,7 @@
   "tolerance": "1e-8 + 1e-7*abs(reference)",
   "runs": [
     {
-      "path": ".local/runs/point_cloud176_reference_f65c8f2d4d",
+      "path": "outputs/runs/point_cloud176_reference_f65c8f2d4d",
       "exports": 12,
       "numeric_checks": 1770,
       "max_absolute_error": 1.8571428661573464e-07,
@@ -27,7 +27,7 @@
       "disconnect": true
     },
     {
-      "path": ".local/runs/point_cloud_ASCII_bcaf13c509",
+      "path": "outputs/runs/point_cloud_ASCII_bcaf13c509",
       "exports": 1,
       "numeric_checks": 124,
       "max_absolute_error": 0.0,
@@ -35,7 +35,7 @@
       "disconnect": true
     },
     {
-      "path": ".local/runs/point_cloud_Binary_a92de4805f",
+      "path": "outputs/runs/point_cloud_Binary_a92de4805f",
       "exports": 1,
       "numeric_checks": 0,
       "max_absolute_error": 0,
@@ -43,7 +43,7 @@
       "disconnect": true
     },
     {
-      "path": ".local/runs/point_cloud_CompressedBinary_45cc5a06d8",
+      "path": "outputs/runs/point_cloud_CompressedBinary_45cc5a06d8",
       "exports": 1,
       "numeric_checks": 0,
       "max_absolute_error": 0,
@@ -53,9 +53,9 @@
   ],
   "numeric_checks": 1894,
   "tests": {
-    "ordinary": ".local/evidence/development/EXT-EXPORT/ordinary179.xml",
+    "ordinary": "verification/development/EXT-EXPORT/ordinary179.xml",
     "ordinary_passed": 80,
-    "native": ".local/evidence/development/EXT-EXPORT/native178-final.xml",
+    "native": "verification/development/EXT-EXPORT/native178-final.xml",
     "point_cloud_passed": 4,
     "cad_layer_diagnostic_xfailed": 1
   },

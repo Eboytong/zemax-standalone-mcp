@@ -6,7 +6,7 @@
     "CO-01.DiffEfficiencyAngular",
     "CO-01.DiffEfficiencyChromatic"
   ],
-  "native_reflection_source": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+  "native_reflection_source": "verification/development/BASE-01/probe/api-interfaces.json",
   "native_settings_interfaces": {
     "ZOSAPI.Analysis.Settings.DiffractionEfficiency.IAS_DiffEfficiency2D": {
       "properties": [
@@ -397,8 +397,8 @@
   "native": {
     "status": "blocked",
     "startup_evidence": [
-      ".local/evidence/development/BASE-04/connection040.json",
-      ".local/evidence/development/BASE-04/connection019/supervisor.json"
+      "verification/development/BASE-04/connection040.json",
+      "verification/development/BASE-04/connection019/supervisor.json"
     ],
     "observed": "Isolated ZOS-API initialization timed out after 180.578 seconds. No native analysis was launched in this run.",
     "pending": [

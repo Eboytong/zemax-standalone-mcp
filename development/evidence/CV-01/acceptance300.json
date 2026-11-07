@@ -1,0 +1,154 @@
+{
+  "date": "2026-11-06",
+  "item_id": "CV-01.Foucault",
+  "state": "done",
+  "source_version": "0.1.59",
+  "native_version": "24.2.0 build240529",
+  "license": "PremiumEdition",
+  "scope": "Typed computed/reference/difference shadowgrams; adopted selection/display/knife/registration/Source; independent FFT reference, paging/PNG, failure/cancel/reuse/save-reload and normal closure",
+  "ordinary_report": "verification/development/BASE-04/ordinary300-foucault-related.xml",
+  "ordinary_passed": 66,
+  "native_reports": [
+    "verification/development/BASE-04/native297-foucault-reference.xml",
+    "verification/development/BASE-04/native298-foucault.xml",
+    "verification/development/BASE-04/native299-foucault-lifecycle.xml",
+    "verification/development/BASE-04/native300-foucault-lifecycle.xml"
+  ],
+  "reference_conditions": {
+    "atol": 1e-07,
+    "rtol": 1e-07,
+    "size": 64,
+    "padding": 32,
+    "pupil_radius": 31,
+    "pupil_center": [
+      32,
+      32
+    ],
+    "central_bin_weight": 0.5,
+    "normalization": "maximum cropped intensity"
+  },
+  "max_pixel_error": 1.2676613092565958e-09,
+  "native_files_probe": "verification/development/CV-01/foucault297-files/probe.json",
+  "limitations": [
+    {
+      "member": "IAS_Foucault.SaveBMP",
+      "observed": "Absolute BMP paths adopted and retained; Computed/Reference/Difference runs produced no BMP file and no native messages.",
+      "resolution": "Obtain documented working formal export trigger or fixed native version; PNG data export remains available.",
+      "public_field_exposed": false
+    }
+  ],
+  "historical_failure": {
+    "report": "verification/development/BASE-04/native298-foucault.xml",
+    "cause": "Path import missing on public Source path",
+    "fix": "Import pathlib.Path; public BMP input and failure paths passed in native299/native300"
+  },
+  "image_viewed": "outputs/runs/foucault298_lifecycle_e9dd6a2b2a/foucault.png",
+  "runs": [
+    {
+      "path": "outputs/runs/foucault297_8ce8d336a1",
+      "disconnect": true,
+      "checks": [
+        {
+          "label": "Horiz_Above 0 max pixel error",
+          "actual": 1.2372374236235828e-09,
+          "expected": 0,
+          "atol": 2e-07,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "Horiz_Below 0 max pixel error",
+          "actual": 1.2676604210781761e-09,
+          "expected": 0,
+          "atol": 2e-07,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "Vert_Right 0 max pixel error",
+          "actual": 1.2372382007797e-09,
+          "expected": 0,
+          "atol": 2e-07,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "Vert_Left 0 max pixel error",
+          "actual": 1.2676613092565958e-09,
+          "expected": 0,
+          "atol": 2e-07,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "Horiz_Above -1000 max pixel error",
+          "actual": 0.0,
+          "expected": 0,
+          "atol": 1e-07,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "Horiz_Above 1000 max pixel error",
+          "actual": 2.220446049250313e-15,
+          "expected": 0,
+          "atol": 2e-07,
+          "rtol": 0,
+          "passed": true
+        }
+      ],
+      "close_receipt": {
+        "schema_version": 1,
+        "generation": null,
+        "session_id": null,
+        "started_at": "2026-11-06T12:53:56.672894+00:00",
+        "active_cancelled": false,
+        "forced": false,
+        "checkpoint": {
+          "attempted": false,
+          "path": null,
+          "ok": false,
+          "error": null
+        },
+        "was_connected": false,
+        "native": {
+          "attempted": true,
+          "closed": true,
+          "error": null
+        },
+        "closed_at": "2026-11-06T12:53:56.673014+00:00"
+      }
+    },
+    {
+      "path": "outputs/runs/foucault298_lifecycle_e9dd6a2b2a",
+      "disconnect": true,
+      "checks": [],
+      "close_receipt": {
+        "schema_version": 1,
+        "generation": null,
+        "session_id": null,
+        "started_at": "2026-11-06T13:00:04.376370+00:00",
+        "active_cancelled": false,
+        "forced": false,
+        "checkpoint": {
+          "attempted": false,
+          "path": null,
+          "ok": false,
+          "error": null
+        },
+        "was_connected": false,
+        "native": {
+          "attempted": true,
+          "closed": true,
+          "error": null
+        },
+        "closed_at": "2026-11-06T13:00:04.376402+00:00"
+      }
+    }
+  ],
+  "additional_related_checks": {
+    "report": "verification/development/BASE-04/ordinary303-related.xml",
+    "passed": 32,
+    "earlier_failure": "ordinary302-related.xml: synthetic collector fixture omitted requested settings; fixture updated to real typed task shape"
+  }
+}

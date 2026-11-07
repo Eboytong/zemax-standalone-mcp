@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-07",
+  "phase": "B006 ongoing",
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "target_release": "0.1.62",
+  "tools": 100,
+  "analyses": 110,
+  "batch_completed": 3,
+  "batch_target": 10,
+  "new_completed": [
+    "CV-01.FftPsfLineEdgeSpread"
+  ],
+  "completed_evidence": "verification/development/CV-01/acceptance547-spread.json",
+  "maintenance": [
+    "MCE numeric getter precision checks and metadata542",
+    "FullFieldSpot direction-cosine units and invalid-radius rejection533"
+  ],
+  "additional_acceptance": [
+    "SagTable units/configuration/Composite542"
+  ],
+  "checks": {
+    "targeted_ordinary547": 120,
+    "stdio_quick_yield_mce_status551": 43,
+    "native541": 4,
+    "native545": 2,
+    "native546": 3,
+    "diagnostic549": 1,
+    "diagnostic550": 1
+  },
+  "retained_numeric_failures": "QuickYield Standard r8/r10/r12 in550; Cooke and other numerical candidates retain prior errors/tolerances. Diagnostic pytest success is separate from numerical acceptance.",
+  "remaining": {
+    "source_records": 133,
+    "distinct_ids": 124,
+    "canonical_functions": 122,
+    "historical_baseline_documented": 38
+  },
+  "native_sessions": "all ended/disconnected; no active session owned by this turn",
+  "full_batch_verification": "pending ten first-completed common functions; no0.1.62 wheel built",
+  "next_action": "MF-01.SagTable non-symmetric/off-axis conditions and remaining complete-criterion manufacturing contract, then fixed fallback order"
+}

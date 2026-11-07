@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-06",
+  "work_package": "GE-01",
+  "state": "done",
+  "items": [
+    "GE-01.SourceRepresentation",
+    "GE-01.MediumRegions",
+    "GE-01.WallThickness",
+    "GE-01.Gaps",
+    "GE-01.ContactRelations"
+  ],
+  "evidence": [
+    "verification/development/GE-01/acceptance098.json",
+    "verification/development/GE-01/acceptance114.json",
+    "verification/development/GE-01/acceptance123.json",
+    "verification/development/GE-01/acceptance127.json",
+    "verification/development/GE-01/acceptance138.json"
+  ],
+  "scope": "Native typed geometry source, bounded representations, medium topology, wall/gap constraints and relations; supported-domain and unknown-source conditions explicitly returned",
+  "batch": "B0035/10; package completion is not release completion"
+}

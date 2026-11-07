@@ -8,10 +8,10 @@
   "scope": "Test independently selected 2N zero-padded DFT display spacing instead of PSF auto-grid spacing",
   "input_source": "Owned mirror R=-200mm, conic=-1, aperture10mm, wavelength.55um, image thickness-100/-100.02mm, pupil64/128",
   "hypothesis": "If discrepancy comes only from PSF-derived display spacing, half-width=N*lambda_um*abs(image_distance_mm)/(2*diameter_mm) should resolve it.",
-  "command": ".venv/Scripts/python.exe -m pytest tests/test_fft_spread_coherent_live.py -k dft_knots -q -s --run-zemax --junitxml=.local/evidence/development/CV-01/native500-dft-knots.xml",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_fft_spread_coherent_live.py -k dft_knots -q -s --run-zemax --junitxml=verification/development/CV-01/native500-dft-knots.xml",
   "results": [
     {
-      "run": ".local/runs/fft_spread500_coherent_dft_knots_64_0db2fb57e8",
+      "run": "outputs/runs/fft_spread500_coherent_dft_knots_64_0db2fb57e8",
       "conditions": {
         "intensity_atol": 0.005,
         "reference": "Scalar Fraunhofer sum at native physical positions; complex pupil slice from independent OPD batch rays",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "run": ".local/runs/fft_spread500_coherent_dft_knots_128_1d941086ad",
+      "run": "outputs/runs/fft_spread500_coherent_dft_knots_128_1d941086ad",
       "conditions": {
         "intensity_atol": 0.005,
         "reference": "Scalar Fraunhofer sum at native physical positions; complex pupil slice from independent OPD batch rays",

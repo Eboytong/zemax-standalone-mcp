@@ -9,8 +9,8 @@
   "records": [
     {
       "record": "probe637-monomials",
-      "input": ".local/evidence/development/MA-01/probe637-monomials/monomials.GRD",
-      "raw": ".local/evidence/development/MA-01/probe637-monomials/basis.json",
+      "input": "verification/development/MA-01/probe637-monomials/monomials.GRD",
+      "raw": "verification/development/MA-01/probe637-monomials/basis.json",
       "maximum_z": 1,
       "amplitude": 0.1,
       "errors": [
@@ -225,8 +225,8 @@
     },
     {
       "record": "probe638-unit-monomials",
-      "input": ".local/evidence/development/MA-01/probe638-unit-monomials/monomials.GRD",
-      "raw": ".local/evidence/development/MA-01/probe638-unit-monomials/basis.json",
+      "input": "verification/development/MA-01/probe638-unit-monomials/monomials.GRD",
+      "raw": "verification/development/MA-01/probe638-unit-monomials/basis.json",
       "maximum_z": 1.0,
       "amplitude": 1.0,
       "errors": [
@@ -441,8 +441,8 @@
     },
     {
       "record": "probe639-boule-scale",
-      "input": ".local/evidence/development/MA-01/probe639-boule-scale/monomials.GRD",
-      "raw": ".local/evidence/development/MA-01/probe639-boule-scale/basis.json",
+      "input": "verification/development/MA-01/probe639-boule-scale/monomials.GRD",
+      "raw": "verification/development/MA-01/probe639-boule-scale/basis.json",
       "maximum_z": 5.8,
       "amplitude": 1.0,
       "errors": [

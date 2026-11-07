@@ -1,7 +1,7 @@
 {
   "cases": [
     {
-      "source": ".local/runs/grin_profile054_X_2c6e9c99f3",
+      "source": "outputs/runs/grin_profile054_X_2c6e9c99f3",
       "requests": [
         {
           "kind": "grin_profile",
@@ -24,7 +24,7 @@
           "z_value": 1
         }
       ],
-      "evidence": ".local/evidence/development/CV-02/grin-acceptance054/grin_profile054_X_2c6e9c99f3",
+      "evidence": "verification/development/CV-02/grin-acceptance054/grin_profile054_X_2c6e9c99f3",
       "context": {
         "session_id": "225c4d8b4ee940f0a36c7baabd3b6b32",
         "model_revision": 0,
@@ -272,14 +272,14 @@
         "artifacts": []
       },
       "saved_outputs": [
-        ".local/evidence/development/CV-02/grin-acceptance054/grin_profile054_X_2c6e9c99f3/X_False.png",
-        ".local/evidence/development/CV-02/grin-acceptance054/grin_profile054_X_2c6e9c99f3/X_True.png",
-        ".local/evidence/development/CV-02/grin-acceptance054/grin_profile054_X_2c6e9c99f3/225c4d8b4ee940f0a36c7baabd3b6b32/993ea4908c7b4e8087706ceb9350284c_native.txt",
-        ".local/evidence/development/CV-02/grin-acceptance054/grin_profile054_X_2c6e9c99f3/225c4d8b4ee940f0a36c7baabd3b6b32/f11963c69ccd4ff5916a74e6180a7c44_native.txt"
+        "verification/development/CV-02/grin-acceptance054/grin_profile054_X_2c6e9c99f3/X_False.png",
+        "verification/development/CV-02/grin-acceptance054/grin_profile054_X_2c6e9c99f3/X_True.png",
+        "verification/development/CV-02/grin-acceptance054/grin_profile054_X_2c6e9c99f3/225c4d8b4ee940f0a36c7baabd3b6b32/993ea4908c7b4e8087706ceb9350284c_native.txt",
+        "verification/development/CV-02/grin-acceptance054/grin_profile054_X_2c6e9c99f3/225c4d8b4ee940f0a36c7baabd3b6b32/f11963c69ccd4ff5916a74e6180a7c44_native.txt"
       ]
     },
     {
-      "source": ".local/runs/grin_profile054_Y_92ffa97d1f",
+      "source": "outputs/runs/grin_profile054_Y_92ffa97d1f",
       "requests": [
         {
           "kind": "grin_profile",
@@ -302,7 +302,7 @@
           "z_value": 1
         }
       ],
-      "evidence": ".local/evidence/development/CV-02/grin-acceptance054/grin_profile054_Y_92ffa97d1f",
+      "evidence": "verification/development/CV-02/grin-acceptance054/grin_profile054_Y_92ffa97d1f",
       "context": {
         "session_id": "09a27b9172344dc293cb30bcc6de83b2",
         "model_revision": 0,
@@ -550,14 +550,14 @@
         "artifacts": []
       },
       "saved_outputs": [
-        ".local/evidence/development/CV-02/grin-acceptance054/grin_profile054_Y_92ffa97d1f/Y_False.png",
-        ".local/evidence/development/CV-02/grin-acceptance054/grin_profile054_Y_92ffa97d1f/Y_True.png",
-        ".local/evidence/development/CV-02/grin-acceptance054/grin_profile054_Y_92ffa97d1f/09a27b9172344dc293cb30bcc6de83b2/2657d72317ba4613810a8e8cf137f974_native.txt",
-        ".local/evidence/development/CV-02/grin-acceptance054/grin_profile054_Y_92ffa97d1f/09a27b9172344dc293cb30bcc6de83b2/6f181f8cba744fd3acafee6b9b0f66a9_native.txt"
+        "verification/development/CV-02/grin-acceptance054/grin_profile054_Y_92ffa97d1f/Y_False.png",
+        "verification/development/CV-02/grin-acceptance054/grin_profile054_Y_92ffa97d1f/Y_True.png",
+        "verification/development/CV-02/grin-acceptance054/grin_profile054_Y_92ffa97d1f/09a27b9172344dc293cb30bcc6de83b2/2657d72317ba4613810a8e8cf137f974_native.txt",
+        "verification/development/CV-02/grin-acceptance054/grin_profile054_Y_92ffa97d1f/09a27b9172344dc293cb30bcc6de83b2/6f181f8cba744fd3acafee6b9b0f66a9_native.txt"
       ]
     },
     {
-      "source": ".local/runs/grin_profile054_Z_72d38a29b4",
+      "source": "outputs/runs/grin_profile054_Z_72d38a29b4",
       "requests": [
         {
           "kind": "grin_profile",
@@ -580,7 +580,7 @@
           "y_value": 0.3
         }
       ],
-      "evidence": ".local/evidence/development/CV-02/grin-acceptance054/grin_profile054_Z_72d38a29b4",
+      "evidence": "verification/development/CV-02/grin-acceptance054/grin_profile054_Z_72d38a29b4",
       "context": {
         "session_id": "6ddc4aca03f44847b28161ba511dbe88",
         "model_revision": 0,
@@ -828,10 +828,10 @@
         "artifacts": []
       },
       "saved_outputs": [
-        ".local/evidence/development/CV-02/grin-acceptance054/grin_profile054_Z_72d38a29b4/Z_False.png",
-        ".local/evidence/development/CV-02/grin-acceptance054/grin_profile054_Z_72d38a29b4/Z_True.png",
-        ".local/evidence/development/CV-02/grin-acceptance054/grin_profile054_Z_72d38a29b4/6ddc4aca03f44847b28161ba511dbe88/6aee4448ad2e42a3811868172ba342a7_native.txt",
-        ".local/evidence/development/CV-02/grin-acceptance054/grin_profile054_Z_72d38a29b4/6ddc4aca03f44847b28161ba511dbe88/e12897a2e7cd452e9b56dd18cd134b31_native.txt"
+        "verification/development/CV-02/grin-acceptance054/grin_profile054_Z_72d38a29b4/Z_False.png",
+        "verification/development/CV-02/grin-acceptance054/grin_profile054_Z_72d38a29b4/Z_True.png",
+        "verification/development/CV-02/grin-acceptance054/grin_profile054_Z_72d38a29b4/6ddc4aca03f44847b28161ba511dbe88/6aee4448ad2e42a3811868172ba342a7_native.txt",
+        "verification/development/CV-02/grin-acceptance054/grin_profile054_Z_72d38a29b4/6ddc4aca03f44847b28161ba511dbe88/e12897a2e7cd452e9b56dd18cd134b31_native.txt"
       ]
     }
   ],

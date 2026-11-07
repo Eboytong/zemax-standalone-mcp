@@ -40,7 +40,7 @@
   "ordinary": {
     "passed": 1617,
     "native_deselected": 531,
-    "evidence": ".local/evidence/development/EXT-EXPORT/ordinary052-release.xml"
+    "evidence": "verification/development/EXT-EXPORT/ordinary052-release.xml"
   },
   "wheel_stdio": {
     "version": "0.1.42",
@@ -85,7 +85,7 @@
   "workflow_collection": {
     "cases": 25,
     "native_executed": 0,
-    "evidence": ".local/evidence/development/RL-01/collection052.txt",
+    "evidence": "verification/development/RL-01/collection052.txt",
     "same_session_handoffs_prepared": 2
   }
 }

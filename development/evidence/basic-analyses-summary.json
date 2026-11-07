@@ -1,0 +1,38 @@
+{
+  "service_version": "0.1.4",
+  "ordinary_tests": {
+    "passed": 670,
+    "failed": 0,
+    "deselected_native": 425
+  },
+  "native_workflow": "passed",
+  "native_evidence": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\basic_analyses_validation_a63f56e66a",
+  "analysis_family_count": 39,
+  "analysis_family_evidence": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\analyses_fce3859aca",
+  "max_absolute_errors": {
+    "real ray coordinate": 4.8828052712224235e-11,
+    "grid chief ray": 8.372365011499738e-06,
+    "Seidel surface sum": 2.0000000000501388e-06,
+    "independent spherical Seidel S1": 1.3300696108007552e-07,
+    "ABCD image_focal_length": 0.0,
+    "ABCD object_focal_length": 0.0,
+    "ABCD object_principal_plane": 2.220446049250313e-16,
+    "ABCD image_principal_plane": 2.220446049250313e-16,
+    "ABCD image_focal_plane": 0.0,
+    "decenter global-local X": 0.0
+  },
+  "all_numeric_checks_passed": true,
+  "wheel": "wheels/zemax_standalone_mcp-0.1.4-py3-none-any.whl",
+  "wheel_smoke": "verification/basic-wheel-smoke.json",
+  "native_diagnostic": "FRU__delta_init remains observed; cause unconfirmed",
+  "validation_scope": [
+    "Cooke single ray vs batch",
+    "grid vs chief ray with aspect .7",
+    "Seidel surface sums",
+    "independent spherical Seidel S1",
+    "N-BK7 thick-lens ABCD for YZ/XZ",
+    "decentered global/local coordinates with explicit reference surface",
+    "grid data plot",
+    "normal disconnect"
+  ]
+}

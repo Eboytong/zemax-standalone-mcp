@@ -18,6 +18,6 @@ Whitebox正式接口没有可写属性。请求使用尚不存在的绝对目录
 
 ## 验收状态
 
-两项调用链状态为implemented。本机DLL接口已反射，普通检查覆盖设置拒绝、原生失败、缺失输出、路径、资源复制、取消、工具/副本关闭及错误保留。记录见 `.local/evidence/development/EXT-SPEOS/probe041.json`；原生用例为 `tests/test_speos_live.py`，等待初始化恢复后串行运行。
+两项调用链状态为implemented。本机DLL接口已反射，普通检查覆盖设置拒绝、原生失败、缺失输出、路径、资源复制、取消、工具/副本关闭及错误保留。记录见 `.local/evidence/development/EXT-SPEOS/probe041.json`；原生用例为 `tests/native/test_speos_live.py`，等待初始化恢复后串行运行。
 
 既有初始化180.578秒超时阻塞原生导出、设置采用及完整源模型保留验收。默认v242目录及HKLM安装记录扫描未确认Speos接收端；LensSystem与Whitebox导入分别为blocked，需要可运行接收端路径/版本、实际导出文件及导入记录，检查单位、几何及资源引用。Whitebox原生输出命名和支持文件组织仍待运行确认。

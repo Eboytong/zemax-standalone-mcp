@@ -9,12 +9,12 @@
   "source_version": "0.1.61 B006 source",
   "installed_release": "0.1.61",
   "native": "24.2.0 build240529 Premium",
-  "base_evidence": ".local/evidence/development/MF-01/progress582-criterion-curves.json",
+  "base_evidence": "verification/development/MF-01/progress582-criterion-curves.json",
   "scope": "MinimumRMS No Offset vertex constrained zero; other physical offsets unavailable. Independent area-weighted RMS sphere fit comparison.",
   "source": "Owned signed z=±.0126*r² parabolic surface, semi5mm; native separately configured SurfaceSlopeCross radius reports; all detailed requests/settings/artifacts preserved in587 run calls.json",
   "commands": [
-    ".venv/Scripts/python.exe -m pytest tests/test_sag_criteria_live.py --run-zemax -x -q --junitxml=.local/evidence/development/MF-01/native587-criterion-offset.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_sag_table.py tests/test_sag_fit.py tests/test_surface_slopes.py tests/test_development_status_report.py -q --junitxml=.local/evidence/development/MF-01/ordinary589-final.xml"
+    ".venv/Scripts/python.exe -m pytest tests/test_sag_criteria_live.py --run-zemax -x -q --junitxml=verification/development/MF-01/native587-criterion-offset.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_sag_table.py tests/test_sag_fit.py tests/test_surface_slopes.py tests/test_development_status_report.py -q --junitxml=verification/development/MF-01/ordinary589-final.xml"
   ],
   "native_final_passed": 2,
   "native_default_and_criterion_regression582_passed": 7,

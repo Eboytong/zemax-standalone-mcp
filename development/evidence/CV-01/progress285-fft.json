@@ -1,0 +1,42 @@
+{
+  "item_id": "CV-01.FftSurfaceMtf",
+  "state": "implemented",
+  "atol": 0.005,
+  "rtol": 0,
+  "runs": [
+    {
+      "run": "outputs/runs/surface_mtf283_fft_e7ada56201",
+      "fields": [
+        {
+          "field": 1,
+          "max_error": 0.005752108347109264
+        },
+        {
+          "field": 3,
+          "max_error": 0.12184385496732056
+        }
+      ]
+    },
+    {
+      "run": "outputs/runs/surface_mtf283_fft_6cafe19fc8",
+      "fields": [
+        {
+          "field": 1,
+          "max_error": 0.005695272522543315
+        },
+        {
+          "field": 3,
+          "max_error": 0.07685317196120814
+        }
+      ]
+    }
+  ],
+  "reports": [
+    "native283-fft.xml",
+    "native284-fft.xml",
+    "native285-fft.xml"
+  ],
+  "startup_attempt": "native284: INVALID_LICENSE before model work; next serial retry initialized successfully, no license settings changed",
+  "conclusion": "Fixed and automatic FFT PSF spacing and chief-ray image projection do not resolve off-axis mismatch; no production frequency or value correction applied. Native axes and raw errors retained.",
+  "next_action": "Establish FFT pupil autocorrelation reference and native FFT Surface/PSF projection definitions; preserve original .005 tolerance; continue FullFieldAberration."
+}

@@ -39,7 +39,7 @@ async def validate():
             await asyncio.sleep(0.15)
 
     from datetime import datetime
-    output = PROJECT_ROOT / "outputs" / ("acceptance_" + datetime.now().strftime("%Y%m%d_%H%M%S"))
+    output = PROJECT_ROOT / ".local" / "runs" / ("acceptance_" + datetime.now().strftime("%Y%m%d_%H%M%S"))
     output.mkdir(parents=True, exist_ok=True)
     try:
         print("connect", flush=True)

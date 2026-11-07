@@ -11,8 +11,8 @@
     "errors": 0,
     "deselected": 523,
     "focused_passed": 144,
-    "report": ".local/evidence/development/EXT-HPC/ordinary050-release.xml",
-    "focused_report": ".local/evidence/development/EXT-HPC/ordinary050-focused.xml",
+    "report": "verification/development/EXT-HPC/ordinary050-release.xml",
+    "focused_report": "verification/development/EXT-HPC/ordinary050-focused.xml",
     "additional_checks": [
       "Int32 node-count upper bound",
       "Default instance explicitly remains unresolved when native enum is still Default"
@@ -21,12 +21,12 @@
   "release": {
     "status": "passed",
     "wheel": "wheels/zemax_standalone_mcp-0.1.40-py3-none-any.whl",
-    "install": ".local/evidence/development/EXT-HPC/wheel-install040-release",
-    "stdio": ".local/evidence/development/EXT-HPC/stdio-smoke050-release.json",
+    "install": "verification/development/EXT-HPC/wheel-install040-release",
+    "stdio": "verification/development/EXT-HPC/stdio-smoke050-release.json",
     "commands": [
       ".venv/Scripts/python.exe -m pip wheel . --no-deps --no-build-isolation --wheel-dir wheels",
-      ".venv/Scripts/python.exe -m pip install --no-deps --target .local/evidence/development/EXT-HPC/wheel-install040-release wheels/zemax_standalone_mcp-0.1.40-py3-none-any.whl",
-      ".venv/Scripts/python.exe -B tests/support/wheel_smoke050.py .local/evidence/development/EXT-HPC/wheel-install040-release .local/evidence/development/EXT-HPC/stdio-smoke050-release.json"
+      ".venv/Scripts/python.exe -m pip install --no-deps --target verification/development/EXT-HPC/wheel-install040-release wheels/zemax_standalone_mcp-0.1.40-py3-none-any.whl",
+      ".venv/Scripts/python.exe -B tests/support/wheel_smoke050.py verification/development/EXT-HPC/wheel-install040-release verification/development/EXT-HPC/stdio-smoke050-release.json"
     ]
   },
   "development-backlog.csv": {

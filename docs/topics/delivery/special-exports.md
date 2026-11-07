@@ -26,7 +26,7 @@ STEP/STL/SAT 扩展设置通过实际采用、文件生成、工具关闭及系�
 
 本机手册第51–55页描述界面创建ZBB及ZEC；第49–51页描述旧线框出口。已将三项分别登记blocked。解除条件为取得本机版本可执行的正式创建接口或受支持自动化协议、参数和许可说明，然后补充有类型请求、原生文件与重载/追迹对照。界面功能存在的记录与MCP正式接口能力分别保留。
 
-CAD的现有格式继续使用run_cad_export，Speos使用run_speos_export；项目归档沿用现有项目/归档工具。当前点云为implemented；设置实际采用、坐标/法线数值、保存重载和原生副本关闭待BASE-04启动恢复后运行 `tests/test_point_cloud.py -m zemax`。平面z与法线参考采用绝对容差1e-8、相对容差1e-7；其他面型及压缩负载数值解码仍为后续原生验收。
+CAD的现有格式继续使用run_cad_export，Speos使用run_speos_export；项目归档沿用现有项目/归档工具。当前点云为implemented；设置实际采用、坐标/法线数值、保存重载和原生副本关闭待BASE-04启动恢复后运行 `tests/unit/test_point_cloud.py -m zemax`。平面z与法线参考采用绝对容差1e-8、相对容差1e-7；其他面型及压缩负载数值解码仍为后续原生验收。
 
 ## 0.1.44 CAD 设置与结果
 

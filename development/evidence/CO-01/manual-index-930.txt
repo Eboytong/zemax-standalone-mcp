@@ -1,0 +1,15 @@
+This feature calculates the surface phase as a cross section across the full clear diameter or diameter of the surface.
+This feature defines phase slope in units of 2p radians perlens units. TheGraph section will display (0,0) atthe vertex
+of the aperture, including for off-axis apertures. The Text data X and Y coordinates are given with respect to the
+vertex of the surface.
+Surfaces which do not impart a phase change to the ray, such as the Standard surface, will display a phase of zero
+everywhere on the surface phase display.
+3.4.3.Coatings (polarizationandsurfacephysics group,the analyze tab, sequential
+ui mode)
+For more information on coating calculations, see "Polarization Analysis".
+3.4.3.1.Reflectionvs.Angle (coatings,polarizationandsurfacephysics group)
+Computes the S, P, and average polarization intensity coefficients forreflection forthe specified surface as a function
+of incident angle.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 931
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

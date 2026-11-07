@@ -1,0 +1,78 @@
+{
+  "item_id": "EXT-EXPORT.CadSettings",
+  "execution_state": "implemented",
+  "date": "2026-11-06",
+  "environment": {
+    "opticstudio": "24.2.0",
+    "build": "240529",
+    "license": "PremiumEdition",
+    "python": "3.14"
+  },
+  "completed": [
+    "eight NSC scatter/split/polarization setting combinations, STEP solid/STL mesh transformed box geometry and subsequent ray trace:66 numeric comparisons",
+    "NSC inactive number_of_rays preflight; per-source NumberOfLayoutRays controls native layout rays",
+    "SAT/SAB actual header metadata; explicit version mismatch rejects after Close and subsequent Current request succeeds",
+    "source settings/objects/solve preservation after save/reload; native CAD and application Close"
+  ],
+  "runs": [
+    {
+      "path": "outputs/runs/cad180_nsc_reference_990b85aa05",
+      "numeric_checks": 66,
+      "max_absolute_error": 6.77111999891622e-05,
+      "cad_close_confirmed": true,
+      "disconnect": true
+    },
+    {
+      "path": "outputs/runs/cad185_acis_readback_eb4ec8fe89",
+      "numeric_checks": 0,
+      "max_absolute_error": 0,
+      "cad_close_confirmed": true,
+      "disconnect": true
+    },
+    {
+      "path": "outputs/runs/cad_settings_step_4443438ca1",
+      "numeric_checks": 0,
+      "max_absolute_error": 0,
+      "cad_close_confirmed": true,
+      "disconnect": true
+    },
+    {
+      "path": "outputs/runs/cad_settings_stl_2f82731227",
+      "numeric_checks": 0,
+      "max_absolute_error": 0,
+      "cad_close_confirmed": true,
+      "disconnect": true
+    },
+    {
+      "path": "outputs/runs/cad_settings_sat_261c96da59",
+      "numeric_checks": 0,
+      "max_absolute_error": 0,
+      "cad_close_confirmed": true,
+      "disconnect": true
+    }
+  ],
+  "checks": {
+    "ordinary": "verification/development/EXT-EXPORT/ordinary186.xml",
+    "ordinary_passed": 87,
+    "native": "verification/development/EXT-EXPORT/native185.xml",
+    "native_passed": 5
+  },
+  "version_probe": "outputs/runs/cad183_acis_versions_f7e715d095/probe.json",
+  "remaining": [
+    "SAT/SAB Current/V25-V30 getter adopts request, actual files all ACIS500; require a formal exporter that adopts requested version. ASAT/ASAB actual version contract remains unprobed."
+  ],
+  "tolerances": {
+    "geometry": "1e-5 + 1e-6*reference",
+    "ray_hit": "1e-8 + 1e-7*reference"
+  },
+  "history": [
+    "native180 NSC NumberOfRays8 rejected; preflight added",
+    "native181 OCP Vertex_s unavailable; installed Vertex accessor adopted",
+    "native182 NSC reference passed; native185 final5 passed"
+  ],
+  "commands": [
+    ".venv/Scripts/python.exe -B -m pytest tests/test_cad_adoption.py tests/test_point_cloud.py -q",
+    " .venv/Scripts/python.exe -B -m pytest tests/test_cad_nsc_reference_live.py tests/test_cad_acis_live.py tests/test_cad_formats_live.py::test_cad_extended_settings -q -s --run-zemax"
+  ],
+  "batch": "B003 8/10; incomplete CAD item excluded"
+}

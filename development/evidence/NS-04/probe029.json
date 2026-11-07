@@ -1,0 +1,622 @@
+{
+  "source": "installed public DLL reflection; no native application",
+  "interfaces": {
+    "ZOSAPI.Editors.NCE.INCERow": {
+      "properties": [
+        {
+          "name": "IsActive",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "ObjectNumber",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "TypeName",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Type",
+          "type": "ZOSAPI.Editors.NCE.ObjectType",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "CurrentTypeSettings",
+          "type": "ZOSAPI.Editors.NCE.IObjectTypeSettings",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "ObjectData",
+          "type": "ZOSAPI.Editors.NCE.IObject",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "TypeData",
+          "type": "ZOSAPI.Editors.NCE.INCETypeData",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "DrawData",
+          "type": "ZOSAPI.Editors.NCE.INCEDrawData",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "SourcesData",
+          "type": "ZOSAPI.Editors.NCE.INCESourcesData",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "CoatScatterData",
+          "type": "ZOSAPI.Editors.NCE.INCECoatScatterData",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "ScatterToData",
+          "type": "ZOSAPI.Editors.NCE.INCEScatterToData",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "VolumePhysicsData",
+          "type": "ZOSAPI.Editors.NCE.INCEVolumePhysicsData",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "IndexData",
+          "type": "ZOSAPI.Editors.NCE.INCEIndexData",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "DiffractionData",
+          "type": "ZOSAPI.Editors.NCE.INCEDiffractionData",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "CADData",
+          "type": "ZOSAPI.Editors.NCE.INCECADData",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Comment",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "CommentCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "RefObject",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "RefObjectCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "InsideOf",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "InsideOfCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "XPosition",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "XPositionCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "YPosition",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "YPositionCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "ZPosition",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ZPositionCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "TiltAboutX",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "TiltAboutXCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "TiltAboutY",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "TiltAboutYCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "TiltAboutZ",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "TiltAboutZCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Material",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "MaterialCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "ObjectId",
+          "type": "System.Int64",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "ZOSAPI.Editors.IEditorCell GetObjectCell(ZOSAPI.Editors.NCE.ObjectColumn)",
+        "ZOSAPI.Editors.NCE.ObjectType[] AvailableObjectTypes()",
+        "System.String[] AvailableParameters()",
+        "ZOSAPI.Editors.NCE.IObjectTypeSettings GetObjectTypeSettings(ZOSAPI.Editors.NCE.ObjectType)",
+        "Boolean ChangeType(ZOSAPI.Editors.NCE.IObjectTypeSettings)",
+        "ZOSAPI.Editors.NCE.IFaceData GetFacetedObjectData()",
+        "ZOSAPI.Common.IMetadata GetMetadata()",
+        "System.String FindMaterialCatalog()",
+        "ZOSAPI.Editors.NCE.INCECoatingPerformanceData GetCoatingPerformanceData()"
+      ]
+    },
+    "ZOSAPI.Editors.NCE.IFaceData": {
+      "properties": [
+        {
+          "name": "NumberOfFaces",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "CurrentFace",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ConvertToGlobal",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "NumberOfVertices",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Flux",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Irradiance",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "AbsorbedFlux",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "AbsorbedIrradiance",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": [
+        "Boolean GetVertex(Int32, Double ByRef, Double ByRef, Double ByRef)",
+        "Boolean GetVertexNormal(Int32, Double ByRef, Double ByRef, Double ByRef)",
+        "Boolean FillData(Int32, Double[], Double[], Double[], Double[], Double[], Double[])"
+      ]
+    },
+    "ZOSAPI.Editors.NCE.IObjectDetectorRectangle": {
+      "properties": [
+        {
+          "name": "XHalfWidthCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "YHalfWidthCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberXPixelsCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberYPixelsCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "DataTypeCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "ColorCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "SmoothingCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "ScaleCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "PlotScaleCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "FrontOnlyCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "PsfWaveNumberCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "XAngleMinCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "XAngleMaxCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "YAngleMinCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "YAngleMaxCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "PolarizationCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "MirroringCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "XHalfWidth",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "YHalfWidth",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "NumberXPixels",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "NumberYPixels",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "DataType",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Color",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Smoothing",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Scale",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "PlotScale",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "FrontOnly",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "PsfWaveNumber",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "XAngleMin",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "XAngleMax",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "YAngleMin",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "YAngleMax",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Polarization",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Mirroring",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    },
+    "ZOSAPI.Editors.NCE.IObjectDetectorVolume": {
+      "properties": [
+        {
+          "name": "XHalfWidthCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "YHalfWidthCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "ZHalfWidthCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberXPixelsCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberYPixelsCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "NumberZPixelsCell",
+          "type": "ZOSAPI.Editors.IEditorCell",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "XHalfWidth",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "YHalfWidth",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ZHalfWidth",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "NumberXPixels",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "NumberYPixels",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "NumberZPixels",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    }
+  },
+  "existing_methods": {
+    "get_detector_data": "GetAllDetectorDataSafe allocates full rectangle matrix; volume uses scalar x-fast reads; surface detector already includes geometry",
+    "object_geometry": "INCERow.GetFacetedObjectData returns borrowed IFaceData with CurrentFace and ConvertToGlobal; no Close member",
+    "run_time": "pending native startup restoration"
+  },
+  "viewer_static_names": [
+    "ZOSAPI.Analysis.Settings.NSCSurface.IAS_NSCSurfaceSag"
+  ],
+  "manual_toc": [
+    {
+      "title": "2.3.2.1.5. Refraction and Reflection From NSC Objects",
+      "page": 362
+    },
+    {
+      "title": "2.3.2.1.8. Diffraction from NSC Objects",
+      "page": 374
+    },
+    {
+      "title": "2.3.2.2.1. Summary of NSC Objects",
+      "page": 404
+    },
+    {
+      "title": "3.4.2.2. Surface Sag",
+      "page": 905
+    },
+    {
+      "title": "3.4.2.5. Surface Sag Cross Section",
+      "page": 914
+    },
+    {
+      "title": "4.6.1. NSC Surface Sag",
+      "page": 1025
+    },
+    {
+      "title": "10.6.8.1. INCERow ObjectType <XXXLink to Summary of NSC Objects>",
+      "page": 1673
+    }
+  ],
+  "remaining_items": {
+    "NSCObjectViewer": "Dedicated plot/viewer settings and runtime result adapter are still unprobed; new object-face geometry complements but does not claim a viewer implementation.",
+    "NSCSurfaceSag": "Use per-object IFaceData surface geometry for triangulated types; dedicated Sag calculation for analytic/volume objects requires native settings/result probe."
+  },
+  "unblock": "restore OpticStudio startup, inspect runtime GetSettings/official CFG for both routes, final adoption/result/closure; provide a controlled analytic sag model"
+}

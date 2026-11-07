@@ -9,11 +9,11 @@
   "source_version": "0.1.59 plus B004 source; released wheel unchanged",
   "native_version": "OpticStudio2024R2 24.2 build240529 PremiumEdition",
   "scope": "Typed native Gaussian merit-operand propagation, axes/surface/wave/field identity, native row quantities and curves; embedded and scaled M2 models",
-  "interface_probe": ".local/evidence/development/WP-01/operands352/probe.json",
-  "official_local_reference": ".local/evidence/development/WP-01/manual352-gaussian-operands.txt",
+  "interface_probe": "verification/development/WP-01/operands352/probe.json",
+  "official_local_reference": "verification/development/WP-01/manual352-gaussian-operands.txt",
   "commands": [
-    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_gaussian_beams_live.py --run-zemax -q --junitxml=.local/evidence/development/WP-01/native356-gaussian.xml",
-    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_gaussian_beams.py tests/test_basic_analyses.py tests/test_analysis_scenarios.py -q --junitxml=.local/evidence/development/WP-01/ordinary358-related.xml"
+    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_gaussian_beams_live.py --run-zemax -q --junitxml=verification/development/WP-01/native356-gaussian.xml",
+    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_gaussian_beams.py tests/test_basic_analyses.py tests/test_analysis_scenarios.py -q --junitxml=verification/development/WP-01/ordinary358-related.xml"
   ],
   "checks": {
     "ordinary355": 162,
@@ -24,7 +24,7 @@
     "rtol": 1e-06
   },
   "source": "Native GetOperandValue query; explicit arguments returned per row. Does not modify dedicated AS_Default dialog settings.",
-  "original_failure": ".local/evidence/development/WP-01/native353-gaussian.xml",
+  "original_failure": "verification/development/WP-01/native353-gaussian.xml",
   "reference_correction": "Native divergence is atan(lambda/(pi*w0)); skew Rayleigh uses waist/tan(native angle). Tolerances preserved.",
   "lifecycle": "Native356 two sessions disconnected normally; no separate native analysis/tool object opened.",
   "remaining": [

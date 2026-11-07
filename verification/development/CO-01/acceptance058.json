@@ -2,9 +2,9 @@
   "version": "0.1.55",
   "scope": "Existing sequential current-configuration coating requests, absolute/relative single film and explicit IDEAL2 MIRROR phase; reverse_direction true rejected on ordinary sequential surfaces.",
   "native_evidence": {
-    "relative": ".local/runs/coating_relative058_03f39843a5/calls.json",
-    "mirror": ".local/runs/coating_mirror058_c1255348a8/calls.json",
-    "cancel": ".local/runs/coating_cancel058_6f4c871f76/calls.json"
+    "relative": "outputs/runs/coating_relative058_03f39843a5/calls.json",
+    "mirror": "outputs/runs/coating_mirror058_c1255348a8/calls.json",
+    "cancel": "outputs/runs/coating_cancel058_6f4c871f76/calls.json"
   },
   "numeric": {
     "relative": {
@@ -23,7 +23,7 @@
     "terminal": "cancelled",
     "closed": true
   },
-  "prior_absolute_reference": ".local/evidence/development/CO-01/acceptance057.json",
+  "prior_absolute_reference": "verification/development/CO-01/acceptance057.json",
   "tolerance": {
     "phase_degrees": 0.0001,
     "coefficients": 1e-06,
@@ -37,12 +37,12 @@
     "Native active cancellation on 1000 layers; source preservation and follow-up analysis",
     "Inactive reverse option rejected before native allocation; unit setup/close errors retained"
   ],
-  "historical_mirror_failure": ".local/runs/coating_mirror058_53f06ed856: uncoated MIRROR has native conductor phase; ideal-perfect-conductor test assumption replaced by explicit IDEAL2 coefficients.",
+  "historical_mirror_failure": "outputs/runs/coating_mirror058_53f06ed856: uncoated MIRROR has native conductor phase; ideal-perfect-conductor test assumption replaced by explicit IDEAL2 coefficients.",
   "remaining": [
     "NSC coating ObjectNumber/FaceNumber selection and reverse media reference",
     "Three diffraction-efficiency off-axis/persistence gates remain in CO-01"
   ],
-  "ordinary_evidence": ".local/evidence/development/CO-01/ordinary058-final.xml",
+  "ordinary_evidence": "verification/development/CO-01/ordinary058-final.xml",
   "native_tests": [
     "native058-mirror-ideal.xml",
     "native058-relative-final.xml",

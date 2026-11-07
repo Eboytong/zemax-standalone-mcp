@@ -1,0 +1,42 @@
+phase_at: the accumulated total phase of the ray (modulo 2*pi). This value includes accumulated phase due to
+propagation as well as phase introduced by objects that impart phase (i.e. gratings, etc.). The phase introduced by
+coatings is not included in this value and is generally considered a "phase aberration". This value is only computed
+atdetector surfaces.Note thephase reportedhere is adjustedto accountfor offsetfromthe center ofthepixelwhere
+the ray lands. In some cases the plane wave, namely the ray, needs to propagate forward a bitto hitthe pixel center,
+in others it needs to propagate backward a bit to hit the pixel center.
+exr, exi, eyr, eyi, ezr, ezi:the electric field in the global x, y, and z coordinates,real and imaginary parts. These values
+will all be zero if the ray trace did not use polarization.
+The ZRD UFD format is subject to change, however, OpticStudio will automatically convert older formats to the
+current format. Note the structure size is 232 bytes for each ray segment. If 100,000 rays are traced with an average
+of 50 segments each, the resulting file will be about 100,000 x 50 x 208 bytes = 1Gb in size. The file sizes can quickly
+become enormous, so great care must be taken to limit the number of segments before deciding to save the ray
+data to a file. Use of a filter string to limit the saved data to the rays of interest may substantially reduce the amount
+of data written to the file.
+The ZRD file consists of alternating blocks of data. For example, if three rays are traced, with 5, 7, and 9 segments
+each, then the ZRD file will be formatted as follows:
+4 bytes: version
+4 bytes: maximum number of segments possible, will be 9 or larger in this example
+4 bytes: 5 (the number of segments in ray 1)
+208 bytes x 5 (the segment data for ray 1)
+4 bytes: 7 (the number of segments in ray 2)
+208 bytes x 7 (the segment data for ray 2)
+4 bytes: 9 (the number of segments in ray 3)
+208 bytes x 9 (the segment data for ray 3)
+For information on what OpticStudio can do with ZRD files, see "The Ray Database Viewer".
+Comments on Data Structure Memory Packing
+Note that typical "C" structures in Windows are packed on 8 byte boundaries. This packing means that 2-byte
+members are aligned on a memory address thatis an integer multiple of 2, 4-byte members are aligned on multiples
+of 4, and 8-byte members are aligned on multiples of 8. This packing speeds memory access but can create some
+small gaps in the structures. That is why structure sizes can be slightly larger than the sum of the byte sizes of all
+the members.
+2.3.2.1.16. The LightningTrace Control
+The LightningTrace Control is used to launch and trace a specific set of rays from a discrete mesh for analysis using
+defined sources, objects, and detectors. The controls on the dialog box are described below.
+For more information, see the "Lightning Trace" tool in the Analyze Tab in-help file.
+2.3.2.1.17. The Ray Database Viewer
+The Ray Database Viewerreads in a previously saved ZRD file, and displays the data in a textformat. Forinformation
+on creating a ZRD file, see the previous section.
+For more information, see the "Ray Database Viewer" analysis tool in the Analyze Tab in-help file.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 386
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Setup Tab

@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-07",
+  "item_id": "CV-02.BiocularDipvergenceConvergence",
+  "state": "implemented",
+  "completion_count": 0,
+  "source_version": "0.1.60 plus B005",
+  "native_version": "24.2.0 build240529 PremiumEdition",
+  "scope": "Typed left/right configuration, wavelength, X/Y angle/cosine scan, ascending/descending/equal limits, up to6 offset slots with−99 disable, point density, convergence offset; native BIOC/BIOD query rows and curves.",
+  "evidence": [
+    "verification/development/CV-02/probe404-biocular/probe.json",
+    "verification/development/CV-02/probe405-biocular-operands/probe.json",
+    "verification/development/CV-02/ordinary406-biocular.xml",
+    "verification/development/CV-02/native406-biocular.xml"
+  ],
+  "command": ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_biocular_live.py --run-zemax -q --junitxml=verification/development/CV-02/native406-biocular.xml",
+  "numerical_reference": "Two planes, config1 STOP-to-image100mm/config2 120mm: angle_right=atan(100/120*tan(angle_left)); BIOC/BIOD=1000*(right-left) for corresponding axis.",
+  "atol_mrad": 0.001,
+  "rtol": 0,
+  "ordinary_passed": 69,
+  "native_passed": 1,
+  "numeric_checks": 20,
+  "settings_source": "Explicit native BIOC/BIOD arguments; no dedicated AS_Default dialog mutation.",
+  "findings": [
+    "BICV/BIDV names unavailable; formal local manual and runtime agree on BIOC/BIOD.",
+    "BIOC/BIOD columns Left,Right,Wave,UseCos,Xang,Yang confirmed.",
+    "Dipvergence/convergence native analysis AS_Default, arrays empty but full text export available.",
+    "Biocular FOV inspected series/grids empty and GetTextFile=false; other drawing/RGB outlets and native field tracing contract remain to probe."
+  ],
+  "lifecycle": "Probe analysis instances closed; native test source surfaces/configurations/MFE unchanged, session normally disconnected.",
+  "remaining": [
+    "Cosine and all6 offset/disabled slots numerical coverage",
+    "Native worksheet matching across offsets, convergence compensation and eye swap",
+    "Clipped/error ray contract: confirm native exception versus zero result and preserve original failure",
+    "Pagination, PNG view, cancellation/reuse, save/reload and restoration failures",
+    "Complete current-config2 and source settings/revision invariants"
+  ]
+}

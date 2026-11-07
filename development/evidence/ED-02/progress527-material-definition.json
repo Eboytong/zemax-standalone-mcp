@@ -1,0 +1,104 @@
+{
+  "date": "2026-11-07",
+  "item_id": "ED-02.MaterialModel.Material",
+  "state": "implemented",
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build240529 Premium",
+  "scope": "Official wavelength anchor/fit definition re-read against retained native six-wavelength results; no additional native execution",
+  "documentation": "verification/development/BASE-01/manual527-selected.json page indices1347/1348; installed2024R2 manual defines Nd.5875618 and F/C .4861327/.6562725um, states approximate model dispersion",
+  "command": ".venv/Scripts/python.exe -X utf8 tests/support/manual_pages.py --page-index 966 --page-index 967 --page-index 968 --page-index 969 --page-index 1347 --page-index 1348 --output verification/development/BASE-01/manual527-selected.json",
+  "input_source": "verification/development/ED-02/material-diagnostic271/anchors.json",
+  "actual_settings": "Native271 anchors/calls contain typed MaterialModel request and final solve readback; native048 numerical gate retained",
+  "results": [
+    {
+      "request": {
+        "mode": "material_model",
+        "index_nd": 1.6,
+        "abbe_vd": 60,
+        "dpgf": 0
+      },
+      "actual_indices": [
+        1.6000019898635562,
+        1.6000000140887367,
+        1.6069459567557782,
+        1.6069489209437722,
+        1.5969499510302583,
+        1.5969489015506768
+      ],
+      "wavelengths_um": [
+        0.5875618,
+        0.5876,
+        0.4861327,
+        0.4861,
+        0.6562725,
+        0.6563
+      ],
+      "exact_line_vd": 60.02417428911052,
+      "rounded_line_vd": 59.999885050524426,
+      "exact_line_vd_error": 0.024174289110519,
+      "rounded_line_vd_error": -0.00011494947557366686
+    },
+    {
+      "request": {
+        "mode": "material_model",
+        "index_nd": 1.6,
+        "abbe_vd": 60,
+        "dpgf": 0.001
+      },
+      "actual_indices": [
+        1.6000019888117303,
+        1.600000014040549,
+        1.6069488980672164,
+        1.6069518660417936,
+        1.5969528946560578,
+        1.5969518466824117
+      ],
+      "wavelengths_um": [
+        0.5875618,
+        0.5876,
+        0.4861327,
+        0.4861,
+        0.6562725,
+        0.6563
+      ],
+      "exact_line_vd": 60.02418808120307,
+      "rounded_line_vd": 59.99988524798575,
+      "exact_line_vd_error": 0.024188081203071476,
+      "rounded_line_vd_error": -0.00011475201424815396
+    },
+    {
+      "request": {
+        "mode": "material_model",
+        "index_nd": 1.5,
+        "abbe_vd": 50,
+        "dpgf": 0
+      },
+      "actual_indices": [
+        1.5000019721718398,
+        1.5000000132782154,
+        1.5069954296141697,
+        1.506998457492494,
+        1.496999462816207,
+        1.4969984386664583
+      ],
+      "wavelengths_um": [
+        0.5875618,
+        0.5876,
+        0.4861327,
+        0.4861,
+        0.6562725,
+        0.6563
+      ],
+      "exact_line_vd": 50.020371443586,
+      "rounded_line_vd": 49.99990719781811,
+      "exact_line_vd_error": 0.020371443586000737,
+      "rounded_line_vd_error": -9.280218188933986e-05
+    }
+  ],
+  "tolerance": "Original Vd1e-5 absolute+1e-7relative unchanged",
+  "conclusion": "Using exact documented lines givesVd60.02418808 for Nd1.6,Vd60,dPgF.001. Rounded lines give59.99988525. Neither satisfies original input-Vd numerical gate; exact wavelengths increase discrepancy. General approximate-dispersion statement does not establish a replacement exact fitting reference.",
+  "lifecycle": "Offline extraction/reference audit only; PDF pages/text/document explicitly closed. Existing native271 disconnect evidence retained.",
+  "unblock_condition": "Formal model-glass dispersion coefficients/algorithm or documented numerical anchor/fit contract for installed runtime, then independent predicted-index comparison. Keep exact/rounded input-Vd errors and original tolerance.",
+  "next_action": "Do not repeat unchanged six-anchor probes; keep implemented and continue FullFieldSpot or next candidate with new formal evidence."
+}

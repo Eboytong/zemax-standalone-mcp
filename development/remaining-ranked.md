@@ -158,4 +158,4 @@
 | 146 | Speos LensSystem及Whitebox导出：工作包收口（`EXT-SPEOS`） | 工作包收口 | 受阻待定 | 已实现待验收 | 完成下属剩余功能后统一核对：导出成功且接收端可导入；同步工作包状态、能力说明、请求示例和证据。 条件：依赖本工作包未完成子项；按声明范围汇总验收。 |
 | 147 | 特殊格式、黑盒及加密正式出口：工作包收口（`EXT-EXPORT`） | 工作包收口 | 受阻待定 | 已实现待验收 | 完成下属剩余功能后统一核对：生成可读取交付物并记录原生关闭；同步工作包状态、能力说明、请求示例和证据。 条件：依赖本工作包未完成子项；按声明范围汇总验收。 |
 
-来源：[工作包台账](development-tasks.csv)、[操作台账](development-items.csv)、[分析台账](development-backlog.csv)、[剩余审计636](../.local/evidence/development/BASE-01/remaining-audit636.json)、[长期规范第7节](development-plan.md#7-完成状态与证据)。逐项现有证据入口见[难度评估](development-difficulty-assessment.md)。
+来源：[工作包台账](ledgers/packages.csv)、[操作台账](ledgers/operations.csv)、[分析台账](ledgers/analyses.csv)、[剩余审计636](../.local/evidence/development/BASE-01/remaining-audit636.json)、[长期规范第7节](plan.md#7-完成状态与证据)。逐项现有证据入口见[难度评估](archive/legacy/development-difficulty-assessment.md)。

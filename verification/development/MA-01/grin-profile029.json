@@ -2,7 +2,7 @@
   "work_package": "MA-01",
   "item": "MA-01.GrinProfile",
   "version": "0.1.29",
-  "native_reflection_source": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+  "native_reflection_source": "verification/development/BASE-01/probe/api-interfaces.json",
   "settings_interfaces": {
     "ZOSAPI.Analysis.Settings.Materials.IAS_GrinProfile": {
       "properties": [
@@ -101,14 +101,14 @@
   },
   "ordinary_checks": {
     "focused_command": ".venv\\Scripts\\python.exe -m pytest tests/test_grin_profile.py -q",
-    "full_suite_report": ".local/evidence/development/MA-01/ordinary039.xml",
+    "full_suite_report": "verification/development/MA-01/ordinary039.xml",
     "full_suite_result": "1340 passed, 500 skipped"
   },
   "native": {
     "status": "blocked",
     "startup_evidence": [
-      ".local/evidence/development/BASE-04/connection040.json",
-      ".local/evidence/development/BASE-04/connection019/supervisor.json"
+      "verification/development/BASE-04/connection040.json",
+      "verification/development/BASE-04/connection019/supervisor.json"
     ],
     "observed": "ZOS-API initialization timed out after 180.578 seconds; no GRIN analysis was launched.",
     "pending": [
@@ -121,11 +121,11 @@
   "wheel_smoke": "pending",
   "wheel": {
     "artifact": "wheels/zemax_standalone_mcp-0.1.29-py3-none-any.whl",
-    "isolated_install": ".local/evidence/development/MA-01/wheel-install029",
+    "isolated_install": "verification/development/MA-01/wheel-install029",
     "status": "installed"
   },
   "stdio_smoke": {
-    "evidence": ".local/evidence/development/MA-01/stdio-smoke039.json",
+    "evidence": "verification/development/MA-01/stdio-smoke039.json",
     "status": "passed",
     "tool_count": 95,
     "analysis_kind_count": 79,

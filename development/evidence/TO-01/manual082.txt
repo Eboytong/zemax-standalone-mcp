@@ -1,0 +1,162 @@
+PAGE 1288
+7.3.1. Quick Sensitivity
+Get a quick estimate of the sensitivity of the optical system.
+Once all the tolerance operands have been defined, the Quick Sensitivity analysis may be performed to quickly
+estimate the sensitivity of an optical system. This tool is similar to the Tolerancing tool, but while the Tolerancing
+tool includes several controls to precisely calculate sensitivity, the Quick Sensitivity tool is instead streamlined for
+maximum speed.
+This tool provides a sensitivity-only analysis with Paraxial Focus compensation.
+Settings:
+Criterion: This control is used to specify what shall be used as the tolerance criterion. The options are:
+RMSspot size (radius, x, or y): The best choice for systems which are not close to the diffraction limit; for example,
+systems with more than one wave of aberration. This is the fastest option. OpticStudio always uses a centroid
+reference for tolerancing.
+RMS wavefront: The best choice for systems which are close to the diffraction limit; for example, systems with less
+than one wave of aberration. This is nearly as fast as RMS spot radius. OpticStudio always uses a centroid reference
+for tolerancing.
+Boresight error: Boresight error is defined as the radial chief ray coordinate traced for the on axis field divided by
+the effective focal length. This definition yields a measure ofthe angular deviation ofthe image.OpticStudio models
+boresight error by using just one BSER operand (see the Optimization chapter for details on BSER). Boresight error
+is always computedattheprimarywavelengthinradians.Boresight error shouldonlybeusedwithradially symmetric
+systems. Note boresight error gives no indication of image quality; it is a measure of the deviation of the axis ray.
+RMS Angularradial, x, or y aberrations. This tolerance criterion is best used for afocal systems (see "Afocal Image
+Space"). The angular aberrations are based upon the direction cosines of the output rays.
+Sampling: Sampling is used to set how many rays are traced when computing the criterion. Higher sampling traces
+more rays, and gives more accurate results. However, the execution time increases. If the selected criterion is RMS
+spot or RMS wavefront, then the sampling value is an integer that refers to the number of rays traced along a radial
+arm ofthe pupil in theGaussian quadrature technique (see "Selecting the pupil integration method" for a description
+of this technique). The number of arms is always twice the number of rays along each arm. Usually, a sampling of 3
+or 4 is sufficient for quality optical systems. Systems with high amounts of aberration require higher sampling than
+systems with low aberration. The most reliable method for determining the best sampling setting is to run the
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1289
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Tolerance Tab
+PAGE 1289
+analysis at a sampling of 3, then again for a sampling of 4. If the results change moderately, then use the higher
+setting. If they change substantially, check the next higher sampling setting. If the results change little, go back to
+the lower sampling. Setting the sampling higher than required increases computation time without increasing
+accuracy of the results.
+Configuration: For multi-configuration lenses, this setting indicates which configuration should be used. Only the
+selected configuration will be considered, and the configuration number will be printed on the final report. If "All"
+is selected, then all configurations will be considered at once.
+Fields: OpticStudio can use three different field settings:
+Y-Symmetric:OpticStudio computes the maximum field coordinate,then defines new field points at +1.0, +0.7, 0.0,
+-0.7, and -1.0 times the maximum field coordinate, in the Y direction only. All X field values are set to zero. This is
+the default for rotationally symmetric lenses.
+XY-Symmetric: Similar to Y-Symmetric, except there are 9 field points used. The 5 Y-Symmetric points are used,
+and -1.0, -0.7, +0.7, and +1.0 are added in the X axis direction only.
+UserDefined:Usewhateverfielddefinitions existinthe currentlens file. This optionis requiredwhenusing vignetting
+factors, tolerancing multiple configuration lenses, or using tolerance scripts. It is also highly recommended when
+tolerancing non rotationally symmetric lenses or lenses with complex field weighting that user defined fields be
+used.
+If user defined fields are used, no adjustment of the weights is performed. For the Y-Symmetric case, the center
+point has a weight of 2.0, all others have a weight of 1.0. For the XY-Symmetric case, the center point has a weight
+of 4.0, all others unity.
+File: On this field you can specify the name ofthe ZTD file to be saved in your project's directory. This ZTD file stores
+all of the data created during a Tolerance run and can be read by the Tolerance Analyses.
+Other buttons
+There are also 5 buttons on the bottom of the dialog box:
+Save: Save the currently selected options as aQS file within the Configs folder. The title oftheQS file will be selected
+by the user.
+Load: Restores Quick Sensitivity options from a previously saved file.
+Reset: Restore the settings to the default values.
+OK: Performs the Quick Sensitivity analysis using the current options.
+Cancel: Exits the dialog box without performing the Quick Sensitivity analysis, restoring the previous settings.
+Once all of the options have been selected, press OK to begin the Quick Sensitivity analysis.
+7.3.2. Quick Yield
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1290
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Tolerance Tab
+PAGE 1290
+Computes the predicted Monte Carlo yield of the system using a faster, approximate calculation.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1291
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Tolerance Tab
+PAGE 1291
+Wavelength The wavelength number used in the calculation.
+Field Generally speaking,the field definitions used for optimization and analysis are inadequate fortolerancing. for
+example, a rotationally symmetric lens may use field definitions of 0, 7, and 10 degrees. For tolerancing purposes,
+the lack of symmetry in the field definitions may cause inaccurate results when analyzing tilt or decentertolerances.
+When constructing a merit function to use for tolerancing OpticStudio can use three different field settings:
+Y-Symmetric: OpticStudio computes the maximum field coordinate, then defines new field points at +1.0, +0.7, 0.0,
+-0.7, and -1.0 times the maximum field coordinate, in the Y direction only. All X field values are set to zero. This is
+the default for rotationally symmetric lenses.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1292
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Tolerance Tab
+PAGE 1292
+XY-Symmetric: Similar to Y-Symmetric, except there are 9 field points used. The 5 Y-Symmetric points are used, and
+-1.0, -0.7, +0.7, and +1.0 are added in the X axis direction only.
+UserDefined:Use whateverfield definitions existin the currentlens file. This option is required when using vignetting
+factors, tolerancing multiple configuration lenses, or using tolerance scripts. It is also highly recommended when
+tolerancing non rotationally symmetric lenses or lenses with complex field weighting that user defined fields be
+used.
+If user defined fields are used, no adjustment of the weights is performed. For the Y-Symmetric case, the center
+point has a weight of 2.0, all others have a weight of 1.0. For the XY-Symmetric case, the center point has a weight
+of 4.0, all others unity.
+Precision The precision level used in the approximation. The options are Standard, High, Very High. The higher the
+precision, the slower the calculation.
+PupilSampling The sampling value for the number of rays traced along a radial arm of the pupil for Gaussian
+quadrature.
+# Monte Carlo Runs The number of simulated Monte Carlo runs.
+Statistics Choose either a Gaussian "normal" distribution, "uniform", or "parabolic" distribution.
+Compensation The number of compensation cycles being run. Standard is 2, High is 5, Very High is 10. This analysis
+uses the equivalent of "Optimize All(DLS)" compensation at alltimes. In orderto compare results to the Monte Carlo
+Yield, please make sure the Tolerancing tool is set up accordingly.
+Comp This control determines how the compensators are evaluated. "Optimize All" will use the optimization
+capability of OpticStudio to determine the optimum values of all defined compensators. Although optimization is
+accurate, it is slow to execute. There are two different optimization algorithms available, DLS and OD. If "Optimize
+All (DLS)" is selected, OpticStudio will execute one cycle of the Orthogonal Decent algorithm then execute the
+Damped Least Squares algorithm. If "Optimize All (OD)" is selected, Then the Orthogonal Descent algorithm only is
+used. For more information, see "Performing an optimization" . If "Paraxial Focus" is selected, only the change in
+paraxial back focus erroris considered as a compensator; all other compensa-tors are ignored.Using Paraxial Focus
+is very useful for rough tolerancing, and is significantly faster than using "Optimize All". If "None" is selected, no
+compensation will be performed, and any defined compensators will be ignored.
+Discussion
+This analysis uses sensitivity results to fit the wavefront error. The fit is extrapolated using a modified Rimmer's
+approach and based on this fit the Monte Carlo outcome can be reconstructed.
+The exact methodology in reconstructing the Monte Carlo outcome is confidential and proprietary to ANSYS, Inc.
+Quick Yield has current limitations when the compensation range is not sufficient to mitigate the Monte Carlo
+perturbations without reaching the compensator min or max values. In this case, the calculations will produce
+erroneous results. This can be avoided by increasing the compensator bounds.
+Quick Yieldis alsolimitedincaseswhere theperturbationeffects ahighlynon-linear. For example,whenaperturbation
+causes significant beam clipping.
+7.4. Tolerance Data Visualization Group
+This group contains analyses to view tolerance data.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1293
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Tolerance Tab
+PAGE 1293
+7.4.1. Tolerance Data Viewer
+The Tolerance Data Viewer reads in a previously saved ZTD file and displays the data in a spreadsheet format. If a
+saved ZTD file is not selected, the Tolerance Data Viewer will default to display the most recent tolerance run.
+Tolerance Data File The name of the ZTD file to use. OpticStudio will look in the folder where the current lens is
+saved and list all files with the ZTD extension found there.
+Statistics Clicking the Statistics button will return basic statistical data for every column in the Tolerance Data
+Editor.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1294
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Tolerance Tab
+PAGE 1294
+Discussion
+The data that is stored in the ZTD file includes all tolerance operands, compensators, criteria, and reported values
+during a tolerance run. This includes any reported numbers when using a tolerance script.
+7.4.2. Histogram
+The analysis displays a histogram of any data saved during a Monte Carlo tolerance run. This includes all tolerance
+operands, compensators, and reported operands from a tolerance script.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1295
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Tolerance Tab
+PAGE 1295
+Tolerance Data File The name of the ZTD file to use. OpticStudio will look in the folder where the current lens is
+saved and list all files with the ZTD extension found there. If no file is selected,the histogram will defaultto the most
+recent tolerance run.
+Operand The tolerance operand, compensator, or reported value to display against the criterion.
+Bin Count This setting determines how many bins are used to span the range from minimum to maximum criterion.
+Min Value The lowest criterion value. Results outside of this value will be summed up into one bar, representing all
+results less than the Min Value.
+MaxValue The highest criterion value. Results outside of this value will be summed up into one bar, representing
+all results greater than the Max Value.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1296
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Tolerance Tab

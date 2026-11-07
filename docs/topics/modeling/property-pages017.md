@@ -23,12 +23,12 @@
 ## 原生限制
 
 - User：CreateScatteringTypeSettings抛出UILDEScatterData序列化异常。返回UNSUPPORTED_SETTING，details保留capability、stage及native_error；其他异常保持原始错误分类。
-- BSDF：本机GetAvailableFileNames返回ABGF列表；请求BrownVinyl.bsdf，分离设置及应用后均回读为ED01.ABGF。检测到列表混用时返回UNSUPPORTED_SETTING并保留native_filenames。独立记录见verification/property-pages017-bsdf-native.json。
+- BSDF：本机GetAvailableFileNames返回ABGF列表；请求BrownVinyl.bsdf，分离设置及应用后均回读为ED01.ABGF。检测到列表混用时返回UNSUPPORTED_SETTING并保留native_filenames。独立记录见development/evidence/property-pages017-bsdf-native.json。
 - ISScatterCatalog：本机有目录索引，但搜索未找到实际ISX数据文件，原生列表只有空选项。待提供有效ISX及匹配目录记录后验收。
 - FloatingAperture至None：本机ChangeApertureTypeSettings可返回成功而类型仍为FloatingAperture，适配层返回SETTING_REJECTED，外层为PARTIAL_UPDATE，保留检查点。
 
 FRU__delta_init诊断继续记录。散射验收包括设置、资源采用与几何追迹冒烟；散射角分布的统计物理验收另列专题。
 
-入口：tests/test_property_pages_adoption.py、tests/test_project_resource_state.py、tests/test_property_pages_numeric_live.py。测试命令、实际证据与发行结果见verification/property-pages017-summary.json。
+入口：tests/unit/test_property_pages_adoption.py、tests/unit/test_project_resource_state.py、tests/native/test_property_pages_numeric_live.py。测试命令、实际证据与发行结果见development/evidence/property-pages017-summary.json。
 
 ABGF格式和资源位置参考[2024 R2官方散射模型说明](https://ansyshelp.ansys.com/public/Views/Secured/Zemax/v242/en/OpticStudio_User_Guide/OpticStudio_Help/topics/Available_Scatter_Models.html)。

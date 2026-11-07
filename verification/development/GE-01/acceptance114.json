@@ -3,19 +3,19 @@
   "completed": [
     "GE-01.ContactRelations"
   ],
-  "ordinary": ".local/evidence/development/GE-01/ordinary111.xml",
+  "ordinary": "verification/development/GE-01/ordinary111.xml",
   "ordinary_passed": 51,
-  "native": ".local/evidence/development/GE-01/native112-relations.xml",
+  "native": "verification/development/GE-01/native112-relations.xml",
   "native_passed": 2,
   "runs": [
     {
-      "run": ".local/runs/geometry109_cemented_8012b403d7",
+      "run": "outputs/runs/geometry109_cemented_8012b403d7",
       "checks": 3,
       "max_error": 1.1712586456269491e-10,
       "disconnect_confirmed": true
     },
     {
-      "run": ".local/runs/geometry110_nested_49736aa151",
+      "run": "outputs/runs/geometry110_nested_49736aa151",
       "checks": 15,
       "max_error": 1.4210854715202004e-14,
       "disconnect_confirmed": true

@@ -7,9 +7,9 @@
   "scope": "Official GBM CFG settings adoption and bitmap numeric/file result outlets",
   "command": ".venv/Scripts/python.exe -X utf8 tests/support/geometric_bitmap_cfg_probe.py",
   "evidence": [
-    ".local/evidence/development/BASE-01/manual349-modifysettings.txt",
-    ".local/evidence/development/IM-01/cfg350-gbm/probe.json",
-    ".local/evidence/development/IM-01/cfg351-gbm-output/probe.json"
+    "verification/development/BASE-01/manual349-modifysettings.txt",
+    "verification/development/IM-01/cfg350-gbm/probe.json",
+    "verification/development/IM-01/cfg351-gbm-output/probe.json"
   ],
   "result": "Ten documented GBM keys return true from ModifySettings before/after Apply, SaveTo/LoadFrom also true. GeometricImageAnalysis positive control retains default field width28.2843 degrees for requested1 degree; adoption unconfirmed. GeometricBitmapImageAnalysis IsValid=true, numeric arrays empty, text empty, no requested BMP file.",
   "lifecycle": "Both analyses and sessions closed; owned input IMA removed.",

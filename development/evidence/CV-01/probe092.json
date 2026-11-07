@@ -1,0 +1,104 @@
+{
+  "date": "2026-11-06",
+  "items": [
+    "CV-01.FftSurfaceMtf",
+    "CV-01.HuygensSurfaceMtf"
+  ],
+  "state": "implemented",
+  "native": "verification/development/CV-01/native092-modes.xml",
+  "ordinary": "verification/development/GE-01/ordinary093-final.xml",
+  "runs": [
+    {
+      "run": "outputs/runs/surface_mtf092_fft_128_256_10_4200778280",
+      "conditions": {
+        "family": "fft",
+        "pupil": 128,
+        "image": 256,
+        "image_delta_um": 10
+      },
+      "circular_max_error": 0.010475676040899412,
+      "complex_checks": 16,
+      "complex_failures": 0,
+      "failed_checks": 6,
+      "disconnect_confirmed": true
+    },
+    {
+      "run": "outputs/runs/surface_mtf092_fft_256_256_10_7a4cfb7b69",
+      "conditions": {
+        "family": "fft",
+        "pupil": 256,
+        "image": 256,
+        "image_delta_um": 10
+      },
+      "circular_max_error": 0.005343448159498415,
+      "complex_checks": 16,
+      "complex_failures": 0,
+      "failed_checks": 1,
+      "disconnect_confirmed": true
+    },
+    {
+      "run": "outputs/runs/surface_mtf092_fft_512_256_10_9bb5edee7b",
+      "conditions": {
+        "family": "fft",
+        "pupil": 512,
+        "image": 256,
+        "image_delta_um": 10
+      },
+      "circular_max_error": 0.0025210702655721895,
+      "complex_checks": 16,
+      "complex_failures": 0,
+      "failed_checks": 0,
+      "disconnect_confirmed": true
+    },
+    {
+      "run": "outputs/runs/surface_mtf092_huygens_256_256_10_f2a71523c2",
+      "conditions": {
+        "family": "huygens",
+        "pupil": 256,
+        "image": 256,
+        "image_delta_um": 10
+      },
+      "circular_max_error": 0.006824299149669866,
+      "complex_checks": 16,
+      "complex_failures": 0,
+      "failed_checks": 2,
+      "disconnect_confirmed": true
+    },
+    {
+      "run": "outputs/runs/surface_mtf092_huygens_256_512_5_02a4d62813",
+      "conditions": {
+        "family": "huygens",
+        "pupil": 256,
+        "image": 512,
+        "image_delta_um": 5
+      },
+      "circular_max_error": 0.00645294529508289,
+      "complex_checks": 16,
+      "complex_failures": 0,
+      "failed_checks": 1,
+      "disconnect_confirmed": true
+    },
+    {
+      "run": "outputs/runs/surface_mtf092_huygens_512_512_5_f8aa896249",
+      "conditions": {
+        "family": "huygens",
+        "pupil": 512,
+        "image": 512,
+        "image_delta_um": 5
+      },
+      "circular_max_error": 0.00652739459719176,
+      "complex_checks": 16,
+      "complex_failures": 0,
+      "failed_checks": 1,
+      "disconnect_confirmed": true
+    }
+  ],
+  "tolerances": {
+    "circular_absolute": 0.005,
+    "complex_absolute": 1e-08,
+    "complex_relative": 1e-07
+  },
+  "conclusion": "FFT circular error converges with pupil sampling; retain native frequency steps pending independent PSF/OTF. Huygens circular discrepancy remains separate from accepted Cooke matched slice comparison.",
+  "remaining": "FFT off-axis slice and independent PSF/OTF; Huygens image window and sampling; pagination/plot/reload/cancel",
+  "batch": "B0030/10; diagnostics do not count as completion"
+}

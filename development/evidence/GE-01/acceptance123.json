@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-06",
+  "completed": [
+    "GE-01.MediumRegions"
+  ],
+  "ordinary": "verification/development/GE-01/ordinary122.xml",
+  "ordinary_passed": 56,
+  "native": "verification/development/GE-01/native121-media-complete.xml",
+  "native_passed": 3,
+  "runs": [
+    {
+      "run": "outputs/runs/geometry109_cemented_633ef21408",
+      "checks": 7,
+      "max_error": 1.1712586456269491e-10,
+      "disconnect_confirmed": true
+    },
+    {
+      "run": "outputs/runs/geometry110_nested_cf1ee90813",
+      "checks": 19,
+      "max_error": 1.4210854715202004e-14,
+      "disconnect_confirmed": true
+    },
+    {
+      "run": "outputs/runs/geometry120_hierarchy_fc5b2fc0e8",
+      "checks": 8,
+      "max_error": 1.1368683772161603e-13,
+      "disconnect_confirmed": true
+    }
+  ],
+  "coverage": [
+    "Native material/InsideOf region identities",
+    "Exact trimmed-face intersections identify common cemented/contact interface, face ids and both materials",
+    "Shared area4pi mm2 and opposed normals",
+    "Ancestor chain with cycle checks and explicit containment direction",
+    "Three nested levels plus disjoint sibling: effective volumes783/208/8/1mm3",
+    "Missing parents, partial containment and unverified relationships retain explicit states",
+    "Native save/reload, model and solve preservation; normal disconnect"
+  ],
+  "condition_limits": [
+    "Point/edge or tolerance-only contact without a shared positive-area face retains partial interface mapping",
+    "Unknown representation precision retains unverified region state; geometry source adapters tracked separately"
+  ],
+  "tolerances": "Lengths and volumes1e-6+1e-7 relative; normals1e-8+1e-7 relative; original thresholds unchanged",
+  "batch": "B0033/10; no full regression or wheel"
+}

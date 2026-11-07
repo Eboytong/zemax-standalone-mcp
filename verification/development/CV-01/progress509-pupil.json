@@ -8,8 +8,8 @@
   "input_source": "Official Cooke 40 degree field.zos; unchanged current configuration",
   "tolerance": "0.005 absolute; unchanged",
   "scope": "Independent normalized complex pupil autocorrelation; axis and oblique frequencies",
-  "command": ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_pupil_reference_live.py -q -s --run-zemax --junitxml=.local/evidence/development/CV-01/native509-pupil.xml",
-  "run": ".local/runs/surface_mtf509_pupil_3517781fe1",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_pupil_reference_live.py -q -s --run-zemax --junitxml=verification/development/CV-01/native509-pupil.xml",
+  "run": "outputs/runs/surface_mtf509_pupil_3517781fe1",
   "request": {
     "kind": "fft_surface_mtf",
     "fields": [

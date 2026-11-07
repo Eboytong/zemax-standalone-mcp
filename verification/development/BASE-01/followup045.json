@@ -15,10 +15,10 @@
     "with_additional_methods": 169
   },
   "artifacts": [
-    "development/generated/remaining.md",
-    ".local/evidence/development/BASE-01/remaining-audit045.json",
-    ".local/evidence/development/BASE-01/inherited-contracts045.json",
-    ".local/evidence/development/EX-01/contract-followup045.json"
+    "docs/development-remaining.md",
+    "verification/development/BASE-01/remaining-audit045.json",
+    "verification/development/BASE-01/inherited-contracts045.json",
+    "verification/development/EX-01/contract-followup045.json"
   ],
   "remaining": {
     "packages": 28,

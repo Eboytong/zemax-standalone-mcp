@@ -1,7 +1,7 @@
 {
   "version": "0.1.46",
   "date": "2026-11-05",
-  "ordinary_report": ".local/evidence/development/ED-02/ordinary047.xml",
+  "ordinary_report": "verification/development/ED-02/ordinary047.xml",
   "ordinary_passed": 100,
   "matrix_states": {
     "persistence_passed": 37,

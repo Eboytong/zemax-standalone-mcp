@@ -1,0 +1,72 @@
+{
+  "date": "2026-11-06",
+  "item": "GE-01.Gaps",
+  "state": "implemented",
+  "run": "outputs/runs/geometry104_selected_8db9534f37",
+  "ordinary": "verification/development/GE-01/ordinary106.xml",
+  "ordinary_passed": 48,
+  "native": "verification/development/GE-01/native107-configurations.xml",
+  "native_passed": 1,
+  "checks": [
+    {
+      "label": "selected native axial gap",
+      "actual": 5.899748742132427,
+      "expected": 5.899748742132399,
+      "atol": 1e-06,
+      "rtol": 1e-07,
+      "passed": true
+    },
+    {
+      "label": "selected native axial gap",
+      "actual": 5.943670675179159,
+      "expected": 5.943670675179131,
+      "atol": 1e-06,
+      "rtol": 1e-07,
+      "passed": true
+    },
+    {
+      "label": "configured selected gap",
+      "actual": 5.943670675179159,
+      "expected": 5.943670675179131,
+      "atol": 1e-06,
+      "rtol": 1e-07,
+      "passed": true
+    },
+    {
+      "label": "configured selected gap",
+      "actual": 7.943670675179159,
+      "expected": 7.943670675179131,
+      "atol": 1e-06,
+      "rtol": 1e-07,
+      "passed": true
+    },
+    {
+      "label": "configured selected gap",
+      "actual": 5.943670675179159,
+      "expected": 5.943670675179131,
+      "atol": 1e-06,
+      "rtol": 1e-07,
+      "passed": true
+    },
+    {
+      "label": "configured selected gap",
+      "actual": 7.943670675179159,
+      "expected": 7.943670675179131,
+      "atol": 1e-06,
+      "rtol": 1e-07,
+      "passed": true
+    }
+  ],
+  "disconnect_confirmed": true,
+  "implemented": [
+    "Nonadjacent coaxial radial boundary selection",
+    "Physical mm annular region; radius bounds and unsupported shapes explicit",
+    "Two-sided floating-point rounding interval allowance"
+  ],
+  "reference": "Plane/sphere radius-20mm, accumulated axial separation6/8mm; two MCE configurations, annulus1..1.5mm, original config and MCE cells restored, save/reload with explicit policy version",
+  "history": [
+    "native104: missing upper rounding allowance, algebraic reference1e-15mm outside interval",
+    "native106: test omitted required request={} in get_configurations; fixed harness"
+  ],
+  "remaining": "Transformed/3D selected boundaries and non-annular regions; retain implemented until scope completed"
+}

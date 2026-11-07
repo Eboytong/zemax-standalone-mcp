@@ -1,0 +1,30 @@
+{
+  "item_id": "ED-04.FindBestAsphere",
+  "state": "done",
+  "scope": "Current-configuration native tool with independent Conic candidate comparison on Cooke surfaces1/2; local DLS optimum, settings/lifecycle/typed-boundary coverage from existing cases.",
+  "native_evidence": "outputs/runs/best_asphere062_1d547abc51/calls.json",
+  "checks": "outputs/runs/best_asphere062_1d547abc51/checks.json",
+  "reference": {
+    "native_surface": 2,
+    "native_merit": 0.0016077722515191782,
+    "candidates": {
+      "1": 0.0030534502405461456,
+      "2": 0.0016077722515191782
+    },
+    "initial": 0.00809324547994345
+  },
+  "tolerance": {
+    "atol": 1e-07,
+    "rtol": 1e-05
+  },
+  "resources": {
+    "native_tool_closed": true,
+    "local_optimizations_closed": 2,
+    "disconnect": true
+  },
+  "ordinary_evidence": "verification/development/ED-04/ordinary062-focused.xml",
+  "native_test": "verification/development/ED-04/native062-asphere.xml",
+  "definition_source": "https://ansyshelp.ansys.com/public/views/secured/zemax/v26103/en/opticstudio_user_guide/OpticStudio_Help/topics/Find_Best_Asphere.html",
+  "batch": "B001",
+  "integration": "pending at 1/10; no full suite or wheel this item"
+}

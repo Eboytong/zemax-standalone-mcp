@@ -5,14 +5,14 @@
   "native": "OpticStudio v242 PremiumEdition",
   "ordinary": {
     "passed": 12,
-    "evidence": ".local/evidence/development/NS-04/ordinary067-comparator-final.xml"
+    "evidence": "verification/development/NS-04/ordinary067-comparator-final.xml"
   },
   "native_checks": {
     "passed": 2,
-    "evidence": ".local/evidence/development/NS-04/native067-comparator-final2.xml",
+    "evidence": "verification/development/NS-04/native067-comparator-final2.xml",
     "runs": [
-      ".local/runs/comparator067_71f3fe1c48",
-      ".local/runs/comparator067_config_5036f668c4"
+      "outputs/runs/comparator067_71f3fe1c48",
+      "outputs/runs/comparator067_config_5036f668c4"
     ]
   },
   "references": [
@@ -35,6 +35,6 @@
   "full_batch_checks": "deferred until 10 unique completed items",
   "additional_related_checks": {
     "passed": 44,
-    "evidence": ".local/evidence/development/NS-04/ordinary068-related-final.xml"
+    "evidence": "verification/development/NS-04/ordinary068-related-final.xml"
   }
 }

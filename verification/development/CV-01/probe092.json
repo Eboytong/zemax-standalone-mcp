@@ -5,11 +5,11 @@
     "CV-01.HuygensSurfaceMtf"
   ],
   "state": "implemented",
-  "native": ".local/evidence/development/CV-01/native092-modes.xml",
-  "ordinary": ".local/evidence/development/GE-01/ordinary093-final.xml",
+  "native": "verification/development/CV-01/native092-modes.xml",
+  "ordinary": "verification/development/GE-01/ordinary093-final.xml",
   "runs": [
     {
-      "run": ".local/runs/surface_mtf092_fft_128_256_10_4200778280",
+      "run": "outputs/runs/surface_mtf092_fft_128_256_10_4200778280",
       "conditions": {
         "family": "fft",
         "pupil": 128,
@@ -23,7 +23,7 @@
       "disconnect_confirmed": true
     },
     {
-      "run": ".local/runs/surface_mtf092_fft_256_256_10_7a4cfb7b69",
+      "run": "outputs/runs/surface_mtf092_fft_256_256_10_7a4cfb7b69",
       "conditions": {
         "family": "fft",
         "pupil": 256,
@@ -37,7 +37,7 @@
       "disconnect_confirmed": true
     },
     {
-      "run": ".local/runs/surface_mtf092_fft_512_256_10_9bb5edee7b",
+      "run": "outputs/runs/surface_mtf092_fft_512_256_10_9bb5edee7b",
       "conditions": {
         "family": "fft",
         "pupil": 512,
@@ -51,7 +51,7 @@
       "disconnect_confirmed": true
     },
     {
-      "run": ".local/runs/surface_mtf092_huygens_256_256_10_f2a71523c2",
+      "run": "outputs/runs/surface_mtf092_huygens_256_256_10_f2a71523c2",
       "conditions": {
         "family": "huygens",
         "pupil": 256,
@@ -65,7 +65,7 @@
       "disconnect_confirmed": true
     },
     {
-      "run": ".local/runs/surface_mtf092_huygens_256_512_5_02a4d62813",
+      "run": "outputs/runs/surface_mtf092_huygens_256_512_5_02a4d62813",
       "conditions": {
         "family": "huygens",
         "pupil": 256,
@@ -79,7 +79,7 @@
       "disconnect_confirmed": true
     },
     {
-      "run": ".local/runs/surface_mtf092_huygens_512_512_5_f8aa896249",
+      "run": "outputs/runs/surface_mtf092_huygens_512_512_5_f8aa896249",
       "conditions": {
         "family": "huygens",
         "pupil": 512,

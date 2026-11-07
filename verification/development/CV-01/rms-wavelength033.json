@@ -14,7 +14,7 @@
     }
   },
   "probe": {
-    "source": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+    "source": "verification/development/BASE-01/probe/api-interfaces.json",
     "interface": {
       "properties": [
         {
@@ -221,7 +221,7 @@
     "failures": 0,
     "errors": 0,
     "deselected": 501,
-    "report": ".local/evidence/development/CV-01/ordinary043.xml"
+    "report": "verification/development/CV-01/ordinary043.xml"
   },
   "native": {
     "status": "not_run",
@@ -235,7 +235,7 @@
   "release": {
     "status": "passed",
     "wheel": "wheels/zemax_standalone_mcp-0.1.33-py3-none-any.whl",
-    "independent_install": ".local/evidence/development/CV-01/wheel-install033",
-    "stdio_smoke": ".local/evidence/development/CV-01/stdio-smoke043.json"
+    "independent_install": "verification/development/CV-01/wheel-install033",
+    "stdio_smoke": "verification/development/CV-01/stdio-smoke043.json"
   }
 }

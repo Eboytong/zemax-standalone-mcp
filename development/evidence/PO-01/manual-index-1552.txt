@@ -1,0 +1,43 @@
+Edge_sampling refers to the resolution used in refining the LightningTrace mesh near the edges of objects, with
+valid values being between 0 (corresponding to a mesh resolution of "Low (1X)") and 4 (corresponding to a mesh
+resolution of "256X"). For more details on LightningTrace, see "The LightningTrace Control".
+NSLT always calls UPDATE before executing a LightningTrace to make certain all objects are correctly loaded and
+updated.
+Example:
+NSLT 1, 0, 3, 2
+10.2.14.95. NSTR
+Initiates a Non-sequential trace with ability to save data to a ZRD file.
+Syntax:
+NSTR surf, source, split, scatter, usepolar, ignore_errors, random_seed, save,
+savefilename, filter, zrd_format
+Discussion:
+Surf is an integer value that indicates the number of the Non-sequential surface. If the program mode is set to
+Non-Sequential, use 1. Source refers to the object number of the desired source. If source is zero, all sources will be
+traced. If Split is non-zero, then splitting is on, otherwise, ray splitting is off. If Scatter is non-zero, then scattering
+is on, otherwise scattering is off. If Usepolar is non-zero then polarization will be used, otherwise polarization is off.
+If splitting is on polarization is automatically selected. If ignore_errors is non-zero, then errors will be ignored,
+otherwise ray errors will terminate the non-sequential trace and macro execution and an error will be reported.
+If random_seed is zero, then the random number generator will be seeded with a random value, and every call to
+NSTR will produce different random rays. If random_seed is any integer other than zero, then the random number
+generator will be seeded with the specified value, and every call to NSTR using the same seed will produce identical
+rays. When using NSTR for optimization, it is recommended that a non-zero value be used for random_seed.
+If save is omitted or is zero, the arguments savefilename, filter, and zrd_format need not be supplied. If save is not
+zero, the rays will be saved to a file. The saved data file will have the name specified by the savefilename. The file
+naming convention and destination folder are the same as described in "Saving ray data to a file". The extension of
+savefilename should be provided, but no path should be specified. If save is not zero, then the optional filter name
+is either a string variable with the filter, or the literal filter in double quotes. If no filter is being used, enter an empty
+pair of double quotes like this: "". Forinformation on filter strings see "The filter string". For ZRDfiles,the zrd_format
+can be 0, 1, or 2 for uncompressed full data, compressed basic data, or compressed full data,respectively. For more
+information on ZRD formats see " Ray database (ZRD) files ".
+NSTR always calls UPDATE before tracing rays to make certain all objects are correctly loaded and updated.
+Related Functions:
+NSTR2
+NSDD
+Example:
+NSTR 1, 0, 0, 0, 0, 1, 0, 1, "saverays.ZRD", "h2"
+10.2.14.96. NSTR2
+Initiates a Non-sequential trace with ability to save data to a ZRD and/or PAF file.
+Syntax:
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1553
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Programming Tab

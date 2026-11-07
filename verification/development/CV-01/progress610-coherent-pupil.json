@@ -14,19 +14,19 @@
     "geometry": "Formal LDE.GetPupil; no model modification"
   },
   "actual_settings": {
-    "phase": ".local/runs/surface_mtf603_phase_identity_c1f2aa8319/phase-identity.json",
-    "coherent": ".local/runs/surface_mtf605_coherent_pupil_7586b33dfc/coherent-pupil.json",
-    "geometry": ".local/evidence/development/CV-01/probe608-pupil-geometry/geometry.json"
+    "phase": "outputs/runs/surface_mtf603_phase_identity_c1f2aa8319/phase-identity.json",
+    "coherent": "outputs/runs/surface_mtf605_coherent_pupil_7586b33dfc/coherent-pupil.json",
+    "geometry": "verification/development/CV-01/probe608-pupil-geometry/geometry.json"
   },
   "commands": [
     ".venv/Scripts/python.exe -X utf8 tests/support/surface_mtf_projection601.py",
     ".venv/Scripts/python.exe -X utf8 tests/support/surface_mtf_jacobian602.py",
-    ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_phase_identity_live.py --run-zemax -x -q --junitxml=.local/evidence/development/CV-01/native604-phase-identity.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_coherent_pupil_live.py --run-zemax -x -q --junitxml=.local/evidence/development/CV-01/native605-coherent-pupil.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_phase_identity_live.py --run-zemax -x -q --junitxml=verification/development/CV-01/native604-phase-identity.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_coherent_pupil_live.py --run-zemax -x -q --junitxml=verification/development/CV-01/native605-coherent-pupil.xml",
     ".venv/Scripts/python.exe -X utf8 tests/support/surface_mtf_coherent606.py",
-    ".venv/Scripts/python.exe -X utf8 tests/support/surface_mtf_geometry607.py .local/evidence/development/CV-01/probe608-pupil-geometry",
+    ".venv/Scripts/python.exe -X utf8 tests/support/surface_mtf_geometry607.py verification/development/CV-01/probe608-pupil-geometry",
     ".venv/Scripts/python.exe -X utf8 tests/support/surface_mtf_transport609.py",
-    ".venv/Scripts/python.exe -m pytest tests/test_diffraction_reference.py tests/test_surface_mtf.py tests/test_fft_surface_mtf.py tests/test_huygens_surface_mtf.py -q --junitxml=.local/evidence/development/CV-01/ordinary610-reference.xml"
+    ".venv/Scripts/python.exe -m pytest tests/test_diffraction_reference.py tests/test_surface_mtf.py tests/test_fft_surface_mtf.py tests/test_huygens_surface_mtf.py -q --junitxml=verification/development/CV-01/ordinary610-reference.xml"
   ],
   "reference": "Independent complex pair-sum checked autocorrelation; native phase vs independently traced OPD at identical known entrance/apparent coordinates; fixed chief-direction projection and physical transport, no MTF-fitted factors",
   "tolerance": {
@@ -147,11 +147,11 @@
   },
   "retained_failures": [
     {
-      "report": ".local/evidence/development/CV-01/native603-phase-identity.xml",
+      "report": "verification/development/CV-01/native603-phase-identity.xml",
       "reason": "Test imported a CLI-only helper with an unqualified sibling import; collection failed before any native session.604 imports existing test bilinear helper."
     },
     {
-      "report": ".local/evidence/development/CV-01/probe607-pupil-geometry/geometry.json",
+      "report": "verification/development/CV-01/probe607-pupil-geometry/geometry.json",
       "reason": "Probe incorrectly supplied Uniform to the distinct LDE.PupilApodizationType enum.Stored DLL enum namesNone/Gaussian/Tangential;608 usesNone.607 finally disconnected; original error retained."
     }
   ],

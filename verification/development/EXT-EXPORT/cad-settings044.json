@@ -220,7 +220,7 @@
     }
   },
   "manual": {
-    "path": ".local/evidence/development/EXT-EXPORT/manual042.txt",
+    "path": "verification/development/EXT-EXPORT/manual042.txt",
     "pages": [
       46,
       47
@@ -249,7 +249,7 @@
   ],
   "checks": {
     "targeted": "tests/test_cad_adoption.py: 45 passed",
-    "ordinary": ".local/evidence/development/RL-01/ordinary054.xml",
+    "ordinary": "verification/development/RL-01/ordinary054.xml",
     "native": "not executed; three new format-setting cases prepared in tests/test_cad_formats_live.py"
   },
   "native_conditions": {
@@ -268,6 +268,6 @@
   },
   "commands": [
     ".venv/Scripts/python.exe -B -m pytest -q tests/test_cad_adoption.py",
-    ".venv/Scripts/python.exe -B -m pytest -q -m \"not zemax\" --junitxml=.local/evidence/development/RL-01/ordinary054.xml"
+    ".venv/Scripts/python.exe -B -m pytest -q -m \"not zemax\" --junitxml=verification/development/RL-01/ordinary054.xml"
   ]
 }

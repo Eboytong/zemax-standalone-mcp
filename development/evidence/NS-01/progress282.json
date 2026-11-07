@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-06",
+  "item_id": "NS-01.Conversion",
+  "state": "implemented",
+  "source_version": "0.1.59",
+  "native_version": "24.2.0 build240529",
+  "license": "PremiumEdition",
+  "scope": "Controlled plane plate pure-conversion polarized rays, mapping, reload and checkpoint restore; mixed-group start defect and recovery",
+  "commands": [
+    ".venv/Scripts/python.exe -m pytest tests/test_conversion.py tests/test_development_status_report.py -q --junitxml=verification/development/NS-01/ordinary278.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_conversion_optical_reference_live.py --run-zemax -q --junitxml=verification/development/NS-01/native282.xml"
+  ],
+  "ordinary_passed": 23,
+  "native_passed": 1,
+  "native_expected_failure": 1,
+  "runs": [
+    {
+      "mode": "pure",
+      "path": "outputs/runs/conversion277_pure_f3457e1675",
+      "checks": 379,
+      "failed_checks": 0,
+      "max_ray_error": 2.815423927327032e-08,
+      "disconnect": true,
+      "close_receipt": {
+        "schema_version": 1,
+        "generation": null,
+        "session_id": null,
+        "started_at": "2026-11-06T11:47:59.100829+00:00",
+        "active_cancelled": false,
+        "forced": false,
+        "checkpoint": {
+          "attempted": false,
+          "path": null,
+          "ok": false,
+          "error": null
+        },
+        "was_connected": false,
+        "native": {
+          "attempted": true,
+          "closed": true,
+          "error": null
+        },
+        "closed_at": "2026-11-06T11:47:59.100878+00:00"
+      }
+    },
+    {
+      "mode": "group",
+      "path": "outputs/runs/conversion277_group_7ecb1706f1",
+      "checks": 187,
+      "failed_checks": 0,
+      "max_ray_error": 0.0,
+      "disconnect": true,
+      "close_receipt": {
+        "schema_version": 1,
+        "generation": null,
+        "session_id": null,
+        "started_at": "2026-11-06T11:48:18.740129+00:00",
+        "active_cancelled": false,
+        "forced": false,
+        "checkpoint": {
+          "attempted": false,
+          "path": null,
+          "ok": false,
+          "error": null
+        },
+        "was_connected": false,
+        "native": {
+          "attempted": true,
+          "closed": true,
+          "error": null
+        },
+        "closed_at": "2026-11-06T11:48:18.740165+00:00"
+      }
+    }
+  ],
+  "reference": {
+    "model": "air2mm / N-BK7 plane plate2mm / air2mm, sequential image globalZ6mm",
+    "method": "Sequential DirectPol versus deterministic NSC SourceRay Jx1/Jy0 plus ZRD detector segments; axial, decentered and two tilted rays",
+    "position_atol": 1e-07,
+    "position_rtol": 1e-07,
+    "direction_atol": 1e-07,
+    "direction_rtol": 0,
+    "power_atol": 1e-08,
+    "power_rtol": 1e-07
+  },
+  "findings": [
+    "Pure native conversion uses image-origin coordinates: plate front z=-4, source z=-6, detector z=0 in this model. Raw before/after object mapping retained.",
+    "Native single ray analysis yielded different random launch electric fields per call despite system polarization; deterministic SourceRay with explicit source Jones settings is required for these power comparisons. No public contract claiming single-ray launch Jones control added.",
+    "Inactive DetectorRectangle NumberOfSpectralData changed from0 to3 on reload; raw snapshots retained. Optical geometry/material/parameter solves/faces/volume, active source settings and postreload rays accepted.",
+    "Mixed group returns TASK_START_FAILED / An unknown error occurred with dummy boundaries, no stop conversion and ConvertToGlobalCoordinates=true. Failed task close, restored surfaces and retraced baseline accepted."
+  ],
+  "historical_failures": [
+    "native277-pure.xml: automatic semi-diameter solve protection; fixture now explicitly replaces solves",
+    "native278-pure.xml: original launch frame bypassed converted glass; original power failure retained",
+    "native279-pure.xml: random single-ray polarization differs for tilted ray",
+    "native279-group.xml: original native group error",
+    "native280-pure.xml: inactive detector default normalization on reload",
+    "native281.xml: harness reused ZRD output name; xfail inside async wrapped by exception group"
+  ],
+  "remaining": "Group conversion optical equivalence and native cancellation where available; stop aperture conversion remains separately unaccepted. Obtain a reliable formal conversion path or corrected engine, reproduce controlled baseline, then validate full parent scope.",
+  "batch": "B0041/10; parent not counted complete; no full regression or wheel"
+}

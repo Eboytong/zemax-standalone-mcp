@@ -1,0 +1,41 @@
+{
+  "item_id": "CV-01.RMSLambdaDiagram",
+  "date": "2026-11-05",
+  "state": "done",
+  "request": "rms_vs_wavelength; five metrics; ChiefRay reference;128x128 pupil;20 wavelength density; Cooke native wavelength endpoints",
+  "numeric": {
+    "spot": {
+      "comparisons": 6,
+      "max_absolute_error": 0.012632707015377775,
+      "atol": 0.05,
+      "rtol": 0.01
+    },
+    "wavefront": {
+      "comparisons": 2,
+      "max_absolute_error": 0.00015229217699838649,
+      "atol": 1e-05,
+      "rtol": 0.01
+    },
+    "single_wave": {
+      "comparisons": 10,
+      "max_absolute_error": 0.0,
+      "atol": 1e-06,
+      "rtol": 1e-06
+    }
+  },
+  "total_checks": 28,
+  "native_xml": "verification/development/CV-01/native079-rms-wavelength-final.xml",
+  "numeric_run": "outputs/runs/rmswave079_c85a2bc88b",
+  "lifecycle_run": "outputs/runs/rmswave079_cancel_434cfdb7ab",
+  "ordinary_xml": "verification/development/CV-01/ordinary079-delivery.xml",
+  "ordinary_passed": 139,
+  "settings": "final combined readback after writes; native enum alias compared by value; Field selector rechecked",
+  "additional": "all fields/GaussQuad5/polarization/diffraction auxiliary line/dashes;5 PNG; curve paging; save/reload; source preservation",
+  "cancellation": {
+    "started_running": true,
+    "state": "cancelled",
+    "closed": true
+  },
+  "scope": "independent on-axis rectangular-pupil spot and OPD endpoint reference; scalar RMS crosscheck for all five metrics; controlled Strehl [0,1] range",
+  "batch": "B0024/10; full gate deferred until ten items"
+}

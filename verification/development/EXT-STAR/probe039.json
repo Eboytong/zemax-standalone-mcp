@@ -176,12 +176,12 @@
     "errors": 0,
     "deselected": 518,
     "focused_passed": 69,
-    "report": ".local/evidence/development/EXT-STAR/ordinary049.xml"
+    "report": "verification/development/EXT-STAR/ordinary049.xml"
   },
   "release": {
     "status": "passed",
     "wheel": "wheels/zemax_standalone_mcp-0.1.39-py3-none-any.whl",
-    "install": ".local/evidence/development/EXT-STAR/wheel-install039",
-    "stdio": ".local/evidence/development/EXT-STAR/stdio-smoke049.json"
+    "install": "verification/development/EXT-STAR/wheel-install039",
+    "stdio": "verification/development/EXT-STAR/stdio-smoke049.json"
   }
 }

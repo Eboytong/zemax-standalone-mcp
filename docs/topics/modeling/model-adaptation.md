@@ -44,7 +44,7 @@ ExtendedAsphere 与 ExtendedOddAsphere 的系数使用归一化半径，分别�
 
 ## 顺序面型与求解范围
 
-六类面型的受控参考与扩展参数检查见专项验收（历史参考）。通过现有 `update_surfaces` 设置类型和实际活动参数，通过 `get_surfaces` 回读标题、数值、可写状态及求解；请求示例见[六类面型](../examples/six-surfaces.json)。
+六类面型的受控参考与扩展参数检查见专项验收（历史参考）。通过现有 `update_surfaces` 设置类型和实际活动参数，通过 `get_surfaces` 回读标题、数值、可写状态及求解；请求示例见[六类面型](../../../examples/requests/six-surfaces.json)。
 
 | 面型 | 参考与适用条件 |
 | --- | --- |

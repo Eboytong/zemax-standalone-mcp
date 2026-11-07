@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="57" time="0.598" timestamp="2026-11-06T00:13:30.883368+08:00" hostname="tongeb"><testcase classname="tests.test_geometric_image_coordinates" name="test_non_square_top_down_pixel_centers" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_geometric_bitmap_default_settings_preserve_interface_limit" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_requests_round_trip[image_simulation]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_requests_round_trip[geometric_image]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_requests_round_trip[geometric_bitmap_image]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_requests_round_trip[fft_line_edge_spread]" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_requests_round_trip[geometric_line_edge_spread]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_requests_round_trip[extended_source_encircled_energy]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_invalid_typed_requests[image_simulation-changes0]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_invalid_typed_requests[image_simulation-changes1]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_invalid_typed_requests[image_simulation-changes2]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_invalid_typed_requests[image_simulation-changes3]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_invalid_typed_requests[image_simulation-changes4]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_invalid_typed_requests[image_simulation-changes5]" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_invalid_typed_requests[geometric_image-changes6]" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_invalid_typed_requests[geometric_image-changes7]" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_invalid_typed_requests[geometric_image-changes8]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_invalid_typed_requests[geometric_image-changes9]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_invalid_typed_requests[fft_line_edge_spread-changes10]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_invalid_typed_requests[fft_line_edge_spread-changes11]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_invalid_typed_requests[geometric_line_edge_spread-changes12]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_invalid_typed_requests[extended_source_encircled_energy-changes13]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_configure_explicit_settings_and_selectors[image_simulation]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_configure_explicit_settings_and_selectors[geometric_image]" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_configure_explicit_settings_and_selectors[geometric_bitmap_image]" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_configure_explicit_settings_and_selectors[fft_line_edge_spread]" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_configure_explicit_settings_and_selectors[geometric_line_edge_spread]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_configure_explicit_settings_and_selectors[extended_source_encircled_energy]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_resource_case_matching_and_rejection[image_simulation]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_resource_case_matching_and_rejection[geometric_image]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_resource_case_matching_and_rejection[geometric_bitmap_image]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_wavelength_selection[RGB]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_wavelength_selection[1+2+3]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_wavelength_selection[1]" time="0.001"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_setting_rejected" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_nonsquare_grid_and_transpose" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_grid_shape_failure[g0]" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_grid_shape_failure[g1]" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_grid_shape_failure[g2]" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_rgb_grid_channels_and_nonfinite" time="0.009"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_scalar_and_rgb_series" time="0.003"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_scalar_series_without_native_labels" time="0.002"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_scatter_rows_invalid_and_rgb" time="0.002"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_text_error_does_not_drop_structured_results" time="0.002"><properties><property name="validation_layer" value="ordinary" /></properties><failure message="AttributeError: 'types.SimpleNamespace' object has no attribute 'context'">tmp_path = WindowsPath('C:/Users/tonge/AppData/Local/Temp/pytest-of-tonge/pytest-320/test_text_error_does_not_drop_0')
+
+    def test_text_error_does_not_drop_structured_results(tmp_path):
+        def fail(path):raise RuntimeError('native text failure')
+        r=results(GetTextFile=fail,NumberOfDataGrids=1,GetDataGrid=lambda i:grid([[1,2,3],[4,5,6]]))
+&gt;       assert collect(tmp_path,r)['native_export_error']['message']=='native text failure'
+               ^^^^^^^^^^^^^^^^^^^
+
+tests\test_imaging.py:159: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_imaging.py:124: in collect
+    return im.collect_imaging(NS(directory=tmp_path),dict(native=NS(GetResults=lambda:r),task_id='test',settings=dict(kind=kind,requested=dict(wavelength='RGB'))))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+backend = namespace(directory=WindowsPath('C:/Users/tonge/AppData/Local/Temp/pytest-of-tonge/pytest-320/test_text_error_does_not_drop_0'))
+task = {'native': namespace(GetResults=&lt;function collect.&lt;locals&gt;.&lt;lambda&gt; at 0x0000023904759900&gt;), 'settings': {'kind': 'geometric_image', 'requested': {'wavelength': 'RGB'}}, 'task_id': 'test'}
+
+    def collect_imaging(backend, task):
+        r = unwrap(task['native'].GetResults())
+        if r is None or not r.IsValid:
+            raise ZemaxError('ANALYSIS_FAILED', '图像分析没有有效原生结果。')
+        path = backend.directory / (task['task_id'] + '_native.txt')
+        data = dict(analysis_kind=task['settings']['kind'], computation_method='native_analysis',
+            native_header=[str(x) for x in r.HeaderData.Lines],
+            native_messages=[dict(code=str(r.GetMessageAt(i).ErrorCode), text=str(r.GetMessageAt(i).Text)) for i in range(r.NumberOfMessages)],
+            grids=[], series=[], scatter=[], rows=[], artifacts=[],
+            units_source='native axis labels, ValueLabel and native_header')
+        try:
+            if r.GetTextFile(str(path)):
+                data['artifacts'].append(dict(kind='native_text', path=str(path)))
+            else:
+                data['native_export_error'] = 'GetTextFile returned false'
+        except Exception as exc:
+            data['native_export_error'] = dict(type=type(exc).__name__, message=str(exc))
+        for rgb, count, getter in [(False, int(r.NumberOfDataGrids), r.GetDataGrid), (True, int(r.NumberOfDataGridsRgb), r.GetDataGridRgb)]:
+            for i in range(count):
+                g = getter(i)
+                array, orientation = grid_values(g, rgb)
+                axes = dict(dx=float(g.Dx), dy=float(g.Dy), min_x=float(g.MinX), min_y=float(g.MinY))
+                if any(not math.isfinite(v) for v in axes.values()):
+                    raise ZemaxError('INVALID_RESULT_DATA', '图像网格坐标包含非有限值。', grid=i)
+                if task['settings']['kind'] in {'geometric_image','geometric_bitmap_image'}:
+                    array,axes=geometric_grid_coordinates(array,axes,int(g.Nx),int(g.Ny))
+                    orientation['orientation_validation']='v242 geometric image native top-down rows; asymmetric ideal source reference'
+                for c, channel in enumerate('RGB' if rgb else [None]):
+                    plane = [[finite(v[c] if rgb else v) for v in row] for row in array]
+                    data['grids'].append(dict(grid=len(data['grids']), native_grid=i, channel=channel,
+                        description=str(g.Description) + ((' '+channel) if channel else ''),
+                        x_label=str(g.XLabel), y_label=str(g.YLabel), value_label=str(g.ValueLabel), nx=int(g.Nx), ny=int(g.Ny),
+                        **axes, values=plane, invalid_count=sum(v is None for row in plane for v in row),
+                        x_unit='see native XLabel/header', y_unit='see native YLabel/header',
+                        value_unit='native RGB intensity' if rgb else str(g.ValueLabel), **orientation))
+        if task['settings']['kind'] in {'geometric_image','geometric_bitmap_image'}:
+            for grid in data['grids']:
+&gt;               grid.update(x_unit=backend.context()['lens_units'],y_unit=backend.context()['lens_units'],
+                                   ^^^^^^^^^^^^^^^
+                            value_unit=grid['description'],units_source='native geometric image unit description and current lens units')
+E               AttributeError: 'types.SimpleNamespace' object has no attribute 'context'
+
+src\zemax_mcp\imaging.py:266: AttributeError</failure></testcase><testcase classname="tests.test_imaging" name="test_empty_results_preserve_native_error" time="0.004"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_invalid_native_result" time="0.002"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_configure_failure_closes_analysis_once[image_simulation]" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_configure_failure_closes_analysis_once[geometric_image]" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_configure_failure_closes_analysis_once[geometric_bitmap_image]" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_configure_failure_closes_analysis_once[fft_line_edge_spread]" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_configure_failure_closes_analysis_once[geometric_line_edge_spread]" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_configure_failure_closes_analysis_once[extended_source_encircled_energy]" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_native_grid_rows_and_curve_paging" time="0.145"><properties><property name="validation_layer" value="ordinary" /></properties><failure message="AttributeError: 'types.SimpleNamespace' object has no attribute 'context'">tmp_path = WindowsPath('C:/Users/tonge/AppData/Local/Temp/pytest-of-tonge/pytest-320/test_native_grid_rows_and_curv0')
+
+    def test_native_grid_rows_and_curve_paging(tmp_path):
+        from zemax_mcp.backend import Backend
+        from zemax_mcp.config import Config
+        from zemax_mcp.models import TaskResult
+        b=Backend(Config(tmp_path,tmp_path/'out'))
+&gt;       r=collect(tmp_path,results(NumberOfDataGrids=1,GetDataGrid=lambda i:grid([[1,2,3],[4,5,6]])))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_imaging.py:183: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_imaging.py:124: in collect
+    return im.collect_imaging(NS(directory=tmp_path),dict(native=NS(GetResults=lambda:r),task_id='test',settings=dict(kind=kind,requested=dict(wavelength='RGB'))))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+backend = namespace(directory=WindowsPath('C:/Users/tonge/AppData/Local/Temp/pytest-of-tonge/pytest-320/test_native_grid_rows_and_curv0'))
+task = {'native': namespace(GetResults=&lt;function collect.&lt;locals&gt;.&lt;lambda&gt; at 0x0000023904890040&gt;), 'settings': {'kind': 'geometric_image', 'requested': {'wavelength': 'RGB'}}, 'task_id': 'test'}
+
+    def collect_imaging(backend, task):
+        r = unwrap(task['native'].GetResults())
+        if r is None or not r.IsValid:
+            raise ZemaxError('ANALYSIS_FAILED', '图像分析没有有效原生结果。')
+        path = backend.directory / (task['task_id'] + '_native.txt')
+        data = dict(analysis_kind=task['settings']['kind'], computation_method='native_analysis',
+            native_header=[str(x) for x in r.HeaderData.Lines],
+            native_messages=[dict(code=str(r.GetMessageAt(i).ErrorCode), text=str(r.GetMessageAt(i).Text)) for i in range(r.NumberOfMessages)],
+            grids=[], series=[], scatter=[], rows=[], artifacts=[],
+            units_source='native axis labels, ValueLabel and native_header')
+        try:
+            if r.GetTextFile(str(path)):
+                data['artifacts'].append(dict(kind='native_text', path=str(path)))
+            else:
+                data['native_export_error'] = 'GetTextFile returned false'
+        except Exception as exc:
+            data['native_export_error'] = dict(type=type(exc).__name__, message=str(exc))
+        for rgb, count, getter in [(False, int(r.NumberOfDataGrids), r.GetDataGrid), (True, int(r.NumberOfDataGridsRgb), r.GetDataGridRgb)]:
+            for i in range(count):
+                g = getter(i)
+                array, orientation = grid_values(g, rgb)
+                axes = dict(dx=float(g.Dx), dy=float(g.Dy), min_x=float(g.MinX), min_y=float(g.MinY))
+                if any(not math.isfinite(v) for v in axes.values()):
+                    raise ZemaxError('INVALID_RESULT_DATA', '图像网格坐标包含非有限值。', grid=i)
+                if task['settings']['kind'] in {'geometric_image','geometric_bitmap_image'}:
+                    array,axes=geometric_grid_coordinates(array,axes,int(g.Nx),int(g.Ny))
+                    orientation['orientation_validation']='v242 geometric image native top-down rows; asymmetric ideal source reference'
+                for c, channel in enumerate('RGB' if rgb else [None]):
+                    plane = [[finite(v[c] if rgb else v) for v in row] for row in array]
+                    data['grids'].append(dict(grid=len(data['grids']), native_grid=i, channel=channel,
+                        description=str(g.Description) + ((' '+channel) if channel else ''),
+                        x_label=str(g.XLabel), y_label=str(g.YLabel), value_label=str(g.ValueLabel), nx=int(g.Nx), ny=int(g.Ny),
+                        **axes, values=plane, invalid_count=sum(v is None for row in plane for v in row),
+                        x_unit='see native XLabel/header', y_unit='see native YLabel/header',
+                        value_unit='native RGB intensity' if rgb else str(g.ValueLabel), **orientation))
+        if task['settings']['kind'] in {'geometric_image','geometric_bitmap_image'}:
+            for grid in data['grids']:
+&gt;               grid.update(x_unit=backend.context()['lens_units'],y_unit=backend.context()['lens_units'],
+                                   ^^^^^^^^^^^^^^^
+                            value_unit=grid['description'],units_source='native geometric image unit description and current lens units')
+E               AttributeError: 'types.SimpleNamespace' object has no attribute 'context'
+
+src\zemax_mcp\imaging.py:266: AttributeError</failure></testcase><testcase classname="tests.test_imaging" name="test_grid_plot_exports" time="0.003"><properties><property name="validation_layer" value="ordinary" /></properties><failure message="AttributeError: 'types.SimpleNamespace' object has no attribute 'context'">tmp_path = WindowsPath('C:/Users/tonge/AppData/Local/Temp/pytest-of-tonge/pytest-320/test_grid_plot_exports0')
+
+    def test_grid_plot_exports(tmp_path):
+        from zemax_mcp.plotting import export_image
+        q=NS(source='data',item=0,width=400,height=300)
+&gt;       r=collect(tmp_path,results(NumberOfDataGrids=1,GetDataGrid=lambda i:grid([[1,2,3],[4,5,6]])))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_imaging.py:194: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_imaging.py:124: in collect
+    return im.collect_imaging(NS(directory=tmp_path),dict(native=NS(GetResults=lambda:r),task_id='test',settings=dict(kind=kind,requested=dict(wavelength='RGB'))))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+backend = namespace(directory=WindowsPath('C:/Users/tonge/AppData/Local/Temp/pytest-of-tonge/pytest-320/test_grid_plot_exports0'))
+task = {'native': namespace(GetResults=&lt;function collect.&lt;locals&gt;.&lt;lambda&gt; at 0x0000023905BF9850&gt;), 'settings': {'kind': 'geometric_image', 'requested': {'wavelength': 'RGB'}}, 'task_id': 'test'}
+
+    def collect_imaging(backend, task):
+        r = unwrap(task['native'].GetResults())
+        if r is None or not r.IsValid:
+            raise ZemaxError('ANALYSIS_FAILED', '图像分析没有有效原生结果。')
+        path = backend.directory / (task['task_id'] + '_native.txt')
+        data = dict(analysis_kind=task['settings']['kind'], computation_method='native_analysis',
+            native_header=[str(x) for x in r.HeaderData.Lines],
+            native_messages=[dict(code=str(r.GetMessageAt(i).ErrorCode), text=str(r.GetMessageAt(i).Text)) for i in range(r.NumberOfMessages)],
+            grids=[], series=[], scatter=[], rows=[], artifacts=[],
+            units_source='native axis labels, ValueLabel and native_header')
+        try:
+            if r.GetTextFile(str(path)):
+                data['artifacts'].append(dict(kind='native_text', path=str(path)))
+            else:
+                data['native_export_error'] = 'GetTextFile returned false'
+        except Exception as exc:
+            data['native_export_error'] = dict(type=type(exc).__name__, message=str(exc))
+        for rgb, count, getter in [(False, int(r.NumberOfDataGrids), r.GetDataGrid), (True, int(r.NumberOfDataGridsRgb), r.GetDataGridRgb)]:
+            for i in range(count):
+                g = getter(i)
+                array, orientation = grid_values(g, rgb)
+                axes = dict(dx=float(g.Dx), dy=float(g.Dy), min_x=float(g.MinX), min_y=float(g.MinY))
+                if any(not math.isfinite(v) for v in axes.values()):
+                    raise ZemaxError('INVALID_RESULT_DATA', '图像网格坐标包含非有限值。', grid=i)
+                if task['settings']['kind'] in {'geometric_image','geometric_bitmap_image'}:
+                    array,axes=geometric_grid_coordinates(array,axes,int(g.Nx),int(g.Ny))
+                    orientation['orientation_validation']='v242 geometric image native top-down rows; asymmetric ideal source reference'
+                for c, channel in enumerate('RGB' if rgb else [None]):
+                    plane = [[finite(v[c] if rgb else v) for v in row] for row in array]
+                    data['grids'].append(dict(grid=len(data['grids']), native_grid=i, channel=channel,
+                        description=str(g.Description) + ((' '+channel) if channel else ''),
+                        x_label=str(g.XLabel), y_label=str(g.YLabel), value_label=str(g.ValueLabel), nx=int(g.Nx), ny=int(g.Ny),
+                        **axes, values=plane, invalid_count=sum(v is None for row in plane for v in row),
+                        x_unit='see native XLabel/header', y_unit='see native YLabel/header',
+                        value_unit='native RGB intensity' if rgb else str(g.ValueLabel), **orientation))
+        if task['settings']['kind'] in {'geometric_image','geometric_bitmap_image'}:
+            for grid in data['grids']:
+&gt;               grid.update(x_unit=backend.context()['lens_units'],y_unit=backend.context()['lens_units'],
+                                   ^^^^^^^^^^^^^^^
+                            value_unit=grid['description'],units_source='native geometric image unit description and current lens units')
+E               AttributeError: 'types.SimpleNamespace' object has no attribute 'context'
+
+src\zemax_mcp\imaging.py:266: AttributeError</failure></testcase><testcase classname="tests.test_imaging" name="test_extended_diffraction_condition" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_resource_query_closes_and_prefers_settings_first" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase><testcase classname="tests.test_imaging" name="test_original_enum_alias_uses_value_equality" time="0.000"><properties><property name="validation_layer" value="ordinary" /></properties></testcase></testsuite></testsuites>

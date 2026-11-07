@@ -3,25 +3,25 @@
   "completed": [
     "GE-01.MediumRegions"
   ],
-  "ordinary": ".local/evidence/development/GE-01/ordinary122.xml",
+  "ordinary": "verification/development/GE-01/ordinary122.xml",
   "ordinary_passed": 56,
-  "native": ".local/evidence/development/GE-01/native121-media-complete.xml",
+  "native": "verification/development/GE-01/native121-media-complete.xml",
   "native_passed": 3,
   "runs": [
     {
-      "run": ".local/runs/geometry109_cemented_633ef21408",
+      "run": "outputs/runs/geometry109_cemented_633ef21408",
       "checks": 7,
       "max_error": 1.1712586456269491e-10,
       "disconnect_confirmed": true
     },
     {
-      "run": ".local/runs/geometry110_nested_cf1ee90813",
+      "run": "outputs/runs/geometry110_nested_cf1ee90813",
       "checks": 19,
       "max_error": 1.4210854715202004e-14,
       "disconnect_confirmed": true
     },
     {
-      "run": ".local/runs/geometry120_hierarchy_fc5b2fc0e8",
+      "run": "outputs/runs/geometry120_hierarchy_fc5b2fc0e8",
       "checks": 8,
       "max_error": 1.1368683772161603e-13,
       "disconnect_confirmed": true

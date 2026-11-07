@@ -6,9 +6,9 @@
   "native_version": "24.2.0 build240529",
   "license": "PremiumEdition",
   "scope": "Typed native settings/readback; ideal and nonzero OPD intensity, tilt, scale, beam order, two-configuration chief optical path, subaperture/vertex selection, grids/paging/PNG, failure/cancel/reuse/save-reload and normal closure",
-  "ordinary_report": ".local/evidence/development/CV-02/ordinary310-related.xml",
+  "ordinary_report": "verification/development/CV-02/ordinary310-related.xml",
   "ordinary_passed": 58,
-  "native_report": ".local/evidence/development/CV-02/native310-final.xml",
+  "native_report": "verification/development/CV-02/native310-final.xml",
   "native_passed": 5,
   "tolerances": {
     "intensity_atol": 0.005,
@@ -33,7 +33,7 @@
   ],
   "runs": [
     {
-      "path": ".local/runs/interferogram301_ad6e566ee8",
+      "path": "outputs/runs/interferogram301_ad6e566ee8",
       "checks": [
         {
           "label": "{} maximum fringe intensity error",
@@ -100,7 +100,7 @@
       }
     },
     {
-      "path": ".local/runs/interferogram304_opd_e610591353",
+      "path": "outputs/runs/interferogram304_opd_e610591353",
       "checks": [
         {
           "label": "{} independent OPD intensity",
@@ -159,7 +159,7 @@
       }
     },
     {
-      "path": ".local/runs/interferogram308_mirror_ae898cae77",
+      "path": "outputs/runs/interferogram308_mirror_ae898cae77",
       "checks": [
         {
           "label": "two configurations OPL False swapped False",
@@ -210,7 +210,7 @@
       }
     },
     {
-      "path": ".local/runs/interferogram308_paraxial_8037346565",
+      "path": "outputs/runs/interferogram308_paraxial_8037346565",
       "checks": [
         {
           "label": "two configurations OPL False swapped False",
@@ -261,7 +261,7 @@
       }
     },
     {
-      "path": ".local/runs/interferogram307_lifecycle_2545c586af",
+      "path": "outputs/runs/interferogram307_lifecycle_2545c586af",
       "checks": [],
       "disconnect": true,
       "close_receipt": {
@@ -288,5 +288,5 @@
     }
   ],
   "max_intensity_error": 5.270835989890088e-10,
-  "image_viewed": ".local/runs/interferogram307_lifecycle_2545c586af/interferogram.png"
+  "image_viewed": "outputs/runs/interferogram307_lifecycle_2545c586af/interferogram.png"
 }

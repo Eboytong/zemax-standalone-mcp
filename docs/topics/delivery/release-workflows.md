@@ -6,7 +6,7 @@
 
 # 六类发行验收流程
 
-0.1.43 为六类流程补齐六条同会话阶段传递入口，见 `tests/test_release_handoffs_live.py`。机器可读清单为 `.local/evidence/development/RL-01/workflows043.json`，包含输入、固定判据、组件测试及handoff_node。状态均为 implemented，实际原生运行待恢复。
+0.1.43 为六类流程补齐六条同会话阶段传递入口，见 `tests/native/test_release_handoffs_live.py`。机器可读清单为 `.local/evidence/development/RL-01/workflows043.json`，包含输入、固定判据、组件测试及handoff_node。状态均为 implemented，实际原生运行待恢复。
 
 | 流程 | 同会话传递 | 固定检查与当前范围 |
 | --- | --- | --- |
@@ -22,14 +22,14 @@
 恢复后可直接运行六条联动：
 
 ```powershell
-.venv/Scripts/python.exe -B -m pytest -q tests/test_release_handoffs_live.py --junitxml=.local/evidence/development/RL-01/native-handoffs.xml
+.venv/Scripts/python.exe -B -m pytest -q tests/native/test_release_handoffs_live.py --junitxml=.local/evidence/development/RL-01/native-handoffs.xml
 ```
 
 在独立安装包上运行六条联动时，先设置已安装目录：
 
 ```powershell
 $env:ZEMAX_TEST_WHEEL_DIR = (Resolve-Path '.local/evidence/development/RL-01/wheel-install043').Path
-.venv/Scripts/python.exe -B -m pytest -q tests/test_release_handoffs_live.py --junitxml=.local/evidence/development/RL-01/installed-native-handoffs.xml
+.venv/Scripts/python.exe -B -m pytest -q tests/native/test_release_handoffs_live.py --junitxml=.local/evidence/development/RL-01/installed-native-handoffs.xml
 Remove-Item Env:ZEMAX_TEST_WHEEL_DIR
 ```
 

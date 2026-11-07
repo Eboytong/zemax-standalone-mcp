@@ -25,5 +25,5 @@
   "source_record_count": 146,
   "canonical_group_count": 135,
   "gate": "B00410/10 pending wheel gate",
-  "queue": "development/generated/queue.json"
+  "queue": "docs/development-queue.json"
 }

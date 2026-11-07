@@ -1,0 +1,18 @@
+2.1.4. Autosave
+The autosave tool automatically saves the currentfile atthe specifiedintervalsdefinedintheOpticStudioPreferences.
+The autosave files are located in the Autosave folder, which can be found in your <Zemax Data folder>.
+The autosave will use the copy of the .ZMX file saved by the Undo setting. If the Undo setting is set to 'None,' then
+both the .ZMX and .ZDA files will be saved at the specified time interval. The autosave will not save while any tool is
+actively running (i.e. in the middle of an optimization run) and will instead save one time interval after the tool has
+completed running.
+If OpticStudio unexpectedly closes, the next time it is opened, a dialog box will appear informing the user that files
+were autosaved. This dialog box can be disabled in the OpticStudio Preferences > General. This box will give you
+the option to open the file, delete the file, open the recovered file folder location, or close the dialog and proceed
+to open the file selected when OpticStudio was launched. Unless the user specifically deletes a file, it will remain
+in the Recovered folder indefinitely.
+2.2. Program Mode Group
+The Program Mode buttons are available in the System section of the Setup tab. These buttons select the user
+interface and program mode.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 187
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Setup Tab

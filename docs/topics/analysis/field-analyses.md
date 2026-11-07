@@ -30,6 +30,6 @@ Footprint 首批提供方格圆瞳采样。前序曲面截断光线不显示；d
 
 默认当前配置。位置使用镜头单位，瞳坐标为归一化值。原生分析输出保留原生文本，派生追迹输出保留逐光线记录。原生实例和测试串行执行。
 
-验收入口：tests/test_field_analyses.py（参数、采样参考、截断规则与取消恢复），tests/test_field_analyses_live.py（真实stdio、照度收敛、MTF对照、平面坐标、圆孔通过率、前后序截断和图像导出）。
+验收入口：tests/unit/test_field_analyses.py（参数、采样参考、截断规则与取消恢复），tests/native/test_field_analyses_live.py（真实stdio、照度收敛、MTF对照、平面坐标、圆孔通过率、前后序截断和图像导出）。
 
-本轮MTF对照采用256×256采样，绝对差验收值为0.005，Cooke样例最大观测差约0.00254；早期0.001阈值下未通过，原始失败记录保留在outputs/runs。RI密度10/20的最大观测差约0.00016。执行汇总见verification/field-analyses-summary.json。
+本轮MTF对照采用256×256采样，绝对差验收值为0.005，Cooke样例最大观测差约0.00254；早期0.001阈值下未通过，原始失败记录保留在outputs/runs。RI密度10/20的最大观测差约0.00016。执行汇总见development/evidence/field-analyses-summary.json。

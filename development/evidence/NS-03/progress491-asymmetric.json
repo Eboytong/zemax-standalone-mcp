@@ -1,0 +1,391 @@
+{
+  "date": "2026-11-07",
+  "source_version": "0.1.61 B006 working source",
+  "installed_release": "0.1.61",
+  "native_version": "24.2.0 build 240529",
+  "license": "Premium",
+  "state": "implemented",
+  "full_batch_gate": "B006 2/10; no new full regression or wheel",
+  "item_id": "NS-03.NSCGeometricMtf",
+  "scope": "Determine detector-local axis assignment and compare exact pixel DFT for X-only, Y-only and asymmetric 1W images",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_nsc_mtf_live.py::test_nsc_asymmetric_detector_mtf_dft_diagnostic -q -s --run-zemax --junitxml=verification/development/NS-03/native491-asymmetric.xml",
+  "inputs": "Owned SourceRay objects at pixel centers; 7x5 detector, half widths 1x2mm; sources/powers/matrix and all queries retained in run JSON",
+  "requests": {
+    "kind": "nsc_geometric_mtf",
+    "detector": 4
+  },
+  "run": "outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be",
+  "results": [
+    {
+      "case": "x",
+      "axis_maximum_errors": {
+        "Tangential": {
+          "x": 0.37454710464897967,
+          "y": 9.87512490446818e-07
+        },
+        "Sagittal": {
+          "x": 3.823653072165811e-06,
+          "y": 0.3745471046489798
+        }
+      },
+      "task": {
+        "task_id": "b61422551a8e4eadad8750d29ac951a4",
+        "request_id": "bf0cc73442b8405da9e416fc2a48fc82",
+        "kind": "nsc_geometric_mtf",
+        "state": "succeeded",
+        "created_at": "2026-11-07T07:40:35.113359+00:00",
+        "finished_at": "2026-11-07T07:40:35.211381+00:00",
+        "progress": 100,
+        "can_cancel": true,
+        "cancel_requested": false,
+        "settings": {
+          "kind": "nsc_geometric_mtf",
+          "requested": {
+            "kind": "nsc_geometric_mtf",
+            "detector": 4,
+            "path": null,
+            "filter": "",
+            "maximum_frequency": 0.0,
+            "minimum_plot_scale": 0.0,
+            "maximum_plot_scale": 1.0
+          },
+          "native": {
+            "RayDatabaseFilename": "",
+            "Filter": "",
+            "MaximumFrequency": 0.0,
+            "MinimumPlotScale": 0.0,
+            "MaximumPlotScale": 1.0,
+            "IsValid": true,
+            "IsActiveWindow": true
+          },
+          "detector_sampling": {
+            "nx": 7,
+            "ny": 5,
+            "x_pixel_width_mm": 0.2857142857142857,
+            "y_pixel_width_mm": 0.8,
+            "nyquist_cycles_per_mm": 0.625,
+            "psf_wave_number": 0,
+            "lens_units": "Millimeters"
+          },
+          "provenance": {
+            "source": "current accumulated detector",
+            "trace_history": [
+              {
+                "task_id": "b8d5a3ce4eb84e2aad43bfdb1b63f65c",
+                "model_revision": 4,
+                "configuration": 1,
+                "trace_options": {
+                  "use_polarization": false,
+                  "split_rays": false,
+                  "scatter_rays": false,
+                  "ignore_errors": false,
+                  "number_of_cores": 1,
+                  "random_seed": 42,
+                  "filter": ""
+                },
+                "state": "succeeded",
+                "error": null,
+                "native_trace_complete": true,
+                "native_dead_ray_errors": 0.0,
+                "finished_at": "2026-11-07T07:40:34.409688+00:00"
+              }
+            ],
+            "history_known": true,
+            "clear_failure": null,
+            "loaded_sources": [],
+            "trace_options_known": true,
+            "mixed_conditions": false,
+            "model_matches_history": true,
+            "complete": true
+          }
+        },
+        "context": {
+          "session_id": "8d1a327423e54823a3c9ec8996bd8843",
+          "model_revision": 4,
+          "source_file": null,
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\working_adc6ee6a.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\checkpoint_r3_nsc_objects_ed08e0c7.zos",
+          "requires_reconnect": false,
+          "mode": "NonSequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 4,
+            "session_id": "8d1a327423e54823a3c9ec8996bd8843"
+          }
+        },
+        "close_attempted": true,
+        "result_path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\b61422551a8e4eadad8750d29ac951a4.json",
+        "result_artifacts": [
+          {
+            "kind": "native_text",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\b61422551a8e4eadad8750d29ac951a4_native.txt"
+          },
+          {
+            "kind": "json",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\b61422551a8e4eadad8750d29ac951a4.json"
+          },
+          {
+            "kind": "csv",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\b61422551a8e4eadad8750d29ac951a4.csv"
+          }
+        ],
+        "elapsed_seconds": 0.098
+      }
+    },
+    {
+      "case": "y",
+      "axis_maximum_errors": {
+        "Tangential": {
+          "x": 0.49997930019283365,
+          "y": 2.997209666644185e-05
+        },
+        "Sagittal": {
+          "x": 9.87512490779885e-07,
+          "y": 0.4999793011767476
+        }
+      },
+      "task": {
+        "task_id": "4e7b46ca520b4464810547e73ce13655",
+        "request_id": "d35c5d55105d4d449e092e16938073fe",
+        "kind": "nsc_geometric_mtf",
+        "state": "succeeded",
+        "created_at": "2026-11-07T07:40:37.154686+00:00",
+        "finished_at": "2026-11-07T07:40:37.197284+00:00",
+        "progress": 100,
+        "can_cancel": true,
+        "cancel_requested": false,
+        "settings": {
+          "kind": "nsc_geometric_mtf",
+          "requested": {
+            "kind": "nsc_geometric_mtf",
+            "detector": 4,
+            "path": null,
+            "filter": "",
+            "maximum_frequency": 0.0,
+            "minimum_plot_scale": 0.0,
+            "maximum_plot_scale": 1.0
+          },
+          "native": {
+            "RayDatabaseFilename": "",
+            "Filter": "",
+            "MaximumFrequency": 0.0,
+            "MinimumPlotScale": 0.0,
+            "MaximumPlotScale": 1.0,
+            "IsValid": true,
+            "IsActiveWindow": true
+          },
+          "detector_sampling": {
+            "nx": 7,
+            "ny": 5,
+            "x_pixel_width_mm": 0.2857142857142857,
+            "y_pixel_width_mm": 0.8,
+            "nyquist_cycles_per_mm": 0.625,
+            "psf_wave_number": 0,
+            "lens_units": "Millimeters"
+          },
+          "provenance": {
+            "source": "current accumulated detector",
+            "trace_history": [
+              {
+                "task_id": "a15feddad3264be28a36b32843a16a1e",
+                "model_revision": 5,
+                "configuration": 1,
+                "trace_options": {
+                  "use_polarization": false,
+                  "split_rays": false,
+                  "scatter_rays": false,
+                  "ignore_errors": false,
+                  "number_of_cores": 1,
+                  "random_seed": 42,
+                  "filter": ""
+                },
+                "state": "succeeded",
+                "error": null,
+                "native_trace_complete": true,
+                "native_dead_ray_errors": 0.0,
+                "finished_at": "2026-11-07T07:40:36.532851+00:00"
+              }
+            ],
+            "history_known": true,
+            "clear_failure": null,
+            "loaded_sources": [],
+            "trace_options_known": true,
+            "mixed_conditions": false,
+            "model_matches_history": true,
+            "complete": true
+          }
+        },
+        "context": {
+          "session_id": "8d1a327423e54823a3c9ec8996bd8843",
+          "model_revision": 5,
+          "source_file": null,
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\working_adc6ee6a.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\checkpoint_r4_nsc_objects_aa51aff2.zos",
+          "requires_reconnect": false,
+          "mode": "NonSequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 5,
+            "session_id": "8d1a327423e54823a3c9ec8996bd8843"
+          }
+        },
+        "close_attempted": true,
+        "result_path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\4e7b46ca520b4464810547e73ce13655.json",
+        "result_artifacts": [
+          {
+            "kind": "native_text",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\4e7b46ca520b4464810547e73ce13655_native.txt"
+          },
+          {
+            "kind": "json",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\4e7b46ca520b4464810547e73ce13655.json"
+          },
+          {
+            "kind": "csv",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\4e7b46ca520b4464810547e73ce13655.csv"
+          }
+        ],
+        "elapsed_seconds": 0.043
+      }
+    },
+    {
+      "case": "asymmetric",
+      "axis_maximum_errors": {
+        "Tangential": {
+          "x": 0.6623854414373455,
+          "y": 6.233949225109559e-05
+        },
+        "Sagittal": {
+          "x": 1.2439099546623922e-05,
+          "y": 0.6623856439678973
+        }
+      },
+      "task": {
+        "task_id": "c2998ec96d384fb780058ac6adef7101",
+        "request_id": "18414f8cbae84695abec20efa6b7e543",
+        "kind": "nsc_geometric_mtf",
+        "state": "succeeded",
+        "created_at": "2026-11-07T07:40:39.362339+00:00",
+        "finished_at": "2026-11-07T07:40:39.392689+00:00",
+        "progress": 100,
+        "can_cancel": true,
+        "cancel_requested": false,
+        "settings": {
+          "kind": "nsc_geometric_mtf",
+          "requested": {
+            "kind": "nsc_geometric_mtf",
+            "detector": 4,
+            "path": null,
+            "filter": "",
+            "maximum_frequency": 0.0,
+            "minimum_plot_scale": 0.0,
+            "maximum_plot_scale": 1.0
+          },
+          "native": {
+            "RayDatabaseFilename": "",
+            "Filter": "",
+            "MaximumFrequency": 0.0,
+            "MinimumPlotScale": 0.0,
+            "MaximumPlotScale": 1.0,
+            "IsValid": true,
+            "IsActiveWindow": true
+          },
+          "detector_sampling": {
+            "nx": 7,
+            "ny": 5,
+            "x_pixel_width_mm": 0.2857142857142857,
+            "y_pixel_width_mm": 0.8,
+            "nyquist_cycles_per_mm": 0.625,
+            "psf_wave_number": 0,
+            "lens_units": "Millimeters"
+          },
+          "provenance": {
+            "source": "current accumulated detector",
+            "trace_history": [
+              {
+                "task_id": "524ef732a7444b82b0f8a7ed4e3170c7",
+                "model_revision": 6,
+                "configuration": 1,
+                "trace_options": {
+                  "use_polarization": false,
+                  "split_rays": false,
+                  "scatter_rays": false,
+                  "ignore_errors": false,
+                  "number_of_cores": 1,
+                  "random_seed": 42,
+                  "filter": ""
+                },
+                "state": "succeeded",
+                "error": null,
+                "native_trace_complete": true,
+                "native_dead_ray_errors": 0.0,
+                "finished_at": "2026-11-07T07:40:38.732175+00:00"
+              }
+            ],
+            "history_known": true,
+            "clear_failure": null,
+            "loaded_sources": [],
+            "trace_options_known": true,
+            "mixed_conditions": false,
+            "model_matches_history": true,
+            "complete": true
+          }
+        },
+        "context": {
+          "session_id": "8d1a327423e54823a3c9ec8996bd8843",
+          "model_revision": 6,
+          "source_file": null,
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\working_adc6ee6a.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\checkpoint_r5_nsc_objects_6c75ac69.zos",
+          "requires_reconnect": false,
+          "mode": "NonSequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 6,
+            "session_id": "8d1a327423e54823a3c9ec8996bd8843"
+          }
+        },
+        "close_attempted": true,
+        "result_path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\c2998ec96d384fb780058ac6adef7101.json",
+        "result_artifacts": [
+          {
+            "kind": "native_text",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\c2998ec96d384fb780058ac6adef7101_native.txt"
+          },
+          {
+            "kind": "json",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\c2998ec96d384fb780058ac6adef7101.json"
+          },
+          {
+            "kind": "csv",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\nsc_mtf491_asymmetric_27d4cba3be\\8d1a327423e54823a3c9ec8996bd8843\\c2998ec96d384fb780058ac6adef7101.csv"
+          }
+        ],
+        "elapsed_seconds": 0.03
+      }
+    }
+  ],
+  "reference": "abs(sum(pixel_W exp(-2pi i f pixel_center_mm)))/sum(pixel_W), both axis hypotheses evaluated at native frequencies",
+  "tolerance": "1e-7 absolute + 1e-7 relative, unchanged",
+  "conclusion": "Tangential follows local Y and Sagittal local X in all three controlled cases. Correct-axis error reaches 6.233949225109559e-5; frequency endpoints match to machine precision, largest error is near the first nonzero node. DataSeries difference exceeds six-decimal text rounding alone.",
+  "lifecycle": "Three successful analyses closed without cleanup warnings; 1W detector totals passed; stdio disconnected.",
+  "next_action": "Isolate native interpolation/frequency knots with controlled two-point separations; retain raw native values and implemented state"
+}

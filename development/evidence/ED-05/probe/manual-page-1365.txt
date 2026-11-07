@@ -1,0 +1,45 @@
+In sequential mode, the lens will be inserted into the Lens Data Editor. A prompt will be issued for the insert file
+options, such as at which surface the lens should be inserted.
+In non-sequential mode, the lens will be inserted into the Non-sequential Components Editor at the bottom of the
+list of current objects. If the inserted lens consists of more than one component, the second and subsequent
+component will use the first as its reference object, so only the first component needs to be properly positioned.
+Catalog Report Displays a text report of all lenses which meet the search criteria in the currently selected catalog.
+The values for the criteria used to filter the lenses are displayed at the top of the report. The lenses are then listed
+3 times: once sorted alphabetically by part name, once sorted by increasing effective focal length (EFL), and once
+sorted by increasing entrance pupil diameter(EPD). In each listing,the following data is provided for each lens: part
+name, EFL, EPD, Shape, Type, and # of Elements. These last three outputs correspond to the 3 part code listed for
+each lens in the "Search Results" table (see the discussion below for more details).
+Prescription Displays a prescription report of the currently selected lens file.
+Layout Displays a layout plot (or 3D Layout for systems without axial symmetry) of the currently selected lens file.
+Note: The prescription report and the layout plots are locked (and cannot be unlocked) as these features show the
+results based on the lens catalog and not the current lens system.
+Close Closes the dialog box.
+Discussion
+The "Search Results" table will list the part name, focal length, and diameter of all the lenses from the selected
+vendor which meet the specified search criteria. After the diameter, a 3 part code is listed, such as (P,S, 1). The first
+entry is the shape code, which is E, B, P, M, or "?", for Equi-, Bi-, Plano-, Meniscus, or other. Other is used if the lens
+is multi-element. The second entry is S, G, A, or T, for Spherical, GRIN, Aspheric, or Toroidal. The third entry is the
+number of elements.
+Upon installation, OpticStudio creates a <data>\Stockcat folder (see "Folders" in the user's manual). Within this
+folder, many individual files are stored with the extension .ZMF. Each of these files contains a large number of
+individual ZMX lens files, each of which represent stock lenses available from various vendors. The following table
+lists the represented vendors and contact data.
+STOCK LENSVENDORS
+Stock Lens Catalogs included with OpticStudio are developed by third party vendors without any involvement by
+Ansys. Ansys makes no representation as to the feasibility or functionality of the Stock Lens Catalogs. Stock Lens
+Catalogs areprovided'as is,' andany express orimpliedwarranties are herebydisclaimed. Ansys hasno responsibility
+to maintain the Stock Lens Catalogs or ensure their availability for future releases.
+The following table lists the vendors associated with each Stock Lens Catalog:
+File Name Website
+ANTERYON.ZMF www.Anteryon.com
+ARCHEROPTX.ZMF www.ArcherOptx.com
+ASPHERICON.ZMF www.Asphericon.com
+BEFORT-WETZLAR.ZMF www.Befort-Optic.com
+BERNHARD HALLE.ZMF www.B-Halle.de
+COMAR.ZMF www.ComarOptics.com
+CVI MELLES GRIOT.ZMF www.CVIMellesGriot.com
+DAHENG OPTICS.ZMF www.DahengOptics.com
+DIAS INFRARED.ZMF www.Dias-Infrared.de
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1365
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Libraries Tab

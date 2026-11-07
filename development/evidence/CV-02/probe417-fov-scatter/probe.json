@@ -1,0 +1,378 @@
+{
+  "stage": "closed",
+  "connect": {
+    "connected": true,
+    "native_system_status": "",
+    "native_startup": {
+      "events": [
+        {
+          "stage": "install_check",
+          "event": "started",
+          "timestamp": "2026-11-07T02:54:00.454+00:00",
+          "elapsed_seconds": 2.1800005924887955e-05
+        },
+        {
+          "stage": "install_check",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:54:00.454+00:00",
+          "elapsed_seconds": 0.00027770000451710075,
+          "duration_seconds": 0.0002663000050233677
+        },
+        {
+          "stage": "environment",
+          "event": "started",
+          "timestamp": "2026-11-07T02:54:00.454+00:00",
+          "elapsed_seconds": 0.00028640000527957454
+        },
+        {
+          "stage": "environment",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:54:00.465+00:00",
+          "elapsed_seconds": 0.01117530000192346,
+          "duration_seconds": 0.010878600005526096
+        },
+        {
+          "stage": "clr_load",
+          "event": "started",
+          "timestamp": "2026-11-07T02:54:00.465+00:00",
+          "elapsed_seconds": 0.011188500000571366
+        },
+        {
+          "stage": "clr_load",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:54:00.702+00:00",
+          "elapsed_seconds": 0.24891690000367817,
+          "duration_seconds": 0.23770919999515172
+        },
+        {
+          "stage": "nethelper_assembly",
+          "event": "started",
+          "timestamp": "2026-11-07T02:54:00.702+00:00",
+          "elapsed_seconds": 0.24894140000105835
+        },
+        {
+          "stage": "nethelper_assembly",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:54:00.710+00:00",
+          "elapsed_seconds": 0.2564775999999256,
+          "duration_seconds": 0.007528800000727642
+        },
+        {
+          "stage": "zos_initialize",
+          "event": "started",
+          "timestamp": "2026-11-07T02:54:00.710+00:00",
+          "elapsed_seconds": 0.2564886000036495
+        },
+        {
+          "stage": "zos_initialize",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:54:00.716+00:00",
+          "elapsed_seconds": 0.2624147000024095,
+          "duration_seconds": 0.005910100000619423
+        },
+        {
+          "stage": "api_assemblies",
+          "event": "started",
+          "timestamp": "2026-11-07T02:54:00.716+00:00",
+          "elapsed_seconds": 0.26243090000207303
+        },
+        {
+          "stage": "api_assemblies",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:54:00.730+00:00",
+          "elapsed_seconds": 0.2763881999999285,
+          "duration_seconds": 0.013947699997515883
+        },
+        {
+          "stage": "connection_create",
+          "event": "started",
+          "timestamp": "2026-11-07T02:54:00.730+00:00",
+          "elapsed_seconds": 0.27639800000179093
+        },
+        {
+          "stage": "connection_create",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:54:00.982+00:00",
+          "elapsed_seconds": 0.5281074000013177,
+          "duration_seconds": 0.25169199999800185
+        },
+        {
+          "stage": "application_create",
+          "event": "started",
+          "timestamp": "2026-11-07T02:54:00.982+00:00",
+          "elapsed_seconds": 0.5281266000019968
+        },
+        {
+          "stage": "application_create",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:54:05.602+00:00",
+          "elapsed_seconds": 5.1488224000058835,
+          "duration_seconds": 4.62068019999424
+        },
+        {
+          "stage": "license_check",
+          "event": "started",
+          "timestamp": "2026-11-07T02:54:05.602+00:00",
+          "elapsed_seconds": 5.148841000001994
+        },
+        {
+          "stage": "license_check",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:54:05.604+00:00",
+          "elapsed_seconds": 5.15034580000065,
+          "duration_seconds": 0.0014910000027157366
+        },
+        {
+          "stage": "primary_system",
+          "event": "started",
+          "timestamp": "2026-11-07T02:54:05.604+00:00",
+          "elapsed_seconds": 5.150361899999552
+        },
+        {
+          "stage": "primary_system",
+          "event": "completed",
+          "timestamp": "2026-11-07T02:54:05.605+00:00",
+          "elapsed_seconds": 5.151919000003545,
+          "duration_seconds": 0.0015522999965469353
+        }
+      ],
+      "observer_warnings": []
+    },
+    "active_task": null,
+    "running_tasks": [],
+    "task_index": {},
+    "recent_tasks": [],
+    "session_id": "f19f0e3358e14622959944ec3cf1cc72",
+    "model_revision": 0,
+    "source_file": null,
+    "working_file": null,
+    "opticstudio_version": "24.2.0",
+    "opticstudio_build": "240529",
+    "license": "PremiumEdition",
+    "checkpoint": null,
+    "requires_reconnect": false,
+    "mode": "Sequential",
+    "configuration": 1,
+    "lens_units": "Millimeters",
+    "mtf_units": "CyclesPerMillimeter",
+    "geometry": {
+      "state": "pending",
+      "model_revision": 0,
+      "session_id": "f19f0e3358e14622959944ec3cf1cc72"
+    }
+  },
+  "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+  "settings_methods": [
+    "Void WriteToStream(System.IO.StreamWriter)",
+    "ZOSAPI.Analysis.IMessages Verify()",
+    "Void Update()",
+    "Void Save()",
+    "Void Load()",
+    "Void Reset()",
+    "Boolean SaveTo(System.String)",
+    "Boolean LoadFrom(System.String)",
+    "Boolean ModifySettings(System.String, System.String, System.String)",
+    "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+    "System.Object InitializeLifetimeService()",
+    "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+    "Void Disconnect()",
+    "System.Object GetLifetimeService()",
+    "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+    "Boolean Equals(System.Object)",
+    "Int32 GetHashCode()",
+    "System.Type GetType()",
+    "System.String ToString()"
+  ],
+  "counts": {
+    "NumberOfDataSeries": 0,
+    "NumberOfDataGrids": 0,
+    "NumberOfDataSeriesRgb": 0,
+    "NumberOfDataGridsRgb": 0,
+    "NumberOfDataScatterPoints": 0,
+    "NumberOfDataScatterPointsRgb": 0,
+    "NumberOfRayData": 0,
+    "NumberOfMessages": 0
+  },
+  "scatter_outlets": [],
+  "result_methods": [
+    "Void DoUpdate()",
+    "Void Disconnect()",
+    "ZOSAPI.Analysis.Data.IAR_DataGrid GetDataGrid(Int32)",
+    "ZOSAPI.Analysis.Data.IAR_DataGridRgb GetDataGridRgb(Int32)",
+    "ZOSAPI.Analysis.Data.IAR_DataSeries GetDataSeries(Int32)",
+    "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb GetDataSeriesRgb(Int32)",
+    "ZOSAPI.Analysis.Data.IAR_DataScatterPoints GetDataScatterPoint(Int32)",
+    "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb GetDataScatterPointRgb(Int32)",
+    "ZOSAPI.Analysis.Data.IAR_RayData GetRayData(Int32)",
+    "ZOSAPI.Analysis.IMessage GetMessageAt(Int32)",
+    "Boolean GetTextFile(System.String)",
+    "Void WriteToStream(System.IO.StreamWriter)",
+    "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+    "System.Object InitializeLifetimeService()",
+    "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+    "System.Object GetLifetimeService()",
+    "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+    "Boolean Equals(System.Object)",
+    "Int32 GetHashCode()",
+    "System.Type GetType()",
+    "System.String ToString()"
+  ],
+  "messages": [],
+  "text_exported": false,
+  "result_properties": [
+    {
+      "name": "Analysis",
+      "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses"
+    },
+    {
+      "name": "MyDataID",
+      "type": "ZOSAPI.Analysis.DataID"
+    },
+    {
+      "name": "IsValid",
+      "type": "System.Boolean"
+    },
+    {
+      "name": "SetDataBridge",
+      "type": "ZemaxUI.ZOSAPI.Analysis.DataBridge"
+    },
+    {
+      "name": "MetaData",
+      "type": "ZOSAPI.Analysis.Data.IAR_MetaData"
+    },
+    {
+      "name": "HeaderData",
+      "type": "ZOSAPI.Analysis.Data.IAR_HeaderData"
+    },
+    {
+      "name": "NumberOfDataGrids",
+      "type": "System.Int32"
+    },
+    {
+      "name": "DataGrids",
+      "type": "ZOSAPI.Analysis.Data.IAR_DataGrid[]"
+    },
+    {
+      "name": "NumberOfDataGridsRgb",
+      "type": "System.Int32"
+    },
+    {
+      "name": "DataGridsRgb",
+      "type": "ZOSAPI.Analysis.Data.IAR_DataGridRgb[]"
+    },
+    {
+      "name": "NumberOfDataSeries",
+      "type": "System.Int32"
+    },
+    {
+      "name": "DataSeries",
+      "type": "ZOSAPI.Analysis.Data.IAR_DataSeries[]"
+    },
+    {
+      "name": "NumberOfDataSeriesRgb",
+      "type": "System.Int32"
+    },
+    {
+      "name": "DataSeriesRgb",
+      "type": "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb[]"
+    },
+    {
+      "name": "NumberOfDataScatterPoints",
+      "type": "System.Int32"
+    },
+    {
+      "name": "DataScatterPoints",
+      "type": "ZOSAPI.Analysis.Data.IAR_DataScatterPoints[]"
+    },
+    {
+      "name": "NumberOfDataScatterPointsRgb",
+      "type": "System.Int32"
+    },
+    {
+      "name": "DataScatterPointsRgb",
+      "type": "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb[]"
+    },
+    {
+      "name": "NumberOfRayData",
+      "type": "System.Int32"
+    },
+    {
+      "name": "RayData",
+      "type": "ZOSAPI.Analysis.Data.IAR_RayData[]"
+    },
+    {
+      "name": "CriticalRayData",
+      "type": "ZOSAPI.Analysis.Data.IAR_CriticalRayData"
+    },
+    {
+      "name": "PathAnalysisData",
+      "type": "ZOSAPI.Analysis.Data.IAR_PathAnalysisData"
+    },
+    {
+      "name": "SpotData",
+      "type": "ZOSAPI.Analysis.Data.IAR_SpotDataResultMatrix"
+    },
+    {
+      "name": "NSCSingleRayTraceData",
+      "type": "ZOSAPI.Analysis.Data.IAR_NSCSingleRayTraceData"
+    },
+    {
+      "name": "NumberOfMessages",
+      "type": "System.Int32"
+    },
+    {
+      "name": "Messages",
+      "type": "ZOSAPI.Analysis.IMessage[]"
+    },
+    {
+      "name": "Parent",
+      "type": "ZOSAPI.IZAPI_BaseObject"
+    }
+  ],
+  "analysis_closed": true,
+  "disconnect": {
+    "ok": true,
+    "data": {
+      "connected": false,
+      "last_session": {
+        "session_id": "f19f0e3358e14622959944ec3cf1cc72",
+        "model_revision": 4,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-02\\probe417-fov-scatter\\native\\f19f0e3358e14622959944ec3cf1cc72\\working_bef5e606.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-02\\probe417-fov-scatter\\native\\f19f0e3358e14622959944ec3cf1cc72\\checkpoint_r4_disconnect_c02d1b40.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 4,
+          "session_id": "f19f0e3358e14622959944ec3cf1cc72"
+        }
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": null,
+      "model_revision": 4,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": null,
+      "opticstudio_build": null,
+      "license": null,
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "geometry": {
+        "state": "pending",
+        "model_revision": 4,
+        "session_id": null
+      }
+    },
+    "artifacts": []
+  }
+}

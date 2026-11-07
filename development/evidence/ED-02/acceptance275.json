@@ -1,0 +1,92 @@
+{
+  "item_id": "ED-02.MaterialOffset.Material",
+  "execution_state": "done",
+  "date": "2026-11-06",
+  "source_version": "0.1.59",
+  "environment": "OpticStudio24.2.0 build240529 PremiumEdition / Python3.14",
+  "scope": "Typed material_offset request; final native parameter adoption; documented dispersion and constant-offset branches; geometric Snell readout; material, cells, configuration and merit persistence; close",
+  "definition": {
+    "dispersion": "catalog Sellmeier1(lambda) + model(Nd+dN,Vd+dV,dPgF,lambda) - model(Nd,Vd,dPgF,lambda)",
+    "reference": "Independent native Model solves measured via Snell at two incident angles; base Sellmeier1 computed from catalog coefficients; catalog dPgF retained.",
+    "fallback": "At minimum wavelength0.29um, LITHOSIL-Q uses constant index offset and ignores Vd offset.",
+    "boundary": "Local v242 includes minimum0.3um in model-difference branch; direct final settings and matching dispersion recorded.",
+    "source": "Local 2024R2 user manual pp333,1348-1349 and official Material_Solves; archived formula verification/development/ED-02/material-reference271/offset-definition.svg"
+  },
+  "tolerances": {
+    "index": "1e-6 + 1e-7*abs(reference)",
+    "abbe": "1e-5 + 1e-7*abs(reference)",
+    "two_angle_snell": "1e-10 + 1e-10*abs(reference)"
+  },
+  "checks": {
+    "ordinary_passed": 120,
+    "ordinary_evidence": "verification/development/ED-02/ordinary272.xml",
+    "native_successful_cases": 4,
+    "numeric_comparisons": 399,
+    "max_abs_error": 9.222544863213278e-11,
+    "evidence": [
+      "verification/development/ED-02/native272.xml: visible and legacy offset cases passed",
+      "verification/development/ED-02/native273.xml: corrected0.3um boundary case passed",
+      "verification/development/ED-02/native274.xml: valid-UV-resource constant-offset case passed"
+    ],
+    "runs": [
+      {
+        "folder": "outputs/runs/material272_offset_visible_c7258e2aca",
+        "numeric_checks": 173,
+        "max_abs_error": 5.4569682106375694e-12,
+        "disconnect_ok": true,
+        "native_closed": true,
+        "forced": false,
+        "close_receipt": "outputs/runs/material272_offset_visible_c7258e2aca/state/close_receipt.json"
+      },
+      {
+        "folder": "outputs/runs/material272_offset_boundary_c2305d88b4",
+        "numeric_checks": 112,
+        "max_abs_error": 6.661338147750939e-16,
+        "disconnect_ok": true,
+        "native_closed": true,
+        "forced": false,
+        "close_receipt": "outputs/runs/material272_offset_boundary_c2305d88b4/state/close_receipt.json"
+      },
+      {
+        "folder": "outputs/runs/material272_offset_below_visible_28dbb38b6e",
+        "numeric_checks": 88,
+        "max_abs_error": 2.220446049250313e-16,
+        "disconnect_ok": true,
+        "native_closed": true,
+        "forced": false,
+        "close_receipt": "outputs/runs/material272_offset_below_visible_28dbb38b6e/state/close_receipt.json"
+      },
+      {
+        "folder": "outputs/runs/material_offset_numeric048_49577e1154",
+        "numeric_checks": 26,
+        "max_abs_error": 9.222544863213278e-11,
+        "disconnect_ok": true,
+        "native_closed": true,
+        "forced": false,
+        "close_receipt": "outputs/runs/material_offset_numeric048_49577e1154/state/close_receipt.json"
+      }
+    ]
+  },
+  "historical_failures": [
+    {
+      "evidence": "verification/development/ED-02/native272.xml",
+      "reason": "A constant-offset expectation at0.3um contradicted the actual local model-difference branch."
+    },
+    {
+      "evidence": "verification/development/ED-02/native273.xml",
+      "reason": "N-BK7 minimum catalog wavelength0.3um invalidated the0.29um baseline; replaced by catalog-valid LITHOSIL-Q and added explicit catalog range precondition."
+    },
+    {
+      "evidence": "verification/development/ED-02/material-diagnostic269",
+      "reason": "Diagnostic used the public server settings wrapper against the internal flattened dispatcher; corrected in270/271."
+    }
+  ],
+  "original_abbe_deviation": {
+    "rounded_delta": 0.9992435881404731,
+    "old_target": 1,
+    "old_tolerance": "1e-5+1e-7*abs(reference)",
+    "resolution": "Corrected reference to the documented model-glass difference, preserving the old tolerance and failure records; model fitting affects the derived Abbe increment."
+  },
+  "related_remaining": "ED-02.MaterialModel.Material remains implemented: native GetIndex reproduces the physical/rounded spectral-line discrepancy; evidence material-diagnostic270/271/anchors.json.",
+  "next_action": "ED-04.RayAimingWizard completion/cancellation diagnosis, then NS-01.Conversion optical equivalence."
+}

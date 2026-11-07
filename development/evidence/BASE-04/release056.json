@@ -1,0 +1,20 @@
+{
+  "version": "0.1.56",
+  "wheel": "wheels/zemax_standalone_mcp-0.1.56-py3-none-any.whl",
+  "installation": "verification\\development\\BASE-04\\wheel-install056-final",
+  "ordinary_passed": 1793,
+  "ordinary_skipped_native": 567,
+  "ordinary_evidence": "verification\\development\\BASE-01\\ordinary059-final.xml",
+  "native_test_cases_completed": 4,
+  "native_wheel_evidence": "verification\\development\\BASE-04\\native-wheel056-final.xml",
+  "candidate_failure_evidence": "verification\\development\\BASE-04\\native-wheel056-release.xml",
+  "native_runs": [
+    "outputs/runs/diff_efficiency_offaxis059_native_277a858202/calls.json",
+    "outputs/runs/diff_efficiency_offaxis059_dll_0de796e6a1/calls.json",
+    "outputs/runs/diff_efficiency056_probe_9fc69a31e4/calls.json",
+    "outputs/runs/hologram_dll059_0aa860d33f/calls.json"
+  ],
+  "scope": "Native Hologram1 S/P 384 comparisons pass, basic Hologram2 192 comparisons pass; both native and DLL active cancel/failure reuse/save reload/paging/PNG. DLL case is characterization: 192 P physical comparisons remain failed; separate projection diagnostics pass.",
+  "known_numeric_blocker": "CO-01.KogelnikDLL.PProjection; DLL P physical maximum absolute error 0.4438234531919145; vendor/source clarification or corrected DLL needed.",
+  "startup_warning": "FRU__delta_init persists in successful sessions"
+}

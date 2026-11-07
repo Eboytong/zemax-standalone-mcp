@@ -1,0 +1,26 @@
+Keep and Exit Saves the current value in the editor and closes the slider control.
+Exit Restores the original data for the modified parameter and closes the slider control.
+Discussion:
+The slider control can be used to adjust any surface or system parameter while monitoring how the changed value
+affects the data displayed in any open analysis window or in all windows.
+When the slider control is activated, a copy is made of the data to be modified. If a new type of data is selected (for
+example,the surfacenumberorparameteror surface/systemsetting is altered)theolddata is automatically restored,
+unless the "Save" button has been pressed. The Save button replaces the saved copy of the original data with the
+newly modified data.
+If any or all of the analysis windows require a long time to update, the slider control may act erratically. This is due
+to theWindows operating systemhandling ofthe slider controlrequiring a very fast updatewhiledragging or scrolling
+the slider bar control. If this occurs, select a single window for updating rather than "all" or choose analysis options
+to reduce computation time.
+5.1.4. Visual Optimizer
+The Visual Optimizer is available in the Manual Adjustment section of the Optimize tab. This feature uses multiple
+slider controls to allow simultaneous manual adjustment of selected variable values.
+Settings:
+Parameter Selects the parameter for that slider to control
+WindowSelect either "All" or any specific analysis window to update when the slideris adjusted. See the discussion.
+Start/Stop The minimum and maximum values of the variable, corresponding to the full left and right positions of
+the slider control, respectively. The difference between the max and min values is the total range of the slider.
+Slider The slider control, which may be dragged left or right to adjust the selected variable.
+Value The current value of the variable for reference.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1064
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Optimize Tab (sequential ui mode)

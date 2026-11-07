@@ -27,11 +27,11 @@
     }
   ],
   "ordinary_passed": 1706,
-  "ordinary_report": ".local/evidence/development/BASE-04/ordinary051.xml",
+  "ordinary_report": "verification/development/BASE-04/ordinary051.xml",
   "wheel_passed": 3,
-  "wheel_report": ".local/evidence/development/BASE-04/wheel-native049.xml",
-  "native_probe": ".local/evidence/development/CO-01/runtime051/probe.json",
-  "polarization_probe": ".local/evidence/development/PO-01/runtime051/settings.json",
+  "wheel_report": "verification/development/BASE-04/wheel-native049.xml",
+  "native_probe": "verification/development/CO-01/runtime051/probe.json",
+  "polarization_probe": "verification/development/PO-01/runtime051/settings.json",
   "fixes": [
     "Sequential coating scans retain inactive NSC selector defaults instead of assigning invalid ObjectNumber=0.",
     "Null SeriesLabels retain Y data and use explicitly generated column indices; native descriptions and extra coefficient tables retained."

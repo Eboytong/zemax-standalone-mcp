@@ -10,4 +10,4 @@ keep_zrd=true与本地.zrd文件名同时提供。ZRDFilename向原生传入文�
 
 2026-11-05用R1=50mm、厚2mm的StandardLens完成前球面50−sqrt(2500−x²−y²)及后平面参考；五张33×33图涵盖ZRD开/关和偏心(.5,−.25)。5445点在1e-8+1e-7×参考值容差下通过，最大绝对差3.55e-15mm；不对称偏心图确认数组方向。两份ZRD实际解析、网格分页、五张PNG、保存重载、源模型保持及正常关闭通过。
 
-无有效采样的失败关闭后可再次计算。1025×1025运行中取消进入cancelled并关闭，源模型保持，后续分析成功。证据.local/evidence/development/NS-04/acceptance065.json；请求例子examples/nsc_surface_sag_requests.json。请求schema沿用docs/tool-schemas.json。
+无有效采样的失败关闭后可再次计算。1025×1025运行中取消进入cancelled并关闭，源模型保持，后续分析成功。证据.local/evidence/development/NS-04/acceptance065.json；请求例子examples/requests/nsc_surface_sag_requests.json。请求schema沿用docs/reference/tool-schemas.json。

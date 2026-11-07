@@ -14,12 +14,12 @@
   "inputs": "Owned signed EvenAspheric z=±.0126*r²,semi5mm; ZernikeFringeSag z=.0126*r²+piston,piston0/±.003mm; current configuration",
   "requests": "Existing sag_table best_fit_sphere MinimumRMS/MinimumRMSWithOffset; request schema unchanged. Actual queries and native headers retained below.",
   "actual_settings": {
-    "operand_cells": ".local/evidence/development/MF-01/probe614-operand-cells/metadata.json",
-    "direct_queries": ".local/evidence/development/MF-01/probe615-dsag-offset/queries.json",
-    "piston": ".local/evidence/development/MF-01/probe621-piston-offset/piston.json",
+    "operand_cells": "verification/development/MF-01/probe614-operand-cells/metadata.json",
+    "direct_queries": "verification/development/MF-01/probe615-dsag-offset/queries.json",
+    "piston": "verification/development/MF-01/probe621-piston-offset/piston.json",
     "stdio": [
-      ".local/runs/sag587_criteria_1_be7d41e8d1",
-      ".local/runs/sag587_criteria_-1_b6f1db7c76"
+      "outputs/runs/sag587_criteria_1_be7d41e8d1",
+      "outputs/runs/sag587_criteria_-1_b6f1db7c76"
     ]
   },
   "production": {
@@ -29,12 +29,12 @@
     "failures": "Native original error/arguments retained; cancellation preserves completed radius; radius discrepancy retains raw values and failed consistency flag"
   },
   "commands": [
-    ".venv/Scripts/python.exe -X utf8 tests/support/sag_offset_outlets611.py .local/evidence/development/MF-01/probe612-sag-outlets",
-    ".venv/Scripts/python.exe -X utf8 tests/support/sag_operand614.py .local/evidence/development/MF-01/probe614-operand-cells",
-    ".venv/Scripts/python.exe -X utf8 tests/support/sag_dsag613.py .local/evidence/development/MF-01/probe615-dsag-offset",
-    ".venv/Scripts/python.exe -m pytest tests/test_sag_criteria_live.py --run-zemax -x -q --junitxml=.local/evidence/development/MF-01/native617-dsag.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_sag_table.py tests/test_sag_fit.py tests/test_surface_slopes.py tests/test_development_status_report.py -q --junitxml=.local/evidence/development/MF-01/ordinary620-final.xml",
-    ".venv/Scripts/python.exe -X utf8 tests/support/sag_piston618.py .local/evidence/development/MF-01/probe621-piston-offset"
+    ".venv/Scripts/python.exe -X utf8 tests/support/sag_offset_outlets611.py verification/development/MF-01/probe612-sag-outlets",
+    ".venv/Scripts/python.exe -X utf8 tests/support/sag_operand614.py verification/development/MF-01/probe614-operand-cells",
+    ".venv/Scripts/python.exe -X utf8 tests/support/sag_dsag613.py verification/development/MF-01/probe615-dsag-offset",
+    ".venv/Scripts/python.exe -m pytest tests/test_sag_criteria_live.py --run-zemax -x -q --junitxml=verification/development/MF-01/native617-dsag.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_sag_table.py tests/test_sag_fit.py tests/test_surface_slopes.py tests/test_development_status_report.py -q --junitxml=verification/development/MF-01/ordinary620-final.xml",
+    ".venv/Scripts/python.exe -X utf8 tests/support/sag_piston618.py verification/development/MF-01/probe621-piston-offset"
   ],
   "tolerance": {
     "radius_absolute": 5e-06,
@@ -475,11 +475,11 @@
   },
   "retained_failures": [
     {
-      "path": ".local/evidence/development/MF-01/probe611-sag-outlets/outlets.json",
+      "path": "verification/development/MF-01/probe611-sag-outlets/outlets.json",
       "reason": "Probe used nonexistent HeaderData.NumberOfLines after native run;finally closed/disconnected;612 iterates formal Lines"
     },
     {
-      "path": ".local/evidence/development/MF-01/probe613-dsag-offset/queries.json",
+      "path": "verification/development/MF-01/probe613-dsag-offset/queries.json",
       "reason": "Initial probe omitted inactive second slot;Data/Samp shifted. Values are not valid Data9/10 evidence.614 formal cell headers then615 corrected arguments;613 source preserved/disconnected."
     }
   ],

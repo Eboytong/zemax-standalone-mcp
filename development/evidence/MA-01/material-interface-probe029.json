@@ -1,0 +1,107 @@
+{
+  "work_package": "MA-01",
+  "date": "2026-11-05",
+  "source": "verification/development/BASE-01/probe/api-interfaces.json",
+  "items": [
+    {
+      "item_id": "MA-01.AthermalGlassMap",
+      "native_analysis_id": "AthermalGlassMap",
+      "analysis_enum_value": 81,
+      "matching_public_interfaces": [],
+      "dedicated_settings_interface_found": false,
+      "runtime_probe": "not run: ZOS-API initialization timed out after 180.578 seconds",
+      "required_probe_after_recovery": [
+        "New_Analysis on the native analysis ID",
+        "GetSettings runtime object type and writable properties",
+        "settings readback",
+        "analysis execution and GetResults/GetTextFile/data grids or series",
+        "normal close and failure cleanup"
+      ],
+      "resume_condition": "Successful ZOS-API initialization; if the runtime exposes a shared settings object, record its exact type and use only confirmed writable properties."
+    },
+    {
+      "item_id": "MA-01.DispersionDiagram",
+      "native_analysis_id": "DispersionDiagram",
+      "analysis_enum_value": 79,
+      "matching_public_interfaces": [],
+      "dedicated_settings_interface_found": false,
+      "runtime_probe": "not run: ZOS-API initialization timed out after 180.578 seconds",
+      "required_probe_after_recovery": [
+        "New_Analysis on the native analysis ID",
+        "GetSettings runtime object type and writable properties",
+        "settings readback",
+        "analysis execution and GetResults/GetTextFile/data grids or series",
+        "normal close and failure cleanup"
+      ],
+      "resume_condition": "Successful ZOS-API initialization; if the runtime exposes a shared settings object, record its exact type and use only confirmed writable properties."
+    },
+    {
+      "item_id": "MA-01.DispersionvsWavelength",
+      "native_analysis_id": "DispersionvsWavelength",
+      "analysis_enum_value": 83,
+      "matching_public_interfaces": [],
+      "dedicated_settings_interface_found": false,
+      "runtime_probe": "not run: ZOS-API initialization timed out after 180.578 seconds",
+      "required_probe_after_recovery": [
+        "New_Analysis on the native analysis ID",
+        "GetSettings runtime object type and writable properties",
+        "settings readback",
+        "analysis execution and GetResults/GetTextFile/data grids or series",
+        "normal close and failure cleanup"
+      ],
+      "resume_condition": "Successful ZOS-API initialization; if the runtime exposes a shared settings object, record its exact type and use only confirmed writable properties."
+    },
+    {
+      "item_id": "MA-01.GlassMap",
+      "native_analysis_id": "GlassMap",
+      "analysis_enum_value": 80,
+      "matching_public_interfaces": [],
+      "dedicated_settings_interface_found": false,
+      "runtime_probe": "not run: ZOS-API initialization timed out after 180.578 seconds",
+      "required_probe_after_recovery": [
+        "New_Analysis on the native analysis ID",
+        "GetSettings runtime object type and writable properties",
+        "settings readback",
+        "analysis execution and GetResults/GetTextFile/data grids or series",
+        "normal close and failure cleanup"
+      ],
+      "resume_condition": "Successful ZOS-API initialization; if the runtime exposes a shared settings object, record its exact type and use only confirmed writable properties."
+    },
+    {
+      "item_id": "MA-01.GradiumProfile",
+      "native_analysis_id": "GradiumProfile",
+      "analysis_enum_value": 85,
+      "matching_public_interfaces": [],
+      "dedicated_settings_interface_found": false,
+      "runtime_probe": "not run: ZOS-API initialization timed out after 180.578 seconds",
+      "required_probe_after_recovery": [
+        "New_Analysis on the native analysis ID",
+        "GetSettings runtime object type and writable properties",
+        "settings readback",
+        "analysis execution and GetResults/GetTextFile/data grids or series",
+        "normal close and failure cleanup"
+      ],
+      "resume_condition": "Successful ZOS-API initialization; if the runtime exposes a shared settings object, record its exact type and use only confirmed writable properties."
+    },
+    {
+      "item_id": "MA-01.SagTable",
+      "native_analysis_id": "SagTable",
+      "analysis_enum_value": 77,
+      "matching_public_interfaces": [],
+      "dedicated_settings_interface_found": false,
+      "runtime_probe": "not run: ZOS-API initialization timed out after 180.578 seconds",
+      "required_probe_after_recovery": [
+        "New_Analysis on the native analysis ID",
+        "GetSettings runtime object type and writable properties",
+        "settings readback",
+        "analysis execution and GetResults/GetTextFile/data grids or series",
+        "normal close and failure cleanup"
+      ],
+      "resume_condition": "Successful ZOS-API initialization; if the runtime exposes a shared settings object, record its exact type and use only confirmed writable properties."
+    }
+  ],
+  "application_startup_evidence": [
+    "verification/development/BASE-04/connection040.json",
+    "verification/development/BASE-04/connection019/supervisor.json"
+  ]
+}

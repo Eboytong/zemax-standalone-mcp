@@ -1,0 +1,50 @@
+import asyncio
+from pathlib import Path
+import pytest
+from tests.support.native import execute
+
+
+@pytest.mark.zemax
+def test_hpc_native_configuration_query():
+    async def work(e):
+        actual=await e.call('get_hpc_settings',{'request':{'mode':'preferences'}})
+        assert type(actual['is_configured']) is bool
+        assert type(actual['node_count']) is int
+        assert actual['source']=='GetHPCSettingsFromPrefs'
+    asyncio.run(execute('hpc_settings',work))
+
+
+@pytest.mark.zemax
+@pytest.mark.parametrize('kind',['nsc','tolerance','global','hammer'])
+def test_hpc_minimal_native_job_result_and_close(kind):
+    async def work(e):
+        actual=await e.call('get_hpc_settings',{'request':{'mode':'preferences'}})
+        if not actual['is_configured']:
+            await e.call('disconnect')
+            pytest.skip('Native IHPCSettings reports IsHPCConfigured=false; configure nodes and feature access.')
+        hpc=dict(mode='preferences')
+        if kind=='nsc':
+            from tests.support.nsc import setup,update
+            await setup(e,2)
+            await update(e,[dict(object=1,object_type='SourceRay',data={'NumberOfAnalysisRays':10,'ZCosine':1}),
+                            dict(object=2,object_type='DetectorRectangle',z=10,data={'NumberXPixels':8,'NumberYPixels':8})])
+            result=await e.finish(await e.call('run_nsc_ray_trace',{'request':dict(hpc=hpc,random_seed=42)}),timeout_seconds=600)
+            assert result['hpc']['is_configured']
+            detector=await e.call('get_detector_data',{'request':{'detector':2}})
+            e.check('HPC direct-ray detector power',detector['total_flux'],1.,atol=1e-8,rtol=1e-7)
+        else:
+            lens=Path.home()/'Documents/Zemax/Samples/Sequential/Objectives/Cooke 40 degree field.zos'
+            await e.call('open_lens',{'path':str(lens)})
+            if kind=='tolerance':
+                await e.call('update_tolerances',{'request':dict(mode='replace',operands=[
+                    dict(type='SEED',param1=42),dict(type='TTHI',param1=1,minimum=-.001,maximum=.001)])})
+                result=await e.finish(await e.call('run_tolerance_analysis',{'request':dict(mode='monte_carlo',samples=4,hpc=hpc)}),timeout_seconds=600)
+                assert result['summary']['actual']['hpc']['is_configured']
+            else:
+                await e.call('set_variables',{'variables':[dict(surface=6,cell='thickness',variable=True,replace_solve=True)]})
+                await e.call('update_merit_function',{'mode':'rms_spot_wizard'})
+                tool='run_global_optimization' if kind=='global' else 'run_hammer_optimization'
+                result=await e.finish(await e.call(tool,{'request':dict(runtime_seconds=2,hpc=hpc)}),timeout_seconds=600)
+                assert result['summary']['optimization']['task']['settings']['hpc']['is_configured']
+                assert result['summary']['independent_validation_completed']
+    asyncio.run(execute('hpc_'+kind,work))

@@ -1,10 +1,10 @@
 {
   "version": "0.1.50",
   "ordinary_passed": 1712,
-  "ordinary_report": ".local/evidence/development/BASE-04/ordinary052-final.xml",
+  "ordinary_report": "verification/development/BASE-04/ordinary052-final.xml",
   "wheel_passed": 2,
-  "wheel_report": ".local/evidence/development/BASE-04/wheel-native050-final.xml",
-  "independent_installation": ".local/evidence/development/BASE-04/wheel-install050-final",
+  "wheel_report": "verification/development/BASE-04/wheel-native050-final.xml",
+  "independent_installation": "verification/development/BASE-04/wheel-install050-final",
   "original_run": "outputs\\runs\\coating024_layers_758af21bf4",
   "checks": [
     {
@@ -72,6 +72,6 @@
     "Zero-layer coating avoids unavailable enable switch",
     "Ordinary injected read/restore failure preserves original error, reconnect and partial-change status"
   ],
-  "cfg_probe": ".local/evidence/development/PO-01/runtime052/settings.json",
+  "cfg_probe": "verification/development/PO-01/runtime052/settings.json",
   "cfg_summary": "Five IAS_.SaveTo calls returned true; five 18448-byte binary CFG files retained; all analyses/application closed. No parameter keys confirmed."
 }

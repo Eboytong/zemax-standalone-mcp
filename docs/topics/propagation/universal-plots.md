@@ -94,7 +94,7 @@
 
 模型须预先建立对应MCE行；编号是实际行号，包含默认MOFF行。正式CFG使用CATEGORY=2、PARAMETER=MCE行号、SURFACE=配置号。扫描选定配置的单元格，计算使用源模型当前配置：选择其他配置不会自动切换计算配置。任务settings.configuration记录当前配置，selected_configuration记录扫描配置。原生文本确认MCE行号/类型；配置选择依据正式CFG接受结果与当前/其他配置独立响应验收，原生轴标题未提供单独配置号getter。
 
-2D两个Configuration轴可组合不同MCE行；与Surface轴组合时，若解析到当前配置的同一曲面属性则提前拒绝。原生验收232覆盖THIC与CRVT、当前/其他配置、双Configuration的5×3网格，24次数值比较最大绝对误差0，固定容差1e-8+1e-7×参考绝对值。保存重载基线、源系统/曲面/solve/MCE/当前配置保持、分页、PNG与关闭通过。相关普通152通过，原生231两项通过，元数据补充检查后的原生232一项通过。证据.local/evidence/development/EX-01/progress232.json；示例examples/universal-configuration232.json。两个Universal条目仍implemented，下一步其他MCE/NSC、一般操作数/评价函数及生命周期。
+2D两个Configuration轴可组合不同MCE行；与Surface轴组合时，若解析到当前配置的同一曲面属性则提前拒绝。原生验收232覆盖THIC与CRVT、当前/其他配置、双Configuration的5×3网格，24次数值比较最大绝对误差0，固定容差1e-8+1e-7×参考绝对值。保存重载基线、源系统/曲面/solve/MCE/当前配置保持、分页、PNG与关闭通过。相关普通152通过，原生231两项通过，元数据补充检查后的原生232一项通过。证据.local/evidence/development/EX-01/progress232.json；示例examples/requests/universal-configuration232.json。两个Universal条目仍implemented，下一步其他MCE/NSC、一般操作数/评价函数及生命周期。
 
 ## 一般操作数与评价函数目标（236）
 
@@ -111,7 +111,7 @@
 
 原生235串行4项通过，包含一般REAY、整体及指定行Merit、Configuration和既有TTHI/CVVA网格回归。新增目标54次数值比较最大绝对误差0：平面光阑REAY=孔径/4，单行TTHI的line1=厚度之和，target1/weight1时line0=|厚度之和−1|。覆盖1D与5×3的2D、非恒定System响应、基线保存重载、源曲面/solve/系统/MFE设置保持、分页、PNG及关闭/断连。
 
-原生可能在IsValid=true时导出“操作数不能计算”的报告；此时返回ANALYSIS_FAILED，保留原始报告和路径。未知名称、活动参数不符、整数类型错误、结果身份不符分别保留具体来源。元数据副本关闭失败要求重连，并保留先前探查错误。相关普通最终188通过；证据.local/evidence/development/EX-01/progress236.json，例子examples/universal-targets236.json。其他MCE/NSC变量、更多操作数族与单位、完整取消/失败/恢复继续开发；两个完整条目保持implemented，B0038/10。
+原生可能在IsValid=true时导出“操作数不能计算”的报告；此时返回ANALYSIS_FAILED，保留原始报告和路径。未知名称、活动参数不符、整数类型错误、结果身份不符分别保留具体来源。元数据副本关闭失败要求重连，并保留先前探查错误。相关普通最终188通过；证据.local/evidence/development/EX-01/progress236.json，例子examples/requests/universal-targets236.json。其他MCE/NSC变量、更多操作数族与单位、完整取消/失败/恢复继续开发；两个完整条目保持implemented，B0038/10。
 
 ## 纯 NSC 轴与生命周期（242）
 
@@ -125,7 +125,7 @@ parameter支持XPosition、YPosition、ZPosition、TiltX、TiltY、TiltZ；位�
 {"request":{"kind":"universal_plot_1d","category":"NSC","object":1,"parameter":"XPosition","start":2,"stop":4,"samples":3,"target":{"mode":"operand","operand":"NPXV","parameters":[1,1,0]}}}
 ```
 
-纯NSC受控Rectangle原生242通过：六种位置/倾斜、两个半宽参数、位置和参数的5×3网格，共10个成功关闭任务，54次数值比较最大绝对误差0；保存重载基线、源对象/solve/系统设置保持、分页和PNG通过。示例examples/universal-nsc242.json。原生241两项通过，另覆盖Configuration回归。
+纯NSC受控Rectangle原生242通过：六种位置/倾斜、两个半宽参数、位置和参数的5×3网格，共10个成功关闭任务，54次数值比较最大绝对误差0；保存重载基线、源对象/solve/系统设置保持、分页和PNG通过。示例examples/requests/universal-nsc242.json。原生241两项通过，另覆盖Configuration回归。
 
 原生239取消验收使用Cooke、RSRE128：1D1001点和2D255×255点均实际进入取消终态，关闭确认无警告；源曲面、solve、系统设置和模型修订保持。每次取消后在同会话运行CVVA，6次数值比较最大绝对误差3.333333331578814e-9，容差1e-8+1e-7×参考绝对值。原生实例正常disconnect。
 
@@ -151,7 +151,7 @@ Surface新增`parameter=Conic`，原生索引4，单位dimensionless；`paramete
 
 原生248两项及扩展249一项通过。最终两个执行记录包含13个成功关闭任务、87次数值比较，最大绝对误差0：COVA/PMVA等于请求属性值，NPXV/NPVA等于组内位置/矩形半宽，两个等权零目标NPXV行的Merit为sqrt((x²+y²)/2)。覆盖两个NSC组、对象参数、跨组5×3网格、NSC/Surface组合、保存重载、源曲面/solve/对象/活动组/修订保持、分页、PNG和断连。
 
-修复绘图对null单位的处理：保留结果中的null，轴标签显示单位参见结果，色标使用值名称。原始native247导出失败及日志保留；修复后EvenAspheric/CoordinateBreak和混合模型PNG通过，并查看EvenAspheric图的坐标、色标与标签。相关普通247通过（含绘图、共用生命周期和任务产物回归）。证据.local/evidence/development/EX-01/progress249.json，例子examples/universal-extended249.json。其他数值MCE轴、更多操作数族/单位及原生计算失败恢复继续开发，完整Universal两项保持implemented；B0038/10。
+修复绘图对null单位的处理：保留结果中的null，轴标签显示单位参见结果，色标使用值名称。原始native247导出失败及日志保留；修复后EvenAspheric/CoordinateBreak和混合模型PNG通过，并查看EvenAspheric图的坐标、色标与标签。相关普通247通过（含绘图、共用生命周期和任务产物回归）。证据.local/evidence/development/EX-01/progress249.json，例子examples/requests/universal-extended249.json。其他数值MCE轴、更多操作数族/单位及原生计算失败恢复继续开发，完整Universal两项保持implemented；B0038/10。
 
 续验250：元数据副本中的NPVA单位读取改动补跑纯NSC回归，原生一项通过，54次数值检查误差0、源对象保持及关闭/断连通过。最终请求schema与证据EX-01/progress249.json同步更新。
 
@@ -175,4 +175,4 @@ TCE扫描使用原生索引5，TCVA读取其值，单位ppm/Celsius；例如TCE=
 
 最终普通334项通过，Universal原生17项通过、无跳过；471次数值比较均满足原定容差。75个原生任务包含71成功、2实际取消、2按设置回读失败，均确认关闭；失败/取消后同会话复用通过。覆盖全部公开轴类别、TCE、九类数值MCE代表、双波长/双视场、一般数值目标、整体/行Merit、非方形网格、保存重载、源模型/solve/配置/活动组/修订保持、分页及PNG。计算报告、启动、设置、解析和关闭错误另有故障注入检查；历史原生异常保留具体归属。
 
-两个Universal条目标为done；原生Surface显示关闭异常、未提供物理单位的字段、非数值/资源型单元格，以及BLNK占位参数无法确认的报告，保留明确条件和失败输出。例子examples/universal-numeric-mce261.json，完整验收.local/evidence/development/EX-01/acceptance261.json。B003达到10/10，0.1.59集中发行检查正在执行。
+两个Universal条目标为done；原生Surface显示关闭异常、未提供物理单位的字段、非数值/资源型单元格，以及BLNK占位参数无法确认的报告，保留明确条件和失败输出。例子examples/requests/universal-numeric-mce261.json，完整验收.local/evidence/development/EX-01/acceptance261.json。B003达到10/10，0.1.59集中发行检查正在执行。

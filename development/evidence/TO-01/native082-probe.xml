@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="13.990" timestamp="2026-11-05T23:38:11.835058+08:00" hostname="tongeb"><testcase classname="tests.test_tolerance_special_analyses_live" name="test_native_tolerance_yield_and_histogram" time="13.488"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'ok': False, 'data': None, 'error': {'code': 'INDEX_OUT_OF_RANGE', 'message': '公差操作数编号越界。', 'details': {'operand': 0, 'count': 0, 'command': 'run_analysis', 'partial_changes_possible': False}}, 'warnings': [], 'context': {'session_id': 'c0d98019ca8549daa59e9361567e6faa', 'model_revision': 5, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_b310effe6a\\c0d98019ca8549daa59e9361567e6faa\\working_45d7e95e.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_b310effe6a\\c0d98019ca8549daa59e9361567e6faa\\checkpoint_r4_tolerances_214b2700.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 5, 'session_id': 'c0d98019ca8549daa59e9361567e6faa'}, 'request_id': '1b7bbb20653542619d3a7c18bb87085d'}, 'artifacts': []}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_tolerance_special_analyses_live.py", line 27, in test_native_tolerance_yield_and_histogram
+  |     asyncio.run(execute("tolerance-special-analyses", work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_tolerance_special_analyses_live.py", line 18, in work
+      |     task = await e.call("run_analysis", {"request": request})
+      |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 14, in call
+      |     if okay:assert r and r["ok"],r
+      |                    ^^^^^^^^^^^^^
+      | AssertionError: {'ok': False, 'data': None, 'error': {'code': 'INDEX_OUT_OF_RANGE', 'message': '公差操作数编号越界。', 'details': {'operand': 0, 'count': 0, 'command': 'run_analysis', 'partial_changes_possible': False}}, 'warnings': [], 'context': {'session_id': 'c0d98019ca8549daa59e9361567e6faa', 'model_revision': 5, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_b310effe6a\\c0d98019ca8549daa59e9361567e6faa\\working_45d7e95e.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_b310effe6a\\c0d98019ca8549daa59e9361567e6faa\\checkpoint_r4_tolerances_214b2700.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 5, 'session_id': 'c0d98019ca8549daa59e9361567e6faa'}, 'request_id': '1b7bbb20653542619d3a7c18bb87085d'}, 'artifacts': []}
+      +------------------------------------</failure></testcase></testsuite></testsuites>

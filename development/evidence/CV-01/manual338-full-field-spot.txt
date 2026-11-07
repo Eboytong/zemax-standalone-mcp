@@ -1,0 +1,31 @@
+Most of the options are identical to the Standard Spot Diagram.
+DeltaFocus: The delta focus option is only used if through-focus spot diagrams are selected. For focal systems,
+delta focus is the Z-axis spacing between the spot diagrams in micrometers. For afocal systems, delta focus is the
+opticalpower spacingbetweenthe spot diagramsin diopters.Five spot diagramswill be shown for each field position.
+The defocus will be -2, -1, 0, 1, and 2 times the delta focus provided. The delta focus units are in microns. For some
+systems the default delta focus may be too small to cause a change in the spot diagram structure.
+Discussion
+The through focus spot diagrams are useful for estimating astigmatism, or for analyzing best focus or depth of focus.
+The Direction Cosine option is not supported.
+3.2.1.6.FullFieldSpotDiagram
+Shows spot diagram with all field points on a common scale.
+719Release 2024 R2 - © Ansys, Inc. All rights reserved.
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+Most of the options are identical to the Standard Spot diagram.
+ExaggerateThisdimensionlessfactormagnifiesthe transverseaberrationsto makethe spotstructuremoreapparent,
+although clearly there is an inherent distortion in using this feature. If "chief ray" is selected as the reference point,
+then the chief ray for field position 1 will be used.
+Discussion The "Full Field" spot diagram type is similar to the "Standard" type, except all of the spots are plotted
+with respect to the same reference point, as opposed to a separate reference point for each field position. This
+provides some idea of how the spot would look relative to the other field points. For example, this can be used to
+determine if two closely spaced image points can be resolved. The "Full Field" spot diagram type is less useful if the
+spot radius is small compared to the total field size, because in this case the spots for each field will appear very
+small compared to the distance between the spots. To increase the detail of the spots, enter a factor for the
+Exaggerate setting.
+3.2.1.7.MatrixSpotDiagram
+Show spot diagram as a matrix of individual diagrams, with each field along a row and each wavelength down a
+column.
+720Release 2024 R2 - © Ansys, Inc. All rights reserved.
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

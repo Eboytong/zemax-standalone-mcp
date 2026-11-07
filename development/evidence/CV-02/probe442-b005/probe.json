@@ -1,0 +1,1220 @@
+{
+  "items": [
+    {
+      "native_id": "PowerFieldMapSettings",
+      "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "properties": [
+        {
+          "name": "Analysis",
+          "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses",
+          "writable": false
+        },
+        {
+          "name": "TheDataID",
+          "type": "ZOSAPI.Analysis.DataID",
+          "writable": false
+        },
+        {
+          "name": "IsValid",
+          "type": "System.Boolean",
+          "writable": true
+        },
+        {
+          "name": "IsActiveWindow",
+          "type": "System.Boolean",
+          "writable": false
+        },
+        {
+          "name": "Parent",
+          "type": "ZOSAPI.IZAPI_BaseObject",
+          "writable": false
+        }
+      ],
+      "methods": [
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "ZOSAPI.Analysis.IMessages Verify()",
+        "Void Update()",
+        "Void Save()",
+        "Void Load()",
+        "Void Reset()",
+        "Boolean SaveTo(System.String)",
+        "Boolean LoadFrom(System.String)",
+        "Boolean ModifySettings(System.String, System.String, System.String)",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object InitializeLifetimeService()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Disconnect()",
+        "System.Object GetLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "Boolean Equals(System.Object)",
+        "Int32 GetHashCode()",
+        "System.Type GetType()",
+        "System.String ToString()"
+      ],
+      "cfg_saved": true,
+      "counts": {
+        "NumberOfDataSeries": 0,
+        "NumberOfDataGrids": 1,
+        "NumberOfDataSeriesRgb": 0,
+        "NumberOfDataGridsRgb": 0,
+        "NumberOfDataScatterPoints": 0,
+        "NumberOfDataScatterPointsRgb": 0,
+        "NumberOfRayData": 0,
+        "NumberOfMessages": 0
+      },
+      "messages": [],
+      "text_exported": true,
+      "result_methods": [
+        "Void DoUpdate()",
+        "Void Disconnect()",
+        "ZOSAPI.Analysis.Data.IAR_DataGrid GetDataGrid(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataGridRgb GetDataGridRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataSeries GetDataSeries(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb GetDataSeriesRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPoints GetDataScatterPoint(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb GetDataScatterPointRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_RayData GetRayData(Int32)",
+        "ZOSAPI.Analysis.IMessage GetMessageAt(Int32)",
+        "Boolean GetTextFile(System.String)",
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object InitializeLifetimeService()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object GetLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "Boolean Equals(System.Object)",
+        "Int32 GetHashCode()",
+        "System.Type GetType()",
+        "System.String ToString()"
+      ],
+      "result_properties": [
+        {
+          "name": "Analysis",
+          "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses"
+        },
+        {
+          "name": "MyDataID",
+          "type": "ZOSAPI.Analysis.DataID"
+        },
+        {
+          "name": "IsValid",
+          "type": "System.Boolean"
+        },
+        {
+          "name": "SetDataBridge",
+          "type": "ZemaxUI.ZOSAPI.Analysis.DataBridge"
+        },
+        {
+          "name": "MetaData",
+          "type": "ZOSAPI.Analysis.Data.IAR_MetaData"
+        },
+        {
+          "name": "HeaderData",
+          "type": "ZOSAPI.Analysis.Data.IAR_HeaderData"
+        },
+        {
+          "name": "NumberOfDataGrids",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataGrids",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataGrid[]"
+        },
+        {
+          "name": "NumberOfDataGridsRgb",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataGridsRgb",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataGridRgb[]"
+        },
+        {
+          "name": "NumberOfDataSeries",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataSeries",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataSeries[]"
+        },
+        {
+          "name": "NumberOfDataSeriesRgb",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataSeriesRgb",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb[]"
+        },
+        {
+          "name": "NumberOfDataScatterPoints",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataScatterPoints",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataScatterPoints[]"
+        },
+        {
+          "name": "NumberOfDataScatterPointsRgb",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataScatterPointsRgb",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb[]"
+        },
+        {
+          "name": "NumberOfRayData",
+          "type": "System.Int32"
+        },
+        {
+          "name": "RayData",
+          "type": "ZOSAPI.Analysis.Data.IAR_RayData[]"
+        },
+        {
+          "name": "CriticalRayData",
+          "type": "ZOSAPI.Analysis.Data.IAR_CriticalRayData"
+        },
+        {
+          "name": "PathAnalysisData",
+          "type": "ZOSAPI.Analysis.Data.IAR_PathAnalysisData"
+        },
+        {
+          "name": "SpotData",
+          "type": "ZOSAPI.Analysis.Data.IAR_SpotDataResultMatrix"
+        },
+        {
+          "name": "NSCSingleRayTraceData",
+          "type": "ZOSAPI.Analysis.Data.IAR_NSCSingleRayTraceData"
+        },
+        {
+          "name": "NumberOfMessages",
+          "type": "System.Int32"
+        },
+        {
+          "name": "Messages",
+          "type": "ZOSAPI.Analysis.IMessage[]"
+        },
+        {
+          "name": "Parent",
+          "type": "ZOSAPI.IZAPI_BaseObject"
+        }
+      ],
+      "closed": true
+    },
+    {
+      "native_id": "PowerPupilMapSettings",
+      "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "properties": [
+        {
+          "name": "Analysis",
+          "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses",
+          "writable": false
+        },
+        {
+          "name": "TheDataID",
+          "type": "ZOSAPI.Analysis.DataID",
+          "writable": false
+        },
+        {
+          "name": "IsValid",
+          "type": "System.Boolean",
+          "writable": true
+        },
+        {
+          "name": "IsActiveWindow",
+          "type": "System.Boolean",
+          "writable": false
+        },
+        {
+          "name": "Parent",
+          "type": "ZOSAPI.IZAPI_BaseObject",
+          "writable": false
+        }
+      ],
+      "methods": [
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "ZOSAPI.Analysis.IMessages Verify()",
+        "Void Update()",
+        "Void Save()",
+        "Void Load()",
+        "Void Reset()",
+        "Boolean SaveTo(System.String)",
+        "Boolean LoadFrom(System.String)",
+        "Boolean ModifySettings(System.String, System.String, System.String)",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object InitializeLifetimeService()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Disconnect()",
+        "System.Object GetLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "Boolean Equals(System.Object)",
+        "Int32 GetHashCode()",
+        "System.Type GetType()",
+        "System.String ToString()"
+      ],
+      "cfg_saved": true,
+      "counts": {
+        "NumberOfDataSeries": 0,
+        "NumberOfDataGrids": 1,
+        "NumberOfDataSeriesRgb": 0,
+        "NumberOfDataGridsRgb": 0,
+        "NumberOfDataScatterPoints": 0,
+        "NumberOfDataScatterPointsRgb": 0,
+        "NumberOfRayData": 0,
+        "NumberOfMessages": 0
+      },
+      "messages": [],
+      "text_exported": true,
+      "result_methods": [
+        "Void DoUpdate()",
+        "Void Disconnect()",
+        "ZOSAPI.Analysis.Data.IAR_DataGrid GetDataGrid(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataGridRgb GetDataGridRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataSeries GetDataSeries(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb GetDataSeriesRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPoints GetDataScatterPoint(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb GetDataScatterPointRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_RayData GetRayData(Int32)",
+        "ZOSAPI.Analysis.IMessage GetMessageAt(Int32)",
+        "Boolean GetTextFile(System.String)",
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object InitializeLifetimeService()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object GetLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "Boolean Equals(System.Object)",
+        "Int32 GetHashCode()",
+        "System.Type GetType()",
+        "System.String ToString()"
+      ],
+      "result_properties": [
+        {
+          "name": "Analysis",
+          "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses"
+        },
+        {
+          "name": "MyDataID",
+          "type": "ZOSAPI.Analysis.DataID"
+        },
+        {
+          "name": "IsValid",
+          "type": "System.Boolean"
+        },
+        {
+          "name": "SetDataBridge",
+          "type": "ZemaxUI.ZOSAPI.Analysis.DataBridge"
+        },
+        {
+          "name": "MetaData",
+          "type": "ZOSAPI.Analysis.Data.IAR_MetaData"
+        },
+        {
+          "name": "HeaderData",
+          "type": "ZOSAPI.Analysis.Data.IAR_HeaderData"
+        },
+        {
+          "name": "NumberOfDataGrids",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataGrids",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataGrid[]"
+        },
+        {
+          "name": "NumberOfDataGridsRgb",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataGridsRgb",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataGridRgb[]"
+        },
+        {
+          "name": "NumberOfDataSeries",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataSeries",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataSeries[]"
+        },
+        {
+          "name": "NumberOfDataSeriesRgb",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataSeriesRgb",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb[]"
+        },
+        {
+          "name": "NumberOfDataScatterPoints",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataScatterPoints",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataScatterPoints[]"
+        },
+        {
+          "name": "NumberOfDataScatterPointsRgb",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataScatterPointsRgb",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb[]"
+        },
+        {
+          "name": "NumberOfRayData",
+          "type": "System.Int32"
+        },
+        {
+          "name": "RayData",
+          "type": "ZOSAPI.Analysis.Data.IAR_RayData[]"
+        },
+        {
+          "name": "CriticalRayData",
+          "type": "ZOSAPI.Analysis.Data.IAR_CriticalRayData"
+        },
+        {
+          "name": "PathAnalysisData",
+          "type": "ZOSAPI.Analysis.Data.IAR_PathAnalysisData"
+        },
+        {
+          "name": "SpotData",
+          "type": "ZOSAPI.Analysis.Data.IAR_SpotDataResultMatrix"
+        },
+        {
+          "name": "NSCSingleRayTraceData",
+          "type": "ZOSAPI.Analysis.Data.IAR_NSCSingleRayTraceData"
+        },
+        {
+          "name": "NumberOfMessages",
+          "type": "System.Int32"
+        },
+        {
+          "name": "Messages",
+          "type": "ZOSAPI.Analysis.IMessage[]"
+        },
+        {
+          "name": "Parent",
+          "type": "ZOSAPI.IZAPI_BaseObject"
+        }
+      ],
+      "closed": true
+    },
+    {
+      "native_id": "RayDatabaseViewer",
+      "factory_result": null
+    },
+    {
+      "native_id": "LightSourceAnalysis",
+      "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "properties": [
+        {
+          "name": "Analysis",
+          "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses",
+          "writable": false
+        },
+        {
+          "name": "TheDataID",
+          "type": "ZOSAPI.Analysis.DataID",
+          "writable": false
+        },
+        {
+          "name": "IsValid",
+          "type": "System.Boolean",
+          "writable": true
+        },
+        {
+          "name": "IsActiveWindow",
+          "type": "System.Boolean",
+          "writable": false
+        },
+        {
+          "name": "Parent",
+          "type": "ZOSAPI.IZAPI_BaseObject",
+          "writable": false
+        }
+      ],
+      "methods": [
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "ZOSAPI.Analysis.IMessages Verify()",
+        "Void Update()",
+        "Void Save()",
+        "Void Load()",
+        "Void Reset()",
+        "Boolean SaveTo(System.String)",
+        "Boolean LoadFrom(System.String)",
+        "Boolean ModifySettings(System.String, System.String, System.String)",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object InitializeLifetimeService()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Disconnect()",
+        "System.Object GetLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "Boolean Equals(System.Object)",
+        "Int32 GetHashCode()",
+        "System.Type GetType()",
+        "System.String ToString()"
+      ],
+      "cfg_saved": true,
+      "counts": {
+        "NumberOfDataSeries": 0,
+        "NumberOfDataGrids": 0,
+        "NumberOfDataSeriesRgb": 0,
+        "NumberOfDataGridsRgb": 0,
+        "NumberOfDataScatterPoints": 0,
+        "NumberOfDataScatterPointsRgb": 0,
+        "NumberOfRayData": 0,
+        "NumberOfMessages": 1
+      },
+      "messages": [
+        "仅有限共轭系统可以使用该功能."
+      ],
+      "text_exported": true,
+      "result_methods": [
+        "Void DoUpdate()",
+        "Void Disconnect()",
+        "ZOSAPI.Analysis.Data.IAR_DataGrid GetDataGrid(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataGridRgb GetDataGridRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataSeries GetDataSeries(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb GetDataSeriesRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPoints GetDataScatterPoint(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb GetDataScatterPointRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_RayData GetRayData(Int32)",
+        "ZOSAPI.Analysis.IMessage GetMessageAt(Int32)",
+        "Boolean GetTextFile(System.String)",
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object InitializeLifetimeService()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object GetLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "Boolean Equals(System.Object)",
+        "Int32 GetHashCode()",
+        "System.Type GetType()",
+        "System.String ToString()"
+      ],
+      "result_properties": [
+        {
+          "name": "Analysis",
+          "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses"
+        },
+        {
+          "name": "MyDataID",
+          "type": "ZOSAPI.Analysis.DataID"
+        },
+        {
+          "name": "IsValid",
+          "type": "System.Boolean"
+        },
+        {
+          "name": "SetDataBridge",
+          "type": "ZemaxUI.ZOSAPI.Analysis.DataBridge"
+        },
+        {
+          "name": "MetaData",
+          "type": "ZOSAPI.Analysis.Data.IAR_MetaData"
+        },
+        {
+          "name": "HeaderData",
+          "type": "ZOSAPI.Analysis.Data.IAR_HeaderData"
+        },
+        {
+          "name": "NumberOfDataGrids",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataGrids",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataGrid[]"
+        },
+        {
+          "name": "NumberOfDataGridsRgb",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataGridsRgb",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataGridRgb[]"
+        },
+        {
+          "name": "NumberOfDataSeries",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataSeries",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataSeries[]"
+        },
+        {
+          "name": "NumberOfDataSeriesRgb",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataSeriesRgb",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb[]"
+        },
+        {
+          "name": "NumberOfDataScatterPoints",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataScatterPoints",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataScatterPoints[]"
+        },
+        {
+          "name": "NumberOfDataScatterPointsRgb",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataScatterPointsRgb",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb[]"
+        },
+        {
+          "name": "NumberOfRayData",
+          "type": "System.Int32"
+        },
+        {
+          "name": "RayData",
+          "type": "ZOSAPI.Analysis.Data.IAR_RayData[]"
+        },
+        {
+          "name": "CriticalRayData",
+          "type": "ZOSAPI.Analysis.Data.IAR_CriticalRayData"
+        },
+        {
+          "name": "PathAnalysisData",
+          "type": "ZOSAPI.Analysis.Data.IAR_PathAnalysisData"
+        },
+        {
+          "name": "SpotData",
+          "type": "ZOSAPI.Analysis.Data.IAR_SpotDataResultMatrix"
+        },
+        {
+          "name": "NSCSingleRayTraceData",
+          "type": "ZOSAPI.Analysis.Data.IAR_NSCSingleRayTraceData"
+        },
+        {
+          "name": "NumberOfMessages",
+          "type": "System.Int32"
+        },
+        {
+          "name": "Messages",
+          "type": "ZOSAPI.Analysis.IMessage[]"
+        },
+        {
+          "name": "Parent",
+          "type": "ZOSAPI.IZAPI_BaseObject"
+        }
+      ],
+      "closed": true
+    },
+    {
+      "native_id": "ExtendedDiffractionImageAnalysis",
+      "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "properties": [
+        {
+          "name": "Analysis",
+          "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses",
+          "writable": false
+        },
+        {
+          "name": "TheDataID",
+          "type": "ZOSAPI.Analysis.DataID",
+          "writable": false
+        },
+        {
+          "name": "IsValid",
+          "type": "System.Boolean",
+          "writable": true
+        },
+        {
+          "name": "IsActiveWindow",
+          "type": "System.Boolean",
+          "writable": false
+        },
+        {
+          "name": "Parent",
+          "type": "ZOSAPI.IZAPI_BaseObject",
+          "writable": false
+        }
+      ],
+      "methods": [
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "ZOSAPI.Analysis.IMessages Verify()",
+        "Void Update()",
+        "Void Save()",
+        "Void Load()",
+        "Void Reset()",
+        "Boolean SaveTo(System.String)",
+        "Boolean LoadFrom(System.String)",
+        "Boolean ModifySettings(System.String, System.String, System.String)",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object InitializeLifetimeService()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Disconnect()",
+        "System.Object GetLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "Boolean Equals(System.Object)",
+        "Int32 GetHashCode()",
+        "System.Type GetType()",
+        "System.String ToString()"
+      ],
+      "cfg_saved": true,
+      "counts": {
+        "NumberOfDataSeries": 0,
+        "NumberOfDataGrids": 1,
+        "NumberOfDataSeriesRgb": 0,
+        "NumberOfDataGridsRgb": 0,
+        "NumberOfDataScatterPoints": 0,
+        "NumberOfDataScatterPointsRgb": 0,
+        "NumberOfRayData": 0,
+        "NumberOfMessages": 0
+      },
+      "messages": [],
+      "text_exported": true,
+      "result_methods": [
+        "Void DoUpdate()",
+        "Void Disconnect()",
+        "ZOSAPI.Analysis.Data.IAR_DataGrid GetDataGrid(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataGridRgb GetDataGridRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataSeries GetDataSeries(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb GetDataSeriesRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPoints GetDataScatterPoint(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb GetDataScatterPointRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_RayData GetRayData(Int32)",
+        "ZOSAPI.Analysis.IMessage GetMessageAt(Int32)",
+        "Boolean GetTextFile(System.String)",
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object InitializeLifetimeService()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object GetLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "Boolean Equals(System.Object)",
+        "Int32 GetHashCode()",
+        "System.Type GetType()",
+        "System.String ToString()"
+      ],
+      "result_properties": [
+        {
+          "name": "Analysis",
+          "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses"
+        },
+        {
+          "name": "MyDataID",
+          "type": "ZOSAPI.Analysis.DataID"
+        },
+        {
+          "name": "IsValid",
+          "type": "System.Boolean"
+        },
+        {
+          "name": "SetDataBridge",
+          "type": "ZemaxUI.ZOSAPI.Analysis.DataBridge"
+        },
+        {
+          "name": "MetaData",
+          "type": "ZOSAPI.Analysis.Data.IAR_MetaData"
+        },
+        {
+          "name": "HeaderData",
+          "type": "ZOSAPI.Analysis.Data.IAR_HeaderData"
+        },
+        {
+          "name": "NumberOfDataGrids",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataGrids",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataGrid[]"
+        },
+        {
+          "name": "NumberOfDataGridsRgb",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataGridsRgb",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataGridRgb[]"
+        },
+        {
+          "name": "NumberOfDataSeries",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataSeries",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataSeries[]"
+        },
+        {
+          "name": "NumberOfDataSeriesRgb",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataSeriesRgb",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb[]"
+        },
+        {
+          "name": "NumberOfDataScatterPoints",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataScatterPoints",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataScatterPoints[]"
+        },
+        {
+          "name": "NumberOfDataScatterPointsRgb",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataScatterPointsRgb",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb[]"
+        },
+        {
+          "name": "NumberOfRayData",
+          "type": "System.Int32"
+        },
+        {
+          "name": "RayData",
+          "type": "ZOSAPI.Analysis.Data.IAR_RayData[]"
+        },
+        {
+          "name": "CriticalRayData",
+          "type": "ZOSAPI.Analysis.Data.IAR_CriticalRayData"
+        },
+        {
+          "name": "PathAnalysisData",
+          "type": "ZOSAPI.Analysis.Data.IAR_PathAnalysisData"
+        },
+        {
+          "name": "SpotData",
+          "type": "ZOSAPI.Analysis.Data.IAR_SpotDataResultMatrix"
+        },
+        {
+          "name": "NSCSingleRayTraceData",
+          "type": "ZOSAPI.Analysis.Data.IAR_NSCSingleRayTraceData"
+        },
+        {
+          "name": "NumberOfMessages",
+          "type": "System.Int32"
+        },
+        {
+          "name": "Messages",
+          "type": "ZOSAPI.Analysis.IMessage[]"
+        },
+        {
+          "name": "Parent",
+          "type": "ZOSAPI.IZAPI_BaseObject"
+        }
+      ],
+      "closed": true
+    },
+    {
+      "native_id": "PartiallyCoherentImageAnalysis",
+      "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "properties": [
+        {
+          "name": "Analysis",
+          "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses",
+          "writable": false
+        },
+        {
+          "name": "TheDataID",
+          "type": "ZOSAPI.Analysis.DataID",
+          "writable": false
+        },
+        {
+          "name": "IsValid",
+          "type": "System.Boolean",
+          "writable": true
+        },
+        {
+          "name": "IsActiveWindow",
+          "type": "System.Boolean",
+          "writable": false
+        },
+        {
+          "name": "Parent",
+          "type": "ZOSAPI.IZAPI_BaseObject",
+          "writable": false
+        }
+      ],
+      "methods": [
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "ZOSAPI.Analysis.IMessages Verify()",
+        "Void Update()",
+        "Void Save()",
+        "Void Load()",
+        "Void Reset()",
+        "Boolean SaveTo(System.String)",
+        "Boolean LoadFrom(System.String)",
+        "Boolean ModifySettings(System.String, System.String, System.String)",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object InitializeLifetimeService()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Disconnect()",
+        "System.Object GetLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "Boolean Equals(System.Object)",
+        "Int32 GetHashCode()",
+        "System.Type GetType()",
+        "System.String ToString()"
+      ],
+      "cfg_saved": true,
+      "counts": {
+        "NumberOfDataSeries": 0,
+        "NumberOfDataGrids": 1,
+        "NumberOfDataSeriesRgb": 0,
+        "NumberOfDataGridsRgb": 0,
+        "NumberOfDataScatterPoints": 0,
+        "NumberOfDataScatterPointsRgb": 0,
+        "NumberOfRayData": 0,
+        "NumberOfMessages": 0
+      },
+      "messages": [],
+      "text_exported": true,
+      "result_methods": [
+        "Void DoUpdate()",
+        "Void Disconnect()",
+        "ZOSAPI.Analysis.Data.IAR_DataGrid GetDataGrid(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataGridRgb GetDataGridRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataSeries GetDataSeries(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb GetDataSeriesRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPoints GetDataScatterPoint(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb GetDataScatterPointRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_RayData GetRayData(Int32)",
+        "ZOSAPI.Analysis.IMessage GetMessageAt(Int32)",
+        "Boolean GetTextFile(System.String)",
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object InitializeLifetimeService()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object GetLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "Boolean Equals(System.Object)",
+        "Int32 GetHashCode()",
+        "System.Type GetType()",
+        "System.String ToString()"
+      ],
+      "result_properties": [
+        {
+          "name": "Analysis",
+          "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses"
+        },
+        {
+          "name": "MyDataID",
+          "type": "ZOSAPI.Analysis.DataID"
+        },
+        {
+          "name": "IsValid",
+          "type": "System.Boolean"
+        },
+        {
+          "name": "SetDataBridge",
+          "type": "ZemaxUI.ZOSAPI.Analysis.DataBridge"
+        },
+        {
+          "name": "MetaData",
+          "type": "ZOSAPI.Analysis.Data.IAR_MetaData"
+        },
+        {
+          "name": "HeaderData",
+          "type": "ZOSAPI.Analysis.Data.IAR_HeaderData"
+        },
+        {
+          "name": "NumberOfDataGrids",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataGrids",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataGrid[]"
+        },
+        {
+          "name": "NumberOfDataGridsRgb",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataGridsRgb",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataGridRgb[]"
+        },
+        {
+          "name": "NumberOfDataSeries",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataSeries",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataSeries[]"
+        },
+        {
+          "name": "NumberOfDataSeriesRgb",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataSeriesRgb",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb[]"
+        },
+        {
+          "name": "NumberOfDataScatterPoints",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataScatterPoints",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataScatterPoints[]"
+        },
+        {
+          "name": "NumberOfDataScatterPointsRgb",
+          "type": "System.Int32"
+        },
+        {
+          "name": "DataScatterPointsRgb",
+          "type": "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb[]"
+        },
+        {
+          "name": "NumberOfRayData",
+          "type": "System.Int32"
+        },
+        {
+          "name": "RayData",
+          "type": "ZOSAPI.Analysis.Data.IAR_RayData[]"
+        },
+        {
+          "name": "CriticalRayData",
+          "type": "ZOSAPI.Analysis.Data.IAR_CriticalRayData"
+        },
+        {
+          "name": "PathAnalysisData",
+          "type": "ZOSAPI.Analysis.Data.IAR_PathAnalysisData"
+        },
+        {
+          "name": "SpotData",
+          "type": "ZOSAPI.Analysis.Data.IAR_SpotDataResultMatrix"
+        },
+        {
+          "name": "NSCSingleRayTraceData",
+          "type": "ZOSAPI.Analysis.Data.IAR_NSCSingleRayTraceData"
+        },
+        {
+          "name": "NumberOfMessages",
+          "type": "System.Int32"
+        },
+        {
+          "name": "Messages",
+          "type": "ZOSAPI.Analysis.IMessage[]"
+        },
+        {
+          "name": "Parent",
+          "type": "ZOSAPI.IZAPI_BaseObject"
+        }
+      ],
+      "closed": true
+    }
+  ],
+  "stage": "closed",
+  "connect": {
+    "connected": true,
+    "native_system_status": "",
+    "native_startup": {
+      "events": [
+        {
+          "stage": "install_check",
+          "event": "started",
+          "timestamp": "2026-11-07T03:50:36.621+00:00",
+          "elapsed_seconds": 2.5000001187436283e-05
+        },
+        {
+          "stage": "install_check",
+          "event": "completed",
+          "timestamp": "2026-11-07T03:50:36.621+00:00",
+          "elapsed_seconds": 0.0003150000120513141,
+          "duration_seconds": 0.00030110000807326287
+        },
+        {
+          "stage": "environment",
+          "event": "started",
+          "timestamp": "2026-11-07T03:50:36.621+00:00",
+          "elapsed_seconds": 0.00032720000308472663
+        },
+        {
+          "stage": "environment",
+          "event": "completed",
+          "timestamp": "2026-11-07T03:50:36.631+00:00",
+          "elapsed_seconds": 0.009744300012243912,
+          "duration_seconds": 0.009411399994860403
+        },
+        {
+          "stage": "clr_load",
+          "event": "started",
+          "timestamp": "2026-11-07T03:50:36.631+00:00",
+          "elapsed_seconds": 0.009755300008691847
+        },
+        {
+          "stage": "clr_load",
+          "event": "completed",
+          "timestamp": "2026-11-07T03:50:36.871+00:00",
+          "elapsed_seconds": 0.2503195000026608,
+          "duration_seconds": 0.2405474000115646
+        },
+        {
+          "stage": "nethelper_assembly",
+          "event": "started",
+          "timestamp": "2026-11-07T03:50:36.871+00:00",
+          "elapsed_seconds": 0.25035280000884086
+        },
+        {
+          "stage": "nethelper_assembly",
+          "event": "completed",
+          "timestamp": "2026-11-07T03:50:36.878+00:00",
+          "elapsed_seconds": 0.2568992000014987,
+          "duration_seconds": 0.006537099994602613
+        },
+        {
+          "stage": "zos_initialize",
+          "event": "started",
+          "timestamp": "2026-11-07T03:50:36.878+00:00",
+          "elapsed_seconds": 0.2569103999994695
+        },
+        {
+          "stage": "zos_initialize",
+          "event": "completed",
+          "timestamp": "2026-11-07T03:50:36.884+00:00",
+          "elapsed_seconds": 0.2629709000029834,
+          "duration_seconds": 0.006043199988198467
+        },
+        {
+          "stage": "api_assemblies",
+          "event": "started",
+          "timestamp": "2026-11-07T03:50:36.884+00:00",
+          "elapsed_seconds": 0.2629878000007011
+        },
+        {
+          "stage": "api_assemblies",
+          "event": "completed",
+          "timestamp": "2026-11-07T03:50:36.898+00:00",
+          "elapsed_seconds": 0.27733420000004116,
+          "duration_seconds": 0.014336599997477606
+        },
+        {
+          "stage": "connection_create",
+          "event": "started",
+          "timestamp": "2026-11-07T03:50:36.898+00:00",
+          "elapsed_seconds": 0.2773450000095181
+        },
+        {
+          "stage": "connection_create",
+          "event": "completed",
+          "timestamp": "2026-11-07T03:50:37.156+00:00",
+          "elapsed_seconds": 0.5350753000093391,
+          "duration_seconds": 0.2577125999960117
+        },
+        {
+          "stage": "application_create",
+          "event": "started",
+          "timestamp": "2026-11-07T03:50:37.156+00:00",
+          "elapsed_seconds": 0.5350943000084953
+        },
+        {
+          "stage": "application_create",
+          "event": "completed",
+          "timestamp": "2026-11-07T03:50:40.518+00:00",
+          "elapsed_seconds": 3.897428200012655,
+          "duration_seconds": 3.3623187000048347
+        },
+        {
+          "stage": "license_check",
+          "event": "started",
+          "timestamp": "2026-11-07T03:50:40.519+00:00",
+          "elapsed_seconds": 3.8974466000072425
+        },
+        {
+          "stage": "license_check",
+          "event": "completed",
+          "timestamp": "2026-11-07T03:50:40.520+00:00",
+          "elapsed_seconds": 3.8988629000086803,
+          "duration_seconds": 0.001408099997206591
+        },
+        {
+          "stage": "primary_system",
+          "event": "started",
+          "timestamp": "2026-11-07T03:50:40.520+00:00",
+          "elapsed_seconds": 3.898881100001745
+        },
+        {
+          "stage": "primary_system",
+          "event": "completed",
+          "timestamp": "2026-11-07T03:50:40.521+00:00",
+          "elapsed_seconds": 3.900241300012567,
+          "duration_seconds": 0.0013547999988077208
+        }
+      ],
+      "observer_warnings": []
+    },
+    "active_task": null,
+    "running_tasks": [],
+    "task_index": {},
+    "recent_tasks": [],
+    "session_id": "0cae1d502adf446da3fc1182d22a8d03",
+    "model_revision": 0,
+    "source_file": null,
+    "working_file": null,
+    "opticstudio_version": "24.2.0",
+    "opticstudio_build": "240529",
+    "license": "PremiumEdition",
+    "checkpoint": null,
+    "requires_reconnect": false,
+    "mode": "Sequential",
+    "configuration": 1,
+    "lens_units": "Millimeters",
+    "mtf_units": "CyclesPerMillimeter",
+    "geometry": {
+      "state": "pending",
+      "model_revision": 0,
+      "session_id": "0cae1d502adf446da3fc1182d22a8d03"
+    }
+  },
+  "resources": {
+    "kind": "gradium_profiles",
+    "items": [
+      "PROFILE.GRD"
+    ],
+    "total": 1,
+    "next_start": null
+  },
+  "disconnect": {
+    "ok": true,
+    "data": {
+      "connected": false,
+      "last_session": {
+        "session_id": "0cae1d502adf446da3fc1182d22a8d03",
+        "model_revision": 1,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-02\\probe442-b005\\native\\0cae1d502adf446da3fc1182d22a8d03\\working_f0c882f5.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-02\\probe442-b005\\native\\0cae1d502adf446da3fc1182d22a8d03\\checkpoint_r1_disconnect_1ea2e840.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 1,
+          "session_id": "0cae1d502adf446da3fc1182d22a8d03"
+        }
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": null,
+      "model_revision": 1,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": null,
+      "opticstudio_build": null,
+      "license": null,
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "geometry": {
+        "state": "pending",
+        "model_revision": 1,
+        "session_id": null
+      }
+    },
+    "artifacts": []
+  }
+}

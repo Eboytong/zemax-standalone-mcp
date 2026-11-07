@@ -1,0 +1,32 @@
+POP_AUTO: Simulates the pressing of the "auto" button which chooses appropriate
+X and Y beam widths based upon the sampling and other settings.
+POP_BEAMTYPE: Selects thebeamtype.Use 0 forGaussianWaist, 1 forGaussianAngle,
+2 for Gaussian Size + Angle, 3 for Top Hat, 4 for File, 5 for DLL and 6 for Multimode.
+POP_PARAMn: Sets beam parameter n, for example, use POP_PARAM3 to set
+parameter3. For example iftheBeamType isGaussianWaist,therewillbe 8parameters
+listed in that order.
+The parameters are read row by row.
+POP_PEAKIRRAD: Sets the normalization by peak irradiance.
+POP_POWER: Sets the normalization by total beam power.
+POP_SAMPX: The X direction sampling, use 1 for 32, 2 for 64, etc.
+POP_SAMPY: The Y direction sampling, use 1 for 32, 2 for 64, etc.
+POP_SOURCEFILE: The file name if the starting beam is defined by a ZBF file, DLL, or
+multimode file.
+POP_WIDEX: The X direction width. POP_WIDEY: The Y direction width.
+PhysicalOpticsPropagation
+- Beam Definition Tab
+POP_COMPUTE: Use 1 to check the fiber coupling integral on, 0 to check it off.
+POP_FIBERFILE: The file name if the fiber mode is defined by a ZBF or DLL.
+POP_FIBERTYPE:Use the same values asPOP_BEAMTYPEabove, exceptformultimode
+which is not yet supported.
+POP_FPARAMn: Sets fiber parameter n, for example, use POP_FPARAM3 to set fiber
+parameter3.
+POP_IGNOREPOL: Use 1 to ignore polarization, 0 to consider polarization.
+POP_POSITION: Fiber position setting. Use 0 for chief ray, 1 for surface vertex.
+POP_TILTX: The X-Tilt.
+POP_TILTY: The Y-Tilt.
+PhysicalOpticsPropagation
+- Fiber Data Tab
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1549
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Programming Tab

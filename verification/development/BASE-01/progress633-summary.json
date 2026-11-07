@@ -3,7 +3,7 @@
   "batch": "B006",
   "completed_count": 5,
   "new_complete_count": 0,
-  "evidence": ".local/evidence/development/MA-01/progress633-context-refraction-capping.json",
+  "evidence": "verification/development/MA-01/progress633-context-refraction-capping.json",
   "ordinary_passed": 97,
   "native_diagnostic_passed": 1,
   "native_regression_passed": 1,

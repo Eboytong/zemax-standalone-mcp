@@ -7,25 +7,25 @@
   "completion_count": 0,
   "counting_reason": "Macro solve cells already accepted under ED-02 including parameter9/10 in acceptance047; EX-01 pending action was stale. Historical scope closure and name-boundary hardening do not add a new B004 function.",
   "historical_evidence": [
-    ".local/evidence/development/ED-02/final-cases018/cases.json",
-    ".local/evidence/development/ED-02/grid-macros018/calls.json",
-    ".local/evidence/development/ED-02/acceptance047/summary.json"
+    "verification/development/ED-02/final-cases018/cases.json",
+    "verification/development/ED-02/grid-macros018/calls.json",
+    "verification/development/ED-02/acceptance047/summary.json"
   ],
-  "ordinary_report": ".local/evidence/development/EX-01/ordinary348-related.xml",
+  "ordinary_report": "verification/development/EX-01/ordinary348-related.xml",
   "ordinary_passed": 162,
-  "native_report": ".local/evidence/development/EX-01/native347-final.xml",
+  "native_report": "verification/development/EX-01/native347-final.xml",
   "native_passed": 1,
   "native_probe": [
-    ".local/evidence/development/EX-01/zpl342-direct/probe.json",
-    ".local/evidence/development/EX-01/zpl343-short-name/probe.json",
-    ".local/evidence/development/EX-01/zpl345-name-boundary/probe.json"
+    "verification/development/EX-01/zpl342-direct/probe.json",
+    "verification/development/EX-01/zpl343-short-name/probe.json",
+    "verification/development/EX-01/zpl345-name-boundary/probe.json"
   ],
   "name_limit": {
     "max_utf16_units": 31,
     "extension_included": false,
     "validated": "ASCII and Chinese BMP names:31 adopted,32 fell back Fixed although setter returned Success; supplementary-character unit counting covered by ordinary request checks"
   },
-  "native_run": ".local/runs/zpl339_gridsag_ab1148667b",
+  "native_run": "outputs/runs/zpl339_gridsag_ab1148667b",
   "checks": [
     {
       "label": "parameter_9 macro result 0.125",

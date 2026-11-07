@@ -12,7 +12,7 @@
 
 证据：`.local/evidence/development/NS-03/progress491-asymmetric.json`、`progress496-endpoint.json`及对应native XML；普通检查见BASE-01/ordinary495-targeted.xml。历史20项普通测试和点像/回放探查保留各自执行范围。NS-03其他专题的实际状态与正式接口缺口见CSV台账；当前原生启动正常。
 
-请求示例见examples/illumination028_requests.json。
+请求示例见examples/requests/illumination028_requests.json。
 
 执行499完成公开运行时接口清单：AS_NSCGeometricMtf公开探测器/ZRD/筛选/最大频率/绘图范围，AR_NSCGeometricMtf只提供序列化曲线/通用数据和文本，未取得原始FFT节点或重采样控制。工具关闭、独立工作模型与断连通过。证据NS-03/progress499-outlets.json。解除完整曲线数值缺口需要正式原始节点/精确频率契约，或可复现的原生插值定义；继续保留implemented。
 
@@ -26,4 +26,4 @@
 
 native563四组用例覆盖单点与非对称1W输入、当前探测器与H4筛选ZRD；64个方向/频率对照最大差2.700854e-8，通过原1e-7+1e-7×参考值。设置、分页、PNG、活动子任务取消、复用、保存重载和关闭通过；PNG已查看。模型基线先保存重载一次以初始化原生光谱表默认值，随后逐项保持对象属性、solve、配置和系统设置。native565原有点像/回放及非对称诊断三项回归通过。560的请求包装失败、562的光谱表延迟初始化断言失败保留历史记录。逐点路径的数值验收与默认显示曲线的历史误差分别记录，见NS-03/acceptance565-endpoints.json。功能通过正式逐点路径完成，B006可计首次完成一次。
 
-调用示例见examples/nsc-mtf-endpoints.json，schema见docs/tool-schemas.json。
+调用示例见examples/requests/nsc-mtf-endpoints.json，schema见docs/reference/tool-schemas.json。

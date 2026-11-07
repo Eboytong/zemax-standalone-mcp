@@ -1,0 +1,47 @@
+other tilts. This insures that the "front" of the image plane corresponds to the front of the detector used for the
+Critical Ray Tracer.
+There is a second header line which describes each column in the rest of the data. This line is a comment and is not
+necessary if the .CRS file is created by hand.
+Then there are N rows of data in the table, with each row containing the following columns:
+The XYZ position data for the starting point of the ray
+The LMN direction cosine data for the starting point of the ray
+The wavelength of the ray (in microns)
+A column of intensity values, all set to 1.0
+The field point number at which the ray starts
+A flag indicating if the ray is a chief ray, marginal ray, or part of a X Fan, Y Fan, XY Fan, Grid, Ring, or List
+The XYZ position data for the ending point of the ray (at the image plane)
+The LMN direction cosine data for the ending point of the ray (at the image plane)
+For both the starting and ending point ofthe ray the XYZ and LMNdata is relative to the vertex ofthe globalreference
+surface. These are similar to the SDF format in non-sequential mode. Like an SDF file, a line starting with "!" Is a
+comment and is ignored.
+Because rays thatfall within the glue distance ofthe edge of an object are terminated in non-sequential mode, when
+we trace the marginal rays for the critical ray set, we don't trace them to the exact edge of the pupil in sequential
+mode. Instead, we trace them to the within 50*(the default glue distance) for systems that are converted to Float
+By Stop Size or 1E-6*(Aperture Value) for systems with Object Space NA or Object Cone Angle aperture types.
+Explicit rays in a ray list don't have a field point, so this is listed as "0" in the .CRS file.
+The ray flags used in the .CRS file are:
+0 for the chief ray,
+1 for marginal rays
+2 for grid rays
+3 for ring rays
+4 for rays that are part of an Y-Fan and are neither the chief or a marginal
+5 for rays that are part of an X-Fan and are neither the chief or a marginal
+6 for rays that are part of an XY-Fan and are neither the chief or a marginal
+7 for rays that are part of a list
+Using a .CRS File as a Source File Object
+A critical ray file can be read into the Source File object in non-sequential mode. This allows the Critical Ray Set to
+be traced and analyzed like any other Source File.
+Effective Input Details
+This option is only available for infinite conjugate systems. For such systems, the user has to define the starting
+location forthe rays in the criticalray set, since the rays inNSC cannot start atinfinity. Forthese systems,the Critical
+Ray Generator inserts a dummy surface and records the rays' position on that surface as the starting point. The
+Effective Input Distance is the distance from the dummy surface to the next surface.
+The minimum allowed effective input distance is 10*(Default Glue Distance), which is currently 1E-5, any values
+entered below that will be converted to 1E-5. Forinfinite conjugate systems, explicitrays from a raylistfile will start
+at the XYZ values listed in the file, not the effective input distance.
+Ifthe angle ofthe inputrays relative to the z-axiswhen projected onto yz-plane or xz-plane is greaterthan 90 degrees,
+then the dummy surface must be curved. The Critical Ray Generator will set the curvature of the dummy surface
+equal to the curvature of the first surface that is not ignored or a coordinate break. Because of the curvature, there
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1255
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Tolerance Tab

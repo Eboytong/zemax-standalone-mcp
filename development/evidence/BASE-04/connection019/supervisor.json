@@ -1,0 +1,12 @@
+{
+  "child_pid": 27592,
+  "budget_seconds": 180,
+  "state": "initialization_timeout",
+  "owned_tree_stop": {
+    "returncode": 0,
+    "stdout": "SUCCESS: The process with PID 21372 (child process of PID 40280) has been terminated.\nSUCCESS: The process with PID 42988 (child process of PID 27592) has been terminated.\nSUCCESS: The process with PID 40280 (child process of PID 27592) has been terminated.\nSUCCESS: The process with PID 27592 (child process of PID 17620) has been terminated.\n",
+    "stderr": ""
+  },
+  "exit_code": 1,
+  "elapsed_seconds": 180.57803489999787
+}

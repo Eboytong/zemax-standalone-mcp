@@ -1,0 +1,18 @@
+{
+  "items": [
+    "TO-01.ToleranceYield",
+    "TO-01.ToleranceHistogram"
+  ],
+  "state": "implemented",
+  "runs": [
+    "outputs/runs/tolerance-special-analyses_b310effe6a",
+    "outputs/runs/tolerance-special-analyses_d39a314ba8"
+  ],
+  "evidence": [
+    "verification/development/TO-01/native082-probe.xml",
+    "verification/development/TO-01/native082-with-data.xml"
+  ],
+  "observed": "Native settings GetOperands.NumberOfOperands=0 after TDE population, also after successful sensitivity analysis; range check rejects operand0 before analysis execution",
+  "next_action": "Probe settings GetToleranceFiles/UseSystemTolerances and retained ZTD input semantics; use formal data selection and verify operand population before numerical acceptance",
+  "counts_as_completed": false
+}

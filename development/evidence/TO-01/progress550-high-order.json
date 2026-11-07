@@ -1,0 +1,125 @@
+{
+  "date": "2026-11-07",
+  "item_id": "TO-01.QuickYield",
+  "state": "implemented",
+  "completion_count": 0,
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build240529 Premium",
+  "scope": "Single rotational high-order term at equal edge sag: precision versus independent area-pupil OPD RMS",
+  "hypothesis": "Fitted-wavefront approximation produces order-dependent zero-perturbation difference; Standard versus VeryHigh separates precision dependence",
+  "input_source": "Owned on-axis EvenAspheric mirror R-200mm,conic-1,semi5mm,image-100mm,wave.55um; r6/r8/r10/r12, each added edge sag.0003125mm",
+  "request": "run_analysis quick_yield field1 wave1 config1,pupil_sampling10,compensator_strategyIgnore,precisionStandard/VeryHigh,TTHI bounds0; full requests/settings in listed records",
+  "reference": "Independent256 radial uniform-area midpoint nodes r=sqrt((j+.5)/256), population RMS of formal batch-ray OPD after piston subtraction; same-condition GaussQuad10 cross-check",
+  "tolerance": "1e-5 waves +1%*reference; unchanged",
+  "commands": [
+    ".venv/Scripts/python.exe -m pytest tests/test_quick_yield_high_order_live.py -q -s --run-zemax --junitxml=verification/development/TO-01/native549-high-order.xml (initial r6/r8-only implementation)",
+    ".venv/Scripts/python.exe -m pytest tests/test_quick_yield_high_order_live.py -k orders10_12 -q -s --run-zemax --junitxml=verification/development/TO-01/native550-higher-order.xml"
+  ],
+  "reproducible_commands": [
+    ".venv/Scripts/python.exe -m pytest tests/test_quick_yield_high_order_live.py -k orders6_8 -q -s --run-zemax",
+    ".venv/Scripts/python.exe -m pytest tests/test_quick_yield_high_order_live.py -k orders10_12 -q -s --run-zemax"
+  ],
+  "results": [
+    {
+      "run": "outputs\\runs\\quickyield549_high_order_60731c1189",
+      "conditions": "outputs\\runs\\quickyield549_high_order_60731c1189\\conditions.json",
+      "actual_settings": "outputs\\runs\\quickyield549_high_order_60731c1189\\high-order.json",
+      "disconnect_ok": true,
+      "results": [
+        {
+          "power": 6,
+          "coefficient": 2e-08,
+          "independent_radial_rms": 0.32194255625467605,
+          "gauss_quad_rms": 0.3219482858737383,
+          "precision_results": [
+            {
+              "precision": "Standard",
+              "maximum_error": 0.0031315716068201493,
+              "tolerance": 0.0032294255625467607,
+              "numerically_passed": true
+            },
+            {
+              "precision": "VeryHigh",
+              "maximum_error": 5.723017635406169e-06,
+              "tolerance": 0.0032294255625467607,
+              "numerically_passed": true
+            }
+          ]
+        },
+        {
+          "power": 8,
+          "coefficient": 8e-10,
+          "independent_radial_rms": 0.3028558810144721,
+          "gauss_quad_rms": 0.30286454439849353,
+          "precision_results": [
+            {
+              "precision": "Standard",
+              "maximum_error": 0.008193367257877004,
+              "tolerance": 0.003038558810144721,
+              "numerically_passed": false
+            },
+            {
+              "precision": "VeryHigh",
+              "maximum_error": 8.66981168046177e-06,
+              "tolerance": 0.003038558810144721,
+              "numerically_passed": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": "outputs\\runs\\quickyield549_high_order_10_12_b692267a7d",
+      "conditions": "outputs\\runs\\quickyield549_high_order_10_12_b692267a7d\\conditions.json",
+      "actual_settings": "outputs\\runs\\quickyield549_high_order_10_12_b692267a7d\\high-order.json",
+      "disconnect_ok": true,
+      "results": [
+        {
+          "power": 10,
+          "coefficient": 3.2e-11,
+          "independent_radial_rms": 0.2853587636320276,
+          "gauss_quad_rms": 0.2853707370398535,
+          "precision_results": [
+            {
+              "precision": "Standard",
+              "maximum_error": 0.013754577827052361,
+              "tolerance": 0.0028635876363202763,
+              "numerically_passed": false
+            },
+            {
+              "precision": "VeryHigh",
+              "maximum_error": 7.866414068063987e-05,
+              "tolerance": 0.0028635876363202763,
+              "numerically_passed": true
+            }
+          ]
+        },
+        {
+          "power": 12,
+          "coefficient": 1.28e-12,
+          "independent_radial_rms": 0.2699930929132951,
+          "gauss_quad_rms": 0.2700087142306634,
+          "precision_results": [
+            {
+              "precision": "Standard",
+              "maximum_error": 0.018974413426660508,
+              "tolerance": 0.002709930929132951,
+              "numerically_passed": false
+            },
+            {
+              "precision": "VeryHigh",
+              "maximum_error": 0.000319603500886112,
+              "tolerance": 0.002709930929132951,
+              "numerically_passed": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "checks": "549/550 each1diagnostic passed. All four GaussQuad-vs-batch checks pass. Eight QuickYield numerical comparisons: VeryHigh4pass;Standard r6pass andr8/r10/r12fail. A diagnostic test pass records completed controlled experiment/lifecycle, not all numerical gates.",
+  "lifecycle": "Eight native QuickYield tasks succeeded and closed without cleanup warnings; two owned sessions disconnected. Snapshots of surfaces/solves, system, MFE/MCE/TDE unchanged around each condition. Raw calls/results retained.",
+  "conclusion": "Precision-dependent high-order fit residual established for controlled reflective systems. VeryHigh maximum error.0003196035waves passes; Standard r8-r12 fails original gate. Cooke VeryHigh still has prior.0303423waves discrepancy, so this does not close original item.",
+  "next_action": "Keep implemented. Need a distinguishing Cooke/refractive controlled model or formal fitted-wavefront definition; do not widen tolerance or replace native results. Continue fixed candidate queue while this definition remains unavailable."
+}

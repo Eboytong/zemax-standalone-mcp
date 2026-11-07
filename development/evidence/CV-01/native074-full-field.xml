@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="13.575" timestamp="2026-11-05T21:23:28.263455+08:00" hostname="tongeb"><testcase classname="tests.test_full_field_spot_live" name="test_full_field_spot_native_statistics" time="13.061"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'completed': False, 'task': {'task_id': '2bb5d9e5a5804c46a5c46e215cebb91c', 'request_id': '2c283e022090408ea9555bb55d4b05fc', 'kind': 'full_field_spot', 'state': 'failed', 'created_at': '2026-11-05T13:23:39.645409+00:00', 'finished_at': '2026-11-05T13:23:39.741112+00:00', 'progress': None, 'can_cancel': True, 'cancel_requested': False, 'settings': {'kind': 'full_field_spot', 'requested': {'kind': 'full_field_spot', 'pattern': 'Hexapolar', 'reference': 'Centroid', 'show_scale': 'ScaleBar', 'color_rays_by': 'Fields', 'ray_density': 6, 'direction_cosines': False, 'use_symbols': False, 'use_polarization': False, 'scatter_rays': False, 'show_airy_disk': False, 'ignore_lateral_color': False, 'field': 1, 'wavelength': 1, 'surface': None, 'plot_scale': 0.0, 'exaggerate': 1.0}, 'native': {'Pattern': 'Hexapolar', 'ReferTo': 'Centroid', 'ShowScale': 'ScaleBar', 'ColorRaysBy': 'Fields', 'RayDensity': 6, 'Configuration': 1, 'DirectionCosines': False, 'UseSymbols': False, 'UsePolarization': False, 'ScatterRays': False, 'ShowAiryDisk': False, 'IgnoreLateralColor': False, 'PlotScale': 0.0, 'DeltaFocus': 0.0, 'Exaggerate': 1.0, 'IsValid': True, 'IsActiveWindow': True, 'Field': 1, 'Wavelength': 1, 'Surface': 7}}, 'context': {'session_id': 'd0761a4d26a243be80798e44bf1e57e7', 'model_revision': 1, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\full_field074_05181e308e\\d0761a4d26a243be80798e44bf1e57e7\\working_f105a25a.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': None, 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 1, 'session_id': 'd0761a4d26a243be80798e44bf1e57e7'}}, 'error': {'code': 'EXPORT_FAILED', 'message': '原生分析文本导出失败。', 'details': {}}, 'close_attempted': True, 'result_path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\full_field074_05181e308e\\d0761a4d26a243be80798e44bf1e57e7\\2bb5d9e5a5804c46a5c46e215cebb91c.json', 'elapsed_seconds': 0.089}, 'checkpoint': None, 'result_schema_version': 1, 'context': {'session_id': 'd0761a4d26a243be80798e44bf1e57e7', 'model_revision': 1, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\full_field074_05181e308e\\d0761a4d26a243be80798e44bf1e57e7\\working_f105a25a.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': None, 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 1, 'session_id': 'd0761a4d26a243be80798e44bf1e57e7'}}, 'artifacts': []}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_full_field_spot_live.py", line 28, in test_full_field_spot_native_statistics
+  |     asyncio.run(execute('full_field074',work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_full_field_spot_live.py", line 16, in work
+      |     result=await e.finish(await e.call('run_analysis',dict(request=q)))
+      |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 22, in finish
+      |     assert t["state"]=="succeeded",r
+      |            ^^^^^^^^^^^^^^^^^^^^^^^
+      | AssertionError: {'completed': False, 'task': {'task_id': '2bb5d9e5a5804c46a5c46e215cebb91c', 'request_id': '2c283e022090408ea9555bb55d4b05fc', 'kind': 'full_field_spot', 'state': 'failed', 'created_at': '2026-11-05T13:23:39.645409+00:00', 'finished_at': '2026-11-05T13:23:39.741112+00:00', 'progress': None, 'can_cancel': True, 'cancel_requested': False, 'settings': {'kind': 'full_field_spot', 'requested': {'kind': 'full_field_spot', 'pattern': 'Hexapolar', 'reference': 'Centroid', 'show_scale': 'ScaleBar', 'color_rays_by': 'Fields', 'ray_density': 6, 'direction_cosines': False, 'use_symbols': False, 'use_polarization': False, 'scatter_rays': False, 'show_airy_disk': False, 'ignore_lateral_color': False, 'field': 1, 'wavelength': 1, 'surface': None, 'plot_scale': 0.0, 'exaggerate': 1.0}, 'native': {'Pattern': 'Hexapolar', 'ReferTo': 'Centroid', 'ShowScale': 'ScaleBar', 'ColorRaysBy': 'Fields', 'RayDensity': 6, 'Configuration': 1, 'DirectionCosines': False, 'UseSymbols': False, 'UsePolarization': False, 'ScatterRays': False, 'ShowAiryDisk': False, 'IgnoreLateralColor': False, 'PlotScale': 0.0, 'DeltaFocus': 0.0, 'Exaggerate': 1.0, 'IsValid': True, 'IsActiveWindow': True, 'Field': 1, 'Wavelength': 1, 'Surface': 7}}, 'context': {'session_id': 'd0761a4d26a243be80798e44bf1e57e7', 'model_revision': 1, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\full_field074_05181e308e\\d0761a4d26a243be80798e44bf1e57e7\\working_f105a25a.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': None, 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 1, 'session_id': 'd0761a4d26a243be80798e44bf1e57e7'}}, 'error': {'code': 'EXPORT_FAILED', 'message': '原生分析文本导出失败。', 'details': {}}, 'close_attempted': True, 'result_path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\full_field074_05181e308e\\d0761a4d26a243be80798e44bf1e57e7\\2bb5d9e5a5804c46a5c46e215cebb91c.json', 'elapsed_seconds': 0.089}, 'checkpoint': None, 'result_schema_version': 1, 'context': {'session_id': 'd0761a4d26a243be80798e44bf1e57e7', 'model_revision': 1, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\full_field074_05181e308e\\d0761a4d26a243be80798e44bf1e57e7\\working_f105a25a.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': None, 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 1, 'session_id': 'd0761a4d26a243be80798e44bf1e57e7'}}, 'artifacts': []}
+      +------------------------------------</failure></testcase></testsuite></testsuites>

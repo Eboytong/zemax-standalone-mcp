@@ -9,8 +9,8 @@
       ],
       "env": {
         "ZEMAX_INSTALL_DIR": "C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio",
-        "ZEMAX_OUTPUT_DIR": "<解压目录>\\outputs\\runs",
-        "ZEMAX_STATE_DIR": "<解压目录>\\outputs\\state",
+        "ZEMAX_OUTPUT_DIR": "<解压目录>\\.local\\runs",
+        "ZEMAX_STATE_DIR": "<解压目录>\\.local\\state",
         "PYTHONUTF8": "1",
         "PYTHONDONTWRITEBYTECODE": "1"
       }

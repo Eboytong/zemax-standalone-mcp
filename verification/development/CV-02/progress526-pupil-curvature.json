@@ -78,10 +78,10 @@
     }
   ],
   "maximum_error": 0.00019476812300922575,
-  "command": ".venv/Scripts/python.exe -m pytest tests/test_power_pupil_curvature_live.py -q -s --run-zemax --junitxml=.local/evidence/development/CV-02/native526-pupil-curvature.xml",
-  "run": ".local/runs/power526_pupil_curvature_2a2807e35f",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_power_pupil_curvature_live.py -q -s --run-zemax --junitxml=verification/development/CV-02/native526-pupil-curvature.xml",
+  "run": "outputs/runs/power526_pupil_curvature_2a2807e35f",
   "retained_failure": {
-    "report": ".local/evidence/development/CV-02/native525-pupil-curvature.xml",
+    "report": "verification/development/CV-02/native525-pupil-curvature.xml",
     "reason": "Test used rectangular flat offset into circle-only rows.526 selects explicit grid_x/grid_y identity; product unchanged."
   },
   "lifecycle": "All four queries succeeded, source surfaces/settings preserved; explicit disconnect completed before numerical gate. Composite query owns no separate analysis; child trace closes in flow finally.",

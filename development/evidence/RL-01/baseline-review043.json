@@ -1,0 +1,1392 @@
+{
+  "version": "0.1.43",
+  "scope": "36 existing baseline adapters and 2 product/placeholder records; source/schema/evidence association, no native rerun",
+  "native_application_created": false,
+  "items": [
+    {
+      "item_id": "BASE-01.DetectorViewer",
+      "state": "baseline",
+      "native_enum": "DetectorViewer",
+      "entry": "run_zrd_replay: viewer channel",
+      "enum_value": 55,
+      "historical_native": null,
+      "typed_tool": "run_zrd_replay",
+      "adapter_source": "src/zemax_mcp/nonsequential.py",
+      "tests": "tests/test_nsc_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.DiffractionEncircledEnergy",
+      "state": "baseline",
+      "native_enum": "DiffractionEncircledEnergy",
+      "entry": "run_analysis: diffraction_encircled_energy",
+      "enum_value": 33,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "192168622cc1474083501d5bc3f7544c",
+        "state": "succeeded",
+        "settings": {
+          "kind": "diffraction_encircled_energy",
+          "requested": {
+            "field": 1,
+            "wavelength": 1,
+            "kind": "diffraction_encircled_energy",
+            "sampling": "S_64x64",
+            "reference": "Centroid",
+            "maximum_radius": 100.0,
+            "use_polarization": false,
+            "multiply_by_diffraction_limit": null
+          },
+          "native": {
+            "HuygensSample": "0",
+            "SampleSize": "S_64x64",
+            "Type": "Encircled",
+            "ReferTo": "Centroid",
+            "ScatterRays": false,
+            "ShowDiffractionLimit": true,
+            "UseDashes": false,
+            "UseHuygensPSF": false,
+            "UsePolarization": false,
+            "HuygensDelta": 0.0,
+            "RadiusMaximum": 100.0,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 1,
+            "Surface": 0
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/EnergyAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.Draw2D",
+      "state": "baseline",
+      "native_enum": "Draw2D",
+      "entry": "run_layout_export: dedicated layout tool, not general analysis adapter",
+      "enum_value": 56,
+      "historical_native": null,
+      "typed_tool": "run_layout_export",
+      "adapter_source": "src/zemax_mcp/exports.py",
+      "tests": "tests/test_layout_exports_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.Draw3D",
+      "state": "baseline",
+      "native_enum": "Draw3D",
+      "entry": "run_layout_export: dedicated layout tool, not general analysis adapter",
+      "enum_value": 57,
+      "historical_native": null,
+      "typed_tool": "run_layout_export",
+      "adapter_source": "src/zemax_mcp/exports.py",
+      "tests": "tests/test_layout_exports_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.FftMtf",
+      "state": "baseline",
+      "native_enum": "FftMtf",
+      "entry": "run_fft_mtf",
+      "enum_value": 15,
+      "historical_native": {
+        "summary": "verification/summary.json",
+        "scope": "Historical FFT MTF task succeeded; independent optical reference not executed in that run"
+      },
+      "typed_tool": "run_fft_mtf",
+      "adapter_source": "src/zemax_mcp/backend.py",
+      "tests": "tests/test_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.FftPsf",
+      "state": "baseline",
+      "native_enum": "FftPsf",
+      "entry": "run_analysis: fft_psf",
+      "enum_value": 28,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "6bd75bde4515434185528a95d6eaa2e0",
+        "state": "succeeded",
+        "settings": {
+          "kind": "fft_psf",
+          "requested": {
+            "field": 1,
+            "wavelength": 1,
+            "kind": "fft_psf",
+            "sampling": "S_64x64",
+            "image_sampling": "S_64x64",
+            "image_delta": 0.0,
+            "normalize": true,
+            "use_polarization": false
+          },
+          "native": {
+            "SampleSize": "PsfS_64x64",
+            "OutputSize": "PsfS_64x64",
+            "Rotation": "CW0",
+            "ImageDelta": 0.0,
+            "UsePolarization": false,
+            "Type": "Linear",
+            "Normalize": true,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 1,
+            "Surface": 0
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "grids"
+        ]
+      },
+      "typed_schema": "#/$defs/PsfAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.FftPsfCrossSection",
+      "state": "baseline",
+      "native_enum": "FftPsfCrossSection",
+      "entry": "run_analysis: fft_psf_cross",
+      "enum_value": 29,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "f4620cb240e042aa8ffc38f8f4a1736b",
+        "state": "succeeded",
+        "settings": {
+          "kind": "fft_psf_cross",
+          "requested": {
+            "field": 1,
+            "wavelength": 1,
+            "kind": "fft_psf_cross",
+            "sampling": "S_64x64",
+            "image_sampling": "S_64x64",
+            "image_delta": 0.0,
+            "normalize": true,
+            "use_polarization": false
+          },
+          "native": {
+            "SampleSize": "S_64x64",
+            "Type": "X_Linear",
+            "UsePolarization": false,
+            "Normalize": true,
+            "PlotScale": 0.0,
+            "RowCol": 0,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 1
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/PsfAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.FftThroughFocusMtf",
+      "state": "baseline",
+      "native_enum": "FftThroughFocusMtf",
+      "entry": "run_analysis: fft_through_focus_mtf",
+      "enum_value": 16,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "7dc4866e99b544fd8df0b7baee07e5c2",
+        "state": "succeeded",
+        "settings": {
+          "kind": "fft_through_focus_mtf",
+          "requested": {
+            "field": 1,
+            "wavelength": 1,
+            "kind": "fft_through_focus_mtf",
+            "sampling": "S_64x64",
+            "frequency": 50.0,
+            "delta_focus": 0.1,
+            "number_of_steps": 11,
+            "use_polarization": false,
+            "multiply_by_diffraction_limit": null
+          },
+          "native": {
+            "Type": "Modulation",
+            "SampleSize": "S_64x64",
+            "UseDashes": false,
+            "UsePolarization": false,
+            "DeltaFocus": 0.1,
+            "Frequency": 50.0,
+            "NumberOfSteps": 11,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 1
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/ThroughFocus",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.FieldCurvatureAndDistortion",
+      "state": "baseline",
+      "native_enum": "FieldCurvatureAndDistortion",
+      "entry": "run_analysis: field_curvature_distortion",
+      "enum_value": 3,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "dd86f63c073a47f48f129e7acb68021d",
+        "state": "succeeded",
+        "settings": {
+          "kind": "field_curvature_distortion",
+          "requested": {
+            "kind": "field_curvature_distortion",
+            "wavelength": 0,
+            "ignore_vignette": false
+          },
+          "native": {
+            "DisplayAs": "Percent",
+            "Distortion": "F_TanTheta",
+            "ScanType": "Plus_Y",
+            "IgnoreVignette": false,
+            "UseDashes": false,
+            "MaximumCurvature": 0.0,
+            "MaximumDistortion": 0.0,
+            "FieldAspectRatio": 1.0,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "ReferenceField": 1,
+            "Wavelength": 0
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/FieldAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.FocalShiftDiagram",
+      "state": "baseline",
+      "native_enum": "FocalShiftDiagram",
+      "entry": "run_analysis: focal_shift",
+      "enum_value": 4,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "3f2b732833f748cca3ae05d82a1ebba2",
+        "state": "succeeded",
+        "settings": {
+          "kind": "focal_shift",
+          "requested": {
+            "kind": "focal_shift"
+          },
+          "native": {
+            "MaximumShift": 0.0,
+            "PupilZone": 0.0,
+            "IsValid": true,
+            "IsActiveWindow": true
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/ColorAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.GeometricEncircledEnergy",
+      "state": "baseline",
+      "native_enum": "GeometricEncircledEnergy",
+      "entry": "run_analysis: geometric_encircled_energy",
+      "enum_value": 34,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "e34e37f3328f4bbeb5b595d3c8aee769",
+        "state": "succeeded",
+        "settings": {
+          "kind": "geometric_encircled_energy",
+          "requested": {
+            "field": 1,
+            "wavelength": 1,
+            "kind": "geometric_encircled_energy",
+            "sampling": "S_64x64",
+            "reference": "Centroid",
+            "maximum_radius": 100.0,
+            "use_polarization": false,
+            "multiply_by_diffraction_limit": null
+          },
+          "native": {
+            "HuygensSample": "0",
+            "SampleSize": "S_64x64",
+            "Type": "Encircled",
+            "ReferTo": "Centroid",
+            "ScatterRays": false,
+            "ShowDiffractionLimit": true,
+            "UseDashes": false,
+            "UseHuygensPSF": false,
+            "UsePolarization": false,
+            "HuygensDelta": 0.0,
+            "RadiusMaximum": 100.0,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 1,
+            "Surface": 0
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/EnergyAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.GeometricMtf",
+      "state": "baseline",
+      "native_enum": "GeometricMtf",
+      "entry": "run_analysis: geometric_mtf",
+      "enum_value": 18,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "83f884043e65496c8e3c6375ebf5dbc9",
+        "state": "succeeded",
+        "settings": {
+          "kind": "geometric_mtf",
+          "requested": {
+            "field": 1,
+            "wavelength": 1,
+            "kind": "geometric_mtf",
+            "sampling": "S_64x64",
+            "image_sampling": "S_64x64",
+            "maximum_frequency": 50.0,
+            "use_polarization": false,
+            "image_delta": 0.0,
+            "multiply_by_diffraction_limit": false
+          },
+          "native": {
+            "SampleSize": "S_64x64",
+            "MultiplyByDiffractionLimit": false,
+            "ScatterRays": false,
+            "UseDashes": false,
+            "UsePolarization": false,
+            "MaximumFrequency": 50.0,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 1
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/MtfAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.GeometricThroughFocusMtf",
+      "state": "baseline",
+      "native_enum": "GeometricThroughFocusMtf",
+      "entry": "run_analysis: geometric_through_focus_mtf",
+      "enum_value": 17,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "4ec578597ac64c4d8db2e913d6fda924",
+        "state": "succeeded",
+        "settings": {
+          "kind": "geometric_through_focus_mtf",
+          "requested": {
+            "field": 1,
+            "wavelength": 1,
+            "kind": "geometric_through_focus_mtf",
+            "sampling": "S_64x64",
+            "frequency": 50.0,
+            "delta_focus": 0.1,
+            "number_of_steps": 11,
+            "use_polarization": false,
+            "multiply_by_diffraction_limit": null
+          },
+          "native": {
+            "SampleSize": "S_64x64",
+            "MultiplyByDiffractionLimit": true,
+            "ScatterRays": false,
+            "UseDashes": false,
+            "UsePolarization": false,
+            "DeltaFocus": 0.1,
+            "Frequency": 50.0,
+            "NumberOfSteps": 11,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 1
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/ThroughFocus",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.HuygensMtf",
+      "state": "baseline",
+      "native_enum": "HuygensMtf",
+      "entry": "run_analysis: huygens_mtf",
+      "enum_value": 25,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "4766166e589e4fe7b82adc7d8075c895",
+        "state": "succeeded",
+        "settings": {
+          "kind": "huygens_mtf",
+          "requested": {
+            "field": 1,
+            "wavelength": 1,
+            "kind": "huygens_mtf",
+            "sampling": "S_64x64",
+            "image_sampling": "S_64x64",
+            "maximum_frequency": 50.0,
+            "use_polarization": false,
+            "image_delta": 0.0,
+            "multiply_by_diffraction_limit": false
+          },
+          "native": {
+            "ImageSampleSize": "S_64x64",
+            "PupilSampleSize": "S_64x64",
+            "Type": "Modulation",
+            "UseDashes": false,
+            "UsePolarization": false,
+            "ImageDelta": 0.0,
+            "MaximumFrequency": 50.0,
+            "Configuration": 1,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 1
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/MtfAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.HuygensPsf",
+      "state": "baseline",
+      "native_enum": "HuygensPsf",
+      "entry": "run_analysis: huygens_psf",
+      "enum_value": 32,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "a9af1aeccce942a4bdec69ccae5f63f3",
+        "state": "succeeded",
+        "settings": {
+          "kind": "huygens_psf",
+          "requested": {
+            "field": 1,
+            "wavelength": 1,
+            "kind": "huygens_psf",
+            "sampling": "S_64x64",
+            "image_sampling": "S_64x64",
+            "image_delta": 0.0,
+            "normalize": true,
+            "use_polarization": false
+          },
+          "native": {
+            "PupilSampleSize": "S_64x64",
+            "ImageSampleSize": "S_64x64",
+            "Type": "Linear",
+            "ShowAsType": "Surface",
+            "Rotation": "Rotate_0",
+            "Normalize": true,
+            "UseCentroid": false,
+            "UsePolarization": false,
+            "ImageDelta": 0.0,
+            "Configuration": 1,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 1
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "grids"
+        ]
+      },
+      "typed_schema": "#/$defs/PsfAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.HuygensPsfCrossSection",
+      "state": "baseline",
+      "native_enum": "HuygensPsfCrossSection",
+      "entry": "run_analysis: huygens_psf_cross",
+      "enum_value": 31,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "96296b30f9fd4a37a807f748f0c52b95",
+        "state": "succeeded",
+        "settings": {
+          "kind": "huygens_psf_cross",
+          "requested": {
+            "field": 1,
+            "wavelength": 1,
+            "kind": "huygens_psf_cross",
+            "sampling": "S_64x64",
+            "image_sampling": "S_64x64",
+            "image_delta": 0.0,
+            "normalize": true,
+            "use_polarization": false
+          },
+          "native": {
+            "PupilSampleSize": "S_64x64",
+            "ImageSampleSize": "S_64x64",
+            "Type": "X_Linear",
+            "Normalize": true,
+            "UseCentroid": false,
+            "UsePolarization": false,
+            "ImageDelta": 0.0,
+            "Configuration": 1,
+            "RowCol": 0,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 1
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/PsfAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.HuygensThroughFocusMtf",
+      "state": "baseline",
+      "native_enum": "HuygensThroughFocusMtf",
+      "entry": "run_analysis: huygens_through_focus_mtf",
+      "enum_value": 27,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "8eb3248d46c340b6a67c4cad6dd2160e",
+        "state": "succeeded",
+        "settings": {
+          "kind": "huygens_through_focus_mtf",
+          "requested": {
+            "field": 1,
+            "wavelength": 1,
+            "kind": "huygens_through_focus_mtf",
+            "sampling": "S_64x64",
+            "frequency": 50.0,
+            "delta_focus": 0.1,
+            "number_of_steps": 11,
+            "use_polarization": false,
+            "multiply_by_diffraction_limit": null
+          },
+          "native": {
+            "ImageSampleSize": "S_64x64",
+            "PupilSampleSize": "S_64x64",
+            "Type": "Modulation",
+            "UseDashes": false,
+            "UsePolarization": false,
+            "DeltaFocus": 0.1,
+            "ImageDelta": 0.0,
+            "Frequency": 50.0,
+            "Configuration": 1,
+            "NumberOfSteps": 11,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 1
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/ThroughFocus",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.LateralColor",
+      "state": "baseline",
+      "native_enum": "LateralColor",
+      "entry": "run_analysis: lateral_color",
+      "enum_value": 6,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "d8d256c976574cc39ef0b77c7e5abdf4",
+        "state": "succeeded",
+        "settings": {
+          "kind": "lateral_color",
+          "requested": {
+            "kind": "lateral_color"
+          },
+          "native": {
+            "AllWavelengths": false,
+            "ShowAiryDisk": true,
+            "UseRealRays": true,
+            "PlotScale": 0.0,
+            "IsValid": true,
+            "IsActiveWindow": true
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/ColorAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.LongitudinalAberration",
+      "state": "baseline",
+      "native_enum": "LongitudinalAberration",
+      "entry": "run_analysis: longitudinal_aberration",
+      "enum_value": 7,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "162e51a869434fe6a8a48822f706abad",
+        "state": "succeeded",
+        "settings": {
+          "kind": "longitudinal_aberration",
+          "requested": {
+            "kind": "longitudinal_aberration"
+          },
+          "native": {
+            "UseDashes": false,
+            "PlotScale": 0.0,
+            "IsValid": true,
+            "IsActiveWindow": true
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/ColorAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.NSC3DLayout",
+      "state": "baseline",
+      "native_enum": "NSC3DLayout",
+      "entry": "run_layout_export: dedicated layout tool, not general analysis adapter",
+      "enum_value": 128,
+      "historical_native": null,
+      "typed_tool": "run_layout_export",
+      "adapter_source": "src/zemax_mcp/exports.py",
+      "tests": "tests/test_layout_exports_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.NSCShadedModel",
+      "state": "baseline",
+      "native_enum": "NSCShadedModel",
+      "entry": "run_layout_export: dedicated layout tool, not general analysis adapter",
+      "enum_value": 127,
+      "historical_native": null,
+      "typed_tool": "run_layout_export",
+      "adapter_source": "src/zemax_mcp/exports.py",
+      "tests": "tests/test_layout_exports_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.OpticalPathFan",
+      "state": "baseline",
+      "native_enum": "OpticalPathFan",
+      "entry": "run_analysis: opd_fan",
+      "enum_value": 1,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "b449810c67d54e148c8bf9dbd399e61d",
+        "state": "succeeded",
+        "settings": {
+          "kind": "opd_fan",
+          "requested": {
+            "field": 1,
+            "wavelength": 1,
+            "kind": "opd_fan",
+            "number_of_rays": 101,
+            "check_apertures": true,
+            "vignetted_pupil": true
+          },
+          "native": {
+            "NumberOfRays": 101,
+            "PlotScale": 0.0,
+            "CheckApertures": true,
+            "VignettedPupil": true,
+            "UseDashes": false,
+            "Sagittal": "Aberration_X",
+            "Tangential": "Aberration_Y",
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 1,
+            "Surface": 0
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/FanAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.PhysicalOpticsPropagation",
+      "state": "baseline",
+      "native_enum": "PhysicalOpticsPropagation",
+      "entry": "run_pop",
+      "enum_value": 95,
+      "historical_native": {
+        "calls": [
+          "outputs\\runs\\pop_a703756b58\\calls.json",
+          "outputs\\runs\\pop_b7c5bc0901\\calls.json",
+          "outputs\\runs\\pop_ccd9bffee0\\calls.json"
+        ],
+        "scope": "Saved historical POP stdio sessions; detailed numerical assertions in test_pop_live.py"
+      },
+      "typed_tool": "run_pop",
+      "adapter_source": "src/zemax_mcp/physical_optics.py",
+      "tests": "tests/test_pop_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.RayFan",
+      "state": "baseline",
+      "native_enum": "RayFan",
+      "entry": "run_analysis: ray_fan",
+      "enum_value": 0,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "0e1ae8eded254ddea22c2b9d72a93c9f",
+        "state": "succeeded",
+        "settings": {
+          "kind": "ray_fan",
+          "requested": {
+            "field": 1,
+            "wavelength": 1,
+            "kind": "ray_fan",
+            "number_of_rays": 101,
+            "check_apertures": true,
+            "vignetted_pupil": true
+          },
+          "native": {
+            "NumberOfRays": 101,
+            "PlotScale": 0.0,
+            "CheckApertures": true,
+            "VignettedPupil": true,
+            "UseDashes": false,
+            "Sagittal": "Aberration_X",
+            "Tangential": "Aberration_Y",
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 1,
+            "Surface": 0
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/FanAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.ReverseRadianceAnalysis",
+      "state": "documented",
+      "native_enum": "ReverseRadianceAnalysis",
+      "entry": "",
+      "enum_value": 118,
+      "historical_native": null,
+      "boundary": "Existing model-adaptation.md cites official 23.2 release-note removal; no current endpoint registered.",
+      "remaining": "Preserve documented product/placeholder boundary; re-evaluate only when installed version or supported interface changes."
+    },
+    {
+      "item_id": "BASE-01.ShadedModel",
+      "state": "baseline",
+      "native_enum": "ShadedModel",
+      "entry": "run_layout_export: dedicated layout tool, not general analysis adapter",
+      "enum_value": 126,
+      "historical_native": null,
+      "typed_tool": "run_layout_export",
+      "adapter_source": "src/zemax_mcp/exports.py",
+      "tests": "tests/test_layout_exports_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.StandardSpot",
+      "state": "baseline",
+      "native_enum": "StandardSpot",
+      "entry": "run_spot_analysis",
+      "enum_value": 43,
+      "historical_native": {
+        "summary": "verification/rms-analyses-summary.json",
+        "scope": "Standard spot child analyses in five-focus-plane RMS validation"
+      },
+      "typed_tool": "run_spot_analysis",
+      "adapter_source": "src/zemax_mcp/backend.py",
+      "tests": "tests/test_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.SurfaceCurvature",
+      "state": "baseline",
+      "native_enum": "SurfaceCurvature",
+      "entry": "run_analysis: surface_curvature",
+      "enum_value": 40,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "730fd385512f425cb813f6486f1f1db8",
+        "state": "succeeded",
+        "settings": {
+          "kind": "surface_curvature",
+          "requested": {
+            "kind": "surface_curvature",
+            "surface": 1,
+            "sampling": "S_65x65",
+            "angle": 0.0
+          },
+          "native": {
+            "Sampling": "S_65x65",
+            "Data": "TangentialCurvature",
+            "ShowAs": "Contour",
+            "ContourFormat": "",
+            "RemoveOption": "None",
+            "BestFitSphereOption": "MinimumVolume",
+            "ConsiderOffAxisAperture": false,
+            "ReverseDirection": false,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Surface": 1
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "grids"
+        ]
+      },
+      "typed_schema": "#/$defs/SurfaceAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.SurfaceCurvatureCross",
+      "state": "baseline",
+      "native_enum": "SurfaceCurvatureCross",
+      "entry": "run_analysis: surface_curvature_cross",
+      "enum_value": 37,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "fa56ef09574b44d784f0d303a7028d30",
+        "state": "succeeded",
+        "settings": {
+          "kind": "surface_curvature_cross",
+          "requested": {
+            "kind": "surface_curvature_cross",
+            "surface": 1,
+            "sampling": "S_65x65",
+            "angle": 0.0
+          },
+          "native": {
+            "Data": "TangentialCurvature",
+            "Sampling": "S_65",
+            "Angle": 0.0,
+            "RemoveOption": "None",
+            "BestFitSphereOption": "MinimumVolume",
+            "ConsiderOffAxisAperture": false,
+            "ReverseDirection": false,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Surface": 1
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/SurfaceAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.SurfacePhase",
+      "state": "baseline",
+      "native_enum": "SurfacePhase",
+      "entry": "run_analysis: surface_phase",
+      "enum_value": 41,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "e1e4df836aa548e7964b3ca8d5ad24fd",
+        "state": "succeeded",
+        "settings": {
+          "kind": "surface_phase",
+          "requested": {
+            "kind": "surface_phase",
+            "surface": 1,
+            "sampling": "S_65x65",
+            "angle": 0.0
+          },
+          "native": {
+            "Sampling": "S_65x65",
+            "Data": "1",
+            "ShowAs": "Contour",
+            "ContourFormat": "",
+            "RemovePiston": false,
+            "RemoveTiltX": false,
+            "RemoveTiltY": false,
+            "RemovePower": false,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Surface": 1
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "grids"
+        ]
+      },
+      "typed_schema": "#/$defs/SurfaceAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.SurfacePhaseCross",
+      "state": "baseline",
+      "native_enum": "SurfacePhaseCross",
+      "entry": "run_analysis: surface_phase_cross",
+      "enum_value": 38,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "353ecd339f2644b6a37fd7391d444d76",
+        "state": "succeeded",
+        "settings": {
+          "kind": "surface_phase_cross",
+          "requested": {
+            "kind": "surface_phase_cross",
+            "surface": 1,
+            "sampling": "S_65x65",
+            "angle": 0.0
+          },
+          "native": {
+            "Data": "1",
+            "Sampling": "S_65",
+            "Angle": 0.0,
+            "RemovePiston": false,
+            "RemoveTiltX": false,
+            "RemoveTiltY": false,
+            "RemovePower": false,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Surface": 1
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/SurfaceAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.SurfaceSag",
+      "state": "baseline",
+      "native_enum": "SurfaceSag",
+      "entry": "run_analysis: surface_sag",
+      "enum_value": 42,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "c4f272bd5a1b4a4c81dce9d10362ed23",
+        "state": "succeeded",
+        "settings": {
+          "kind": "surface_sag",
+          "requested": {
+            "kind": "surface_sag",
+            "surface": 1,
+            "sampling": "S_65x65",
+            "angle": 0.0
+          },
+          "native": {
+            "Sampling": "S_65x65",
+            "Data": "SurfaceSag",
+            "ShowAs": "Surface",
+            "ContourFormat": "",
+            "RemoveOption": "None",
+            "BestFitSphereOption": "MinimumVolume",
+            "ConsiderOffAxisAperture": false,
+            "ReverseDirection": false,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Surface": 1
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "grids"
+        ]
+      },
+      "typed_schema": "#/$defs/SurfaceAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.SurfaceSagCross",
+      "state": "baseline",
+      "native_enum": "SurfaceSagCross",
+      "entry": "run_analysis: surface_sag_cross",
+      "enum_value": 39,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "a9ddbf2f761349dcb04ae6be6d1801ca",
+        "state": "succeeded",
+        "settings": {
+          "kind": "surface_sag_cross",
+          "requested": {
+            "kind": "surface_sag_cross",
+            "surface": 1,
+            "sampling": "S_65x65",
+            "angle": 0.0
+          },
+          "native": {
+            "Data": "SurfaceSag",
+            "Sampling": "S_65",
+            "Angle": 0.0,
+            "RemoveOption": "None",
+            "BestFitSphereOption": "MinimumVolume",
+            "ConsiderOffAxisAperture": false,
+            "ReverseDirection": false,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Surface": 1
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "series"
+        ]
+      },
+      "typed_schema": "#/$defs/SurfaceAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.WavefrontMap",
+      "state": "baseline",
+      "native_enum": "WavefrontMap",
+      "entry": "run_analysis: wavefront",
+      "enum_value": 54,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "ef2292b2d49640e68f88324fac68281b",
+        "state": "succeeded",
+        "settings": {
+          "kind": "wavefront",
+          "requested": {
+            "field": 1,
+            "wavelength": 1,
+            "kind": "wavefront",
+            "sampling": "S_64x64",
+            "remove_tilt": true,
+            "use_exit_pupil": true,
+            "include_pupil_mapping": false
+          },
+          "native": {
+            "ShowAs": "Surface",
+            "Rotation": "Rotate_0",
+            "Sampling": "S_64x64",
+            "Polarization": "None",
+            "ReferenceToPrimary": false,
+            "UseExitPupil": true,
+            "RemoveTilt": true,
+            "Scale": 1.0,
+            "Subaperture_X": 0.0,
+            "Subaperture_Y": 0.0,
+            "Subaperture_R": 1.0,
+            "ContourFormat": "",
+            "STAREffects": "On",
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 1,
+            "Surface": 0
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "grids"
+        ]
+      },
+      "typed_schema": "#/$defs/WavefrontAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.XXXTemplateXXX",
+      "state": "documented",
+      "native_enum": "XXXTemplateXXX",
+      "entry": "",
+      "enum_value": -1,
+      "historical_native": null,
+      "boundary": "Placeholder named XXXTemplateXXX in installed AnalysisIDM; no functional endpoint registered.",
+      "remaining": "Preserve documented product/placeholder boundary; re-evaluate only when installed version or supported interface changes."
+    },
+    {
+      "item_id": "BASE-01.ZernikeAnnularCoefficients",
+      "state": "baseline",
+      "native_enum": "ZernikeAnnularCoefficients",
+      "entry": "run_analysis: zernike_annular",
+      "enum_value": 11,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "b175039bd73b4ee2a802732ebad00704",
+        "state": "succeeded",
+        "settings": {
+          "kind": "zernike_annular",
+          "requested": {
+            "field": 1,
+            "wavelength": 1,
+            "kind": "zernike_annular",
+            "sampling": "S_64x64",
+            "maximum_terms": 22,
+            "obscuration": 0.0
+          },
+          "native": {
+            "SampleSize": "S_64x64",
+            "ReferenceOBDToVertex": false,
+            "Sx": 0.0,
+            "Sy": 0.0,
+            "Sr": 1.0,
+            "Obscuration": 0.0,
+            "MaximumNumberOfTerms": 22,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 1,
+            "Surface": 0
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "rows"
+        ]
+      },
+      "typed_schema": "#/$defs/ZernikeAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.ZernikeFringeCoefficients",
+      "state": "baseline",
+      "native_enum": "ZernikeFringeCoefficients",
+      "entry": "run_analysis: zernike_fringe",
+      "enum_value": 13,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "d843590261064b1f948dbdaa90f80d68",
+        "state": "succeeded",
+        "settings": {
+          "kind": "zernike_fringe",
+          "requested": {
+            "field": 1,
+            "wavelength": 1,
+            "kind": "zernike_fringe",
+            "sampling": "S_64x64",
+            "maximum_terms": 37,
+            "obscuration": 0.0
+          },
+          "native": {
+            "SampleSize": "S_64x64",
+            "ReferenceOBDToVertex": false,
+            "Sx": 0.0,
+            "Sy": 0.0,
+            "Sr": 1.0,
+            "MaximumNumberOfTerms": 37,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 1,
+            "Surface": 0
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "rows"
+        ]
+      },
+      "typed_schema": "#/$defs/ZernikeAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    },
+    {
+      "item_id": "BASE-01.ZernikeStandardCoefficients",
+      "state": "baseline",
+      "native_enum": "ZernikeStandardCoefficients",
+      "entry": "run_analysis: zernike_standard",
+      "enum_value": 14,
+      "historical_native": {
+        "calls": "outputs\\runs\\analyses_98c90c1c01\\calls.json",
+        "task_id": "e686f09302dc4534a5f1173496adf7ef",
+        "state": "succeeded",
+        "settings": {
+          "kind": "zernike_standard",
+          "requested": {
+            "field": 1,
+            "wavelength": 1,
+            "kind": "zernike_standard",
+            "sampling": "S_64x64",
+            "maximum_terms": 22,
+            "obscuration": 0.0
+          },
+          "native": {
+            "SampleSize": "S_64x64",
+            "ReferenceOBDToVertex": false,
+            "Sx": 0.0,
+            "Sy": 0.0,
+            "Sr": 1.0,
+            "Epsilon": 0.0,
+            "MaximumNumberOfTerms": 22,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 1,
+            "Surface": 0
+          }
+        },
+        "native_messages": [],
+        "result_forms": [
+          "rows"
+        ]
+      },
+      "typed_schema": "#/$defs/ZernikeAnalysis",
+      "adapter_source": "src/zemax_mcp/analyses.py",
+      "tests": "tests/test_analyses_live.py",
+      "remaining": "Run current native settings/results/numeric and close regression after startup recovery; retain original historical scope."
+    }
+  ],
+  "historical_request_validation": {
+    "against_current_version": "0.1.43",
+    "accepted_count": 42,
+    "kinds": [
+      "rms_vs_field",
+      "rms_vs_focus",
+      "through_focus_spot",
+      "single_ray_trace",
+      "cardinal_points",
+      "seidel_coefficients",
+      "grid_distortion",
+      "geometric_mtf_vs_field",
+      "huygens_mtf_vs_field",
+      "fft_mtf_map",
+      "geometric_mtf_map",
+      "relative_illumination",
+      "fft_mtf_vs_field",
+      "vignetting",
+      "footprint",
+      "huygens_mtf",
+      "geometric_mtf",
+      "fft_through_focus_mtf",
+      "huygens_through_focus_mtf",
+      "geometric_through_focus_mtf",
+      "fft_psf",
+      "fft_psf_cross",
+      "huygens_psf",
+      "huygens_psf_cross",
+      "diffraction_encircled_energy",
+      "geometric_encircled_energy",
+      "wavefront",
+      "zernike_standard",
+      "zernike_fringe",
+      "zernike_annular",
+      "ray_fan",
+      "opd_fan",
+      "field_curvature_distortion",
+      "longitudinal_aberration",
+      "lateral_color",
+      "focal_shift",
+      "surface_sag",
+      "surface_curvature",
+      "surface_phase",
+      "surface_sag_cross",
+      "surface_curvature_cross",
+      "surface_phase_cross"
+    ],
+    "scope": "Recorded successful analysis request payloads parsed by current typed models; no native execution"
+  }
+}

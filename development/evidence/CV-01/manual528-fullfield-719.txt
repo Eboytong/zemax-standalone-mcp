@@ -1,0 +1,17 @@
+Most of the options are identical to the Standard Spot diagram.
+ExaggerateThisdimensionless factormagnifies the transverse aberrations tomake the spot structuremore apparent,
+although clearly there is an inherent distortion in using this feature. If "chief ray" is selected as the reference point,
+then the chief ray for field position 1 will be used.
+Discussion The "Full Field" spot diagram type is similar to the "Standard" type, except all of the spots are plotted
+with respect to the same reference point, as opposed to a separate reference point for each field position. This
+provides some idea of how the spot would look relative to the other field points. For example, this can be used to
+determine if two closely spaced image points can be resolved. The "Full Field" spot diagram type is less useful if the
+spot radius is small compared to the total field size, because in this case the spots for each field will appear very
+small compared to the distance between the spots. To increase the detail of the spots, enter a factor for the
+Exaggerate setting.
+3.2.1.7. Matrix Spot Diagram
+Show spot diagram as a matrix of individual diagrams, with each field along a row and each wavelength down a
+column.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 720
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

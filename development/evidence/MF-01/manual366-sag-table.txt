@@ -1,0 +1,7 @@
+PAGE 906
+3.4.2.1. Sag Table
+3.4.2.2. Surface Sag
+Displays the sag of a surface as a 2D color or contour map, or as a 3D surface plot.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 906
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

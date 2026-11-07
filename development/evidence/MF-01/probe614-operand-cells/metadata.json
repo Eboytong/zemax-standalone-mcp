@@ -1,0 +1,477 @@
+{
+  "connect": {
+    "ok": true,
+    "data": {
+      "connected": true,
+      "native_system_status": "",
+      "native_startup": {
+        "events": [
+          {
+            "stage": "install_check",
+            "event": "started",
+            "timestamp": "2026-11-07T11:53:13.255+00:00",
+            "elapsed_seconds": 3.3500007702969015e-05
+          },
+          {
+            "stage": "install_check",
+            "event": "completed",
+            "timestamp": "2026-11-07T11:53:13.255+00:00",
+            "elapsed_seconds": 0.0005063999997219071,
+            "duration_seconds": 0.00048820000665728003
+          },
+          {
+            "stage": "environment",
+            "event": "started",
+            "timestamp": "2026-11-07T11:53:13.255+00:00",
+            "elapsed_seconds": 0.0005181000014999881
+          },
+          {
+            "stage": "environment",
+            "event": "completed",
+            "timestamp": "2026-11-07T11:53:13.265+00:00",
+            "elapsed_seconds": 0.010802600008901209,
+            "duration_seconds": 0.010275399996316992
+          },
+          {
+            "stage": "clr_load",
+            "event": "started",
+            "timestamp": "2026-11-07T11:53:13.265+00:00",
+            "elapsed_seconds": 0.010817700007464737
+          },
+          {
+            "stage": "clr_load",
+            "event": "completed",
+            "timestamp": "2026-11-07T11:53:13.534+00:00",
+            "elapsed_seconds": 0.2792681000137236,
+            "duration_seconds": 0.2684333999932278
+          },
+          {
+            "stage": "nethelper_assembly",
+            "event": "started",
+            "timestamp": "2026-11-07T11:53:13.534+00:00",
+            "elapsed_seconds": 0.27929010000661947
+          },
+          {
+            "stage": "nethelper_assembly",
+            "event": "completed",
+            "timestamp": "2026-11-07T11:53:13.543+00:00",
+            "elapsed_seconds": 0.2881504000106361,
+            "duration_seconds": 0.008846500000800006
+          },
+          {
+            "stage": "zos_initialize",
+            "event": "started",
+            "timestamp": "2026-11-07T11:53:13.543+00:00",
+            "elapsed_seconds": 0.28816830000141636
+          },
+          {
+            "stage": "zos_initialize",
+            "event": "completed",
+            "timestamp": "2026-11-07T11:53:13.550+00:00",
+            "elapsed_seconds": 0.29522680000809487,
+            "duration_seconds": 0.007038700001430698
+          },
+          {
+            "stage": "api_assemblies",
+            "event": "started",
+            "timestamp": "2026-11-07T11:53:13.550+00:00",
+            "elapsed_seconds": 0.29525970001122914
+          },
+          {
+            "stage": "api_assemblies",
+            "event": "completed",
+            "timestamp": "2026-11-07T11:53:13.566+00:00",
+            "elapsed_seconds": 0.3111349000100745,
+            "duration_seconds": 0.01586230000248179
+          },
+          {
+            "stage": "connection_create",
+            "event": "started",
+            "timestamp": "2026-11-07T11:53:13.566+00:00",
+            "elapsed_seconds": 0.3111489000002621
+          },
+          {
+            "stage": "connection_create",
+            "event": "completed",
+            "timestamp": "2026-11-07T11:53:13.853+00:00",
+            "elapsed_seconds": 0.5981601000094088,
+            "duration_seconds": 0.28699110000161454
+          },
+          {
+            "stage": "application_create",
+            "event": "started",
+            "timestamp": "2026-11-07T11:53:13.853+00:00",
+            "elapsed_seconds": 0.5981831000099191
+          },
+          {
+            "stage": "application_create",
+            "event": "completed",
+            "timestamp": "2026-11-07T11:53:20.940+00:00",
+            "elapsed_seconds": 7.684880700006033,
+            "duration_seconds": 7.086669600001187
+          },
+          {
+            "stage": "license_check",
+            "event": "started",
+            "timestamp": "2026-11-07T11:53:20.940+00:00",
+            "elapsed_seconds": 7.684918600003584
+          },
+          {
+            "stage": "license_check",
+            "event": "completed",
+            "timestamp": "2026-11-07T11:53:20.943+00:00",
+            "elapsed_seconds": 7.6884592000133125,
+            "duration_seconds": 0.0035124999994877726
+          },
+          {
+            "stage": "primary_system",
+            "event": "started",
+            "timestamp": "2026-11-07T11:53:20.943+00:00",
+            "elapsed_seconds": 7.68849770000088
+          },
+          {
+            "stage": "primary_system",
+            "event": "completed",
+            "timestamp": "2026-11-07T11:53:20.947+00:00",
+            "elapsed_seconds": 7.69273810001323,
+            "duration_seconds": 0.0042310999997425824
+          }
+        ],
+        "observer_warnings": []
+      },
+      "active_task": null,
+      "running_tasks": [],
+      "task_index": {},
+      "recent_tasks": [],
+      "session_id": "8e46cf64bcd5450291c57ca0a2228ef3",
+      "model_revision": 0,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": "24.2.0",
+      "opticstudio_build": "240529",
+      "license": "PremiumEdition",
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "mode": "Sequential",
+      "configuration": 1,
+      "lens_units": "Millimeters",
+      "mtf_units": "CyclesPerMillimeter",
+      "geometry": {
+        "state": "pending",
+        "model_revision": 0,
+        "session_id": "8e46cf64bcd5450291c57ca0a2228ef3"
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": "8e46cf64bcd5450291c57ca0a2228ef3",
+      "model_revision": 0,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": "24.2.0",
+      "opticstudio_build": "240529",
+      "license": "PremiumEdition",
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "mode": "Sequential",
+      "configuration": 1,
+      "lens_units": "Millimeters",
+      "mtf_units": "CyclesPerMillimeter",
+      "geometry": {
+        "state": "pending",
+        "model_revision": 0,
+        "session_id": "8e46cf64bcd5450291c57ca0a2228ef3"
+      }
+    },
+    "artifacts": []
+  },
+  "new": {
+    "ok": true,
+    "data": {
+      "mode": "Sequential",
+      "configuration": 1,
+      "lens_units": "Millimeters",
+      "mtf_units": "CyclesPerMillimeter",
+      "source_units": "Watts",
+      "source_unit_prefix": "None",
+      "analysis_units": "WattsPerCMSq",
+      "analysis_unit_prefix": "None",
+      "afocal_image_space": false,
+      "aperture": {
+        "type": "EntrancePupilDiameter",
+        "value": 0.0
+      },
+      "field_type": "Angle",
+      "field_normalization": "Radial",
+      "fields": [
+        {
+          "number": 1,
+          "x": 0.0,
+          "y": 0.0,
+          "weight": 1.0,
+          "vdx": 0.0,
+          "vdy": 0.0,
+          "vcx": 0.0,
+          "vcy": 0.0,
+          "van": 0.0
+        }
+      ],
+      "wavelength_unit": "micrometers (environmental air reference)",
+      "wavelengths": [
+        {
+          "number": 1,
+          "wavelength_um": 0.55,
+          "weight": 1.0,
+          "primary": true
+        }
+      ],
+      "temperature_c": 20.0,
+      "pressure_atm": 1.0,
+      "adjust_index_to_environment": false,
+      "afocal_mode_units": "Milliradians",
+      "settings_activity": {
+        "apodization_factor_is_used": false
+      },
+      "author": "",
+      "aperture_options": {
+        "apodization_type": "Uniform",
+        "apodization_factor": 0.0,
+        "semi_diameter_margin": 0.0,
+        "semi_diameter_margin_pct": 0.0,
+        "telecentric_object_space": false,
+        "afocal_image_space": false,
+        "iterate_solves_when_updating": false,
+        "fast_semi_diameters": true,
+        "check_grin_apertures": false
+      },
+      "advanced": {
+        "reference_opd": "ExitPupil",
+        "paraxial_rays": "IgnoreCoordinateBreaks",
+        "f_num_method": "TracingRays",
+        "dont_print_coordinate_break_data": false,
+        "turn_off_threading": false,
+        "opd_modulo_2pi": false,
+        "include_calculated_data_in_session_file": true,
+        "include_tolerance_data_in_session_file": true,
+        "huygens_integral_method": "Auto"
+      },
+      "global_reference_surface": 1,
+      "material_catalogs": [
+        "SCHOTT"
+      ],
+      "polarization": {
+        "unpolarized": true,
+        "jx": 0.0,
+        "jy": 1.0,
+        "x_phase": 0.0,
+        "y_phase": 0.0,
+        "method": "XAxisMethod",
+        "convert_thin_film_phase": true
+      },
+      "ray_aiming": {
+        "mode": "Off",
+        "method": "Heuristic",
+        "cache": true,
+        "robust": false,
+        "scale_pupil_shift_by_field": false,
+        "auto_pupil_shift": true,
+        "enhanced": false,
+        "advanced_convergence": false,
+        "fallback_search": false,
+        "pupil_shift_x": 0.0,
+        "pupil_shift_y": 0.0,
+        "pupil_shift_z": 0.0,
+        "pupil_compress_x": 0.0,
+        "pupil_compress_y": 0.0,
+        "cache_steps": 10
+      },
+      "files": {
+        "coating_file": "COATING.DAT",
+        "scatter_profile": "SCATTER_PROFILE.DAT",
+        "abg_file": "ABG_DATA.DAT",
+        "gradium_profile": "PROFILE.GRD"
+      },
+      "title": "",
+      "notes": "",
+      "surface_count": 3,
+      "native_system_status": "",
+      "first_order": {
+        "effective_focal_length": 10000000000.0,
+        "paraxial_working_f_number": 10000.0,
+        "real_working_f_number": 10000.0,
+        "paraxial_image_height": 0.0,
+        "paraxial_magnification": 0.0
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": "8e46cf64bcd5450291c57ca0a2228ef3",
+      "model_revision": 1,
+      "source_file": null,
+      "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\MF-01\\probe614-operand-cells\\native\\8e46cf64bcd5450291c57ca0a2228ef3\\working_a412ae12.zos",
+      "opticstudio_version": "24.2.0",
+      "opticstudio_build": "240529",
+      "license": "PremiumEdition",
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "mode": "Sequential",
+      "configuration": 1,
+      "lens_units": "Millimeters",
+      "mtf_units": "CyclesPerMillimeter",
+      "geometry": {
+        "state": "pending",
+        "model_revision": 1,
+        "session_id": "8e46cf64bcd5450291c57ca0a2228ef3"
+      }
+    },
+    "artifacts": []
+  },
+  "DSAG": [
+    {
+      "column": 2,
+      "header": "\u9762",
+      "active": true,
+      "data_type": "Integer"
+    },
+    {
+      "column": 3,
+      "header": " ",
+      "active": false,
+      "data_type": "Integer"
+    },
+    {
+      "column": 4,
+      "header": "\u6570\u636e",
+      "active": true,
+      "data_type": "Integer"
+    },
+    {
+      "column": 5,
+      "header": "\u91c7\u6837",
+      "active": true,
+      "data_type": "Integer"
+    },
+    {
+      "column": 6,
+      "header": "\u79bb\u8f74",
+      "active": true,
+      "data_type": "Integer"
+    },
+    {
+      "column": 7,
+      "header": "\u79fb\u9664",
+      "active": true,
+      "data_type": "Integer"
+    },
+    {
+      "column": 8,
+      "header": "\u6700\u4f73\u62df\u5408\u7403\u9762",
+      "active": true,
+      "data_type": "Integer"
+    },
+    {
+      "column": 9,
+      "header": " ",
+      "active": false,
+      "data_type": "Double"
+    }
+  ],
+  "DSLP": [
+    {
+      "column": 2,
+      "header": "\u9762",
+      "active": true,
+      "data_type": "Integer"
+    },
+    {
+      "column": 3,
+      "header": " ",
+      "active": false,
+      "data_type": "Integer"
+    },
+    {
+      "column": 4,
+      "header": "\u6570\u636e",
+      "active": true,
+      "data_type": "Integer"
+    },
+    {
+      "column": 5,
+      "header": "\u91c7\u6837",
+      "active": true,
+      "data_type": "Integer"
+    },
+    {
+      "column": 6,
+      "header": "\u79bb\u8f74",
+      "active": true,
+      "data_type": "Integer"
+    },
+    {
+      "column": 7,
+      "header": "\u79fb\u9664",
+      "active": true,
+      "data_type": "Integer"
+    },
+    {
+      "column": 8,
+      "header": "\u6700\u4f73\u62df\u5408\u7403\u9762",
+      "active": true,
+      "data_type": "Integer"
+    },
+    {
+      "column": 9,
+      "header": "\u671d\u5411",
+      "active": true,
+      "data_type": "Integer"
+    }
+  ],
+  "copy_closed": true,
+  "disconnect": {
+    "ok": true,
+    "data": {
+      "connected": false,
+      "last_session": {
+        "session_id": "8e46cf64bcd5450291c57ca0a2228ef3",
+        "model_revision": 1,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\MF-01\\probe614-operand-cells\\native\\8e46cf64bcd5450291c57ca0a2228ef3\\working_a412ae12.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\MF-01\\probe614-operand-cells\\native\\8e46cf64bcd5450291c57ca0a2228ef3\\checkpoint_r1_disconnect_71316745.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 1,
+          "session_id": "8e46cf64bcd5450291c57ca0a2228ef3"
+        }
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": null,
+      "model_revision": 1,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": null,
+      "opticstudio_build": null,
+      "license": null,
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "geometry": {
+        "state": "pending",
+        "model_revision": 1,
+        "session_id": null
+      }
+    },
+    "artifacts": []
+  }
+}

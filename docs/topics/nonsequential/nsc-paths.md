@@ -24,7 +24,7 @@ nsc_single_ray_trace默认从(0,0,0)沿(0,0,1)发射，wavelength=1，reference_
 
 原生ReadSegmentFull参数名通过DLL反射确认，证据single-ray-signature027.json。返回段级parent/level、对象/面、状态、位置、方向、复电场、强度、物理路长、法线、折射率和探测器相位。max_segments默认及上限100000，超过时保留truncated及总数；原生ZRD存在时作为文件结果，可继续read_zrd分块。native_segment_index按本机实际接口从1开始。SaveRaysFile使用工作模型目录内文件名；native_database_file保留原生临时路径，artifacts优先返回实际生成的配置ZRD。
 
-三项均逐项写入及最终回读设置，设置失败关闭分析，终态复用统一任务关闭；原始计算、结果和关闭错误分别保留。examples/nsc027_requests.json提供调用例子。0.1.17历史普通检查为61项；当时准备的3项原生用例：1 W直达路径、单光线解析位置/方向、受控CRS通过与失败，位置/方向/功率容差1e-8+1e-7×参考值。本轮实际执行与修复结果见下方B001记录。
+三项均逐项写入及最终回读设置，设置失败关闭分析，终态复用统一任务关闭；原始计算、结果和关闭错误分别保留。examples/requests/nsc027_requests.json提供调用例子。0.1.17历史普通检查为61项；当时准备的3项原生用例：1 W直达路径、单光线解析位置/方向、受控CRS通过与失败，位置/方向/功率容差1e-8+1e-7×参考值。本轮实际执行与修复结果见下方B001记录。
 
 RayDatabaseViewer专题缺专用静态设置接口，保留运行时GetSettings/正式CFG探查条目；现有read_zrd可读取正式数据库及段信息，不替代该专题的原生验收。探查记录和手册摘录见.local/evidence/development/NS-02/probe027.json。
 
@@ -36,4 +36,4 @@ RayDatabaseViewer专题缺专用静态设置接口，保留运行时GetSettings/
 
 N-BK7平板ZRD末端功率0.9167180210351944W在阈值0时可读；阈值1时分支被剔除，GetPathUncategorized仍报告无未分类路径，备用编号查询为空，文本也无相应功率行。继续探查正式配置或供应方说明。历史失败和最终成功分别列于acceptance063.json。
 
-受控CRS例子见examples/critical063.CRS，输入模型为.55µm、镜头单位mm、沿+Z无障碍传播；第二条的目标X偏移1mm。专用结果缺失时错误details.native_report保留原生文本、头及消息，供定位实际输入或计算问题。公开请求字段沿用docs/tool-schemas.json，本轮修复未增加请求参数。
+受控CRS例子见examples/critical063.CRS，输入模型为.55µm、镜头单位mm、沿+Z无障碍传播；第二条的目标X偏移1mm。专用结果缺失时错误details.native_report保留原生文本、头及消息，供定位实际输入或计算问题。公开请求字段沿用docs/reference/tool-schemas.json，本轮修复未增加请求参数。

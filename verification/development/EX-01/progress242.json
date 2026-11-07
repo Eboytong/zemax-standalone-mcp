@@ -7,8 +7,8 @@
   "execution_state": "implemented",
   "native_version": "OpticStudio2024 R2; connect/license and complete requests in run calls.json",
   "probes": [
-    ".local/runs/universal237_nsc_0dc89116ca/probe.json",
-    ".local/runs/universal240_nsc_parameters_06fe8ce86c/probe.json"
+    "outputs/runs/universal237_nsc_0dc89116ca/probe.json",
+    "outputs/runs/universal240_nsc_parameters_06fe8ce86c/probe.json"
   ],
   "formal_reference": "Installed manual3.6.1/3.6.2; nonsequential position operands pages1120/1121; RMS operand units page1074; stored manual-nsc-operands237.txt/manual-rsce239.txt",
   "changes": [

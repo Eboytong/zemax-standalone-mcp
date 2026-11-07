@@ -87,7 +87,7 @@ C = |Σ sqrt(Pn)*exp(-i*φn)|² / (Σ sqrt(Pn))²
 
 相干 Power 为该像素非相干功率乘 C。相位差0°/90°/180°/270°对应 C=1/0.5/0/0.5。原生初相位单位为度；CoherenceLength=0关闭相干长度导致的随机退相干。
 
-Amplitude、Real/Imaginary和Power分别保留原生定义，并结合像素数、Polarization和NormalizeCoherentPower解释。既有8×8模型与1×1局部分量模型具有不同的显示量核对条件，不能把某个模型的Amplitude含义推广到全部探测器设置，也不能直接以Real²+Imaginary²替代Power。具体公式与独立参考见[相干数值方法](numerical-validation.md#有限模型验收与复现)。完全相消时相位没有独立参考意义。
+Amplitude、Real/Imaginary和Power分别保留原生定义，并结合像素数、Polarization和NormalizeCoherentPower解释。既有8×8模型与1×1局部分量模型具有不同的显示量核对条件，不能把某个模型的Amplitude含义推广到全部探测器设置，也不能直接以Real²+Imaginary²替代Power。具体公式与独立参考见[相干数值方法](../../guides/numerical-validation.md#有限模型验收与复现)。完全相消时相位没有独立参考意义。
 
 coherence 返回实际归一化与插值开关及上述解释。开启 NormalizeCoherentPower 时按原生总功率归一化规则另行解释；当前等像素模型核对其总 Power 与非相干功率一致。NSC 相干光线模型的结果范围见手册§2.3.2.4.4和§2.3.2.1.9。
 
@@ -107,20 +107,20 @@ coherence 返回实际归一化与插值开关及上述解释。开启 Normalize
 
 ~~~powershell
 $env:PYTHONUTF8='1'
-.venv/Scripts/python.exe -B -m pytest tests/test_nsc_validation_live.py tests/test_nsc_units_live.py tests/test_nsc_provenance_live.py --run-zemax -q -s
+.venv/Scripts/python.exe -B -m pytest tests/native/test_nsc_validation_live.py tests/native/test_nsc_units_live.py tests/native/test_nsc_provenance_live.py --run-zemax -q -s
 ~~~
 
 运行示例：
 
 ~~~powershell
-.venv/Scripts/python.exe -B examples/run_workflow.py nsc_polar
-.venv/Scripts/python.exe -B examples/run_workflow.py nsc_coherent
-.venv/Scripts/python.exe -B examples/run_workflow.py nsc_reference
+.venv/Scripts/python.exe -B examples/workflows/run_workflow.py nsc_polar
+.venv/Scripts/python.exe -B examples/workflows/run_workflow.py nsc_coherent
+.venv/Scripts/python.exe -B examples/workflows/run_workflow.py nsc_reference
 ~~~
 
 每个场景保存 calls.json、checks.json、工作模型和ZRD。普通测试、真实客户端调用和数值依据分别记录；光学模型见非序列光学验收（历史参考），属性采用、追迹条件、离线来源及完整回归见来源验收（历史参考）。
 
-其他探测器、有限大角多介质散射、CAD及DLL模型按各自支持清单和数值依据使用。CIE官方积分、稀薄荧光、有限带宽相干及近前向多事件的范围见[数值方法](numerical-validation.md)。
+其他探测器、有限大角多介质散射、CAD及DLL模型按各自支持清单和数值依据使用。CIE官方积分、稀薄荧光、有限带宽相干及近前向多事件的范围见[数值方法](../../guides/numerical-validation.md)。
 
 
 ## 专项数据与适用边界
@@ -149,7 +149,7 @@ GUI `ZRDPLAYBACK` 在159条命中的最小Polar工作副本上，完整400–800
 
 荧光细分不计为数值通过。WlUM仍是源光线头波长；正非零光程比值与Sellmeier独立参考仅用于受控验收，不自动替换原生过滤或扩展到零光程、GRIN及任意多次转换。FluxvsWavelength在本机返回AS_Default，尚无已验证的专用替代路径。逐光线差异及原生对照（历史参考）分别提供接口一致性和数值失败依据。
 
-相关复现测试：`tests/test_wavelength_filter_live.py`、`tests/test_fluorescence_integral_live.py`和`tests/test_fluorescence_path_reference_live.py`。numeric_membership及spectrum为严格数值检查，当前记录模型继续失败；无宽泛xfail。所有原生场景串行运行，输入依赖及具体执行命令见验收记录。
+相关复现测试：`tests/native/test_wavelength_filter_live.py`、`tests/native/test_fluorescence_integral_live.py`和`tests/test_fluorescence_path_reference_live.py`。numeric_membership及spectrum为严格数值检查，当前记录模型继续失败；无宽泛xfail。所有原生场景串行运行，输入依赖及具体执行命令见验收记录。
 
 ## 回放功率与追迹完整状态
 

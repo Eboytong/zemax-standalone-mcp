@@ -1,0 +1,26 @@
+Jx, Jy Jones electric field. See "Defining the Initial Polarization"
+X, Y Phase Phase of the X, Y component of the Jones electric field in degrees.
+Wavelength The wavelength number of the rays to trace.
+Field The field position number of the rays to trace.
+SurfaceThe surface at which the data is shown. Data is after refraction through the specified surface.
+Sampling The grid size of the sampling in the pupil.
+Add Configs
+Sub Configs Ifthe "Add Configs" and "Sub Configs" settings are left blank,the polarization ellipse and transmission
+is computed for a single configuration (selected in the drop-down menu at the top of the window; "Current" is the
+default setting) and no interference effects are considered. To model interference between configurations see the
+discussion below.
+Discussion
+The Polarization Pupil Map has 2 tabs: Graph and Text.
+The Graph tab shows the polarization ellipse. This is the figure traced out by the electric field vector as the wave
+propagates during one cycle. The magnitude of the ellipse is determined by the transmission of the ray which is
+generally a function of pupil position. For more information on analyzing polarization, see Polarization Analysis.
+The transmission value is displayed at the bottom of the analysis window. This is the transmission of the polarized
+beam for the field, wavelength, and surface that are selected in the settings. This transmission value takes into
+account Ez. For each ray ofthe beam the intensity is calculated as Ex^2+Ey^2+Ez^2, and the transmission is displayed
+as the average of the intensities.
+The Text tab shows the data computed by this analysis. It lists the Px, Py, Ex, Ey, Intensity, Phase, and Orientation
+values.
+• Px and Py are the normalized pupil x and y coordinates.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 900
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

@@ -47,8 +47,8 @@
       "Wavelength": 1
     }
   },
-  "command": ".venv/Scripts/python.exe -m pytest tests/test_quick_yield_live.py::test_quick_yield_uniform_defocus_quantiles -q -s --run-zemax --junitxml=.local/evidence/development/TO-01/native502-uniform.xml",
-  "run": ".local/runs/quickyield502_uniform_9c0eade498",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_quick_yield_live.py::test_quick_yield_uniform_defocus_quantiles -q -s --run-zemax --junitxml=verification/development/TO-01/native502-uniform.xml",
+  "run": "outputs/runs/quickyield502_uniform_9c0eade498",
   "reference": "Uniform thickness CDF under monotone |defocus| wavefront: t(p)=-100.02+.002-.004*p/100. Independent direct RMS-vs-field GaussQuad10 at five selected thicknesses.",
   "tolerance": "1e-5 waves + 1% reference",
   "comparisons": [

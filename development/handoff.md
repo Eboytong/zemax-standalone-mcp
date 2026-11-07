@@ -14,6 +14,6 @@
 
 下一命令：`Get-Content .local/evidence/development/MA-01/progress641-monomials.json; Get-Content .local/evidence/development/MF-01/progress641-slope-summary.json`。
 
-历史过程及恢复方法见[归档索引](history-archive.md)。
+历史过程及恢复方法见[归档索引](archive/README.md)。
 
 维护检查：状态汇总定向2项通过；清理后3265项测试收集成功。归档清单58426项，含641原始输出同时保留在线；删除缓存/构建残留1306项。恢复位置见归档索引。下一条优先读取Gradium637–639原始单项式证据，确认高阶求值正式定义；缺少新依据时按B006固定候补继续。

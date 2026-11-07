@@ -2,7 +2,7 @@
   "date": "2026-11-05",
   "command": ".venv\\Scripts\\python.exe tests/support/connection_probe019.py",
   "budget_seconds": 180,
-  "supervisor": ".local/evidence/development/BASE-04/connection019/supervisor.json",
+  "supervisor": "verification/development/BASE-04/connection019/supervisor.json",
   "state": "initialization_timeout",
   "elapsed_seconds": 180.57803489999787,
   "exit_code": 1,

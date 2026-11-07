@@ -2,7 +2,7 @@
   "date": "2026-11-05",
   "item_id": "CV-01.FullFieldSpot",
   "state": "implemented",
-  "run": ".local/runs/full_field074_a57fad6d20",
+  "run": "outputs/runs/full_field074_a57fad6d20",
   "native_evidence": "verification\\development\\CV-01\\native074-final.xml",
   "ordinary_evidence": "verification\\development\\CV-01\\ordinary074-full-field.xml",
   "settings": "AS_Spot concrete interface, final actual settings and selectors retained",

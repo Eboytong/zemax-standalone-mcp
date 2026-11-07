@@ -1,0 +1,14 @@
+3.4.1.5. Transmission Fan
+Generates a graph of the transmitted intensity for each field and wavelength as a function of either tangential or
+sagittal pupil fans.
+Jx, Jy Jones electric field. See "Defining the Initial Polarization".
+X, Y Phase Phase of the X, Y component of the Jones electric field in degrees.
+Wavelength The wavelength number of the rays to trace.
+Field The field position number of the rays to trace.
+Unpolarized If checked, the electric field definition is ignored and the unpolarized computation is performed.
+Discussion The polarization transmission fan is useful for determining the transmission variation over the pupil as
+a function of field and wavelength. See "Polarization Analysis".
+3.4.2. Surface
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 905
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

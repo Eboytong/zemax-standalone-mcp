@@ -1,0 +1,349 @@
+{
+  "version": "0.1.41",
+  "source": "C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\ZOSAPI_Interfaces.dll",
+  "exported_type_count": 908,
+  "matches": [
+    {
+      "type": "ZOSAPI.Tools.ILayouts",
+      "methods": [
+        "ZOSAPI.Tools.Layouts.ICrossSectionExport OpenCrossSectionExport()",
+        "ZOSAPI.Tools.Layouts.I3DViewerExport Open3DViewerExport()",
+        "ZOSAPI.Tools.Layouts.IShadedModelExport OpenShadedModelExport()",
+        "ZOSAPI.Tools.Layouts.INSC3DLayoutExport OpenNSC3DLayoutExport()",
+        "ZOSAPI.Tools.Layouts.INSCShadedModelExport OpenNSCShadedModelExport()"
+      ],
+      "properties": []
+    },
+    {
+      "type": "ZOSAPI.Tools.IExportToSpeosLensSystem",
+      "methods": [],
+      "properties": [
+        "Double SensorWidth",
+        "Double SensorHeight",
+        "Boolean SkipSystemReversal",
+        "Int32 SamplePoints",
+        "Int32 XSampling",
+        "Int32 YSampling",
+        "ZOSAPI.Analysis.SampleSizes SampleSize",
+        "Int32 Configuration",
+        "Int32 FileFormatVersion",
+        "Boolean AssumeRadialSymmetry",
+        "System.String OPTDistortionFilename"
+      ]
+    },
+    {
+      "type": "ZOSAPI.Tools.IShadedModelVisualizationExport",
+      "methods": [],
+      "properties": [
+        "Int32 StartSurface",
+        "Int32 EndSurface",
+        "Int32 Object"
+      ]
+    },
+    {
+      "type": "ZOSAPI.Tools.IExportToSpeosWhitebox",
+      "methods": [],
+      "properties": [
+        "Int32 ErrorCode",
+        "System.String OutputFilename"
+      ]
+    },
+    {
+      "type": "ZOSAPI.Tools.IOpticalSystemTools",
+      "methods": [
+        "ZOSAPI.Tools.General.IExportCAD OpenExportCAD()",
+        "ZOSAPI.Tools.IShadedModelVisualizationExport OpenShadedModelVisualizationExport()",
+        "ZOSAPI.Tools.IExportToSpeosLensSystem OpenExportToSpeosLensSystem()",
+        "ZOSAPI.Tools.IExportToSpeosWhitebox OpenExportToSpeosWhitebox()"
+      ],
+      "properties": [
+        "ZOSAPI.Tools.ISystemTool CurrentTool",
+        "Int32 Progress",
+        "System.String Status",
+        "Boolean IsRunning",
+        "ZOSAPI.Tools.ILayouts Layouts",
+        "ZOSAPI.Analysis.IMessage LastError"
+      ]
+    },
+    {
+      "type": "ZOSAPI.Tools.General.ACISExportVersion",
+      "methods": [],
+      "properties": []
+    },
+    {
+      "type": "ZOSAPI.Tools.General.IExportCAD",
+      "methods": [
+        "Boolean get_ExportDummySurfaces()",
+        "Void set_ExportDummySurfaces(Boolean)"
+      ],
+      "properties": [
+        "Int32 FirstSurface",
+        "Int32 LastSurface",
+        "Boolean CanChangeSurface",
+        "Int32 FirstObject",
+        "Int32 LastObject",
+        "Boolean SequentialSettingsEnabled",
+        "ZOSAPI.Tools.General.RayPatternType RayPattern",
+        "Int32 NumberOfRays",
+        "Int32 Wavelength",
+        "Int32 Field",
+        "Boolean DeleteVignetted",
+        "Int32 RayLayer",
+        "Int32 LensLayer",
+        "Double DummyThickness",
+        "ZOSAPI.Tools.General.SplineSegmentsType SplineSegments",
+        "ZOSAPI.Tools.General.CADFileType FileType",
+        "ZOSAPI.Tools.General.CADToleranceType Tolerance",
+        "ZOSAPI.Tools.General.CADAngularToleranceType AngularTolerance",
+        "Int32 Configuration",
+        "Boolean ExportDummySurfaces",
+        "Boolean SurfacesAsSolids",
+        "Boolean ScatterNSCRays",
+        "Boolean SplitNSCRays",
+        "Boolean UsePolarization",
+        "System.String OutputFileName",
+        "Boolean AutoNameFaces",
+        "ZOSAPI.Tools.General.ACISExportVersion FileVersion"
+      ]
+    },
+    {
+      "type": "ZOSAPI.Tools.Layouts.I3DViewerExport",
+      "methods": [
+        "ZOSAPI.Tools.Layouts.IImageExportData get_ImageExportData()"
+      ],
+      "properties": [
+        "Boolean SaveImageAsFile",
+        "System.String OutputFileName",
+        "Boolean IsValidFileName",
+        "Int32 OutputPixelWidth",
+        "Int32 OutputPixelHeight",
+        "Int32 StartSurface",
+        "Int32 EndSurface",
+        "Int32 NumberOfRays",
+        "Int32 Wavelength",
+        "Int32 Field",
+        "ZOSAPI.Tools.General.RayPatternType RayPattern",
+        "ZOSAPI.Tools.Layouts.ColorRaysByOptions ColorRaysBy",
+        "Boolean DeleteVignetted",
+        "Boolean HideLensFaces",
+        "Boolean HideLensEdges",
+        "Boolean HideXBars",
+        "Boolean DrawParaxialPupils",
+        "Boolean FletchRays",
+        "Boolean SplitNSCRays",
+        "Boolean ScatterNSCRays",
+        "ZOSAPI.Tools.Layouts.RealPupilOptions DrawRealEntrancePupils",
+        "ZOSAPI.Tools.Layouts.RealPupilOptions DrawRealExitPupils",
+        "ZOSAPI.Tools.Layouts.LineThicknessOptions SurfaceLineThickness",
+        "ZOSAPI.Tools.Layouts.LineThicknessOptions RaysLineThickness",
+        "Boolean ConfigurationAll",
+        "Boolean ConfigurationCurrent",
+        "Double ConfigurationOffsetX",
+        "Double ConfigurationOffsetY",
+        "Double ConfigurationOffsetZ",
+        "Double CameraViewpointAngleX",
+        "Double CameraViewpointAngleY",
+        "Double CameraViewpointAngleZ",
+        "ZOSAPI.Tools.Layouts.IImageExportData ImageExportData"
+      ]
+    },
+    {
+      "type": "ZOSAPI.Tools.Layouts.ICrossSectionExport",
+      "methods": [
+        "ZOSAPI.Tools.Layouts.IImageExportData get_ImageExportData()"
+      ],
+      "properties": [
+        "Boolean SaveImageAsFile",
+        "System.String OutputFileName",
+        "Boolean IsValidFileName",
+        "Int32 OutputPixelWidth",
+        "Int32 OutputPixelHeight",
+        "Int32 StartSurface",
+        "Int32 EndSurface",
+        "Int32 NumberOfRays",
+        "Double YStretch",
+        "Int32 Wavelength",
+        "Int32 Field",
+        "ZOSAPI.Tools.Layouts.ColorRaysByCrossSectionOptions ColorRaysBy",
+        "Double UpperPupil",
+        "Double LowerPupil",
+        "Boolean FletchRays",
+        "Boolean DeleteVignetted",
+        "Boolean MarginalAndChiefRayOnly",
+        "ZOSAPI.Tools.Layouts.LineThicknessOptions SurfaceLineThickness",
+        "ZOSAPI.Tools.Layouts.LineThicknessOptions RaysLineThickness",
+        "Int32 Configuration",
+        "ZOSAPI.Tools.Layouts.IImageExportData ImageExportData"
+      ]
+    },
+    {
+      "type": "ZOSAPI.Tools.Layouts.IImageExportData",
+      "methods": [],
+      "properties": [
+        "Int32 Width",
+        "Int32 Height",
+        "ZOSAPI.Tools.Layouts.IImagePixel[,] Values"
+      ]
+    },
+    {
+      "type": "ZOSAPI.Tools.Layouts.INSC3DLayoutExport",
+      "methods": [
+        "ZOSAPI.Tools.Layouts.IImageExportData get_ImageExportData()"
+      ],
+      "properties": [
+        "Boolean SaveImageAsFile",
+        "System.String OutputFileName",
+        "Boolean IsValidFileName",
+        "Int32 OutputPixelWidth",
+        "Int32 OutputPixelHeight",
+        "System.String RayDatabase",
+        "System.String Filter",
+        "ZOSAPI.Tools.Layouts.RayTraceOptions RayTrace",
+        "ZOSAPI.Tools.Layouts.ColorRaysByNSCOptions ColorRaysBy",
+        "Boolean UsePolarization",
+        "Boolean FletchRays",
+        "Boolean SplitNSCRays",
+        "Boolean ScatterNSCRays",
+        "ZOSAPI.Tools.Layouts.LineThicknessOptions SurfaceLineThickness",
+        "ZOSAPI.Tools.Layouts.LineThicknessOptions RaysLineThickness",
+        "Boolean ConfigurationAll",
+        "Boolean ConfigurationCurrent",
+        "Double ConfigurationOffsetX",
+        "Double ConfigurationOffsetY",
+        "Double ConfigurationOffsetZ",
+        "Double CameraViewpointAngleX",
+        "Double CameraViewpointAngleY",
+        "Double CameraViewpointAngleZ",
+        "ZOSAPI.Tools.Layouts.IImageExportData ImageExportData"
+      ]
+    },
+    {
+      "type": "ZOSAPI.Tools.Layouts.INSCShadedModelExport",
+      "methods": [
+        "ZOSAPI.Tools.Layouts.IImageExportData get_ImageExportData()"
+      ],
+      "properties": [
+        "Boolean SaveImageAsFile",
+        "System.String OutputFileName",
+        "Boolean IsValidFileName",
+        "Int32 OutputPixelWidth",
+        "Int32 OutputPixelHeight",
+        "System.String RayDatabase",
+        "System.String Filter",
+        "ZOSAPI.Tools.Layouts.RayTraceOptions RayTrace",
+        "ZOSAPI.Tools.Layouts.ColorRaysByNSCOptions ColorRaysBy",
+        "ZOSAPI.Tools.Layouts.DetectorPixelColorOptions DetectorPixelColorMode",
+        "Boolean UsePolarization",
+        "Boolean FletchRays",
+        "Boolean SplitNSCRays",
+        "Boolean ScatterNSCRays",
+        "ZOSAPI.Tools.Layouts.LineThicknessOptions SurfaceLineThickness",
+        "ZOSAPI.Tools.Layouts.LineThicknessOptions RaysLineThickness",
+        "Boolean ConfigurationAll",
+        "Boolean ConfigurationCurrent",
+        "Double ConfigurationOffsetX",
+        "Double ConfigurationOffsetY",
+        "Double ConfigurationOffsetZ",
+        "Double CameraViewpointAngleX",
+        "Double CameraViewpointAngleY",
+        "Double CameraViewpointAngleZ",
+        "ZOSAPI.Tools.Layouts.IImageExportData ImageExportData",
+        "ZOSAPI.Tools.Layouts.DetectorDisplayModeOptions DetectorDisplayMode",
+        "ZOSAPI.Tools.Layouts.OpacityOptions Opacity",
+        "ZOSAPI.Tools.Layouts.BackgroundOptions Background",
+        "ZOSAPI.Tools.Layouts.BrightnessOptions Brightness"
+      ]
+    },
+    {
+      "type": "ZOSAPI.Tools.Layouts.IShadedModelExport",
+      "methods": [
+        "ZOSAPI.Tools.Layouts.IImageExportData get_ImageExportData()"
+      ],
+      "properties": [
+        "Boolean SaveImageAsFile",
+        "System.String OutputFileName",
+        "Boolean IsValidFileName",
+        "Int32 OutputPixelWidth",
+        "Int32 OutputPixelHeight",
+        "Int32 StartSurface",
+        "Int32 EndSurface",
+        "Int32 NumberOfRays",
+        "ZOSAPI.Tools.Layouts.ColorRaysByOptions ColorRaysBy",
+        "ZOSAPI.Tools.General.RayPatternType RayPattern",
+        "Int32 Wavelength",
+        "Int32 Field",
+        "ZOSAPI.Tools.Layouts.OpacityOptions Opacity",
+        "ZOSAPI.Tools.Layouts.BackgroundOptions Background",
+        "ZOSAPI.Tools.Layouts.BrightnessOptions Brightness",
+        "ZOSAPI.Tools.Layouts.NumberSegmentsOptions AngularSegments",
+        "ZOSAPI.Tools.Layouts.NumberSegmentsOptions RadialSegments",
+        "Boolean FletchRays",
+        "Boolean DeleteVignetted",
+        "Boolean SplitNSCRays",
+        "Boolean ScatterNSCRays",
+        "ZOSAPI.Tools.Layouts.LineThicknessOptions SurfaceLineThickness",
+        "ZOSAPI.Tools.Layouts.LineThicknessOptions RaysLineThickness",
+        "ZOSAPI.Tools.Layouts.IImageExportData ImageExportData",
+        "Boolean ConfigurationAll",
+        "Boolean ConfigurationCurrent",
+        "Double ConfigurationOffsetX",
+        "Double ConfigurationOffsetY",
+        "Double ConfigurationOffsetZ",
+        "Double CameraViewpointAngleX",
+        "Double CameraViewpointAngleY",
+        "Double CameraViewpointAngleZ",
+        "ZOSAPI.Tools.Layouts.DrawSectionOptions DrawSection"
+      ]
+    },
+    {
+      "type": "ZOSAPI.Editors.NCE.INCEDrawData",
+      "methods": [
+        "Boolean get_ExportAsTriangles()",
+        "Void set_ExportAsTriangles(Boolean)"
+      ],
+      "properties": [
+        "Boolean DoNotDrawObject",
+        "Boolean DrawLocalAxis",
+        "Boolean SupportsDrawingResolution",
+        "ZOSAPI.Editors.NCE.DrawingResolutionType DrawingResolution",
+        "Int32 NumSegments1",
+        "System.String Segments1Type",
+        "Int32 NumSegments2",
+        "System.String Segments2Type",
+        "Boolean ExportAsTriangles",
+        "Boolean IncreaseResolutionOnShadedModelLayouts",
+        "ZOSAPI.Common.ZemaxOpacity Opacity",
+        "ZOSAPI.Common.ZemaxColor ObjectColor"
+      ]
+    },
+    {
+      "type": "ZOSAPI.Editors.LDE.ILensDataEditor",
+      "methods": [
+        "Boolean CanExportPointCloud(Int32)",
+        "ZOSAPI.Analysis.IMessage RunTool_ExportPointCloudFile(Int32, System.String, Int32, Int32, Boolean, ZOSAPI.Editors.LDE.PointCloudFileFormat)"
+      ],
+      "properties": [
+        "Int32 RowToSurfaceOffset",
+        "Int32 NumberOfSurfaces",
+        "Int32 NumberOfNonSequentialSurfaces",
+        "ZOSAPI.Editors.LDE.SurfaceColumn FirstColumn",
+        "ZOSAPI.Editors.LDE.SurfaceColumn LastColumn",
+        "Int32 StopSurface"
+      ]
+    },
+    {
+      "type": "ZOSAPI.Editors.LDE.ISurfaceBlackBoxLens",
+      "methods": [
+        "Int32 get_NumberOfAvailableBlackBoxLensFilenames()",
+        "System.String GetBlackBoxLensFilenameAt(Int32)",
+        "System.String get_BlackBoxLensFilename()",
+        "Void set_BlackBoxLensFilename(System.String)"
+      ],
+      "properties": [
+        "Int32 NumberOfAvailableBlackBoxLensFilenames",
+        "System.String BlackBoxLensFilename"
+      ]
+    }
+  ],
+  "native_application_created": false
+}

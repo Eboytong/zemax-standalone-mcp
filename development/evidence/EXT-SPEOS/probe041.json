@@ -1,0 +1,129 @@
+{
+  "version": "0.1.41",
+  "date": "2026-11-05",
+  "status": "implemented_native_acceptance_pending",
+  "source": "verification/development/BASE-01/probe/api-interfaces.json",
+  "interfaces": {
+    "ZOSAPI.Tools.IExportToSpeosLensSystem": {
+      "properties": [
+        {
+          "name": "SensorWidth",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SensorHeight",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SkipSystemReversal",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SamplePoints",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "XSampling",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "YSampling",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "SampleSize",
+          "type": "ZOSAPI.Analysis.SampleSizes",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Configuration",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "FileFormatVersion",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "AssumeRadialSymmetry",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "OPTDistortionFilename",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    },
+    "ZOSAPI.Tools.IExportToSpeosWhitebox": {
+      "properties": [
+        {
+          "name": "ErrorCode",
+          "type": "System.Int32",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "OutputFilename",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": false
+        }
+      ],
+      "methods": []
+    }
+  },
+  "factories": [
+    "ZOSAPI.Tools.IExportToSpeosLensSystem OpenExportToSpeosLensSystem()",
+    "ZOSAPI.Tools.IExportToSpeosWhitebox OpenExportToSpeosWhitebox()"
+  ],
+  "receiver_discovery": {
+    "roots_checked": [
+      "C:\\Program Files\\ANSYS Inc\\v242"
+    ],
+    "directory_candidates": [],
+    "uninstall_registry_matches": [],
+    "confirmed_receiver": "not established by this inventory",
+    "required": "Identify an actual Speos receiver installation/version and an import fixture for OPTDistortion/Whitebox",
+    "registry_roots_checked": [
+      "HKLM SOFTWARE/Microsoft/Windows/CurrentVersion/Uninstall, 32-bit and 64-bit views"
+    ]
+  },
+  "implementation_next": "Implement typed LensSystem/Whitebox exports on an owned optical-system copy; check every writable setting/read-only output field and close the native export tool plus copy on success, failure and cancel.",
+  "native_status": "Existing BASE-04 initialization timeout; no export or receiver import attempted",
+  "implementation": [
+    "src/zemax_mcp/speos.py",
+    "src/zemax_mcp/speos_models.py"
+  ],
+  "ordinary": "verification/development/EXT-SPEOS/ordinary051.xml",
+  "native_tests": "tests/test_speos_live.py",
+  "native_executed": false,
+  "next_action": "Recover BASE-04 startup; execute radial/Cartesian LensSystem and Whitebox owned-copy tests, then actual receiver imports. Verify Whitebox output naming and package, source full properties/solve and cancellation.",
+  "ordinary_result": {
+    "passed": 1594,
+    "deselected": 526,
+    "failed": 0
+  },
+  "installed_stdio": "verification/development/EXT-SPEOS/stdio-smoke051.json",
+  "wheel": "wheels/zemax_standalone_mcp-0.1.41-py3-none-any.whl"
+}

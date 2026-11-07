@@ -3,7 +3,7 @@
   "date": "2026-11-05",
   "item_id": "CV-01.MatrixSpot",
   "native_api": {
-    "probe": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+    "probe": "verification/development/BASE-01/probe/api-interfaces.json",
     "analysis_id": "ZOSAPI.Analysis.AnalysisIDM.MatrixSpot",
     "factory": "ZOSAPI.Analysis.IA_ New_MatrixSpot()",
     "settings_interface": "ZOSAPI.Analysis.Settings.Spot.IAS_Spot",

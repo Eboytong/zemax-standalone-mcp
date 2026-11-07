@@ -1,0 +1,16 @@
+is a maximum Effective Input Distance above which the Critical Ray Generator can't function. The max distance
+depends on the curvature of the dummy surface and the details of the system.
+7.2. Tolerancing Group
+This group contains the tools for tolerancing.
+7.2.1. Tolerance Data Editor
+The Tolerance Data editor is used to define, modify, and review the system tolerance values.
+See "Tolerancing Overview" for details. Also see Tolerancing for more information.
+See Convert To NSC Group for more information about converting operands to non-sequential mode.
+7.2.1.1. Tolerance Operands
+Atoleranceoperandhas a fourlettermnemonic, suchasTRADforToleranceRadius.Three integer values, abbreviated
+Int1, Int2, and Int3, are associated with the mnemonic to identify the surface or surfaces of the lens to which the
+tolerance applies. Some tolerance operands use the Int numbers for purposes otherthan defining surface numbers
+as indicated in the following table.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1256
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Tolerance Tab

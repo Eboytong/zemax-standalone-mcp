@@ -1,0 +1,15 @@
+Comments on distortion
+The distortion algorithm in the Image Simulation depends in part on tracing parabasal rays and in cases where a
+central obscuration is present, the distortion model may produce non-physical results. Also, the algorithm of
+distortion can generate some non-physical artifacts at or very near to 90-degree field angle when the object is at
+infinity, which means afocal in object space. Use the Geometric Bitmap Image Analysis to cross-check that the
+distortion is correctly calculated in situations where a central obscuration is present.
+3.2.8.2. Geometric Image Analysis
+The geometric image analysis feature has many applications. It can be used to model extended sources, analyze
+useful resolution, represent the appearance of imaged objects, and provide intuition as to image rotation. Image
+analysis is also useful for estimating multi-mode fiber coupling efficiency.
+Note that the ImageSimulation feature is better suited for the evaluation of high resolution photographic
+scenes.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 827
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

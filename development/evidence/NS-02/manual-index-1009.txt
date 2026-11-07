@@ -1,0 +1,22 @@
+NSC 3D LayoutSettings:
+Scale Bar Shows the scale bar in the layout.
+Suppress Frame Suppresses drawing the frame on the bottom of the window, which leaves more room for the
+layout plot itself. No scale bar, address block, or other data will be displayed.
+Rotation X The angle in degrees by which the lens appears to be rotated about the X-axis.
+Rotation Y The angle in degrees by which the lens appears to be rotated about the Y-axis.
+Rotation Z The angle in degrees by which the lens appears to be rotated about the Z-axis.
+Results:
+The feature allows to ray trace a single ray in NSC without affecting the original system. The NSC single ray trace
+enables the analysis and visualization on a ray-by-ray basis to study the ray propagation in a non-sequential optical
+system.
+The Non-Sequential Single Ray Trace tool uses the same format as the Ray Database Viewer to ensure consistency
+and familiarity.
+Discussion:
+Upon viewing the output Segment 0 data is at the source point of the ray and subsequent segment coordinate data
+is at the end of the segment. The Intensity, phase, cosine, field, and path to values are prior to reflection, refraction,
+splitting, absorbing, or scattering at the end point.
+Basic ray information includes Wavelength, number of segments, and number of branches. The data is arranged by
+segment number and includes; parent, level, in, hit, face, XRTS, DGEF, and BZ.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1010
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (non-sequential ui mode)

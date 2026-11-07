@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="13.759" timestamp="2026-11-06T00:23:56.068868+08:00" hostname="tongeb"><testcase classname="tests.test_zernike_field_reference_live" name="test_zernike_field_native_reference_probe" time="13.273"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'completed': False, 'task': {'task_id': 'e051baab38c34d9b9075c0273860d13c', 'request_id': '1822ed02eb5f478fa6d51b681a7400f0', 'kind': 'analysis', 'state': 'failed', 'created_at': '2026-11-05T16:24:07.476752+00:00', 'finished_at': '2026-11-05T16:24:07.689343+00:00', 'progress': None, 'can_cancel': True, 'cancel_requested': False, 'settings': {'kind': 'zernike_coefficients_vs_field', 'requested': {'kind': 'zernike_coefficients_vs_field', 'wavelength': 1, 'sampling': 'S_64x64', 'coefficient_type': 'Standard', 'coefficients': [4, 5, 6], 'field_scan': 'Plus_Y', 'field_density': 5, 'obscuration': 0.0, 'scale_minimum': 0.0, 'scale_maximum': 0.0}, 'native': {'SampleSize': 'S_64x64', 'FieldScanDirection': 'Plus_Y', 'ZernikeCoefficientType': 'Standard', 'ScaleMinimum': 0.0, 'ScaleMaximum': 0.0, 'ObscurationFactor': 0.0, 'FieldDensity': 5, 'Coefficients': '4,5,6', 'IsValid': True, 'IsActiveWindow': True, 'Wavelength': 1}}, 'context': {'session_id': '94569c26ecb241c391895bd26cfbaea9', 'model_revision': 1, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\zernike089_4a694fc30f\\94569c26ecb241c391895bd26cfbaea9\\working_db33d29f.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': None, 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 1, 'session_id': '94569c26ecb241c391895bd26cfbaea9'}}, 'error': {'code': 'NO_RESULT_DATA', 'message': 'Zernike field scan returned no native series.', 'details': {'native_text': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\zernike089_4a694fc30f\\94569c26ecb241c391895bd26cfbaea9\\e051baab38c34d9b9075c0273860d13c_native.txt'}}, 'close_attempted': True, 'result_path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\zernike089_4a694fc30f\\94569c26ecb241c391895bd26cfbaea9\\e051baab38c34d9b9075c0273860d13c.json', 'elapsed_seconds': 0.182}, 'checkpoint': None, 'result_schema_version': 1, 'context': {'session_id': '94569c26ecb241c391895bd26cfbaea9', 'model_revision': 1, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\zernike089_4a694fc30f\\94569c26ecb241c391895bd26cfbaea9\\working_db33d29f.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': None, 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 1, 'session_id': '94569c26ecb241c391895bd26cfbaea9'}}, 'artifacts': []}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_zernike_field_reference_live.py", line 20, in test_zernike_field_native_reference_probe
+  |     asyncio.run(execute('zernike089',work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_zernike_field_reference_live.py", line 14, in work
+      |     scan=await e.finish(await e.call('run_analysis',dict(request=request)))
+      |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 22, in finish
+      |     assert t["state"]=="succeeded",r
+      |            ^^^^^^^^^^^^^^^^^^^^^^^
+      | AssertionError: {'completed': False, 'task': {'task_id': 'e051baab38c34d9b9075c0273860d13c', 'request_id': '1822ed02eb5f478fa6d51b681a7400f0', 'kind': 'analysis', 'state': 'failed', 'created_at': '2026-11-05T16:24:07.476752+00:00', 'finished_at': '2026-11-05T16:24:07.689343+00:00', 'progress': None, 'can_cancel': True, 'cancel_requested': False, 'settings': {'kind': 'zernike_coefficients_vs_field', 'requested': {'kind': 'zernike_coefficients_vs_field', 'wavelength': 1, 'sampling': 'S_64x64', 'coefficient_type': 'Standard', 'coefficients': [4, 5, 6], 'field_scan': 'Plus_Y', 'field_density': 5, 'obscuration': 0.0, 'scale_minimum': 0.0, 'scale_maximum': 0.0}, 'native': {'SampleSize': 'S_64x64', 'FieldScanDirection': 'Plus_Y', 'ZernikeCoefficientType': 'Standard', 'ScaleMinimum': 0.0, 'ScaleMaximum': 0.0, 'ObscurationFactor': 0.0, 'FieldDensity': 5, 'Coefficients': '4,5,6', 'IsValid': True, 'IsActiveWindow': True, 'Wavelength': 1}}, 'context': {'session_id': '94569c26ecb241c391895bd26cfbaea9', 'model_revision': 1, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\zernike089_4a694fc30f\\94569c26ecb241c391895bd26cfbaea9\\working_db33d29f.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': None, 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 1, 'session_id': '94569c26ecb241c391895bd26cfbaea9'}}, 'error': {'code': 'NO_RESULT_DATA', 'message': 'Zernike field scan returned no native series.', 'details': {'native_text': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\zernike089_4a694fc30f\\94569c26ecb241c391895bd26cfbaea9\\e051baab38c34d9b9075c0273860d13c_native.txt'}}, 'close_attempted': True, 'result_path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\zernike089_4a694fc30f\\94569c26ecb241c391895bd26cfbaea9\\e051baab38c34d9b9075c0273860d13c.json', 'elapsed_seconds': 0.182}, 'checkpoint': None, 'result_schema_version': 1, 'context': {'session_id': '94569c26ecb241c391895bd26cfbaea9', 'model_revision': 1, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\zernike089_4a694fc30f\\94569c26ecb241c391895bd26cfbaea9\\working_db33d29f.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': None, 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 1, 'session_id': '94569c26ecb241c391895bd26cfbaea9'}}, 'artifacts': []}
+      +------------------------------------</failure></testcase></testsuite></testsuites>

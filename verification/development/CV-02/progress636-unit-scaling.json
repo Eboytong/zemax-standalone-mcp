@@ -18,10 +18,10 @@
     "tolerance": "EFL physical2e-4mm+2e-5relative;Power2e-4diopters+2e-5relative;original gates retained"
   },
   "commands": [
-    ".venv/Scripts/python.exe -m pytest tests/test_power_map_units_live.py --run-zemax -x -q --junitxml=.local/evidence/development/CV-02/native634-units.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_power_maps.py tests/test_grin_profile.py -q --junitxml=.local/evidence/development/CV-02/ordinary636-power-grin.xml"
+    ".venv/Scripts/python.exe -m pytest tests/test_power_map_units_live.py --run-zemax -x -q --junitxml=verification/development/CV-02/native634-units.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_power_maps.py tests/test_grin_profile.py -q --junitxml=verification/development/CV-02/ordinary636-power-grin.xml"
   ],
-  "actual_settings": ".local/runs/power634_units_2ffb26dbe1/units.json",
+  "actual_settings": "outputs/runs/power634_units_2ffb26dbe1/units.json",
   "results": [
     {
       "unit": "Millimeters",

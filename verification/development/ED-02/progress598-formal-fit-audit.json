@@ -7,7 +7,7 @@
   "completion_count": 0,
   "item_id": "ED-02.MaterialModel.Material",
   "scope": "Audit stored installed-DLL reflection for a formal temporary MaterialModel coefficient outlet",
-  "input_source": ".local/evidence/development/BASE-01/probe/api-interfaces.json;src/zemax_mcp/materials.py;tests/support/material_reference.py",
+  "input_source": "verification/development/BASE-01/probe/api-interfaces.json;src/zemax_mcp/materials.py;tests/support/material_reference.py",
   "request": "Existing typed MaterialModel request unchanged; no new native execution",
   "actual_settings": "Retained native271 requests/readbacks in material-diagnostic271/anchors.json",
   "command": "Inspect ISolveMaterialModel, IMaterialsCatalog and MaterialFormulas in stored public-DLL reflection",

@@ -1,0 +1,21 @@
+Plots the dispersion (
+) as a function of wavelength for up to 4 different glasses.
+Glass 1 - 4 The name of the glass for which the data is plotted. Up to 4 different glasses may be selected.
+Minimum Wave Defines the minimum wavelength for which the data should be plotted.
+Maximim Wave Defines the maximum wavelength for which the data should be plotted.
+Minimum DispersionDefines theminimumdispersionforwhichthedata shouldbeplotted. Enter zerofor automatic
+scaling.
+MaximumDispersionDefines themaximumdispersionforwhichthedata shouldbeplotted.Enter zerofor automatic
+scaling.
+Use Temperature, Pressure If checked, then the change in index due to temperature and pressure effects will be
+considered.
+Discussion
+This feature is useful for comparing how dispersion varies with wavelength for different glasses.
+Table glass files (see "Using table glasses") are listed at the bottom of the various "Glass" controls.
+If the minimum and maximum wavelength inputs are both zero, then the left X-axis of the plot will be determined
+by the minimum wavelength for which data are available for any of the input glasses (even if other glasses do not
+have data at this wavelength) and the right X-axis of the plot will be determined by the maximum wavelength for
+which data are available for any of the input glasses (even if other glasses do not have data at this wavelength).
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1355
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Libraries Tab

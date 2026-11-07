@@ -7,7 +7,7 @@
   "execution_state": "implemented",
   "native_version": "OpticStudio2024 R2; actual version/license and requests in calls.json",
   "probes": [
-    ".local/runs/universal233_targets_35524f000d/probe.json"
+    "outputs/runs/universal233_targets_35524f000d/probe.json"
   ],
   "formal_reference": "Installed UserManual_en.pdf sections3.6.1/3.6.2, UN1/UN2 PAR1..8, OPERAND, MFLINE; installed MeritOperandType and active MFE cells",
   "changes": [
@@ -28,7 +28,7 @@
     "max_absolute_error": 0.0,
     "closed_successful_tasks": 6
   },
-  "native_command": ".venv/Scripts/python.exe -m pytest tests/test_universal_targets_live.py tests/test_universal_configuration_live.py tests/test_universal_grid_live.py -q --run-zemax --junitxml=.local/evidence/development/EX-01/native235.xml",
+  "native_command": ".venv/Scripts/python.exe -m pytest tests/test_universal_targets_live.py tests/test_universal_configuration_live.py tests/test_universal_grid_live.py -q --run-zemax --junitxml=verification/development/EX-01/native235.xml",
   "run": "outputs\\runs\\universal235_targets_e5d2b26680",
   "references": "Plane stop REAY=aperture/4; MFE single TTHI target1 weight1: line1=sum thickness, line0=abs(sum thickness-1);2D5x3 thickness sum",
   "tolerance": "atol1e-8 + rtol1e-7*abs(reference); text parameter readback5e-7",

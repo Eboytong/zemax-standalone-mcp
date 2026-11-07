@@ -9,7 +9,7 @@ ImageSimulation用受控IMA及BMP均未取得可读取结果，当前GetTextFile
 全量普通1702通过；独立安装0.1.48 wheel，真实stdio三项冒烟通过（位图Apply、道路Apply、几何位图限制及清理）。原始失败与成功报告分别保留，证据 .local/evidence/development/IM-01/acceptance050/summary.json；发行 .local/evidence/development/BASE-04/release048.json。下一步继续成像数值/出口探查，再推进偏振、镀膜和材料。全量目标继续进行。
 
 
-IM-01 已接入六项有类型分析；原生设置采用、非对称网格方向和数值参考待连接恢复。逐项记录见 `verification/imaging023-summary.json` 与本轮 `.local/evidence/development/IM-01/`。
+IM-01 已接入六项有类型分析；原生设置采用、非对称网格方向和数值参考待连接恢复。逐项记录见 `development/evidence/imaging023-summary.json` 与本轮 `.local/evidence/development/IM-01/`。
 
 | kind | 本批设置与条件 |
 | --- | --- |
@@ -30,7 +30,7 @@ IM-01 已接入六项有类型分析；原生设置采用、非对称网格方�
 
 Image Simulation按原生定义将输出峰值归一化到输入峰值；RGB固定波长为0.606/0.535/0.465 µm，1+2+3对应R=3/G=2/B=1。原生衍射模式在严重像差下可能转几何PSF，消息随结果保留。实像高视场在该分析中按原生近轴像高处理。几何图像的TotalWatts为入瞳源功率，实际网格数值保留原生定义。
 
-请求例子在 examples/imaging023_requests.json。tests/resources/imaging023 提供本项目生成的33×33点源、条纹和阶跃边缘ASCII IMA；格式来自本机2024 R2用户手册印刷页830。原生用例通过ImagesDir复制唯一测试文件，结束删除该文件，准备于tests/test_imaging_live.py。9个用例尚未执行；数值参考仍需补齐PSF/LSF/ESF、归一化、方向和图像功率比较，当前用例提供资源采用及结果读取基础。
+请求例子在 examples/requests/imaging023_requests.json。tests/resources/imaging023 提供本项目生成的33×33点源、条纹和阶跃边缘ASCII IMA；格式来自本机2024 R2用户手册印刷页830。原生用例通过ImagesDir复制唯一测试文件，结束删除该文件，准备于tests/native/test_imaging_live.py。9个用例尚未执行；数值参考仍需补齐PSF/LSF/ESF、归一化、方向和图像功率比较，当前用例提供资源采用及结果读取基础。
 
 `GeometricBitmapImageAnalysis` 的分析 ID 为61；反射未显示独立 BitmapImage 设置接口，使用共享 `IAS_GeometricImageAnalysis` 设置适配。它已进入类型请求、设置回读、结果读取和标准任务关闭路径。运行时 `GetSettings` 类型、结果形状及真实关闭验收等待连接恢复，记录见 `.local/evidence/development/IM-01/geometric-bitmap-image027.json`。
 
@@ -80,4 +80,4 @@ Encircled为圆形区域能量分数，X_Only/Y_Only为指定半宽的无限长�
 
 2026-11-07 B006执行544–547：FFT线边扩散完成声明范围验收。相干参考改用手册明确的默认FFT瞳网格拉伸：`p=(i-N/2)*sqrt(N/32)/(N/2-1)`，仅追迹严格瞳内节点。64/128采样分别有43/63个一维节点；独立新追迹的OPD/强度经物理Fraunhofer求和，在焦面−100/−100.02mm的最大强度差分别为0.000692780、0.000810981、0.000418584、0.000263290，均低于原0.005门槛。544的旧相位插值仅为假设实验，最终545使用准确节点的新光线。
 
-546重新执行Cooke轴上/离轴PSF边缘积分、ESF累积、原FFT节点复振幅强度/相位和生命周期，共3原生通过；545独立参考2原生通过。最大LSF/ESF差0.004682579/0.000286458，强度恒等式差9.97405e-7、相位差0.00239177degrees，沿用原门槛。偏振/多色、设置回读、分页、PNG导出与查看、失败/取消/复用、曲面/solve/系统/MFE保持、保存重载及关闭均通过。ordinary547定向120通过。原0.260976及489/500/513失败实验保留；生产原生曲线/坐标未作补偿。条目CV-01.FftPsfLineEdgeSpread现为done，计入B006第3项。证据`.local/evidence/development/CV-01/acceptance547-spread.json`；请求沿用`examples/imaging023_requests.json`。
+546重新执行Cooke轴上/离轴PSF边缘积分、ESF累积、原FFT节点复振幅强度/相位和生命周期，共3原生通过；545独立参考2原生通过。最大LSF/ESF差0.004682579/0.000286458，强度恒等式差9.97405e-7、相位差0.00239177degrees，沿用原门槛。偏振/多色、设置回读、分页、PNG导出与查看、失败/取消/复用、曲面/solve/系统/MFE保持、保存重载及关闭均通过。ordinary547定向120通过。原0.260976及489/500/513失败实验保留；生产原生曲线/坐标未作补偿。条目CV-01.FftPsfLineEdgeSpread现为done，计入B006第3项。证据`.local/evidence/development/CV-01/acceptance547-spread.json`；请求沿用`examples/requests/imaging023_requests.json`。

@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-05",
+  "command": ".venv\\Scripts\\python.exe tests/support/connection_probe019.py",
+  "budget_seconds": 180,
+  "supervisor": "verification/development/BASE-04/connection019/supervisor.json",
+  "state": "initialization_timeout",
+  "elapsed_seconds": 180.57803489999787,
+  "exit_code": 1,
+  "stdout_bytes": 0,
+  "stderr_bytes": 0,
+  "license_status": "unavailable: initialization did not return",
+  "child_tree_terminated": true,
+  "result": "No native application/session was returned; no feature-level native test was run.",
+  "next_action": "Continue static and ordinary checks. Retry after OpticStudio, authorization or installation state changes."
+}

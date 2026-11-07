@@ -5,11 +5,11 @@
   "source_version": "0.1.59",
   "native_version": "24.2.0 build240529",
   "scope": "Typed native settings/readback, four X/Y LSF/ESF column identities from original text header, units, circular-pupil analytic reference, display selections, field/wavelength/surface/polarization, paging/PNG/failure/cancel/reuse/reload and closure",
-  "ordinary_report": ".local/evidence/development/CV-01/ordinary324-related.xml",
+  "ordinary_report": "verification/development/CV-01/ordinary324-related.xml",
   "ordinary_passed": 77,
   "native_reports": [
-    ".local/evidence/development/CV-01/native324-geometric-reference.xml",
-    ".local/evidence/development/CV-01/native325-geometric-lifecycle.xml"
+    "verification/development/CV-01/native324-geometric-reference.xml",
+    "verification/development/CV-01/native325-geometric-lifecycle.xml"
   ],
   "native_passed": 3,
   "reference": {
@@ -30,10 +30,10 @@
     "edge_max_error": 0.0042914073406782605,
     "interpretation": "Fixed 101-point output with finite pupil-grid binning; accepted analytic comparison uses the higher density, retains original tolerances."
   },
-  "manual": ".local/evidence/development/CV-01/manual315-spread.txt",
+  "manual": "verification/development/CV-01/manual315-spread.txt",
   "runs": [
     {
-      "path": ".local/runs/geometric_spread322_5a9c42073b",
+      "path": "outputs/runs/geometric_spread322_5a9c42073b",
       "checks": [],
       "disconnect": true,
       "close_receipt": {
@@ -59,7 +59,7 @@
       }
     },
     {
-      "path": ".local/runs/geometric_spread322_7b2f7b9508",
+      "path": "outputs/runs/geometric_spread322_7b2f7b9508",
       "checks": [
         {
           "label": "LineEdge X circular-pupil LSF",
@@ -182,7 +182,7 @@
       }
     },
     {
-      "path": ".local/runs/geometric_spread325_lifecycle_8fc8800f49",
+      "path": "outputs/runs/geometric_spread325_lifecycle_8fc8800f49",
       "checks": [],
       "disconnect": true,
       "close_receipt": {
@@ -208,5 +208,5 @@
       }
     }
   ],
-  "image_viewed": ".local/runs/geometric_spread325_lifecycle_8fc8800f49/geometric-spread.png"
+  "image_viewed": "outputs/runs/geometric_spread325_lifecycle_8fc8800f49/geometric-spread.png"
 }

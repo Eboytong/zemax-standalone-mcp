@@ -21,10 +21,13 @@ if ($WithReports) { $Extras += 'reports' }
 if ($WithGeometry) { $Extras += 'geometry' }
 $Requirement = $Wheel.FullName
 if ($Extras.Count -gt 0) { $Requirement += '[' + ($Extras -join ',') + ']' }
-& $VenvPython -m pip install --constraint (Join-Path $PackageRoot 'requirements\\all.lock.txt') $Requirement
+& $VenvPython -m pip install --constraint (Join-Path $PackageRoot 'requirements\all.lock.txt') $Requirement
 if ($LASTEXITCODE -ne 0) { throw 'Failed to install MCP dependencies.' }
 $OutputRoot = Join-Path $PackageRoot '.local\runs'
 $StateRoot = Join-Path $PackageRoot '.local\state'
+$ConfigRoot = Join-Path $PackageRoot '.local\config'
+New-Item -ItemType Directory -Path $ConfigRoot -Force | Out-Null
+$ConfigPath = Join-Path $ConfigRoot 'mcp.config.json'
 $ServerConfig = @{
     command = $VenvPython
     args = @('-B', '-m', 'zemax_mcp')
@@ -37,5 +40,5 @@ $ServerConfig = @{
         PYTHONDONTWRITEBYTECODE = '1'
     }
 }
-@{ mcpServers = @{ zemax = $ServerConfig } } | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath (Join-Path $PackageRoot 'mcp.config.json') -Encoding UTF8
-Write-Host 'Installed. Client configuration: mcp.config.json'
+@{ mcpServers = @{ zemax = $ServerConfig } } | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath $ConfigPath -Encoding UTF8
+Write-Host "Installed. Client configuration: $ConfigPath"

@@ -40,7 +40,7 @@
   "ordinary": {
     "passed": 1621,
     "native_deselected": 535,
-    "report": ".local/evidence/development/RL-01/ordinary053.xml"
+    "report": "verification/development/RL-01/ordinary053.xml"
   },
   "wheel_stdio": {
     "version": "0.1.43",
@@ -95,5 +95,5 @@
     "scope": "Current ledger/capability index; native acceptance remains per individual item"
   },
   "empty_evidence": [],
-  "acceptance_review": ".local/evidence/development/RL-01/acceptance-review043.json"
+  "acceptance_review": "verification/development/RL-01/acceptance-review043.json"
 }

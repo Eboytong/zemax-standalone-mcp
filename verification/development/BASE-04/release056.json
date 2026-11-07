@@ -9,10 +9,10 @@
   "native_wheel_evidence": "verification\\development\\BASE-04\\native-wheel056-final.xml",
   "candidate_failure_evidence": "verification\\development\\BASE-04\\native-wheel056-release.xml",
   "native_runs": [
-    ".local/runs/diff_efficiency_offaxis059_native_277a858202/calls.json",
-    ".local/runs/diff_efficiency_offaxis059_dll_0de796e6a1/calls.json",
-    ".local/runs/diff_efficiency056_probe_9fc69a31e4/calls.json",
-    ".local/runs/hologram_dll059_0aa860d33f/calls.json"
+    "outputs/runs/diff_efficiency_offaxis059_native_277a858202/calls.json",
+    "outputs/runs/diff_efficiency_offaxis059_dll_0de796e6a1/calls.json",
+    "outputs/runs/diff_efficiency056_probe_9fc69a31e4/calls.json",
+    "outputs/runs/hologram_dll059_0aa860d33f/calls.json"
   ],
   "scope": "Native Hologram1 S/P 384 comparisons pass, basic Hologram2 192 comparisons pass; both native and DLL active cancel/failure reuse/save reload/paging/PNG. DLL case is characterization: 192 P physical comparisons remain failed; separate projection diagnostics pass.",
   "known_numeric_blocker": "CO-01.KogelnikDLL.PProjection; DLL P physical maximum absolute error 0.4438234531919145; vendor/source clarification or corrected DLL needed.",

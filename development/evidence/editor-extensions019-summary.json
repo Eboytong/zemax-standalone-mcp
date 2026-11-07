@@ -1,0 +1,49 @@
+{
+  "version": "0.1.9",
+  "date": "2026-11-05",
+  "work_package": "ED-03",
+  "state": "implemented",
+  "implementation": [
+    "TDE update/insert/delete; native active-field guards and final readback",
+    "MFE/MCE/TDE row insertion and copy",
+    "MFE/MCE/TDE typed metadata and column pagination",
+    "Native TDE .tol load/save"
+  ],
+  "static_probe": {
+    "editors": 373,
+    "editor_enums": 65,
+    "all_interfaces": 614,
+    "all_enums": 277,
+    "evidence": "verification/development/ED-03/probe/editor-interfaces.json"
+  },
+  "ordinary": {
+    "passed": 833,
+    "native_deselected": 438,
+    "duration_seconds": 9.79,
+    "evidence": "verification/development/ED-03/ordinary019-final.xml",
+    "new_cases": 52
+  },
+  "native": {
+    "state": "pending",
+    "reason": "180-second native initialization probe did not complete",
+    "probe": "verification/development/BASE-04/connection019/supervisor.json",
+    "owned_process_tree_stopped": true,
+    "graceful_native_close": "not confirmed: initialization never returned",
+    "test": "tests/test_editor_extensions_live.py",
+    "next_command": ".venv/Scripts/python.exe -B -m pytest tests/test_editor_extensions_live.py --run-zemax -q -s"
+  },
+  "limits": [
+    {
+      "item": "MCE independent file interface",
+      "finding": "IMultiConfigEditor declares no Load/Save method",
+      "unblock": "An installed formal independent MCE file interface; existing full-system save/load available"
+    }
+  ],
+  "release": {
+    "wheel": "wheels/zemax_standalone_mcp-0.1.9-py3-none-any.whl",
+    "installed_directory": "outputs/wheel-release019",
+    "installed_stdio": "passed",
+    "evidence": "verification/development/ED-03/wheel-smoke019.json",
+    "native_installed_smoke": "pending successful ZOS-API connection"
+  }
+}

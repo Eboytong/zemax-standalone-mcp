@@ -85,8 +85,8 @@
       "y_points": 3
     }
   ],
-  "actual_settings": ".local/runs/power596_value_states_3749cf01db/value-states.json",
-  "command": ".venv/Scripts/python.exe -m pytest tests/test_power_map_value_states_live.py --run-zemax -x -q --junitxml=.local/evidence/development/CV-02/native596-value-states.xml",
+  "actual_settings": "outputs/runs/power596_value_states_3749cf01db/value-states.json",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_power_map_value_states_live.py --run-zemax -x -q --junitxml=verification/development/CV-02/native596-value-states.xml",
   "result": "Eight analyses: planar rawzero preserved with offset7 for both quantities/maps; curved model nonzero results retain identity; rows and grid pagination passed.",
   "implementation": [
     "native_ring_validity and valid_mask_scope",
@@ -132,14 +132,14 @@
   ],
   "maximum_numeric_error": 0.0,
   "ordinary": {
-    "report": ".local/evidence/development/BASE-01/ordinary597-targeted.xml",
+    "report": "verification/development/BASE-01/ordinary597-targeted.xml",
     "passed": 71
   },
   "task_state": "Eight parents succeeded; child batch owners closed; no cleanup warnings",
   "lifecycle": "Real stdio connected/disconnected; source surfaces/solve/settings/MFE retained; separate before/after saves reloaded for both models",
   "retained_failure": {
-    "report": ".local/evidence/development/CV-02/native595-value-states.xml",
-    "run": ".local/runs/power595_value_states_74485fa4c4",
+    "report": "verification/development/CV-02/native595-value-states.xml",
+    "run": "outputs/runs/power595_value_states_74485fa4c4",
     "reason": "Test supplied offset/limit instead of public start/count paging arguments; page defaulted to all rows.596 uses actual public arguments; production paging unchanged.",
     "disconnect": "Explicit disconnect succeeded before failed stdio context exited"
   },

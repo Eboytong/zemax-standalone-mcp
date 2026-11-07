@@ -6,19 +6,19 @@
   "state": "done",
   "date": "2026-11-06",
   "source": "0.1.57 plus B002 source",
-  "runtime": ".local/evidence/development/WP-01/probe030.json",
-  "ordinary": ".local/evidence/development/TO-01/ordinary085-delivery.xml",
+  "runtime": "verification/development/WP-01/probe030.json",
+  "ordinary": "verification/development/TO-01/ordinary085-delivery.xml",
   "ordinary_passed": 66,
   "native": [
-    ".local/evidence/development/TO-01/native084-delivery.xml",
-    ".local/evidence/development/TO-01/native085-final.xml",
-    ".local/evidence/development/TO-01/native085-mixed-tails.xml"
+    "verification/development/TO-01/native084-delivery.xml",
+    "verification/development/TO-01/native085-final.xml",
+    "verification/development/TO-01/native085-mixed-tails.xml"
   ],
   "runs": [
-    ".local/runs/tolerance_edges085_77dd82a526",
-    ".local/runs/tolerance_edges085_db15785103",
-    ".local/runs/tolerance-special-analyses_4fdc4ce54e",
-    ".local/runs/tolerance-special-analyses_eb087d6829"
+    "outputs/runs/tolerance_edges085_77dd82a526",
+    "outputs/runs/tolerance_edges085_db15785103",
+    "outputs/runs/tolerance-special-analyses_4fdc4ce54e",
+    "outputs/runs/tolerance-special-analyses_eb087d6829"
   ],
   "scope": "Native ZTD stored-value distributions; public zero-based to native one-based columns; final settings, CDF/count references, tail counters, sample counts, series units, paging/PNG, save/reload, error/reuse, source preservation and close",
   "numeric": {

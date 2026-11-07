@@ -3,7 +3,7 @@
   "date": "2026-11-05",
   "item_id": "CV-01.Foucault",
   "native_api": {
-    "probe": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+    "probe": "verification/development/BASE-01/probe/api-interfaces.json",
     "analysis_id": "ZOSAPI.Analysis.AnalysisIDM.Foucault",
     "settings_interface": "ZOSAPI.Analysis.Settings.Wavefront.IAS_Foucault",
     "read_write_properties": [

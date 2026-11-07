@@ -6,27 +6,27 @@
     "license": "PremiumEdition",
     "python": "3.14"
   },
-  "module_probe": ".local/runs/star188_license_0e7885c405/probe.json",
+  "module_probe": "outputs/runs/star188_license_0e7885c405/probe.json",
   "actual": {
     "IsSTARModuleEnabled": false,
     "IsValidLicenseForAPI": true,
     "STARData_type": "ZemaxUI.ZOSAPI.Editors.ZOSAPI_STAR_Data"
   },
   "material_probes": [
-    ".local/runs/star189_material_conditions_74289c88b4/probe.json",
-    ".local/runs/star191_material_aliases_4b92c88c28/probe.json"
+    "outputs/runs/star189_material_conditions_74289c88b4/probe.json",
+    "outputs/runs/star191_material_aliases_4b92c88c28/probe.json"
   ],
   "material_outcome": "GetRefractiveIndex and GetDNDT returned0 for N-BK7 and N-F2 under SCHOTT, SCHOTT.AGF and absolute path; six environment/material condition sets also returned0. Public adapter rejects index0 as INVALID_RESULT_DATA.",
   "native_attempt": {
-    "report": ".local/evidence/development/EXT-STAR/native190-materials.xml",
+    "report": "verification/development/EXT-STAR/native190-materials.xml",
     "passed": 0,
     "failed": 1,
     "reason": "first wavelength returned invalid index0; no numerical-reference acceptance achieved"
   },
   "controlled_error_reuse": {
-    "report": ".local/evidence/development/EXT-STAR/native192-availability.xml",
+    "report": "verification/development/EXT-STAR/native192-availability.xml",
     "passed": 1,
-    "path": ".local/runs/star192_availability_7cb9c9fe3a",
+    "path": "outputs/runs/star192_availability_7cb9c9fe3a",
     "outcome": "STAR read gated FEATURE_UNAVAILABLE; material utility invalid0 rejected; ordinary catalog call reuse and source state preserved; normal disconnect"
   },
   "resume_conditions": [

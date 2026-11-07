@@ -1,7 +1,7 @@
 {
   "date":"2026-11-05",
   "kind":"runtime discovery; not functional completion",
-  "evidence":".local/evidence/development/NS-04/runtime066/settings.json",
+  "evidence":"verification/development/NS-04/runtime066/settings.json",
   "observed":{
     "NS-04.FileComparatorSettings":"Concrete AS_FileComparator exposes file/config selections and comparison sections. All properties and methods captured; next implement typed adapter and independent changed-file text reference.",
     "NS-04.NSCObjectViewer":"AS_Default exposes base IAS_ only; SaveTo succeeds with 18448-byte binary CFG. No object selector readback through dedicated properties. Need documented ModifySettings keys and reliable selected-object/output readback.",

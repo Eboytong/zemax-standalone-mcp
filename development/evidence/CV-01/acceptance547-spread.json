@@ -1,0 +1,233 @@
+{
+  "date": "2026-11-07",
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build240529 Premium",
+  "item_id": "CV-01.FftPsfLineEdgeSpread",
+  "state": "done",
+  "scope": "Typed FFT line/edge native settings/readback; text/series units and axes; incoherentPSF marginal/cumulative; independent coherent pupil reference; complex identities; paging/image/error/cancel/reuse/reload/close",
+  "input_source": "Official Cooke fields1/3 and controlled mirror R-200/conic-1/semi5mm/wave.55um at image thickness-100/-100.02mm",
+  "request": "Existing run_analysis kind=fft_line_edge_spread; incoherentLine/Edge X/Y, coherent intensity/log/phase/real/imag;64/128 sampling; request examples imaging023_requests.json",
+  "actual_settings": "Every listed calls.json/comparisons.json/outlets.json and selected.json contains requested and adopted settings",
+  "formal_material": "CV-01/manual535-reference-assumptions.json pages777/778; previous native settings reflection and progress320-spread.json retained",
+  "reference": {
+    "pupil_nodes": "p_y=(i-N/2)*sqrt(N/32)/(N/2-1), strict abs(p_y)<1",
+    "pupil_counts": {
+      "64": 43,
+      "128": 63
+    },
+    "amplitude": "sqrt(native independently traced intensity)*exp(2*pi*i*independently traced OPD)",
+    "transform": "Direct physical Fraunhofer sum at native original output knot positions, lambda.55um, pupil5mm, absolute image distance; peak normalized",
+    "incoherent": "Independent orthogonal nativePSF marginal and midpoint cumulative",
+    "complex": "Original FFT knots: intensity=abs(real+i*imag)^2, phase=angle(real+i*imag)",
+    "offline": "544 phase interpolation was only preliminary;545 independently traces exact stretched nodes"
+  },
+  "tolerances": {
+    "coherent_intensity_absolute": 0.005,
+    "incoherent_line_edge_absolute": 0.005,
+    "complex_intensity_absolute": 2e-06,
+    "phase_degrees_absolute": 0.005
+  },
+  "coherent": [
+    {
+      "run": "outputs\\runs\\fft_spread513_fft_stretched_psf_auto_64_f61fa3033e",
+      "numeric_checks": 2,
+      "all_checks_passed": true,
+      "checks": [
+        {
+          "label": "-100 coherent pupil slice",
+          "actual": 0.0006927796007210885,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "-100.02 coherent pupil slice",
+          "actual": 0.0008109807835486871,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        }
+      ],
+      "disconnect_ok": true,
+      "requests_and_actual_settings": "outputs\\runs\\fft_spread513_fft_stretched_psf_auto_64_f61fa3033e\\calls.json"
+    },
+    {
+      "run": "outputs\\runs\\fft_spread513_fft_stretched_psf_auto_128_634a032580",
+      "numeric_checks": 2,
+      "all_checks_passed": true,
+      "checks": [
+        {
+          "label": "-100 coherent pupil slice",
+          "actual": 0.0004185843611947959,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "-100.02 coherent pupil slice",
+          "actual": 0.00026328999326097335,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        }
+      ],
+      "disconnect_ok": true,
+      "requests_and_actual_settings": "outputs\\runs\\fft_spread513_fft_stretched_psf_auto_128_634a032580\\calls.json"
+    }
+  ],
+  "incoherent_complex": [
+    {
+      "run": "outputs\\runs\\fft_spread315_61b2364604",
+      "numeric_checks": 6,
+      "all_checks_passed": true,
+      "checks": [
+        {
+          "label": "X PSF marginal",
+          "actual": 0.002347171139119031,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "X PSF midpoint cumulative",
+          "actual": 0.00022969531886585237,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "Y PSF marginal",
+          "actual": 0.0023471711391200674,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "Y PSF midpoint cumulative",
+          "actual": 0.00022969531886662953,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "coherent original knots amplitude squared",
+          "actual": 9.974049998140444e-07,
+          "expected": 0,
+          "atol": 2e-06,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "coherent original knots phase degrees",
+          "actual": 0.0014407303835923813,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        }
+      ],
+      "disconnect_ok": true,
+      "requests_and_actual_settings": "outputs\\runs\\fft_spread315_61b2364604\\calls.json"
+    },
+    {
+      "run": "outputs\\runs\\fft_spread315_be48a1026d",
+      "numeric_checks": 6,
+      "all_checks_passed": true,
+      "checks": [
+        {
+          "label": "X PSF marginal",
+          "actual": 0.0035018972691672995,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "X PSF midpoint cumulative",
+          "actual": 0.00012810760722348213,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "Y PSF marginal",
+          "actual": 0.004682579424659525,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "Y PSF midpoint cumulative",
+          "actual": 0.0002864584002840731,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "coherent original knots amplitude squared",
+          "actual": 9.288290000464272e-07,
+          "expected": 0,
+          "atol": 2e-06,
+          "rtol": 0,
+          "passed": true
+        },
+        {
+          "label": "coherent original knots phase degrees",
+          "actual": 0.0023917699817275206,
+          "expected": 0,
+          "atol": 0.005,
+          "rtol": 0,
+          "passed": true
+        }
+      ],
+      "disconnect_ok": true,
+      "requests_and_actual_settings": "outputs\\runs\\fft_spread315_be48a1026d\\calls.json"
+    }
+  ],
+  "lifecycle_run": {
+    "run": "outputs\\runs\\fft_spread319_lifecycle_4d06f2364f",
+    "numeric_checks": 0,
+    "all_checks_passed": true,
+    "checks": [],
+    "disconnect_ok": true,
+    "requests_and_actual_settings": "outputs\\runs\\fft_spread319_lifecycle_4d06f2364f\\calls.json"
+  },
+  "maximum_coherent_error": 0.0008109807835486871,
+  "maximum_incoherent_line_error": 0.004682579424659525,
+  "maximum_incoherent_edge_error": 0.0002864584002840731,
+  "ordinary_report": "verification/development/BASE-01/ordinary547-targeted.xml",
+  "ordinary_passed": 120,
+  "native_reports": [
+    "verification/development/CV-01/native545-stretched.xml",
+    "verification/development/CV-01/native546-spread-final.xml"
+  ],
+  "native_passed": 5,
+  "commands": [
+    ".venv/Scripts/python.exe -X utf8 tests/support/coherent_stretched544.py",
+    ".venv/Scripts/python.exe -m pytest tests/test_fft_spread_coherent_live.py -k \"fft_stretched and psf_auto\" -q -s --run-zemax --junitxml=verification/development/CV-01/native545-stretched.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_fft_spread_lifecycle_live.py tests/test_fft_spread_reference_live.py -q -s --run-zemax --junitxml=verification/development/CV-01/native546-spread-final.xml"
+  ],
+  "retained_failures": [
+    "progress320 original index-based.260975929 mismatch",
+    "progress489 interior128.005815089/.005908417",
+    "progress500 plot-spacing hypothesis",
+    "progress513 guard128.005915891/.006008147"
+  ],
+  "conclusion": "Remaining coherent reference gap explained by documented default pupil stretching; exact newly traced stretched nodes pass original tolerances at both samplings/defocuses. Production native values and coordinates unchanged.",
+  "lifecycle": "546 selection, polarization/polychromatic, series pagination, PNG export/view, invalid wavelength, running cancellation/native close, reuse, surfaces/settings/MFE/solves preserved and save/reload succeeded.545/546 all sessions disconnected.",
+  "image_viewed": "outputs/runs/fft_spread319_lifecycle_4d06f2364f/fft-edge.png",
+  "batch": "B006 third first-completed common function;3/10. No new release/wheel.",
+  "next_action": "Continue TO-01.QuickYield controlled fit definition, then fixed fallback queue."
+}

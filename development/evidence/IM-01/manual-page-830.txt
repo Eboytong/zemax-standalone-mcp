@@ -1,0 +1,50 @@
+OpticStudio supports three different file formats. Two of these formats end in the IMA extension, one in the BIM
+extension
+The IMA format
+There are two different IMA file formats, one text and one binary. Whichever file format is used, the file must end in
+the extension IMA. OpticStudio will distinguish between the two types of file formats automatically.
+The text image file is a text file which ends in the extension .IMA. At the top of the file is one number which indicates
+the size ofthe file in pixels. The remaining rows and columns contain the pixel data, with one characterto each pixel.
+All IMA files must be square, with n x n pixels defined. For example, a 7 x 7 representation of the letter "F" could be
+described by the following IMA file:
+7
+0111110
+0100000
+0100000
+0111100
+0100000
+0100000
+0100000
+Note thatthe single entry "7" starts the file, and itis followed by a carriage return. Then there are 7 rows of 7 columns
+each, and each row is terminated with a carriage return. The columns are not separated by a space or any other
+character. The image file must be square. OpticStudio will attempt to allocate enough memory to hold the image
+file and will report an error if there is not enough memory.
+The "intensity" at each pixel can be any digit between 0 and 9. The number of rays each pixel will generate is
+proportional to this value. Pixels with a value of 0 do not radiate any rays.
+The binary IMA file format is more complicated than the text format, and binary IMA files cannot be edited with a
+text editor.However,thebinary IMAfiles aredramaticallymorepowerful.Eachpixel inthebinary IMAfile is represented
+by an unsigned byte, which means there are 256 "gray-scale" levels of intensity. Furthermore, each wavelength can
+be assigned a separate pixel map. Therefore, very realistic photograph like extended sources can be modeled.
+The binary IMA file formatrequires 3 16-bit header values. The first 16-bit value is a signed integerthat must be equal
+to zero. The second 16-bit signed integer is the width of the pixel map in pixels, which can be any number from 1 to
+8000. The third 16-bit signed integer is the number of pixel maps, which correspond to the number of colors (or
+wavelengths) represented in the file.
+For example, a 3-color binary pixel map of a 50 by 50 image would have 6 bytes of header (0, 50, and 3), followed by
+2500 bytes for color 1, then 2500 bytes for color 2, then 2500 bytes for color 3, for a total of 7506 bytes. The data for
+each color is stored by columns for each row (the column index changes faster than the row index).
+The BIM format
+The drawback to the IMA formatis that a maximum of 256 grey scale levels are supported. The BIM formatis a binary
+double precision floating point file format which effectively makes the number of grey scales many trillions. The
+BIM format consists of the following binary values:
+1 32 bit integer representing the number of x pixels, nx.
+1 32 bit integer representing the number of y pixels, ny.
+followed by n*n 64 bit double precision floating point values representing the relative intensity. The first pixel is the
+bottom left corner, and the remaining pixels are listed by rows along x.
+Currently, the nx and ny values must be identical or an error message will be issued.
+Comments on using field angles
+The comments regarding field angles for the Image Simulation also apply to this feature. For a full discussion, see
+"Comments on using field angles".
+Comments on using paraxial and real image height
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 830
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

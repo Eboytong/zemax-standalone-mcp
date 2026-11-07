@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="9" time="330.785" timestamp="2026-11-05T13:59:38.747826+08:00" hostname="tongeb"><testcase classname="tests.test_design_tools_live" name="test_design_cooke[quick_adjust]" time="14.691"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_design_tools_live" name="test_design_cooke[find_best_asphere]" time="25.260"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_design_tools_live" name="test_design_cooke[ray_aiming_wizard]" time="196.230"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError() [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_design_tools_live.py", line 72, in test_design_cooke
+  |     asyncio.run(execute('design_cooke020_'+kind,work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_design_tools_live.py", line 67, in work
+      |     result=await e.finish(await e.call('run_design_tool',dict(request=q)),timeout_seconds=180)
+      |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 19, in finish
+      |     assert time.monotonic()&lt;deadline
+      |            ^^^^^^^^^^^^^^^^^^^^^^^^^
+      | AssertionError
+      +------------------------------------</failure></testcase><testcase classname="tests.test_design_tools_live" name="test_design_cooke[sequential]" time="17.394"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_design_tools_live" name="test_design_nsc_wizard_options[nsc]" time="17.299"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'completed': False, 'rows': [], 'summary': {}, 'restoration': None, 'baseline': None, 'error': {'code': 'UNSUPPORTED_MODE', 'message': '本工具当前适配顺序系统。', 'details': {}}, 'kind': 'nsc', 'requested': {'apply': True, 'reset': True, 'kind': 'nsc', 'is_clear_data_settings_used': None, 'is_raytrace_settings_used': None, 'is_split_rays_used': None, 'is_use_polarization_used': None, 'is_scatter_rays_used': None, 'is_ignore_errors_used': None, 'is_use_lightning_trace_used': None, 'is_criterion_settings_used': None, 'is_minimum_flux_used': None, 'is_overwrite_used': None, 'is_target_settings_used': None, 'is_color_targets_used': None, 'is_resample_detector_used': None, 'clear_detector': None, 'criterion': None, 'use_source': None, 'use_detector': None, 'boundary': None, 'start_at': None, 'configuration': None, 'bitmap_file': None, 'ray_sampling': None, 'edge_sampling': None, 'target': None, 'minimum_flux': None, 'overall_weight': None, 'total_flux': None}, 'settings': {'IsNSCOptimizingWizard': True, 'IsNSCBitmapWizard': False, 'IsClearDataSettingsUsed': True, 'IsRaytraceSettingsUsed': True, 'IsSplitRaysUsed': False, 'IsUsePolarizationUsed': False, 'IsScatterRaysUsed': False, 'IsIgnoreErrorsUsed': False, 'IsUseLightningTraceUsed': False, 'IsCriterionSettingsUsed': True, 'IsMinimumFluxUsed': True, 'IsOverwriteUsed': True, 'IsTargetSettingsUsed': False, 'IsColorTargetsUsed': False, 'IsResampleDetectorUsed': False, 'ClearDetector': 0, 'Criterion': 0, 'UseSource': 0, 'UseDetector': 0, 'Boundary': 0, 'StartAt': 1, 'Configuration': 0, 'BitmapFile': 0, 'RaySampling': 0, 'EdgeSampling': 0, 'Target': 0.0, 'MinimumFlux': 0.0, 'OverallWeight': 1.0, 'TotalFlux': 0.0, 'NumberOfSources': 2, 'NumberOfDetectors': 1, 'NumberOfCriterion': 13, 'NumberOfConfigurations': 2, 'NumberOfRaySamplings': 6, 'NumberOfEdgeSamplings': 5, 'NumberOfBoundaries': 3, 'Wizard': 'NSCOptimization', 'IsNonSequential': True, 'IsSequential': False}, 'applied': False, 'source': 'ZOS-API MFE wizard', 'ownership': 'MFE-owned; no SystemTool Close', 'result_schema_version': 1, 'task': {'task_id': 'c0edccd41308412e83239cf23372ab8a', 'request_id': 'd36775ce5d28439cb18a7894cbc3b7d5', 'kind': 'optimization_wizard_nsc', 'state': 'failed', 'created_at': '2026-11-05T06:04:08.071976+00:00', 'finished_at': '2026-11-05T06:04:08.244030+00:00', 'progress': 0, 'can_cancel': True, 'cancel_requested': False, 'settings': {'apply': True, 'reset': True, 'kind': 'nsc', 'is_clear_data_settings_used': None, 'is_raytrace_settings_used': None, 'is_split_rays_used': None, 'is_use_polarization_used': None, 'is_scatter_rays_used': None, 'is_ignore_errors_used': None, 'is_use_lightning_trace_used': None, 'is_criterion_settings_used': None, 'is_minimum_flux_used': None, 'is_overwrite_used': None, 'is_target_settings_used': None, 'is_color_targets_used': None, 'is_resample_detector_used': None, 'clear_detector': None, 'criterion': None, 'use_source': None, 'use_detector': None, 'boundary': None, 'start_at': None, 'configuration': None, 'bitmap_file': None, 'ray_sampling': None, 'edge_sampling': None, 'target': None, 'minimum_flux': None, 'overall_weight': None, 'total_flux': None}, 'context': {'session_id': 'c5bd7367638f4eaabba8d78d52462904', 'model_revision': 4, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\design_nsc020_nsc_af007dc5eb\\c5bd7367638f4eaabba8d78d52462904\\working_37e454b6.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\design_nsc020_nsc_af007dc5eb\\c5bd7367638f4eaabba8d78d52462904\\checkpoint_r3_wizard_nsc_6ace4e22.zos', 'requires_reconnect': False, 'mode': 'NonSequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 4, 'session_id': 'c5bd7367638f4eaabba8d78d52462904'}}, 'error': {'code': 'UNSUPPORTED_MODE', 'message': '本工具当前适配顺序系统。', 'details': {}}, 'result_path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\design_nsc020_nsc_af007dc5eb\\c5bd7367638f4eaabba8d78d52462904\\c0edccd41308412e83239cf23372ab8a.json', 'result_artifacts': [{'kind': 'json', 'path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\design_nsc020_nsc_af007dc5eb\\c5bd7367638f4eaabba8d78d52462904\\c0edccd41308412e83239cf23372ab8a.json'}], 'elapsed_seconds': 0.121}, 'context': {'session_id': 'c5bd7367638f4eaabba8d78d52462904', 'model_revision': 4, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\design_nsc020_nsc_af007dc5eb\\c5bd7367638f4eaabba8d78d52462904\\working_37e454b6.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\design_nsc020_nsc_af007dc5eb\\c5bd7367638f4eaabba8d78d52462904\\checkpoint_r3_wizard_nsc_6ace4e22.zos', 'requires_reconnect': False, 'mode': 'NonSequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 4, 'session_id': 'c5bd7367638f4eaabba8d78d52462904'}}, 'system_settings': {'mode': 'NonSequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'source_units': 'Watts', 'source_unit_prefix': 'None', 'analysis_units': 'WattsPerCMSq', 'analysis_unit_prefix': 'None', 'afocal_image_space': False, 'aperture': {'type': 'EntrancePupilDiameter', 'value': 0.0}, 'field_type': 'Angle', 'field_normalization': 'Radial', 'fields': [{'number': 1, 'x': 0.0, 'y': 0.0, 'weight': 1.0, 'vdx': 0.0, 'vdy': 0.0, 'vcx': 0.0, 'vcy': 0.0, 'van': 0.0}], 'wavelength_unit': 'micrometers (environmental air reference)', 'wavelengths': [{'number': 1, 'wavelength_um': 0.55, 'weight': 1.0, 'primary': True}], 'temperature_c': 20.0, 'pressure_atm': 1.0, 'adjust_index_to_environment': False, 'afocal_mode_units': 'Milliradians', 'settings_activity': {'apodization_factor_is_used': False}, 'author': '', 'aperture_options': {'apodization_type': 'Uniform', 'apodization_factor': 0.0, 'semi_diameter_margin': 0.0, 'semi_diameter_margin_pct': 0.0, 'telecentric_object_space': False, 'afocal_image_space': False, 'iterate_solves_when_updating': False, 'fast_semi_diameters': True, 'check_grin_apertures': False}, 'advanced': {'reference_opd': 'ExitPupil', 'paraxial_rays': 'IgnoreCoordinateBreaks', 'f_num_method': 'TracingRays', 'dont_print_coordinate_break_data': False, 'turn_off_threading': False, 'opd_modulo_2pi': False, 'include_calculated_data_in_session_file': True, 'include_tolerance_data_in_session_file': True, 'huygens_integral_method': 'Auto'}, 'global_reference_surface': None, 'material_catalogs': ['SCHOTT'], 'polarization': {'unpolarized': True, 'jx': 0.0, 'jy': 1.0, 'x_phase': 0.0, 'y_phase': 0.0, 'method': 'XAxisMethod', 'convert_thin_film_phase': True}, 'ray_aiming': {'mode': 'Off', 'method': 'Heuristic', 'cache': True, 'robust': False, 'scale_pupil_shift_by_field': False, 'auto_pupil_shift': True, 'enhanced': False, 'advanced_convergence': False, 'fallback_search': False, 'pupil_shift_x': 0.0, 'pupil_shift_y': 0.0, 'pupil_shift_z': 0.0, 'pupil_compress_x': 0.0, 'pupil_compress_y': 0.0, 'cache_steps': 10}, 'files': {'coating_file': 'COATING.DAT', 'scatter_profile': 'SCATTER_PROFILE.DAT', 'abg_file': 'ABG_DATA.DAT', 'gradium_profile': 'PROFILE.GRD'}, 'title': '', 'notes': ''}, 'artifacts': [{'kind': 'json', 'path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\design_nsc020_nsc_af007dc5eb\\c5bd7367638f4eaabba8d78d52462904\\c0edccd41308412e83239cf23372ab8a.json'}], 'total': 0, 'next_start': None}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_design_tools_live.py", line 91, in test_design_nsc_wizard_options
+  |     asyncio.run(execute('design_nsc020_'+kind,work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_design_tools_live.py", line 86, in work
+      |     result=await e.finish(await e.call('run_optimization_wizard',dict(request=dict(kind=kind,apply=True))))
+      |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 22, in finish
+      |     assert t["state"]=="succeeded",r
+      |            ^^^^^^^^^^^^^^^^^^^^^^^
+      | AssertionError: {'completed': False, 'rows': [], 'summary': {}, 'restoration': None, 'baseline': None, 'error': {'code': 'UNSUPPORTED_MODE', 'message': '本工具当前适配顺序系统。', 'details': {}}, 'kind': 'nsc', 'requested': {'apply': True, 'reset': True, 'kind': 'nsc', 'is_clear_data_settings_used': None, 'is_raytrace_settings_used': None, 'is_split_rays_used': None, 'is_use_polarization_used': None, 'is_scatter_rays_used': None, 'is_ignore_errors_used': None, 'is_use_lightning_trace_used': None, 'is_criterion_settings_used': None, 'is_minimum_flux_used': None, 'is_overwrite_used': None, 'is_target_settings_used': None, 'is_color_targets_used': None, 'is_resample_detector_used': None, 'clear_detector': None, 'criterion': None, 'use_source': None, 'use_detector': None, 'boundary': None, 'start_at': None, 'configuration': None, 'bitmap_file': None, 'ray_sampling': None, 'edge_sampling': None, 'target': None, 'minimum_flux': None, 'overall_weight': None, 'total_flux': None}, 'settings': {'IsNSCOptimizingWizard': True, 'IsNSCBitmapWizard': False, 'IsClearDataSettingsUsed': True, 'IsRaytraceSettingsUsed': True, 'IsSplitRaysUsed': False, 'IsUsePolarizationUsed': False, 'IsScatterRaysUsed': False, 'IsIgnoreErrorsUsed': False, 'IsUseLightningTraceUsed': False, 'IsCriterionSettingsUsed': True, 'IsMinimumFluxUsed': True, 'IsOverwriteUsed': True, 'IsTargetSettingsUsed': False, 'IsColorTargetsUsed': False, 'IsResampleDetectorUsed': False, 'ClearDetector': 0, 'Criterion': 0, 'UseSource': 0, 'UseDetector': 0, 'Boundary': 0, 'StartAt': 1, 'Configuration': 0, 'BitmapFile': 0, 'RaySampling': 0, 'EdgeSampling': 0, 'Target': 0.0, 'MinimumFlux': 0.0, 'OverallWeight': 1.0, 'TotalFlux': 0.0, 'NumberOfSources': 2, 'NumberOfDetectors': 1, 'NumberOfCriterion': 13, 'NumberOfConfigurations': 2, 'NumberOfRaySamplings': 6, 'NumberOfEdgeSamplings': 5, 'NumberOfBoundaries': 3, 'Wizard': 'NSCOptimization', 'IsNonSequential': True, 'IsSequential': False}, 'applied': False, 'source': 'ZOS-API MFE wizard', 'ownership': 'MFE-owned; no SystemTool Close', 'result_schema_version': 1, 'task': {'task_id': 'c0edccd41308412e83239cf23372ab8a', 'request_id': 'd36775ce5d28439cb18a7894cbc3b7d5', 'kind': 'optimization_wizard_nsc', 'state': 'failed', 'created_at': '2026-11-05T06:04:08.071976+00:00', 'finished_at': '2026-11-05T06:04:08.244030+00:00', 'progress': 0, 'can_cancel': True, 'cancel_requested': False, 'settings': {'apply': True, 'reset': True, 'kind': 'nsc', 'is_clear_data_settings_used': None, 'is_raytrace_settings_used': None, 'is_split_rays_used': None, 'is_use_polarization_used': None, 'is_scatter_rays_used': None, 'is_ignore_errors_used': None, 'is_use_lightning_trace_used': None, 'is_criterion_settings_used': None, 'is_minimum_flux_used': None, 'is_overwrite_used': None, 'is_target_settings_used': None, 'is_color_targets_used': None, 'is_resample_detector_used': None, 'clear_detector': None, 'criterion': None, 'use_source': None, 'use_detector': None, 'boundary': None, 'start_at': None, 'configuration': None, 'bitmap_file': None, 'ray_sampling': None, 'edge_sampling': None, 'target': None, 'minimum_flux': None, 'overall_weight': None, 'total_flux': None}, 'context': {'session_id': 'c5bd7367638f4eaabba8d78d52462904', 'model_revision': 4, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\design_nsc020_nsc_af007dc5eb\\c5bd7367638f4eaabba8d78d52462904\\working_37e454b6.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\design_nsc020_nsc_af007dc5eb\\c5bd7367638f4eaabba8d78d52462904\\checkpoint_r3_wizard_nsc_6ace4e22.zos', 'requires_reconnect': False, 'mode': 'NonSequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 4, 'session_id': 'c5bd7367638f4eaabba8d78d52462904'}}, 'error': {'code': 'UNSUPPORTED_MODE', 'message': '本工具当前适配顺序系统。', 'details': {}}, 'result_path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\design_nsc020_nsc_af007dc5eb\\c5bd7367638f4eaabba8d78d52462904\\c0edccd41308412e83239cf23372ab8a.json', 'result_artifacts': [{'kind': 'json', 'path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\design_nsc020_nsc_af007dc5eb\\c5bd7367638f4eaabba8d78d52462904\\c0edccd41308412e83239cf23372ab8a.json'}], 'elapsed_seconds': 0.121}, 'context': {'session_id': 'c5bd7367638f4eaabba8d78d52462904', 'model_revision': 4, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\design_nsc020_nsc_af007dc5eb\\c5bd7367638f4eaabba8d78d52462904\\working_37e454b6.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\design_nsc020_nsc_af007dc5eb\\c5bd7367638f4eaabba8d78d52462904\\checkpoint_r3_wizard_nsc_6ace4e22.zos', 'requires_reconnect': False, 'mode': 'NonSequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 4, 'session_id': 'c5bd7367638f4eaabba8d78d52462904'}}, 'system_settings': {'mode': 'NonSequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'source_units': 'Watts', 'source_unit_prefix': 'None', 'analysis_units': 'WattsPerCMSq', 'analysis_unit_prefix': 'None', 'afocal_image_space': False, 'aperture': {'type': 'EntrancePupilDiameter', 'value': 0.0}, 'field_type': 'Angle', 'field_normalization': 'Radial', 'fields': [{'number': 1, 'x': 0.0, 'y': 0.0, 'weight': 1.0, 'vdx': 0.0, 'vdy': 0.0, 'vcx': 0.0, 'vcy': 0.0, 'van': 0.0}], 'wavelength_unit': 'micrometers (environmental air reference)', 'wavelengths': [{'number': 1, 'wavelength_um': 0.55, 'weight': 1.0, 'primary': True}], 'temperature_c': 20.0, 'pressure_atm': 1.0, 'adjust_index_to_environment': False, 'afocal_mode_units': 'Milliradians', 'settings_activity': {'apodization_factor_is_used': False}, 'author': '', 'aperture_options': {'apodization_type': 'Uniform', 'apodization_factor': 0.0, 'semi_diameter_margin': 0.0, 'semi_diameter_margin_pct': 0.0, 'telecentric_object_space': False, 'afocal_image_space': False, 'iterate_solves_when_updating': False, 'fast_semi_diameters': True, 'check_grin_apertures': False}, 'advanced': {'reference_opd': 'ExitPupil', 'paraxial_rays': 'IgnoreCoordinateBreaks', 'f_num_method': 'TracingRays', 'dont_print_coordinate_break_data': False, 'turn_off_threading': False, 'opd_modulo_2pi': False, 'include_calculated_data_in_session_file': True, 'include_tolerance_data_in_session_file': True, 'huygens_integral_method': 'Auto'}, 'global_reference_surface': None, 'material_catalogs': ['SCHOTT'], 'polarization': {'unpolarized': True, 'jx': 0.0, 'jy': 1.0, 'x_phase': 0.0, 'y_phase': 0.0, 'method': 'XAxisMethod', 'convert_thin_film_phase': True}, 'ray_aiming': {'mode': 'Off', 'method': 'Heuristic', 'cache': True, 'robust': False, 'scale_pupil_shift_by_field': False, 'auto_pupil_shift': True, 'enhanced': False, 'advanced_convergence': False, 'fallback_search': False, 'pupil_shift_x': 0.0, 'pupil_shift_y': 0.0, 'pupil_shift_z': 0.0, 'pupil_compress_x': 0.0, 'pupil_compress_y': 0.0, 'cache_steps': 10}, 'files': {'coating_file': 'COATING.DAT', 'scatter_profile': 'SCATTER_PROFILE.DAT', 'abg_file': 'ABG_DATA.DAT', 'gradium_profile': 'PROFILE.GRD'}, 'title': '', 'notes': ''}, 'artifacts': [{'kind': 'json', 'path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\design_nsc020_nsc_af007dc5eb\\c5bd7367638f4eaabba8d78d52462904\\c0edccd41308412e83239cf23372ab8a.json'}], 'total': 0, 'next_start': None}
+      +------------------------------------</failure></testcase><testcase classname="tests.test_design_tools_live" name="test_design_nsc_wizard_options[bitmap]" time="14.843"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_design_tools_live" name="test_design_nsc_wizard_options[roadway]" time="15.766"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_catalogs_live" name="test_catalog_search_load_insert_stdio" time="15.378"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_catalogs_live" name="test_material_candidates_independent_and_restored" time="13.099"><properties><property name="validation_layer" value="native" /></properties><failure message="KeyError('material') [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_catalogs_live.py", line 44, in test_material_candidates_independent_and_restored
+  |     asyncio.run(execute('catalog_candidates021',work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_catalogs_live.py", line 36, in work
+      |     material=baseline['surfaces'][0]['material']
+      |              ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+      | KeyError: 'material'
+      +------------------------------------</failure></testcase></testsuite></testsuites>

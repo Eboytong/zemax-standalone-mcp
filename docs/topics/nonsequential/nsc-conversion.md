@@ -18,4 +18,4 @@ run_nsc_conversion通过IConvertToNSCGroup转换当前顺序工作副本。mode=
 
 混合组在dummy边界、关闭光阑孔径转换的受控模型中仍返回`TASK_START_FAILED / An unknown error occurred`。失败任务关闭、检查点重开及原始光线复测通过；解除条件是可靠的正式组转换路径或修正原生版本，随后补转换光线、功率和对象映射验收。两次会话均正常断连和关闭；普通23项通过，原生1项通过、1项明确预期失败。原生取消及光阑孔径转换保留各自未验收范围。
 
-接口及本机手册摘录：`.local/evidence/development/NS-01/probe026.json`。调用例子：`examples/conversion026_requests.json`。完整受控序列见`tests/test_conversion_optical_reference_live.py`。历史初始化与早期失败记录按原路径保留。
+接口及本机手册摘录：`.local/evidence/development/NS-01/probe026.json`。调用例子：`examples/requests/conversion026_requests.json`。完整受控序列见`tests/native/test_conversion_optical_reference_live.py`。历史初始化与早期失败记录按原路径保留。

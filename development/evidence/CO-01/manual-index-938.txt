@@ -1,0 +1,11 @@
+Computes the S, P, and average polarization intensity coefficients for transmission for the specified surface as a
+function of incident wavelength.
+See "Reflectivity vs. Wavelength" for settings.
+Discussion See "Polarization Analysis".
+3.4.3.9.Absorptionvs. Wavelength(coatings,polarizationandsurfacephysics
+group)
+Computes the S, P, and average polarization intensity coefficients for absorption for the specified surface as a
+function of incident wavelength.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 939
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

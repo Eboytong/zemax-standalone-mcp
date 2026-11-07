@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-05",
+  "state": "runtime_discovery",
+  "items": [
+    {
+      "item_id": "NS-03.DirectivityPlot",
+      "type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "closed": true,
+      "writable_business_properties": []
+    },
+    {
+      "item_id": "NS-03.FluxvsWavelength",
+      "type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "closed": true,
+      "writable_business_properties": []
+    },
+    {
+      "item_id": "NS-03.PhotoluminscenceViewer",
+      "type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "closed": true,
+      "writable_business_properties": []
+    },
+    {
+      "item_id": "NS-03.RadiantSourceModelViewerSettings",
+      "type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "closed": true,
+      "writable_business_properties": []
+    },
+    {
+      "item_id": "NS-03.RoadwayLighting",
+      "type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "closed": true,
+      "writable_business_properties": []
+    },
+    {
+      "item_id": "NS-03.ScatterFunctionViewer",
+      "type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "closed": true,
+      "writable_business_properties": []
+    },
+    {
+      "item_id": "NS-03.ScatterPolarPlotSettings",
+      "type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "closed": true,
+      "writable_business_properties": []
+    },
+    {
+      "item_id": "NS-03.SourceIlluminationMap",
+      "type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "closed": true,
+      "writable_business_properties": []
+    },
+    {
+      "item_id": "NS-03.SourcePolarViewer",
+      "type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "closed": true,
+      "writable_business_properties": []
+    },
+    {
+      "item_id": "NS-03.SourceSpectrumViewer",
+      "type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "closed": true,
+      "writable_business_properties": []
+    }
+  ],
+  "disconnect": true,
+  "next_action": "AS_Default exposes base settings only. Inspect documented CFG keys and actual adopted input/output contract; existing POP/file parser entry is a related capability, dedicated native analysis acceptance remains open.",
+  "completion_count": 0
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="14.990" timestamp="2026-11-05T23:45:15.292622+08:00" hostname="tongeb"><testcase classname="tests.test_tolerance_special_analyses_live" name="test_native_tolerance_yield_and_histogram" time="14.482"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'completed': False, 'task': {'task_id': '341581a4853a48d8b72fa5df27da4167', 'request_id': 'ac96df6e18e94684a98d1ee4c26cd4e1', 'kind': 'analysis', 'state': 'failed', 'created_at': '2026-11-05T15:45:28.051825+00:00', 'finished_at': '2026-11-05T15:45:28.175194+00:00', 'progress': None, 'can_cancel': True, 'cancel_requested': False, 'settings': {'kind': 'tolerance_yield', 'requested': {'kind': 'tolerance_yield', 'operand': 0, 'tolerance_file': '29eebcf1a38746ba826c4cd5d0d4f12e.ztd'}, 'native': {'Filename': '29eebcf1a38746ba826c4cd5d0d4f12e.ztd', 'Operand': 0, 'IsValid': True, 'IsActiveWindow': True}, 'tolerance_source': 'file'}, 'context': {'session_id': '8d59a1d04868447084482687c692d0ca', 'model_revision': 4, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_5c8af87779\\8d59a1d04868447084482687c692d0ca\\working_f45b473b.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_5c8af87779\\8d59a1d04868447084482687c692d0ca\\checkpoint_r2_tolerance_baseline_02491fb1.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 4, 'session_id': '8d59a1d04868447084482687c692d0ca'}}, 'error': {'code': 'NO_RESULT_DATA', 'message': '原生分析返回了没有坐标或数值的曲线。', 'details': {'series': 0, 'native_messages': [{'code': 'Success', 'text': '计算终止; 无效的结果!'}], 'native_preamble': ['计算终止; 无效的结果!', ''], 'native_text': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_5c8af87779\\8d59a1d04868447084482687c692d0ca\\341581a4853a48d8b72fa5df27da4167_native.txt'}}, 'close_attempted': True, 'result_path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_5c8af87779\\8d59a1d04868447084482687c692d0ca\\341581a4853a48d8b72fa5df27da4167.json', 'elapsed_seconds': 0.091}, 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_5c8af87779\\8d59a1d04868447084482687c692d0ca\\checkpoint_r2_tolerance_baseline_02491fb1.zos', 'result_schema_version': 1, 'context': {'session_id': '8d59a1d04868447084482687c692d0ca', 'model_revision': 4, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_5c8af87779\\8d59a1d04868447084482687c692d0ca\\working_f45b473b.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_5c8af87779\\8d59a1d04868447084482687c692d0ca\\checkpoint_r2_tolerance_baseline_02491fb1.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 4, 'session_id': '8d59a1d04868447084482687c692d0ca'}}, 'artifacts': []}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_tolerance_special_analyses_live.py", line 31, in test_native_tolerance_yield_and_histogram
+  |     asyncio.run(execute("tolerance-special-analyses", work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_tolerance_special_analyses_live.py", line 22, in work
+      |     result = await e.finish(task)
+      |              ^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 22, in finish
+      |     assert t["state"]=="succeeded",r
+      |            ^^^^^^^^^^^^^^^^^^^^^^^
+      | AssertionError: {'completed': False, 'task': {'task_id': '341581a4853a48d8b72fa5df27da4167', 'request_id': 'ac96df6e18e94684a98d1ee4c26cd4e1', 'kind': 'analysis', 'state': 'failed', 'created_at': '2026-11-05T15:45:28.051825+00:00', 'finished_at': '2026-11-05T15:45:28.175194+00:00', 'progress': None, 'can_cancel': True, 'cancel_requested': False, 'settings': {'kind': 'tolerance_yield', 'requested': {'kind': 'tolerance_yield', 'operand': 0, 'tolerance_file': '29eebcf1a38746ba826c4cd5d0d4f12e.ztd'}, 'native': {'Filename': '29eebcf1a38746ba826c4cd5d0d4f12e.ztd', 'Operand': 0, 'IsValid': True, 'IsActiveWindow': True}, 'tolerance_source': 'file'}, 'context': {'session_id': '8d59a1d04868447084482687c692d0ca', 'model_revision': 4, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_5c8af87779\\8d59a1d04868447084482687c692d0ca\\working_f45b473b.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_5c8af87779\\8d59a1d04868447084482687c692d0ca\\checkpoint_r2_tolerance_baseline_02491fb1.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 4, 'session_id': '8d59a1d04868447084482687c692d0ca'}}, 'error': {'code': 'NO_RESULT_DATA', 'message': '原生分析返回了没有坐标或数值的曲线。', 'details': {'series': 0, 'native_messages': [{'code': 'Success', 'text': '计算终止; 无效的结果!'}], 'native_preamble': ['计算终止; 无效的结果!', ''], 'native_text': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_5c8af87779\\8d59a1d04868447084482687c692d0ca\\341581a4853a48d8b72fa5df27da4167_native.txt'}}, 'close_attempted': True, 'result_path': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_5c8af87779\\8d59a1d04868447084482687c692d0ca\\341581a4853a48d8b72fa5df27da4167.json', 'elapsed_seconds': 0.091}, 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_5c8af87779\\8d59a1d04868447084482687c692d0ca\\checkpoint_r2_tolerance_baseline_02491fb1.zos', 'result_schema_version': 1, 'context': {'session_id': '8d59a1d04868447084482687c692d0ca', 'model_revision': 4, 'source_file': 'C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_5c8af87779\\8d59a1d04868447084482687c692d0ca\\working_f45b473b.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\tolerance-special-analyses_5c8af87779\\8d59a1d04868447084482687c692d0ca\\checkpoint_r2_tolerance_baseline_02491fb1.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 4, 'session_id': '8d59a1d04868447084482687c692d0ca'}}, 'artifacts': []}
+      +------------------------------------</failure></testcase></testsuite></testsuites>

@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-07",
+  "phase": "B006 ongoing",
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "target_release": "0.1.62",
+  "tools": 100,
+  "analyses": 110,
+  "batch_completed": 5,
+  "batch_target": 10,
+  "new_completed": [
+    "TO-01.QuickYield"
+  ],
+  "evidence": "verification/development/TO-01/acceptance574-reference.json",
+  "implementation": [
+    "Source primary and selected wavelength identity",
+    "Qualified controlled native-reference equivalence",
+    "Invalid/empty RMS-axis rejection"
+  ],
+  "checks": {
+    "native568": 1,
+    "native569": 1,
+    "native570": "1passed/1failed missing replace_solves",
+    "native571": 1,
+    "native572": "1passed/1failed15of4096clipped",
+    "native573": 2,
+    "native574": 4,
+    "ordinary575": 80
+  },
+  "solve_matched_maximum_error": 6.626550993482638e-07,
+  "refractive_matched_maximum_error": 6.361862560338993e-05,
+  "tolerance": "1e-5waves+1%reference; unchanged",
+  "retained_limit": "Standard high-order fitted approximation residuals remain recorded550; source raw-reference and failed-input evidence retained",
+  "remaining": {
+    "source_records": 130,
+    "distinct_ids": 122,
+    "canonical_functions": 120,
+    "historical_baseline_documented": 38
+  },
+  "native_sessions": "all ended; final acceptance sessions explicitly disconnected; no active native handles",
+  "full_batch_verification": "pending10first completions; no0.1.62wheel",
+  "next_action": "Fixed fallback queue beginning SagTable full-criterion formal equivalence; reuse425 evidence before further native probes"
+}

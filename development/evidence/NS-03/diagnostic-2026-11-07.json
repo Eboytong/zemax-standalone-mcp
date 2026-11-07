@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-07",
+  "item_id": "NS-03.NSCGeometricMtf",
+  "state": "implemented",
+  "native": "OpticStudio 24.2.0 build 240529 PremiumEdition",
+  "request": "nsc_geometric_mtf on a 7x5 DetectorRectangle; 10 axial rays; 600 ordinate comparisons across tangential and sagittal curves",
+  "reference": "Independent discrete Fourier transform of get_detector_data flux matrix",
+  "probe": {
+    "nonzero_pixels": 1,
+    "occupied_pixel": [3, 2],
+    "maximum_absolute_error": 9.87512490668863e-7,
+    "tolerance": "1e-7 absolute + 1e-7 relative (2e-7 at reference 1)",
+    "result": "Failed numerical threshold; prior deviation reproduced. Both MTF directions are 1 for this point image."
+  },
+  "resource_lifecycle": "Analysis task succeeded and closed; stdio session disconnected by native test harness.",
+  "evidence": [
+    "tests/test_nsc_mtf_live.py::test_nsc_point_detector_mtf_dft_diagnostic",
+    "outputs/runs/nsc_mtf_dft_diagnostic_ca0040ba7c/mtf-dft-diagnostic.json",
+    "verification/development/BASE-04/batch-B006.json"
+  ],
+  "conclusion": "The measured single occupied pixel and independent DFT reproduce the earlier 9.875e-7 deviation. Both axes have reference magnitude 1, so this case cannot distinguish directional mapping. The cause remains unresolved; tolerance unchanged.",
+  "next_action": "Obtain higher-precision native ordinate/frequency output or a multi-pixel point-spread reference that separates native formatting precision from internal frequency evaluation. Continue the B006 queue meanwhile."
+}

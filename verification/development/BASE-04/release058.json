@@ -3,12 +3,12 @@
   "date": "2026-11-06",
   "batch_id": "B002",
   "wheel": "wheels/zemax_standalone_mcp-0.1.58-py3-none-any.whl",
-  "installation": ".local/evidence/development/BASE-04/wheel-install058-b002",
+  "installation": "verification/development/BASE-04/wheel-install058-b002",
   "ordinary_passed": 1889,
   "ordinary_skipped_native": 605,
-  "ordinary_evidence": ".local/evidence/development/BASE-01/ordinary089-b002.xml",
+  "ordinary_evidence": "verification/development/BASE-01/ordinary089-b002.xml",
   "native_test_cases_completed": 17,
-  "native_wheel_evidence": ".local/evidence/development/BASE-04/native-wheel058-b002.xml",
+  "native_wheel_evidence": "verification/development/BASE-04/native-wheel058-b002.xml",
   "native_test_cases": [
     {
       "classname": "tests.test_phase_slope_reference_live",
@@ -96,7 +96,7 @@
       "time": "18.481"
     }
   ],
-  "schema_evidence": ".local/evidence/development/BASE-04/stdio058-schema/summary.json",
+  "schema_evidence": "verification/development/BASE-04/stdio058-schema/summary.json",
   "tool_count": 100,
   "analysis_kind_count": 96,
   "completed_item_ids": [

@@ -1,7 +1,7 @@
 {
   "work_package": "MA-01",
   "date": "2026-11-05",
-  "source": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+  "source": "verification/development/BASE-01/probe/api-interfaces.json",
   "items": [
     {
       "item_id": "MA-01.AthermalGlassMap",
@@ -101,7 +101,7 @@
     }
   ],
   "application_startup_evidence": [
-    ".local/evidence/development/BASE-04/connection040.json",
-    ".local/evidence/development/BASE-04/connection019/supervisor.json"
+    "verification/development/BASE-04/connection040.json",
+    "verification/development/BASE-04/connection019/supervisor.json"
   ]
 }

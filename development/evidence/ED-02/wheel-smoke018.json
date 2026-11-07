@@ -1,0 +1,17 @@
+{
+  "version": "0.1.8",
+  "module": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-release018\\zemax_mcp\\__init__.py",
+  "dependency_runtime": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.venv\\Scripts\\python.exe",
+  "checks": [
+    "stdio initialize and list_tools",
+    "27 solve modes and installed packaged evidence available",
+    "typed solve schema through stdio",
+    "solve macro lookup retains connection precondition",
+    "installed typed solve rejects cross-mode parameter",
+    "disconnected state retained"
+  ],
+  "native": "blocked: INVALID_LICENSE; see licensing018.json",
+  "tool_count": 74,
+  "stdio_closed": true,
+  "status": "passed"
+}

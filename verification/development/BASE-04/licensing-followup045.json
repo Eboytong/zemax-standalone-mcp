@@ -11,9 +11,9 @@
   "targeted_tests_passed": 34,
   "new_tests": 6,
   "evidence": [
-    ".local/evidence/development/BASE-04/licensing-correlation045.json",
-    ".local/evidence/development/BASE-04/license-proxy045.json",
-    ".local/evidence/development/BASE-04/licensing-correlation045-tests.xml"
+    "verification/development/BASE-04/licensing-correlation045.json",
+    "verification/development/BASE-04/license-proxy045.json",
+    "verification/development/BASE-04/licensing-correlation045-tests.xml"
   ],
   "result": "The owned OpticStudio child reported SSL handshake timeouts to the local licensing client proxy; proxy internal failure cause remains unresolved.",
   "next_action": "Obtain authorization to restart only the confirmed shared local client proxy, then execute one staged native probe.",

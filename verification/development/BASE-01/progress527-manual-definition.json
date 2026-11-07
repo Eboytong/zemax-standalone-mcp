@@ -2,7 +2,7 @@
   "date": "2026-11-07",
   "scope": "Installed PowerMap ring and MaterialModel definition audit",
   "manual": "C:/Program Files/ANSYS Inc/v242/Zemax OpticStudio/OpticStudio_UserManual_en.pdf",
-  "evidence": ".local/evidence/development/BASE-01/manual527-selected.json",
+  "evidence": "verification/development/BASE-01/manual527-selected.json",
   "page_index_base": 0,
   "power_map_findings": [
     "967: ring of real rays around central pupil reference; physical system includes refraction up to selected surface",

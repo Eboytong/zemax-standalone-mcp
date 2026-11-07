@@ -1,0 +1,31 @@
+This feature exports a single coating to a Zemax Encrypted Coating (ZEC) file. To export an entire lens, see "Export
+Zemax Black Box Data".
+Coating:The name of the coating to export.
+File Name:The name of the file to create. The file name should not include any path or extension. The file will be
+created in the coating file folder (see "Folders" in the user's manual) and the extension "ZEC" will be automatically
+appended.
+Wavelength:The wavelength, in micrometers, measured in air at system temperature and pressure, used to define
+the layer thicknesses. This value is only used when converting layers from optical thickness to absolute thickness.
+See below.
+ConverttoAbsoluteThickness:Converts opticalthickness defined relative to the primarywavelength (for example,
+a quarterwave thickness)in the coating to absolute thickness. For maximum security,this option should be selected.
+If the relative optical thickness is left in the coating definition, then the end user of the encrypted coating may be
+able to determine some properties ofthe coating by changing the designwavelength. The conversion from thickness
+in primary waves to absolute thickness is done using the wavelength value from the above setting.
+Discussion
+Optical coating designers and manufacturers are often hesitant to divulge the details of their coating designs. This
+feature allows a coatingdefinedinOpticStudio formattobe exportedto a single file thatis encrypted. The encrypted
+file may be distributed to users that need to trace rays and perform analysis on the coating as applied to a specific
+optical system, without the details of the coating design being revealed.
+The coating data that is exported includes all the material, index, extinction, dispersion, and layer data required to
+exactly reproduce the coating performance. No approximations or tables are used. However, no coating tapers,
+ideal coatings, or table coatings are supported. A maximum of 12 different materials and 400 layers may be used in
+defining the coating to be exported.
+To use an encrypted coating file, see "The ENCRYPTED data section" in the user's manual.
+The encryption is based upon a 256-bit algorithm that provides good, but not unbreakable security. This feature is
+provided as is and the user should determine if the encryption implemented provides adequate security for the
+intended application before distributing sensitive data in the encrypted format. ANSYS, Inc. provides no warranty
+and assumes no liability for the use of this feature.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1374
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Libraries Tab

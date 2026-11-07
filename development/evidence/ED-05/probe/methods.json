@@ -1,0 +1,45 @@
+{
+  "ZOSAPI.Tools.General.ILensCatalogs": {
+    "interfaces": [
+      "ZOSAPI.Tools.ISystemTool"
+    ],
+    "methods": {
+      "GetAllVendors": [],
+      "SetNumberOfElementsAny": [],
+      "GetResult": [
+        {
+          "name": "index",
+          "type": "System.Int32"
+        }
+      ]
+    }
+  },
+  "ZOSAPI.Tools.General.ILensCatalogLens": {
+    "interfaces": [],
+    "methods": {
+      "LoadLens": [
+        {
+          "name": "saveIfNeeded",
+          "type": "System.Boolean"
+        }
+      ],
+      "LoadNewLensSeq": [],
+      "LoadNewLensNonSeq": [],
+      "InsertLensSeq": [
+        {
+          "name": "atSurface",
+          "type": "System.Int32"
+        },
+        {
+          "name": "ignoreObject",
+          "type": "System.Boolean"
+        },
+        {
+          "name": "reverseSurfGeom",
+          "type": "System.Boolean"
+        }
+      ],
+      "InsertLensNonSeq": []
+    }
+  }
+}

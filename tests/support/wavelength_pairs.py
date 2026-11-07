@@ -1,9 +1,10 @@
+from zemax_mcp.config import PROJECT_ROOT
 """Matched local-medium fixtures and independent per-hit wavelength references."""
 import json
 import math
 from pathlib import Path
 
-from support.nsc import setup, update
+from tests.support.nsc import setup, update
 
 WAVES=[.4375,.5,.515625,.5625,.625,.6875,.75]
 TYPES=["DetectorPolar","DetectorRectangle","DetectorColor"]
@@ -20,7 +21,7 @@ def coefficients():
 
 async def model(e,kind,converted):
     if kind=="DetectorPolar"and converted:
-        spec=json.loads((Path(__file__).parents[1]/"reference_data/wavelength-filter.json").read_text(encoding="utf-8"))
+        spec=json.loads((PROJECT_ROOT/"reference_data/wavelength-filter.json").read_text(encoding="utf-8"))
         fixture=Path(spec["fluorescence_fixture"]).resolve()
         await e.call("open_lens",dict(path=str(fixture/"dilute_fluorescence.zos")))
         return fixture/"fluorescence.zrd",str(fixture/"dilute_fluorescence.zos"),True

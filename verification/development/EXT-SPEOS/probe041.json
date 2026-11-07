@@ -2,7 +2,7 @@
   "version": "0.1.41",
   "date": "2026-11-05",
   "status": "implemented_native_acceptance_pending",
-  "source": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+  "source": "verification/development/BASE-01/probe/api-interfaces.json",
   "interfaces": {
     "ZOSAPI.Tools.IExportToSpeosLensSystem": {
       "properties": [
@@ -115,7 +115,7 @@
     "src/zemax_mcp/speos.py",
     "src/zemax_mcp/speos_models.py"
   ],
-  "ordinary": ".local/evidence/development/EXT-SPEOS/ordinary051.xml",
+  "ordinary": "verification/development/EXT-SPEOS/ordinary051.xml",
   "native_tests": "tests/test_speos_live.py",
   "native_executed": false,
   "next_action": "Recover BASE-04 startup; execute radial/Cartesian LensSystem and Whitebox owned-copy tests, then actual receiver imports. Verify Whitebox output naming and package, source full properties/solve and cancellation.",
@@ -124,6 +124,6 @@
     "deselected": 526,
     "failed": 0
   },
-  "installed_stdio": ".local/evidence/development/EXT-SPEOS/stdio-smoke051.json",
+  "installed_stdio": "verification/development/EXT-SPEOS/stdio-smoke051.json",
   "wheel": "wheels/zemax_standalone_mcp-0.1.41-py3-none-any.whl"
 }

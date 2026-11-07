@@ -1,0 +1,82 @@
+{
+  "version": "0.1.42",
+  "native_execution": "not_run",
+  "blocker": "BASE-04 initialization timed out after 180.578 seconds; no changed startup conditions confirmed",
+  "workflows": [
+    {
+      "id": "sequential",
+      "title": "顺序优化与全视场评价",
+      "nodes": [
+        "tests/test_live.py::test_real_tools_over_stdio",
+        "tests/test_evaluation_live.py::test_evaluation_over_stdio",
+        "tests/test_release_handoffs_live.py::test_optimized_model_to_full_field_evaluation"
+      ],
+      "inputs": "Cooke 40 degree field.zos；本机顺序优化许可",
+      "criteria": "优化后评价值<=原值*1.001+1e-10；既有光线参考rel1e-7+abs1e-8",
+      "status": "prepared_native_pending",
+      "remaining": "同一会话模型传递入口已准备；等待原生执行，记录实际设置、数值、保存/导出及关闭。"
+    },
+    {
+      "id": "modeling",
+      "title": "非球面与偏心建模",
+      "nodes": [
+        "tests/test_modeling_live.py::test_modeling_over_stdio"
+      ],
+      "inputs": "Cooke样例；曲面类型及solve可用",
+      "criteria": "球面sag和旋转矩阵解析参考rel1e-7+abs1e-8；面型/设置保存重载",
+      "status": "prepared_native_pending",
+      "remaining": "运行并记录实际设置、许可、数值误差、关闭；这些组合入口使用独立基线，跨阶段同一模型/结果传递仍须集成验收。"
+    },
+    {
+      "id": "imaging",
+      "title": "图像与偏振镀膜",
+      "nodes": [
+        "tests/test_imaging_live.py::test_imaging_native_resources_and_result",
+        "tests/test_coatings_live.py::test_coating_bare_interface_fresnel",
+        "tests/test_coatings_live.py::test_coating_layer_adoption_reload"
+      ],
+      "inputs": "Cooke；tests/resources/imaging023；可写临时图像目录；本机膜系资源",
+      "criteria": "图像有效输出/分页/导出；Fresnel通道abs1e-6+rel1e-5；膜层保存重载",
+      "status": "prepared_native_pending",
+      "remaining": "运行并记录实际设置、许可、数值误差、关闭；这些组合入口使用独立基线，跨阶段同一模型/结果传递仍须集成验收。"
+    },
+    {
+      "id": "nsc",
+      "title": "NSC照明与路径",
+      "nodes": [
+        "tests/test_nsc_path_live.py::test_path_flux_sequence_and_pagination",
+        "tests/test_nsc_path_live.py::test_single_ray_reference_coordinates_and_database"
+      ],
+      "inputs": "NSC许可；受控SourceRay及DetectorRectangle；可写ZRD目录",
+      "criteria": "受控路径输入/结束功率1W，abs1e-8+rel1e-7；坐标和ZRD读取",
+      "status": "prepared_native_pending",
+      "remaining": "运行并记录实际设置、许可、数值误差、关闭；这些组合入口使用独立基线，跨阶段同一模型/结果传递仍须集成验收。"
+    },
+    {
+      "id": "pop",
+      "title": "POP耦合",
+      "nodes": [
+        "tests/test_pop_live.py::test_pop_over_stdio",
+        "tests/test_pop_propagation_live.py::test_gaussian_propagation_and_receiver_native",
+        "tests/test_pupil_coupling_live.py::test_tilted_gaussian_coupling_native"
+      ],
+      "inputs": "POP许可；自建平面高斯束系统；可写ZBF目录",
+      "criteria": "解析高斯束宽rel5e-4；功率/耦合abs5e-4；分页/收敛/倾斜对称性",
+      "status": "prepared_native_pending",
+      "remaining": "运行并记录实际设置、许可、数值误差、关闭；这些组合入口使用独立基线，跨阶段同一模型/结果传递仍须集成验收。"
+    },
+    {
+      "id": "delivery",
+      "title": "公差与制造交付",
+      "nodes": [
+        "tests/test_tolerancing_live.py::test_tolerancing_over_stdio",
+        "tests/test_exports_live.py::test_cad_and_pdf_over_stdio",
+        "tests/test_release_handoffs_live.py::test_tolerance_to_same_model_manufacturing_delivery"
+      ],
+      "inputs": "Cooke；公差与CAD许可；pypdfium2；可写输出",
+      "criteria": "灵敏度/Monte Carlo/逆公差终态；保存样本2；STEP/网格/PDF文件及图像可读",
+      "status": "prepared_native_pending",
+      "remaining": "同一会话模型传递入口已准备；等待原生执行，记录实际设置、数值、保存/导出及关闭。"
+    }
+  ]
+}

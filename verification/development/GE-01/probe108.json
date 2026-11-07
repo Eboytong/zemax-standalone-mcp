@@ -2,10 +2,10 @@
   "date": "2026-11-06",
   "item": "GE-01.Gaps",
   "state": "implemented",
-  "run": ".local/runs/geometry104_selected_8db9534f37",
-  "ordinary": ".local/evidence/development/GE-01/ordinary106.xml",
+  "run": "outputs/runs/geometry104_selected_8db9534f37",
+  "ordinary": "verification/development/GE-01/ordinary106.xml",
   "ordinary_passed": 48,
-  "native": ".local/evidence/development/GE-01/native107-configurations.xml",
+  "native": "verification/development/GE-01/native107-configurations.xml",
   "native_passed": 1,
   "checks": [
     {

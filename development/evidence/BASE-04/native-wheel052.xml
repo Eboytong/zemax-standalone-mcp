@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="8" time="138.891" timestamp="2026-11-05T17:22:34.618184+08:00" hostname="tongeb"><testcase classname="tests.test_polarization_live" name="test_polarization_pupil_map_native[3-1-0-0-1-1]" time="12.170"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_polarization_live" name="test_polarization_pupil_map_native[5-0-1-0-1-1]" time="11.670"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_polarization_live" name="test_polarization_pupil_map_native[7-1-1-90-2-2]" time="11.354"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_polarization_live" name="test_polarization_pupil_map_native[9-1-1-45-3-1]" time="11.376"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_polarization_live" name="test_polarization_pupil_map_native[7-1-1-450-4-2]" time="56.538"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'ok': False, 'data': None, 'error': {'code': 'REPORT_TIMEOUT', 'message': '同步报告超过45秒；可使用background=true。', 'details': {'command': 'export_evaluation_report', 'partial_changes_possible': False}}, 'warnings': [], 'context': {'session_id': '5d110056e6ba446cb05d85f8795e479e', 'model_revision': 8, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\polarization_pupil054_7_67582542be\\5d110056e6ba446cb05d85f8795e479e\\working_5bc524c9.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\polarization_pupil054_7_67582542be\\5d110056e6ba446cb05d85f8795e479e\\checkpoint_r7_configuration_a63965f6.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 2, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 8, 'session_id': '5d110056e6ba446cb05d85f8795e479e'}, 'request_id': '6281f3f43ba74240976c0e2d0a547a6d'}, 'artifacts': []}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_polarization_live.py", line 57, in test_polarization_pupil_map_native
+  |     asyncio.run(execute('polarization_pupil054_'+str(sampling),work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_polarization_live.py", line 54, in work
+      |     await e.call('export_evaluation_report',dict(task_ids=[task],title='Polarization pupil acceptance',include_charts=True,formats=['markdown']))
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 14, in call
+      |     if okay:assert r and r["ok"],r
+      |                    ^^^^^^^^^^^^^
+      | AssertionError: {'ok': False, 'data': None, 'error': {'code': 'REPORT_TIMEOUT', 'message': '同步报告超过45秒；可使用background=true。', 'details': {'command': 'export_evaluation_report', 'partial_changes_possible': False}}, 'warnings': [], 'context': {'session_id': '5d110056e6ba446cb05d85f8795e479e', 'model_revision': 8, 'source_file': None, 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\polarization_pupil054_7_67582542be\\5d110056e6ba446cb05d85f8795e479e\\working_5bc524c9.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\polarization_pupil054_7_67582542be\\5d110056e6ba446cb05d85f8795e479e\\checkpoint_r7_configuration_a63965f6.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 2, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 8, 'session_id': '5d110056e6ba446cb05d85f8795e479e'}, 'request_id': '6281f3f43ba74240976c0e2d0a547a6d'}, 'artifacts': []}
+      +------------------------------------</failure></testcase><testcase classname="tests.test_polarization_live" name="test_polarization_pupil_map_native[101-1-0-0-4-2]" time="15.262"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_materials_live" name="test_material_properties_and_transmission_native" time="10.202"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_materials_live" name="test_material_thickness_beer_lambert" time="9.584"><properties><property name="validation_layer" value="native" /></properties></testcase></testsuite></testsuites>

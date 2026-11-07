@@ -6,8 +6,8 @@ from mcp.client.stdio import StdioServerParameters
 from zemax_mcp.config import PROJECT_ROOT
 
 async def run(name,lens,timeout):
-    workflows=json.loads(Path(__file__).with_name("extended_workflows.json").read_text(encoding="utf-8"))
-    output=PROJECT_ROOT/"outputs"/("workflow_"+name+"_"+uuid.uuid4().hex[:10]);output.mkdir(parents=True)
+    workflows=json.loads(PROJECT_ROOT/"examples/requests/extended_workflows.json".read_text(encoding="utf-8"))
+    output=PROJECT_ROOT/".local"/"runs"/("workflow_"+name+"_"+uuid.uuid4().hex[:10]);output.mkdir(parents=True)
     events=[];tasks={}
     def resolve(value):
         if isinstance(value,dict):return {k:resolve(v)for k,v in value.items()}
@@ -60,7 +60,7 @@ async def run(name,lens,timeout):
 
 if __name__=="__main__":
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("workflow",choices=list(json.loads(Path(__file__).with_name("extended_workflows.json").read_text(encoding="utf-8"))))
+    parser.add_argument("workflow",choices=list(json.loads(PROJECT_ROOT/"examples/requests/extended_workflows.json".read_text(encoding="utf-8"))))
     parser.add_argument("--lens",type=Path,default=Path.home()/"Documents/Zemax/Samples/Sequential/Objectives/Cooke 40 degree field.zos")
     parser.add_argument("--timeout",type=float,default=300)
     args=parser.parse_args()

@@ -1,0 +1,32 @@
+{
+  "service_version": "0.1.3",
+  "ordinary_tests": {
+    "passed": 664,
+    "failed": 0,
+    "deselected_native": 424
+  },
+  "native_workflow": "passed",
+  "native_evidence": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\mtf_extensions_da8998667e",
+  "analysis_family_evidence": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\analyses_aceec0b06a",
+  "analysis_family_count": 35,
+  "absolute_tolerance": 0.005,
+  "max_comparison_difference": 0.0014233942238308789,
+  "wheel": "wheels/zemax_standalone_mcp-0.1.3-py3-none-any.whl",
+  "wheel_smoke": "verification/mtf-wheel-smoke.json",
+  "observations": [
+    "Native map axes are used directly; local maps sample width endpoints",
+    "Native geometric map includes diffraction-limit correction",
+    "Two-point maps rejected before native execution",
+    "FRU__delta_init remains observed; cause unconfirmed"
+  ],
+  "scenarios": [
+    "unsorted frequencies",
+    "256x256 single-field comparison",
+    "7x5 map with offset reference",
+    "center and corner values",
+    "Average/Tangential/Sagittal",
+    "grid paging and plots",
+    "polychromatic polarized map with vignetting factors retained",
+    "normal disconnect"
+  ]
+}

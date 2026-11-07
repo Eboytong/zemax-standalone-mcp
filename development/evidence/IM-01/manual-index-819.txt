@@ -1,0 +1,28 @@
+Field Size This value defines the full width of the square image file in field coordinates, which may be either lens
+units or degrees, depending upon the current field definition (heights or angles, respectively).
+Rays x 1000 This setting determines approximately how many rays will be traced. The number of rays traced is
+approximately 1000 times the specified value. The reason the number of rays is only approximate is because the
+distribution of rays over the pixels in the image must be uniform. For example, if there are 1500 pixels in an image
+file, then at least 1500 rays will be traced, even if a value of 1 is selected. The distribution of rays at each wavelength
+is in proportion to the wavelength weights.
+Type The analysis type option specifies how the encircled energy is calculated; either encircled (radial), X-only,
+Y-only, or ensquared. The X-only and Y-only options are sometimes called "enslitted" and correspond to the total
+fraction of energy contained within an expanding slit.
+There are also options for X- or Y-distributions, which show the energy distribution in either x or y directions. These
+lattertwo options also reportthe geometric fullwidth at half max. The X- or Y- distributions are the amount of energy
+falling on a pixel which is narrow in one direction and infinite in the other direction.
+ReferTo Select either chief ray, centroid, or surface vertex as the reference point.
+Surface Selects the surface at which the data is to be evaluated. This is useful for evaluating intermediate images.
+See "Evaluating results at intermediate surfaces".
+Use Polarization If checked, polarization is considered. See " Polarization (system explorer) " for information on
+defining the polarization state and how polarization is used by analysis features.
+Multiplyby Diffraction LimitIf checked, OpticStudio approximates the diffraction encircled energy by scaling the
+geometric data by the theoretical diffraction limit curve. The diffraction limit curve OpticStudio uses is based upon
+the unobscured circular pupil. The only way to compute the obscured pupil diffraction limit function would be to
+perform the exact diffraction calculation, in which case the diffraction encircled energy feature should be used
+instead. The diffraction limit approximation is only useful for systems with unobscured pupils and modest field
+angles, since the approximation ignores the change in F/# with field. This option is only available for Type = encircled.
+Wavelength The wavelength number to be used in the calculation.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 820
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

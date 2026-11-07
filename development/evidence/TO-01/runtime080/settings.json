@@ -1,0 +1,334 @@
+{
+  "package": "TO-01",
+  "settings_writes": 0,
+  "calculations": 0,
+  "closed": true,
+  "items": [
+    {
+      "item_id": "TO-01.SystemCheck",
+      "native_enum": "SystemCheck",
+      "closed": true,
+      "runtime_settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "interfaces": [
+        "ZOSAPI.IZAPI_BaseObject",
+        "ZOSAPI.Analysis.Settings.IAS_"
+      ],
+      "methods": [
+        "Boolean Equals(System.Object)",
+        "Boolean LoadFrom(System.String)",
+        "Boolean ModifySettings(System.String, System.String, System.String)",
+        "Boolean SaveTo(System.String)",
+        "Boolean get_IsActiveWindow()",
+        "Boolean get_IsValid()",
+        "Int32 GetHashCode()",
+        "System.Object GetLifetimeService()",
+        "System.Object InitializeLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "System.String ToString()",
+        "System.Type GetType()",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Disconnect()",
+        "Void Load()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Reset()",
+        "Void Save()",
+        "Void Update()",
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "Void set_IsValid(Boolean)",
+        "ZOSAPI.Analysis.DataID get_TheDataID()",
+        "ZOSAPI.Analysis.IMessages Verify()",
+        "ZOSAPI.IZAPI_BaseObject get_Parent()",
+        "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses get_Analysis()"
+      ],
+      "inherited_interface_methods": [
+        "Boolean LoadFrom(System.String)",
+        "Boolean ModifySettings(System.String, System.String, System.String)",
+        "Boolean SaveTo(System.String)",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Disconnect()",
+        "Void Load()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "Void Reset()",
+        "Void Save()",
+        "ZOSAPI.Analysis.IMessages Verify()",
+        "ZOSAPI.IZAPI_BaseObject get_Parent()"
+      ],
+      "properties": [
+        {
+          "name": "Analysis",
+          "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses",
+          "readable": true,
+          "writable": false
+        },
+        {
+          "name": "TheDataID",
+          "type": "ZOSAPI.Analysis.DataID",
+          "readable": true,
+          "writable": false
+        },
+        {
+          "name": "IsValid",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": true
+        },
+        {
+          "name": "IsActiveWindow",
+          "type": "System.Boolean",
+          "readable": true,
+          "writable": false
+        },
+        {
+          "name": "Parent",
+          "type": "ZOSAPI.IZAPI_BaseObject",
+          "readable": true,
+          "writable": false
+        }
+      ],
+      "enums": {},
+      "cfg_export": {
+        "api": "IAS_.SaveTo",
+        "returned": true,
+        "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\TO-01\\runtime080\\SystemCheck.CFG",
+        "exists": true,
+        "bytes": 18448,
+        "contains_null_bytes": true,
+        "ascii_tokens": []
+      },
+      "cleanup_warnings": []
+    }
+  ],
+  "connect": {
+    "ok": true,
+    "data": {
+      "connected": true,
+      "native_system_status": "",
+      "native_startup": {
+        "events": [
+          {
+            "stage": "install_check",
+            "event": "started",
+            "timestamp": "2026-11-05T14:45:05.925+00:00",
+            "elapsed_seconds": 2.6599998818710446e-05
+          },
+          {
+            "stage": "install_check",
+            "event": "completed",
+            "timestamp": "2026-11-05T14:45:05.925+00:00",
+            "elapsed_seconds": 0.0002982000005431473,
+            "duration_seconds": 0.00028469999961089343
+          },
+          {
+            "stage": "environment",
+            "event": "started",
+            "timestamp": "2026-11-05T14:45:05.925+00:00",
+            "elapsed_seconds": 0.0003069000013056211
+          },
+          {
+            "stage": "environment",
+            "event": "completed",
+            "timestamp": "2026-11-05T14:45:05.935+00:00",
+            "elapsed_seconds": 0.009752300000400282,
+            "duration_seconds": 0.009435500000108732
+          },
+          {
+            "stage": "clr_load",
+            "event": "started",
+            "timestamp": "2026-11-05T14:45:05.935+00:00",
+            "elapsed_seconds": 0.009765999999217456
+          },
+          {
+            "stage": "clr_load",
+            "event": "completed",
+            "timestamp": "2026-11-05T14:45:06.184+00:00",
+            "elapsed_seconds": 0.25897900000200025,
+            "duration_seconds": 0.24919760000193492
+          },
+          {
+            "stage": "nethelper_assembly",
+            "event": "started",
+            "timestamp": "2026-11-05T14:45:06.184+00:00",
+            "elapsed_seconds": 0.258999000001495
+          },
+          {
+            "stage": "nethelper_assembly",
+            "event": "completed",
+            "timestamp": "2026-11-05T14:45:06.191+00:00",
+            "elapsed_seconds": 0.26555200000075274,
+            "duration_seconds": 0.006545799999003066
+          },
+          {
+            "stage": "zos_initialize",
+            "event": "started",
+            "timestamp": "2026-11-05T14:45:06.191+00:00",
+            "elapsed_seconds": 0.2655617999989772
+          },
+          {
+            "stage": "zos_initialize",
+            "event": "completed",
+            "timestamp": "2026-11-05T14:45:06.196+00:00",
+            "elapsed_seconds": 0.27152810000188765,
+            "duration_seconds": 0.005955199998425087
+          },
+          {
+            "stage": "api_assemblies",
+            "event": "started",
+            "timestamp": "2026-11-05T14:45:06.197+00:00",
+            "elapsed_seconds": 0.2715408000003663
+          },
+          {
+            "stage": "api_assemblies",
+            "event": "completed",
+            "timestamp": "2026-11-05T14:45:06.212+00:00",
+            "elapsed_seconds": 0.286847300001682,
+            "duration_seconds": 0.015297300000383984
+          },
+          {
+            "stage": "connection_create",
+            "event": "started",
+            "timestamp": "2026-11-05T14:45:06.212+00:00",
+            "elapsed_seconds": 0.28685760000007576
+          },
+          {
+            "stage": "connection_create",
+            "event": "completed",
+            "timestamp": "2026-11-05T14:45:06.490+00:00",
+            "elapsed_seconds": 0.565411800002039,
+            "duration_seconds": 0.2785366999996768
+          },
+          {
+            "stage": "application_create",
+            "event": "started",
+            "timestamp": "2026-11-05T14:45:06.490+00:00",
+            "elapsed_seconds": 0.565431200000603
+          },
+          {
+            "stage": "application_create",
+            "event": "completed",
+            "timestamp": "2026-11-05T14:45:13.605+00:00",
+            "elapsed_seconds": 7.680210700000316,
+            "duration_seconds": 7.114762699999119
+          },
+          {
+            "stage": "license_check",
+            "event": "started",
+            "timestamp": "2026-11-05T14:45:13.605+00:00",
+            "elapsed_seconds": 7.680229500001587
+          },
+          {
+            "stage": "license_check",
+            "event": "completed",
+            "timestamp": "2026-11-05T14:45:13.607+00:00",
+            "elapsed_seconds": 7.681744900000922,
+            "duration_seconds": 0.0015020999999251217
+          },
+          {
+            "stage": "primary_system",
+            "event": "started",
+            "timestamp": "2026-11-05T14:45:13.607+00:00",
+            "elapsed_seconds": 7.681762299998809
+          },
+          {
+            "stage": "primary_system",
+            "event": "completed",
+            "timestamp": "2026-11-05T14:45:13.609+00:00",
+            "elapsed_seconds": 7.6838883999989775,
+            "duration_seconds": 0.002120900000591064
+          }
+        ],
+        "observer_warnings": []
+      },
+      "active_task": null,
+      "running_tasks": [],
+      "task_index": {},
+      "recent_tasks": [],
+      "session_id": "e5af17a00c424832b8b395cf418d34bb",
+      "model_revision": 0,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": "24.2.0",
+      "opticstudio_build": "240529",
+      "license": "PremiumEdition",
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "mode": "Sequential",
+      "configuration": 1,
+      "lens_units": "Millimeters",
+      "mtf_units": "CyclesPerMillimeter",
+      "geometry": {
+        "state": "pending",
+        "model_revision": 0,
+        "session_id": "e5af17a00c424832b8b395cf418d34bb"
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": "e5af17a00c424832b8b395cf418d34bb",
+      "model_revision": 0,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": "24.2.0",
+      "opticstudio_build": "240529",
+      "license": "PremiumEdition",
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "mode": "Sequential",
+      "configuration": 1,
+      "lens_units": "Millimeters",
+      "mtf_units": "CyclesPerMillimeter",
+      "geometry": {
+        "state": "pending",
+        "model_revision": 0,
+        "session_id": "e5af17a00c424832b8b395cf418d34bb"
+      }
+    },
+    "artifacts": []
+  },
+  "system_mode": "Sequential",
+  "disconnect": {
+    "ok": true,
+    "data": {
+      "connected": false,
+      "last_session": {
+        "session_id": "e5af17a00c424832b8b395cf418d34bb",
+        "model_revision": 1,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\TO-01\\runtime080\\native\\e5af17a00c424832b8b395cf418d34bb\\working_85c30819.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\TO-01\\runtime080\\native\\e5af17a00c424832b8b395cf418d34bb\\checkpoint_r1_disconnect_5aa4ab06.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 1,
+          "session_id": "e5af17a00c424832b8b395cf418d34bb"
+        }
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": null,
+      "model_revision": 1,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": null,
+      "opticstudio_build": null,
+      "license": null,
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "geometry": {
+        "state": "pending",
+        "model_revision": 1,
+        "session_id": null
+      }
+    },
+    "artifacts": []
+  }
+}

@@ -1,0 +1,18 @@
+Min Angle The minimum angle of incidence to plot. This defines the left edge of the plot.
+Max Angle The maximum angle of incidence to plot. This defines the right edge of the plot.
+Min Y The minimum y value to plot. This defines the bottom edge of the plot.
+Max Y The maximum y value to plot. This defines the top edge of the plot.
+Surface The surface number which defines the interface to use.
+Object The object number if the surface is a Non-sequential Components surface.
+Face The face number which defines the interface to use, if the surface is a Non-sequential Components surface.
+Wavelength The wavelength number to use.
+ReverseDirection Ifthe selected surface is aNon-sequential Components surface, choosing this option willreverse
+the incident media and substrate.
+Discussion: The incident angle is measured in the medium prior to the specified surface.
+3.4.3.2. Transmission vs. Angle (coatings, polarization and surface physics
+group)
+Computes the S, P and average polarization intensity coefficients for transmission for the specified surface as a
+function of incident angle.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 932
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

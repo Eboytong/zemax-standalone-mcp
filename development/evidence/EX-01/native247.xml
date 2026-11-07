@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="3" time="61.155" timestamp="2026-11-06T15:17:40.742791+08:00" hostname="tongeb"><testcase classname="tests.test_universal_surface_live" name="test_universal_conic_and_surface_parameters" time="20.069"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'ok': False, 'data': None, 'error': {'code': 'IMAGE_EXPORT_FAILED', 'message': '离线图片生成失败。', 'details': {'log': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\universal247_surface_b9d276ab74\\eb9b6f0dea454df4aad0175b2d2819ad\\image_request_0c05b9b9b8cc4647a3c535209e6cec19.log', 'stderr': 'image_worker: reading saved input\nimage_worker: rendering\nTraceback (most recent call last):\n  File &quot;&lt;frozen runpy&gt;&quot;, line 203, in _run_module_as_main\n  File &quot;&lt;frozen runpy&gt;&quot;, line 88, in _run_code\n  File &quot;C:\\Users\\tonge\\Desktop\\Zemax_MCP\\src\\zemax_mcp\\image_worker.py&quot;, line 17, in &lt;module&gt;\n    if __name__==&quot;__main__&quot;:main()\n                            ~~~~^^\n  File &quot;C:\\Users\\tonge\\Desktop\\Zemax_MCP\\src\\zemax_mcp\\image_worker.py&quot;, line 13, in main\n    result=export_image(payload[&quot;result&quot;],request,Path(request.path))\n  File &quot;C:\\Users\\tonge\\Desktop\\Zemax_MCP\\src\\zemax_mcp\\plotting.py&quot;, line 48, in export_image\n    ax.set(xlabel=data.get(&quot;x_label&quot;,&quot;X&quot;)+&quot; (&quot;+data.get(&quot;x_unit&quot;,&quot;native&quot;)+&quot;)&quot;,ylabel=data.get(&quot;y_label&quot;,&quot;Y&quot;)+&quot; (&quot;+data.get(&quot;y_unit&quot;,&quot;native&quot;)+&quot;)&quot;,title=data.get(&quot;description&quot;,&quot;&quot;))\n                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~\nTypeError: can only concatenate str (not &quot;NoneType&quot;) to str\n', 'command': 'export_analysis_image', 'partial_changes_possible': False}}, 'warnings': [], 'context': {'session_id': 'eb9b6f0dea454df4aad0175b2d2819ad', 'model_revision': 6, 'source_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\universal247_surface_b9d276ab74\\EvenAspheric.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\universal247_surface_b9d276ab74\\eb9b6f0dea454df4aad0175b2d2819ad\\working_0c65ac76.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\universal247_surface_b9d276ab74\\eb9b6f0dea454df4aad0175b2d2819ad\\checkpoint_r5_before_open_a051c4d4.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 6, 'session_id': 'eb9b6f0dea454df4aad0175b2d2819ad'}, 'request_id': 'ffe258dbef7b4b2eb157afb340e56ea7'}, 'artifacts': []}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_universal_surface_live.py", line 35, in test_universal_conic_and_surface_parameters
+  |     asyncio.run(execute('universal247_surface',work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 57, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\Zemax_MCP\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 59, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\test_universal_surface_live.py", line 33, in work
+      |     await e.call('export_analysis_image',dict(request=dict(task_id=task,path=str(e.folder/(kind+'.png')))))
+      |   File "C:\Users\tonge\Desktop\Zemax_MCP\tests\support\native.py", line 14, in call
+      |     if okay:assert r and r["ok"],r
+      |                    ^^^^^^^^^^^^^
+      | AssertionError: {'ok': False, 'data': None, 'error': {'code': 'IMAGE_EXPORT_FAILED', 'message': '离线图片生成失败。', 'details': {'log': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\universal247_surface_b9d276ab74\\eb9b6f0dea454df4aad0175b2d2819ad\\image_request_0c05b9b9b8cc4647a3c535209e6cec19.log', 'stderr': 'image_worker: reading saved input\nimage_worker: rendering\nTraceback (most recent call last):\n  File "&lt;frozen runpy&gt;", line 203, in _run_module_as_main\n  File "&lt;frozen runpy&gt;", line 88, in _run_code\n  File "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\src\\zemax_mcp\\image_worker.py", line 17, in &lt;module&gt;\n    if __name__=="__main__":main()\n                            ~~~~^^\n  File "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\src\\zemax_mcp\\image_worker.py", line 13, in main\n    result=export_image(payload["result"],request,Path(request.path))\n  File "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\src\\zemax_mcp\\plotting.py", line 48, in export_image\n    ax.set(xlabel=data.get("x_label","X")+" ("+data.get("x_unit","native")+")",ylabel=data.get("y_label","Y")+" ("+data.get("y_unit","native")+")",title=data.get("description",""))\n                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~\nTypeError: can only concatenate str (not "NoneType") to str\n', 'command': 'export_analysis_image', 'partial_changes_possible': False}}, 'warnings': [], 'context': {'session_id': 'eb9b6f0dea454df4aad0175b2d2819ad', 'model_revision': 6, 'source_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\universal247_surface_b9d276ab74\\EvenAspheric.zos', 'working_file': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\universal247_surface_b9d276ab74\\eb9b6f0dea454df4aad0175b2d2819ad\\working_0c65ac76.zos', 'opticstudio_version': '24.2.0', 'opticstudio_build': '240529', 'license': 'PremiumEdition', 'checkpoint': 'C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\universal247_surface_b9d276ab74\\eb9b6f0dea454df4aad0175b2d2819ad\\checkpoint_r5_before_open_a051c4d4.zos', 'requires_reconnect': False, 'mode': 'Sequential', 'configuration': 1, 'lens_units': 'Millimeters', 'mtf_units': 'CyclesPerMillimeter', 'geometry': {'state': 'pending', 'model_revision': 6, 'session_id': 'eb9b6f0dea454df4aad0175b2d2819ad'}, 'request_id': 'ffe258dbef7b4b2eb157afb340e56ea7'}, 'artifacts': []}
+      +------------------------------------</failure></testcase><testcase classname="tests.test_universal_mixed_live" name="test_universal_mixed_nsc_groups" time="19.845"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.test_universal_nsc_live" name="test_universal_nsc_position_axes" time="19.907"><properties><property name="validation_layer" value="native" /></properties></testcase></testsuite></testsuites>

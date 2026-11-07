@@ -1,0 +1,11 @@
+{
+  "ZOSAPI.Tools.General.IRayAimingWizard": [
+    "ZOSAPI.Tools.ISystemTool"
+  ],
+  "ZOSAPI.Tools.General.IScale": [
+    "ZOSAPI.Tools.ISystemTool"
+  ],
+  "ZOSAPI.Wizards.ISEQOptimizationWizard2": [
+    "ZOSAPI.Wizards.IWizard"
+  ]
+}

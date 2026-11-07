@@ -1,0 +1,131 @@
+{
+  "date": "2026-11-07",
+  "item_id": "MF-01.SagTable",
+  "aliases": [
+    "MA-01.SagTable"
+  ],
+  "state": "implemented",
+  "completion_count": 0,
+  "source_version": "0.1.60 plus B005",
+  "native_version": "24.2.0 build240529 PremiumEdition",
+  "probe_commands": [
+    ".venv/Scripts/python.exe -X utf8 tests/support/sag_criteria_probe.py verification/development/MF-01/probe423-criteria",
+    ".venv/Scripts/python.exe -X utf8 tests/support/sag_criterion_reports.py verification/development/MF-01/probe424-reports"
+  ],
+  "ordinary_report": "verification/development/MF-01/ordinary425-sag-fit.xml",
+  "ordinary_passed": 80,
+  "checks": [
+    {
+      "criterion": 0,
+      "native_setting": {
+        "surface": 1,
+        "criterion": "MinimumVolume",
+        "criterion_value": 0,
+        "reverse": false,
+        "angle": 90.0
+      },
+      "fit": {
+        "curvature": 0.025100377890604163,
+        "radius": 39.84003764239464,
+        "data_piston": 0.0,
+        "maximum_residual": 5.551115123125783e-17,
+        "sample_count": 4,
+        "piston_definition": "additive constant in supplied removed-sag data"
+      },
+      "reported_radius": 39.840038,
+      "radius_error": 3.5760535865847487e-07,
+      "report_rounding_atol": 5e-06,
+      "reported_radius_agrees": true,
+      "SSLP_curvature": 0.025100378088403017,
+      "curvature_difference": 1.9779885368498284e-10
+    },
+    {
+      "criterion": 1,
+      "native_setting": {
+        "surface": 1,
+        "criterion": "MinimumRMS",
+        "criterion_value": 1,
+        "reverse": false,
+        "angle": 90.0
+      },
+      "fit": {
+        "curvature": 0.02512513439692357,
+        "radius": 39.800782125266736,
+        "data_piston": 0.0,
+        "maximum_residual": 5.551115123125783e-17,
+        "sample_count": 4,
+        "piston_definition": "additive constant in supplied removed-sag data"
+      },
+      "reported_radius": 39.800782,
+      "radius_error": 1.2526673742740968e-07,
+      "report_rounding_atol": 5e-06,
+      "reported_radius_agrees": true,
+      "SSLP_curvature": 0.025125134595308553,
+      "curvature_difference": 1.983849820530459e-10
+    },
+    {
+      "criterion": 2,
+      "native_setting": {
+        "surface": 1,
+        "criterion": "MinimumRMSWithOffset",
+        "criterion_value": 2,
+        "reverse": false,
+        "angle": 90.0
+      },
+      "fit": {
+        "curvature": 0.025100376605174658,
+        "radius": 39.840039682665214,
+        "data_piston": 0.0,
+        "maximum_residual": 1.0004774786409598e-12,
+        "sample_count": 4,
+        "piston_definition": "additive constant in supplied removed-sag data"
+      },
+      "reported_radius": 39.84004,
+      "radius_error": 3.1733478778050994e-07,
+      "report_rounding_atol": 5e-06,
+      "reported_radius_agrees": true,
+      "SSLP_curvature": 0.025100376802973664,
+      "curvature_difference": 1.9779900634064873e-10
+    },
+    {
+      "criterion": 3,
+      "native_setting": {
+        "surface": 1,
+        "criterion": "MinimumVolume",
+        "criterion_value": 0,
+        "reverse": true,
+        "angle": 90.0
+      },
+      "fit": {
+        "curvature": 0.0251004213963631,
+        "radius": 39.83996858892951,
+        "data_piston": 0.0,
+        "maximum_residual": 0.0,
+        "sample_count": 4,
+        "piston_definition": "additive constant in supplied removed-sag data"
+      },
+      "reported_radius": 39.839969,
+      "radius_error": 4.1107049497668413e-07,
+      "report_rounding_atol": 5e-06,
+      "reported_radius_agrees": true,
+      "SSLP_curvature": 0.025100378088403017,
+      "curvature_difference": 4.3307960082700214e-08
+    }
+  ],
+  "findings": [
+    "All4 SSAG/SSLP criterion calls completed; slow observation was verified on same live session, not restarted.",
+    "SurfaceSlopeCross criteria enum0/1/2 and ReverseDirection readback adopted; all4 text exports returned fitted radius.",
+    "SSAG removed-sag curves identify a single spherical profile to numerical precision. MinRMSWithOffset vertex SSAG=0 does not establish physical BFS vertex offset=0.",
+    "SSLP BFS flag3 returned the flag0 sphere while SSAG flag3 and typed ReverseDirection report agree on a different radius. Keep the independent sources distinct.",
+    "Existing sag_table uses BFSD MinimumVolume and raw SSLP(Remove0); current public numerical contract unchanged."
+  ],
+  "lifecycle": "Probe4233 analyses, probe4244 analyses closed, both applications disconnected normally. Surface and system snapshots retained in evidence.",
+  "implementation": "Added sag_fit.py for constrained sphere reconstruction and residual validation, with independent positive/negative/planar sphere+data-piston tests and stored-native cross-checks; no new public request or fabricated manufacturing summary.",
+  "remaining": [
+    "Find formal numerical vertex offset and global manufacturing metrics for non-MinimumVolume criteria, or validate explicitly sourced equivalent calculation",
+    "Annular range/native aperture weighting and off-axis/non-symmetric/Composite conditions",
+    "Current configuration/lens units and existing scope completion audit"
+  ],
+  "next_action": "Keep MinimumVolume implementation; recover manufacturing offset/summary contract using formal result sources or independently validated calculation. If unavailable record condition, continue remaining executable queue.",
+  "batch": "B0054/10 unchanged;105 source analysis kinds"
+}

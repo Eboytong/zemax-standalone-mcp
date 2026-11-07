@@ -5,13 +5,13 @@
     "CV-01.SurfaceSlopeCross"
   ],
   "state": "done",
-  "native_reference": ".local/runs/slopes075_c480486c7d",
-  "native_lifecycle": ".local/runs/slopes075_cancel_c38fe77625",
+  "native_reference": "outputs/runs/slopes075_c480486c7d",
+  "native_lifecycle": "outputs/runs/slopes075_cancel_c38fe77625",
   "native_evidence": [
-    ".local/evidence/development/CV-01/native075-slopes-final.xml",
-    ".local/evidence/development/CV-01/native075-lifecycle.xml"
+    "verification/development/CV-01/native075-slopes-final.xml",
+    "verification/development/CV-01/native075-lifecycle.xml"
   ],
-  "ordinary_evidence": ".local/evidence/development/CV-01/ordinary075-related.xml",
+  "ordinary_evidence": "verification/development/CV-01/ordinary075-related.xml",
   "ordinary_passed": 87,
   "numeric": {
     "comparisons": 39613,

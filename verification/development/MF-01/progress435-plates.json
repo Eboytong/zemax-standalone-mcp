@@ -11,28 +11,28 @@
   "source_analysis_count": 106,
   "released_analysis_count": 100,
   "batch": "B0054/10",
-  "native_probe": ".local/evidence/development/MF-01/probe427-viewers/probe.json",
-  "manual": ".local/evidence/development/MF-01/manual428-viewers.txt",
+  "native_probe": "verification/development/MF-01/probe427-viewers/probe.json",
+  "manual": "verification/development/MF-01/manual428-viewers.txt",
   "implementation": "src/zemax_mcp/test_plates.py",
   "examples": "examples/test-plates.json",
   "schema": "docs/tool-schemas.json",
   "commands": [
-    ".venv\\Scripts\\python.exe -X utf8 tests/support/manufacturing_viewer_probe.py .local/evidence/development/MF-01/probe427-viewers",
-    ".venv\\Scripts\\python.exe -X utf8 -m pytest tests/test_test_plates.py tests/test_sag_table.py tests/test_analysis_scenarios.py -q --junitxml=.local/evidence/development/MF-01/ordinary434-plates.xml",
-    ".venv\\Scripts\\python.exe -X utf8 -m pytest tests/test_test_plates_live.py -q --run-zemax --junitxml=.local/evidence/development/MF-01/native435-plates-final.xml"
+    ".venv\\Scripts\\python.exe -X utf8 tests/support/manufacturing_viewer_probe.py verification/development/MF-01/probe427-viewers",
+    ".venv\\Scripts\\python.exe -X utf8 -m pytest tests/test_test_plates.py tests/test_sag_table.py tests/test_analysis_scenarios.py -q --junitxml=verification/development/MF-01/ordinary434-plates.xml",
+    ".venv\\Scripts\\python.exe -X utf8 -m pytest tests/test_test_plates_live.py -q --run-zemax --junitxml=verification/development/MF-01/native435-plates-final.xml"
   ],
   "ordinary": {
     "passed": 102,
-    "evidence": ".local/evidence/development/MF-01/ordinary434-plates.xml"
+    "evidence": "verification/development/MF-01/ordinary434-plates.xml"
   },
   "native": {
     "passed": 2,
     "skipped": 0,
     "failed": 0,
-    "evidence": ".local/evidence/development/MF-01/native435-plates-final.xml",
+    "evidence": "verification/development/MF-01/native435-plates-final.xml",
     "conditions": [
-      ".local/runs/plates429_native_cc55b5b63b",
-      ".local/runs/plates433_lifecycle_fe7c7a1844"
+      "outputs/runs/plates429_native_cc55b5b63b",
+      "outputs/runs/plates433_lifecycle_fe7c7a1844"
     ],
     "dimension_checks": 1799,
     "maximum_error": 0.0,
@@ -158,7 +158,7 @@
   },
   "closure": [
     {
-      "folder": ".local/runs/plates429_native_cc55b5b63b",
+      "folder": "outputs/runs/plates429_native_cc55b5b63b",
       "receipt": {
         "schema_version": 1,
         "generation": null,
@@ -182,7 +182,7 @@
       }
     },
     {
-      "folder": ".local/runs/plates433_lifecycle_fe7c7a1844",
+      "folder": "outputs/runs/plates433_lifecycle_fe7c7a1844",
       "receipt": {
         "schema_version": 1,
         "generation": null,
@@ -208,20 +208,20 @@
   ],
   "historical_failures": [
     {
-      "evidence": ".local/evidence/development/MF-01/probe426-viewers/probe.json",
+      "evidence": "verification/development/MF-01/probe426-viewers/probe.json",
       "reason": "probe omitted required resource kind; stopped before topic execution; session disconnected"
     },
     {
-      "evidence": ".local/evidence/development/MF-01/native429-plates.xml",
+      "evidence": "verification/development/MF-01/native429-plates.xml",
       "reason": "native tests skipped without --run-zemax; no execution evidence"
     },
     {
-      "evidence": ".local/evidence/development/MF-01/native430-plates.xml",
+      "evidence": "verification/development/MF-01/native430-plates.xml",
       "reason": "test used flat public resource request; corrected wrapper and paging arguments; native shutdown receipt closed=true"
     }
   ],
   "capability_metadata_check": {
-    "evidence": ".local/evidence/development/MF-01/native436-capabilities.xml",
+    "evidence": "verification/development/MF-01/native436-capabilities.xml",
     "folder": "outputs\\runs\\plates429_native_26eaec05b2",
     "scope": "public get_capabilities exposes methods, units, resource kind and unconfirmed native selection; related native catalog regression"
   }

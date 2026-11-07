@@ -46,14 +46,14 @@
       "max_error": 0.003621467581974125
     },
     {
-      "evidence": ".local/evidence/development/CV-01/probe090.json",
+      "evidence": "verification/development/CV-01/probe090.json",
       "method": "Matched Cooke field3 single Huygens MTF pupil/image256 delta1um slices",
       "comparisons": 19,
       "max_slice_error": 0.0018245707674065526,
       "atol": 0.005
     },
     {
-      "evidence": ".local/evidence/development/CV-01/probe092.json",
+      "evidence": "verification/development/CV-01/probe092.json",
       "method": "Six native coherent/incoherent magnitude/real/imaginary modes; complex magnitude identities",
       "complex_checks": 16,
       "failures": 0,
@@ -71,7 +71,7 @@
   },
   "closures": [
     {
-      "run": ".local/runs/surface_mtf283_huygens_66a56f760c",
+      "run": "outputs/runs/surface_mtf283_huygens_66a56f760c",
       "disconnected": true,
       "receipt": {
         "schema_version": 1,
@@ -96,7 +96,7 @@
       }
     },
     {
-      "run": ".local/runs/surface_mtf286_huygens_0de09ebe71",
+      "run": "outputs/runs/surface_mtf286_huygens_0de09ebe71",
       "disconnected": true,
       "receipt": {
         "schema_version": 1,
@@ -121,7 +121,7 @@
       }
     },
     {
-      "run": ".local/runs/surface_mtf287_huygens_5d6b975a99",
+      "run": "outputs/runs/surface_mtf287_huygens_5d6b975a99",
       "disconnected": true,
       "receipt": {
         "schema_version": 1,
@@ -152,10 +152,10 @@
   "historical_failure": "Old paraxial ideal reference max error .006527 remains in probe092; controlled paraboloid is a separate declared model, not a relaxed tolerance or overwritten result",
   "batch": "B0042/10; no full regression/wheel yet",
   "commands": [
-    ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_psf_reference_live.py -k huygens --run-zemax -q --junitxml=.local/evidence/development/CV-01/native283-huygens.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_lifecycle_live.py --run-zemax -q --junitxml=.local/evidence/development/CV-01/native286-huygens.xml (at that revision only mirror lifecycle case existed)",
-    ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_lifecycle_live.py -k axis_labels --run-zemax -q --junitxml=.local/evidence/development/CV-01/native287-labels.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf.py tests/test_fft_surface_mtf.py tests/test_huygens_surface_mtf.py tests/test_surface_mtf_psf_reference_live.py -m \"not zemax\" -q --junitxml=.local/evidence/development/CV-01/ordinary287-final.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_plotting_units.py -q --junitxml=.local/evidence/development/CV-01/ordinary287-plotting.xml"
+    ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_psf_reference_live.py -k huygens --run-zemax -q --junitxml=verification/development/CV-01/native283-huygens.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_lifecycle_live.py --run-zemax -q --junitxml=verification/development/CV-01/native286-huygens.xml (at that revision only mirror lifecycle case existed)",
+    ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf_lifecycle_live.py -k axis_labels --run-zemax -q --junitxml=verification/development/CV-01/native287-labels.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_surface_mtf.py tests/test_fft_surface_mtf.py tests/test_huygens_surface_mtf.py tests/test_surface_mtf_psf_reference_live.py -m \"not zemax\" -q --junitxml=verification/development/CV-01/ordinary287-final.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_plotting_units.py -q --junitxml=verification/development/CV-01/ordinary287-plotting.xml"
   ]
 }

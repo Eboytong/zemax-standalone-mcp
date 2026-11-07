@@ -1,0 +1,21 @@
+Settings:
+SpotSize Radial Focus to best RMS spot radius image surface.
+SpotSize X Only Focus to best RMS x direction spot size image surface.
+SpotSize Y Only Focus to best RMS y direction spot size image surface.
+Wavefront Error Focus to best RMS wavefront error image surface.
+UseCentroidReference all calculations to the image centroid ratherthan the chiefray. This option is slightly slower,
+but more appropriate for systems dominated by coma.
+Discussion:
+This feature adjusts the thickness of the surface prior to the image surface. The thickness chosen is that which
+minimizes the RMS aberration. Note that for non-axially symmetric systems, the Quick Focus tool only works if the
+chief ray can be traced for all fields.
+There are several different RMS computations that may be performed as listed above. The "best focus" position
+depends upon which criterion is selected. The RMS is always computed as a polychromatic average over the field,
+using the defined fields, wavelengths, and weights.
+5.1.2. Quick Adjust
+The Quick Adjust button is available in the Manual Adjustment section of the Optimize tab. It adjusts any radius or
+thickness to achieve best transverse or angular ray focus evaluated at any subsequent surface. See also "Quick
+Focus"
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1062
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Optimize Tab (sequential ui mode)

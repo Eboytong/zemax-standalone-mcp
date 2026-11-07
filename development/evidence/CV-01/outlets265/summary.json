@@ -1,0 +1,699 @@
+{
+  "items": [
+    {
+      "kind": "SeidelDiagram",
+      "settings": {
+        "IgnoreChromatic": false,
+        "IgnoreDistortion": false,
+        "SuppressFrame": false,
+        "PlotScale": 0.0,
+        "IsValid": true,
+        "IsActiveWindow": true
+      },
+      "result_type": "ZemaxUI.ZOSAPI.Analysis.Aberrations.AR_SeidelDiagram",
+      "valid": true,
+      "methods": [
+        "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses get_Analysis()",
+        "ZOSAPI.Analysis.DataID get_MyDataID()",
+        "Boolean get_IsValid()",
+        "Void set_SetDataBridge(ZemaxUI.ZOSAPI.Analysis.DataBridge)",
+        "Void DoUpdate()",
+        "Void Disconnect()",
+        "ZOSAPI.Analysis.Data.IAR_MetaData get_MetaData()",
+        "ZOSAPI.Analysis.Data.IAR_HeaderData get_HeaderData()",
+        "Int32 get_NumberOfDataGrids()",
+        "ZOSAPI.Analysis.Data.IAR_DataGrid GetDataGrid(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataGrid[] get_DataGrids()",
+        "Int32 get_NumberOfDataGridsRgb()",
+        "ZOSAPI.Analysis.Data.IAR_DataGridRgb GetDataGridRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataGridRgb[] get_DataGridsRgb()",
+        "Int32 get_NumberOfDataSeries()",
+        "ZOSAPI.Analysis.Data.IAR_DataSeries GetDataSeries(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataSeries[] get_DataSeries()",
+        "Int32 get_NumberOfDataSeriesRgb()",
+        "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb GetDataSeriesRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb[] get_DataSeriesRgb()",
+        "Int32 get_NumberOfDataScatterPoints()",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPoints GetDataScatterPoint(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPoints[] get_DataScatterPoints()",
+        "Int32 get_NumberOfDataScatterPointsRgb()",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb GetDataScatterPointRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb[] get_DataScatterPointsRgb()",
+        "Int32 get_NumberOfRayData()",
+        "ZOSAPI.Analysis.Data.IAR_RayData GetRayData(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_RayData[] get_RayData()",
+        "ZOSAPI.Analysis.Data.IAR_CriticalRayData get_CriticalRayData()",
+        "ZOSAPI.Analysis.Data.IAR_PathAnalysisData get_PathAnalysisData()",
+        "ZOSAPI.Analysis.Data.IAR_SpotDataResultMatrix get_SpotData()",
+        "ZOSAPI.Analysis.Data.IAR_NSCSingleRayTraceData get_NSCSingleRayTraceData()",
+        "Int32 get_NumberOfMessages()",
+        "ZOSAPI.Analysis.IMessage GetMessageAt(Int32)",
+        "ZOSAPI.Analysis.IMessage[] get_Messages()",
+        "Boolean GetTextFile(System.String)",
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "ZOSAPI.IZAPI_BaseObject get_Parent()",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object InitializeLifetimeService()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object GetLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "Boolean Equals(System.Object)",
+        "Int32 GetHashCode()",
+        "System.Type GetType()",
+        "System.String ToString()"
+      ],
+      "header": [],
+      "counts": {
+        "NumberOfDataSeries": 0,
+        "NumberOfDataGrids": 0,
+        "NumberOfDataGridsRgb": 0,
+        "NumberOfDataScatterPoints": 0,
+        "NumberOfDataScatterPointsRgb": 0
+      },
+      "text_exported": false,
+      "series": [],
+      "grids": [],
+      "collector_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\tonge\\Desktop\\Zemax_MCP\\tests\\support\\analysis_outlets265.py\", line 37, in collect\n    try:item['existing_collector']=b._collect_general_analysis(task)\n                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\tonge\\Desktop\\Zemax_MCP\\src\\zemax_mcp\\analyses.py\", line 495, in _collect_general_analysis\n    raise ZemaxError(\"EXPORT_FAILED\",\"原生分析文本导出失败。\")\nzemax_mcp.errors.ZemaxError: 原生分析文本导出失败。\n",
+      "task": {
+        "task_id": "c0d6f2d955404fff8575be4c2a6943d3",
+        "request_id": null,
+        "kind": "SeidelDiagram",
+        "state": "succeeded",
+        "created_at": "2026-11-06T10:31:56.306676+00:00",
+        "finished_at": "2026-11-06T10:31:56.416072+00:00",
+        "progress": 100,
+        "can_cancel": true,
+        "cancel_requested": false,
+        "settings": {
+          "kind": "SeidelDiagram",
+          "native": {
+            "IgnoreChromatic": false,
+            "IgnoreDistortion": false,
+            "SuppressFrame": false,
+            "PlotScale": 0.0,
+            "IsValid": true,
+            "IsActiveWindow": true
+          }
+        },
+        "context": {
+          "session_id": "1f605ba17610442399c0fad7faec2c67",
+          "model_revision": 1,
+          "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-01\\outlets265\\native\\1f605ba17610442399c0fad7faec2c67\\working_d0eed697.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": null,
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 1,
+            "session_id": "1f605ba17610442399c0fad7faec2c67"
+          }
+        },
+        "close_attempted": true,
+        "result_path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-01\\outlets265\\native\\1f605ba17610442399c0fad7faec2c67\\c0d6f2d955404fff8575be4c2a6943d3.json",
+        "result_artifacts": [
+          {
+            "kind": "json",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-01\\outlets265\\native\\1f605ba17610442399c0fad7faec2c67\\c0d6f2d955404fff8575be4c2a6943d3.json"
+          }
+        ],
+        "elapsed_seconds": 0.109
+      }
+    },
+    {
+      "kind": "Foucault",
+      "settings": {
+        "Type": "Linear",
+        "Sampling": "S_32x32",
+        "ShowAs": "GreyScale",
+        "Knife": "Horiz_Above",
+        "Data": "Computed",
+        "RowColumn": 17,
+        "UsePolarization": false,
+        "Y_Position": 0.0,
+        "Decenter_X": 0.0,
+        "Decenter_Y": 0.0,
+        "Scale_X": 0.0,
+        "Scale_Y": 0.0,
+        "Source": "",
+        "SaveBMP": "",
+        "IsValid": true,
+        "IsActiveWindow": true,
+        "Field": 1,
+        "Wavelength": 2
+      },
+      "result_type": "ZemaxUI.ZOSAPI.Analysis.Wavefront.AR_Foucault",
+      "valid": true,
+      "methods": [
+        "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses get_Analysis()",
+        "ZOSAPI.Analysis.DataID get_MyDataID()",
+        "Boolean get_IsValid()",
+        "Void set_SetDataBridge(ZemaxUI.ZOSAPI.Analysis.DataBridge)",
+        "Void DoUpdate()",
+        "Void Disconnect()",
+        "ZOSAPI.Analysis.Data.IAR_MetaData get_MetaData()",
+        "ZOSAPI.Analysis.Data.IAR_HeaderData get_HeaderData()",
+        "Int32 get_NumberOfDataGrids()",
+        "ZOSAPI.Analysis.Data.IAR_DataGrid GetDataGrid(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataGrid[] get_DataGrids()",
+        "Int32 get_NumberOfDataGridsRgb()",
+        "ZOSAPI.Analysis.Data.IAR_DataGridRgb GetDataGridRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataGridRgb[] get_DataGridsRgb()",
+        "Int32 get_NumberOfDataSeries()",
+        "ZOSAPI.Analysis.Data.IAR_DataSeries GetDataSeries(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataSeries[] get_DataSeries()",
+        "Int32 get_NumberOfDataSeriesRgb()",
+        "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb GetDataSeriesRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb[] get_DataSeriesRgb()",
+        "Int32 get_NumberOfDataScatterPoints()",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPoints GetDataScatterPoint(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPoints[] get_DataScatterPoints()",
+        "Int32 get_NumberOfDataScatterPointsRgb()",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb GetDataScatterPointRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb[] get_DataScatterPointsRgb()",
+        "Int32 get_NumberOfRayData()",
+        "ZOSAPI.Analysis.Data.IAR_RayData GetRayData(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_RayData[] get_RayData()",
+        "ZOSAPI.Analysis.Data.IAR_CriticalRayData get_CriticalRayData()",
+        "ZOSAPI.Analysis.Data.IAR_PathAnalysisData get_PathAnalysisData()",
+        "ZOSAPI.Analysis.Data.IAR_SpotDataResultMatrix get_SpotData()",
+        "ZOSAPI.Analysis.Data.IAR_NSCSingleRayTraceData get_NSCSingleRayTraceData()",
+        "Int32 get_NumberOfMessages()",
+        "ZOSAPI.Analysis.IMessage GetMessageAt(Int32)",
+        "ZOSAPI.Analysis.IMessage[] get_Messages()",
+        "Boolean GetTextFile(System.String)",
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "ZOSAPI.IZAPI_BaseObject get_Parent()",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object InitializeLifetimeService()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object GetLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "Boolean Equals(System.Object)",
+        "Int32 GetHashCode()",
+        "System.Type GetType()",
+        "System.String ToString()"
+      ],
+      "header": [
+        "0.5500 μm对于0.00 (度)。",
+        "刀口:水平线上Y = 0.0000 µm."
+      ],
+      "counts": {
+        "NumberOfDataSeries": 1,
+        "NumberOfDataGrids": 1,
+        "NumberOfDataGridsRgb": 0,
+        "NumberOfDataScatterPoints": 0,
+        "NumberOfDataScatterPointsRgb": 0
+      },
+      "text_exported": true,
+      "series": [
+        {
+          "description": "",
+          "labels": null,
+          "x_null": false,
+          "y_null": false
+        }
+      ],
+      "grids": [
+        {
+          "nx": 32,
+          "ny": 32,
+          "values_null": false
+        }
+      ],
+      "collector_traceback": "Traceback (most recent call last):\n  File \"C:\\Users\\tonge\\Desktop\\Zemax_MCP\\tests\\support\\analysis_outlets265.py\", line 37, in collect\n    try:item['existing_collector']=b._collect_general_analysis(task)\n                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^\n  File \"C:\\Users\\tonge\\Desktop\\Zemax_MCP\\src\\zemax_mcp\\analyses.py\", line 516, in _collect_general_analysis\n    data[\"series\"].append(dict(series=i,description=str(s.Description),x_label=str(s.XLabel),labels=[str(x) for x in s.SeriesLabels],x=x,y=[[v if math.isfinite(v) else None for v in row] for row in y],invalid_count=invalid))\n                                                                                                                     ^^^^^^^^^^^^^^\nTypeError: 'NoneType' object is not iterable\n",
+      "task": {
+        "task_id": "9d46c0f1c5d840f58c7e8a5f7bbeb0ac",
+        "request_id": null,
+        "kind": "Foucault",
+        "state": "succeeded",
+        "created_at": "2026-11-06T10:31:56.493710+00:00",
+        "finished_at": "2026-11-06T10:31:56.663690+00:00",
+        "progress": 100,
+        "can_cancel": true,
+        "cancel_requested": false,
+        "settings": {
+          "kind": "Foucault",
+          "native": {
+            "Type": "Linear",
+            "Sampling": "S_32x32",
+            "ShowAs": "GreyScale",
+            "Knife": "Horiz_Above",
+            "Data": "Computed",
+            "RowColumn": 17,
+            "UsePolarization": false,
+            "Y_Position": 0.0,
+            "Decenter_X": 0.0,
+            "Decenter_Y": 0.0,
+            "Scale_X": 0.0,
+            "Scale_Y": 0.0,
+            "Source": "",
+            "SaveBMP": "",
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 2
+          }
+        },
+        "context": {
+          "session_id": "1f605ba17610442399c0fad7faec2c67",
+          "model_revision": 1,
+          "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-01\\outlets265\\native\\1f605ba17610442399c0fad7faec2c67\\working_d0eed697.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": null,
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 1,
+            "session_id": "1f605ba17610442399c0fad7faec2c67"
+          }
+        },
+        "close_attempted": true,
+        "result_path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-01\\outlets265\\native\\1f605ba17610442399c0fad7faec2c67\\9d46c0f1c5d840f58c7e8a5f7bbeb0ac.json",
+        "result_artifacts": [
+          {
+            "kind": "json",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-01\\outlets265\\native\\1f605ba17610442399c0fad7faec2c67\\9d46c0f1c5d840f58c7e8a5f7bbeb0ac.json"
+          }
+        ],
+        "elapsed_seconds": 0.17
+      }
+    },
+    {
+      "kind": "FftPsfLineEdgeSpread",
+      "settings": {
+        "SampleSize": "S_64x64",
+        "Spread": "Line",
+        "Type": "X_Linear",
+        "UseCoherentPSF": false,
+        "UsePolarization": false,
+        "PlotScale": 0.0,
+        "IsValid": true,
+        "IsActiveWindow": true,
+        "Field": 1,
+        "Wavelength": 0
+      },
+      "result_type": "ZemaxUI.ZOSAPI.Analysis.Psf.AR_FftPsfLineEdgeSpread",
+      "valid": true,
+      "methods": [
+        "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses get_Analysis()",
+        "ZOSAPI.Analysis.DataID get_MyDataID()",
+        "Boolean get_IsValid()",
+        "Void set_SetDataBridge(ZemaxUI.ZOSAPI.Analysis.DataBridge)",
+        "Void DoUpdate()",
+        "Void Disconnect()",
+        "ZOSAPI.Analysis.Data.IAR_MetaData get_MetaData()",
+        "ZOSAPI.Analysis.Data.IAR_HeaderData get_HeaderData()",
+        "Int32 get_NumberOfDataGrids()",
+        "ZOSAPI.Analysis.Data.IAR_DataGrid GetDataGrid(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataGrid[] get_DataGrids()",
+        "Int32 get_NumberOfDataGridsRgb()",
+        "ZOSAPI.Analysis.Data.IAR_DataGridRgb GetDataGridRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataGridRgb[] get_DataGridsRgb()",
+        "Int32 get_NumberOfDataSeries()",
+        "ZOSAPI.Analysis.Data.IAR_DataSeries GetDataSeries(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataSeries[] get_DataSeries()",
+        "Int32 get_NumberOfDataSeriesRgb()",
+        "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb GetDataSeriesRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataSeriesRgb[] get_DataSeriesRgb()",
+        "Int32 get_NumberOfDataScatterPoints()",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPoints GetDataScatterPoint(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPoints[] get_DataScatterPoints()",
+        "Int32 get_NumberOfDataScatterPointsRgb()",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb GetDataScatterPointRgb(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_DataScatterPointsRgb[] get_DataScatterPointsRgb()",
+        "Int32 get_NumberOfRayData()",
+        "ZOSAPI.Analysis.Data.IAR_RayData GetRayData(Int32)",
+        "ZOSAPI.Analysis.Data.IAR_RayData[] get_RayData()",
+        "ZOSAPI.Analysis.Data.IAR_CriticalRayData get_CriticalRayData()",
+        "ZOSAPI.Analysis.Data.IAR_PathAnalysisData get_PathAnalysisData()",
+        "ZOSAPI.Analysis.Data.IAR_SpotDataResultMatrix get_SpotData()",
+        "ZOSAPI.Analysis.Data.IAR_NSCSingleRayTraceData get_NSCSingleRayTraceData()",
+        "Int32 get_NumberOfMessages()",
+        "ZOSAPI.Analysis.IMessage GetMessageAt(Int32)",
+        "ZOSAPI.Analysis.IMessage[] get_Messages()",
+        "Boolean GetTextFile(System.String)",
+        "Void WriteToStream(System.IO.StreamWriter)",
+        "ZOSAPI.IZAPI_BaseObject get_Parent()",
+        "Void AddChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object InitializeLifetimeService()",
+        "Void RemoveChild(ZOSAPI.IZAPI_BaseObject)",
+        "System.Object GetLifetimeService()",
+        "System.Runtime.Remoting.ObjRef CreateObjRef(System.Type)",
+        "Boolean Equals(System.Object)",
+        "Int32 GetHashCode()",
+        "System.Type GetType()",
+        "System.String ToString()"
+      ],
+      "header": [
+        "数据类型      :",
+        "线性X线扩散函数"
+      ],
+      "counts": {
+        "NumberOfDataSeries": 0,
+        "NumberOfDataGrids": 0,
+        "NumberOfDataGridsRgb": 0,
+        "NumberOfDataScatterPoints": 0,
+        "NumberOfDataScatterPointsRgb": 0
+      },
+      "text_exported": true,
+      "series": [],
+      "grids": [],
+      "existing_collector": {
+        "native_header": [
+          "数据类型      :",
+          "线性X线扩散函数"
+        ],
+        "native_messages": [],
+        "artifacts": [
+          {
+            "kind": "native_text",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-01\\outlets265\\native\\1f605ba17610442399c0fad7faec2c67\\640bf4eb388b4489be4180d99814f9e5_native.txt"
+          }
+        ],
+        "grids": [],
+        "units_source": "原生轴标签、ValueLabel 和 native_header；不得对不同分析统一套用镜头单位。",
+        "native_preamble": [
+          " FFT 线扩散函数列表",
+          "",
+          "文件 : C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-01\\outlets265\\native\\1f605ba17610442399c0fad7faec2c67\\working_d0eed697.zos",
+          "题目: A SIMPLE COOKE TRIPLET.",
+          "日期 : 2026/11/6",
+          "",
+          "",
+          "数据类型      : 线性X线扩散函数",
+          "视场          : 0.00 (度)",
+          "波长     : 0.4800 到 0.6500 μm",
+          "光瞳网格尺寸: 64 by 64",
+          "像方网格尺寸: 128 by 128",
+          "峰值归一化= 1.0",
+          "方位值在Y 方向.",
+          "",
+          "数据    位置       值"
+        ],
+        "computation_method": "native_analysis",
+        "structured_data_available": false
+      },
+      "task": {
+        "task_id": "640bf4eb388b4489be4180d99814f9e5",
+        "request_id": null,
+        "kind": "FftPsfLineEdgeSpread",
+        "state": "succeeded",
+        "created_at": "2026-11-06T10:31:56.744044+00:00",
+        "finished_at": "2026-11-06T10:31:56.810920+00:00",
+        "progress": 100,
+        "can_cancel": true,
+        "cancel_requested": false,
+        "settings": {
+          "kind": "FftPsfLineEdgeSpread",
+          "native": {
+            "SampleSize": "S_64x64",
+            "Spread": "Line",
+            "Type": "X_Linear",
+            "UseCoherentPSF": false,
+            "UsePolarization": false,
+            "PlotScale": 0.0,
+            "IsValid": true,
+            "IsActiveWindow": true,
+            "Field": 1,
+            "Wavelength": 0
+          }
+        },
+        "context": {
+          "session_id": "1f605ba17610442399c0fad7faec2c67",
+          "model_revision": 1,
+          "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-01\\outlets265\\native\\1f605ba17610442399c0fad7faec2c67\\working_d0eed697.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": null,
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 1,
+            "session_id": "1f605ba17610442399c0fad7faec2c67"
+          }
+        },
+        "close_attempted": true,
+        "result_path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-01\\outlets265\\native\\1f605ba17610442399c0fad7faec2c67\\640bf4eb388b4489be4180d99814f9e5.json",
+        "result_artifacts": [
+          {
+            "kind": "json",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-01\\outlets265\\native\\1f605ba17610442399c0fad7faec2c67\\640bf4eb388b4489be4180d99814f9e5.json"
+          }
+        ],
+        "elapsed_seconds": 0.067
+      }
+    }
+  ],
+  "connect": {
+    "ok": true,
+    "data": {
+      "connected": true,
+      "native_system_status": "",
+      "native_startup": {
+        "events": [
+          {
+            "stage": "install_check",
+            "event": "started",
+            "timestamp": "2026-11-06T10:31:47.982+00:00",
+            "elapsed_seconds": 2.3800000235496555e-05
+          },
+          {
+            "stage": "install_check",
+            "event": "completed",
+            "timestamp": "2026-11-06T10:31:47.982+00:00",
+            "elapsed_seconds": 0.00026430000025357003,
+            "duration_seconds": 0.000251399999797286
+          },
+          {
+            "stage": "environment",
+            "event": "started",
+            "timestamp": "2026-11-06T10:31:47.982+00:00",
+            "elapsed_seconds": 0.0002730000001065491
+          },
+          {
+            "stage": "environment",
+            "event": "completed",
+            "timestamp": "2026-11-06T10:31:48.004+00:00",
+            "elapsed_seconds": 0.02277060000005804,
+            "duration_seconds": 0.022488000000066677
+          },
+          {
+            "stage": "clr_load",
+            "event": "started",
+            "timestamp": "2026-11-06T10:31:48.004+00:00",
+            "elapsed_seconds": 0.02278329999990092
+          },
+          {
+            "stage": "clr_load",
+            "event": "completed",
+            "timestamp": "2026-11-06T10:31:48.304+00:00",
+            "elapsed_seconds": 0.3225080000001981,
+            "duration_seconds": 0.29970810000031634
+          },
+          {
+            "stage": "nethelper_assembly",
+            "event": "started",
+            "timestamp": "2026-11-06T10:31:48.304+00:00",
+            "elapsed_seconds": 0.32252950000020064
+          },
+          {
+            "stage": "nethelper_assembly",
+            "event": "completed",
+            "timestamp": "2026-11-06T10:31:48.311+00:00",
+            "elapsed_seconds": 0.3291487999999845,
+            "duration_seconds": 0.0066117999999733
+          },
+          {
+            "stage": "zos_initialize",
+            "event": "started",
+            "timestamp": "2026-11-06T10:31:48.311+00:00",
+            "elapsed_seconds": 0.3291591000001972
+          },
+          {
+            "stage": "zos_initialize",
+            "event": "completed",
+            "timestamp": "2026-11-06T10:31:48.317+00:00",
+            "elapsed_seconds": 0.33564990000013495,
+            "duration_seconds": 0.006472200000189332
+          },
+          {
+            "stage": "api_assemblies",
+            "event": "started",
+            "timestamp": "2026-11-06T10:31:48.317+00:00",
+            "elapsed_seconds": 0.33566860000019005
+          },
+          {
+            "stage": "api_assemblies",
+            "event": "completed",
+            "timestamp": "2026-11-06T10:31:48.336+00:00",
+            "elapsed_seconds": 0.3543475999999828,
+            "duration_seconds": 0.018669300000055955
+          },
+          {
+            "stage": "connection_create",
+            "event": "started",
+            "timestamp": "2026-11-06T10:31:48.336+00:00",
+            "elapsed_seconds": 0.3543580999998994
+          },
+          {
+            "stage": "connection_create",
+            "event": "completed",
+            "timestamp": "2026-11-06T10:31:48.627+00:00",
+            "elapsed_seconds": 0.6452968000003239,
+            "duration_seconds": 0.2909202999999252
+          },
+          {
+            "stage": "application_create",
+            "event": "started",
+            "timestamp": "2026-11-06T10:31:48.627+00:00",
+            "elapsed_seconds": 0.6453160999999454
+          },
+          {
+            "stage": "application_create",
+            "event": "completed",
+            "timestamp": "2026-11-06T10:31:55.822+00:00",
+            "elapsed_seconds": 7.840907100000095,
+            "duration_seconds": 7.195573999999851
+          },
+          {
+            "stage": "license_check",
+            "event": "started",
+            "timestamp": "2026-11-06T10:31:55.822+00:00",
+            "elapsed_seconds": 7.8409270000001925
+          },
+          {
+            "stage": "license_check",
+            "event": "completed",
+            "timestamp": "2026-11-06T10:31:55.824+00:00",
+            "elapsed_seconds": 7.842535000000225,
+            "duration_seconds": 0.0015942999998515006
+          },
+          {
+            "stage": "primary_system",
+            "event": "started",
+            "timestamp": "2026-11-06T10:31:55.824+00:00",
+            "elapsed_seconds": 7.842550700000174
+          },
+          {
+            "stage": "primary_system",
+            "event": "completed",
+            "timestamp": "2026-11-06T10:31:55.826+00:00",
+            "elapsed_seconds": 7.844260800000029,
+            "duration_seconds": 0.0017026000000441854
+          }
+        ],
+        "observer_warnings": []
+      },
+      "active_task": null,
+      "running_tasks": [],
+      "task_index": {},
+      "recent_tasks": [],
+      "session_id": "1f605ba17610442399c0fad7faec2c67",
+      "model_revision": 0,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": "24.2.0",
+      "opticstudio_build": "240529",
+      "license": "PremiumEdition",
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "mode": "Sequential",
+      "configuration": 1,
+      "lens_units": "Millimeters",
+      "mtf_units": "CyclesPerMillimeter",
+      "geometry": {
+        "state": "pending",
+        "model_revision": 0,
+        "session_id": "1f605ba17610442399c0fad7faec2c67"
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": "1f605ba17610442399c0fad7faec2c67",
+      "model_revision": 0,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": "24.2.0",
+      "opticstudio_build": "240529",
+      "license": "PremiumEdition",
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "mode": "Sequential",
+      "configuration": 1,
+      "lens_units": "Millimeters",
+      "mtf_units": "CyclesPerMillimeter",
+      "geometry": {
+        "state": "pending",
+        "model_revision": 0,
+        "session_id": "1f605ba17610442399c0fad7faec2c67"
+      }
+    },
+    "artifacts": []
+  },
+  "disconnect": {
+    "ok": true,
+    "data": {
+      "connected": false,
+      "last_session": {
+        "session_id": "1f605ba17610442399c0fad7faec2c67",
+        "model_revision": 1,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-01\\outlets265\\native\\1f605ba17610442399c0fad7faec2c67\\working_d0eed697.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\CV-01\\outlets265\\native\\1f605ba17610442399c0fad7faec2c67\\checkpoint_r1_disconnect_4c78cb8d.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 1,
+          "session_id": "1f605ba17610442399c0fad7faec2c67"
+        }
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": null,
+      "model_revision": 1,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": null,
+      "opticstudio_build": null,
+      "license": null,
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "geometry": {
+        "state": "pending",
+        "model_revision": 1,
+        "session_id": null
+      }
+    },
+    "artifacts": []
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "version": "0.1.54",
+  "state": "implemented",
+  "native_evidence": "outputs/runs/coating_reference057_4b1c450392/calls.json",
+  "checks": "outputs/runs/coating_reference057_4b1c450392/checks.json",
+  "native_test": "native057-final.xml",
+  "ordinary_test": "ordinary057.xml",
+  "native_analysis_count": 24,
+  "comparisons": 600,
+  "maximum_absolute_error_by_metric": {
+    "phase": 5.684341886080802e-14,
+    "retardance": 4.547473508864641e-13,
+    "diattenuation": 2.220446049250313e-15,
+    "reflection": 4.163336342344337e-16,
+    "transmission": 1.2212453270876722e-15,
+    "absorption": 6.997279303778281e-16
+  },
+  "all_passed": true,
+  "model": {
+    "material": "N-BK7 / SCHOTT",
+    "film_index": 1.38,
+    "absolute_thickness_um": 0.1,
+    "wavelengths_um": [
+      0.45,
+      0.55,
+      0.7
+    ],
+    "angles_degrees": [
+      0,
+      70
+    ],
+    "wavelength_scan_um": [
+      0.45,
+      0.7
+    ]
+  },
+  "reference": "One-layer Fabry-Perot complex amplitude sum, exp(-i delta), tangential electric admittance q_s=n*cos(theta), q_p=n/cos(theta); reflected P basis sign reversed. BK7 Sellmeier independently evaluated. Thickness explicitly absolute to remove primary-wavelength scaling.",
+  "tolerance": {
+    "phase_and_retardance_degrees": 0.0001,
+    "intensity_and_diattenuation": 1e-06,
+    "phase_comparison": "wrapped difference modulo 360 degrees"
+  },
+  "fix": "All coating angle selectors in installed v242 use zero-based wavelength index. Public request stays one-based; map q.wavelength-1 and retain both in settings.",
+  "completed": [
+    "Six metrics at three monochromatic wavelength numbers and wavelength scans",
+    "600 numeric comparisons",
+    "24 task close receipts",
+    "24 paginated series and PNG exports",
+    "Source system settings and surfaces preserved"
+  ],
+  "remaining": [
+    "Reverse-direction film reference",
+    "MIRROR phase basis and labels",
+    "Native cancellation and failure lifecycle",
+    "Relative-thickness coating primary-wavelength handling"
+  ],
+  "historical_failure": {
+    "evidence": "outputs/runs/coating_reference057_68def8c1ee/calls.json",
+    "result": "Wavelength scans pass; angle requests wavelength=2 evaluate wavelength3=.7. Corrected mapping validated against all three wavelengths."
+  }
+}

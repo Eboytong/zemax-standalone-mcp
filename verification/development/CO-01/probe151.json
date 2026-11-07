@@ -12,8 +12,8 @@
     "ReverseDirection": "Boolean read/write"
   },
   "sources": [
-    ".local/evidence/development/BASE-01/probe/api-interfaces.json",
-    ".local/evidence/development/CO-01/manual-index-931.txt",
+    "verification/development/BASE-01/probe/api-interfaces.json",
+    "verification/development/CO-01/manual-index-931.txt",
     "src/zemax_mcp/coatings.py",
     "src/zemax_mcp/nonsequential.py: object_scope"
   ],

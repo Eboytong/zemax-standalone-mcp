@@ -1,6 +1,6 @@
 {
   "planned_on": "2026-11-07",
-  "plan": "development/current.md",
+  "plan": "docs/next-development-plan.md",
   "released_baseline": "0.1.61",
   "candidate_release": "0.1.62",
   "current_gate": "B006: 5/10; B006 remaining gaps after evidence637–641 synchronization",
@@ -42,11 +42,11 @@
       "batch_order": 2,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-01.FftSurfaceMtf",
           "execution_state": "implemented",
           "next_action": "610确认批量OPD与原生波前相位一致，但正式相干OTF的内部采样/支持域不同；自相关跨出口在.005内。仍需独立光线到相干复瞳的坐标/幅度映射及采样定义，保留implemented；继续固定候补SagTable其他物理偏移/制造摘要的正式出口审计，有新依据再运行。",
-          "evidence": ".local/evidence/development/CV-01/fft-surface-mtf021.json;tests/test_fft_surface_mtf.py;tests/test_fft_surface_mtf_live.py;tests/test_surface_mtf_psf_reference_live.py;docs/fft-surface-mtf.md;.local/runs/surface_mtf283_fft_29f918eac5/fourier-comparison.json;.local/evidence/development/CV-01/progress285-fft.json;.local/evidence/development/CV-01/progress509-pupil.json;.local/evidence/development/CV-01/progress512-pupil-controls.json;.local/evidence/development/CV-01/progress536-pupil-mapping.json;.local/evidence/development/CV-01/progress566-stretched-pupil.json;.local/evidence/development/CV-01/progress610-coherent-pupil.json",
+          "evidence": "verification/development/CV-01/fft-surface-mtf021.json;tests/test_fft_surface_mtf.py;tests/test_fft_surface_mtf_live.py;tests/test_surface_mtf_psf_reference_live.py;docs/fft-surface-mtf.md;outputs/runs/surface_mtf283_fft_29f918eac5/fourier-comparison.json;verification/development/CV-01/progress285-fft.json;verification/development/CV-01/progress509-pupil.json;verification/development/CV-01/progress512-pupil-controls.json;verification/development/CV-01/progress536-pupil-mapping.json;verification/development/CV-01/progress566-stretched-pupil.json;verification/development/CV-01/progress610-coherent-pupil.json",
           "blocked_reason": ""
         }
       ]
@@ -58,19 +58,19 @@
       "batch_order": 5,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "MA-01.SagTable",
           "execution_state": "implemented",
           "next_action": "640普通45项、641正负原生2项通过；新增1001节点径向加权斜率摘要。继续制造偏移符号/基准、面型拟合适用性及反向制造摘要，保持implemented。",
-          "evidence": ".local/evidence/development/MA-01/material-interface-probe029.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;docs/development-functional-groups.json;.local/evidence/development/MF-01/runtime078/settings.json;.local/evidence/development/MF-01/progress374-sag.json;.local/evidence/development/MF-01/progress425-criteria.json;.local/evidence/development/MF-01/progress519-statistics.json;.local/evidence/development/MF-01/progress542-units-configurations-composite.json;.local/evidence/development/MF-01/progress558-applicability.json;.local/evidence/development/MF-01/progress582-criterion-curves.json;.local/evidence/development/MF-01/progress589-offset-reference.json;.local/evidence/development/MF-01/progress622-dsag-fit.json;.local/evidence/development/MF-01/progress641-slope-summary.json",
+          "evidence": "verification/development/MA-01/material-interface-probe029.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;docs/development-functional-groups.json;verification/development/MF-01/runtime078/settings.json;verification/development/MF-01/progress374-sag.json;verification/development/MF-01/progress425-criteria.json;verification/development/MF-01/progress519-statistics.json;verification/development/MF-01/progress542-units-configurations-composite.json;verification/development/MF-01/progress558-applicability.json;verification/development/MF-01/progress582-criterion-curves.json;verification/development/MF-01/progress589-offset-reference.json;verification/development/MF-01/progress622-dsag-fit.json;verification/development/MF-01/progress641-slope-summary.json",
           "blocked_reason": "专用SagTable设置AS_Default/CFG未采用；NoOffset偏移已固定零，其他物理偏移缺正式出口/等价验收，保留null及独立预测。"
         },
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "MF-01.SagTable",
           "execution_state": "implemented",
           "next_action": "640普通45项、641正负原生2项通过；新增1001节点径向加权斜率摘要。继续制造偏移符号/基准、面型拟合适用性及反向制造摘要，保持implemented。",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/MF-01/runtime078/settings.json;docs/development-functional-groups.json;.local/evidence/development/MF-01/progress374-sag.json;.local/evidence/development/MF-01/progress425-criteria.json;.local/evidence/development/MF-01/progress519-statistics.json;.local/evidence/development/MF-01/progress542-units-configurations-composite.json;.local/evidence/development/MF-01/progress558-applicability.json;.local/evidence/development/MF-01/progress582-criterion-curves.json;.local/evidence/development/MF-01/progress589-offset-reference.json;.local/evidence/development/MF-01/progress622-dsag-fit.json;.local/evidence/development/MF-01/progress641-slope-summary.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/MF-01/runtime078/settings.json;docs/development-functional-groups.json;verification/development/MF-01/progress374-sag.json;verification/development/MF-01/progress425-criteria.json;verification/development/MF-01/progress519-statistics.json;verification/development/MF-01/progress542-units-configurations-composite.json;verification/development/MF-01/progress558-applicability.json;verification/development/MF-01/progress582-criterion-curves.json;verification/development/MF-01/progress589-offset-reference.json;verification/development/MF-01/progress622-dsag-fit.json;verification/development/MF-01/progress641-slope-summary.json",
           "blocked_reason": "专用SagTable设置AS_Default/CFG未采用；NoOffset偏移已固定零，其他物理偏移缺正式出口/等价验收，保留null及独立预测。"
         }
       ]
@@ -82,11 +82,11 @@
       "batch_order": 6,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-EXPORT.CadMultipleConfigurations",
           "execution_state": "implemented",
           "next_action": "585实体/曲面两种IGES写出路径×AllByLayer/AllAtOnce四组均只输出65535；设置回读与保存重载保持通过。需真正采用配置分层的正式出口或上游修复后续验，继续其余候补。",
-          "evidence": ".local/evidence/development/EXT-EXPORT/cad-settings044.json;.local/evidence/development/EXT-EXPORT/progress175.json;.local/runs/cad169_multiple_2355377ab2/exports.json;.local/runs/cad169_multiple_2355377ab2/all_by_layer-layers.json;.local/runs/cad169_multiple_2355377ab2/all_at_once-layers.json;.local/evidence/development/EXT-EXPORT/progress585-solid-surface-layers.json",
+          "evidence": "verification/development/EXT-EXPORT/cad-settings044.json;verification/development/EXT-EXPORT/progress175.json;outputs/runs/cad169_multiple_2355377ab2/exports.json;outputs/runs/cad169_multiple_2355377ab2/all_by_layer-layers.json;outputs/runs/cad169_multiple_2355377ab2/all_at_once-layers.json;verification/development/EXT-EXPORT/progress585-solid-surface-layers.json",
           "blocked_reason": "原生Getter采用LensLayer10/配置编码，实体与曲面文件层号均65535；请求10/11或10未采用。"
         }
       ]
@@ -98,11 +98,11 @@
       "batch_order": 7,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-EXPORT.CadSettings",
           "execution_state": "implemented",
           "next_action": "521已确认ASAT/ASAB设置getter采用但原生Run拒绝Unsupported export format，两任务关闭。需实际支持格式/版本的正式导出器后再验头部；SAT/SAB版本500限制保持。继续其余候补，不重复相同条件。",
-          "evidence": ".local/evidence/development/EXT-EXPORT/cad-settings044.json;tests/test_cad_adoption.py;tests/test_cad_formats_live.py;docs/special-exports.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/EXT-EXPORT/progress186.json;.local/evidence/development/EXT-EXPORT/progress521-advanced-acis.json",
+          "evidence": "verification/development/EXT-EXPORT/cad-settings044.json;tests/test_cad_adoption.py;tests/test_cad_formats_live.py;docs/special-exports.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/EXT-EXPORT/progress186.json;verification/development/EXT-EXPORT/progress521-advanced-acis.json",
           "blocked_reason": "SAT/SAB显式V25–V30仍写ACIS500；ASAT/ASAB在本机2024R2 Premium原生Run拒绝Unsupported export format，无输出文件。"
         }
       ]
@@ -114,11 +114,11 @@
       "batch_order": 8,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "ED-02.MaterialModel.Material",
           "execution_state": "implemented",
           "next_action": "598复用正式DLL反射：Solve仅Nd/Abbe/dPgF及Vary，目录拟合系数属于目录材料；所查接口无临时模型系数出口。保留527精确线Vd误差及原门槛，取得正式模型色散定义后继续。",
-          "evidence": ".local/evidence/development/ED-02/final-cases018/cases.json;docs/solve-extensions.md;.local/evidence/development/ED-02/licensing018.json;.local/evidence/development/ED-02/acceptance047/summary.json;verification\\development\\ED-03\\acceptance048\\summary.json;.local/evidence/development/NS-01/probe061/summary.json;.local/evidence/development/ED-02/material-diagnostic270/anchors.json;.local/evidence/development/ED-02/material-diagnostic271/anchors.json;.local/runs/material_model_numeric048_36498407b2/checks.json;.local/evidence/development/ED-02/progress527-material-definition.json;.local/evidence/development/ED-02/progress598-formal-fit-audit.json",
+          "evidence": "verification/development/ED-02/final-cases018/cases.json;docs/solve-extensions.md;verification/development/ED-02/licensing018.json;verification/development/ED-02/acceptance047/summary.json;verification\\development\\ED-03\\acceptance048\\summary.json;verification/development/NS-01/probe061/summary.json;verification/development/ED-02/material-diagnostic270/anchors.json;verification/development/ED-02/material-diagnostic271/anchors.json;outputs/runs/material_model_numeric048_36498407b2/checks.json;verification/development/ED-02/progress527-material-definition.json;verification/development/ED-02/progress598-formal-fit-audit.json",
           "blocked_reason": "Native Model fit still exceeds original requested Nd/Abbe exactness criteria; direct LDE.GetIndex excludes ray inversion/parser as the discrepancy source."
         }
       ]
@@ -130,11 +130,11 @@
       "batch_order": 9,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-01.FullFieldSpot",
           "execution_state": "implemented",
           "next_action": "591三种设置下八类正式出口全0、SpotData空、文本false；三工具关闭且源状态保持。完整计数已纳入错误。需正式有效出口或共享参考/放大映射，保留implemented。",
-          "evidence": ".local/evidence/development/CV-01/full-field-spot-probe025.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CV-01/acceptance074.json;.local/evidence/development/CV-01/progress533-full-field.json;.local/evidence/development/CV-01/progress591-formal-outlets.json",
+          "evidence": "verification/development/CV-01/full-field-spot-probe025.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CV-01/acceptance074.json;verification/development/CV-01/progress533-full-field.json;verification/development/CV-01/progress591-formal-outlets.json",
           "blocked_reason": ""
         }
       ]
@@ -146,11 +146,11 @@
       "batch_order": 10,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-02.PowerFieldMapSettings",
           "execution_state": "implemented",
           "next_action": "634已完成毫米/厘米等物理模型16分析：Power不变，EFL按单位缩放，平面原始零值、区域分页及保存重载通过。完整两条仍implemented，需原生周边环节点/状态及零EFL正式语义；复用596/634，不重复相同单位或缩孔径控制。",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/BASE-01/progress438-442.json;.local/evidence/development/CV-02/progress448-power.json;docs/power-maps.md;.local/evidence/development/CV-02/native463-spherical.xml;.local/evidence/development/CV-02/native474-power-reference.xml;.local/evidence/development/CV-02/progress490-power.json;.local/evidence/development/CV-02/native490-power-regression.xml;.local/evidence/development/CV-02/progress492-units-planar.json;.local/evidence/development/CV-02/progress524-oblique.json;.local/evidence/development/CV-02/progress596-value-states.json;.local/evidence/development/CV-02/progress593-aperture-ring.json;.local/evidence/development/CV-02/progress636-unit-scaling.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/BASE-01/progress438-442.json;verification/development/CV-02/progress448-power.json;docs/power-maps.md;verification/development/CV-02/native463-spherical.xml;verification/development/CV-02/native474-power-reference.xml;verification/development/CV-02/progress490-power.json;verification/development/CV-02/native490-power-regression.xml;verification/development/CV-02/progress492-units-planar.json;verification/development/CV-02/progress524-oblique.json;verification/development/CV-02/progress596-value-states.json;verification/development/CV-02/progress593-aperture-ring.json;verification/development/CV-02/progress636-unit-scaling.json",
           "blocked_reason": ""
         }
       ]
@@ -162,11 +162,11 @@
       "batch_order": 11,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-02.PowerPupilMapSettings",
           "execution_state": "implemented",
           "next_action": "634已完成毫米/厘米等物理模型16分析：Power不变，EFL按单位缩放，平面原始零值、区域分页及保存重载通过。完整两条仍implemented，需原生周边环节点/状态及零EFL正式语义；复用596/634，不重复相同单位或缩孔径控制。",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/BASE-01/progress438-442.json;.local/evidence/development/CV-02/progress448-power.json;docs/power-maps.md;.local/evidence/development/CV-02/native474-power-reference.xml;.local/evidence/development/CV-02/progress490-power.json;.local/evidence/development/CV-02/native490-power-regression.xml;.local/evidence/development/CV-02/progress492-units-planar.json;.local/evidence/development/CV-02/progress524-oblique.json;.local/evidence/development/CV-02/progress526-pupil-curvature.json;.local/evidence/development/CV-02/progress596-value-states.json;.local/evidence/development/CV-02/progress593-aperture-ring.json;.local/evidence/development/CV-02/progress636-unit-scaling.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/BASE-01/progress438-442.json;verification/development/CV-02/progress448-power.json;docs/power-maps.md;verification/development/CV-02/native474-power-reference.xml;verification/development/CV-02/progress490-power.json;verification/development/CV-02/native490-power-regression.xml;verification/development/CV-02/progress492-units-planar.json;verification/development/CV-02/progress524-oblique.json;verification/development/CV-02/progress526-pupil-curvature.json;verification/development/CV-02/progress596-value-states.json;verification/development/CV-02/progress593-aperture-ring.json;verification/development/CV-02/progress636-unit-scaling.json",
           "blocked_reason": ""
         }
       ]
@@ -178,11 +178,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "ED-01.Aperture.FloatingToNone",
           "execution_state": "blocked",
           "next_action": "native returns success while retaining FloatingAperture; needs reliable formal reset",
-          "evidence": "verification/property-pages017-summary.json;.local/evidence/development/BASE-04/reboot046.json",
+          "evidence": "verification/property-pages017-summary.json;verification/development/BASE-04/reboot046.json",
           "blocked_reason": "native returns success while retaining FloatingAperture; needs reliable formal reset"
         }
       ]
@@ -194,11 +194,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "ED-01.Scattering",
           "execution_state": "implemented",
           "next_action": "Five native types adopted/traced/reloaded; retain implemented until User, BSDF and ISScatterCatalog conditions are resolved. Continue ED-02 material numerical diagnosis.",
-          "evidence": "verification/property-pages017-summary.json;.local/evidence/development/BASE-04/connection040.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/ED-01/scattering268.json",
+          "evidence": "verification/property-pages017-summary.json;verification/development/BASE-04/connection040.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/ED-01/scattering268.json",
           "blocked_reason": "User serialization endpoint, BSDF selector and valid ISX catalog input remain outstanding; see per-type children and scattering268.json."
         }
       ]
@@ -210,11 +210,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "ED-01.Scattering.BSDF",
           "execution_state": "blocked",
           "next_action": "native file list points to ABGF and filename assignment ignored; needs corrected native selector",
-          "evidence": "verification/property-pages017-summary.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/ED-01/scattering268.json",
+          "evidence": "verification/property-pages017-summary.json;verification/development/BASE-04/reboot046.json;verification/development/ED-01/scattering268.json",
           "blocked_reason": "native file list points to ABGF and filename assignment ignored; needs corrected native selector"
         }
       ]
@@ -226,11 +226,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "ED-01.Scattering.ISScatterCatalog",
           "execution_state": "blocked",
           "next_action": "Provide a documented ISX data file with its matching catalog entry; after startup recovery verify selection, parameters, trace and save/reload.",
-          "evidence": "verification/property-pages017-summary.json;.local/evidence/development/EX-01/contract-followup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/ED-01/scattering268.json",
+          "evidence": "verification/property-pages017-summary.json;verification/development/EX-01/contract-followup045.json;verification/development/BASE-04/reboot046.json;verification/development/ED-01/scattering268.json",
           "blocked_reason": "No ISX file found in installed v242 ZemaxData or the current user Zemax data directory; a matching catalog entry and native adoption remain required."
         }
       ]
@@ -242,11 +242,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "ED-01.Scattering.User",
           "execution_state": "blocked",
           "next_action": "native UILDEScatterData serialization exception; needs corrected native endpoint",
-          "evidence": "verification/property-pages017-summary.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/ED-01/scattering268.json",
+          "evidence": "verification/property-pages017-summary.json;verification/development/BASE-04/reboot046.json;verification/development/ED-01/scattering268.json",
           "blocked_reason": "native UILDEScatterData serialization exception; needs corrected native endpoint"
         }
       ]
@@ -258,11 +258,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "ED-02.CA_fill.LDEDiscovery",
           "execution_state": "blocked",
           "next_action": "取得本机正式可用单元格及设置接口、样例后实现",
-          "evidence": ".local/evidence/development/ED-02/all-types/probe.json;docs/solve-extensions.md",
+          "evidence": "verification/development/ED-02/all-types/probe.json;docs/solve-extensions.md",
           "blocked_reason": "81种面型的基本列和活动参数未提供可用单元格；具体接口情况见说明。"
         }
       ]
@@ -274,11 +274,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "ED-02.DIA_fill.LDEDiscovery",
           "execution_state": "blocked",
           "next_action": "取得本机正式可用单元格及设置接口、样例后实现",
-          "evidence": ".local/evidence/development/ED-02/all-types/probe.json;docs/solve-extensions.md",
+          "evidence": "verification/development/ED-02/all-types/probe.json;docs/solve-extensions.md",
           "blocked_reason": "81种面型的基本列和活动参数未提供可用单元格；具体接口情况见说明。"
         }
       ]
@@ -290,11 +290,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "ED-02.DuplicateSag.LDEDiscovery",
           "execution_state": "blocked",
           "next_action": "取得本机正式可用单元格及设置接口、样例后实现",
-          "evidence": ".local/evidence/development/ED-02/all-types/probe.json;docs/solve-extensions.md",
+          "evidence": "verification/development/ED-02/all-types/probe.json;docs/solve-extensions.md",
           "blocked_reason": "81种面型的基本列和活动参数未提供可用单元格；具体接口情况见说明。"
         }
       ]
@@ -306,11 +306,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "ED-02.InvertSag.LDEDiscovery",
           "execution_state": "blocked",
           "next_action": "取得本机正式可用单元格及设置接口、样例后实现",
-          "evidence": ".local/evidence/development/ED-02/all-types/probe.json;docs/solve-extensions.md",
+          "evidence": "verification/development/ED-02/all-types/probe.json;docs/solve-extensions.md",
           "blocked_reason": "81种面型的基本列和活动参数未提供可用单元格；具体接口情况见说明。"
         }
       ]
@@ -322,11 +322,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "ED-02.MarginPercent.LDEDiscovery",
           "execution_state": "blocked",
           "next_action": "取得本机正式可用单元格及设置接口、样例后实现",
-          "evidence": ".local/evidence/development/ED-02/all-types/probe.json;docs/solve-extensions.md",
+          "evidence": "verification/development/ED-02/all-types/probe.json;docs/solve-extensions.md",
           "blocked_reason": "81种面型的基本列和活动参数未提供可用单元格；具体接口情况见说明。"
         }
       ]
@@ -338,11 +338,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "ED-02.SurfacePickup.ChipZone",
           "execution_state": "blocked",
           "next_action": "取得能采用并持久保存该模式/宏名的正式原生路径",
-          "evidence": ".local/evidence/development/ED-02/final-cases018/cases.json;docs/solve-extensions.md;.local/evidence/development/ED-02/diagnostics/controls.json",
+          "evidence": "verification/development/ED-02/final-cases018/cases.json;docs/solve-extensions.md;verification/development/ED-02/diagnostics/controls.json",
           "blocked_reason": "直接 API 与 MCP 均回退模式或丢失宏名；见 controls.json。"
         }
       ]
@@ -354,11 +354,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "ED-02.SurfacePickup.MechanicalSemiDiameter",
           "execution_state": "blocked",
           "next_action": "取得能采用并持久保存该模式/宏名的正式原生路径",
-          "evidence": ".local/evidence/development/ED-02/final-cases018/cases.json;docs/solve-extensions.md;.local/evidence/development/ED-02/diagnostics/controls.json",
+          "evidence": "verification/development/ED-02/final-cases018/cases.json;docs/solve-extensions.md;verification/development/ED-02/diagnostics/controls.json",
           "blocked_reason": "直接 API 与 MCP 均回退模式或丢失宏名；见 controls.json。"
         }
       ]
@@ -370,11 +370,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "ED-02.ZPLMacro.ChipZone",
           "execution_state": "blocked",
           "next_action": "取得能采用并持久保存该模式/宏名的正式原生路径",
-          "evidence": ".local/evidence/development/ED-02/final-cases018/cases.json;docs/solve-extensions.md;.local/evidence/development/ED-02/diagnostics/controls.json",
+          "evidence": "verification/development/ED-02/final-cases018/cases.json;docs/solve-extensions.md;verification/development/ED-02/diagnostics/controls.json",
           "blocked_reason": "直接 API 与 MCP 均回退模式或丢失宏名；见 controls.json。"
         }
       ]
@@ -386,11 +386,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "ED-02.ZPLMacro.MechanicalSemiDiameter",
           "execution_state": "blocked",
           "next_action": "取得能采用并持久保存该模式/宏名的正式原生路径",
-          "evidence": ".local/evidence/development/ED-02/final-cases018/cases.json;docs/solve-extensions.md;.local/evidence/development/ED-02/diagnostics/controls.json",
+          "evidence": "verification/development/ED-02/final-cases018/cases.json;docs/solve-extensions.md;verification/development/ED-02/diagnostics/controls.json",
           "blocked_reason": "直接 API 与 MCP 均回退模式或丢失宏名；见 controls.json。"
         }
       ]
@@ -402,11 +402,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "ED-03.MCE.independent_file",
           "execution_state": "blocked",
           "next_action": "Use whole-system save/load for configuration preservation; obtain a formal independent MCE file interface before implementation.",
-          "evidence": ".local/evidence/development/ED-03/probe/editor-interfaces.json;docs/editor-extensions.md;.local/evidence/development/ED-03/ordinary019-final.xml;.local/evidence/development/EX-01/contract-followup045.json",
+          "evidence": "verification/development/ED-03/probe/editor-interfaces.json;docs/editor-extensions.md;verification/development/ED-03/ordinary019-final.xml;verification/development/EX-01/contract-followup045.json",
           "blocked_reason": "Complete IMultiConfigEditor plus inherited IEditor reflection contains no independent Load/Save entry."
         }
       ]
@@ -418,11 +418,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "ED-04.RayAimingWizard",
           "execution_state": "blocked",
           "next_action": "取得可靠的正式完成/取消/关闭路径或修正原生版本后，先运行受控最小复现，再验预览、Apply、保存重载及完整模型保持；当前继续 NS-01.Conversion。",
-          "evidence": "verification/design-tools020-summary.json;.local/evidence/development/ED-04/ordinary020-final.xml;.local/evidence/development/BASE-04/connection040.json;.local/evidence/development/BASE-04/startup045.json;verification\\development\\ED-04\\acceptance049\\summary.json;.local/evidence/development/ED-04/ray-aiming276/probe.json",
+          "evidence": "verification/design-tools020-summary.json;verification/development/ED-04/ordinary020-final.xml;verification/development/BASE-04/connection040.json;verification/development/BASE-04/startup045.json;verification\\development\\ED-04\\acceptance049\\summary.json;verification/development/ED-04/ray-aiming276/probe.json",
           "blocked_reason": "受控模型正式 RunAndWaitWithTimeout(10) 返回 TimedOut；Cancel=true 后 WaitWithTimeout(10) 仍 TimedOut 且 IsRunning=true；Close=false。Ray Aiming 设置相同，完整模型保持未完成；应用断连成功。"
         }
       ]
@@ -434,11 +434,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "NS-01.Conversion",
           "execution_state": "implemented",
           "next_action": "纯NSC受控偏振位置/方向/功率、对象映射、重载及恢复已通过；混合组原生启动失败，取得可靠正式路径或修正版本后补完整对照；当前继续SurfaceMTF。",
-          "evidence": "verification/conversion026-summary.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-01/probe061/summary.json;.local/runs/conversion_options062_35ee51bf2a/option-results.json;.local/evidence/development/NS-01/native062-options-final.xml;.local/evidence/development/NS-02/acceptance063.json;.local/evidence/development/NS-01/progress282.json",
+          "evidence": "verification/conversion026-summary.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-01/probe061/summary.json;outputs/runs/conversion_options062_35ee51bf2a/option-results.json;verification/development/NS-01/native062-options-final.xml;verification/development/NS-02/acceptance063.json;verification/development/NS-01/progress282.json",
           "blocked_reason": "混合组在dummy边界、关闭光阑孔径转换下仍TASK_START_FAILED / An unknown error occurred；失败工具关闭和检查点恢复已通过。父项保留implemented及纯NSC已验收范围。"
         }
       ]
@@ -450,11 +450,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-01.ConfigurationMatrixSpot",
           "execution_state": "implemented",
           "next_action": "Cooke结果出口为空；需正式数值/图形出口或修正版本，见probe088；继续其余专题",
-          "evidence": ".local/evidence/development/CV-01/configuration-matrix-spot022.json;tests/test_configuration_matrix_spot.py;tests/test_configuration_matrix_spot_live.py;docs/configuration-matrix-spot.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CV-01/probe088.json",
+          "evidence": "verification/development/CV-01/configuration-matrix-spot022.json;tests/test_configuration_matrix_spot.py;tests/test_configuration_matrix_spot_live.py;docs/configuration-matrix-spot.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CV-01/probe088.json",
           "blocked_reason": "Native GetTextFile=false, SpotData=null and all inspected data arrays empty after valid execution; corrected native result outlet required."
         }
       ]
@@ -466,11 +466,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-01.MatrixSpot",
           "execution_state": "implemented",
           "next_action": "Cooke结果出口为空；需正式数值/图形出口或修正版本，见probe088；继续其余专题",
-          "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/connection040.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CV-01/probe088.json",
+          "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/connection040.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CV-01/probe088.json",
           "blocked_reason": "Native GetTextFile=false, SpotData=null and all inspected data arrays empty after valid execution; corrected native result outlet required."
         }
       ]
@@ -482,11 +482,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-01.SeidelDiagram",
           "execution_state": "blocked",
           "next_action": "Obtain a formal native graphic or numerical result outlet; retain settings adoption and close evidence from outlets265. SeidelCoefficients remains the separate supported numerical analysis.",
-          "evidence": ".local/evidence/development/CV-01/seidel-diagram034.json;docs/seidel-diagram.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CV-01/outlets265/summary.json",
+          "evidence": "verification/development/CV-01/seidel-diagram034.json;docs/seidel-diagram.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CV-01/outlets265/summary.json",
           "blocked_reason": "v242 Cooke: IsValid=true, every inspected public result array count=0, GetTextFile=false; no result data available through inspected IAR outlets."
         }
       ]
@@ -498,19 +498,19 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "CO-01.DiffEfficiency2D",
           "execution_state": "implemented",
           "next_action": "原生Hologram1的S/P离轴384点、持久性和失败/取消通过；DLL的P参考偏差跟踪CO-01.KogelnikDLL.PProjection，继续NSC镀膜及其余P2队列。",
-          "evidence": ".local/evidence/development/CO-01/diffraction-efficiency028.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CO-01/acceptance056.json;tests/test_diff_efficiency_live.py;.local/evidence/development/CO-01/acceptance059.json;tests/test_diff_efficiency_offaxis_live.py",
+          "evidence": "verification/development/CO-01/diffraction-efficiency028.json;verification/development/BASE-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CO-01/acceptance056.json;tests/test_diff_efficiency_live.py;verification/development/CO-01/acceptance059.json;tests/test_diff_efficiency_offaxis_live.py",
           "blocked_reason": ""
         },
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CO-01.DiffEfficiency2D",
           "execution_state": "implemented",
           "next_action": "原生Hologram1的S/P离轴384点、持久性和失败/取消通过；DLL的P参考偏差跟踪CO-01.KogelnikDLL.PProjection，继续NSC镀膜及其余P2队列。",
-          "evidence": ".local/evidence/development/CO-01/diffraction-efficiency028.json;.local/evidence/development/CO-01/ordinary038.xml;.local/evidence/development/CO-01/stdio-smoke038.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;docs/diffraction-efficiency.md;examples/diffraction_efficiency_requests.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CO-01/acceptance056.json;tests/test_diff_efficiency_live.py;.local/evidence/development/CO-01/acceptance059.json;tests/test_diff_efficiency_offaxis_live.py",
+          "evidence": "verification/development/CO-01/diffraction-efficiency028.json;verification/development/CO-01/ordinary038.xml;verification/development/CO-01/stdio-smoke038.json;verification/development/BASE-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;docs/diffraction-efficiency.md;examples/diffraction_efficiency_requests.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CO-01/acceptance056.json;tests/test_diff_efficiency_live.py;verification/development/CO-01/acceptance059.json;tests/test_diff_efficiency_offaxis_live.py",
           "blocked_reason": ""
         }
       ]
@@ -522,19 +522,19 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "CO-01.DiffEfficiencyAngular",
           "execution_state": "implemented",
           "next_action": "原生Hologram1的S/P离轴384点、持久性和失败/取消通过；DLL的P参考偏差跟踪CO-01.KogelnikDLL.PProjection，继续NSC镀膜及其余P2队列。",
-          "evidence": ".local/evidence/development/CO-01/diffraction-efficiency028.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CO-01/acceptance056.json;tests/test_diff_efficiency_live.py;.local/evidence/development/CO-01/acceptance059.json;tests/test_diff_efficiency_offaxis_live.py",
+          "evidence": "verification/development/CO-01/diffraction-efficiency028.json;verification/development/BASE-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CO-01/acceptance056.json;tests/test_diff_efficiency_live.py;verification/development/CO-01/acceptance059.json;tests/test_diff_efficiency_offaxis_live.py",
           "blocked_reason": ""
         },
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CO-01.DiffEfficiencyAngular",
           "execution_state": "implemented",
           "next_action": "原生Hologram1的S/P离轴384点、持久性和失败/取消通过；DLL的P参考偏差跟踪CO-01.KogelnikDLL.PProjection，继续NSC镀膜及其余P2队列。",
-          "evidence": ".local/evidence/development/CO-01/diffraction-efficiency028.json;.local/evidence/development/CO-01/ordinary038.xml;.local/evidence/development/CO-01/stdio-smoke038.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;docs/diffraction-efficiency.md;examples/diffraction_efficiency_requests.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CO-01/acceptance056.json;tests/test_diff_efficiency_live.py;.local/evidence/development/CO-01/acceptance059.json;tests/test_diff_efficiency_offaxis_live.py",
+          "evidence": "verification/development/CO-01/diffraction-efficiency028.json;verification/development/CO-01/ordinary038.xml;verification/development/CO-01/stdio-smoke038.json;verification/development/BASE-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;docs/diffraction-efficiency.md;examples/diffraction_efficiency_requests.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CO-01/acceptance056.json;tests/test_diff_efficiency_live.py;verification/development/CO-01/acceptance059.json;tests/test_diff_efficiency_offaxis_live.py",
           "blocked_reason": ""
         }
       ]
@@ -546,19 +546,19 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "CO-01.DiffEfficiencyChromatic",
           "execution_state": "implemented",
           "next_action": "原生Hologram1的S/P离轴384点、持久性和失败/取消通过；DLL的P参考偏差跟踪CO-01.KogelnikDLL.PProjection，继续NSC镀膜及其余P2队列。",
-          "evidence": ".local/evidence/development/CO-01/diffraction-efficiency028.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CO-01/acceptance056.json;tests/test_diff_efficiency_live.py;.local/evidence/development/CO-01/acceptance059.json;tests/test_diff_efficiency_offaxis_live.py",
+          "evidence": "verification/development/CO-01/diffraction-efficiency028.json;verification/development/BASE-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CO-01/acceptance056.json;tests/test_diff_efficiency_live.py;verification/development/CO-01/acceptance059.json;tests/test_diff_efficiency_offaxis_live.py",
           "blocked_reason": ""
         },
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CO-01.DiffEfficiencyChromatic",
           "execution_state": "implemented",
           "next_action": "原生Hologram1的S/P离轴384点、持久性和失败/取消通过；DLL的P参考偏差跟踪CO-01.KogelnikDLL.PProjection，继续NSC镀膜及其余P2队列。",
-          "evidence": ".local/evidence/development/CO-01/diffraction-efficiency028.json;.local/evidence/development/CO-01/ordinary038.xml;.local/evidence/development/CO-01/stdio-smoke038.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;docs/diffraction-efficiency.md;examples/diffraction_efficiency_requests.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CO-01/acceptance056.json;tests/test_diff_efficiency_live.py;.local/evidence/development/CO-01/acceptance059.json;tests/test_diff_efficiency_offaxis_live.py",
+          "evidence": "verification/development/CO-01/diffraction-efficiency028.json;verification/development/CO-01/ordinary038.xml;verification/development/CO-01/stdio-smoke038.json;verification/development/BASE-01/probe/api-interfaces.json;tests/test_diff_efficiency.py;docs/diffraction-efficiency.md;examples/diffraction_efficiency_requests.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CO-01/acceptance056.json;tests/test_diff_efficiency_live.py;verification/development/CO-01/acceptance059.json;tests/test_diff_efficiency_offaxis_live.py",
           "blocked_reason": ""
         }
       ]
@@ -570,11 +570,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "CO-01.KogelnikDLL.PProjection",
           "execution_state": "blocked",
           "next_action": "Obtain DLL source/fixed build or vendor clarification of Jones basis and efficiency semantics, then rerun independent S/P comparisons; native Hologram1 route already passes.",
-          "evidence": ".local/evidence/development/CO-01/acceptance059.json;tests/test_diff_efficiency_offaxis_live.py",
+          "evidence": "verification/development/CO-01/acceptance059.json;tests/test_diff_efficiency_offaxis_live.py",
           "blocked_reason": "Installed sequential us_hologram_kogelnik.dll gives an additional external ray-direction dot-product squared factor for P; 192 physical comparisons fail, maximum absolute error 0.4438234531919145."
         }
       ]
@@ -586,19 +586,19 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "MA-01.AthermalGlassMap",
           "execution_state": "blocked",
           "next_action": "从本机正式手册取得专题 CFG 键；执行 ModifySettings/LoadFrom、采用回读与结果数值验收。",
-          "evidence": ".local/evidence/development/MA-01/material-interface-probe029.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/MA-01/runtime054/settings.json",
+          "evidence": "verification/development/MA-01/material-interface-probe029.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/MA-01/runtime054/settings.json",
           "blocked_reason": "实际 SettingsFirst/GetSettings 为 AS_Default，无专题可写属性；正式 SaveTo 已成功，需确认该专题官方 CFG 键及结果出口。"
         },
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "MA-01.AthermalGlassMap",
           "execution_state": "blocked",
           "next_action": "从本机正式手册取得专题 CFG 键；执行 ModifySettings/LoadFrom、采用回读与结果数值验收。",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/MA-01/runtime054/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/MA-01/runtime054/settings.json",
           "blocked_reason": "实际 SettingsFirst/GetSettings 为 AS_Default，无专题可写属性；正式 SaveTo 已成功，需确认该专题官方 CFG 键及结果出口。"
         }
       ]
@@ -610,19 +610,19 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "MA-01.DispersionDiagram",
           "execution_state": "blocked",
           "next_action": "从本机正式手册取得专题 CFG 键；执行 ModifySettings/LoadFrom、采用回读与结果数值验收。",
-          "evidence": ".local/evidence/development/MA-01/material-interface-probe029.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/MA-01/runtime054/settings.json",
+          "evidence": "verification/development/MA-01/material-interface-probe029.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/MA-01/runtime054/settings.json",
           "blocked_reason": "实际 SettingsFirst/GetSettings 为 AS_Default，无专题可写属性；正式 SaveTo 已成功，需确认该专题官方 CFG 键及结果出口。"
         },
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "MA-01.DispersionDiagram",
           "execution_state": "blocked",
           "next_action": "从本机正式手册取得专题 CFG 键；执行 ModifySettings/LoadFrom、采用回读与结果数值验收。",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/MA-01/runtime054/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/MA-01/runtime054/settings.json",
           "blocked_reason": "实际 SettingsFirst/GetSettings 为 AS_Default，无专题可写属性；正式 SaveTo 已成功，需确认该专题官方 CFG 键及结果出口。"
         }
       ]
@@ -634,19 +634,19 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "MA-01.DispersionvsWavelength",
           "execution_state": "blocked",
           "next_action": "从本机正式手册取得专题 CFG 键；执行 ModifySettings/LoadFrom、采用回读与结果数值验收。",
-          "evidence": ".local/evidence/development/MA-01/material-interface-probe029.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/MA-01/runtime054/settings.json",
+          "evidence": "verification/development/MA-01/material-interface-probe029.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/MA-01/runtime054/settings.json",
           "blocked_reason": "实际 SettingsFirst/GetSettings 为 AS_Default，无专题可写属性；正式 SaveTo 已成功，需确认该专题官方 CFG 键及结果出口。"
         },
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "MA-01.DispersionvsWavelength",
           "execution_state": "blocked",
           "next_action": "从本机正式手册取得专题 CFG 键；执行 ModifySettings/LoadFrom、采用回读与结果数值验收。",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/MA-01/runtime054/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/MA-01/runtime054/settings.json",
           "blocked_reason": "实际 SettingsFirst/GetSettings 为 AS_Default，无专题可写属性；正式 SaveTo 已成功，需确认该专题官方 CFG 键及结果出口。"
         }
       ]
@@ -658,19 +658,19 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "MA-01.GlassMap",
           "execution_state": "blocked",
           "next_action": "从本机正式手册取得专题 CFG 键；执行 ModifySettings/LoadFrom、采用回读与结果数值验收。",
-          "evidence": ".local/evidence/development/MA-01/material-interface-probe029.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/MA-01/runtime054/settings.json",
+          "evidence": "verification/development/MA-01/material-interface-probe029.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/MA-01/runtime054/settings.json",
           "blocked_reason": "实际 SettingsFirst/GetSettings 为 AS_Default，无专题可写属性；正式 SaveTo 已成功，需确认该专题官方 CFG 键及结果出口。"
         },
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "MA-01.GlassMap",
           "execution_state": "blocked",
           "next_action": "从本机正式手册取得专题 CFG 键；执行 ModifySettings/LoadFrom、采用回读与结果数值验收。",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/MA-01/runtime054/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/MA-01/runtime054/settings.json",
           "blocked_reason": "实际 SettingsFirst/GetSettings 为 AS_Default，无专题可写属性；正式 SaveTo 已成功，需确认该专题官方 CFG 键及结果出口。"
         }
       ]
@@ -682,19 +682,19 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "MA-01.GradiumProfile",
           "execution_state": "in_progress",
           "next_action": "637–639单项式0–9阶为浮点精度；10/11阶单位幅度误差5.104e-9/6.124e-10，zmax1/5.8归一化结果一致。继续确认高阶正式求值、左端capping及专题选择，保持in_progress。",
-          "evidence": ".local/evidence/development/MA-01/material-interface-probe029.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;docs/development-functional-groups.json;.local/evidence/development/MF-01/probe427-viewers/probe.json;.local/evidence/development/MF-01/progress435-plates.json;.local/evidence/development/BASE-01/progress438-442.json;.local/evidence/development/MA-01/probe480-reference-zero-dt/probe.json;.local/evidence/development/MA-01/probe480-reference-small-dt/probe.json;.local/evidence/development/MA-01/progress584-native-index.json;.local/evidence/development/MA-01/progress633-context-refraction-capping.json;.local/evidence/development/MA-01/progress636-positive-profile.json;.local/evidence/development/MA-01/progress641-monomials.json",
+          "evidence": "verification/development/MA-01/material-interface-probe029.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;docs/development-functional-groups.json;verification/development/MF-01/probe427-viewers/probe.json;verification/development/MF-01/progress435-plates.json;verification/development/BASE-01/progress438-442.json;verification/development/MA-01/probe480-reference-zero-dt/probe.json;verification/development/MA-01/probe480-reference-small-dt/probe.json;verification/development/MA-01/progress584-native-index.json;verification/development/MA-01/progress633-context-refraction-capping.json;verification/development/MA-01/progress636-positive-profile.json;verification/development/MA-01/progress641-monomials.json",
           "blocked_reason": "高阶原生剖面求值偏差、左端capping行为及AS_Default专题选择未解决；SGRIN共用色散解释已由624控制排除。"
         },
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-02.GradiumProfile",
           "execution_state": "in_progress",
           "next_action": "637–639单项式0–9阶为浮点精度；10/11阶单位幅度误差5.104e-9/6.124e-10，zmax1/5.8归一化结果一致。继续确认高阶正式求值、左端capping及专题选择，保持in_progress。",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;docs/development-functional-groups.json;.local/evidence/development/MF-01/probe427-viewers/probe.json;.local/evidence/development/MF-01/progress435-plates.json;.local/evidence/development/BASE-01/progress438-442.json;.local/evidence/development/MA-01/probe480-reference-zero-dt/probe.json;.local/evidence/development/MA-01/probe480-reference-small-dt/probe.json;.local/evidence/development/MA-01/progress584-native-index.json;.local/evidence/development/MA-01/progress633-context-refraction-capping.json;.local/evidence/development/MA-01/progress636-positive-profile.json;.local/evidence/development/MA-01/progress641-monomials.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;docs/development-functional-groups.json;verification/development/MF-01/probe427-viewers/probe.json;verification/development/MF-01/progress435-plates.json;verification/development/BASE-01/progress438-442.json;verification/development/MA-01/probe480-reference-zero-dt/probe.json;verification/development/MA-01/probe480-reference-small-dt/probe.json;verification/development/MA-01/progress584-native-index.json;verification/development/MA-01/progress633-context-refraction-capping.json;verification/development/MA-01/progress636-positive-profile.json;verification/development/MA-01/progress641-monomials.json",
           "blocked_reason": "高阶原生剖面求值偏差、左端capping行为及AS_Default专题选择未解决；SGRIN共用色散解释已由624控制排除。"
         }
       ]
@@ -706,11 +706,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-01.SourceColorChart1931",
           "execution_state": "in_progress",
           "next_action": "Runtime071 returned AS_Default; establish documented settings keys, actual adoption readback and meaningful result outlet before typed execution.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CV-01/runtime071/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CV-01/runtime071/settings.json",
           "blocked_reason": ""
         }
       ]
@@ -722,11 +722,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-01.SourceColorChart1976",
           "execution_state": "in_progress",
           "next_action": "Runtime071 returned AS_Default; establish documented settings keys, actual adoption readback and meaningful result outlet before typed execution.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CV-01/runtime071/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CV-01/runtime071/settings.json",
           "blocked_reason": ""
         }
       ]
@@ -738,19 +738,19 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "NS-02.PathAnalysis",
           "execution_state": "implemented",
           "next_action": "定位阈值剔除分支的未分类功率正式出口；已完成直达/双源、取消、保存重载与重复面交互检查",
-          "evidence": "verification/paths027-summary.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-02/acceptance063.json",
+          "evidence": "verification/paths027-summary.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-02/acceptance063.json",
           "blocked_reason": "本机阈值1剔除0.916718021W分支后GetPathUncategorized报告无未分类路径；GetPathNumber(0/MaxValue)为空，原生文本无对应行；需正式配置出口或供应方说明"
         },
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "NS-02.PathAnalysis",
           "execution_state": "implemented",
           "next_action": "定位阈值剔除分支的未分类功率正式出口；已完成直达/双源、取消、保存重载与重复面交互检查",
-          "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/connection040.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-02/acceptance063.json",
+          "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/connection040.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-02/acceptance063.json",
           "blocked_reason": "本机阈值1剔除0.916718021W分支后GetPathUncategorized报告无未分类路径；GetPathNumber(0/MaxValue)为空，原生文本无对应行；需正式配置出口或供应方说明"
         }
       ]
@@ -762,11 +762,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-01.ISOElementDrawing",
           "execution_state": "in_progress",
           "next_action": "Runtime071 returned AS_Default; establish documented settings keys, actual adoption readback and meaningful result outlet before typed execution.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CV-01/runtime071/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CV-01/runtime071/settings.json",
           "blocked_reason": ""
         }
       ]
@@ -778,11 +778,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-01.YNIContributions",
           "execution_state": "in_progress",
           "next_action": "Runtime071 returned AS_Default; establish documented settings keys, actual adoption readback and meaningful result outlet before typed execution.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CV-01/runtime071/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CV-01/runtime071/settings.json",
           "blocked_reason": ""
         }
       ]
@@ -794,11 +794,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-02.BitmapFileViewer",
           "execution_state": "blocked",
           "next_action": "Obtain formal file-selection/readback and image outlet, then test an owned asymmetric bitmap and export.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/MF-01/probe427-viewers/probe.json;.local/evidence/development/MF-01/progress435-plates.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/MF-01/probe427-viewers/probe.json;verification/development/MF-01/progress435-plates.json",
           "blocked_reason": "Runtime427 AS_Default; all eight public result counts zero and GetTextFile=false; typed input selection/output path absent."
         }
       ]
@@ -810,11 +810,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EX-01.CCallback",
           "execution_state": "pending",
           "next_action": "按本条声明范围确认正式设置、输入身份和结果出口，再完成定向原生及关闭验收。Native setting/resource selection and result/lifecycle acceptance as specified per operation",
-          "evidence": ".local/evidence/development/EX-01/probe036.json;docs/extensions.md;.local/evidence/development/EX-01/contract-followup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json",
+          "evidence": "verification/development/EX-01/probe036.json;docs/extensions.md;verification/development/EX-01/contract-followup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json",
           "blocked_reason": ""
         }
       ]
@@ -826,11 +826,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EX-01.NETCallback",
           "execution_state": "blocked",
           "next_action": "Inspect the formal loader contract and native diagnostics for the controlled DLL/type; obtain non-null callback before Execute/settings/Dispose acceptance.",
-          "evidence": ".local/evidence/development/EX-01/probe036.json;docs/extensions.md;.local/evidence/development/EX-01/callback-contract045.json;.local/evidence/development/EX-01/callback-build045.json;.local/evidence/development/EX-01/callback-offline045.json;tests/test_net_callback_live.py;.local/evidence/development/BASE-04/reboot046.json",
+          "evidence": "verification/development/EX-01/probe036.json;docs/extensions.md;verification/development/EX-01/callback-contract045.json;verification/development/EX-01/callback-build045.json;verification/development/EX-01/callback-offline045.json;tests/test_net_callback_live.py;verification/development/BASE-04/reboot046.json",
           "blocked_reason": "LoadNETCallback returned null after successful native connection; no callback handle for Execute or Dispose. Application closed normally. Confirm supported loader/assembly/type contract or provide a working controlled callback sample."
         }
       ]
@@ -842,11 +842,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EX-01.RegisterOperandCallback",
           "execution_state": "blocked",
           "next_action": "use the compiled controlled .NET fixture; inspect registration IMessage, operand results and application teardown.",
-          "evidence": ".local/evidence/development/EX-01/probe036.json;docs/extensions.md;.local/evidence/development/EX-01/contract-followup045.json",
+          "evidence": "verification/development/EX-01/probe036.json;docs/extensions.md;verification/development/EX-01/contract-followup045.json",
           "blocked_reason": "The full application interface has no inherited unregister endpoint; registration result, operand invocation and session-scoped cleanup remain unverified."
         }
       ]
@@ -858,11 +858,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EX-01.StandaloneMacro",
           "execution_state": "blocked",
           "next_action": "Obtain a supported macro execution contract and stop/output protocol; continue using the existing typed ZPL solve path.",
-          "evidence": ".local/evidence/development/EX-01/probe036.json;docs/extensions.md;.local/evidence/development/EX-01/contract-followup045.json",
+          "evidence": "verification/development/EX-01/probe036.json;docs/extensions.md;verification/development/EX-01/contract-followup045.json",
           "blocked_reason": "Full reflection confirms RunCommand(String) but no documented arbitrary ZPL command verb or dedicated macro endpoint; official reference fetch returned HTTP 403 in this followup."
         }
       ]
@@ -874,11 +874,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EX-01.UserAnalysisHost",
           "execution_state": "pending",
           "next_action": "按本条声明范围确认正式设置、输入身份和结果出口，再完成定向原生及关闭验收。Native setting/resource selection and result/lifecycle acceptance as specified per operation",
-          "evidence": ".local/evidence/development/EX-01/probe036.json;docs/extensions.md;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json",
+          "evidence": "verification/development/EX-01/probe036.json;docs/extensions.md;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json",
           "blocked_reason": ""
         }
       ]
@@ -890,11 +890,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EX-01.UserOperandHost",
           "execution_state": "pending",
           "next_action": "按本条声明范围确认正式设置、输入身份和结果出口，再完成定向原生及关闭验收。Native setting/resource selection and result/lifecycle acceptance as specified per operation",
-          "evidence": ".local/evidence/development/EX-01/probe036.json;docs/extensions.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json",
+          "evidence": "verification/development/EX-01/probe036.json;docs/extensions.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json",
           "blocked_reason": ""
         }
       ]
@@ -906,11 +906,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-01.STAR2DDefPlot",
           "execution_state": "in_progress",
           "next_action": "Ordinary sequential factory returned null; establish STAR license/FEA input/active deformation conditions and re-probe; no owned analysis created.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CV-01/runtime071/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CV-01/runtime071/settings.json",
           "blocked_reason": "Runtime071 factory null on ordinary sequential model; requires valid STAR model/input and factory availability."
         }
       ]
@@ -922,11 +922,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-01.STARAlignCheck",
           "execution_state": "in_progress",
           "next_action": "Ordinary sequential factory returned null; establish STAR license/FEA input/active deformation conditions and re-probe; no owned analysis created.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CV-01/runtime071/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CV-01/runtime071/settings.json",
           "blocked_reason": "Runtime071 factory null on ordinary sequential model; requires valid STAR model/input and factory availability."
         }
       ]
@@ -938,11 +938,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-01.STARIndexVsTemp",
           "execution_state": "in_progress",
           "next_action": "Ordinary sequential factory returned null; establish STAR license/FEA input/active deformation conditions and re-probe; no owned analysis created.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CV-01/runtime071/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CV-01/runtime071/settings.json",
           "blocked_reason": "Runtime071 factory null on ordinary sequential model; requires valid STAR model/input and factory availability."
         }
       ]
@@ -954,11 +954,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-01.STARInspectFEA",
           "execution_state": "in_progress",
           "next_action": "Ordinary sequential factory returned null; establish STAR license/FEA input/active deformation conditions and re-probe; no owned analysis created.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CV-01/runtime071/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CV-01/runtime071/settings.json",
           "blocked_reason": "Runtime071 factory null on ordinary sequential model; requires valid STAR model/input and factory availability."
         }
       ]
@@ -970,11 +970,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-01.STARPerfChange",
           "execution_state": "in_progress",
           "next_action": "Ordinary sequential factory returned null; establish STAR license/FEA input/active deformation conditions and re-probe; no owned analysis created.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CV-01/runtime071/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CV-01/runtime071/settings.json",
           "blocked_reason": "Runtime071 factory null on ordinary sequential model; requires valid STAR model/input and factory availability."
         }
       ]
@@ -986,11 +986,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-01.STARSysViewer",
           "execution_state": "in_progress",
           "next_action": "Ordinary sequential factory returned null; establish STAR license/FEA input/active deformation conditions and re-probe; no owned analysis created.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/CV-01/runtime071/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/CV-01/runtime071/settings.json",
           "blocked_reason": "Runtime071 factory null on ordinary sequential model; requires valid STAR model/input and factory availability."
         }
       ]
@@ -1002,11 +1002,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-EXPORT.BlackBox",
           "execution_state": "blocked",
           "next_action": "Identify supported formal creation interface/protocol and parameters; see probe042.json.",
-          "evidence": ".local/evidence/development/EXT-EXPORT/probe042.json;docs/special-exports.md",
+          "evidence": "verification/development/EXT-EXPORT/probe042.json;docs/special-exports.md",
           "blocked_reason": "No corresponding named creation/export interface in 908 public types; GUI feature documented in local manual."
         }
       ]
@@ -1018,11 +1018,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-EXPORT.EncryptedCoating",
           "execution_state": "blocked",
           "next_action": "Identify supported formal creation interface/protocol and parameters; see probe042.json.",
-          "evidence": ".local/evidence/development/EXT-EXPORT/probe042.json;docs/special-exports.md",
+          "evidence": "verification/development/EXT-EXPORT/probe042.json;docs/special-exports.md",
           "blocked_reason": "No corresponding named creation/export interface in 908 public types; GUI feature documented in local manual."
         }
       ]
@@ -1034,11 +1034,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-EXPORT.LegacyLinework",
           "execution_state": "blocked",
           "next_action": "Identify supported formal creation interface/protocol and parameters; see probe042.json.",
-          "evidence": ".local/evidence/development/EXT-EXPORT/probe042.json;docs/special-exports.md",
+          "evidence": "verification/development/EXT-EXPORT/probe042.json;docs/special-exports.md",
           "blocked_reason": "No corresponding named creation/export interface in 908 public types; GUI feature documented in local manual."
         }
       ]
@@ -1050,11 +1050,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-HPC.GlobalOptimization",
           "execution_state": "implemented",
           "next_action": "按本条声明范围确认正式设置、输入身份和结果出口，再完成定向原生及关闭验收。Configuration and factory adoption, minimal job submit/status/cancel/results/close; default local behavior preserved",
-          "evidence": ".local/evidence/development/EXT-HPC/probe040.json;docs/hpc.md;tests/test_hpc.py;tests/test_hpc_execution.py;tests/test_hpc_live.py;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json",
+          "evidence": "verification/development/EXT-HPC/probe040.json;docs/hpc.md;tests/test_hpc.py;tests/test_hpc_execution.py;tests/test_hpc_live.py;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json",
           "blocked_reason": ""
         }
       ]
@@ -1066,11 +1066,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-HPC.HammerOptimization",
           "execution_state": "implemented",
           "next_action": "按本条声明范围确认正式设置、输入身份和结果出口，再完成定向原生及关闭验收。Configuration and factory adoption, minimal job submit/status/cancel/results/close; default local behavior preserved",
-          "evidence": ".local/evidence/development/EXT-HPC/probe040.json;docs/hpc.md;tests/test_hpc.py;tests/test_hpc_execution.py;tests/test_hpc_live.py;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json",
+          "evidence": "verification/development/EXT-HPC/probe040.json;docs/hpc.md;tests/test_hpc.py;tests/test_hpc_execution.py;tests/test_hpc_live.py;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json",
           "blocked_reason": ""
         }
       ]
@@ -1082,11 +1082,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-HPC.NSCTrace",
           "execution_state": "implemented",
           "next_action": "按本条声明范围确认正式设置、输入身份和结果出口，再完成定向原生及关闭验收。Configuration and factory adoption, minimal job submit/status/cancel/results/close; default local behavior preserved",
-          "evidence": ".local/evidence/development/EXT-HPC/probe040.json;docs/hpc.md;tests/test_hpc.py;tests/test_hpc_execution.py;tests/test_hpc_live.py;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json",
+          "evidence": "verification/development/EXT-HPC/probe040.json;docs/hpc.md;tests/test_hpc.py;tests/test_hpc_execution.py;tests/test_hpc_live.py;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json",
           "blocked_reason": ""
         }
       ]
@@ -1098,11 +1098,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-HPC.Settings",
           "execution_state": "implemented",
           "next_action": "按本条声明范围确认正式设置、输入身份和结果出口，再完成定向原生及关闭验收。Configuration and factory adoption, minimal job submit/status/cancel/results/close; default local behavior preserved",
-          "evidence": ".local/evidence/development/EXT-HPC/probe040.json;docs/hpc.md;tests/test_hpc.py;tests/test_hpc_execution.py;tests/test_hpc_live.py;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json",
+          "evidence": "verification/development/EXT-HPC/probe040.json;docs/hpc.md;tests/test_hpc.py;tests/test_hpc_execution.py;tests/test_hpc_live.py;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json",
           "blocked_reason": ""
         }
       ]
@@ -1114,11 +1114,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-HPC.Tolerancing",
           "execution_state": "implemented",
           "next_action": "按本条声明范围确认正式设置、输入身份和结果出口，再完成定向原生及关闭验收。Configuration and factory adoption, minimal job submit/status/cancel/results/close; default local behavior preserved",
-          "evidence": ".local/evidence/development/EXT-HPC/probe040.json;docs/hpc.md;tests/test_hpc.py;tests/test_hpc_execution.py;tests/test_hpc_live.py;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json",
+          "evidence": "verification/development/EXT-HPC/probe040.json;docs/hpc.md;tests/test_hpc.py;tests/test_hpc_execution.py;tests/test_hpc_live.py;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json",
           "blocked_reason": ""
         }
       ]
@@ -1130,11 +1130,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-SPEOS.LensSystem",
           "execution_state": "implemented",
           "next_action": "按本条声明范围确认正式设置、输入身份和结果出口，再完成定向原生及关闭验收。Source model preserved; native export/cancel/close on success/failure; imported geometry/units in receiver",
-          "evidence": ".local/evidence/development/EXT-SPEOS/probe041.json;docs/speos.md;tests/test_speos.py;tests/test_speos_live.py;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json",
+          "evidence": "verification/development/EXT-SPEOS/probe041.json;docs/speos.md;tests/test_speos.py;tests/test_speos_live.py;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json",
           "blocked_reason": ""
         }
       ]
@@ -1146,11 +1146,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-SPEOS.Receiver.LensSystem",
           "execution_state": "pending",
           "next_action": "按本条声明范围确认正式设置、输入身份和结果出口，再完成定向原生及关闭验收。Source model preserved; native export/cancel/close on success/failure; imported geometry/units in receiver",
-          "evidence": ".local/evidence/development/EXT-SPEOS/probe041.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json",
+          "evidence": "verification/development/EXT-SPEOS/probe041.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json",
           "blocked_reason": ""
         }
       ]
@@ -1162,11 +1162,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-SPEOS.Receiver.Whitebox",
           "execution_state": "blocked",
           "next_action": "Identify runnable receiver version/location and native output package format; then verify import, units and geometry.",
-          "evidence": ".local/evidence/development/EXT-SPEOS/probe041.json",
+          "evidence": "verification/development/EXT-SPEOS/probe041.json",
           "blocked_reason": "Default v242 directory and HKLM uninstall inventory found no confirmed Speos receiver; native readonly output filename/package still awaits execution."
         }
       ]
@@ -1178,11 +1178,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-SPEOS.Whitebox",
           "execution_state": "implemented",
           "next_action": "按本条声明范围确认正式设置、输入身份和结果出口，再完成定向原生及关闭验收。Source model preserved; native export/cancel/close on success/failure; imported geometry/units in receiver",
-          "evidence": ".local/evidence/development/EXT-SPEOS/probe041.json;docs/speos.md;tests/test_speos.py;tests/test_speos_live.py;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json",
+          "evidence": "verification/development/EXT-SPEOS/probe041.json;docs/speos.md;tests/test_speos.py;tests/test_speos_live.py;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json",
           "blocked_reason": ""
         }
       ]
@@ -1194,11 +1194,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.Components",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe038.json;.local/evidence/development/EXT-STAR/parameters038.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe038.json;verification/development/EXT-STAR/parameters038.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1210,11 +1210,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.Components.configure",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe038.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe038.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1226,11 +1226,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.Components.coordinate_breaks",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe038.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe038.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1242,11 +1242,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.Components.define",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe038.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe038.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1258,11 +1258,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.Components.remove",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe038.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe038.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1274,11 +1274,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.Components.remove_rbms",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe038.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe038.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1290,11 +1290,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.CoordinateTransform",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe038.json;.local/evidence/development/EXT-STAR/parameters038.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe038.json;verification/development/EXT-STAR/parameters038.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1306,11 +1306,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.FitDeformation",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe037.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe037.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1322,11 +1322,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.FitDirectIndex",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe037.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe037.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1338,11 +1338,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.FitTemperature",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe037.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe037.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1354,11 +1354,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.FittedSamples",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe037.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe037.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1370,11 +1370,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.ImportDeformation",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe037.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe037.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1386,11 +1386,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.ImportDirectIndex",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe037.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe037.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1402,11 +1402,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.ImportTemperature",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe037.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe037.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1418,11 +1418,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.Materials.dndt",
           "execution_state": "blocked",
           "next_action": "After material utility returns a finite positive index, resume six wavelengths and independent absolute/relative and thermal references; preserve original tolerances.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe039.json;docs/materials.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe039.json;docs/materials.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Native ISTARMaterials returned index0 and dn/dT0 for both confirmed glasses under three catalog identifiers; STAR module flagFalse. Public invalid-result error and catalog reuse verified."
         }
       ]
@@ -1434,11 +1434,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.Materials.refractive_index",
           "execution_state": "blocked",
           "next_action": "After material utility returns a finite positive index, resume six wavelengths and independent absolute/relative and thermal references; preserve original tolerances.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe039.json;docs/materials.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe039.json;docs/materials.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Native ISTARMaterials returned index0 and dn/dT0 for both confirmed glasses under three catalog identifiers; STAR module flagFalse. Public invalid-result error and catalog reuse verified."
         }
       ]
@@ -1450,11 +1450,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.Read",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe037.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe037.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1466,11 +1466,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.RigidBody",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe038.json;.local/evidence/development/EXT-STAR/parameters038.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe038.json;verification/development/EXT-STAR/parameters038.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1482,11 +1482,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.ThermalControls",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe038.json;.local/evidence/development/EXT-STAR/parameters038.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe038.json;verification/development/EXT-STAR/parameters038.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1498,11 +1498,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.UnloadDeformation",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe039.json;docs/materials.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe039.json;docs/materials.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1514,11 +1514,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.UnloadDirectIndex",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe039.json;docs/materials.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe039.json;docs/materials.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1530,11 +1530,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.UnloadTemperature",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe039.json;docs/materials.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe039.json;docs/materials.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1546,11 +1546,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.UpdateMode",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe038.json;.local/evidence/development/EXT-STAR/parameters038.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe038.json;verification/development/EXT-STAR/parameters038.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1562,11 +1562,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/operations.csv",
+          "ledger": "docs/development-items.csv",
           "item_id": "EXT-STAR.VolumeControls",
           "execution_state": "blocked",
           "next_action": "When native IsSTARModuleEnabled becomes True, resume this item using controlled FEA copies, actual settings, reference values, reload/recovery and normal closure.",
-          "evidence": ".local/evidence/development/EXT-STAR/probe038.json;docs/star.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EXT-STAR/readiness193.json",
+          "evidence": "verification/development/EXT-STAR/probe038.json;docs/star.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EXT-STAR/readiness193.json",
           "blocked_reason": "Local Premium v242 application IsSTARModuleEnabled=False. STAR controls/read/import/fit require enabled module; public request returns FEATURE_UNAVAILABLE before modification."
         }
       ]
@@ -1578,11 +1578,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-02.ExtendedDiffractionImageAnalysis",
           "execution_state": "blocked",
           "next_action": "600已复核466/471：取得正式专用设置接口，或可确认CFG键及独立回读/输入输出归属；随后运行自有光源或衍射/相干参考。保留blocked，条件未变时继续其他候补。",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/BASE-01/progress438-442.json;.local/evidence/development/CV-02/probe468-image-analyses/probe.json;.local/evidence/development/CV-02/probe469-image-grids/probe.json;.local/evidence/development/CV-02/probe470-image-axes/probe.json;.local/evidence/development/CV-02/probe471-cfg-validation/probe.json;.local/evidence/development/CV-02/progress600-image-interface-review.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/BASE-01/progress438-442.json;verification/development/CV-02/probe468-image-analyses/probe.json;verification/development/CV-02/probe469-image-grids/probe.json;verification/development/CV-02/probe470-image-axes/probe.json;verification/development/CV-02/probe471-cfg-validation/probe.json;verification/development/CV-02/progress600-image-interface-review.json",
           "blocked_reason": "GRID CFG setting calls cannot verify field/key recognition: deliberate unknown ModifySettings key also returns true; output grids256x256 on owned7x7 IMA, but source/data/scale remain unconfirmed."
         }
       ]
@@ -1594,11 +1594,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-02.LightSourceAnalysis",
           "execution_state": "blocked",
           "next_action": "600已复核466/471：取得正式专用设置接口，或可确认CFG键及独立回读/输入输出归属；随后运行自有光源或衍射/相干参考。保留blocked，条件未变时继续其他候补。",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/BASE-01/progress438-442.json;.local/evidence/development/CV-02/probe464-light-source/probe.json;.local/evidence/development/CV-02/probe466-light-source/probe.json;.local/evidence/development/CV-02/progress600-image-interface-review.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/BASE-01/progress438-442.json;verification/development/CV-02/probe464-light-source/probe.json;verification/development/CV-02/probe466-light-source/probe.json;verification/development/CV-02/progress600-image-interface-review.json",
           "blocked_reason": "LightSourceAnalysis AS_Default exposes only IsValid; finite-conjugate owned model + installed sample.SDF and manual-key ModifySettings probe (22 keys) returned true for all, but LoadFrom gave no field readback and Apply yielded zero grids/series/messages; no verified selector/result identity."
         }
       ]
@@ -1610,11 +1610,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "CV-02.PartiallyCoherentImageAnalysis",
           "execution_state": "blocked",
           "next_action": "600已复核466/471：取得正式专用设置接口，或可确认CFG键及独立回读/输入输出归属；随后运行自有光源或衍射/相干参考。保留blocked，条件未变时继续其他候补。",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/BASE-01/progress438-442.json;.local/evidence/development/CV-02/probe468-image-analyses/probe.json;.local/evidence/development/CV-02/probe469-image-grids/probe.json;.local/evidence/development/CV-02/probe470-image-axes/probe.json;.local/evidence/development/CV-02/probe471-cfg-validation/probe.json;.local/evidence/development/CV-02/progress600-image-interface-review.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/BASE-01/progress438-442.json;verification/development/CV-02/probe468-image-analyses/probe.json;verification/development/CV-02/probe469-image-grids/probe.json;verification/development/CV-02/probe470-image-axes/probe.json;verification/development/CV-02/probe471-cfg-validation/probe.json;verification/development/CV-02/progress600-image-interface-review.json",
           "blocked_reason": "CFG ModifySettings returns true even for a deliberately invalid key; one13x13 grid returned but selected source/data/coherence settings cannot be tied to the output."
         }
       ]
@@ -1626,11 +1626,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "ED-02.SolveExtensions018",
           "execution_state": "implemented",
           "next_action": "参数9/10宏solve已由acceptance047及本轮348复测确认；聚合项仍待MaterialModel原有数值差异，已知机械口径/ChipZone限制沿独立条目保留。",
-          "evidence": "verification/solve-extensions018-summary.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/EX-01/acceptance348.json",
+          "evidence": "verification/solve-extensions018-summary.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/EX-01/acceptance348.json",
           "blocked_reason": ""
         }
       ]
@@ -1642,11 +1642,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "EX-01.UserDefinedCOM",
           "execution_state": "pending",
           "next_action": "按本条声明范围确认正式设置、输入身份和结果出口，再完成定向原生及关闭验收。Typed request, adopted settings, result data, checks and lifecycle evidence",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json",
           "blocked_reason": ""
         }
       ]
@@ -1658,11 +1658,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "IM-01.GeometricBitmapImageAnalysis",
           "execution_state": "blocked",
           "next_action": "Obtain CFG keys matching this runtime with demonstrated setting adoption and usable formal bitmap export, or corrected native version; then implement typed execution and independent reference.",
-          "evidence": "docs/native-analysis-matrix.csv;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;verification\\development\\IM-01\\acceptance050\\summary.json;.local/evidence/development/IM-01/progress351-gbm.json",
+          "evidence": "docs/native-analysis-matrix.csv;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification\\development\\IM-01\\acceptance050\\summary.json;verification/development/IM-01/progress351-gbm.json",
           "blocked_reason": "Ten documented GBM keys return true from ModifySettings before/after Apply, SaveTo/LoadFrom also true. GeometricImageAnalysis positive control retains default field width28.2843 degrees for requested1 degree; adoption unconfirmed. GeometricBitmapImageAnalysis IsValid=true, numeric arrays empty, text empty, no requested BMP file."
         }
       ]
@@ -1674,11 +1674,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "MF-01.TestPlateList",
           "execution_state": "implemented",
           "next_action": "Native active-catalog text and explicit documented TPD file reader implemented; obtain formal catalog-selection setting with adoption readback to complete native selector scope. 436 capability regression passed; 437 supplied manual material only, no additional native execution.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/MF-01/runtime078/settings.json;.local/evidence/development/MF-01/probe427-viewers/probe.json;.local/evidence/development/MF-01/progress435-plates.json;.local/evidence/development/MF-01/native436-capabilities.xml",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/MF-01/runtime078/settings.json;verification/development/MF-01/probe427-viewers/probe.json;verification/development/MF-01/progress435-plates.json;verification/development/MF-01/native436-capabilities.xml",
           "blocked_reason": "AS_Default exposes no typed catalog selection; explicit native catalog mismatch returns SETTING_NOT_SUPPORTED, auto records TPD-file fallback."
         }
       ]
@@ -1690,11 +1690,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "MF-01.ZemaxElementDrawing",
           "execution_state": "blocked",
           "next_action": "Obtain formal drawing settings/readback and an exportable image/vector outlet; rerun minimal Cooke case and drawing comparison.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe035.json;.local/evidence/development/BASE-01/probe/api-interfaces.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/MF-01/runtime078/settings.json;.local/evidence/development/MF-01/probe427-viewers/probe.json;.local/evidence/development/MF-01/progress435-plates.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe035.json;verification/development/BASE-01/probe/api-interfaces.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/MF-01/runtime078/settings.json;verification/development/MF-01/probe427-viewers/probe.json;verification/development/MF-01/progress435-plates.json",
           "blocked_reason": "Runtime427 AS_Default; all eight public result counts zero, GetTextFile=false; no typed drawing settings or export outlet identified."
         }
       ]
@@ -1706,11 +1706,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "NS-03.DirectivityPlot",
           "execution_state": "in_progress",
           "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-03/runtime069/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-03/runtime069/settings.json",
           "blocked_reason": ""
         }
       ]
@@ -1722,11 +1722,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "NS-03.FluxvsWavelength",
           "execution_state": "in_progress",
           "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-03/runtime069/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-03/runtime069/settings.json",
           "blocked_reason": ""
         }
       ]
@@ -1738,11 +1738,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "NS-03.PhotoluminscenceViewer",
           "execution_state": "in_progress",
           "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-03/runtime069/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-03/runtime069/settings.json",
           "blocked_reason": ""
         }
       ]
@@ -1754,11 +1754,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "NS-03.RadiantSourceModelViewerSettings",
           "execution_state": "in_progress",
           "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-03/runtime069/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-03/runtime069/settings.json",
           "blocked_reason": ""
         }
       ]
@@ -1770,11 +1770,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "NS-03.RoadwayLighting",
           "execution_state": "in_progress",
           "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
-          "evidence": ".local/evidence/development/BASE-01/probe/api-interfaces.json;verification/design-tools020-summary.json;docs/design-tools.md;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-03/runtime069/settings.json",
+          "evidence": "verification/development/BASE-01/probe/api-interfaces.json;verification/design-tools020-summary.json;docs/design-tools.md;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-03/runtime069/settings.json",
           "blocked_reason": ""
         }
       ]
@@ -1786,11 +1786,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "NS-03.ScatterFunctionViewer",
           "execution_state": "in_progress",
           "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-03/runtime069/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-03/runtime069/settings.json",
           "blocked_reason": ""
         }
       ]
@@ -1802,11 +1802,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "NS-03.ScatterPolarPlotSettings",
           "execution_state": "in_progress",
           "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-03/runtime069/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-03/runtime069/settings.json",
           "blocked_reason": ""
         }
       ]
@@ -1818,11 +1818,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "NS-03.SourceIlluminationMap",
           "execution_state": "in_progress",
           "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-03/runtime069/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-03/runtime069/settings.json",
           "blocked_reason": ""
         }
       ]
@@ -1834,11 +1834,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "NS-03.SourcePolarViewer",
           "execution_state": "in_progress",
           "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-03/runtime069/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-03/runtime069/settings.json",
           "blocked_reason": ""
         }
       ]
@@ -1850,11 +1850,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "NS-03.SourceSpectrumViewer",
           "execution_state": "in_progress",
           "next_action": "Runtime AS_Default/base IAS_ only; CFG export succeeds. Probe official setting keys and input/selection readback plus dedicated output.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-03/runtime069/settings.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-03/runtime069/settings.json",
           "blocked_reason": ""
         }
       ]
@@ -1866,11 +1866,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "NS-04.NSCObjectViewer",
           "execution_state": "in_progress",
           "next_action": "Pure NSC factory creates AS_Default; sequential factory null. Default pure NSC text export false; analysis closed. Official MODIFYSETTINGS has SHA_ROTX/Y/Z only; object selector and rotation readback unavailable. Need formal object selection/readback and graphics outlet.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-04/runtime066/summary.json;.local/evidence/development/NS-04/runtime068-sequential/summary.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-04/runtime066/summary.json;verification/development/NS-04/runtime068-sequential/summary.json",
           "blocked_reason": ""
         }
       ]
@@ -1882,11 +1882,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "NS-04.PartViewer",
           "execution_state": "in_progress",
           "next_action": "AS_Default in both modes; default text export false, closed. Needs formal part input selection/readback and graphics outlet.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-04/runtime066/summary.json;.local/evidence/development/NS-04/runtime068-sequential/summary.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-04/runtime066/summary.json;verification/development/NS-04/runtime068-sequential/summary.json",
           "blocked_reason": ""
         }
       ]
@@ -1898,11 +1898,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "NS-04.PrescriptionDataSettings",
           "execution_state": "in_progress",
           "next_action": "AS_Default in both modes; default native prescription text export works and closed. Typed section selections and actual adopted readback unavailable; require official keys or dedicated settings interface.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-04/runtime066/summary.json;.local/evidence/development/NS-04/runtime068-sequential/summary.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-04/runtime066/summary.json;verification/development/NS-04/runtime068-sequential/summary.json",
           "blocked_reason": ""
         }
       ]
@@ -1914,11 +1914,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "NS-04.PrescriptionGraphic",
           "execution_state": "in_progress",
           "next_action": "Sequential factory creates AS_Default; pure NSC factory null. Default text export false and closed; requires graphics export and settings contract.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-04/runtime066/summary.json;.local/evidence/development/NS-04/runtime068-sequential/summary.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-04/runtime066/summary.json;verification/development/NS-04/runtime068-sequential/summary.json",
           "blocked_reason": ""
         }
       ]
@@ -1930,11 +1930,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "NS-04.SurfaceDataSettings",
           "execution_state": "in_progress",
           "next_action": "Sequential AS_Default; NSC factory null. Default surface report text exports and closes. Need formal surface selector and adopted selection readback.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/NS-04/runtime066/summary.json;.local/evidence/development/NS-04/runtime068-sequential/summary.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/NS-04/runtime066/summary.json;verification/development/NS-04/runtime068-sequential/summary.json",
           "blocked_reason": ""
         }
       ]
@@ -1946,11 +1946,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "PO-01.PhaseAberration",
           "execution_state": "blocked",
           "next_action": "Use formal IAS_.SaveTo/LoadFrom/ModifySettings; obtain documented CFG parameter keys and verify adoption/results before typed execution.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;verification\\development\\CO-01\\acceptance051\\summary.json;verification\\development\\CO-01\\acceptance052\\summary.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification\\development\\CO-01\\acceptance051\\summary.json;verification\\development\\CO-01\\acceptance052\\summary.json",
           "blocked_reason": "AS_Default has no specialized typed settings. Five binary CFG exports succeeded; supported parameter keys and numerical execution remain unresolved."
         }
       ]
@@ -1962,11 +1962,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "PO-01.PolarizationRayTrace",
           "execution_state": "blocked",
           "next_action": "Use formal IAS_.SaveTo/LoadFrom/ModifySettings; obtain documented CFG parameter keys and verify adoption/results before typed execution.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;verification\\development\\CO-01\\acceptance051\\summary.json;verification\\development\\CO-01\\acceptance052\\summary.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification\\development\\CO-01\\acceptance051\\summary.json;verification\\development\\CO-01\\acceptance052\\summary.json",
           "blocked_reason": "AS_Default has no specialized typed settings. Five binary CFG exports succeeded; supported parameter keys and numerical execution remain unresolved."
         }
       ]
@@ -1978,11 +1978,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "PO-01.Transmission",
           "execution_state": "blocked",
           "next_action": "Use formal IAS_.SaveTo/LoadFrom/ModifySettings; obtain documented CFG parameter keys and verify adoption/results before typed execution.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;verification\\development\\CO-01\\acceptance051\\summary.json;verification\\development\\CO-01\\acceptance052\\summary.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification\\development\\CO-01\\acceptance051\\summary.json;verification\\development\\CO-01\\acceptance052\\summary.json",
           "blocked_reason": "AS_Default has no specialized typed settings. Five binary CFG exports succeeded; supported parameter keys and numerical execution remain unresolved."
         }
       ]
@@ -1994,11 +1994,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "PO-01.TransmissionFan",
           "execution_state": "blocked",
           "next_action": "Use formal IAS_.SaveTo/LoadFrom/ModifySettings; obtain documented CFG parameter keys and verify adoption/results before typed execution.",
-          "evidence": ".local/evidence/development/BASE-01/static-runtime-probe031.json;.local/evidence/development/BASE-04/startup045.json;verification\\development\\CO-01\\acceptance051\\summary.json;verification\\development\\CO-01\\acceptance052\\summary.json",
+          "evidence": "verification/development/BASE-01/static-runtime-probe031.json;verification/development/BASE-04/startup045.json;verification\\development\\CO-01\\acceptance051\\summary.json;verification\\development\\CO-01\\acceptance052\\summary.json",
           "blocked_reason": "AS_Default has no specialized typed settings. Five binary CFG exports succeeded; supported parameter keys and numerical execution remain unresolved."
         }
       ]
@@ -2010,11 +2010,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "WP-01.BeamFileViewer",
           "execution_state": "implemented",
           "next_action": "Obtain formal ZBF file-selection/readback; run known nonzero owned beam and compare all grid/power quantities with existing get_beam_file reader.",
-          "evidence": "verification/tolerancing030-summary.json;src/zemax_mcp/physical_optics.py;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/WP-01/runtime072/summary.json;.local/evidence/development/MF-01/probe427-viewers/probe.json;.local/evidence/development/MF-01/progress435-plates.json",
+          "evidence": "verification/tolerancing030-summary.json;src/zemax_mcp/physical_optics.py;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/WP-01/runtime072/summary.json;verification/development/MF-01/probe427-viewers/probe.json;verification/development/MF-01/progress435-plates.json",
           "blocked_reason": "Runtime427 AS_Default; one 32x32 zero grid and text explicitly report no defined file; zero grid is not a valid beam acceptance."
         }
       ]
@@ -2026,11 +2026,11 @@
       "batch_order": null,
       "source_records": [
         {
-          "ledger": "development/ledgers/analyses.csv",
+          "ledger": "docs/development-backlog.csv",
           "item_id": "WP-01.FiberCouplingSettings",
           "execution_state": "implemented",
           "next_action": "AS_Default/base IAS_ only; dedicated analysis settings/readback/output contract remains open. Existing POP/file-reader path retained.",
-          "evidence": "verification/tolerancing030-summary.json;src/zemax_mcp/physical_optics.py;.local/evidence/development/BASE-04/startup045.json;.local/evidence/development/BASE-04/reboot046.json;.local/evidence/development/BASE-01/ledger-refresh054.json;.local/evidence/development/WP-01/runtime072/summary.json",
+          "evidence": "verification/tolerancing030-summary.json;src/zemax_mcp/physical_optics.py;verification/development/BASE-04/startup045.json;verification/development/BASE-04/reboot046.json;verification/development/BASE-01/ledger-refresh054.json;verification/development/WP-01/runtime072/summary.json",
           "blocked_reason": ""
         }
       ]

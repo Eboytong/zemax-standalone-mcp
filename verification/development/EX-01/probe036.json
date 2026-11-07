@@ -467,13 +467,13 @@
     "failures": 0,
     "errors": 0,
     "deselected": 509,
-    "report": ".local/evidence/development/EX-01/ordinary046.xml"
+    "report": "verification/development/EX-01/ordinary046.xml"
   },
   "release": {
     "status": "passed",
     "wheel": "wheels/zemax_standalone_mcp-0.1.36-py3-none-any.whl",
-    "install": ".local/evidence/development/EX-01/wheel-install036",
-    "stdio": ".local/evidence/development/EX-01/stdio-smoke046.json"
+    "install": "verification/development/EX-01/wheel-install036",
+    "stdio": "verification/development/EX-01/stdio-smoke046.json"
   },
   "operations": [
     {

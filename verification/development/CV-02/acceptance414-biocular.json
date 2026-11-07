@@ -6,26 +6,26 @@
   "native_version": "24.2.0 build240529 PremiumEdition",
   "scope": "All documented scan controls through typed BIOC/BIOD arguments; true STOP-launched left/right validation and matched-image residual; raw silent-zero handling; rows/series/paging/plot/config restoration/cancellation/reload and resource closure.",
   "ordinary_passed": 106,
-  "ordinary_report": ".local/evidence/development/CV-02/ordinary414-biocular.xml",
+  "ordinary_report": "verification/development/CV-02/ordinary414-biocular.xml",
   "native_unique_cases": 3,
   "native_reports": [
-    ".local/evidence/development/CV-02/native411-biocular-serial.xml",
-    ".local/evidence/development/CV-02/native412-clipped.xml"
+    "verification/development/CV-02/native411-biocular-serial.xml",
+    "verification/development/CV-02/native412-clipped.xml"
   ],
   "numeric_checks": 307,
   "max_absolute_error_mrad": 4.344098438302524e-05,
   "preset_atol_mrad": 0.001,
   "reference": "Native126-point six-offset worksheet, independent two-plane100/120mm matching, 2D cosine geometry, eye swap120/100mm, equal-eye zero, compensation identity.",
   "run_folders": [
-    ".local/runs/biocular406_planes_2f2f85e516",
-    ".local/runs/biocular408_full_6cecfee221",
-    ".local/runs/biocular412_clipped_1f333fc020"
+    "outputs/runs/biocular406_planes_2f2f85e516",
+    "outputs/runs/biocular408_full_6cecfee221",
+    "outputs/runs/biocular412_clipped_1f333fc020"
   ],
-  "probe": ".local/evidence/development/CV-02/probe410-clipping-isolated/probe.json",
+  "probe": "verification/development/CV-02/probe410-clipping-isolated/probe.json",
   "commands": [
-    ".venv/Scripts/python.exe -X utf8 tests/support/biocular_probe.py .local/evidence/development/CV-02/probe410-clipping-isolated clipping_only",
-    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_biocular_live.py --run-zemax -q --junitxml=.local/evidence/development/CV-02/native411-biocular-serial.xml",
-    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_biocular_live.py::test_biocular_eye_swap_and_clipped_zero_rejection --run-zemax -q --junitxml=.local/evidence/development/CV-02/native412-clipped.xml"
+    ".venv/Scripts/python.exe -X utf8 tests/support/biocular_probe.py verification/development/CV-02/probe410-clipping-isolated clipping_only",
+    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_biocular_live.py --run-zemax -q --junitxml=verification/development/CV-02/native411-biocular-serial.xml",
+    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_biocular_live.py::test_biocular_eye_swap_and_clipped_zero_rejection --run-zemax -q --junitxml=verification/development/CV-02/native412-clipped.xml"
   ],
   "settings": "Explicit native BIOC/BIOD parameters and configuration readback; no AS_Default dialog mutation.",
   "validation": "Independent native copies per eye, direct real rays from STOP center using requested and returned matched angles; pass status plus local image X/Y residual tolerance1e-5+1e-6*max absolute image coordinate in current lens units.",

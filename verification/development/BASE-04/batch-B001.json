@@ -18,19 +18,19 @@
   "verification_state": "passed",
   "evidence": [
     "verification\\development\\NS-01\\probe061\\summary.json",
-    ".local/evidence/development/ED-04/acceptance062/summary.json",
-    ".local/runs/conversion_options062_35ee51bf2a/option-results.json",
-    ".local/evidence/development/NS-02/acceptance063.json",
-    ".local/evidence/development/NS-03/acceptance064.json",
-    ".local/evidence/development/NS-04/acceptance065.json",
-    ".local/evidence/development/NS-04/runtime066/summary.json",
-    ".local/evidence/development/NS-04/acceptance067.json",
-    ".local/evidence/development/CV-01/acceptance073.json",
-    ".local/evidence/development/CV-01/acceptance074.json",
-    ".local/evidence/development/CV-01/acceptance075.json",
-    ".local/evidence/development/BASE-01/ordinary076-b001.xml"
+    "verification/development/ED-04/acceptance062/summary.json",
+    "outputs/runs/conversion_options062_35ee51bf2a/option-results.json",
+    "verification/development/NS-02/acceptance063.json",
+    "verification/development/NS-03/acceptance064.json",
+    "verification/development/NS-04/acceptance065.json",
+    "verification/development/NS-04/runtime066/summary.json",
+    "verification/development/NS-04/acceptance067.json",
+    "verification/development/CV-01/acceptance073.json",
+    "verification/development/CV-01/acceptance074.json",
+    "verification/development/CV-01/acceptance075.json",
+    "verification/development/BASE-01/ordinary076-b001.xml"
   ],
   "counting": "Unique completed functional items; blocked probes, duplicate rows and historical evidence maintenance excluded.",
   "current_item": "Ten unique completed items; ordinary and installed native batch passed.",
-  "release_evidence": ".local/evidence/development/BASE-04/release057.json"
+  "release_evidence": "verification/development/BASE-04/release057.json"
 }

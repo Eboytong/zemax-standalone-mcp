@@ -17,11 +17,11 @@
       "native_deselected": 538,
       "failures": 0,
       "errors": 0,
-      "path": ".local/evidence/development/RL-01/ordinary054.xml"
+      "path": "verification/development/RL-01/ordinary054.xml"
     },
     "wheel": {
       "path": "wheels/zemax_standalone_mcp-0.1.44-py3-none-any.whl",
-      "independent_install": ".local/evidence/development/RL-01/wheel-install044",
+      "independent_install": "verification/development/RL-01/wheel-install044",
       "status": "passed"
     },
     "stdio": {
@@ -29,16 +29,16 @@
       "analysis_kind_count": 90,
       "closed": true,
       "status": "passed",
-      "evidence": ".local/evidence/development/RL-01/stdio-smoke054.json"
+      "evidence": "verification/development/RL-01/stdio-smoke054.json"
     },
     "installed_native_launcher": {
       "status": "passed_without_connect",
-      "evidence": ".local/evidence/development/RL-01/installed-launcher054.json"
+      "evidence": "verification/development/RL-01/installed-launcher054.json"
     },
     "prepared_native_cases": 4,
     "new_native_execution": 0,
     "corrected_test_expectation": {
-      "evidence": ".local/evidence/development/RL-01/stdio-smoke054-attempt1.json",
+      "evidence": "verification/development/RL-01/stdio-smoke054-attempt1.json",
       "expected": "NO_WORKING_MODEL before opening a lens"
     }
   },

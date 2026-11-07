@@ -2,19 +2,19 @@
   "date": "2026-11-06",
   "item": "GE-01.Gaps",
   "state": "implemented",
-  "ordinary": ".local/evidence/development/GE-01/ordinary131.xml",
+  "ordinary": "verification/development/GE-01/ordinary131.xml",
   "ordinary_passed": 69,
-  "native": ".local/evidence/development/GE-01/native131-gaps-final.xml",
+  "native": "verification/development/GE-01/native131-gaps-final.xml",
   "native_passed": 2,
   "runs": [
     {
-      "run": ".local/runs/geometry129_object_gap_f0ddc6612c",
+      "run": "outputs/runs/geometry129_object_gap_f0ddc6612c",
       "checks": 3,
       "max_error": 2.220446049250313e-16,
       "disconnect_confirmed": true
     },
     {
-      "run": ".local/runs/geometry104_selected_dab796cb18",
+      "run": "outputs/runs/geometry104_selected_dab796cb18",
       "checks": 7,
       "max_error": 2.842170943040401e-14,
       "disconnect_confirmed": true

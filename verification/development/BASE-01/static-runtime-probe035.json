@@ -2,9 +2,9 @@
   "version": "0.1.35",
   "date": "2026-11-05",
   "assembly": "ZOSAPI_Interfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
-  "source": ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+  "source": "verification/development/BASE-01/probe/api-interfaces.json",
   "scope": "Remaining pending analysis entries after interface-backed adapters",
-  "initialization_evidence": ".local/evidence/development/BASE-04/connection040.json",
+  "initialization_evidence": "verification/development/BASE-04/connection040.json",
   "initialization_status": "Existing isolated initialization timed out at 180.578 seconds; no session/feature license result returned; no repeated launch",
   "items": [
     {

@@ -7,7 +7,7 @@
   "installed_release": "0.1.61",
   "native": "24.2.0 build240529 Premium",
   "input_source": "Official Cooke field1/wavelength1 .48um; existing509 rays, no additional native execution",
-  "input_evidence": ".local/runs/surface_mtf509_pupil_3517781fe1/field1-rays.json",
+  "input_evidence": "outputs/runs/surface_mtf509_pupil_3517781fe1/field1-rays.json",
   "request": "run_batch_ray_trace opd=true; normalized disk nodes (index-128)/127, strict circle; 50613 valid samples",
   "actual_settings": "Original509 calls.json and autocorrelation.json; QuickYield settings from494/507 evidence",
   "command": "Offline NumPy mean/std of valid509 OPD; no native model or task opened",

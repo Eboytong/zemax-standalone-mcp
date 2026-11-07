@@ -2,29 +2,29 @@
   "date": "2026-11-06",
   "item": "IM-01.ImageSimulation",
   "state": "implemented",
-  "native_file_probe": ".local/runs/image_output140_2b97541378/probe.json",
-  "ordinary": ".local/evidence/development/IM-01/ordinary143.xml",
+  "native_file_probe": "outputs/runs/image_output140_2b97541378/probe.json",
+  "ordinary": "verification/development/IM-01/ordinary143.xml",
   "ordinary_passed": 64,
-  "native": ".local/evidence/development/IM-01/native143-rgb-export.xml",
+  "native": "verification/development/IM-01/native143-rgb-export.xml",
   "native_passed": 3,
   "runs": [
     {
-      "run": ".local/runs/imaging023_image_simulation_point_45422bb7a7",
+      "run": "outputs/runs/imaging023_image_simulation_point_45422bb7a7",
       "normal_analysis_close": true,
       "disconnect_confirmed": true,
-      "raw_native_png": ".local/runs/imaging023_image_simulation_point_45422bb7a7/native.png"
+      "raw_native_png": "outputs/runs/imaging023_image_simulation_point_45422bb7a7/native.png"
     },
     {
-      "run": ".local/runs/imaging023_image_simulation_bars_7307c00ce9",
+      "run": "outputs/runs/imaging023_image_simulation_bars_7307c00ce9",
       "normal_analysis_close": true,
       "disconnect_confirmed": true,
-      "raw_native_png": ".local/runs/imaging023_image_simulation_bars_7307c00ce9/native.png"
+      "raw_native_png": "outputs/runs/imaging023_image_simulation_bars_7307c00ce9/native.png"
     },
     {
-      "run": ".local/runs/imaging023_image_simulation_edge_c19d6a9d0f",
+      "run": "outputs/runs/imaging023_image_simulation_edge_c19d6a9d0f",
       "normal_analysis_close": true,
       "disconnect_confirmed": true,
-      "raw_native_png": ".local/runs/imaging023_image_simulation_edge_c19d6a9d0f/native.png"
+      "raw_native_png": "outputs/runs/imaging023_image_simulation_edge_c19d6a9d0f/native.png"
     }
   ],
   "implemented": [

@@ -58,7 +58,7 @@
       "entities": 53
     }
   ],
-  "command": ".venv/Scripts/python.exe -m pytest tests/test_cad_layer_modes_live.py --run-zemax -q -x --junitxml=.local/evidence/development/EXT-EXPORT/native585-solid-surface-layers.xml",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_cad_layer_modes_live.py --run-zemax -q -x --junitxml=verification/development/EXT-EXPORT/native585-solid-surface-layers.xml",
   "native_diagnostic_pytest_passed": 1,
   "numerical_layer_acceptance": false,
   "reference": "IGES Directory Entry level field, retained per-entity raw types and levels; adopted LensLayer10 and two configurations expected10/11 for AllByLayer,10 for AllAtOnce",

@@ -1,0 +1,27 @@
+Computes the polarization induced phase aberration of an optical system.
+Jx, Jy Jones electric field. See " Defining the Initial Polarization "
+X, Y Phase Phase of the X, Y component of the Jones electric field in degrees.
+Wavelength The wavelength number of the rays to trace.
+Field The field position number of the rays to trace.
+Discussion
+Polarization phase aberrations are induced by the effects of refraction through dielectric media, and by reflection
+from metallic or dielectric mirrors. This feature computes for the specified field position and wavelength the
+polarization phase aberration in the image space forthe X and Y orientations ofthe electric field vector as a function
+of entrance pupil coordinate. The aberration is defined as the variation in the phase of the electric field in one
+direction, such as X or Y, as a function of the pupil position. For example, if the electric field in the X direction is (0.7
++ 0.7i) for the chief ray (note the E field values are complex), and at some other point in the pupil the electric field
+in the X direction is (-0.7 + 0.7i) then the polarization phase aberration between these points is one-quarter wave
+(the phase of Ex changed from 45 degrees to 135 degrees, or one-quarter wave). Note this is completely distinct
+from the phase differences between the Ex and Ey fields, which describe the polarization state (linear or circular for
+example). For phase differences between Ex and Ey see " Power Pupil Map ".
+Like the usual OPD plots, the polarization phase aberration is referenced to the chief ray. However, there are cases
+where the chief ray phase cannot be determined in both orientations. For example, in an axial symmetric system,
+if the incident polarization is linear in the Y direction, there is zero intensity in the X direction for the chief ray, and
+therefore the Xphase is indeterminate. Forotherrays inthepupil,there is generally a slightrotationofthepolarization,
+and therefore the resulting electric field in the X direction yields a valid phase angle. To avoid this discontinuity in
+the phase, OpticStudio averages two rays on either side of the chief ray to interpolate the chief ray phase. The
+problem may still appear under certain circumstances, even with this averaging technique. In all cases, the phase
+data is still valid, because the phase aberration has no effect on image quality if the intensity is zero.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 904
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

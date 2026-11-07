@@ -1,0 +1,11 @@
+{
+  "fluorescence_fixture": "outputs/fluorescence_integral_total_energy_408a9f97d8",
+  "native_reference": "outputs/wavelength_filter_acceptance_20261025/native-official/native-reference.json",
+  "scope": "Existing seed42, 100000 rays, dilute sample_3 emission in uniform N-BK7; no new stochastic trace is needed for membership comparison",
+  "object": 3,
+  "lens_unit": "Millimeters",
+  "lower_nm": 500,
+  "upper_nm": 750,
+  "step_nm": 25,
+  "path_wavelength_index_atol": 2e-7
+}

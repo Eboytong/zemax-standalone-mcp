@@ -11,7 +11,7 @@
   "new_completed": [
     "NS-03.NSCGeometricMtf"
   ],
-  "completed_evidence": ".local/evidence/development/NS-03/acceptance565-endpoints.json",
+  "completed_evidence": "verification/development/NS-03/acceptance565-endpoints.json",
   "maintenance": [
     "SagTable asymmetry witness, unclipped owned slope copy, cleanup/cancellation and provenance558"
   ],

@@ -7,15 +7,15 @@
   "license": "PremiumEdition",
   "scope": "Typed native settings and all four aberration types, Standard term identity, signed physical grids, three displays, rectangle/ellipse mask, field/wavelength/current configuration, cm ObjectHeight, pagination/PNG, failure/cancel/reuse/save-reload and closure",
   "commands": [
-    ".venv/Scripts/python.exe -m pytest tests/test_full_field_aberration_live.py --run-zemax -q --junitxml=.local/evidence/development/CV-01/native292-full-field.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_full_field_aberration_lifecycle_live.py --run-zemax -q --junitxml=.local/evidence/development/CV-01/native295-final.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_full_field_aberration.py tests/test_zernike_reference.py -q --junitxml=.local/evidence/development/CV-01/ordinary294.xml"
+    ".venv/Scripts/python.exe -m pytest tests/test_full_field_aberration_live.py --run-zemax -q --junitxml=verification/development/CV-01/native292-full-field.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_full_field_aberration_lifecycle_live.py --run-zemax -q --junitxml=verification/development/CV-01/native295-final.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_full_field_aberration.py tests/test_zernike_reference.py -q --junitxml=verification/development/CV-01/ordinary294.xml"
   ],
   "ordinary_passed": 20,
   "native_passed": 3,
   "runs": [
     {
-      "path": ".local/runs/full_field288_2a1d8ac6f5",
+      "path": "outputs/runs/full_field288_2a1d8ac6f5",
       "checks": 12,
       "failed_checks": 0,
       "max_error": 0.0001781143120826445,
@@ -43,7 +43,7 @@
       }
     },
     {
-      "path": ".local/runs/full_field293_displays_47c2acaba8",
+      "path": "outputs/runs/full_field293_displays_47c2acaba8",
       "checks": 108,
       "failed_checks": 0,
       "max_error": 2.7755575615628914e-17,
@@ -71,7 +71,7 @@
       }
     },
     {
-      "path": ".local/runs/full_field294_lifecycle_2f0b466342",
+      "path": "outputs/runs/full_field294_lifecycle_2f0b466342",
       "checks": 5,
       "failed_checks": 0,
       "max_error": 2.9030532630591743e-09,

@@ -10,6 +10,6 @@
 
 原生验收覆盖 3、5、7、9、101 点、X/Y 线偏振和椭圆/圆偏振、两种波长、轴上/Y 离轴/斜向/负视场及配置 2。Ex/Ey、横向强度与独立批量偏振光线参考逐点比较，容差 `1e-8+1e-7×参考值`；相位模 360 度误差容差 `1e-6°`；中心强度另用本机 N-BK7 Sellmeier 系数及 Fresnel 公式比较。原生关闭、模型状态、分页及图像导出已执行；历史报告子进程曾超过同步 45 秒时限，保留 `REPORT_TIMEOUT` 记录。独立标准输入及工作目录调整后，配置 2、负视场、450° 相位的小采样报告通过；报告散点 PNG 已纳入验收。101 点采样完成全部逐点数值和模型状态检查，其完整报告没有在修复后复跑。
 
-证据：`.local/evidence/development/PO-01/native-acceptance054.json`、`native054-final3.xml`；首次强度参考定义和双分量视场解析失败记录分别保留。其余四项偏振专题仍按逐项台账继续探查。调用示例见 `examples/polarization_pupil054_requests.json`。
+证据：`.local/evidence/development/PO-01/native-acceptance054.json`、`native054-final3.xml`；首次强度参考定义和双分量视场解析失败记录分别保留。其余四项偏振专题仍按逐项台账继续探查。调用示例见 `examples/requests/polarization_pupil054_requests.json`。
 
 最终独立安装包证据：`.local/evidence/development/PO-01/acceptance054/summary.json`。6 组请求共 31,767 次数值比较，振幅/强度最大绝对误差低于 `5e-10`，相位最大误差低于 `5e-8°`，中心 Fresnel 误差约 `4.06e-10`。原生文本、CFG、调用回执和图像副本已保存。

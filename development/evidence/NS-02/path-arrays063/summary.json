@@ -1,0 +1,120 @@
+{
+  "records": [
+    {
+      "threshold": 0,
+      "uncategorized_error": "There are no uncategorized paths.\r\n   在 ZemaxUI.ZOSAPI.Analysis.AR_PathAnalysisData.GetPathUncategorized()",
+      "entries": [
+        {
+          "path_number": 1,
+          "object_count": 4,
+          "unique_objects": 0,
+          "objects": [
+            1,
+            2,
+            3
+          ],
+          "matrix": [
+            [
+              1.0,
+              0.0
+            ],
+            [
+              2.0,
+              1.0
+            ],
+            [
+              2.0,
+              2.0
+            ],
+            [
+              3.0,
+              0.0
+            ]
+          ],
+          "flux": 0.9167180210351944,
+          "sequence": "1.0, 2.1, 2.2, 3.0"
+        }
+      ],
+      "num_paths": 1,
+      "alternate_lookups": [
+        {
+          "number": 0,
+          "present": false,
+          "path_number": null
+        },
+        {
+          "number": 4294967295,
+          "present": false,
+          "path_number": null
+        }
+      ],
+      "text_export": true,
+      "closed": true
+    },
+    {
+      "threshold": 1,
+      "uncategorized_error": "There are no uncategorized paths.\r\n   在 ZemaxUI.ZOSAPI.Analysis.AR_PathAnalysisData.GetPathUncategorized()",
+      "entries": [],
+      "num_paths": 0,
+      "alternate_lookups": [
+        {
+          "number": 0,
+          "present": false,
+          "path_number": null
+        },
+        {
+          "number": 4294967295,
+          "present": false,
+          "path_number": null
+        }
+      ],
+      "text_export": true,
+      "closed": true
+    }
+  ],
+  "disconnect": {
+    "ok": true,
+    "data": {
+      "connected": false,
+      "last_session": {
+        "session_id": "fa50aa79e51246b7854bc3b0365e5890",
+        "model_revision": 4,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\NS-02\\path-arrays063\\runs\\fa50aa79e51246b7854bc3b0365e5890\\working_f34907f9.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\NS-02\\path-arrays063\\runs\\fa50aa79e51246b7854bc3b0365e5890\\checkpoint_r4_disconnect_2be4a72e.zos",
+        "requires_reconnect": false,
+        "mode": "NonSequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 4,
+          "session_id": "fa50aa79e51246b7854bc3b0365e5890"
+        }
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": null,
+      "model_revision": 4,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": null,
+      "opticstudio_build": null,
+      "license": null,
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "geometry": {
+        "state": "pending",
+        "model_revision": 4,
+        "session_id": null
+      }
+    },
+    "artifacts": []
+  }
+}

@@ -10,7 +10,7 @@
       "release_action": "按独立阻塞项继续User、BSDF和ISX；ABgFile已完成项目采用与重载",
       "evidence": [
         "verification/property-pages017-summary.json",
-        ".local/evidence/development/BASE-04/connection040.json"
+        "verification/development/BASE-04/connection040.json"
       ]
     },
     {
@@ -60,9 +60,9 @@
       "reason": "补测连接返回 INVALID_LICENSE；重试超过十分钟无返回。先恢复有效连接。",
       "release_action": "恢复 ZOS-API 连接后补材料 Snell/色散基准或不同配置口径数值对照",
       "evidence": [
-        ".local/evidence/development/ED-02/final-cases018/cases.json",
+        "verification/development/ED-02/final-cases018/cases.json",
         "docs/solve-extensions.md",
-        ".local/evidence/development/ED-02/licensing018.json"
+        "verification/development/ED-02/licensing018.json"
       ]
     },
     {
@@ -72,9 +72,9 @@
       "reason": "补测连接返回 INVALID_LICENSE；重试超过十分钟无返回。先恢复有效连接。",
       "release_action": "恢复 ZOS-API 连接后补材料 Snell/色散基准或不同配置口径数值对照",
       "evidence": [
-        ".local/evidence/development/ED-02/final-cases018/cases.json",
+        "verification/development/ED-02/final-cases018/cases.json",
         "docs/solve-extensions.md",
-        ".local/evidence/development/ED-02/licensing018.json"
+        "verification/development/ED-02/licensing018.json"
       ]
     },
     {
@@ -84,9 +84,9 @@
       "reason": "补测连接返回 INVALID_LICENSE；重试超过十分钟无返回。先恢复有效连接。",
       "release_action": "恢复 ZOS-API 连接后补材料 Snell/色散基准或不同配置口径数值对照",
       "evidence": [
-        ".local/evidence/development/ED-02/final-cases018/cases.json",
+        "verification/development/ED-02/final-cases018/cases.json",
         "docs/solve-extensions.md",
-        ".local/evidence/development/ED-02/licensing018.json"
+        "verification/development/ED-02/licensing018.json"
       ]
     },
     {
@@ -96,9 +96,9 @@
       "reason": "补测连接返回 INVALID_LICENSE；重试超过十分钟无返回。先恢复有效连接。",
       "release_action": "恢复 ZOS-API 连接后补材料 Snell/色散基准或不同配置口径数值对照",
       "evidence": [
-        ".local/evidence/development/ED-02/final-cases018/cases.json",
+        "verification/development/ED-02/final-cases018/cases.json",
         "docs/solve-extensions.md",
-        ".local/evidence/development/ED-02/licensing018.json"
+        "verification/development/ED-02/licensing018.json"
       ]
     },
     {
@@ -108,9 +108,9 @@
       "reason": "补测连接返回 INVALID_LICENSE；重试超过十分钟无返回。先恢复有效连接。",
       "release_action": "恢复 ZOS-API 连接后补材料 Snell/色散基准或不同配置口径数值对照",
       "evidence": [
-        ".local/evidence/development/ED-02/final-cases018/cases.json",
+        "verification/development/ED-02/final-cases018/cases.json",
         "docs/solve-extensions.md",
-        ".local/evidence/development/ED-02/licensing018.json"
+        "verification/development/ED-02/licensing018.json"
       ]
     },
     {
@@ -120,9 +120,9 @@
       "reason": "直接 API 与 MCP 均回退模式或丢失宏名；见 controls.json。",
       "release_action": "取得能采用并持久保存该模式/宏名的正式原生路径",
       "evidence": [
-        ".local/evidence/development/ED-02/final-cases018/cases.json",
+        "verification/development/ED-02/final-cases018/cases.json",
         "docs/solve-extensions.md",
-        ".local/evidence/development/ED-02/diagnostics/controls.json"
+        "verification/development/ED-02/diagnostics/controls.json"
       ]
     },
     {
@@ -132,9 +132,9 @@
       "reason": "直接 API 与 MCP 均回退模式或丢失宏名；见 controls.json。",
       "release_action": "取得能采用并持久保存该模式/宏名的正式原生路径",
       "evidence": [
-        ".local/evidence/development/ED-02/final-cases018/cases.json",
+        "verification/development/ED-02/final-cases018/cases.json",
         "docs/solve-extensions.md",
-        ".local/evidence/development/ED-02/diagnostics/controls.json"
+        "verification/development/ED-02/diagnostics/controls.json"
       ]
     },
     {
@@ -144,9 +144,9 @@
       "reason": "旧用例选择了非活动参数；已修正基线，补测 connect 返回 INVALID_LICENSE。",
       "release_action": "恢复连接后用非零 GridSag 重跑宏参数9/10",
       "evidence": [
-        ".local/evidence/development/ED-02/final-cases018/cases.json",
+        "verification/development/ED-02/final-cases018/cases.json",
         "docs/solve-extensions.md",
-        ".local/evidence/development/ED-02/grid-macros018/calls.json"
+        "verification/development/ED-02/grid-macros018/calls.json"
       ]
     },
     {
@@ -156,9 +156,9 @@
       "reason": "旧用例选择了非活动参数；已修正基线，补测 connect 返回 INVALID_LICENSE。",
       "release_action": "恢复连接后用非零 GridSag 重跑宏参数9/10",
       "evidence": [
-        ".local/evidence/development/ED-02/final-cases018/cases.json",
+        "verification/development/ED-02/final-cases018/cases.json",
         "docs/solve-extensions.md",
-        ".local/evidence/development/ED-02/grid-macros018/calls.json"
+        "verification/development/ED-02/grid-macros018/calls.json"
       ]
     },
     {
@@ -168,9 +168,9 @@
       "reason": "直接 API 与 MCP 均回退模式或丢失宏名；见 controls.json。",
       "release_action": "取得能采用并持久保存该模式/宏名的正式原生路径",
       "evidence": [
-        ".local/evidence/development/ED-02/final-cases018/cases.json",
+        "verification/development/ED-02/final-cases018/cases.json",
         "docs/solve-extensions.md",
-        ".local/evidence/development/ED-02/diagnostics/controls.json"
+        "verification/development/ED-02/diagnostics/controls.json"
       ]
     },
     {
@@ -180,9 +180,9 @@
       "reason": "直接 API 与 MCP 均回退模式或丢失宏名；见 controls.json。",
       "release_action": "取得能采用并持久保存该模式/宏名的正式原生路径",
       "evidence": [
-        ".local/evidence/development/ED-02/final-cases018/cases.json",
+        "verification/development/ED-02/final-cases018/cases.json",
         "docs/solve-extensions.md",
-        ".local/evidence/development/ED-02/diagnostics/controls.json"
+        "verification/development/ED-02/diagnostics/controls.json"
       ]
     },
     {
@@ -192,7 +192,7 @@
       "reason": "81种面型的基本列和活动参数未提供可用单元格；具体接口情况见说明。",
       "release_action": "取得本机正式可用单元格及设置接口、样例后实现",
       "evidence": [
-        ".local/evidence/development/ED-02/all-types/probe.json",
+        "verification/development/ED-02/all-types/probe.json",
         "docs/solve-extensions.md"
       ]
     },
@@ -203,7 +203,7 @@
       "reason": "81种面型的基本列和活动参数未提供可用单元格；具体接口情况见说明。",
       "release_action": "取得本机正式可用单元格及设置接口、样例后实现",
       "evidence": [
-        ".local/evidence/development/ED-02/all-types/probe.json",
+        "verification/development/ED-02/all-types/probe.json",
         "docs/solve-extensions.md"
       ]
     },
@@ -214,7 +214,7 @@
       "reason": "81种面型的基本列和活动参数未提供可用单元格；具体接口情况见说明。",
       "release_action": "取得本机正式可用单元格及设置接口、样例后实现",
       "evidence": [
-        ".local/evidence/development/ED-02/all-types/probe.json",
+        "verification/development/ED-02/all-types/probe.json",
         "docs/solve-extensions.md"
       ]
     },
@@ -225,7 +225,7 @@
       "reason": "81种面型的基本列和活动参数未提供可用单元格；具体接口情况见说明。",
       "release_action": "取得本机正式可用单元格及设置接口、样例后实现",
       "evidence": [
-        ".local/evidence/development/ED-02/all-types/probe.json",
+        "verification/development/ED-02/all-types/probe.json",
         "docs/solve-extensions.md"
       ]
     },
@@ -236,7 +236,7 @@
       "reason": "81种面型的基本列和活动参数未提供可用单元格；具体接口情况见说明。",
       "release_action": "取得本机正式可用单元格及设置接口、样例后实现",
       "evidence": [
-        ".local/evidence/development/ED-02/all-types/probe.json",
+        "verification/development/ED-02/all-types/probe.json",
         "docs/solve-extensions.md"
       ]
     },
@@ -247,9 +247,9 @@
       "reason": "本批连接180秒未初始化完成；原生采用待测。",
       "release_action": "恢复连接后执行editor_extensions_stdio并保存重载",
       "evidence": [
-        ".local/evidence/development/ED-03/probe/editor-interfaces.json",
+        "verification/development/ED-03/probe/editor-interfaces.json",
         "docs/editor-extensions.md",
-        ".local/evidence/development/ED-03/ordinary019-final.xml"
+        "verification/development/ED-03/ordinary019-final.xml"
       ]
     },
     {
@@ -259,9 +259,9 @@
       "reason": "本批连接180秒未初始化完成；原生采用待测。",
       "release_action": "恢复连接后执行editor_extensions_stdio并保存重载",
       "evidence": [
-        ".local/evidence/development/ED-03/probe/editor-interfaces.json",
+        "verification/development/ED-03/probe/editor-interfaces.json",
         "docs/editor-extensions.md",
-        ".local/evidence/development/ED-03/ordinary019-final.xml"
+        "verification/development/ED-03/ordinary019-final.xml"
       ]
     },
     {
@@ -271,9 +271,9 @@
       "reason": "本批连接180秒未初始化完成；原生采用待测。",
       "release_action": "恢复连接后执行editor_extensions_stdio并保存重载",
       "evidence": [
-        ".local/evidence/development/ED-03/probe/editor-interfaces.json",
+        "verification/development/ED-03/probe/editor-interfaces.json",
         "docs/editor-extensions.md",
-        ".local/evidence/development/ED-03/ordinary019-final.xml"
+        "verification/development/ED-03/ordinary019-final.xml"
       ]
     },
     {
@@ -283,9 +283,9 @@
       "reason": "本批连接180秒未初始化完成；原生采用待测。",
       "release_action": "恢复连接后执行editor_extensions_stdio并保存重载",
       "evidence": [
-        ".local/evidence/development/ED-03/probe/editor-interfaces.json",
+        "verification/development/ED-03/probe/editor-interfaces.json",
         "docs/editor-extensions.md",
-        ".local/evidence/development/ED-03/ordinary019-final.xml"
+        "verification/development/ED-03/ordinary019-final.xml"
       ]
     },
     {
@@ -295,9 +295,9 @@
       "reason": "本批连接180秒未初始化完成；原生采用待测。",
       "release_action": "恢复连接后执行editor_extensions_stdio并保存重载",
       "evidence": [
-        ".local/evidence/development/ED-03/probe/editor-interfaces.json",
+        "verification/development/ED-03/probe/editor-interfaces.json",
         "docs/editor-extensions.md",
-        ".local/evidence/development/ED-03/ordinary019-final.xml"
+        "verification/development/ED-03/ordinary019-final.xml"
       ]
     },
     {
@@ -307,9 +307,9 @@
       "reason": "本批连接180秒未初始化完成；原生采用待测。",
       "release_action": "恢复连接后执行editor_extensions_stdio并保存重载",
       "evidence": [
-        ".local/evidence/development/ED-03/probe/editor-interfaces.json",
+        "verification/development/ED-03/probe/editor-interfaces.json",
         "docs/editor-extensions.md",
-        ".local/evidence/development/ED-03/ordinary019-final.xml"
+        "verification/development/ED-03/ordinary019-final.xml"
       ]
     },
     {
@@ -319,9 +319,9 @@
       "reason": "本批连接180秒未初始化完成；原生采用待测。",
       "release_action": "恢复连接后执行editor_extensions_stdio并保存重载",
       "evidence": [
-        ".local/evidence/development/ED-03/probe/editor-interfaces.json",
+        "verification/development/ED-03/probe/editor-interfaces.json",
         "docs/editor-extensions.md",
-        ".local/evidence/development/ED-03/ordinary019-final.xml"
+        "verification/development/ED-03/ordinary019-final.xml"
       ]
     },
     {
@@ -331,9 +331,9 @@
       "reason": "本批连接180秒未初始化完成；原生采用待测。",
       "release_action": "恢复连接后执行editor_extensions_stdio并保存重载",
       "evidence": [
-        ".local/evidence/development/ED-03/probe/editor-interfaces.json",
+        "verification/development/ED-03/probe/editor-interfaces.json",
         "docs/editor-extensions.md",
-        ".local/evidence/development/ED-03/ordinary019-final.xml"
+        "verification/development/ED-03/ordinary019-final.xml"
       ]
     },
     {
@@ -343,9 +343,9 @@
       "reason": "本批连接180秒未初始化完成；原生采用待测。",
       "release_action": "恢复连接后执行editor_extensions_stdio并保存重载",
       "evidence": [
-        ".local/evidence/development/ED-03/probe/editor-interfaces.json",
+        "verification/development/ED-03/probe/editor-interfaces.json",
         "docs/editor-extensions.md",
-        ".local/evidence/development/ED-03/ordinary019-final.xml"
+        "verification/development/ED-03/ordinary019-final.xml"
       ]
     },
     {
@@ -355,9 +355,9 @@
       "reason": "本批连接180秒未初始化完成；原生采用待测。",
       "release_action": "恢复连接后执行editor_extensions_stdio并保存重载",
       "evidence": [
-        ".local/evidence/development/ED-03/probe/editor-interfaces.json",
+        "verification/development/ED-03/probe/editor-interfaces.json",
         "docs/editor-extensions.md",
-        ".local/evidence/development/ED-03/ordinary019-final.xml"
+        "verification/development/ED-03/ordinary019-final.xml"
       ]
     },
     {
@@ -367,9 +367,9 @@
       "reason": "本批连接180秒未初始化完成；原生采用待测。",
       "release_action": "恢复连接后执行editor_extensions_stdio并保存重载",
       "evidence": [
-        ".local/evidence/development/ED-03/probe/editor-interfaces.json",
+        "verification/development/ED-03/probe/editor-interfaces.json",
         "docs/editor-extensions.md",
-        ".local/evidence/development/ED-03/ordinary019-final.xml"
+        "verification/development/ED-03/ordinary019-final.xml"
       ]
     },
     {
@@ -379,9 +379,9 @@
       "reason": "本批连接180秒未初始化完成；原生采用待测。",
       "release_action": "恢复连接后执行editor_extensions_stdio并保存重载",
       "evidence": [
-        ".local/evidence/development/ED-03/probe/editor-interfaces.json",
+        "verification/development/ED-03/probe/editor-interfaces.json",
         "docs/editor-extensions.md",
-        ".local/evidence/development/ED-03/ordinary019-final.xml"
+        "verification/development/ED-03/ordinary019-final.xml"
       ]
     },
     {
@@ -391,9 +391,9 @@
       "reason": "本批连接180秒未初始化完成；原生采用待测。",
       "release_action": "恢复连接后执行editor_extensions_stdio并保存重载",
       "evidence": [
-        ".local/evidence/development/ED-03/probe/editor-interfaces.json",
+        "verification/development/ED-03/probe/editor-interfaces.json",
         "docs/editor-extensions.md",
-        ".local/evidence/development/ED-03/ordinary019-final.xml"
+        "verification/development/ED-03/ordinary019-final.xml"
       ]
     },
     {
@@ -403,9 +403,9 @@
       "reason": "本批连接180秒未初始化完成；原生采用待测。",
       "release_action": "恢复连接后执行editor_extensions_stdio并保存重载",
       "evidence": [
-        ".local/evidence/development/ED-03/probe/editor-interfaces.json",
+        "verification/development/ED-03/probe/editor-interfaces.json",
         "docs/editor-extensions.md",
-        ".local/evidence/development/ED-03/ordinary019-final.xml"
+        "verification/development/ED-03/ordinary019-final.xml"
       ]
     },
     {
@@ -415,9 +415,9 @@
       "reason": "本机IMultiConfigEditor未声明独立Load/Save方法。",
       "release_action": "通过完整系统保存加载配置表；取得独立正式文件接口后继续",
       "evidence": [
-        ".local/evidence/development/ED-03/probe/editor-interfaces.json",
+        "verification/development/ED-03/probe/editor-interfaces.json",
         "docs/editor-extensions.md",
-        ".local/evidence/development/ED-03/ordinary019-final.xml"
+        "verification/development/ED-03/ordinary019-final.xml"
       ]
     },
     {
@@ -428,8 +428,8 @@
       "release_action": "恢复许可连接后串行执行design_tools_live并补独立数值参考、资源型向导Apply；继续ED-05",
       "evidence": [
         "verification/design-tools020-summary.json",
-        ".local/evidence/development/ED-04/ordinary020-final.xml",
-        ".local/evidence/development/BASE-04/connection040.json"
+        "verification/development/ED-04/ordinary020-final.xml",
+        "verification/development/BASE-04/connection040.json"
       ]
     },
     {
@@ -440,8 +440,8 @@
       "release_action": "恢复许可连接后串行执行design_tools_live并补独立数值参考、资源型向导Apply；继续ED-05",
       "evidence": [
         "verification/design-tools020-summary.json",
-        ".local/evidence/development/ED-04/ordinary020-final.xml",
-        ".local/evidence/development/BASE-04/connection040.json"
+        "verification/development/ED-04/ordinary020-final.xml",
+        "verification/development/BASE-04/connection040.json"
       ]
     },
     {
@@ -452,8 +452,8 @@
       "release_action": "恢复许可连接后串行执行design_tools_live并补独立数值参考、资源型向导Apply；继续ED-05",
       "evidence": [
         "verification/design-tools020-summary.json",
-        ".local/evidence/development/ED-04/ordinary020-final.xml",
-        ".local/evidence/development/BASE-04/connection040.json"
+        "verification/development/ED-04/ordinary020-final.xml",
+        "verification/development/BASE-04/connection040.json"
       ]
     },
     {
@@ -464,8 +464,8 @@
       "release_action": "恢复许可连接后串行执行design_tools_live并补独立数值参考、资源型向导Apply；继续ED-05",
       "evidence": [
         "verification/design-tools020-summary.json",
-        ".local/evidence/development/ED-04/ordinary020-final.xml",
-        ".local/evidence/development/BASE-04/connection040.json"
+        "verification/development/ED-04/ordinary020-final.xml",
+        "verification/development/BASE-04/connection040.json"
       ]
     },
     {
@@ -476,8 +476,8 @@
       "release_action": "恢复许可连接后串行执行design_tools_live并补独立数值参考、资源型向导Apply；继续ED-05",
       "evidence": [
         "verification/design-tools020-summary.json",
-        ".local/evidence/development/ED-04/ordinary020-final.xml",
-        ".local/evidence/development/BASE-04/connection040.json"
+        "verification/development/ED-04/ordinary020-final.xml",
+        "verification/development/BASE-04/connection040.json"
       ]
     },
     {
@@ -488,8 +488,8 @@
       "release_action": "恢复许可连接后串行执行design_tools_live并补独立数值参考、资源型向导Apply；继续ED-05",
       "evidence": [
         "verification/design-tools020-summary.json",
-        ".local/evidence/development/ED-04/ordinary020-final.xml",
-        ".local/evidence/development/BASE-04/connection040.json"
+        "verification/development/ED-04/ordinary020-final.xml",
+        "verification/development/BASE-04/connection040.json"
       ]
     },
     {
@@ -500,8 +500,8 @@
       "release_action": "恢复许可连接后串行执行design_tools_live并补独立数值参考、资源型向导Apply；继续ED-05",
       "evidence": [
         "verification/design-tools020-summary.json",
-        ".local/evidence/development/ED-04/ordinary020-final.xml",
-        ".local/evidence/development/BASE-04/connection040.json"
+        "verification/development/ED-04/ordinary020-final.xml",
+        "verification/development/BASE-04/connection040.json"
       ]
     },
     {
@@ -512,8 +512,8 @@
       "release_action": "恢复许可连接后串行执行design_tools_live并补独立数值参考、资源型向导Apply；继续ED-05",
       "evidence": [
         "verification/design-tools020-summary.json",
-        ".local/evidence/development/ED-04/ordinary020-final.xml",
-        ".local/evidence/development/BASE-04/connection040.json"
+        "verification/development/ED-04/ordinary020-final.xml",
+        "verification/development/BASE-04/connection040.json"
       ]
     },
     {
@@ -524,8 +524,8 @@
       "release_action": "恢复许可连接后串行执行design_tools_live并补独立数值参考、资源型向导Apply；继续ED-05",
       "evidence": [
         "verification/design-tools020-summary.json",
-        ".local/evidence/development/ED-04/ordinary020-final.xml",
-        ".local/evidence/development/BASE-04/connection040.json"
+        "verification/development/ED-04/ordinary020-final.xml",
+        "verification/development/BASE-04/connection040.json"
       ]
     },
     {
@@ -695,8 +695,8 @@
       "reason": "Latest isolated ZOS-API startup timed out after 180.578 seconds; native execution and resource-close receipt are pending.",
       "release_action": "Wait for successful OpticStudio initialization, then verify native settings, output units/dimensions, reference values and owned-analysis close.",
       "evidence": [
-        ".local/evidence/development/CO-01/diffraction-efficiency028.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        "verification/development/CO-01/diffraction-efficiency028.json",
+        "verification/development/BASE-01/probe/api-interfaces.json",
         "tests/test_diff_efficiency.py"
       ]
     },
@@ -707,8 +707,8 @@
       "reason": "Latest isolated ZOS-API startup timed out after 180.578 seconds; native execution and resource-close receipt are pending.",
       "release_action": "Wait for successful OpticStudio initialization, then verify native settings, output units/dimensions, reference values and owned-analysis close.",
       "evidence": [
-        ".local/evidence/development/CO-01/diffraction-efficiency028.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        "verification/development/CO-01/diffraction-efficiency028.json",
+        "verification/development/BASE-01/probe/api-interfaces.json",
         "tests/test_diff_efficiency.py"
       ]
     },
@@ -719,8 +719,8 @@
       "reason": "Latest isolated ZOS-API startup timed out after 180.578 seconds; native execution and resource-close receipt are pending.",
       "release_action": "Wait for successful OpticStudio initialization, then verify native settings, output units/dimensions, reference values and owned-analysis close.",
       "evidence": [
-        ".local/evidence/development/CO-01/diffraction-efficiency028.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        "verification/development/CO-01/diffraction-efficiency028.json",
+        "verification/development/BASE-01/probe/api-interfaces.json",
         "tests/test_diff_efficiency.py"
       ]
     },
@@ -731,8 +731,8 @@
       "reason": "Latest isolated ZOS-API initialization timed out after 180.578 seconds; runtime execution and resource close await successful startup.",
       "release_action": "After OpticStudio initializes successfully, verify AxisType settings, profile result and task close on a controlled GRIN model.",
       "evidence": [
-        ".local/evidence/development/MA-01/grin-profile029.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        "verification/development/MA-01/grin-profile029.json",
+        "verification/development/BASE-01/probe/api-interfaces.json",
         "tests/test_grin_profile.py"
       ]
     },
@@ -743,8 +743,8 @@
       "reason": "No matching IAS_* interface in static reflection; runtime New_Analysis/GetSettings could not run because initialization timed out after 180.578 seconds.",
       "release_action": "Inspect the runtime GetSettings type and result output after ZOS-API initialization succeeds; run and close a controlled case.",
       "evidence": [
-        ".local/evidence/development/MA-01/material-interface-probe029.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/MA-01/material-interface-probe029.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -754,8 +754,8 @@
       "reason": "No matching IAS_* interface in static reflection; runtime New_Analysis/GetSettings could not run because initialization timed out after 180.578 seconds.",
       "release_action": "Inspect the runtime GetSettings type and result output after ZOS-API initialization succeeds; run and close a controlled case.",
       "evidence": [
-        ".local/evidence/development/MA-01/material-interface-probe029.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/MA-01/material-interface-probe029.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -765,8 +765,8 @@
       "reason": "No matching IAS_* interface in static reflection; runtime New_Analysis/GetSettings could not run because initialization timed out after 180.578 seconds.",
       "release_action": "Inspect the runtime GetSettings type and result output after ZOS-API initialization succeeds; run and close a controlled case.",
       "evidence": [
-        ".local/evidence/development/MA-01/material-interface-probe029.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/MA-01/material-interface-probe029.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -776,8 +776,8 @@
       "reason": "No matching IAS_* interface in static reflection; runtime New_Analysis/GetSettings could not run because initialization timed out after 180.578 seconds.",
       "release_action": "Inspect the runtime GetSettings type and result output after ZOS-API initialization succeeds; run and close a controlled case.",
       "evidence": [
-        ".local/evidence/development/MA-01/material-interface-probe029.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/MA-01/material-interface-probe029.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -787,8 +787,8 @@
       "reason": "No matching IAS_* interface in static reflection; runtime New_Analysis/GetSettings could not run because initialization timed out after 180.578 seconds.",
       "release_action": "Inspect the runtime GetSettings type and result output after ZOS-API initialization succeeds; run and close a controlled case.",
       "evidence": [
-        ".local/evidence/development/MA-01/material-interface-probe029.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/MA-01/material-interface-probe029.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -798,8 +798,8 @@
       "reason": "No matching IAS_* interface in static reflection; runtime New_Analysis/GetSettings could not run because initialization timed out after 180.578 seconds.",
       "release_action": "Inspect the runtime GetSettings type and result output after ZOS-API initialization succeeds; run and close a controlled case.",
       "evidence": [
-        ".local/evidence/development/MA-01/material-interface-probe029.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/MA-01/material-interface-probe029.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -809,8 +809,8 @@
       "reason": "Latest startup timed out after 180.578 seconds; native execution and result verification await successful initialization.",
       "release_action": "Run controlled native NSC Sag case, verify settings and grid, inspect ZRD, then confirm task close after startup recovery.",
       "evidence": [
-        ".local/evidence/development/NS-04/nsc-surface-sag030.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        "verification/development/NS-04/nsc-surface-sag030.json",
+        "verification/development/BASE-01/probe/api-interfaces.json",
         "tests/test_nsc_surface_sag.py"
       ]
     },
@@ -821,7 +821,7 @@
       "reason": "Native root acceptance awaits BASE-04 startup recovery.",
       "release_action": "After native initialization verify application resource roots, paging, unchanged revision and normal shutdown.",
       "evidence": [
-        ".local/evidence/development/EX-01/probe036.json",
+        "verification/development/EX-01/probe036.json",
         "docs/extensions.md"
       ]
     },
@@ -832,7 +832,7 @@
       "reason": "Official SampleAnalysis1.cs requires UserAnalysis/UserAnalysisSettings host modes; Standalone host startup and runtime GetSettings remain unverified.",
       "release_action": "Restore startup; invoke SampleAnalysis1.exe using formal UserDefinedCOM analysis host; inspect settings/result, termination and ownership.",
       "evidence": [
-        ".local/evidence/development/EX-01/probe036.json",
+        "verification/development/EX-01/probe036.json",
         "docs/extensions.md"
       ]
     },
@@ -843,7 +843,7 @@
       "reason": "Official operand sample requires Operand mode via ConnectToApplication; runtime host invocation/lifecycle requires successful native initialization.",
       "release_action": "Restore startup; configure UDOC01.exe in an independent MFE sample and verify arguments, results, timeout/termination and ownership.",
       "evidence": [
-        ".local/evidence/development/EX-01/probe036.json",
+        "verification/development/EX-01/probe036.json",
         "docs/extensions.md"
       ]
     },
@@ -854,7 +854,7 @@
       "reason": "No compatible controlled C callback fixture or runtime signature/ownership evidence; installed reflection exposes Execute but no callback Close/Cancel.",
       "release_action": "Provide or build a callback fixture with the documented entry signature; isolate its execution; verify typed ISettingsData, Execute return, stop and release behavior.",
       "evidence": [
-        ".local/evidence/development/EX-01/probe036.json",
+        "verification/development/EX-01/probe036.json",
         "docs/extensions.md"
       ]
     },
@@ -865,7 +865,7 @@
       "reason": "Libraries folder contains NetHelper, with no compatible controlled callback implementation identified; callback signature and lifecycle require formal minimal execution.",
       "release_action": "Prepare a compatible managed callback fixture using the formal entry contract; verify typed settings/readback, Execute and lifecycle in isolation.",
       "evidence": [
-        ".local/evidence/development/EX-01/probe036.json",
+        "verification/development/EX-01/probe036.json",
         "docs/extensions.md"
       ]
     },
@@ -876,7 +876,7 @@
       "reason": "Register methods exist; no unregister in reflected application interface, and fixture/runtime lifecycle evidence is missing.",
       "release_action": "Use controlled callback fixture; inspect registration IMessage, operand result and session cleanup; locate any formal unregister or confirm session-scoped lifetime.",
       "evidence": [
-        ".local/evidence/development/EX-01/probe036.json",
+        "verification/development/EX-01/probe036.json",
         "docs/extensions.md"
       ]
     },
@@ -887,7 +887,7 @@
       "reason": "Existing ED-02 native checks remain open; use existing solve evidence.",
       "release_action": "After native startup recover the remaining GridSag 9/10 macro cases and save/reload verification.",
       "evidence": [
-        ".local/evidence/development/EX-01/probe036.json",
+        "verification/development/EX-01/probe036.json",
         "docs/extensions.md"
       ]
     },
@@ -898,7 +898,7 @@
       "reason": "Reflection exposes general RunCommand and solve macros, with no dedicated arbitrary macro execution contract confirmed.",
       "release_action": "Find a documented RunCommand macro verb or dedicated API; verify on an independent sample with state, output and stop protocol.",
       "evidence": [
-        ".local/evidence/development/EX-01/probe036.json",
+        "verification/development/EX-01/probe036.json",
         "docs/extensions.md"
       ]
     },
@@ -909,7 +909,7 @@
       "reason": "Existing initialization timeout prevents native feature checkout, readback, execution and numeric/lifecycle acceptance.",
       "release_action": "After successful initialization verify STAR feature flag; run controlled data/settings/result/numeric cases and save/reload with failure/cancel recovery and normal shutdown.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe037.json",
+        "verification/development/EXT-STAR/probe037.json",
         "docs/star.md"
       ]
     },
@@ -920,7 +920,7 @@
       "reason": "Existing initialization timeout prevents native feature checkout, readback, execution and numeric/lifecycle acceptance.",
       "release_action": "After successful initialization verify STAR feature flag; run controlled data/settings/result/numeric cases and save/reload with failure/cancel recovery and normal shutdown.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe037.json",
+        "verification/development/EXT-STAR/probe037.json",
         "docs/star.md"
       ]
     },
@@ -931,7 +931,7 @@
       "reason": "Existing initialization timeout prevents native feature checkout, readback, execution and numeric/lifecycle acceptance.",
       "release_action": "After successful initialization verify STAR feature flag; run controlled data/settings/result/numeric cases and save/reload with failure/cancel recovery and normal shutdown.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe037.json",
+        "verification/development/EXT-STAR/probe037.json",
         "docs/star.md"
       ]
     },
@@ -942,7 +942,7 @@
       "reason": "Existing initialization timeout prevents native feature checkout, readback, execution and numeric/lifecycle acceptance.",
       "release_action": "After successful initialization verify STAR feature flag; run controlled data/settings/result/numeric cases and save/reload with failure/cancel recovery and normal shutdown.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe037.json",
+        "verification/development/EXT-STAR/probe037.json",
         "docs/star.md"
       ]
     },
@@ -953,7 +953,7 @@
       "reason": "Existing initialization timeout prevents native feature checkout, readback, execution and numeric/lifecycle acceptance.",
       "release_action": "After successful initialization verify STAR feature flag; run controlled data/settings/result/numeric cases and save/reload with failure/cancel recovery and normal shutdown.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe037.json",
+        "verification/development/EXT-STAR/probe037.json",
         "docs/star.md"
       ]
     },
@@ -964,7 +964,7 @@
       "reason": "Existing initialization timeout prevents native feature checkout, readback, execution and numeric/lifecycle acceptance.",
       "release_action": "After successful initialization verify STAR feature flag; run controlled data/settings/result/numeric cases and save/reload with failure/cancel recovery and normal shutdown.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe037.json",
+        "verification/development/EXT-STAR/probe037.json",
         "docs/star.md"
       ]
     },
@@ -975,7 +975,7 @@
       "reason": "Existing initialization timeout prevents native feature checkout, readback, execution and numeric/lifecycle acceptance.",
       "release_action": "After successful initialization verify STAR feature flag; run controlled data/settings/result/numeric cases and save/reload with failure/cancel recovery and normal shutdown.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe037.json",
+        "verification/development/EXT-STAR/probe037.json",
         "docs/star.md"
       ]
     },
@@ -986,7 +986,7 @@
       "reason": "Existing initialization timeout prevents native feature checkout, readback, execution and numeric/lifecycle acceptance.",
       "release_action": "After successful initialization verify STAR feature flag; run controlled data/settings/result/numeric cases and save/reload with failure/cancel recovery and normal shutdown.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe037.json",
+        "verification/development/EXT-STAR/probe037.json",
         "docs/star.md"
       ]
     },
@@ -997,8 +997,8 @@
       "reason": "Existing BASE-04 initialization timed out at 180.578 seconds; actual STAR feature status unavailable",
       "release_action": "After startup/STAR recovery verify actual settings, component mapping/solves after CB insertion, matrix/FEA numeric consistency, rigid-body extraction, valid thermal codes/GRIN step conventions, save/reload and successful/failed/cancelled cleanup.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe038.json",
-        ".local/evidence/development/EXT-STAR/parameters038.json",
+        "verification/development/EXT-STAR/probe038.json",
+        "verification/development/EXT-STAR/parameters038.json",
         "docs/star.md"
       ]
     },
@@ -1009,8 +1009,8 @@
       "reason": "Existing BASE-04 initialization timed out at 180.578 seconds; actual STAR feature status unavailable",
       "release_action": "After startup/STAR recovery verify actual settings, component mapping/solves after CB insertion, matrix/FEA numeric consistency, rigid-body extraction, valid thermal codes/GRIN step conventions, save/reload and successful/failed/cancelled cleanup.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe038.json",
-        ".local/evidence/development/EXT-STAR/parameters038.json",
+        "verification/development/EXT-STAR/probe038.json",
+        "verification/development/EXT-STAR/parameters038.json",
         "docs/star.md"
       ]
     },
@@ -1021,8 +1021,8 @@
       "reason": "Existing BASE-04 initialization timed out at 180.578 seconds; actual STAR feature status unavailable",
       "release_action": "After startup/STAR recovery verify actual settings, component mapping/solves after CB insertion, matrix/FEA numeric consistency, rigid-body extraction, valid thermal codes/GRIN step conventions, save/reload and successful/failed/cancelled cleanup.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe038.json",
-        ".local/evidence/development/EXT-STAR/parameters038.json",
+        "verification/development/EXT-STAR/probe038.json",
+        "verification/development/EXT-STAR/parameters038.json",
         "docs/star.md"
       ]
     },
@@ -1033,8 +1033,8 @@
       "reason": "Existing BASE-04 initialization timed out at 180.578 seconds; actual STAR feature status unavailable",
       "release_action": "After startup/STAR recovery verify actual settings, component mapping/solves after CB insertion, matrix/FEA numeric consistency, rigid-body extraction, valid thermal codes/GRIN step conventions, save/reload and successful/failed/cancelled cleanup.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe038.json",
-        ".local/evidence/development/EXT-STAR/parameters038.json",
+        "verification/development/EXT-STAR/probe038.json",
+        "verification/development/EXT-STAR/parameters038.json",
         "docs/star.md"
       ]
     },
@@ -1045,8 +1045,8 @@
       "reason": "Existing BASE-04 initialization timed out at 180.578 seconds; actual STAR feature status unavailable",
       "release_action": "After startup/STAR recovery verify actual settings, component mapping/solves after CB insertion, matrix/FEA numeric consistency, rigid-body extraction, valid thermal codes/GRIN step conventions, save/reload and successful/failed/cancelled cleanup.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe038.json",
-        ".local/evidence/development/EXT-STAR/parameters038.json",
+        "verification/development/EXT-STAR/probe038.json",
+        "verification/development/EXT-STAR/parameters038.json",
         "docs/star.md"
       ]
     },
@@ -1057,7 +1057,7 @@
       "reason": "Existing BASE-04 initialization timed out at 180.578 seconds; actual STAR feature status unavailable",
       "release_action": "After startup/STAR recovery verify actual settings, component mapping/solves after CB insertion, matrix/FEA numeric consistency, rigid-body extraction, valid thermal codes/GRIN step conventions, save/reload and successful/failed/cancelled cleanup.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe038.json",
+        "verification/development/EXT-STAR/probe038.json",
         "docs/star.md"
       ]
     },
@@ -1068,7 +1068,7 @@
       "reason": "Existing BASE-04 initialization timed out at 180.578 seconds; actual STAR feature status unavailable",
       "release_action": "After startup/STAR recovery verify actual settings, component mapping/solves after CB insertion, matrix/FEA numeric consistency, rigid-body extraction, valid thermal codes/GRIN step conventions, save/reload and successful/failed/cancelled cleanup.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe038.json",
+        "verification/development/EXT-STAR/probe038.json",
         "docs/star.md"
       ]
     },
@@ -1079,7 +1079,7 @@
       "reason": "Existing BASE-04 initialization timed out at 180.578 seconds; actual STAR feature status unavailable",
       "release_action": "After startup/STAR recovery verify actual settings, component mapping/solves after CB insertion, matrix/FEA numeric consistency, rigid-body extraction, valid thermal codes/GRIN step conventions, save/reload and successful/failed/cancelled cleanup.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe038.json",
+        "verification/development/EXT-STAR/probe038.json",
         "docs/star.md"
       ]
     },
@@ -1090,7 +1090,7 @@
       "reason": "Existing BASE-04 initialization timed out at 180.578 seconds; actual STAR feature status unavailable",
       "release_action": "After startup/STAR recovery verify actual settings, component mapping/solves after CB insertion, matrix/FEA numeric consistency, rigid-body extraction, valid thermal codes/GRIN step conventions, save/reload and successful/failed/cancelled cleanup.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe038.json",
+        "verification/development/EXT-STAR/probe038.json",
         "docs/star.md"
       ]
     },
@@ -1101,7 +1101,7 @@
       "reason": "Existing BASE-04 initialization timed out at 180.578 seconds; actual STAR feature status unavailable",
       "release_action": "After startup/STAR recovery verify actual settings, component mapping/solves after CB insertion, matrix/FEA numeric consistency, rigid-body extraction, valid thermal codes/GRIN step conventions, save/reload and successful/failed/cancelled cleanup.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe038.json",
+        "verification/development/EXT-STAR/probe038.json",
         "docs/star.md"
       ]
     },
@@ -1112,7 +1112,7 @@
       "reason": "Existing BASE-04 initialization timed out at 180.578 seconds; actual STAR feature status unavailable",
       "release_action": "After startup/STAR recovery verify actual settings, component mapping/solves after CB insertion, matrix/FEA numeric consistency, rigid-body extraction, valid thermal codes/GRIN step conventions, save/reload and successful/failed/cancelled cleanup.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe038.json",
+        "verification/development/EXT-STAR/probe038.json",
         "docs/star.md"
       ]
     },
@@ -1123,7 +1123,7 @@
       "reason": "Existing BASE-04 initialization timed out at 180.578 seconds; actual getter availability not inferred from STAR flag",
       "release_action": "tests/test_star_materials_live.py after startup recovery",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe039.json",
+        "verification/development/EXT-STAR/probe039.json",
         "docs/materials.md"
       ]
     },
@@ -1134,7 +1134,7 @@
       "reason": "Existing BASE-04 initialization timed out at 180.578 seconds; actual getter availability not inferred from STAR flag",
       "release_action": "tests/test_star_materials_live.py after startup recovery",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe039.json",
+        "verification/development/EXT-STAR/probe039.json",
         "docs/materials.md"
       ]
     },
@@ -1145,7 +1145,7 @@
       "reason": "Native initialization unavailable; UnloadData resource retention and save/reload behavior cannot yet be confirmed from the local formal signature.",
       "release_action": "After initialization succeeds, use independent source and model copies to observe unload, persisted references, failure/cancel restoration and resource cleanup before defining the public unload operation.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe039.json",
+        "verification/development/EXT-STAR/probe039.json",
         "docs/materials.md"
       ]
     },
@@ -1156,7 +1156,7 @@
       "reason": "Native initialization unavailable; UnloadData resource retention and save/reload behavior cannot yet be confirmed from the local formal signature.",
       "release_action": "After initialization succeeds, use independent source and model copies to observe unload, persisted references, failure/cancel restoration and resource cleanup before defining the public unload operation.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe039.json",
+        "verification/development/EXT-STAR/probe039.json",
         "docs/materials.md"
       ]
     },
@@ -1167,7 +1167,7 @@
       "reason": "Native initialization unavailable; UnloadData resource retention and save/reload behavior cannot yet be confirmed from the local formal signature.",
       "release_action": "After initialization succeeds, use independent source and model copies to observe unload, persisted references, failure/cancel restoration and resource cleanup before defining the public unload operation.",
       "evidence": [
-        ".local/evidence/development/EXT-STAR/probe039.json",
+        "verification/development/EXT-STAR/probe039.json",
         "docs/materials.md"
       ]
     },
@@ -1178,7 +1178,7 @@
       "reason": "Existing initialization timeout; configured nodes, actual HPC license and receiver state unknown",
       "release_action": "After initialization succeeds read IHPCSettings.IsHPCConfigured/NodeCount/MaxNodeCount/InstanceType/ThreadsPerTask; verify actual license/nodes on a minimal owned job. Run four serial minimal jobs; verify native setup/status/cancel, result files/paging, controlled numeric references, persisted model state and normal shutdown.",
       "evidence": [
-        ".local/evidence/development/EXT-HPC/probe040.json",
+        "verification/development/EXT-HPC/probe040.json",
         "docs/hpc.md",
         "tests/test_hpc.py",
         "tests/test_hpc_execution.py",
@@ -1192,7 +1192,7 @@
       "reason": "Existing initialization timeout; configured nodes, actual HPC license and receiver state unknown",
       "release_action": "After initialization succeeds read IHPCSettings.IsHPCConfigured/NodeCount/MaxNodeCount/InstanceType/ThreadsPerTask; verify actual license/nodes on a minimal owned job. Run four serial minimal jobs; verify native setup/status/cancel, result files/paging, controlled numeric references, persisted model state and normal shutdown.",
       "evidence": [
-        ".local/evidence/development/EXT-HPC/probe040.json",
+        "verification/development/EXT-HPC/probe040.json",
         "docs/hpc.md",
         "tests/test_hpc.py",
         "tests/test_hpc_execution.py",
@@ -1206,7 +1206,7 @@
       "reason": "Existing initialization timeout; configured nodes, actual HPC license and receiver state unknown",
       "release_action": "After initialization succeeds read IHPCSettings.IsHPCConfigured/NodeCount/MaxNodeCount/InstanceType/ThreadsPerTask; verify actual license/nodes on a minimal owned job. Run four serial minimal jobs; verify native setup/status/cancel, result files/paging, controlled numeric references, persisted model state and normal shutdown.",
       "evidence": [
-        ".local/evidence/development/EXT-HPC/probe040.json",
+        "verification/development/EXT-HPC/probe040.json",
         "docs/hpc.md",
         "tests/test_hpc.py",
         "tests/test_hpc_execution.py",
@@ -1220,7 +1220,7 @@
       "reason": "Existing initialization timeout; configured nodes, actual HPC license and receiver state unknown",
       "release_action": "After initialization succeeds read IHPCSettings.IsHPCConfigured/NodeCount/MaxNodeCount/InstanceType/ThreadsPerTask; verify actual license/nodes on a minimal owned job. Run four serial minimal jobs; verify native setup/status/cancel, result files/paging, controlled numeric references, persisted model state and normal shutdown.",
       "evidence": [
-        ".local/evidence/development/EXT-HPC/probe040.json",
+        "verification/development/EXT-HPC/probe040.json",
         "docs/hpc.md",
         "tests/test_hpc.py",
         "tests/test_hpc_execution.py",
@@ -1234,7 +1234,7 @@
       "reason": "Existing initialization timeout; configured nodes, actual HPC license and receiver state unknown",
       "release_action": "After initialization succeeds read IHPCSettings.IsHPCConfigured/NodeCount/MaxNodeCount/InstanceType/ThreadsPerTask; verify actual license/nodes on a minimal owned job. Run four serial minimal jobs; verify native setup/status/cancel, result files/paging, controlled numeric references, persisted model state and normal shutdown.",
       "evidence": [
-        ".local/evidence/development/EXT-HPC/probe040.json",
+        "verification/development/EXT-HPC/probe040.json",
         "docs/hpc.md",
         "tests/test_hpc.py",
         "tests/test_hpc_execution.py",
@@ -1248,7 +1248,7 @@
       "reason": "Native initialization timed out; actual export adoption, Whitebox filename/package and receiver acceptance pending.",
       "release_action": "Restore native initialization, run tests/test_speos_live.py serially; validate actual files/settings/source full state and native close/cancel, then receiver import.",
       "evidence": [
-        ".local/evidence/development/EXT-SPEOS/probe041.json",
+        "verification/development/EXT-SPEOS/probe041.json",
         "docs/speos.md",
         "tests/test_speos.py",
         "tests/test_speos_live.py"
@@ -1261,7 +1261,7 @@
       "reason": "Native initialization timed out; actual export adoption, Whitebox filename/package and receiver acceptance pending.",
       "release_action": "Restore native initialization, run tests/test_speos_live.py serially; validate actual files/settings/source full state and native close/cancel, then receiver import.",
       "evidence": [
-        ".local/evidence/development/EXT-SPEOS/probe041.json",
+        "verification/development/EXT-SPEOS/probe041.json",
         "docs/speos.md",
         "tests/test_speos.py",
         "tests/test_speos_live.py"
@@ -1274,7 +1274,7 @@
       "reason": "Default v242 directory and HKLM uninstall inventory found no confirmed Speos receiver; native export fixture awaits startup recovery.",
       "release_action": "Identify runnable receiver version/location and prepare an import fixture after native exporter is available.",
       "evidence": [
-        ".local/evidence/development/EXT-SPEOS/probe041.json"
+        "verification/development/EXT-SPEOS/probe041.json"
       ]
     },
     {
@@ -1284,7 +1284,7 @@
       "reason": "Default v242 directory and HKLM uninstall inventory found no confirmed Speos receiver; native readonly output filename/package still awaits execution.",
       "release_action": "Identify runnable receiver version/location and native output package format; then verify import, units and geometry.",
       "evidence": [
-        ".local/evidence/development/EXT-SPEOS/probe041.json"
+        "verification/development/EXT-SPEOS/probe041.json"
       ]
     },
     {
@@ -1294,7 +1294,7 @@
       "reason": "Native initialization timeout; actual PCD numeric and lifecycle acceptance pending.",
       "release_action": "Run native point-cloud settings/coordinates/normal/close acceptance after startup recovery.",
       "evidence": [
-        ".local/evidence/development/EXT-EXPORT/probe042.json",
+        "verification/development/EXT-EXPORT/probe042.json",
         "docs/special-exports.md"
       ]
     },
@@ -1305,7 +1305,7 @@
       "reason": "No corresponding named creation/export interface in 908 public types; GUI feature documented in local manual.",
       "release_action": "Identify supported formal creation interface/protocol and parameters; see probe042.json.",
       "evidence": [
-        ".local/evidence/development/EXT-EXPORT/probe042.json",
+        "verification/development/EXT-EXPORT/probe042.json",
         "docs/special-exports.md"
       ]
     },
@@ -1316,7 +1316,7 @@
       "reason": "No corresponding named creation/export interface in 908 public types; GUI feature documented in local manual.",
       "release_action": "Identify supported formal creation interface/protocol and parameters; see probe042.json.",
       "evidence": [
-        ".local/evidence/development/EXT-EXPORT/probe042.json",
+        "verification/development/EXT-EXPORT/probe042.json",
         "docs/special-exports.md"
       ]
     },
@@ -1327,7 +1327,7 @@
       "reason": "No corresponding named creation/export interface in 908 public types; GUI feature documented in local manual.",
       "release_action": "Identify supported formal creation interface/protocol and parameters; see probe042.json.",
       "evidence": [
-        ".local/evidence/development/EXT-EXPORT/probe042.json",
+        "verification/development/EXT-EXPORT/probe042.json",
         "docs/special-exports.md"
       ]
     },
@@ -1338,7 +1338,7 @@
       "reason": "BASE-04初始化180.578秒超时；实际许可、设置、数值与关闭待验收。",
       "release_action": "Same-session handoff implemented as prepared native test; runtime setting/result/numeric/reload/close evidence awaits startup recovery. Component tests retain their individual scope.",
       "evidence": [
-        ".local/evidence/development/RL-01/workflows043.json",
+        "verification/development/RL-01/workflows043.json",
         "tests/test_release_handoffs_live.py",
         "docs/release-workflows.md"
       ]
@@ -1350,7 +1350,7 @@
       "reason": "BASE-04初始化180.578秒超时；实际许可、设置、数值与关闭待验收。",
       "release_action": "Same-session handoff implemented as prepared native test; runtime setting/result/numeric/reload/close evidence awaits startup recovery. Component tests retain their individual scope.",
       "evidence": [
-        ".local/evidence/development/RL-01/workflows043.json",
+        "verification/development/RL-01/workflows043.json",
         "tests/test_release_handoffs_live.py",
         "docs/release-workflows.md"
       ]
@@ -1362,7 +1362,7 @@
       "reason": "BASE-04初始化180.578秒超时；实际许可、设置、数值与关闭待验收。",
       "release_action": "Same-session handoff implemented as prepared native test; runtime setting/result/numeric/reload/close evidence awaits startup recovery. Component tests retain their individual scope.",
       "evidence": [
-        ".local/evidence/development/RL-01/workflows043.json",
+        "verification/development/RL-01/workflows043.json",
         "tests/test_release_handoffs_live.py",
         "docs/release-workflows.md"
       ]
@@ -1374,7 +1374,7 @@
       "reason": "BASE-04初始化180.578秒超时；实际许可、设置、数值与关闭待验收。",
       "release_action": "Same-session handoff implemented as prepared native test; runtime setting/result/numeric/reload/close evidence awaits startup recovery. Component tests retain their individual scope.",
       "evidence": [
-        ".local/evidence/development/RL-01/workflows043.json",
+        "verification/development/RL-01/workflows043.json",
         "tests/test_release_handoffs_live.py",
         "docs/release-workflows.md"
       ]
@@ -1386,7 +1386,7 @@
       "reason": "BASE-04初始化180.578秒超时；实际许可、设置、数值与关闭待验收。",
       "release_action": "Same-session handoff implemented as prepared native test; runtime setting/result/numeric/reload/close evidence awaits startup recovery. Component tests retain their individual scope.",
       "evidence": [
-        ".local/evidence/development/RL-01/workflows043.json",
+        "verification/development/RL-01/workflows043.json",
         "tests/test_release_handoffs_live.py",
         "docs/release-workflows.md"
       ]
@@ -1398,7 +1398,7 @@
       "reason": "BASE-04初始化180.578秒超时；实际许可、设置、数值与关闭待验收。",
       "release_action": "Same-session handoff implemented as prepared native test; runtime setting/result/numeric/reload/close evidence awaits startup recovery. Component tests retain their individual scope.",
       "evidence": [
-        ".local/evidence/development/RL-01/workflows043.json",
+        "verification/development/RL-01/workflows043.json",
         "tests/test_release_handoffs_live.py",
         "docs/release-workflows.md"
       ]
@@ -1410,7 +1410,7 @@
       "reason": "原生设置和输出内容验收等待BASE-04启动恢复；既有初始化180.578秒超时。",
       "release_action": "连接恢复后串行运行tests/test_cad_formats_live.py，核对STEP/STL/SAT设置采用、输出、模型配置与关闭；继续多配置出口。",
       "evidence": [
-        ".local/evidence/development/EXT-EXPORT/cad-settings044.json",
+        "verification/development/EXT-EXPORT/cad-settings044.json",
         "tests/test_cad_adoption.py",
         "tests/test_cad_formats_live.py",
         "docs/special-exports.md"
@@ -1423,9 +1423,9 @@
       "reason": "公开接口有三种选择方法，Configuration只读Int32且没有对应模式枚举或标志；缺少实际模式编码和多文件输出记录，初始化超时阻断受控探查。",
       "release_action": "BASE-04恢复后在双配置模型逐个调用三种选择方法，记录Configuration整数编码、文件命名、回读、所有输出和模型保持，再接入有类型请求。",
       "evidence": [
-        ".local/evidence/development/EXT-EXPORT/cad-settings044.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
-        ".local/evidence/development/EXT-EXPORT/manual042.txt"
+        "verification/development/EXT-EXPORT/cad-settings044.json",
+        "verification/development/BASE-01/probe/api-interfaces.json",
+        "verification/development/EXT-EXPORT/manual042.txt"
       ]
     },
     {
@@ -1485,10 +1485,10 @@
       "reason": "Native execution is pending because the latest isolated ZOS-API initialization timed out after 180.578 seconds. Resume the recorded runtime acceptance after startup succeeds.",
       "release_action": "After successful OpticStudio initialization, execute on a controlled hologram model and record actual settings, result axes/units, reference values, cancellation/failure cleanup and close.",
       "evidence": [
-        ".local/evidence/development/CO-01/diffraction-efficiency028.json",
-        ".local/evidence/development/CO-01/ordinary038.xml",
-        ".local/evidence/development/CO-01/stdio-smoke038.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        "verification/development/CO-01/diffraction-efficiency028.json",
+        "verification/development/CO-01/ordinary038.xml",
+        "verification/development/CO-01/stdio-smoke038.json",
+        "verification/development/BASE-01/probe/api-interfaces.json",
         "tests/test_diff_efficiency.py",
         "docs/diffraction-efficiency.md",
         "examples/diffraction_efficiency_requests.json"
@@ -1501,10 +1501,10 @@
       "reason": "Native execution is pending because the latest isolated ZOS-API initialization timed out after 180.578 seconds. Resume the recorded runtime acceptance after startup succeeds.",
       "release_action": "After successful OpticStudio initialization, execute on a controlled hologram model and record actual settings, result axes/units, reference values, cancellation/failure cleanup and close.",
       "evidence": [
-        ".local/evidence/development/CO-01/diffraction-efficiency028.json",
-        ".local/evidence/development/CO-01/ordinary038.xml",
-        ".local/evidence/development/CO-01/stdio-smoke038.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        "verification/development/CO-01/diffraction-efficiency028.json",
+        "verification/development/CO-01/ordinary038.xml",
+        "verification/development/CO-01/stdio-smoke038.json",
+        "verification/development/BASE-01/probe/api-interfaces.json",
         "tests/test_diff_efficiency.py",
         "docs/diffraction-efficiency.md",
         "examples/diffraction_efficiency_requests.json"
@@ -1517,10 +1517,10 @@
       "reason": "Native execution is pending because the latest isolated ZOS-API initialization timed out after 180.578 seconds. Resume the recorded runtime acceptance after startup succeeds.",
       "release_action": "After successful OpticStudio initialization, execute on a controlled hologram model and record actual settings, result axes/units, reference values, cancellation/failure cleanup and close.",
       "evidence": [
-        ".local/evidence/development/CO-01/diffraction-efficiency028.json",
-        ".local/evidence/development/CO-01/ordinary038.xml",
-        ".local/evidence/development/CO-01/stdio-smoke038.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        "verification/development/CO-01/diffraction-efficiency028.json",
+        "verification/development/CO-01/ordinary038.xml",
+        "verification/development/CO-01/stdio-smoke038.json",
+        "verification/development/BASE-01/probe/api-interfaces.json",
         "tests/test_diff_efficiency.py",
         "docs/diffraction-efficiency.md",
         "examples/diffraction_efficiency_requests.json"
@@ -1613,7 +1613,7 @@
       "reason": "原生初始化180.526秒超时；解除条件：成功启动OpticStudio并完成双配置模型的设置回读、结果轴与关闭检查",
       "release_action": "连接恢复后执行双配置Cooke样例，回读设置并核对矩阵轴、数值/文本结果及工具关闭",
       "evidence": [
-        ".local/evidence/development/CV-01/configuration-matrix-spot022.json",
+        "verification/development/CV-01/configuration-matrix-spot022.json",
         "tests/test_configuration_matrix_spot.py",
         "tests/test_configuration_matrix_spot_live.py",
         "docs/configuration-matrix-spot.md"
@@ -1626,7 +1626,7 @@
       "reason": "BASE-04 initialization timeout of 180.578 seconds; native acceptance pending.",
       "release_action": "Restore startup; run Cooke readback, normalization/OPD, output and close checks.",
       "evidence": [
-        ".local/evidence/development/CV-01/contrast-loss032.json",
+        "verification/development/CV-01/contrast-loss032.json",
         "docs/contrast-loss.md"
       ]
     },
@@ -1638,7 +1638,7 @@
       "release_action": "Restore startup for native readback/result/close checks",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -1649,7 +1649,7 @@
       "release_action": "Restore startup for native readback/result/close checks",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -1659,7 +1659,7 @@
       "reason": "原生初始化180.526秒超时；解除条件：成功启动OpticStudio并完成受控曲面的设置回读、结果和关闭检查",
       "release_action": "连接恢复后执行Cooke样例，回读六项设置并检查表面数据/文本导出、工具关闭及与参考曲面MTF的数值关系",
       "evidence": [
-        ".local/evidence/development/CV-01/fft-surface-mtf021.json",
+        "verification/development/CV-01/fft-surface-mtf021.json",
         "tests/test_fft_surface_mtf.py",
         "tests/test_fft_surface_mtf_live.py",
         "docs/fft-surface-mtf.md"
@@ -1672,14 +1672,14 @@
       "reason": "原生初始化180.526秒超时；解除条件：成功启动OpticStudio并使用Cooke样例执行Foucault分析",
       "release_action": "连接恢复后检查设置采用、输出数据/轴、保存图像和关闭；确认Source及SaveBMP字符串路径语义",
       "evidence": [
-        ".local/evidence/development/CV-01/foucault024.json",
+        "verification/development/CV-01/foucault024.json",
         "tests/test_foucault.py",
         "tests/test_foucault_live.py",
         "docs/foucault.md",
-        ".local/evidence/development/CV-01/foucault024.json",
-        ".local/evidence/development/CV-01/stdio-smoke034.json",
-        ".local/evidence/development/CV-01/foucault024.json",
-        ".local/evidence/development/CV-01/stdio-smoke034.json"
+        "verification/development/CV-01/foucault024.json",
+        "verification/development/CV-01/stdio-smoke034.json",
+        "verification/development/CV-01/foucault024.json",
+        "verification/development/CV-01/stdio-smoke034.json"
       ]
     },
     {
@@ -1689,7 +1689,7 @@
       "reason": "Native acceptance awaits OpticStudio startup recovery; BASE-04/connection019 records initialization timeout of 180.526 seconds",
       "release_action": "After native startup recovers, run rectangular and elliptical Cooke cases; check readback, native results, numeric reference and tool closure",
       "evidence": [
-        ".local/evidence/development/CV-01/full-field-aberration025.json",
+        "verification/development/CV-01/full-field-aberration025.json",
         "tests/test_full_field_aberration.py",
         "docs/full-field-aberration.md"
       ]
@@ -1701,8 +1701,8 @@
       "reason": "Formal settings interface absent from static reflection; native startup also waits on BASE-04 recovery (180.526 second initialization timeout)",
       "release_action": "After native startup, inspect New_FullFieldSpot().GetSettings runtime type; proceed only if the formal interface exposes settings and result access",
       "evidence": [
-        ".local/evidence/development/CV-01/full-field-spot-probe025.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/CV-01/full-field-spot-probe025.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -1713,8 +1713,8 @@
       "release_action": "Run a controlled native case and verify setup readback, result axes/data and close.",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
-        ".local/evidence/development/BASE-04/connection040.json"
+        "verification/development/BASE-01/probe/api-interfaces.json",
+        "verification/development/BASE-04/connection040.json"
       ]
     },
     {
@@ -1724,7 +1724,7 @@
       "reason": "Native acceptance awaits OpticStudio startup recovery; BASE-04/connection019 initialization timeout is 180.526 seconds",
       "release_action": "After native startup, execute matched Huygens/FFT Surface MTF cases; verify settings readback, numerical curve/grid and analysis close",
       "evidence": [
-        ".local/evidence/development/CV-01/huygens-surface-mtf026.json",
+        "verification/development/CV-01/huygens-surface-mtf026.json",
         "tests/test_huygens_surface_mtf.py",
         "docs/huygens-surface-mtf.md"
       ]
@@ -1736,8 +1736,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -1748,8 +1748,8 @@
       "release_action": "Run a controlled native case and verify setup readback, result axes/data and close.",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
-        ".local/evidence/development/BASE-04/connection040.json"
+        "verification/development/BASE-01/probe/api-interfaces.json",
+        "verification/development/BASE-04/connection040.json"
       ]
     },
     {
@@ -1759,8 +1759,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -1770,8 +1770,8 @@
       "reason": "BASE-04 initialization timeout of 180.578 seconds.",
       "release_action": "Restore startup; verify 7x5 asymmetric grid axes, units, values and Analysis close.",
       "evidence": [
-        ".local/evidence/development/CV-01/rms-field-map031.json",
-        ".local/evidence/development/CV-01/ordinary041.xml"
+        "verification/development/CV-01/rms-field-map031.json",
+        "verification/development/CV-01/ordinary041.xml"
       ]
     },
     {
@@ -1781,7 +1781,7 @@
       "reason": "BASE-04 initialization timed out at 180.578 seconds; no environment change recorded",
       "release_action": "After startup recovery execute tests/test_rms_wavelength_live.py; validate readback, wavelength range and units, all fields, numeric RMS references, persistence and successful/failed/cancelled closure",
       "evidence": [
-        ".local/evidence/development/CV-01/rms-wavelength033.json",
+        "verification/development/CV-01/rms-wavelength033.json",
         "docs/rms-wavelength.md",
         "tests/test_rms_wavelength.py",
         "tests/test_rms_wavelength_live.py"
@@ -1794,8 +1794,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -1805,8 +1805,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -1816,8 +1816,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -1827,8 +1827,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -1838,8 +1838,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -1849,8 +1849,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -1860,7 +1860,7 @@
       "reason": "BASE-04 initialization timeout of 180.578 seconds; native acceptance pending.",
       "release_action": "Restore native startup; verify settings, units/axes, controlled numerical references, persistence and lifecycle.",
       "evidence": [
-        ".local/evidence/development/CV-01/seidel-diagram034.json",
+        "verification/development/CV-01/seidel-diagram034.json",
         "docs/seidel-diagram.md"
       ]
     },
@@ -1871,8 +1871,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -1882,8 +1882,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -1893,7 +1893,7 @@
       "reason": "BASE-04 initialization timeout of 180.578 seconds; native acceptance pending.",
       "release_action": "Restore native startup; verify settings, units/axes, controlled numerical references, persistence and lifecycle.",
       "evidence": [
-        ".local/evidence/development/CV-01/surface-slopes034.json",
+        "verification/development/CV-01/surface-slopes034.json",
         "docs/surface-slopes.md"
       ]
     },
@@ -1904,7 +1904,7 @@
       "reason": "BASE-04 initialization timeout of 180.578 seconds; native acceptance pending.",
       "release_action": "Restore native startup; verify settings, units/axes, controlled numerical references, persistence and lifecycle.",
       "evidence": [
-        ".local/evidence/development/CV-01/surface-slopes034.json",
+        "verification/development/CV-01/surface-slopes034.json",
         "docs/surface-slopes.md"
       ]
     },
@@ -1915,7 +1915,7 @@
       "reason": "BASE-04 initialization timeout of 180.578 seconds; native acceptance pending.",
       "release_action": "Restore native startup; verify settings, units/axes, controlled numerical references, persistence and lifecycle.",
       "evidence": [
-        ".local/evidence/development/CV-01/surface-slopes034.json",
+        "verification/development/CV-01/surface-slopes034.json",
         "docs/surface-slopes.md"
       ]
     },
@@ -1926,7 +1926,7 @@
       "reason": "BASE-04 initialization timeout of 180.578 seconds; native acceptance pending.",
       "release_action": "Restore native startup; verify settings, units/axes, controlled numerical references, persistence and lifecycle.",
       "evidence": [
-        ".local/evidence/development/CV-01/surface-slopes034.json",
+        "verification/development/CV-01/surface-slopes034.json",
         "docs/surface-slopes.md"
       ]
     },
@@ -1937,8 +1937,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -1948,7 +1948,7 @@
       "reason": "BASE-04 initialization timeout at 180.578 seconds; native acceptance pending.",
       "release_action": "Restore native startup; verify adopted settings, result semantics, numerical reference, persistence and close.",
       "evidence": [
-        ".local/evidence/development/CV-01/zernike-field035.json",
+        "verification/development/CV-01/zernike-field035.json",
         "docs/wavefront-topics.md"
       ]
     },
@@ -1959,8 +1959,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -1970,8 +1970,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -1981,8 +1981,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -1992,8 +1992,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2003,8 +2003,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2015,7 +2015,7 @@
       "release_action": "Restore startup for native readback/result/close checks",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2025,8 +2025,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2036,8 +2036,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2047,7 +2047,7 @@
       "reason": "BASE-04 initialization timeout at 180.578 seconds; native acceptance pending.",
       "release_action": "Restore native startup; verify adopted settings, result semantics, numerical reference, persistence and close.",
       "evidence": [
-        ".local/evidence/development/CV-02/interferogram035.json",
+        "verification/development/CV-02/interferogram035.json",
         "docs/wavefront-topics.md"
       ]
     },
@@ -2058,8 +2058,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2069,8 +2069,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2080,8 +2080,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2091,8 +2091,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2102,8 +2102,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2113,7 +2113,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2133,8 +2133,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2144,8 +2144,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2155,8 +2155,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2167,7 +2167,7 @@
       "release_action": "Restore startup for native readback/result/close checks",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2178,7 +2178,7 @@
       "release_action": "Restore startup for native readback/result/close checks",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2189,7 +2189,7 @@
       "release_action": "Restore startup for native readback/result/close checks",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2199,8 +2199,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2210,8 +2210,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2221,8 +2221,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2232,8 +2232,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2244,7 +2244,7 @@
       "release_action": "Restore startup for native readback/result/close checks",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2254,8 +2254,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2265,7 +2265,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2275,8 +2275,8 @@
       "reason": "Runtime interface discovery requires successful ZOS-API initialization; existing BASE-04 isolated probe timed out at 180.578 seconds. Restore initialization, inspect official runtime settings/result path and supply any item-specific inputs.",
       "release_action": "After successful ZOS-API initialization invoke the official analysis factory or New_Analysis for this ID; inspect runtime GetSettings type and inherited members, formal CFG save/load and result APIs; record resource selections, writable settings, results and close. Add typed request only after members and conditions are confirmed.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe035.json",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/static-runtime-probe035.json",
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2287,8 +2287,8 @@
       "release_action": "Run a controlled native case and verify setup readback, result axes/data and close.",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
-        ".local/evidence/development/BASE-04/connection040.json"
+        "verification/development/BASE-01/probe/api-interfaces.json",
+        "verification/development/BASE-04/connection040.json"
       ]
     },
     {
@@ -2299,7 +2299,7 @@
       "release_action": "Restore startup for native readback/result/close checks",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2310,8 +2310,8 @@
       "release_action": "Run a controlled native case and verify setup readback, result axes/data and close.",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
-        ".local/evidence/development/BASE-04/connection040.json"
+        "verification/development/BASE-01/probe/api-interfaces.json",
+        "verification/development/BASE-04/connection040.json"
       ]
     },
     {
@@ -2321,7 +2321,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2331,7 +2331,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2341,7 +2341,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2352,7 +2352,7 @@
       "release_action": "Restore native startup; verify adopted settings, result data and resource closure.",
       "evidence": [
         "verification/illumination028-summary.json",
-        ".local/evidence/development/NS-03/probe028.json",
+        "verification/development/NS-03/probe028.json",
         "tests/test_nsc_mtf.py",
         "tests/test_nsc_mtf_live.py"
       ]
@@ -2364,7 +2364,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2374,7 +2374,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2384,7 +2384,7 @@
       "reason": "No matching IAS_RoadwayLighting interface in local static reflection; runtime interface discovery requires successful initialization, while the existing wizard is not the analysis entry.",
       "release_action": "After successful ZOS-API initialization, invoke RoadwayLighting and inspect runtime GetSettings type, available selectors, result shape and close behavior before adding a typed analysis request.",
       "evidence": [
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json",
+        "verification/development/BASE-01/probe/api-interfaces.json",
         "verification/design-tools020-summary.json",
         "docs/design-tools.md"
       ]
@@ -2396,7 +2396,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2406,7 +2406,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2416,7 +2416,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2426,7 +2426,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2436,7 +2436,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2446,7 +2446,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2456,7 +2456,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2467,7 +2467,7 @@
       "release_action": "Restore startup for native readback/result/close checks",
       "evidence": [
         "docs/native-analysis-matrix.csv",
-        ".local/evidence/development/BASE-01/probe/api-interfaces.json"
+        "verification/development/BASE-01/probe/api-interfaces.json"
       ]
     },
     {
@@ -2477,7 +2477,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2487,7 +2487,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2497,7 +2497,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2507,7 +2507,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2517,7 +2517,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2527,7 +2527,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2537,7 +2537,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2547,7 +2547,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2557,7 +2557,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2569,7 +2569,7 @@
       "evidence": [
         "docs/tolerancing-quick-yield.md",
         "tests/test_quick_yield.py",
-        ".local/evidence/development/WP-01/probe030.json"
+        "verification/development/WP-01/probe030.json"
       ]
     },
     {
@@ -2579,7 +2579,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2590,7 +2590,7 @@
       "release_action": "Restore native startup; verify adopted settings, result data and resource closure.",
       "evidence": [
         "verification/tolerancing030-summary.json",
-        ".local/evidence/development/WP-01/probe030.json",
+        "verification/development/WP-01/probe030.json",
         "tests/test_tolerance_special_analyses_live.py"
       ]
     },
@@ -2602,7 +2602,7 @@
       "release_action": "Restore native startup; verify adopted settings, result data and resource closure.",
       "evidence": [
         "verification/tolerancing030-summary.json",
-        ".local/evidence/development/WP-01/probe030.json",
+        "verification/development/WP-01/probe030.json",
         "tests/test_tolerance_special_analyses_live.py"
       ]
     },
@@ -2635,7 +2635,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     },
     {
@@ -2645,7 +2645,7 @@
       "reason": "No exact settings interface in installed reflection; BASE-04 initialization timed out before runtime GetSettings discovery. Restore startup and inspect official runtime settings/result interface.",
       "release_action": "After successful ZOS-API initialization, resolve the native tool/analysis ID; invoke the official constructor; read GetSettings runtime type and methods; record writable settings, resource and result APIs; run a controlled case and close it.",
       "evidence": [
-        ".local/evidence/development/BASE-01/static-runtime-probe031.json"
+        "verification/development/BASE-01/static-runtime-probe031.json"
       ]
     }
   ]

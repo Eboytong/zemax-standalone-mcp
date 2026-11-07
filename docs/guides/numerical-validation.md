@@ -8,7 +8,7 @@
 
 ```powershell
 $env:PYTHONUTF8='1'
-.venv/Scripts/python.exe -B -m pytest tests/test_pupil_coupling_live.py --run-zemax -q -p no:cacheprovider
+.venv/Scripts/python.exe -B -m pytest tests/native/test_pupil_coupling_live.py --run-zemax -q -p no:cacheprovider
 ```
 
 按所需模型选择对应测试文件；上例仅执行矩形瞳和小角度耦合。普通测试不创建OpticStudio实例。原生测试通过工作副本执行；每个stdio场景保存calls.json、checks.json，求解矩阵另存matrix.json。GUI、普通测试、原生调用和光学数值各自评定。诊断仅在有新线索时单独运行，入口见诊断程序（历史参考）。
@@ -33,7 +33,7 @@ GridPhase 样本文件采用从正 Y 向负 Y 排列的行顺序。非对称混�
 
 覆盖 Standard、EvenAspheric、OddAsphere、Toroidal、Biconic、Paraxial、CoordinateBreak、GridSag、GridPhase；枚举活动基础单元格与 parameter_1..20，以及九类公开 solve。
 
-矩阵分别记录通过、原生列表不支持、不适用、原生拒绝及待补数值参考。Fixed、Variable、SurfacePickup 检查状态、数值和保存重载。其余 solve 的既有数值参考见[能力说明](capabilities.md)；49个专项组合已对应46个数值通过和3个原生未采用，完整范围见[求解支持表](solve-support.md)。
+矩阵分别记录通过、原生列表不支持、不适用、原生拒绝及待补数值参考。Fixed、Variable、SurfacePickup 检查状态、数值和保存重载。其余 solve 的既有数值参考见[能力说明](../reference/capabilities.md)；49个专项组合已对应46个数值通过和3个原生未采用，完整范围见[求解支持表](../topics/analysis/solve-support.md)。
 
 原生列表声称支持某模式，并不保证当前单元格实际采用。写入后回读 Solve；未采用请求模式时返回错误并保留检查点。PARTIAL_UPDATE 表示原生修改可能已经发生。
 
@@ -50,7 +50,7 @@ remove_tilt/use_exit_pupil 的四种组合均通过真实 stdio 调用；覆盖�
 
 use_exit_pupil=false：以归一化入瞳光线独立核对非零 OPD，去倾斜前后差值按仿射倾斜项核对。use_exit_pupil=true：核对保留原生轴、主光线 OPD、去倾斜前后的仿射关系及默认请求；未将出瞳图坐标直接作为入瞳追迹输入。
 
-手册§3.2.3.2、L17779说明Use Exit Pupil Shape会按像点所见出瞳形状改变图形。结果的pupil_frame区分normalized circular entrance pupil与apparent exit pupil shape；coordinate_validation明确实际核查范围。规则圆形轴对称模型的主波长显示映射已有双方向F-number与逐光线OPD依据，定义和误差含义见[规则波前映射](model-adaptation.md#规则波前显示坐标映射)。非主波长和其他模型仍待验；当前映射不重建真实出瞳面。
+手册§3.2.3.2、L17779说明Use Exit Pupil Shape会按像点所见出瞳形状改变图形。结果的pupil_frame区分normalized circular entrance pupil与apparent exit pupil shape；coordinate_validation明确实际核查范围。规则圆形轴对称模型的主波长显示映射已有双方向F-number与逐光线OPD依据，定义和误差含义见[规则波前映射](../topics/modeling/model-adaptation.md#规则波前显示坐标映射)。非主波长和其他模型仍待验；当前映射不重建真实出瞳面。
 
 ## 生命周期诊断
 
@@ -75,16 +75,16 @@ FFT MTF GUI采用同一Cooke基线、像面、全部视场/波长、64×64、Mod
 
 ```powershell
 $env:PYTHONUTF8='1'
-.venv/Scripts/python.exe -B -m pytest tests/test_pupil_coupling_live.py --run-zemax -q -s
+.venv/Scripts/python.exe -B -m pytest tests/native/test_pupil_coupling_live.py --run-zemax -q -s
 ```
 
-两个测试均通过真实 stdio 调用，读取实际孔径、模式、采样及倾角，并保存基线、请求、响应、参考公式和逐项检查。可独立运行 test_rectangular_pupil_mtf_native 或 test_tilted_gaussian_coupling_native。请求示例见 [pupil_coupling_requests.json](../examples/pupil_coupling_requests.json)，逐项依据见专项验收（历史参考）。示例中的计算调用返回任务编号，使用 get_task_status 等待完成后再读取 get_task_result。
+两个测试均通过真实 stdio 调用，读取实际孔径、模式、采样及倾角，并保存基线、请求、响应、参考公式和逐项检查。可独立运行 test_rectangular_pupil_mtf_native 或 test_tilted_gaussian_coupling_native。请求示例见 [pupil_coupling_requests.json](../../examples/requests/pupil_coupling_requests.json)，逐项依据见专项验收（历史参考）。示例中的计算调用返回任务编号，使用 get_task_status 等待完成后再读取 get_task_result。
 
 FFT MTF GUI与默认出瞳完整映射分别按独立验收条件判断。
 
 ## 非序列参考
 
-Polar 的定向光线、立体角与角度像素，以及带参考对象的反射、平行玻璃板和相干归一化见[专项说明](nonsequential-validation.md)。双精度 API 与 ZRD 保存精度分别记录，未探测功率不自动解释为吸收；各探测器的累计来源绑定修订与配置。
+Polar 的定向光线、立体角与角度像素，以及带参考对象的反射、平行玻璃板和相干归一化见[专项说明](../topics/nonsequential/nonsequential-validation.md)。双精度 API 与 ZRD 保存精度分别记录，未探测功率不自动解释为吸收；各探测器的累计来源绑定修订与配置。
 
 ## 非零复瞳与偏振耦合参考
 
@@ -108,7 +108,7 @@ POP偏振耦合按手册分别归一化X/Y重叠积分，再按入射分量功�
 
 `_sample_3.ZES`的权重按光子谱解释，Q=1的输出能量为`Iabsorbed·λin/λout`。稀薄模型使用0.47μm、100000条光线、seed42、1mm球形探测器；源和探测器均在同一N-BK7体内，避免玻璃出口和全反射选择效应。由摩尔消光系数、粒子数密度及阿伏伽德罗常数计算吸收概率，再积分Stokes损耗。总功率、转换光子数采用六标准误差及2×10⁻⁵的插值/微弱再吸收预算。
 
-`WlUM`是光线头波长；`Wn`过滤源波长。`X_WAVERANGE(3,a,b)`按手册检查探测器处波长，a/b以微米表示，双端包含。本机该稀薄模型的402条转换光线在原生过滤中表现为约0.55μm；两个相邻闭区间525–550和550–575nm均选中全部402条，其他25nm区间为空，与独立逐光线波长不符。直接属性式与官方重载、两种完整保存格式均复现，当前波长表变化未使细分正确。总能量通过、原生路径一致和分波段数值失败分别记录；内部原因未确认。逐光线集合判据及范围见[原生波长区间过滤](nonsequential-validation.md#原生波长区间过滤)。
+`WlUM`是光线头波长；`Wn`过滤源波长。`X_WAVERANGE(3,a,b)`按手册检查探测器处波长，a/b以微米表示，双端包含。本机该稀薄模型的402条转换光线在原生过滤中表现为约0.55μm；两个相邻闭区间525–550和550–575nm均选中全部402条，其他25nm区间为空，与独立逐光线波长不符。直接属性式与官方重载、两种完整保存格式均复现，当前波长表变化未使细分正确。总能量通过、原生路径一致和分波段数值失败分别记录；内部原因未确认。逐光线集合判据及范围见[原生波长区间过滤](../topics/nonsequential/nonsequential-validation.md#原生波长区间过滤)。
 
 在均匀N-BK7、毫米单位且光程非零的受控记录中，使用`λum=1000·OpticalPathLU/OpticalPathW`还原每段波长。以独立Sellmeier系数核对逐段折射率，再检查逐光子的Stokes能量；402条转换光线的折射率最大差为6.03×10⁻⁸。由这些波长分箱，光子谱与功率谱均符合预设六标准误差和积分预算。该参考不使用强度反推波长，不覆盖零光程、GRIN或全部ZRD格式，也不表示X_WAVERANGE细分过滤已修复。
 
@@ -136,7 +136,7 @@ STAT分别作用于后续TTHI，128个保存镜头读取实际厚度；Uniform�
 
 ## 有限模型验收与复现
 
-扩展模型的固定输入和容差见[有限验收清单](../tests/reference_data/finite-acceptance.json)，逐项结果见有限模型验收（历史参考）。清单限定 Cooke 三视场、三单色及加权多色，N-BK7 平凸单透镜，矩形/环形瞳四种0.2 waves像差，以及明确列出的22种官方面型。面型参数作用、模式采用、保存重载和独立光学数值分别判断。
+扩展模型的固定输入和容差见[有限验收清单](../../tests/reference_data/finite-acceptance.json)，逐项结果见有限模型验收（历史参考）。清单限定 Cooke 三视场、三单色及加权多色，N-BK7 平凸单透镜，矩形/环形瞳四种0.2 waves像差，以及明确列出的22种官方面型。面型参数作用、模式采用、保存重载和独立光学数值分别判断。
 
 Ince 独立参考求解有限 Fourier 本征问题：`Y'' + ε sin(2η)Y' + (a − pε cos(2η))Y = 0`。有限模式为 `(p,m)=(0,0),(1,1),(2,0),(2,2),(4,0),(4,2),(4,4)`，有非零奇解的模式分别检查奇、偶分支；`w0=0.1 mm`、`f0=0.05/0.1 mm`，传播距离为0、0.5、1倍瑞利长度。相对复场只移除每个平面共同的一个复常数，空间相位、符号和强度分布保留。强度、相对复场及功率预算均为0.005，不推广到清单外阶次。
 

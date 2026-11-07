@@ -1,0 +1,29 @@
+Occasionally there will be cases where it can be observed that ray bundles do not fill the stop surface or errors
+messages such as "Cannot Determine Object Coordinate" and "Cannot find rays to yield requested image height"
+are displayed.Usually turning on ray aiming will solve this error message. If, when ray aiming is turned on,the initial
+first guess ray cannot be traced then the fall back option is to search over a grid of rays. That grid of rays needs a
+scale to set the distance between grid points, and that scale is set by the first surface with optical power.
+If the semi-diameter of that surface is zero, then we cap the search scale based on the radius of that surface or the
+entrance pupil diameter depending on which is smaller. Note this is mainly for a cautious check as it's unusual to
+have a surface with optical power and zero semi-diameter at the same time.
+If the semi-diameter of that surface is non-zero, then we cap the search scale based on the radius and a multiple of
+the semi-diameter value depending on which is smaller.
+The ray aiming search can be aided by applying a fixed semi-diameter solve to the first surface with optical power.
+This will narrow down the search and will help the ray aiming algorithm converge more quickly. Even in cases where
+no error messages are generated, applying a Fixed solve to the Clear Semi-Diameter of the first surface with optical
+power can significantly increase the update speed of the system.
+2.1.1.7.1. Ray Aiming Wizard
+The Ray Aiming Wizard provides recommendations on which Ray Aiming settings to use for the currently loaded
+optical model. The output of the tool displays the recommended ray aiming settings, the decision metrics used to
+make the recommendations, and any warnings. The output of the Ray Aiming Wizard is a text window.
+The Ray Aiming Wizard uses information from Pupil Aberration and the RMS Wavefront Error (see RMS vs. Field for
+more information) to determine which Ray Aiming settings to recommend. The reasons for the recommendations
+are described in the Decision Metrics section of the output text.
+After running the Ray Aiming Wizard, a text report is generated. There are four main sections in the report:
+• Basic system information: File name, system aperture and field settings.
+• Recommended Settings: The recommended list of ray aiming settings.
+• DecisionMetrics:AsummaryofhowtheRayAimingWizardtestedthe systemandfoundthe recommendedsettings.
+• Raw data: The data used to make each decision shown in the previous section.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 150
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Setup Tab

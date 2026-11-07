@@ -10,7 +10,7 @@
     "reference": "Independent native Model solves measured via Snell at two incident angles; base Sellmeier1 computed from catalog coefficients; catalog dPgF retained.",
     "fallback": "At minimum wavelength0.29um, LITHOSIL-Q uses constant index offset and ignores Vd offset.",
     "boundary": "Local v242 includes minimum0.3um in model-difference branch; direct final settings and matching dispersion recorded.",
-    "source": "Local 2024R2 user manual pp333,1348-1349 and official Material_Solves; archived formula .local/evidence/development/ED-02/material-reference271/offset-definition.svg"
+    "source": "Local 2024R2 user manual pp333,1348-1349 and official Material_Solves; archived formula verification/development/ED-02/material-reference271/offset-definition.svg"
   },
   "tolerances": {
     "index": "1e-6 + 1e-7*abs(reference)",
@@ -19,65 +19,65 @@
   },
   "checks": {
     "ordinary_passed": 120,
-    "ordinary_evidence": ".local/evidence/development/ED-02/ordinary272.xml",
+    "ordinary_evidence": "verification/development/ED-02/ordinary272.xml",
     "native_successful_cases": 4,
     "numeric_comparisons": 399,
     "max_abs_error": 9.222544863213278e-11,
     "evidence": [
-      ".local/evidence/development/ED-02/native272.xml: visible and legacy offset cases passed",
-      ".local/evidence/development/ED-02/native273.xml: corrected0.3um boundary case passed",
-      ".local/evidence/development/ED-02/native274.xml: valid-UV-resource constant-offset case passed"
+      "verification/development/ED-02/native272.xml: visible and legacy offset cases passed",
+      "verification/development/ED-02/native273.xml: corrected0.3um boundary case passed",
+      "verification/development/ED-02/native274.xml: valid-UV-resource constant-offset case passed"
     ],
     "runs": [
       {
-        "folder": ".local/runs/material272_offset_visible_c7258e2aca",
+        "folder": "outputs/runs/material272_offset_visible_c7258e2aca",
         "numeric_checks": 173,
         "max_abs_error": 5.4569682106375694e-12,
         "disconnect_ok": true,
         "native_closed": true,
         "forced": false,
-        "close_receipt": ".local/runs/material272_offset_visible_c7258e2aca/state/close_receipt.json"
+        "close_receipt": "outputs/runs/material272_offset_visible_c7258e2aca/state/close_receipt.json"
       },
       {
-        "folder": ".local/runs/material272_offset_boundary_c2305d88b4",
+        "folder": "outputs/runs/material272_offset_boundary_c2305d88b4",
         "numeric_checks": 112,
         "max_abs_error": 6.661338147750939e-16,
         "disconnect_ok": true,
         "native_closed": true,
         "forced": false,
-        "close_receipt": ".local/runs/material272_offset_boundary_c2305d88b4/state/close_receipt.json"
+        "close_receipt": "outputs/runs/material272_offset_boundary_c2305d88b4/state/close_receipt.json"
       },
       {
-        "folder": ".local/runs/material272_offset_below_visible_28dbb38b6e",
+        "folder": "outputs/runs/material272_offset_below_visible_28dbb38b6e",
         "numeric_checks": 88,
         "max_abs_error": 2.220446049250313e-16,
         "disconnect_ok": true,
         "native_closed": true,
         "forced": false,
-        "close_receipt": ".local/runs/material272_offset_below_visible_28dbb38b6e/state/close_receipt.json"
+        "close_receipt": "outputs/runs/material272_offset_below_visible_28dbb38b6e/state/close_receipt.json"
       },
       {
-        "folder": ".local/runs/material_offset_numeric048_49577e1154",
+        "folder": "outputs/runs/material_offset_numeric048_49577e1154",
         "numeric_checks": 26,
         "max_abs_error": 9.222544863213278e-11,
         "disconnect_ok": true,
         "native_closed": true,
         "forced": false,
-        "close_receipt": ".local/runs/material_offset_numeric048_49577e1154/state/close_receipt.json"
+        "close_receipt": "outputs/runs/material_offset_numeric048_49577e1154/state/close_receipt.json"
       }
     ]
   },
   "historical_failures": [
     {
-      "evidence": ".local/evidence/development/ED-02/native272.xml",
+      "evidence": "verification/development/ED-02/native272.xml",
       "reason": "A constant-offset expectation at0.3um contradicted the actual local model-difference branch."
     },
     {
-      "evidence": ".local/evidence/development/ED-02/native273.xml",
+      "evidence": "verification/development/ED-02/native273.xml",
       "reason": "N-BK7 minimum catalog wavelength0.3um invalidated the0.29um baseline; replaced by catalog-valid LITHOSIL-Q and added explicit catalog range precondition."
     },
     {
-      "evidence": ".local/evidence/development/ED-02/material-diagnostic269",
+      "evidence": "verification/development/ED-02/material-diagnostic269",
       "reason": "Diagnostic used the public server settings wrapper against the internal flattened dispatcher; corrected in270/271."
     }
   ],

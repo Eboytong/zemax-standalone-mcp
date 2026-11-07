@@ -1,0 +1,22 @@
+Text output
+Selecting the "Text" option on the image analysis window menu bar will generate and display a text file listing the
+ray data. Ifthe "Show" option is setto "SpotDiagram",the file will have 9 columns. The first column is the sequential
+ray number. The second and third columns are the x and y field coordinates (either degrees or object height). The
+fourth andfifth columns are thenormalizedpupil coordinates,Px andPy. The sixth columnis the integerwavelength
+number. The seventh column is the weight of the ray, which depends upon the source properties. The eighth and
+ninth columns are the image coordinates in lens units, relative to the reference ray.
+If the "Show" option is not set to "Spot Diagram", then the text display will list the weighted ray count in each pixel.
+The pixel listing starts at the -x, -y (bottom left) corner pixel, and proceeds up the y columns. Use the "Escape" key
+to terminate a lengthy image analysis computation.
+3.2.8.3. Geometric Bitmap Image Analysis
+The feature "Image Simulation" is generally superior to this feature, unless the simulated image is desired on an
+intermediate surface away from the image.
+This feature creates an RGB color image based upon ray tracing data using an RGB bitmap file as the source. This
+featurehasmany applications. It canbeusedtomodel extendedsources, analyzeusefulresolution,displaydistortion,
+represent the appearance of imaged objects, provide intuition as to image rotation, display beam footprints, to
+name just a few.
+This feature is based strictly upon geometrical ray tracing. The bitmap image analysis feature uses standard BMP,
+JPG, and PNG files as the source image, see the discussion for details
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 832
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

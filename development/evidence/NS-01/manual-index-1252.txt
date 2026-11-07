@@ -1,0 +1,33 @@
+type switched to Float By Stop Size. For example, ifthe original system uses the EPD, we setthe stop semi-diameter
+to be such that the EPD in the new system equals the EPD in the original. If the stop surface supports mechanical
+semi-diameters, then OpticStudio adjusts the chip zone so that the mechanical semi-diameter is set to the original
+optical semi-diameter.
+Notes on fixing Model glasses
+When replacing a Model glass with the closest glass in the loaded catalogs, it may be the case that the index of
+refraction or dispersion data changes significantly enough to affect overall system performance. To ensure this
+doesn't happen, users can take two approaches:
+1. Ensure the Model glass being used is close to - if not exactly - the same as a glass within the selected Material
+Catalog. Preferably, this should be the glass that will be used during the manufacturing process.
+2. Build a unique catalog of glasses based on the Model glass data. Note: this is not recommended for late-stage
+design work. When building for manufacture, users should always use the data specific to the material they
+intend to manufacture with instead of an idealized model.
+For option 2, there are a few ways to create a user-defined catalog. A useful method is to use the INDX optimization
+operand to collect the index of refraction for the Model glass at at least three wavelengths. Then fit this data to the
+Conrady dispersion formula and generate a user-defined material within a user-defined catalog. Replace the Model
+glass with this new material. For more guidance on creating unique materials, see the Knowledgebase article "How
+to add new materials and glasses in OpticStudio".
+7.1.3. Critical Rayset Generator
+This feature is only available in the Premium and Enterprise editions of Ansys Zemax OpticStudio.
+The Critical Ray Generator creates a "critical" set of rays that provide the basis for ensuring that changes made to
+the original sequential system in NSC (e.g. by adding components to reduce stray light effects or by adding optical
+mounts) are not detrimental. It creates a .CRS file that can be traced in non-sequential mode with the Critical Ray
+Tracer or used as a Source File object.
+The Critical Rayset Generator issues an error and aborts if any of the following are true:
+• Scattering is present.
+• The aperture is not Float By Stop Size, Object Space NA, or Object Cone Angle.
+• Ray-Aiming is off.
+• Any surface (other than coordinate breaks and ignored surfaces) has a clear semi-diameter or semi-diameter = 0.
+• Multiple configurations are present.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1253
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Tolerance Tab

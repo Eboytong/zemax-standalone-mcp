@@ -1,0 +1,187 @@
+{
+  "version": "0.1.39",
+  "date": "2026-11-05",
+  "probe_source": "Local ZOSAPI_Interfaces.dll reflection; method parameter names inspected without application initialization",
+  "interface": {
+    "properties": [],
+    "methods": [
+      "Double GetRefractiveIndex(System.String, System.String, Double, Double, Double, Double, Double)",
+      "Double GetDNDT(System.String, System.String, Double, Double, Double, Double, Double, Double)"
+    ]
+  },
+  "parameters": [
+    {
+      "method": "GetRefractiveIndex",
+      "parameters": [
+        "MaterialCatalog",
+        "Material",
+        "Wavelength",
+        "EnvironmentPressure",
+        "EnvironmentTemperature",
+        "MaterialPressure",
+        "MaterialTemperature"
+      ]
+    },
+    {
+      "method": "GetDNDT",
+      "parameters": [
+        "MaterialCatalog",
+        "Material",
+        "Wavelength",
+        "EnvironmentPressure",
+        "EnvironmentTemperature",
+        "MaterialPressure",
+        "MaterialTemperature",
+        "DeltaT"
+      ]
+    }
+  ],
+  "request": "get_material_properties.star_samples: up to 100 typed conditions, canonical native catalog/material selectors",
+  "implementation": {
+    "native": "GetRefractiveIndex/GetDNDT with environment/material conditions kept distinct",
+    "readback": "Canonical resource selection checked before and after query; each result row retains exact typed input conditions",
+    "errors": "Nonfinite/nonpositive index rejected; native method/sample/conditions and close failure preserved",
+    "ownership": "Existing owned_catalog closes on success/failure; no model or catalog save mutation"
+  },
+  "native": {
+    "status": "not_run",
+    "reason": "Existing BASE-04 initialization timed out at 180.578 seconds; actual getter availability not inferred from STAR flag",
+    "prepared_test": "tests/test_star_materials_live.py",
+    "reference": "Six wavelengths and central finite difference of native n with fixed environment; independent thermal formula and absolute/relative index reference remain pending",
+    "tolerance": "dn/dT 1e-8 per Celsius + 1% reference; existing catalog Nd tolerance unchanged"
+  },
+  "unload_probe": {
+    "interfaces": {
+      "ZOSAPI.Editors.LDE.ISTAR_TemperaturesFEAData": {
+        "properties": [
+          {
+            "name": "SurfaceNumber",
+            "type": "System.Int32",
+            "can_read": true,
+            "can_write": false
+          },
+          {
+            "name": "AreTemperaturesImported",
+            "type": "System.Boolean",
+            "can_read": true,
+            "can_write": false
+          },
+          {
+            "name": "NumberOfDataPoints",
+            "type": "System.Int32",
+            "can_read": true,
+            "can_write": false
+          },
+          {
+            "name": "Filename",
+            "type": "System.String",
+            "can_read": true,
+            "can_write": false
+          }
+        ],
+        "methods": [
+          "Void ImportTemperatures(System.String)",
+          "ZOSAPI.Editors.LDE.ISTAR_PointWithTemperatureAndIndex[] GetFEAPointsSafeOld()",
+          "ZOSAPI.Editors.LDE.ISTAR_PointWithTemperatureAndIndex[] GetFEAPointsSafe()",
+          "Boolean AreTemperaturesApplied()",
+          "Void UnloadData()",
+          "ZOSAPI.Common.ICoordinateTransform GetTransformValues(Int32)",
+          "ZOSAPI.Editors.LDE.ISTAR_PointWithTemperatureAndIndex[] GetTransformedFEAPointsSafe(Int32)",
+          "ZOSAPI.Editors.LDE.ISTAR_PointWithTemperatureAndIndex[] GetTransformedFEAPointsNoImportRequired(System.String, Int32, Double[,], Double[], Int32)"
+        ]
+      },
+      "ZOSAPI.Editors.LDE.ISTAR_DirectIndexFEAData": {
+        "properties": [
+          {
+            "name": "SurfaceNumber",
+            "type": "System.Int32",
+            "can_read": true,
+            "can_write": false
+          },
+          {
+            "name": "IsDirectIndexImported",
+            "type": "System.Boolean",
+            "can_read": true,
+            "can_write": false
+          },
+          {
+            "name": "NumberOfDataPoints",
+            "type": "System.Int32",
+            "can_read": true,
+            "can_write": false
+          },
+          {
+            "name": "Filename",
+            "type": "System.String",
+            "can_read": true,
+            "can_write": false
+          }
+        ],
+        "methods": [
+          "Void ImportDirectIndex(System.String)",
+          "ZOSAPI.Editors.LDE.ISTAR_PointWithIndex[] GetFEAPointsSafe()",
+          "Boolean IsDirectIndexApplied()",
+          "Void UnloadData()",
+          "ZOSAPI.Common.ICoordinateTransform GetTransformValues(Int32)",
+          "ZOSAPI.Editors.LDE.ISTAR_PointWithIndex[] GetTransformedFEAPointsSafe(Int32)",
+          "ZOSAPI.Editors.LDE.ISTAR_PointWithIndex[] GetTransformedFEAPointsNoImportRequired(System.String, Int32, Double[,], Double[], Int32)"
+        ]
+      },
+      "ZOSAPI.Editors.LDE.ISTAR_DeformationsFEAData": {
+        "properties": [
+          {
+            "name": "SurfaceNumber",
+            "type": "System.Int32",
+            "can_read": true,
+            "can_write": false
+          },
+          {
+            "name": "AreDeformationsImported",
+            "type": "System.Boolean",
+            "can_read": true,
+            "can_write": false
+          },
+          {
+            "name": "NumberOfDataPoints",
+            "type": "System.Int32",
+            "can_read": true,
+            "can_write": false
+          },
+          {
+            "name": "Filename",
+            "type": "System.String",
+            "can_read": true,
+            "can_write": false
+          }
+        ],
+        "methods": [
+          "Void ImportDeformations(System.String)",
+          "ZOSAPI.Editors.LDE.ISTAR_PointWithDeformation[] GetFEAPointsSafeOld()",
+          "ZOSAPI.Editors.LDE.ISTAR_PointWithDeformation[] GetFEAPointsSafe()",
+          "ZOSAPI.Editors.LDE.ISTAR_PointWithDeformationAndWeight[] GetFEAPointsWithAutoWeightsSafe(Int32)",
+          "Boolean AreDeformationsApplied()",
+          "Void UnloadData()",
+          "ZOSAPI.Common.ICoordinateTransform GetTransformValues(Int32)",
+          "ZOSAPI.Editors.LDE.ISTAR_PointWithDeformation[] GetTransformedFEAPointsSafe(Int32)",
+          "ZOSAPI.Editors.LDE.ISTAR_PointWithDeformation[] GetTransformedFEAPointsNoImportRequired(System.String, Int32, Double[,], Double[], Int32)"
+        ]
+      }
+    },
+    "finding": "Local interfaces expose UnloadData, with no keep-files selector. Runtime effect on external data and checkpoint save/reload references has not been observed.",
+    "next_action": "After initialization succeeds, use independent source and model copies to observe unload, persisted references, failure/cancel restoration and resource cleanup before defining the public unload operation."
+  },
+  "ordinary": {
+    "passed": 1531,
+    "failures": 0,
+    "errors": 0,
+    "deselected": 518,
+    "focused_passed": 69,
+    "report": "verification/development/EXT-STAR/ordinary049.xml"
+  },
+  "release": {
+    "status": "passed",
+    "wheel": "wheels/zemax_standalone_mcp-0.1.39-py3-none-any.whl",
+    "install": "verification/development/EXT-STAR/wheel-install039",
+    "stdio": "verification/development/EXT-STAR/stdio-smoke049.json"
+  }
+}

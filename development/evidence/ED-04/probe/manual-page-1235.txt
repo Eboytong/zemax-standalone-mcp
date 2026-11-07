@@ -1,0 +1,12 @@
+6.2.2. Optimize! (optimize tab, non-sequential)
+See the description of Optimize! under the "Automatic Optimization" section of "The Optimize Tab".
+6.2.3. Merit Function Wizards (optimize tab, non-sequential)
+These are the Merit Function Wizards, available in the Automatic Optimization section of the Optimize Tab in
+Non-sequential UI Mode.
+The Wizards can also be accessed by expanding the "Wizards and Operands" bar above the Merit Function Editor
+data.
+Note that wizards may not be available if the specified objects are not loaded in the NSC Editor, as shown below.
+6.2.3.1. Optimization Wizard (from the Setup Tab)
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1235
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Optimize Tab (non-sequential ui mode)

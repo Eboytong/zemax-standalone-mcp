@@ -21,7 +21,7 @@ B006目标0.1.62，现为5/10。已完成POP、制造交付、FFT线边扩散、
 | development-remaining.md / development-queue.json | 从台账生成的源记录、不同编号、共同功能及执行动作 |
 | development-batches.json / BASE-04批次记录 | 首次完成数、发行门槛和证据 |
 
-统计入口：`.venv/Scripts/python.exe tests/support/development_status.py --output .local/evidence/development/BASE-01/remaining-audit641.json --markdown development/generated/remaining.md --queue development/generated/queue.json`。统计报告的源码能力与已发行wheel能力分别记录。别名共享实际范围、状态和证据。
+统计入口：`.venv/Scripts/python.exe scripts/development/status.py --output .local/evidence/development/BASE-01/remaining-audit641.json --markdown development/generated/remaining.md --queue development/generated/queue.json`。统计报告的源码能力与已发行wheel能力分别记录。别名共享实际范围、状态和证据。
 
 ## 3. B006当前执行顺序
 

@@ -1,3 +1,4 @@
+from zemax_mcp.config import PROJECT_ROOT
 """
 MCP Test Support - Path Management
 
@@ -23,8 +24,8 @@ from typing import Optional, List
 import secrets
 
 
-PROJECT_ROOT = Path(__file__).parents[2]
-OUTPUTS_DIR = PROJECT_ROOT / "outputs"
+PROJECT_ROOT = PROJECT_ROOT
+OUTPUTS_DIR = PROJECT_ROOT / ".local" / "runs"
 
 # Legacy mode: set ZEMAX_TEST_OUTPUT_LEGACY=1 to use old behavior
 LEGACY_MODE = os.environ.get('ZEMAX_TEST_OUTPUT_LEGACY', '0') == '1'
@@ -39,7 +40,7 @@ def run_dir(kind: str, role: str = "run") -> Path:
         role: "run" (default) or "fixture" (permanent)
 
     Returns:
-        Path to output directory in outputs/runs/ or outputs/fixtures/
+        Path to output directory in .local/fixtures/ or outputs/fixtures/
     """
     if LEGACY_MODE:
         # Legacy behavior: write to outputs/ root
@@ -117,7 +118,7 @@ def find_outputs(pattern: str) -> List[Path]:
     Searches in order:
     1. outputs/ top-level (legacy 256 dirs)
     2. outputs/fixtures/
-    3. outputs/runs/
+    3. .local/fixtures/
 
     Args:
         pattern: Glob pattern (e.g., "finite_comp_*")

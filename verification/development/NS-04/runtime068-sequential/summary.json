@@ -1,8 +1,8 @@
 {
   "date": "2026-11-05",
   "scope": "NS-04 remaining runtime discovery and report outlets; not functional acceptance",
-  "settings_evidence": ".local/evidence/development/NS-04/runtime068-sequential/settings.json",
-  "outlets": ".local/evidence/development/NS-04/outlets068/summary.json",
+  "settings_evidence": "verification/development/NS-04/runtime068-sequential/settings.json",
+  "outlets": "verification/development/NS-04/outlets068/summary.json",
   "manual": "Installed OpticStudio v242 English manual pages950-953 and1541-1554; extracted sections beside settings.json",
   "observed": {
     "NSCObjectViewer": "Pure NSC factory creates AS_Default; sequential factory null. Default pure NSC text export false; analysis closed. Official MODIFYSETTINGS has SHA_ROTX/Y/Z only; object selector and rotation readback unavailable. Need formal object selection/readback and graphics outlet.",

@@ -10,7 +10,7 @@ MIRROR 的 Phase 主曲线标记 S/P reflection phase；其他介质为 transmis
 
 ReverseDirection原生条件为NonSequential组件曲面，普通顺序曲面传true返回INACTIVE_SETTING并记录曲面类型和条件来源。NSC对象/面选择及反向介质对照单列后续条目。1000层膜系完成运行中取消，任务cancelled、分析和副本关闭、源模型保持，随后新分析成功。副本早期设置失败时检查Close返回值，失败则要求重连，并保留原始设置错误。
 
-证据 .local/evidence/development/CO-01/acceptance058.json；调用示例 examples/coating_conditions058_requests.json。此前0.1.54的600次绝对膜厚参考与本轮相对膜厚、镜面、取消共同覆盖现有顺序请求；六项顺序偏振扫描条目已完成，NSC扩展见CO-01.NscSurfaceScans。
+证据 .local/evidence/development/CO-01/acceptance058.json；调用示例 examples/requests/coating_conditions058_requests.json。此前0.1.54的600次绝对膜厚参考与本轮相对膜厚、镜面、取消共同覆盖现有顺序请求；六项顺序偏振扫描条目已完成，NSC扩展见CO-01.NscSurfaceScans。
 
 ## 0.1.54 波长选择修复与独立薄膜参考
 
@@ -18,13 +18,13 @@ ReverseDirection原生条件为NonSequential组件曲面，普通顺序曲面传
 
 本轮采用 n=1.38、绝对厚度0.1 µm的单层膜和 SCHOTT N-BK7 基底，使用独立 Fabry–Perot 复振幅求和及 Sellmeier 公式。三种系统波长0.45/0.55/0.70 µm的角度扫描，加0.45–0.70 µm波长扫描，覆盖相位、延迟、二向衰减、R/T/A，共24次原生分析和600次比较。相位/延迟以360°为周期比较，容差1e-4°；系数容差1e-6。最大相位/延迟误差4.55e-13°，最大无量纲系数误差2.23e-15。24次分页、PNG导出、关闭及源模型保持通过。
 
-测试实现见 tests/support/thin_film.py、tests/test_coating_reference_live.py；证据 .local/evidence/development/CO-01/acceptance057.json 和 native057-final.xml。反向传播、MIRROR相位通道、相对膜厚及原生失败/取消继续验收，相关条目保持 implemented。
+测试实现见 tests/support/thin_film.py、tests/native/test_coating_reference_live.py；证据 .local/evidence/development/CO-01/acceptance057.json 和 native057-final.xml。反向传播、MIRROR相位通道、相对膜厚及原生失败/取消继续验收，相关条目保持 implemented。
 
 ## 0.1.53 偏振性能扫描与波长副本
 
 `phase_vs_angle`、`phase_vs_wavelength`、`retardance_vs_angle`、`retardance_vs_wavelength`、`diattenuation_vs_angle` 和 `diattenuation_vs_wavelength` 已加入真实 stdio 执行记录。六项均回读原生 Surface、Wavelength/Angle 和扫描范围，任务成功终止并释放；角度曲线为 400 点，波长扫描结果覆盖请求的 0.45–0.70 微米端点。波长扫描在临时系统副本执行并保留源系统编号，原活动模型设置及曲面状态前后相同。
 
-主曲线分别标注 S/P 透射相位、反射/透射延迟及反射/透射二向衰减；相位定义依据 native analysis header 和 OpticStudio 定义。独立薄膜矩阵数值对照仍待完成，因此这六项维持 implemented。普通专项检查 95 项通过；全量普通检查 1762 项通过，559 项原生测试因默认要求显式 `--run-zemax` 而跳过。显式运行 `pytest tests/test_coating_polarization_live.py --run-zemax` 后，六项真实 stdio 分析、结果读取、分页、绘图和任务释放通过，源系统设置及曲面快照保持一致；启动输出含 `FRU__delta_init(): Attempt to start when running!` 警告。证据见 `.local/runs/coating_polarization055_0147d061ae/calls.json`、`.local/runs/coating_polarization055_6bd54c03d5/calls.json`、`.local/evidence/development/CO-01/range055`、`range055b` 及 `.local/evidence/development/BASE-01/remaining-audit056.json`。
+主曲线分别标注 S/P 透射相位、反射/透射延迟及反射/透射二向衰减；相位定义依据 native analysis header 和 OpticStudio 定义。独立薄膜矩阵数值对照仍待完成，因此这六项维持 implemented。普通专项检查 95 项通过；全量普通检查 1762 项通过，559 项原生测试因默认要求显式 `--run-zemax` 而跳过。显式运行 `pytest tests/native/test_coating_polarization_live.py --run-zemax` 后，六项真实 stdio 分析、结果读取、分页、绘图和任务释放通过，源系统设置及曲面快照保持一致；启动输出含 `FRU__delta_init(): Attempt to start when running!` 警告。证据见 `.local/runs/coating_polarization055_0147d061ae/calls.json`、`.local/runs/coating_polarization055_6bd54c03d5/calls.json`、`.local/evidence/development/CO-01/range055`、`range055b` 及 `.local/evidence/development/BASE-01/remaining-audit056.json`。
 
 ## 0.1.51 材料目录修复与镀膜波长参考
 
@@ -59,7 +59,7 @@ PO-01五项已实际构造SettingsFirst并读取运行时接口，均为AS_Defau
 证据 .local/evidence/development/CO-01/acceptance051/summary.json、PO-01/runtime051/settings.json、CO-01/runtime051/probe.json；发行BASE-04/release049.json。原始四项首次失败及后续定位报告保留，版本0.1.49，全量目标继续进行。
 
 
-CO-01本批实现13种run_analysis请求及两个层操作工具，状态为implemented。原生设置采用、持久性与数值验收等待启动恢复。正式接口见.local/evidence/development/CO-01/probe024.json，执行证据汇总见verification/coatings024-summary.json。
+CO-01本批实现13种run_analysis请求及两个层操作工具，状态为implemented。原生设置采用、持久性与数值验收等待启动恢复。正式接口见.local/evidence/development/CO-01/probe024.json，执行证据汇总见development/evidence/coatings024-summary.json。
 
 ## 性能分析
 
@@ -85,7 +85,7 @@ update_coating_layers接受局部设置：use_layer_multiplier_and_offsets及lay
 
 ## 检查与待测
 
-普通检查覆盖13种请求、范围/类型、局部修改、活动依赖、拾取关系、最终回读、原始错误、结果和关闭。tests/test_coatings_live.py准备17项原生用例：13种专题、3项无膜空气至n=1.5界面的Fresnel比较，以及有层样例的修改和保存重载。Fresnel预设容差为1e-6绝对差+1e-5×参考值，比较S/P及平均系数。
+普通检查覆盖13种请求、范围/类型、局部修改、活动依赖、拾取关系、最终回读、原始错误、结果和关闭。tests/native/test_coatings_live.py准备17项原生用例：13种专题、3项无膜空气至n=1.5界面的Fresnel比较，以及有层样例的修改和保存重载。Fresnel预设容差为1e-6绝对差+1e-5×参考值，比较S/P及平均系数。
 
 早期17项用例的逐次状态保留于台账及原记录。本机原生启动已恢复；本轮绝对厚度单层膜独立参考通过，仍需复杂膜系、反向传播、镜面相位和失败/取消验收。正式接口/枚举与本机手册索引930–942页的摘录存于.local/evidence/development/CO-01。
 

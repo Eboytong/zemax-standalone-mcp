@@ -1,0 +1,12 @@
+{
+  "version": "0.1.25",
+  "date": "2026-11-05",
+  "item_id": "CV-01.FullFieldSpot",
+  "probe_source": "verification/development/BASE-01/probe/api-interfaces.json",
+  "analysis_id": 45,
+  "settings_interfaces_found": [],
+  "probe_result": "The static reflection inventory contains the analysis ID but no FullFieldSpot settings interface or properties.",
+  "execution": "not_run",
+  "blocker": "No formal settings adapter surface is present in the checked reflection inventory; native startup also remains blocked by BASE-04/connection019 timeout 180.526 seconds.",
+  "unlock_condition": "After successful OpticStudio startup, call New_FullFieldSpot, inspect GetSettings runtime type and its properties/methods; add a typed adapter only if the formal runtime API exposes settings and result access."
+}

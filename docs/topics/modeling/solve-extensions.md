@@ -2,7 +2,7 @@
 
 ## 2026-11-06 MaterialOffset 完成
 
-MaterialOffset 已按本机手册第333页的定义完成验收：在目录色散上叠加两组模型玻璃的折射率差，模型输入保留目录的 `Nd/Vd/dPgF`。参考的基底色散独立按目录 Sellmeier1 系数计算，模型差通过独立设置的 Model 光学基线和双入射角 Snell 反算取得。十五组零、正、负偏移组合覆盖可见光、最短波长0.3µm及0.29µm分支；四个原生用例共399次数值检查通过，120项相关普通检查通过。逐组最终设置、保存重载后的单元格/配置/评价函数、光线结果及关闭通过，证据 `.local/evidence/development/ED-02/acceptance275.json`，例子 `examples/material-offset275.json`。
+MaterialOffset 已按本机手册第333页的定义完成验收：在目录色散上叠加两组模型玻璃的折射率差，模型输入保留目录的 `Nd/Vd/dPgF`。参考的基底色散独立按目录 Sellmeier1 系数计算，模型差通过独立设置的 Model 光学基线和双入射角 Snell 反算取得。十五组零、正、负偏移组合覆盖可见光、最短波长0.3µm及0.29µm分支；四个原生用例共399次数值检查通过，120项相关普通检查通过。逐组最终设置、保存重载后的单元格/配置/评价函数、光线结果及关闭通过，证据 `.local/evidence/development/ED-02/acceptance275.json`，例子 `examples/requests/material-offset275.json`。
 
 原有折射率容差 `1e-6 + 1e-7×参考绝对值`、阿贝数容差 `1e-5 + 1e-7×参考绝对值` 保持。旧测试把输入 `vd_offset` 直接当作最终反算阿贝数的增量；参考已改为文档定义的模型差分，旧失败及实际增量0.9992435881404731保留。目录 `dPgF=-0.0009` 是 N-BK7 独立参考的一部分，省略它会改变模型差。
 
@@ -84,11 +84,11 @@ Model与Offset已拆成独立基线执行，原生舍入谱线阿贝数分别为
 
 本轮数值检查以追迹基本量和解析关系为参考：角度取方向余弦比值；法线/消球差取近轴入射高度和斜率；光焦度取厚透镜公式；同心、曲率中心、补偿器取独立轴向和厚度关系；OPD 取归一化真实光线结果；瞳位置取正负小场差分主光线。一般使用 `atol=1e-8 + rtol=1e-7×|参考值|`；OPD 为 `1e-5 waves + 1e-7×|参考值|`；微分瞳位置为 `1e-6 + 1e-6×|参考值|`。
 
-`numeric018` 保留最初将方向余弦直接当斜率所产生的超限；`final-cases018` 使用 m/n，保持原容差。参数9/10的旧用例选择了非活动参数；已改为带非零数据的 GridSag 基线，补测连接失败，尚未取得替代基线的数值结果。材料与多配置口径的真实 stdio 数值记录、最终普通与原生回归、wheel 安装冒烟汇入 `verification/solve-extensions018-summary.json`。
+`numeric018` 保留最初将方向余弦直接当斜率所产生的超限；`final-cases018` 使用 m/n，保持原容差。参数9/10的旧用例选择了非活动参数；已改为带非零数据的 GridSag 基线，补测连接失败，尚未取得替代基线的数值结果。材料与多配置口径的真实 stdio 数值记录、最终普通与原生回归、wheel 安装冒烟汇入 `development/evidence/solve-extensions018-summary.json`。
 
 正式定义来源为本机安装的 `OpticStudio_UserManual_en.pdf` 第197–198、328–336、1348–1349、1602页及 DLL 反射。材料模型波长基准的实测差异保留在 `.local/evidence/development/ED-02/material-diagnostic018/`。
 
-重放：`.venv/Scripts/python.exe -B -m pytest tests/test_extended_solves_live.py --run-zemax -q -s`。较大逐项原生检查：`.venv/Scripts/python.exe -B tests/support/solve_cases018.py <新的证据目录>`。原生执行串行。
+重放：`.venv/Scripts/python.exe -B -m pytest tests/native/test_extended_solves_live.py --run-zemax -q -s`。较大逐项原生检查：`.venv/Scripts/python.exe -B tests/support/solve_cases018.py <新的证据目录>`。原生执行串行。
 
 ## 本轮状态（2026-11-04 至 2026-11-05）
 
@@ -100,7 +100,7 @@ Model与Offset已拆成独立基线执行，原生舍入谱线阿贝数分别为
 
 随后补测连接返回`INVALID_LICENSE`，第二次材料诊断等待超过十分钟无返回，终止后确认测试启动的Python和OpticStudio进程均退出。本机配置为`1055@localhost`，1055端口监听，服务运行；`ansysli_server.log`为空，现有日志未给出本次具体拒绝原因。记录见 `.local/evidence/development/ED-02/licensing018.json`。恢复一次成功ZOS-API连接后，串行补材料、不同配置Maximum、GridSag参数9/10、受影响既有原生回归及安装包原生冒烟。
 
-请求示例见 `examples/solve_extensions018_requests.json`；同一文件的各例须分别从其注明的基线开始。失败例明确保留原生拒绝状态。完整请求模型由 `docs/tool-schemas.json` 和 `get_capabilities` 提供。
+请求示例见 `examples/requests/solve_extensions018_requests.json`；同一文件的各例须分别从其注明的基线开始。失败例明确保留原生拒绝状态。完整请求模型由 `docs/reference/tool-schemas.json` 和 `get_capabilities` 提供。
 
 
 0.1.8 wheel已构建并独立安装至`outputs/wheel-release018`；复用现有锁定依赖，以`-I`启动安装目录中的服务。真实stdio冒烟通过74工具发现、27模式、随包记录、请求schema、连接前提及类型拒绝，正常关闭。证据为`.local/evidence/development/ED-02/wheel-smoke018.json`。安装包的原生连接/建模/分析冒烟待许可恢复。

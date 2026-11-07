@@ -24,10 +24,10 @@ The adapter writes and reads back each writable scalar and enum. It sets the QY 
 
 Related existing entry points are `run_pop` for Gaussian beam propagation and receiver coupling and `get_beam_file` for paged ZBF data inspection. Those implement overlapping capabilities while dedicated `FiberCouplingSettings` and GUI `BeamFileViewer` selection contracts remain separate items. Both Gaussian beam analyses completed acceptance in WP-01/acceptance362-gaussian.json.
 
-`run_analysis` also accepts `kind="tolerance_yield"` and `kind="tolerance_histogram"`. Both requests select a zero-based tolerance operand and either use system tolerances or name a tolerance file exposed by the native settings object. Histogram additionally requires a finite increasing range and a bin count from 1 through 1000. The implementation records the selected source and reads back `Operand`, `MinValue`, `MaxValue`, and `NumBins`; results use the standard native text, series, and grid fields. Cooke-system distribution acceptance is recorded in TO-01/acceptance085.json and `tests/test_tolerance_special_analyses_live.py`.
+`run_analysis` also accepts `kind="tolerance_yield"` and `kind="tolerance_histogram"`. Both requests select a zero-based tolerance operand and either use system tolerances or name a tolerance file exposed by the native settings object. Histogram additionally requires a finite increasing range and a bin count from 1 through 1000. The implementation records the selected source and reads back `Operand`, `MinValue`, `MaxValue`, and `NumBins`; results use the standard native text, series, and grid fields. Cooke-system distribution acceptance is recorded in TO-01/acceptance085.json and `tests/native/test_tolerance_special_analyses_live.py`.
 
 
-Examples: [examples/quick-yield030.json](../examples/quick-yield030.json) and [examples/tolerance-statistics030.json](../examples/tolerance-statistics030.json).
+Examples: [examples/requests/quick-yield030.json](../../../examples/requests/quick-yield030.json) and [examples/requests/tolerance-statistics030.json](../../../examples/requests/tolerance-statistics030.json).
 
 
 

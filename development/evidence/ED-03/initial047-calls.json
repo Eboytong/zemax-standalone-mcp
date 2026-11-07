@@ -1,0 +1,4323 @@
+[
+  {
+    "tool": "connect",
+    "arguments": null,
+    "response": {
+      "ok": true,
+      "data": {
+        "connected": true,
+        "native_system_status": "",
+        "native_startup": {
+          "events": [
+            {
+              "stage": "install_check",
+              "event": "started",
+              "timestamp": "2026-11-05T05:51:01.322+00:00",
+              "elapsed_seconds": 2.0699999822682003e-05
+            },
+            {
+              "stage": "install_check",
+              "event": "completed",
+              "timestamp": "2026-11-05T05:51:01.323+00:00",
+              "elapsed_seconds": 0.0007716999998592655,
+              "duration_seconds": 0.0007547000000158732
+            },
+            {
+              "stage": "environment",
+              "event": "started",
+              "timestamp": "2026-11-05T05:51:01.323+00:00",
+              "elapsed_seconds": 0.0007828000000245083
+            },
+            {
+              "stage": "environment",
+              "event": "completed",
+              "timestamp": "2026-11-05T05:51:01.333+00:00",
+              "elapsed_seconds": 0.010897399999976187,
+              "duration_seconds": 0.010102000000188127
+            },
+            {
+              "stage": "clr_load",
+              "event": "started",
+              "timestamp": "2026-11-05T05:51:01.333+00:00",
+              "elapsed_seconds": 0.010913899999877685
+            },
+            {
+              "stage": "clr_load",
+              "event": "completed",
+              "timestamp": "2026-11-05T05:51:01.657+00:00",
+              "elapsed_seconds": 0.3351127999999335,
+              "duration_seconds": 0.3241792000001169
+            },
+            {
+              "stage": "nethelper_assembly",
+              "event": "started",
+              "timestamp": "2026-11-05T05:51:01.657+00:00",
+              "elapsed_seconds": 0.3351356999999098
+            },
+            {
+              "stage": "nethelper_assembly",
+              "event": "completed",
+              "timestamp": "2026-11-05T05:51:01.666+00:00",
+              "elapsed_seconds": 0.34416699999997036,
+              "duration_seconds": 0.009020799999916562
+            },
+            {
+              "stage": "zos_initialize",
+              "event": "started",
+              "timestamp": "2026-11-05T05:51:01.666+00:00",
+              "elapsed_seconds": 0.34417999999982385
+            },
+            {
+              "stage": "zos_initialize",
+              "event": "completed",
+              "timestamp": "2026-11-05T05:51:01.673+00:00",
+              "elapsed_seconds": 0.3513792999999623,
+              "duration_seconds": 0.00717650000001413
+            },
+            {
+              "stage": "api_assemblies",
+              "event": "started",
+              "timestamp": "2026-11-05T05:51:01.673+00:00",
+              "elapsed_seconds": 0.35140129999990677
+            },
+            {
+              "stage": "api_assemblies",
+              "event": "completed",
+              "timestamp": "2026-11-05T05:51:01.694+00:00",
+              "elapsed_seconds": 0.37184579999984635,
+              "duration_seconds": 0.020429200000080527
+            },
+            {
+              "stage": "connection_create",
+              "event": "started",
+              "timestamp": "2026-11-05T05:51:01.694+00:00",
+              "elapsed_seconds": 0.371865200000002
+            },
+            {
+              "stage": "connection_create",
+              "event": "completed",
+              "timestamp": "2026-11-05T05:51:02.047+00:00",
+              "elapsed_seconds": 0.7249134999999569,
+              "duration_seconds": 0.35303129999988414
+            },
+            {
+              "stage": "application_create",
+              "event": "started",
+              "timestamp": "2026-11-05T05:51:02.047+00:00",
+              "elapsed_seconds": 0.7249351000000388
+            },
+            {
+              "stage": "application_create",
+              "event": "completed",
+              "timestamp": "2026-11-05T05:51:07.469+00:00",
+              "elapsed_seconds": 6.1466978999999355,
+              "duration_seconds": 5.421728300000041
+            },
+            {
+              "stage": "license_check",
+              "event": "started",
+              "timestamp": "2026-11-05T05:51:07.469+00:00",
+              "elapsed_seconds": 6.146725800000013
+            },
+            {
+              "stage": "license_check",
+              "event": "completed",
+              "timestamp": "2026-11-05T05:51:07.472+00:00",
+              "elapsed_seconds": 6.150566699999899,
+              "duration_seconds": 0.003785000000107175
+            },
+            {
+              "stage": "primary_system",
+              "event": "started",
+              "timestamp": "2026-11-05T05:51:07.473+00:00",
+              "elapsed_seconds": 6.150617399999874
+            },
+            {
+              "stage": "primary_system",
+              "event": "completed",
+              "timestamp": "2026-11-05T05:51:07.477+00:00",
+              "elapsed_seconds": 6.154832400000032,
+              "duration_seconds": 0.00420950000011544
+            }
+          ],
+          "observer_warnings": []
+        },
+        "active_task": null,
+        "running_tasks": [],
+        "task_index": {},
+        "recent_tasks": [],
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 0,
+        "source_file": null,
+        "working_file": null,
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": null,
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 0,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        }
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 0,
+        "source_file": null,
+        "working_file": null,
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": null,
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 0,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "91c4d0c218734fa2a6e3120533e5709e"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "new_system",
+    "arguments": null,
+    "response": {
+      "ok": true,
+      "data": {
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "source_units": "Watts",
+        "source_unit_prefix": "None",
+        "analysis_units": "WattsPerCMSq",
+        "analysis_unit_prefix": "None",
+        "afocal_image_space": false,
+        "aperture": {
+          "type": "EntrancePupilDiameter",
+          "value": 0.0
+        },
+        "field_type": "Angle",
+        "field_normalization": "Radial",
+        "fields": [
+          {
+            "number": 1,
+            "x": 0.0,
+            "y": 0.0,
+            "weight": 1.0,
+            "vdx": 0.0,
+            "vdy": 0.0,
+            "vcx": 0.0,
+            "vcy": 0.0,
+            "van": 0.0
+          }
+        ],
+        "wavelength_unit": "micrometers (environmental air reference)",
+        "wavelengths": [
+          {
+            "number": 1,
+            "wavelength_um": 0.55,
+            "weight": 1.0,
+            "primary": true
+          }
+        ],
+        "temperature_c": 20.0,
+        "pressure_atm": 1.0,
+        "adjust_index_to_environment": false,
+        "afocal_mode_units": "Milliradians",
+        "settings_activity": {
+          "apodization_factor_is_used": false
+        },
+        "author": "",
+        "aperture_options": {
+          "apodization_type": "Uniform",
+          "apodization_factor": 0.0,
+          "semi_diameter_margin": 0.0,
+          "semi_diameter_margin_pct": 0.0,
+          "telecentric_object_space": false,
+          "afocal_image_space": false,
+          "iterate_solves_when_updating": false,
+          "fast_semi_diameters": true,
+          "check_grin_apertures": false
+        },
+        "advanced": {
+          "reference_opd": "ExitPupil",
+          "paraxial_rays": "IgnoreCoordinateBreaks",
+          "f_num_method": "TracingRays",
+          "dont_print_coordinate_break_data": false,
+          "turn_off_threading": false,
+          "opd_modulo_2pi": false,
+          "include_calculated_data_in_session_file": true,
+          "include_tolerance_data_in_session_file": true,
+          "huygens_integral_method": "Auto"
+        },
+        "global_reference_surface": 1,
+        "material_catalogs": [
+          "SCHOTT"
+        ],
+        "polarization": {
+          "unpolarized": true,
+          "jx": 0.0,
+          "jy": 1.0,
+          "x_phase": 0.0,
+          "y_phase": 0.0,
+          "method": "XAxisMethod",
+          "convert_thin_film_phase": true
+        },
+        "ray_aiming": {
+          "mode": "Off",
+          "method": "Heuristic",
+          "cache": true,
+          "robust": false,
+          "scale_pupil_shift_by_field": false,
+          "auto_pupil_shift": true,
+          "enhanced": false,
+          "advanced_convergence": false,
+          "fallback_search": false,
+          "pupil_shift_x": 0.0,
+          "pupil_shift_y": 0.0,
+          "pupil_shift_z": 0.0,
+          "pupil_compress_x": 0.0,
+          "pupil_compress_y": 0.0,
+          "cache_steps": 10
+        },
+        "files": {
+          "coating_file": "COATING.DAT",
+          "scatter_profile": "SCATTER_PROFILE.DAT",
+          "abg_file": "ABG_DATA.DAT",
+          "gradium_profile": "PROFILE.GRD"
+        },
+        "title": "",
+        "notes": "",
+        "surface_count": 3,
+        "native_system_status": "",
+        "first_order": {
+          "effective_focal_length": 10000000000.0,
+          "paraxial_working_f_number": 10000.0,
+          "real_working_f_number": 10000.0,
+          "paraxial_image_height": 0.0,
+          "paraxial_magnification": 0.0
+        }
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 1,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": null,
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 1,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "a25176f8c3134f2dbc40d1866e76fbe5"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "insert_surfaces",
+    "arguments": {
+      "at": 1
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "inserted_at": 1,
+        "count": 1,
+        "total": 4
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 2,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r1_insert_5bda7385.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 2,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "7ed239e25098450bad6f04e9aed9bd97"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "update_system_settings",
+    "arguments": {
+      "settings": {
+        "aperture_value": 10,
+        "wavelengths": [
+          {
+            "wavelength_um": 0.55
+          }
+        ]
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "source_units": "Watts",
+        "source_unit_prefix": "None",
+        "analysis_units": "WattsPerCMSq",
+        "analysis_unit_prefix": "None",
+        "afocal_image_space": false,
+        "aperture": {
+          "type": "EntrancePupilDiameter",
+          "value": 10.0
+        },
+        "field_type": "Angle",
+        "field_normalization": "Radial",
+        "fields": [
+          {
+            "number": 1,
+            "x": 0.0,
+            "y": 0.0,
+            "weight": 1.0,
+            "vdx": 0.0,
+            "vdy": 0.0,
+            "vcx": 0.0,
+            "vcy": 0.0,
+            "van": 0.0
+          }
+        ],
+        "wavelength_unit": "micrometers (environmental air reference)",
+        "wavelengths": [
+          {
+            "number": 1,
+            "wavelength_um": 0.55,
+            "weight": 1.0,
+            "primary": true
+          }
+        ],
+        "temperature_c": 20.0,
+        "pressure_atm": 1.0,
+        "adjust_index_to_environment": false,
+        "afocal_mode_units": "Milliradians",
+        "settings_activity": {
+          "apodization_factor_is_used": false
+        },
+        "author": "",
+        "aperture_options": {
+          "apodization_type": "Uniform",
+          "apodization_factor": 0.0,
+          "semi_diameter_margin": 0.0,
+          "semi_diameter_margin_pct": 0.0,
+          "telecentric_object_space": false,
+          "afocal_image_space": false,
+          "iterate_solves_when_updating": false,
+          "fast_semi_diameters": true,
+          "check_grin_apertures": false
+        },
+        "advanced": {
+          "reference_opd": "ExitPupil",
+          "paraxial_rays": "IgnoreCoordinateBreaks",
+          "f_num_method": "TracingRays",
+          "dont_print_coordinate_break_data": false,
+          "turn_off_threading": false,
+          "opd_modulo_2pi": false,
+          "include_calculated_data_in_session_file": true,
+          "include_tolerance_data_in_session_file": true,
+          "huygens_integral_method": "Auto"
+        },
+        "global_reference_surface": 2,
+        "material_catalogs": [
+          "SCHOTT"
+        ],
+        "polarization": {
+          "unpolarized": true,
+          "jx": 0.0,
+          "jy": 1.0,
+          "x_phase": 0.0,
+          "y_phase": 0.0,
+          "method": "XAxisMethod",
+          "convert_thin_film_phase": true
+        },
+        "ray_aiming": {
+          "mode": "Off",
+          "method": "Heuristic",
+          "cache": true,
+          "robust": false,
+          "scale_pupil_shift_by_field": false,
+          "auto_pupil_shift": true,
+          "enhanced": false,
+          "advanced_convergence": false,
+          "fallback_search": false,
+          "pupil_shift_x": 0.0,
+          "pupil_shift_y": 0.0,
+          "pupil_shift_z": 0.0,
+          "pupil_compress_x": 0.0,
+          "pupil_compress_y": 0.0,
+          "cache_steps": 10
+        },
+        "files": {
+          "coating_file": "COATING.DAT",
+          "scatter_profile": "SCATTER_PROFILE.DAT",
+          "abg_file": "ABG_DATA.DAT",
+          "gradium_profile": "PROFILE.GRD"
+        },
+        "title": "",
+        "notes": ""
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 3,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r2_settings_7b46fe8d.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 3,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "84fc2014a1ac4a068535c0052e802186"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "update_surfaces",
+    "arguments": {
+      "changes": [
+        {
+          "surface": 1,
+          "thickness": 0,
+          "semi_diameter": 5,
+          "replace_solves": true
+        }
+      ]
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "surfaces": [
+          {
+            "surface": 1,
+            "surface_type": "Standard",
+            "comment": "",
+            "is_object": false,
+            "is_image": false,
+            "is_stop": false,
+            "cells": {
+              "radius": {
+                "value": "Infinity",
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "曲率半径",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "MarginalRayAngle",
+                  "ChiefRayAngle",
+                  "MarginalRayNormal",
+                  "ChiefRayNormal",
+                  "Aplanatic",
+                  "ElementPower",
+                  "CocentricSurface",
+                  "CocentricSurface",
+                  "CocentricRadius",
+                  "CocentricRadius",
+                  "FNumber"
+                ]
+              },
+              "thickness": {
+                "value": 0.0,
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "厚度",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "MarginalRayHeight",
+                  "ChiefRayHeight",
+                  "EdgeThickness",
+                  "OpticalPathDifference",
+                  "Position",
+                  "Compensator",
+                  "CenterOfCurvature",
+                  "PupilPosition"
+                ]
+              },
+              "material": {
+                "value": "",
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "材料",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "MaterialSubstitute",
+                  "MaterialOffset",
+                  "MaterialModel"
+                ]
+              },
+              "semi_diameter": {
+                "value": 5.0,
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "净口径",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "Automatic",
+                  "Maximum"
+                ]
+              },
+              "conic": {
+                "value": 0.0,
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "圆锥系数",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup",
+                  "ZPLMacro"
+                ]
+              },
+              "tce": {
+                "value": 0.0,
+                "solve": {
+                  "type": "Fixed"
+                },
+                "writable": true,
+                "header": "TCE x 1E-6",
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "SurfacePickup"
+                ]
+              },
+              "mechanical_semi_diameter": {
+                "value": 5.0,
+                "solve": {
+                  "type": "Automatic"
+                },
+                "writable": true,
+                "header": "机械半直径",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "Automatic"
+                ]
+              },
+              "chip_zone": {
+                "value": 0.0,
+                "solve": {
+                  "type": "Automatic"
+                },
+                "writable": true,
+                "header": "延伸区",
+                "available_solves": [
+                  "Fixed",
+                  "SurfacePickup",
+                  "ZPLMacro",
+                  "Automatic"
+                ]
+              }
+            },
+            "properties": {
+              "property_activity": {
+                "has_mirror_settings": false,
+                "can_be_stop": true,
+                "can_be_gcr": true
+              },
+              "scattering": {
+                "type": "None"
+              },
+              "drawing": {
+                "hide_rays_to_this_surface": false,
+                "skip_rays_to_this_surface": false,
+                "do_not_draw_this_surface": false,
+                "do_not_draw_edges_from_this_surface": false,
+                "draw_local_axis": false,
+                "draw_edges_as": "Squared",
+                "mirror_substrate": "Curved",
+                "mirror_thickness": 0.0
+              },
+              "type_properties": {
+                "surface_color": "Default",
+                "surface_opacity": "P100",
+                "row_color": "Default",
+                "ignore_surface": false,
+                "surface_cannot_be_hyperhemispheric": false
+              },
+              "composite": {
+                "is_composite_surface": false
+              },
+              "physical_optics": {
+                "use_rays_to_propagate_to_next_surface": false,
+                "do_not_rescale_beam_size_using_ray_data": false,
+                "use_angular_spectrum_propagator": false,
+                "draw_this_lens_on_shaded_model": false,
+                "re_compute_pilot_beam_parameters": false,
+                "use_xaxis_reference": false,
+                "resample_after_refraction": false,
+                "auto_resample": false,
+                "x_sampling": "S32",
+                "y_sampling": "S32",
+                "x_width": 1.0,
+                "y_width": 1.0,
+                "output_pilot_radius": "BestFit",
+                "x_radius": 0.0,
+                "y_radius": 0.0
+              },
+              "disable_clear_semi_diameter_margins": false,
+              "surface_file": null,
+              "coating": "",
+              "material_catalog": null,
+              "mechanical": {
+                "mechanical_semi_diameter": {
+                  "value": 5.0,
+                  "solve": "Automatic"
+                },
+                "chip_zone": {
+                  "value": 0.0,
+                  "solve": "Automatic"
+                }
+              },
+              "aperture": {
+                "type": "None",
+                "pickup_from": null
+              },
+              "tilt_decenter": {
+                "before_order": "Decenter_Tilt",
+                "before_decenter_x": 0.0,
+                "before_decenter_y": 0.0,
+                "before_tilt_x": 0.0,
+                "before_tilt_y": 0.0,
+                "before_tilt_z": 0.0,
+                "after_order": "Decenter_Tilt",
+                "after_decenter_x": 0.0,
+                "after_decenter_y": 0.0,
+                "after_tilt_x": 0.0,
+                "after_tilt_y": 0.0,
+                "after_tilt_z": 0.0,
+                "after_mode": "Explicit"
+              }
+            }
+          }
+        ]
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 4,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r3_surfaces_387623a1.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 4,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "c6d8b9d4b7394b75954cddbcc40a4b47"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "update_tolerances",
+    "arguments": {
+      "request": {
+        "mode": "replace",
+        "operands": [
+          {
+            "type": "TTHI",
+            "param1": 1,
+            "param2": 1,
+            "minimum": -0.01,
+            "maximum": 0.01,
+            "comment": "first"
+          },
+          {
+            "type": "TTHI",
+            "param1": 1,
+            "param2": 1,
+            "minimum": -0.02,
+            "maximum": 0.02,
+            "comment": "second"
+          }
+        ]
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "rows": [
+          {
+            "operand": 1,
+            "type": "TTHI",
+            "parameters": {
+              "1": 1,
+              "2": 1
+            },
+            "minimum": -0.01,
+            "maximum": 0.01,
+            "nominal": 0.0,
+            "comment": "first",
+            "ignore": false,
+            "inverse_protected": false
+          },
+          {
+            "operand": 2,
+            "type": "TTHI",
+            "parameters": {
+              "1": 1,
+              "2": 1
+            },
+            "minimum": -0.02,
+            "maximum": 0.02,
+            "nominal": 0.0,
+            "comment": "second",
+            "ignore": false,
+            "inverse_protected": false
+          }
+        ],
+        "total": 2,
+        "next_start": null,
+        "units": "按各公差操作数定义；长度、角度与 fringes 分别解释。",
+        "edit": {
+          "mode": "replace",
+          "completed_operands": [
+            1,
+            2
+          ],
+          "total_before": 1,
+          "total_after": 2,
+          "numbering": "delete编号基于修改前；按降序删除。insert按输入顺序连续插入。",
+          "placeholder_retained": false
+        }
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 5,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r4_tolerances_ca482839.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 5,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "81ac07ea56c94d1380d798c352eb5866"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "update_tolerances",
+    "arguments": {
+      "request": {
+        "mode": "update",
+        "updates": [
+          {
+            "operand": 1,
+            "maximum": 0.03,
+            "ignore": true
+          }
+        ]
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "rows": [
+          {
+            "operand": 1,
+            "type": "TTHI",
+            "parameters": {
+              "1": 1,
+              "2": 1
+            },
+            "minimum": -0.01,
+            "maximum": 0.03,
+            "nominal": 0.0,
+            "comment": "first",
+            "ignore": true,
+            "inverse_protected": false
+          },
+          {
+            "operand": 2,
+            "type": "TTHI",
+            "parameters": {
+              "1": 1,
+              "2": 1
+            },
+            "minimum": -0.02,
+            "maximum": 0.02,
+            "nominal": 0.0,
+            "comment": "second",
+            "ignore": false,
+            "inverse_protected": false
+          }
+        ],
+        "total": 2,
+        "next_start": null,
+        "units": "按各公差操作数定义；长度、角度与 fringes 分别解释。",
+        "edit": {
+          "mode": "update",
+          "completed_operands": [
+            1
+          ],
+          "total_before": 2,
+          "total_after": 2,
+          "numbering": "delete编号基于修改前；按降序删除。insert按输入顺序连续插入。",
+          "placeholder_retained": false
+        }
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 6,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r5_tolerances_d9baeff0.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 6,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "7e1161f63d9c43dc8f6972f2975c0a37"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "update_tolerances",
+    "arguments": {
+      "request": {
+        "mode": "insert",
+        "at": 2,
+        "operands": [
+          {
+            "type": "TTHI",
+            "param1": 1,
+            "param2": 1,
+            "minimum": -0.04,
+            "maximum": 0.04,
+            "comment": "inserted"
+          }
+        ]
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "rows": [
+          {
+            "operand": 1,
+            "type": "TTHI",
+            "parameters": {
+              "1": 1,
+              "2": 1
+            },
+            "minimum": -0.01,
+            "maximum": 0.03,
+            "nominal": 0.0,
+            "comment": "first",
+            "ignore": true,
+            "inverse_protected": false
+          },
+          {
+            "operand": 2,
+            "type": "TTHI",
+            "parameters": {
+              "1": 1,
+              "2": 1
+            },
+            "minimum": -0.04,
+            "maximum": 0.04,
+            "nominal": 0.0,
+            "comment": "inserted",
+            "ignore": false,
+            "inverse_protected": false
+          },
+          {
+            "operand": 3,
+            "type": "TTHI",
+            "parameters": {
+              "1": 1,
+              "2": 1
+            },
+            "minimum": -0.02,
+            "maximum": 0.02,
+            "nominal": 0.0,
+            "comment": "second",
+            "ignore": false,
+            "inverse_protected": false
+          }
+        ],
+        "total": 3,
+        "next_start": null,
+        "units": "按各公差操作数定义；长度、角度与 fringes 分别解释。",
+        "edit": {
+          "mode": "insert",
+          "completed_operands": [
+            2
+          ],
+          "total_before": 2,
+          "total_after": 3,
+          "numbering": "delete编号基于修改前；按降序删除。insert按输入顺序连续插入。",
+          "placeholder_retained": false
+        }
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 7,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r6_tolerances_1da511d4.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 7,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "d6b63d2bc1384862810c6430e33fc84c"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "copy_editor_rows",
+    "arguments": {
+      "request": {
+        "editor": "TDE",
+        "start": 1,
+        "count": 1,
+        "at": 4
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "editor": "TDE",
+        "start": 1,
+        "at": 4,
+        "copied": 1,
+        "total_before": 3,
+        "total_after": 4,
+        "result": {
+          "rows": [
+            {
+              "operand": 4,
+              "type": "TTHI",
+              "parameters": {
+                "1": 1,
+                "2": 1
+              },
+              "minimum": -0.01,
+              "maximum": 0.03,
+              "nominal": 0.0,
+              "comment": "first",
+              "ignore": true,
+              "inverse_protected": false,
+              "metadata": {
+                "active": true,
+                "type_name": "4: TTHI",
+                "available_types": [
+                  "TOFF",
+                  "TRAD",
+                  "TCUR",
+                  "TFRN",
+                  "TTHI",
+                  "TCON",
+                  "TSDI",
+                  "TSDX",
+                  "TSDY",
+                  "TSTX",
+                  "TSTY",
+                  "TIRX",
+                  "TIRY",
+                  "TIRR",
+                  "TPAR",
+                  "TEDX",
+                  "TEDY",
+                  "TETX",
+                  "TETY",
+                  "TETZ",
+                  "TUDX",
+                  "TUDY",
+                  "TUTX",
+                  "TUTY",
+                  "TUTZ",
+                  "TIND",
+                  "TABB",
+                  "TEXI",
+                  "SAVE",
+                  "COMP",
+                  "CPAR",
+                  "CMCO",
+                  "STAT",
+                  "TWAV",
+                  "TNPS",
+                  "TNPA",
+                  "TMCO",
+                  "TEZI",
+                  "TCMU",
+                  "SEED",
+                  "COMM",
+                  "TPAI",
+                  "TCIO",
+                  "TCEO",
+                  "TNMA",
+                  "CNPA",
+                  "CNPS",
+                  "TRLX",
+                  "TRLY",
+                  "TRLR",
+                  "TARX",
+                  "TARY",
+                  "TARR",
+                  "TEDR",
+                  "TSDR",
+                  "ISOA",
+                  "ISOB",
+                  "ISOC",
+                  "ISOD"
+                ],
+                "columns": {
+                  "param1": {
+                    "active": true,
+                    "read_only": false,
+                    "data_type": "Integer",
+                    "header": "面"
+                  },
+                  "param2": {
+                    "active": true,
+                    "read_only": false,
+                    "data_type": "Integer",
+                    "header": "调整"
+                  },
+                  "param3": {
+                    "active": false,
+                    "read_only": true,
+                    "data_type": "Integer",
+                    "header": ""
+                  },
+                  "minimum": {
+                    "active": true,
+                    "read_only": false,
+                    "data_type": "Double",
+                    "header": "最小"
+                  },
+                  "maximum": {
+                    "active": true,
+                    "read_only": false,
+                    "data_type": "Double",
+                    "header": "最大"
+                  },
+                  "comment": {
+                    "active": true,
+                    "read_only": false,
+                    "data_type": "String",
+                    "header": "标注"
+                  },
+                  "nominal": {
+                    "active": true,
+                    "read_only": false,
+                    "data_type": "Double",
+                    "header": "名义"
+                  }
+                }
+              }
+            }
+          ],
+          "total": 4,
+          "next_start": null,
+          "units": "按各公差操作数定义；长度、角度与 fringes 分别解释。"
+        },
+        "relations": "引用重编号由原生CopyOperands处理；结果返回实际关系。"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 8,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r7_editor_copy_ccc3ca77.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 8,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "fc06489dd01c4be3893fcdc39357fe50"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_editor_metadata",
+    "arguments": {
+      "request": {
+        "editor": "TDE",
+        "operand": 1,
+        "column_count": 3
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "editor": "TDE",
+        "total_operands": 4,
+        "operand": 1,
+        "type": "TTHI",
+        "type_name": "1: TTHI",
+        "active": true,
+        "available_operand_types": [
+          "TOFF",
+          "TRAD",
+          "TCUR",
+          "TFRN",
+          "TTHI",
+          "TCON",
+          "TSDI",
+          "TSDX",
+          "TSDY",
+          "TSTX",
+          "TSTY",
+          "TIRX",
+          "TIRY",
+          "TIRR",
+          "TPAR",
+          "TEDX",
+          "TEDY",
+          "TETX",
+          "TETY",
+          "TETZ",
+          "TUDX",
+          "TUDY",
+          "TUTX",
+          "TUTY",
+          "TUTZ",
+          "TIND",
+          "TABB",
+          "TEXI",
+          "SAVE",
+          "COMP",
+          "CPAR",
+          "CMCO",
+          "STAT",
+          "TWAV",
+          "TNPS",
+          "TNPA",
+          "TMCO",
+          "TEZI",
+          "TCMU",
+          "SEED",
+          "COMM",
+          "TPAI",
+          "TCIO",
+          "TCEO",
+          "TNMA",
+          "CNPA",
+          "CNPS",
+          "TRLX",
+          "TRLY",
+          "TRLR",
+          "TARX",
+          "TARY",
+          "TARR",
+          "TEDR",
+          "TSDR",
+          "ISOA",
+          "ISOB",
+          "ISOC",
+          "ISOD"
+        ],
+        "columns": [
+          {
+            "column": 2,
+            "name": "Param1",
+            "active": true,
+            "read_only": false,
+            "data_type": "Integer",
+            "header": "面",
+            "value": 1
+          },
+          {
+            "column": 3,
+            "name": "Param2",
+            "active": true,
+            "read_only": false,
+            "data_type": "Integer",
+            "header": "调整",
+            "value": 1
+          },
+          {
+            "column": 4,
+            "name": "Param3",
+            "active": false,
+            "read_only": true,
+            "data_type": "Integer",
+            "header": "",
+            "value": null
+          }
+        ],
+        "total_columns": 7,
+        "next_start": 3,
+        "parameters": null,
+        "numbering": "operand从1开始；column_start为元数据列表的0基偏移；column为原生列号或配置号。",
+        "file_operations": [
+          "load_tolerance_file",
+          "save_tolerance_file"
+        ],
+        "file_operation_source": "本机IToleranceDataEditor/IMeritFunctionEditor/IMultiConfigEditor公开方法；MCE随完整系统保存和加载。"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 8,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r7_editor_copy_ccc3ca77.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 8,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "0efd3c5c0cbb45de99fec0f7ab8c788e"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "update_tolerances",
+    "arguments": {
+      "request": {
+        "mode": "delete",
+        "operand_numbers": [
+          2,
+          4
+        ]
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "rows": [
+          {
+            "operand": 1,
+            "type": "TTHI",
+            "parameters": {
+              "1": 1,
+              "2": 1
+            },
+            "minimum": -0.01,
+            "maximum": 0.03,
+            "nominal": 0.0,
+            "comment": "first",
+            "ignore": true,
+            "inverse_protected": false
+          },
+          {
+            "operand": 2,
+            "type": "TTHI",
+            "parameters": {
+              "1": 1,
+              "2": 1
+            },
+            "minimum": -0.02,
+            "maximum": 0.02,
+            "nominal": 0.0,
+            "comment": "second",
+            "ignore": false,
+            "inverse_protected": false
+          }
+        ],
+        "total": 2,
+        "next_start": null,
+        "units": "按各公差操作数定义；长度、角度与 fringes 分别解释。",
+        "edit": {
+          "mode": "delete",
+          "completed_operands": [
+            4,
+            2
+          ],
+          "total_before": 4,
+          "total_after": 2,
+          "numbering": "delete编号基于修改前；按降序删除。insert按输入顺序连续插入。",
+          "placeholder_retained": false
+        }
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 9,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r8_tolerances_253b9dd9.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 9,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "555ea0481e8b41e8b49c945fcd340346"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "save_tolerance_file",
+    "arguments": {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\editor.tol"
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\editor.tol",
+        "editor": "TDE",
+        "total_operands": 2,
+        "artifacts": [
+          {
+            "kind": "tolerance_file",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\editor.tol"
+          }
+        ]
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 9,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r8_tolerances_253b9dd9.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 9,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "04696f429b4c42b39dcf07d2e433a33b"
+      },
+      "artifacts": [
+        {
+          "kind": "tolerance_file",
+          "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\editor.tol"
+        }
+      ]
+    }
+  },
+  {
+    "tool": "get_tolerances",
+    "arguments": {
+      "request": {
+        "include_metadata": true
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "rows": [
+          {
+            "operand": 1,
+            "type": "TTHI",
+            "parameters": {
+              "1": 1,
+              "2": 1
+            },
+            "minimum": -0.01,
+            "maximum": 0.03,
+            "nominal": 0.0,
+            "comment": "first",
+            "ignore": true,
+            "inverse_protected": false,
+            "metadata": {
+              "active": true,
+              "type_name": "1: TTHI",
+              "available_types": [
+                "TOFF",
+                "TRAD",
+                "TCUR",
+                "TFRN",
+                "TTHI",
+                "TCON",
+                "TSDI",
+                "TSDX",
+                "TSDY",
+                "TSTX",
+                "TSTY",
+                "TIRX",
+                "TIRY",
+                "TIRR",
+                "TPAR",
+                "TEDX",
+                "TEDY",
+                "TETX",
+                "TETY",
+                "TETZ",
+                "TUDX",
+                "TUDY",
+                "TUTX",
+                "TUTY",
+                "TUTZ",
+                "TIND",
+                "TABB",
+                "TEXI",
+                "SAVE",
+                "COMP",
+                "CPAR",
+                "CMCO",
+                "STAT",
+                "TWAV",
+                "TNPS",
+                "TNPA",
+                "TMCO",
+                "TEZI",
+                "TCMU",
+                "SEED",
+                "COMM",
+                "TPAI",
+                "TCIO",
+                "TCEO",
+                "TNMA",
+                "CNPA",
+                "CNPS",
+                "TRLX",
+                "TRLY",
+                "TRLR",
+                "TARX",
+                "TARY",
+                "TARR",
+                "TEDR",
+                "TSDR",
+                "ISOA",
+                "ISOB",
+                "ISOC",
+                "ISOD"
+              ],
+              "columns": {
+                "param1": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Integer",
+                  "header": "面"
+                },
+                "param2": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Integer",
+                  "header": "调整"
+                },
+                "param3": {
+                  "active": false,
+                  "read_only": true,
+                  "data_type": "Integer",
+                  "header": ""
+                },
+                "minimum": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "最小"
+                },
+                "maximum": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "最大"
+                },
+                "comment": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "String",
+                  "header": "标注"
+                },
+                "nominal": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "名义"
+                }
+              }
+            }
+          },
+          {
+            "operand": 2,
+            "type": "TTHI",
+            "parameters": {
+              "1": 1,
+              "2": 1
+            },
+            "minimum": -0.02,
+            "maximum": 0.02,
+            "nominal": 0.0,
+            "comment": "second",
+            "ignore": false,
+            "inverse_protected": false,
+            "metadata": {
+              "active": true,
+              "type_name": "2: TTHI",
+              "available_types": [
+                "TOFF",
+                "TRAD",
+                "TCUR",
+                "TFRN",
+                "TTHI",
+                "TCON",
+                "TSDI",
+                "TSDX",
+                "TSDY",
+                "TSTX",
+                "TSTY",
+                "TIRX",
+                "TIRY",
+                "TIRR",
+                "TPAR",
+                "TEDX",
+                "TEDY",
+                "TETX",
+                "TETY",
+                "TETZ",
+                "TUDX",
+                "TUDY",
+                "TUTX",
+                "TUTY",
+                "TUTZ",
+                "TIND",
+                "TABB",
+                "TEXI",
+                "SAVE",
+                "COMP",
+                "CPAR",
+                "CMCO",
+                "STAT",
+                "TWAV",
+                "TNPS",
+                "TNPA",
+                "TMCO",
+                "TEZI",
+                "TCMU",
+                "SEED",
+                "COMM",
+                "TPAI",
+                "TCIO",
+                "TCEO",
+                "TNMA",
+                "CNPA",
+                "CNPS",
+                "TRLX",
+                "TRLY",
+                "TRLR",
+                "TARX",
+                "TARY",
+                "TARR",
+                "TEDR",
+                "TSDR",
+                "ISOA",
+                "ISOB",
+                "ISOC",
+                "ISOD"
+              ],
+              "columns": {
+                "param1": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Integer",
+                  "header": "面"
+                },
+                "param2": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Integer",
+                  "header": "调整"
+                },
+                "param3": {
+                  "active": false,
+                  "read_only": true,
+                  "data_type": "Integer",
+                  "header": ""
+                },
+                "minimum": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "最小"
+                },
+                "maximum": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "最大"
+                },
+                "comment": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "String",
+                  "header": "标注"
+                },
+                "nominal": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "名义"
+                }
+              }
+            }
+          }
+        ],
+        "total": 2,
+        "next_start": null,
+        "units": "按各公差操作数定义；长度、角度与 fringes 分别解释。"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 9,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r8_tolerances_253b9dd9.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 9,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "e7ebeaad3b02469c84c1f321a8f48e32"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "update_tolerances",
+    "arguments": {
+      "request": {
+        "mode": "update",
+        "updates": [
+          {
+            "operand": 1,
+            "maximum": 0.2
+          }
+        ]
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "rows": [
+          {
+            "operand": 1,
+            "type": "TTHI",
+            "parameters": {
+              "1": 1,
+              "2": 1
+            },
+            "minimum": -0.01,
+            "maximum": 0.2,
+            "nominal": 0.0,
+            "comment": "first",
+            "ignore": true,
+            "inverse_protected": false
+          },
+          {
+            "operand": 2,
+            "type": "TTHI",
+            "parameters": {
+              "1": 1,
+              "2": 1
+            },
+            "minimum": -0.02,
+            "maximum": 0.02,
+            "nominal": 0.0,
+            "comment": "second",
+            "ignore": false,
+            "inverse_protected": false
+          }
+        ],
+        "total": 2,
+        "next_start": null,
+        "units": "按各公差操作数定义；长度、角度与 fringes 分别解释。",
+        "edit": {
+          "mode": "update",
+          "completed_operands": [
+            1
+          ],
+          "total_before": 2,
+          "total_after": 2,
+          "numbering": "delete编号基于修改前；按降序删除。insert按输入顺序连续插入。",
+          "placeholder_retained": false
+        }
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 10,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r9_tolerances_3f6643dc.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 10,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "f78edc0a4fec416698c99088880c86f1"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "load_tolerance_file",
+    "arguments": {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\editor.tol"
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\editor.tol",
+        "editor": "TDE",
+        "tolerances": {
+          "rows": [
+            {
+              "operand": 1,
+              "type": "TTHI",
+              "parameters": {
+                "1": 1,
+                "2": 1
+              },
+              "minimum": -0.01,
+              "maximum": 0.03,
+              "nominal": 0.0,
+              "comment": "first",
+              "ignore": true,
+              "inverse_protected": false
+            },
+            {
+              "operand": 2,
+              "type": "TTHI",
+              "parameters": {
+                "1": 1,
+                "2": 1
+              },
+              "minimum": -0.02,
+              "maximum": 0.02,
+              "nominal": 0.0,
+              "comment": "second",
+              "ignore": false,
+              "inverse_protected": false
+            }
+          ],
+          "total": 2,
+          "next_start": null,
+          "units": "按各公差操作数定义；长度、角度与 fringes 分别解释。"
+        }
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 11,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r10_tolerance_load_9fa7f91c.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 11,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "f1da2a8203cd4cec94fc4efc5c62d79e"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_tolerances",
+    "arguments": {
+      "request": {
+        "include_metadata": true
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "rows": [
+          {
+            "operand": 1,
+            "type": "TTHI",
+            "parameters": {
+              "1": 1,
+              "2": 1
+            },
+            "minimum": -0.01,
+            "maximum": 0.03,
+            "nominal": 0.0,
+            "comment": "first",
+            "ignore": true,
+            "inverse_protected": false,
+            "metadata": {
+              "active": true,
+              "type_name": "1: TTHI",
+              "available_types": [
+                "TOFF",
+                "TRAD",
+                "TCUR",
+                "TFRN",
+                "TTHI",
+                "TCON",
+                "TSDI",
+                "TSDX",
+                "TSDY",
+                "TSTX",
+                "TSTY",
+                "TIRX",
+                "TIRY",
+                "TIRR",
+                "TPAR",
+                "TEDX",
+                "TEDY",
+                "TETX",
+                "TETY",
+                "TETZ",
+                "TUDX",
+                "TUDY",
+                "TUTX",
+                "TUTY",
+                "TUTZ",
+                "TIND",
+                "TABB",
+                "TEXI",
+                "SAVE",
+                "COMP",
+                "CPAR",
+                "CMCO",
+                "STAT",
+                "TWAV",
+                "TNPS",
+                "TNPA",
+                "TMCO",
+                "TEZI",
+                "TCMU",
+                "SEED",
+                "COMM",
+                "TPAI",
+                "TCIO",
+                "TCEO",
+                "TNMA",
+                "CNPA",
+                "CNPS",
+                "TRLX",
+                "TRLY",
+                "TRLR",
+                "TARX",
+                "TARY",
+                "TARR",
+                "TEDR",
+                "TSDR",
+                "ISOA",
+                "ISOB",
+                "ISOC",
+                "ISOD"
+              ],
+              "columns": {
+                "param1": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Integer",
+                  "header": "面"
+                },
+                "param2": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Integer",
+                  "header": "调整"
+                },
+                "param3": {
+                  "active": false,
+                  "read_only": true,
+                  "data_type": "Integer",
+                  "header": ""
+                },
+                "minimum": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "最小"
+                },
+                "maximum": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "最大"
+                },
+                "comment": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "String",
+                  "header": "标注"
+                },
+                "nominal": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "名义"
+                }
+              }
+            }
+          },
+          {
+            "operand": 2,
+            "type": "TTHI",
+            "parameters": {
+              "1": 1,
+              "2": 1
+            },
+            "minimum": -0.02,
+            "maximum": 0.02,
+            "nominal": 0.0,
+            "comment": "second",
+            "ignore": false,
+            "inverse_protected": false,
+            "metadata": {
+              "active": true,
+              "type_name": "2: TTHI",
+              "available_types": [
+                "TOFF",
+                "TRAD",
+                "TCUR",
+                "TFRN",
+                "TTHI",
+                "TCON",
+                "TSDI",
+                "TSDX",
+                "TSDY",
+                "TSTX",
+                "TSTY",
+                "TIRX",
+                "TIRY",
+                "TIRR",
+                "TPAR",
+                "TEDX",
+                "TEDY",
+                "TETX",
+                "TETY",
+                "TETZ",
+                "TUDX",
+                "TUDY",
+                "TUTX",
+                "TUTY",
+                "TUTZ",
+                "TIND",
+                "TABB",
+                "TEXI",
+                "SAVE",
+                "COMP",
+                "CPAR",
+                "CMCO",
+                "STAT",
+                "TWAV",
+                "TNPS",
+                "TNPA",
+                "TMCO",
+                "TEZI",
+                "TCMU",
+                "SEED",
+                "COMM",
+                "TPAI",
+                "TCIO",
+                "TCEO",
+                "TNMA",
+                "CNPA",
+                "CNPS",
+                "TRLX",
+                "TRLY",
+                "TRLR",
+                "TARX",
+                "TARY",
+                "TARR",
+                "TEDR",
+                "TSDR",
+                "ISOA",
+                "ISOB",
+                "ISOC",
+                "ISOD"
+              ],
+              "columns": {
+                "param1": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Integer",
+                  "header": "面"
+                },
+                "param2": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Integer",
+                  "header": "调整"
+                },
+                "param3": {
+                  "active": false,
+                  "read_only": true,
+                  "data_type": "Integer",
+                  "header": ""
+                },
+                "minimum": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "最小"
+                },
+                "maximum": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "最大"
+                },
+                "comment": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "String",
+                  "header": "标注"
+                },
+                "nominal": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "名义"
+                }
+              }
+            }
+          }
+        ],
+        "total": 2,
+        "next_start": null,
+        "units": "按各公差操作数定义；长度、角度与 fringes 分别解释。"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 11,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r10_tolerance_load_9fa7f91c.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 11,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "cedbd1e64f194d099cec546c523967c0"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_merit_function",
+    "arguments": null,
+    "response": {
+      "ok": true,
+      "data": {
+        "total": 1,
+        "operands": [
+          {
+            "operand": 1,
+            "type": "BLNK",
+            "target": "NaN",
+            "weight": "NaN",
+            "value": "NaN",
+            "contribution": "NaN",
+            "parameters": {},
+            "cells": {
+              "2": {
+                "column": 2,
+                "header": " ",
+                "data_type": "String",
+                "active": false,
+                "writable": false,
+                "unit": null,
+                "unit_source": null
+              },
+              "3": {
+                "column": 3,
+                "header": " ",
+                "data_type": "String",
+                "active": false,
+                "writable": false,
+                "unit": null,
+                "unit_source": null
+              },
+              "4": {
+                "column": 4,
+                "header": " ",
+                "data_type": "String",
+                "active": false,
+                "writable": false,
+                "unit": null,
+                "unit_source": null
+              },
+              "5": {
+                "column": 5,
+                "header": " ",
+                "data_type": "String",
+                "active": false,
+                "writable": false,
+                "unit": null,
+                "unit_source": null
+              },
+              "6": {
+                "column": 6,
+                "header": " ",
+                "data_type": "String",
+                "active": false,
+                "writable": false,
+                "unit": null,
+                "unit_source": null
+              },
+              "7": {
+                "column": 7,
+                "header": " ",
+                "data_type": "String",
+                "active": false,
+                "writable": false,
+                "unit": null,
+                "unit_source": null
+              },
+              "8": {
+                "column": 8,
+                "header": " ",
+                "data_type": "String",
+                "active": false,
+                "writable": false,
+                "unit": null,
+                "unit_source": null
+              },
+              "9": {
+                "column": 9,
+                "header": " ",
+                "data_type": "String",
+                "active": false,
+                "writable": false,
+                "unit": null,
+                "unit_source": null
+              }
+            }
+          }
+        ],
+        "next_start": null,
+        "values_are_cached": true
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 11,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r10_tolerance_load_9fa7f91c.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 11,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "bd65a7faca734c16a565dc5f847c0379"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "insert_editor_rows",
+    "arguments": {
+      "request": {
+        "editor": "MFE",
+        "at": 2,
+        "operand_type": "REAY"
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "editor": "MFE",
+        "completed_operands": [
+          2
+        ],
+        "total_before": 1,
+        "total_after": 2,
+        "result": {
+          "total": 2,
+          "operands": [
+            {
+              "operand": 2,
+              "type": "REAY",
+              "target": 0.0,
+              "weight": 0.0,
+              "value": 0.0,
+              "contribution": 0.0,
+              "parameters": {
+                "2": {
+                  "column": 2,
+                  "header": "面",
+                  "data_type": "Integer",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null,
+                  "value": 0
+                },
+                "3": {
+                  "column": 3,
+                  "header": "波",
+                  "data_type": "Integer",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null,
+                  "value": 0
+                },
+                "4": {
+                  "column": 4,
+                  "header": "Hx",
+                  "data_type": "Double",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null,
+                  "value": 0.0
+                },
+                "5": {
+                  "column": 5,
+                  "header": "Hy",
+                  "data_type": "Double",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null,
+                  "value": 0.0
+                },
+                "6": {
+                  "column": 6,
+                  "header": "Px",
+                  "data_type": "Double",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null,
+                  "value": 0.0
+                },
+                "7": {
+                  "column": 7,
+                  "header": "Py",
+                  "data_type": "Double",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null,
+                  "value": 0.0
+                }
+              },
+              "cells": {
+                "2": {
+                  "column": 2,
+                  "header": "面",
+                  "data_type": "Integer",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "3": {
+                  "column": 3,
+                  "header": "波",
+                  "data_type": "Integer",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "4": {
+                  "column": 4,
+                  "header": "Hx",
+                  "data_type": "Double",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "5": {
+                  "column": 5,
+                  "header": "Hy",
+                  "data_type": "Double",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "6": {
+                  "column": 6,
+                  "header": "Px",
+                  "data_type": "Double",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "7": {
+                  "column": 7,
+                  "header": "Py",
+                  "data_type": "Double",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "8": {
+                  "column": 8,
+                  "header": " ",
+                  "data_type": "Double",
+                  "active": false,
+                  "writable": false,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "9": {
+                  "column": 9,
+                  "header": " ",
+                  "data_type": "Double",
+                  "active": false,
+                  "writable": false,
+                  "unit": null,
+                  "unit_source": null
+                }
+              }
+            }
+          ],
+          "next_start": null,
+          "values_are_cached": true
+        },
+        "next_action": "使用对应编辑器的有类型修改入口设置新行参数。"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 12,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r11_editor_insert_9d7b8c70.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 12,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "431b91c4784044adb590ba42e762eca3"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "copy_editor_rows",
+    "arguments": {
+      "request": {
+        "editor": "MFE",
+        "start": 2,
+        "at": 3
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "editor": "MFE",
+        "start": 2,
+        "at": 3,
+        "copied": 1,
+        "total_before": 2,
+        "total_after": 3,
+        "result": {
+          "total": 3,
+          "operands": [
+            {
+              "operand": 3,
+              "type": "REAY",
+              "target": 0.0,
+              "weight": 0.0,
+              "value": 0.0,
+              "contribution": 0.0,
+              "parameters": {
+                "2": {
+                  "column": 2,
+                  "header": "面",
+                  "data_type": "Integer",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null,
+                  "value": 0
+                },
+                "3": {
+                  "column": 3,
+                  "header": "波",
+                  "data_type": "Integer",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null,
+                  "value": 1
+                },
+                "4": {
+                  "column": 4,
+                  "header": "Hx",
+                  "data_type": "Double",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null,
+                  "value": 0.0
+                },
+                "5": {
+                  "column": 5,
+                  "header": "Hy",
+                  "data_type": "Double",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null,
+                  "value": 0.0
+                },
+                "6": {
+                  "column": 6,
+                  "header": "Px",
+                  "data_type": "Double",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null,
+                  "value": 0.0
+                },
+                "7": {
+                  "column": 7,
+                  "header": "Py",
+                  "data_type": "Double",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null,
+                  "value": 0.0
+                }
+              },
+              "cells": {
+                "2": {
+                  "column": 2,
+                  "header": "面",
+                  "data_type": "Integer",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "3": {
+                  "column": 3,
+                  "header": "波",
+                  "data_type": "Integer",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "4": {
+                  "column": 4,
+                  "header": "Hx",
+                  "data_type": "Double",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "5": {
+                  "column": 5,
+                  "header": "Hy",
+                  "data_type": "Double",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "6": {
+                  "column": 6,
+                  "header": "Px",
+                  "data_type": "Double",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "7": {
+                  "column": 7,
+                  "header": "Py",
+                  "data_type": "Double",
+                  "active": true,
+                  "writable": true,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "8": {
+                  "column": 8,
+                  "header": " ",
+                  "data_type": "Double",
+                  "active": false,
+                  "writable": false,
+                  "unit": null,
+                  "unit_source": null
+                },
+                "9": {
+                  "column": 9,
+                  "header": " ",
+                  "data_type": "Double",
+                  "active": false,
+                  "writable": false,
+                  "unit": null,
+                  "unit_source": null
+                }
+              }
+            }
+          ],
+          "next_start": null,
+          "values_are_cached": true
+        },
+        "relations": "引用重编号由原生CopyOperands处理；结果返回实际关系。"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 13,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r12_editor_copy_92ae7c72.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 13,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "426132ddc4d64363ab5f9cfaec8e7cde"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_editor_metadata",
+    "arguments": {
+      "request": {
+        "editor": "MFE",
+        "operand": 2,
+        "column_count": 5
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "editor": "MFE",
+        "total_operands": 3,
+        "operand": 2,
+        "type": "REAY",
+        "type_name": "REAY",
+        "active": true,
+        "available_operand_types": [
+          "ABCD",
+          "ABGT",
+          "ABLT",
+          "ABSO",
+          "ACOS",
+          "AMAG",
+          "ANAC",
+          "ANAR",
+          "ANAX",
+          "ANAY",
+          "ANCX",
+          "ANCY",
+          "ASIN",
+          "ASTI",
+          "ATAN",
+          "AXCL",
+          "BFSD",
+          "BIOC",
+          "BIOD",
+          "BIPF",
+          "BLNK",
+          "BLTH",
+          "BSER",
+          "CARD",
+          "CEGT",
+          "CEHX",
+          "CEHY",
+          "CELT",
+          "CENX",
+          "CENY",
+          "CEVA",
+          "CIGT",
+          "CILT",
+          "CIVA",
+          "CMFV",
+          "CMGT",
+          "CMLT",
+          "CMVA",
+          "CNAX",
+          "CNAY",
+          "CNPX",
+          "CNPY",
+          "CODA",
+          "COGT",
+          "COLT",
+          "COMA",
+          "CONF",
+          "CONS",
+          "COSA",
+          "COSI",
+          "COVA",
+          "CTGT",
+          "CTLT",
+          "CTVA",
+          "CVGT",
+          "CVIG",
+          "CVLT",
+          "CVOL",
+          "CVVA",
+          "DCRV",
+          "DENC",
+          "DENF",
+          "DIFF",
+          "DIMX",
+          "DISA",
+          "DISC",
+          "DISG",
+          "DIST",
+          "DIVB",
+          "DIVI",
+          "DLTN",
+          "DMFS",
+          "DMGT",
+          "DMLT",
+          "DMVA",
+          "DPHS",
+          "DSAG",
+          "DSLP",
+          "DXDX",
+          "DXDY",
+          "DYDX",
+          "DYDY",
+          "EFFL",
+          "EFLA",
+          "EFLX",
+          "EFLY",
+          "EFNO",
+          "ENDX",
+          "ENPP",
+          "EPDI",
+          "EQUA",
+          "ERFP",
+          "ETGT",
+          "ETLT",
+          "ETVA",
+          "EXPD",
+          "EXPP",
+          "FCGS",
+          "FCGT",
+          "FCUR",
+          "FDMO",
+          "FDRE",
+          "FICL",
+          "FICP",
+          "FOUC",
+          "FREZ",
+          "FTGT",
+          "FTLT",
+          "GAOI",
+          "GBPD",
+          "GBPP",
+          "GBPR",
+          "GBPS",
+          "GBPW",
+          "GBPZ",
+          "GBSD",
+          "GBSP",
+          "GBSR",
+          "GBSS",
+          "GBSW",
+          "GCOS",
+          "GENC",
+          "GENF",
+          "GLCA",
+          "GLCB",
+          "GLCC",
+          "GLCR",
+          "GLCX",
+          "GLCY",
+          "GLCZ",
+          "GMTA",
+          "GMTN",
+          "GMTS",
+          "GMTT",
+          "GMTX",
+          "GOTO",
+          "GPIM",
+          "GPRT",
+          "GPRX",
+          "GPRY",
+          "GPSX",
+          "GPSY",
+          "GRMN",
+          "GRMX",
+          "GTCE",
+          "HACG",
+          "HHCN",
+          "HYLD",
+          "I1GT",
+          "I1LT",
+          "I1VA",
+          "I2GT",
+          "I2LT",
+          "I2VA",
+          "I3GT",
+          "I3LT",
+          "I3VA",
+          "I4GT",
+          "I4LT",
+          "I4VA",
+          "I5GT",
+          "I5LT",
+          "I5VA",
+          "I6GT",
+          "I6LT",
+          "I6VA",
+          "IMAE",
+          "IMSF",
+          "INDX",
+          "ISFN",
+          "ISNA",
+          "LACL",
+          "LINV",
+          "LOGE",
+          "LOGT",
+          "LONA",
+          "LPTD",
+          "MAXX",
+          "MCOG",
+          "MCOL",
+          "MCOV",
+          "MECA",
+          "MECS",
+          "MECT",
+          "MINN",
+          "MNAB",
+          "MNAI",
+          "MNCA",
+          "MNCG",
+          "MNCT",
+          "MNCV",
+          "MNDT",
+          "MNEA",
+          "MNEG",
+          "MNET",
+          "MNIN",
+          "MNPD",
+          "MNRE",
+          "MNRI",
+          "MNSD",
+          "MSWA",
+          "MSWN",
+          "MSWS",
+          "MSWT",
+          "MSWX",
+          "MTFA",
+          "MTFN",
+          "MTFS",
+          "MTFT",
+          "MTFX",
+          "MTHA",
+          "MTHN",
+          "MTHS",
+          "MTHT",
+          "MTHX",
+          "MXAB",
+          "MXAI",
+          "MXCA",
+          "MXCG",
+          "MXCT",
+          "MXCV",
+          "MXDT",
+          "MXEA",
+          "MXEG",
+          "MXET",
+          "MXIN",
+          "MXPD",
+          "MXRE",
+          "MXRI",
+          "MXSD",
+          "NORD",
+          "NORX",
+          "NORY",
+          "NORZ",
+          "NPAF",
+          "NPGT",
+          "NPLT",
+          "NPVA",
+          "NPXG",
+          "NPXL",
+          "NPXV",
+          "NPYG",
+          "NPYL",
+          "NPYV",
+          "NPZG",
+          "NPZL",
+          "NPZV",
+          "NSDC",
+          "NSDD",
+          "NSDE",
+          "NSDP",
+          "NSLT",
+          "NSRA",
+          "NSRD",
+          "NSRM",
+          "NSST",
+          "NSTR",
+          "NTXG",
+          "NTXL",
+          "NTXV",
+          "NTYG",
+          "NTYL",
+          "NTYV",
+          "NTZG",
+          "NTZL",
+          "NTZV",
+          "OBSN",
+          "OGSS",
+          "OOFF",
+          "OPDC",
+          "OPDM",
+          "OPDX",
+          "OPGT",
+          "OPLT",
+          "OPTH",
+          "OPVA",
+          "OSCD",
+          "OSUM",
+          "P1GT",
+          "P1LT",
+          "P1VA",
+          "P2GT",
+          "P2LT",
+          "P2VA",
+          "P3GT",
+          "P3LT",
+          "P3VA",
+          "P4GT",
+          "P4LT",
+          "P4VA",
+          "P5GT",
+          "P5LT",
+          "P5VA",
+          "P6GT",
+          "P6LT",
+          "P6VA",
+          "P7GT",
+          "P7LT",
+          "P7VA",
+          "P8GT",
+          "P8LT",
+          "P8VA",
+          "PANA",
+          "PANB",
+          "PANC",
+          "PARA",
+          "PARB",
+          "PARC",
+          "PARR",
+          "PARX",
+          "PARY",
+          "PARZ",
+          "PATX",
+          "PATY",
+          "PETC",
+          "PETZ",
+          "PIMH",
+          "PLEN",
+          "PMAG",
+          "PMGT",
+          "PMLT",
+          "PMVA",
+          "POPD",
+          "POPI",
+          "POWF",
+          "POWP",
+          "POWR",
+          "PRIM",
+          "PROB",
+          "PROD",
+          "PSLP",
+          "QOAC",
+          "QSLP",
+          "QSUM",
+          "RAED",
+          "RAEN",
+          "RAGA",
+          "RAGB",
+          "RAGC",
+          "RAGX",
+          "RAGY",
+          "RAGZ",
+          "RAID",
+          "RAIN",
+          "RANG",
+          "REAA",
+          "REAB",
+          "REAC",
+          "REAR",
+          "REAX",
+          "REAY",
+          "REAZ",
+          "RECI",
+          "RELI",
+          "RENA",
+          "RENB",
+          "RENC",
+          "RETX",
+          "RETY",
+          "REVR",
+          "RGLA",
+          "RSCE",
+          "RSCH",
+          "RSRE",
+          "RSRH",
+          "RWCE",
+          "RWCH",
+          "RWRE",
+          "RWRH",
+          "SAGX",
+          "SAGY",
+          "SCRV",
+          "SCUR",
+          "SDRV",
+          "SFNO",
+          "SINE",
+          "SKIN",
+          "SKIS",
+          "SMIA",
+          "SPCH",
+          "SPHA",
+          "SPHD",
+          "SPHS",
+          "SQRT",
+          "SSAG",
+          "SSLP",
+          "STHI",
+          "STRH",
+          "SUMM",
+          "SVIG",
+          "TANG",
+          "TCGT",
+          "TCLT",
+          "TCVA",
+          "TFNO",
+          "TGTH",
+          "TMAS",
+          "TOLR",
+          "TOTR",
+          "TRAC",
+          "TRAD",
+          "TRAE",
+          "TRAI",
+          "TRAN",
+          "TRAR",
+          "TRAX",
+          "TRAY",
+          "TRCX",
+          "TRCY",
+          "TSAG",
+          "TTGT",
+          "TTHI",
+          "TTLT",
+          "TTVA",
+          "UDOC",
+          "USYM",
+          "VOLU",
+          "WFNO",
+          "WLEN",
+          "XENC",
+          "XENF",
+          "XNEA",
+          "XNEG",
+          "XNET",
+          "XXEA",
+          "XXEG",
+          "XXET",
+          "YNIP",
+          "ZERN",
+          "ZPLM",
+          "ZTHI"
+        ],
+        "columns": [
+          {
+            "column": 1,
+            "name": "Comment",
+            "active": false,
+            "read_only": true,
+            "data_type": "String",
+            "header": "类型",
+            "value": null
+          },
+          {
+            "column": 2,
+            "name": "Param1",
+            "active": true,
+            "read_only": false,
+            "data_type": "Integer",
+            "header": "面",
+            "value": 0
+          },
+          {
+            "column": 3,
+            "name": "Param2",
+            "active": true,
+            "read_only": false,
+            "data_type": "Integer",
+            "header": "波",
+            "value": 1
+          },
+          {
+            "column": 4,
+            "name": "Param3",
+            "active": true,
+            "read_only": false,
+            "data_type": "Double",
+            "header": "Hx",
+            "value": 0.0
+          },
+          {
+            "column": 5,
+            "name": "Param4",
+            "active": true,
+            "read_only": false,
+            "data_type": "Double",
+            "header": "Hy",
+            "value": 0.0
+          }
+        ],
+        "total_columns": 13,
+        "next_start": 5,
+        "parameters": null,
+        "numbering": "operand从1开始；column_start为元数据列表的0基偏移；column为原生列号或配置号。",
+        "file_operations": [
+          "load_merit_function",
+          "save_merit_function"
+        ],
+        "file_operation_source": "本机IToleranceDataEditor/IMeritFunctionEditor/IMultiConfigEditor公开方法；MCE随完整系统保存和加载。"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 13,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r12_editor_copy_92ae7c72.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 13,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "8e2683c80aff47deb323fa2e9e60abe7"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_configurations",
+    "arguments": {
+      "request": {}
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "current_configuration": 1,
+        "configuration_count": 1,
+        "rows": [
+          {
+            "operand": 1,
+            "type": "MOFF",
+            "parameters": {},
+            "cells": [
+              {
+                "configuration": 1,
+                "value": "",
+                "writable": true,
+                "header": "结构 1*",
+                "data_type": "String",
+                "solve": {
+                  "mode": "Fixed"
+                },
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "ConfigPickup"
+                ]
+              }
+            ]
+          }
+        ],
+        "total": 1,
+        "next_start": null
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 13,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r12_editor_copy_92ae7c72.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 13,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "b1034b77d83f4d81a6d270488ae2346b"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "insert_editor_rows",
+    "arguments": {
+      "request": {
+        "editor": "MCE",
+        "at": 2,
+        "operand_type": "THIC"
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "editor": "MCE",
+        "completed_operands": [
+          2
+        ],
+        "total_before": 1,
+        "total_after": 2,
+        "result": {
+          "current_configuration": 1,
+          "configuration_count": 1,
+          "rows": [
+            {
+              "operand": 2,
+              "type": "THIC",
+              "parameters": {
+                "1": 0
+              },
+              "cells": [
+                {
+                  "configuration": 1,
+                  "value": 10000000000.0,
+                  "writable": true,
+                  "header": "结构 1*",
+                  "data_type": "Double",
+                  "solve": {
+                    "mode": "Fixed"
+                  },
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "ConfigPickup",
+                    "ThermalPickup",
+                    "ZPLMacro"
+                  ]
+                }
+              ]
+            }
+          ],
+          "total": 2,
+          "next_start": null
+        },
+        "next_action": "使用对应编辑器的有类型修改入口设置新行参数。"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 14,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r13_editor_insert_96443412.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 14,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "907c5ec6052a44cbb450d4568c59ec6c"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "update_configurations",
+    "arguments": {
+      "request": {
+        "operands": [
+          {
+            "operand": 2,
+            "parameters": {
+              "1": 1
+            },
+            "cells": [
+              {
+                "configuration": 1,
+                "value": 1
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "current_configuration": 1,
+        "configuration_count": 1,
+        "rows": [
+          {
+            "operand": 1,
+            "type": "MOFF",
+            "parameters": {},
+            "cells": [
+              {
+                "configuration": 1,
+                "value": "",
+                "writable": true,
+                "header": "结构 1*",
+                "data_type": "String",
+                "solve": {
+                  "mode": "Fixed"
+                },
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "ConfigPickup"
+                ]
+              }
+            ]
+          },
+          {
+            "operand": 2,
+            "type": "THIC",
+            "parameters": {
+              "1": 1
+            },
+            "cells": [
+              {
+                "configuration": 1,
+                "value": 1.0,
+                "writable": true,
+                "header": "结构 1*",
+                "data_type": "Double",
+                "solve": {
+                  "mode": "Fixed"
+                },
+                "available_solves": [
+                  "Fixed",
+                  "Variable",
+                  "ConfigPickup",
+                  "ThermalPickup",
+                  "ZPLMacro"
+                ]
+              }
+            ]
+          }
+        ],
+        "total": 2,
+        "next_start": null
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 15,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r14_mce_5bfa0a92.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 15,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "80add92a87964b9587e172112a3d915d"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "copy_editor_rows",
+    "arguments": {
+      "request": {
+        "editor": "MCE",
+        "start": 2,
+        "at": 3
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "editor": "MCE",
+        "start": 2,
+        "at": 3,
+        "copied": 1,
+        "total_before": 2,
+        "total_after": 3,
+        "result": {
+          "current_configuration": 1,
+          "configuration_count": 1,
+          "rows": [
+            {
+              "operand": 3,
+              "type": "THIC",
+              "parameters": {
+                "1": 1
+              },
+              "cells": [
+                {
+                  "configuration": 1,
+                  "value": 1.0,
+                  "writable": true,
+                  "header": "结构 1*",
+                  "data_type": "Double",
+                  "solve": {
+                    "mode": "Fixed"
+                  },
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "ConfigPickup",
+                    "ThermalPickup",
+                    "ZPLMacro"
+                  ]
+                }
+              ]
+            }
+          ],
+          "total": 3,
+          "next_start": null
+        },
+        "relations": "引用重编号由原生CopyOperands处理；结果返回实际关系。"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 16,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r15_editor_copy_a91d42ba.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 16,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "12b10029382f4bf2af62cd28ea4ee1c9"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_editor_metadata",
+    "arguments": {
+      "request": {
+        "editor": "MCE",
+        "operand": 2
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "editor": "MCE",
+        "total_operands": 3,
+        "operand": 2,
+        "type": "THIC",
+        "type_name": "THIC",
+        "active": true,
+        "available_operand_types": [
+          "MOFF",
+          "AICN",
+          "AFOC",
+          "APDF",
+          "APDT",
+          "APDX",
+          "APDY",
+          "APER",
+          "APMN",
+          "APMX",
+          "APTP",
+          "CADX",
+          "CADY",
+          "CAOR",
+          "CATX",
+          "CATY",
+          "CATZ",
+          "CBDX",
+          "CBDY",
+          "CBOR",
+          "CBTX",
+          "CBTY",
+          "CBTZ",
+          "CONN",
+          "COTN",
+          "CPCN",
+          "CROR",
+          "CRSR",
+          "CRVT",
+          "CSP1",
+          "CSP2",
+          "CWGT",
+          "FLTP",
+          "FLWT",
+          "FVAN",
+          "FVCX",
+          "FVCY",
+          "FVDX",
+          "FVDY",
+          "GCRS",
+          "GLSS",
+          "GPEX",
+          "GPEY",
+          "GPIU",
+          "GPJX",
+          "GPJY",
+          "GPPX",
+          "GPPY",
+          "GQPO",
+          "HOLD",
+          "IGNM",
+          "IGNR",
+          "LTTL",
+          "MABB",
+          "MCOM",
+          "MDPG",
+          "MIND",
+          "MTFU",
+          "NCOM",
+          "NCOT",
+          "NGLS",
+          "NPAR",
+          "NPOS",
+          "NPRO",
+          "PAR1",
+          "PAR2",
+          "PAR3",
+          "PAR4",
+          "PAR5",
+          "PAR6",
+          "PAR7",
+          "PAR8",
+          "PRAM",
+          "PRES",
+          "PRWV",
+          "PSCX",
+          "PSCY",
+          "PSHX",
+          "PSHY",
+          "PSHZ",
+          "PSP1",
+          "PSP2",
+          "PSP3",
+          "PUCN",
+          "PXAR",
+          "RAAM",
+          "SATP",
+          "SDIA",
+          "SDRW",
+          "STPS",
+          "TCEX",
+          "TELE",
+          "TEMP",
+          "THIC",
+          "TSP1",
+          "TSP2",
+          "TSP3",
+          "UDAF",
+          "WAVE",
+          "WLWT",
+          "XFIE",
+          "YFIE",
+          "OPDR",
+          "CHZN",
+          "MCSD",
+          "SRTS",
+          "MCHI",
+          "IGTO",
+          "FTAN",
+          "FCMM",
+          "CSDX",
+          "CSDY",
+          "CSTX",
+          "CSTY",
+          "CSTZ"
+        ],
+        "columns": [
+          {
+            "column": 1,
+            "name": "configuration_1",
+            "active": true,
+            "read_only": false,
+            "data_type": "Double",
+            "header": "结构 1*",
+            "value": 1.0
+          }
+        ],
+        "total_columns": 1,
+        "next_start": null,
+        "parameters": {
+          "1": {
+            "enabled": true,
+            "value": 1
+          },
+          "2": {
+            "enabled": false,
+            "value": 0
+          },
+          "3": {
+            "enabled": false,
+            "value": 0
+          }
+        },
+        "numbering": "operand从1开始；column_start为元数据列表的0基偏移；column为原生列号或配置号。",
+        "file_operations": [],
+        "file_operation_source": "本机IToleranceDataEditor/IMeritFunctionEditor/IMultiConfigEditor公开方法；MCE随完整系统保存和加载。"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 16,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r15_editor_copy_a91d42ba.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 16,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "a0a3ef51613a452cbd3980c3d39bc1d6"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "save_lens_as",
+    "arguments": {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\editors.zos"
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\editors.zos",
+        "artifacts": [
+          {
+            "kind": "lens",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\editors.zos"
+          }
+        ]
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 16,
+        "source_file": null,
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_74daa7dd.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r15_editor_copy_a91d42ba.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 16,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "015cfa27705e43819dc709dd93cff92e"
+      },
+      "artifacts": [
+        {
+          "kind": "lens",
+          "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\editors.zos"
+        }
+      ]
+    }
+  },
+  {
+    "tool": "open_lens",
+    "arguments": {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\editors.zos"
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "source_units": "Watts",
+        "source_unit_prefix": "None",
+        "analysis_units": "WattsPerCMSq",
+        "analysis_unit_prefix": "None",
+        "afocal_image_space": false,
+        "aperture": {
+          "type": "EntrancePupilDiameter",
+          "value": 10.0
+        },
+        "field_type": "Angle",
+        "field_normalization": "Radial",
+        "fields": [
+          {
+            "number": 1,
+            "x": 0.0,
+            "y": 0.0,
+            "weight": 1.0,
+            "vdx": 0.0,
+            "vdy": 0.0,
+            "vcx": 0.0,
+            "vcy": 0.0,
+            "van": 0.0
+          }
+        ],
+        "wavelength_unit": "micrometers (environmental air reference)",
+        "wavelengths": [
+          {
+            "number": 1,
+            "wavelength_um": 0.55,
+            "weight": 1.0,
+            "primary": true
+          }
+        ],
+        "temperature_c": 20.0,
+        "pressure_atm": 1.0,
+        "adjust_index_to_environment": false,
+        "afocal_mode_units": "Milliradians",
+        "settings_activity": {
+          "apodization_factor_is_used": false
+        },
+        "author": "",
+        "aperture_options": {
+          "apodization_type": "Uniform",
+          "apodization_factor": 0.0,
+          "semi_diameter_margin": 0.0,
+          "semi_diameter_margin_pct": 0.0,
+          "telecentric_object_space": false,
+          "afocal_image_space": false,
+          "iterate_solves_when_updating": false,
+          "fast_semi_diameters": true,
+          "check_grin_apertures": false
+        },
+        "advanced": {
+          "reference_opd": "ExitPupil",
+          "paraxial_rays": "IgnoreCoordinateBreaks",
+          "f_num_method": "TracingRays",
+          "dont_print_coordinate_break_data": false,
+          "turn_off_threading": false,
+          "opd_modulo_2pi": false,
+          "include_calculated_data_in_session_file": true,
+          "include_tolerance_data_in_session_file": true,
+          "huygens_integral_method": "Auto"
+        },
+        "global_reference_surface": 2,
+        "material_catalogs": [
+          "SCHOTT"
+        ],
+        "polarization": {
+          "unpolarized": true,
+          "jx": 0.0,
+          "jy": 1.0,
+          "x_phase": 0.0,
+          "y_phase": 0.0,
+          "method": "XAxisMethod",
+          "convert_thin_film_phase": true
+        },
+        "ray_aiming": {
+          "mode": "Off",
+          "method": "Heuristic",
+          "cache": true,
+          "robust": false,
+          "scale_pupil_shift_by_field": false,
+          "auto_pupil_shift": true,
+          "enhanced": false,
+          "advanced_convergence": false,
+          "fallback_search": false,
+          "pupil_shift_x": 0.0,
+          "pupil_shift_y": 0.0,
+          "pupil_shift_z": 0.0,
+          "pupil_compress_x": 0.0,
+          "pupil_compress_y": 0.0,
+          "cache_steps": 10
+        },
+        "files": {
+          "coating_file": "COATING.DAT",
+          "scatter_profile": "SCATTER_PROFILE.DAT",
+          "abg_file": "ABG_DATA.DAT",
+          "gradium_profile": "PROFILE.GRD"
+        },
+        "title": "",
+        "notes": "",
+        "surface_count": 4,
+        "native_system_status": "",
+        "first_order": {
+          "effective_focal_length": 10000000000.0,
+          "paraxial_working_f_number": 10000.0,
+          "real_working_f_number": 10000.0,
+          "paraxial_image_height": 0.0,
+          "paraxial_magnification": 0.0
+        }
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 17,
+        "source_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\editors.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_0c76edea.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r16_before_open_18009033.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 17,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "d487fc34bbe5417ba66cd07f81840564"
+      },
+      "artifacts": []
+    }
+  },
+  {
+    "tool": "get_tolerances",
+    "arguments": {
+      "request": {
+        "include_metadata": true
+      }
+    },
+    "response": {
+      "ok": true,
+      "data": {
+        "rows": [
+          {
+            "operand": 1,
+            "type": "TTHI",
+            "parameters": {
+              "1": 1,
+              "2": 1
+            },
+            "minimum": -0.01,
+            "maximum": 0.03,
+            "nominal": 1.0,
+            "comment": "first",
+            "ignore": true,
+            "inverse_protected": false,
+            "metadata": {
+              "active": true,
+              "type_name": "1: TTHI",
+              "available_types": [
+                "TOFF",
+                "TRAD",
+                "TCUR",
+                "TFRN",
+                "TTHI",
+                "TCON",
+                "TSDI",
+                "TSDX",
+                "TSDY",
+                "TSTX",
+                "TSTY",
+                "TIRX",
+                "TIRY",
+                "TIRR",
+                "TPAR",
+                "TEDX",
+                "TEDY",
+                "TETX",
+                "TETY",
+                "TETZ",
+                "TUDX",
+                "TUDY",
+                "TUTX",
+                "TUTY",
+                "TUTZ",
+                "TIND",
+                "TABB",
+                "TEXI",
+                "SAVE",
+                "COMP",
+                "CPAR",
+                "CMCO",
+                "STAT",
+                "TWAV",
+                "TNPS",
+                "TNPA",
+                "TMCO",
+                "TEZI",
+                "TCMU",
+                "SEED",
+                "COMM",
+                "TPAI",
+                "TCIO",
+                "TCEO",
+                "TNMA",
+                "CNPA",
+                "CNPS",
+                "TRLX",
+                "TRLY",
+                "TRLR",
+                "TARX",
+                "TARY",
+                "TARR",
+                "TEDR",
+                "TSDR",
+                "ISOA",
+                "ISOB",
+                "ISOC",
+                "ISOD"
+              ],
+              "columns": {
+                "param1": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Integer",
+                  "header": "面"
+                },
+                "param2": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Integer",
+                  "header": "调整"
+                },
+                "param3": {
+                  "active": false,
+                  "read_only": true,
+                  "data_type": "Integer",
+                  "header": ""
+                },
+                "minimum": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "最小"
+                },
+                "maximum": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "最大"
+                },
+                "comment": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "String",
+                  "header": "标注"
+                },
+                "nominal": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "名义"
+                }
+              }
+            }
+          },
+          {
+            "operand": 2,
+            "type": "TTHI",
+            "parameters": {
+              "1": 1,
+              "2": 1
+            },
+            "minimum": -0.02,
+            "maximum": 0.02,
+            "nominal": 1.0,
+            "comment": "second",
+            "ignore": false,
+            "inverse_protected": false,
+            "metadata": {
+              "active": true,
+              "type_name": "2: TTHI",
+              "available_types": [
+                "TOFF",
+                "TRAD",
+                "TCUR",
+                "TFRN",
+                "TTHI",
+                "TCON",
+                "TSDI",
+                "TSDX",
+                "TSDY",
+                "TSTX",
+                "TSTY",
+                "TIRX",
+                "TIRY",
+                "TIRR",
+                "TPAR",
+                "TEDX",
+                "TEDY",
+                "TETX",
+                "TETY",
+                "TETZ",
+                "TUDX",
+                "TUDY",
+                "TUTX",
+                "TUTY",
+                "TUTZ",
+                "TIND",
+                "TABB",
+                "TEXI",
+                "SAVE",
+                "COMP",
+                "CPAR",
+                "CMCO",
+                "STAT",
+                "TWAV",
+                "TNPS",
+                "TNPA",
+                "TMCO",
+                "TEZI",
+                "TCMU",
+                "SEED",
+                "COMM",
+                "TPAI",
+                "TCIO",
+                "TCEO",
+                "TNMA",
+                "CNPA",
+                "CNPS",
+                "TRLX",
+                "TRLY",
+                "TRLR",
+                "TARX",
+                "TARY",
+                "TARR",
+                "TEDR",
+                "TSDR",
+                "ISOA",
+                "ISOB",
+                "ISOC",
+                "ISOD"
+              ],
+              "columns": {
+                "param1": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Integer",
+                  "header": "面"
+                },
+                "param2": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Integer",
+                  "header": "调整"
+                },
+                "param3": {
+                  "active": false,
+                  "read_only": true,
+                  "data_type": "Integer",
+                  "header": ""
+                },
+                "minimum": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "最小"
+                },
+                "maximum": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "最大"
+                },
+                "comment": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "String",
+                  "header": "标注"
+                },
+                "nominal": {
+                  "active": true,
+                  "read_only": false,
+                  "data_type": "Double",
+                  "header": "名义"
+                }
+              }
+            }
+          }
+        ],
+        "total": 2,
+        "next_start": null,
+        "units": "按各公差操作数定义；长度、角度与 fringes 分别解释。"
+      },
+      "error": null,
+      "warnings": [],
+      "context": {
+        "session_id": "195df06e3fee49a2a7aa7a668f45190e",
+        "model_revision": 17,
+        "source_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\editors.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\working_0c76edea.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\runs\\editor_extensions019_34cab918ab\\195df06e3fee49a2a7aa7a668f45190e\\checkpoint_r16_before_open_18009033.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 17,
+          "session_id": "195df06e3fee49a2a7aa7a668f45190e"
+        },
+        "request_id": "19dd2cd647b743b2869ae955d7c23286"
+      },
+      "artifacts": []
+    }
+  }
+]

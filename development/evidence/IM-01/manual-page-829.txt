@@ -1,0 +1,47 @@
+Additional considerations for spot diagram mode: The memory requirement for the spot diagram mode scales
+linearly with the number of rays traced, unlike the other modes where the maximum memory needed is always
+nx*ny pixels). For this reason, OpticStudio does not cache the analysis data in Spot Diagram mode. As a result, any
+changes to the GIA settings when using Spot Diagram mode will force a complete recalculation of the GIA data.
+Source The source may be uniform or Lambertian. The uniform setting weights rays equally. Lambertian weights
+rays by the cosine of the angle the ray makes with local normal of the object surface.
+Use Polarization If checked, polarization is considered. See " Polarization (system explorer) " for information on
+defining the polarization state and how polarization is used by analysis features.
+Scatter Rays If checked, rays will be statistically scattered at ray-surface intercepts that have defined scattering
+properties. See "Surface scattering settings".
+Wavelength The wavelength number to be used in the calculation.
+Field The image file may be centered on any defined field position. This permits a small target such as a bar chart
+to be moved to any location in the field of view. The resulting image is then centered on the chief ray coordinate of
+this field position.
+File The name of the .IMA or .BIM image file. This file must reside in the <images> folder (see " Folders "). See the
+discussion section for a full description of the IMA and BIM file formats.
+EditIMA File Pressing this buttonwill invoke theWindowsNotepad editorwhich allows modification ofthe currently
+selected IMA file. This button is disabled if the file type is BIM.
+Surface The surface number at which to evaluate the rays. The default is the image surface. Other surfaces may be
+selected, for example, to visualize the beam footprint on an optical surface.
+# Pixels The number of pixels across the width of the selected image size. This value is not used if "spot diagram"
+is the method of displaying the image data.
+NA The numerical aperture (NA) cut-off. If zero, this feature is ignored. If a number greater than 0 is entered, then
+all rays with a numerical aperture greater than the specified number are ignored.
+Total Watts The total power in watts radiated by the source into the entrance pupil of the optical system. This flux
+is then used to normalize the detected power according to the relative pixel values and the total efficiency.
+PlotScale For false color and gray scale plots, this value defines the maximum scale range.
+UseSymbols If checked, this option will draw different symbols rather than dots for each wavelength. This helps
+distinguish the various wavelengths. This value is only used if "spot diagram" is the method of displaying the image
+data.
+Reference Selects the reference coordinate for the center of the plot: chief ray, surface vertex, primary wavelength
+chief ray, or centroid. The primary wavelength option chooses the primary wavelength chief ray even if some other
+wavelength is the only one selected.
+RemoveVignetting Factors If checked, vignetting factors are automatically removed. See "Comment about
+vignetting factors".
+DeleteVignetted If checked, rays are not drawn if they will be vignetted by any surface.
+Use Pixel Interpolation If checked, ray energy is distributed among adjacent pixels according to the distance from
+where the ray lands to the center of the pixel. This yields smoother, more accurate results for images where the
+pixels are small compared to the spot size. If unchecked, all the energy for a ray is placed only in the pixel struck.
+Pixel Interpolation should not be used if the pixels are large compared to the spot size. This control has no affect if
+"Show" is set to "spot diagram".
+Save As BIM File If a file name ending in the BIM extension is provided, and "Show" is not set to "Spot Diagram",
+then the output image will be saved in the specified file and be placed in the <images> folder (see "Folders").
+Discussion
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 829
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

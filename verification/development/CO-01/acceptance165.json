@@ -12,18 +12,18 @@
   "interfaces": "IAS_RTA_Angle/IAS_RTA_Wavelength: ObjectNumber/FaceNumber/ReverseDirection; formal static/runtime probes151/152/157",
   "scope": "12 angle/wavelength scans; sequential NSC component and pure NSC; explicit object and optical face groups; owned analysis copy",
   "tests": {
-    "ordinary": ".local/evidence/development/CO-01/ordinary165.xml",
+    "ordinary": "verification/development/CO-01/ordinary165.xml",
     "passed": 162,
     "native": [
-      ".local/evidence/development/CO-01/native159-modes.xml",
-      ".local/evidence/development/CO-01/native163-final.xml",
-      ".local/evidence/development/CO-01/native164-cancellation.xml",
-      ".local/evidence/development/CO-01/native162-regression.xml"
+      "verification/development/CO-01/native159-modes.xml",
+      "verification/development/CO-01/native163-final.xml",
+      "verification/development/CO-01/native164-cancellation.xml",
+      "verification/development/CO-01/native162-regression.xml"
     ]
   },
   "runs": [
     {
-      "path": ".local/runs/coating154_nsc_reference_610fca8ab2",
+      "path": "outputs/runs/coating154_nsc_reference_610fca8ab2",
       "numeric_checks": 198,
       "max_absolute_error": 4.440892098500626e-16,
       "native_terminal_observations": 25,
@@ -31,7 +31,7 @@
       "cleanup_warnings": []
     },
     {
-      "path": ".local/runs/coating158_pure_reference_604906a8ac",
+      "path": "outputs/runs/coating158_pure_reference_604906a8ac",
       "numeric_checks": 72,
       "max_absolute_error": 3.3306690738754696e-16,
       "native_terminal_observations": 8,
@@ -39,7 +39,7 @@
       "cleanup_warnings": []
     },
     {
-      "path": ".local/runs/coating160_nsc_film_a1729dca86",
+      "path": "outputs/runs/coating160_nsc_film_a1729dca86",
       "numeric_checks": 300,
       "max_absolute_error": 1.7053025658242404e-13,
       "native_terminal_observations": 24,
@@ -47,7 +47,7 @@
       "cleanup_warnings": []
     },
     {
-      "path": ".local/runs/coating_cancel058_5628746f6c",
+      "path": "outputs/runs/coating_cancel058_5628746f6c",
       "numeric_checks": 0,
       "max_absolute_error": 0,
       "native_terminal_observations": 2,
@@ -55,7 +55,7 @@
       "cleanup_warnings": []
     },
     {
-      "path": ".local/runs/coating_cancel160_nsc_e1452e1eba",
+      "path": "outputs/runs/coating_cancel160_nsc_e1452e1eba",
       "numeric_checks": 0,
       "max_absolute_error": 0,
       "native_terminal_observations": 2,
@@ -63,7 +63,7 @@
       "cleanup_warnings": []
     },
     {
-      "path": ".local/runs/coating_reference057_555d335220",
+      "path": "outputs/runs/coating_reference057_555d335220",
       "numeric_checks": 600,
       "max_absolute_error": 4.547473508864641e-13,
       "native_terminal_observations": 48,

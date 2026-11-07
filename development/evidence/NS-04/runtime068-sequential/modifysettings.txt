@@ -1,0 +1,551 @@
+PAGE 1541
+10.2.14.92. MODIFYSETTINGS (keywords)
+Modifies data within the settings files used by GETTEXTFILE.
+The settings file must be manually created priorto using MODIFYSETTING. To create a setting file, open the analysis
+in OpticStudio and click Save in the settings dropdown.
+Syntax:
+MODIFYSETTINGS settingsfilename, type, value, windowtype
+Discussion:
+The settingsfilename must be in quotes, or be a string variable name, and include the full path, name, and extension
+for the file to be modified.
+The type argument is a text mnemonic that indicates which setting within the file is to be modified. The supported
+values for the type argument are listed in the table below.
+The windowtype argumentis a 3 character string code thatindicates the type of analysis to look forin a lens-specific
+settings file. Forthe full listof string codes, see the "StringCodes" sectionofthe TheProgramming Tab. Ifwindowtype
+is omitted, the first settings that match the type argument will be modified; note that some type arguments may
+match multiple different windows settings and, if no settings match the given type, no change will be made to the
+file.
+Type codes supported by MODIFYSETTINGS
+Feature Available type codes
+2D Layout LAY_RAYS: The number of rays.
+DVW_SURFACE: The surface number. Use 1 for Non-sequential mode.
+DVW_DETECTOR: The detector number.
+DVW_SHOW: The "Show As" setting. The meaning depends upon the type of window
+displayed (Graphic or Text) and the type of detector (Detector Rectangle, Detector
+Color, etc.). The value forDVW_SHOWcorresponds to the position ofthe desired item
+in the UI of the Detector Viewer window. For an example, see Table 2: DVW_SHOW
+Example on page 1551.
+DVW_ROWCOL: The row or column number for cross section plots.
+DVW_ZPLANE: The Z-Plane number for detector volumes.
+DVW_SCALE: The scale mode. Use 0 for linear, 1 for Log -5, 2 for Log -10, and 3 for Log
+- 15.
+DVW_SMOOTHING: The integer smoothing value.
+DVW_DATA:The "ShowData" setting. LikeDVW_SHOW,themeaningdependsonother
+settings such as type of window displayed, type of detector, and source units. The
+value corresponds to the position of the desired item in the UI of the Detector viewer
+window. For an example, see Table 3: DVW_DATA Example on page 1552
+DVW_ZRD: The ray data base name, or null for none.
+DVW_FILTER: The filter string.
+DVW_MAXPLOT: The maximum plot scale.
+DVW_MINPLOT: The minimum plot scale.
+DVW_OUTPUTFILE: The output file name.
+Detector Viewer
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1541
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Programming Tab
+PAGE 1542
+EXD_DISPLAYSIZE: The display size.
+EXD_FIELD: The field number.
+EXD_FILESIZE: The file size.
+EXD_WAVE: The wavelength number.
+ExtendedDiffraction Image
+Analysis
+XSE_FIELD: Field number (1, .., n)
+XSE_FIELDSIZE: Field Size
+XSE_WAVE: Wavelength (0 = "All", 1, ...n)
+XSE_KRAYS: Rays x 1000
+XSE_IMANAME: *.IMA File name
+XSE_SURFACE: Surface number
+XSE_MAXRAD: Maximum Radial Distance
+XSE_TYPE: Type of the Data (1 = "Encircled", 2 = "X Only", 3 = "Y Only", etc.)
+XSE_REF: Reference to (0 = "Chief Ray", 1 = "Centroid", 2 = "Vertex")
+XSE_POLARIZATION: Use Polarization flag (0 for off, 1 for on)
+XSE_REMVIGNET: Remove Vignetting Factors flag
+XSE_MULDIFFLI: Multiply by Diffraction Limit flag
+Extended Source Encircled
+Energy
+LSF_COHERENT: Use 0 for incoherent, 1 for coherent
+LSF_TYPE:Use 0-9 for X-Linear, Y-Linear, X-Log, Y-Log, X-Phase, Y-Phase, X-Real, Y-Real,
+X-Imaginary, or Y-Imaginary, respectively.
+LSF_SAMP: The sampling, use 1 for 32 x 32, 2 for 64 x 64, etc.
+LSF_SPREAD: Use 0 for line, 1 for edge.
+LSF_WAVE: The wavelength number, use 0 for polychromatic (incoherent only).
+LSF_FIELD: The field number.
+LSF_POLARIZATION: Use 0 for unpolarized, 1 for polarized.
+LSF_PLOTSCALE: The plot scale.
+FFT Line/Edge Spread
+PSF_TYPE: Use 0-4 for Linear, Log, Phase, Real, or Imaginary, respectively.
+PSF_SAMP: The sampling, use 1 for 32 x 32, 2 for 64 x 64, etc.
+PSF_WAVE: The wavelength number, use 0 for polychromatic.
+PSF_FIELD: The field number.
+PSF_SURFACE: The surface number, use 0 for image.
+PSF_POLARIZATION: Use 0 for unpolarized, 1 for polarized.
+PSF_NORMALIZE: Use 0 for unnormalized, 1 for unity normalization.
+PSF_IMAGEDELTA: The image point spacing in micrometers.
+FFT PSF
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1542
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Programming Tab
+PAGE 1543
+PSF_TYPE: Use 0-9 for X-Linear, Y-Linear, X-Log, Y-Log, X-Phase, Y-Phase, X- Real,
+Y-Real, X-Imaginary, or Y-Imaginary, respectively.
+PSF_ROW: The row number (if doing an X scan) or column number (if doing a y scan).
+Use 0 for center.
+PSF_SAMP: The sampling, use 1 for 32 x 32, 2 for 64 x 64, etc.
+PSF_WAVE: The wavelength number, use 0 for polychromatic.
+PSF_FIELD: The field number.
+PSF_POLARIZATION: Use 0 for unpolarized, 1 for polarized.
+PSF_NORMALIZE: Use 0 for unnormalized, 1 for unity normalization.
+PSF_PLOTSCALE: The plot scale.
+FFT PSF Cross Section
+FOO_RAYDENSITY: The ray density. Use 0 for ring, 1 for 10, 2 for 15, 3 for 20 etc.
+FOO_SURFACE: The surface number.
+FOO_FIELD: The field number.
+FOO_WAVELENGTH: The wavelength number.
+FOO_DELETEVIGNETTED: Delete vignetted, use 0 for no, 1 for yes.
+Footprint Diagram
+FFA_FIELD: The field number.
+FFA_FIELDSHAPE: The field shape, use 0 for Rectangular and 1 for Elliptical.
+FFA_WAVELENGTH: The wavelength number.
+FFA_XFIELDWIDTH: The half size of the field sampling grid in X.
+FFA_YFIELDWIDTH: The half size of the field sampling grid in Y.
+FFA_XFIELDSAMPLING: The number of sampling field points in X, use 0 for 5, 1 for 6,
+etc.
+FFA_YFIELDSAMPLING: The number of sampling field points in Y, use 0 for 5, 1 for 6,
+etc.
+FFA_DECOMPOSITION: The decomposition option, use 0 for Zernike Terms.
+FFA_MAXIMUMTERM: The maximum term to be considered for the decomposition.
+Any value up to 231 may be specified.
+FFA_ABERRATION: The aberration to be plotted, use 0 for Defocus, 1 for Primary
+Astigmatism, etc.
+FFA_PUPILSAMPLING: The pupil density to use for coefficient fitting, use 1 for 32 x 32,
+2 for 64 x 64, etc.
+FFA_DISPLAY: The display mode, use 0 for Absolute, 1 for Relative, and 2 for Average.
+FFA_SHOWAS: The "Show As" setting, use 0 for Grey Scale, 1 for Inverse Grey Scale,
+etc.
+Full-Field Aberration
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1543
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Programming Tab
+PAGE 1544
+GBM_FIELDSIZE: The field Y size.
+GBM_RAYS: The number of rays per source pixel.
+GBM_XPIX: The number of X pixels.
+GBM_YPIX: The number of Y pixels.
+GBM_XSIZ: The X pixel size.
+GBM_YSIZ: The Y pixel size.
+GBM_INPUT: The input file name
+GBM_OUTPUT: The output file name
+GBM_SURFACE: The surface number
+GBM_ROTATION: The rotation setting
+Geometric Bitmap Image
+Analysis
+IMA_FIELD: The field size.
+IMA_IMAGESIZE: The image size.
+IMA_IMANAME: The image file name.
+IMA_KRAYS: The number of rays x 1000.
+IMA_NA: The numerical aperture.
+IMA_OUTNAME: The output file name.
+IMA_SURFACE: The surface number.
+IMA_PIXELS: The number of pixels.
+Geometric Image Analysis
+TFM_SAMP: The sampling. Use 1 for 32x32, 2 for 64x64, etc.
+TFM_DELTAFOC: The delta focus.
+TFM_FREQ: The spatial frequency for which the data is plotted.
+TFM_STEPS: The number of focal plane steps.
+TFM_WAVE: The wavelength number. Use 0 for all.
+TFM_FIELD: The field number. Use 0 for all.
+TFM_TYPE: The data type.Use 0 for modulation, 1 forreal, 2 forimaginary, 3 for phase,
+or 4 for square wave.
+TFM_POLAR: Use polarization. Use 0 for no, 1 for yes.
+TFM_DASH: Use dashes. Use 0 for no, 1 for yes.
+FFT Through Focus MTF
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1544
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Programming Tab
+PAGE 1545
+HMF_PUPILSAMP: The pupil sampling. Use 1 for 32x32, 2 for 64x64, etc.
+HMF_IMAGESAMP: The image sampling. Use 1 for 32x32, 2 for 64x64, etc.
+HMF_IMAGEDELTA: The image point spacing in micrometers.
+HMF_CONFIG: The configuration number. Use 0 for all, 1 for current, etc.
+HMF_WAVE: The wavelength number. Use 0 for polychromatic.
+HMF_FIELD: The field number. Use 0 for all.
+HMF_TYPE: The data type. Currently only modulation (0) is supported.
+HMF_MAXF: The maximum spatial frequency.
+HMF_POLAR: Use polarization. Use 0 for no, 1 for yes.
+HMF_DASH: Use dashes. Use 0 for no, 1 for yes.
+Huygens MTF
+HTF_PUPILSAMP: The pupil sampling. Use 1 for 32x32, 2 for 64x64, etc.
+HTF_IMAGESAMP: The image sampling. Use 1 for 32x32, 2 for 64x64, etc.
+HTF_IMAGEDELTA: The image point spacing in micrometers.
+HTF_CONFIG: The configuration number. Use 0 for all, 1 for current, etc.
+HTF_FREQ: The spatial frequency for which data is plotted.
+HTF_WAVE: The wavelength number. Use 0 for all.
+HTF_FIELD: The field number. Use 0 for all.
+HTF_TYPE: The data type. Currently only modulation (0) is supported.
+HTF_DELTAFOC: The delta focus.
+HTF_STEPS: The number of focal plane steps.
+HTF_POLAR: Use polarization. Use 0 for no, 1 for yes.
+HTF_DASH: Use dashes. Use 0 for no, 1 for yes.
+Huygens Through Focus
+MTF
+HMH_SAMP: The sampling. Use 1 for 32x32, 2 for 64x64, etc.
+HMH_SCANTYPE: The field scan type. Use 0 for +Y, 1 for +X, etc.
+HMH_WAVE: The wavelength. Use 0 for all.
+HMH_FIELDDENSITY: The field density.
+HMH_FREQ1: Spatial frequency 1.
+HMH_FREQ2: Spatial frequency 2.
+HMH_FREQ3: Spatial frequency 3.
+HMH_FREQ4: Spatial frequency 4.
+HMH_FREQ5: Spatial frequency 5.
+HMH_FREQ6: Spatial frequency 6.
+HMH_POLAR: Use polarization. Use 0 for no, 1 for yes.
+HMH_DASH: Use dashes. Use 0 for no, 1 for yes.
+HMH_REMOVEVIGNETTING: Remove vignetting factors. Use 0 for no, 1 for yes.
+Huygens MTF vs. Field
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1545
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Programming Tab
+PAGE 1546
+HPS_CENTROID: Use Centroid flag (0 for off, 1 for on).
+HPS_PUPILSAMP: The pupil sampling, use 1 for 32 x 32, 2 for 64 x 64, etc.
+HPS_IMAGESAMP: The image sampling, use 1 for 32 x 32, 2 for 64 x 64, etc.
+HPS_WAVE: The wavelength number, use 0 for polychromatic.
+HPS_FIELD: The field number.
+HPS_IMAGEDELTA: The image point spacing in micrometers.
+HPS_TYPE: The data type.Use 0-8 for Linear, Log -1, Log -2, Log -3, Log -4, Log -5, Real,
+Imaginary, or Phase, respectively.
+Huygens PSF
+HPC_PUPILSAMP: The pupil sampling, use 1 for 32 x 32, 2 for 64 x 64, etc.
+HPC_IMAGESAMP: The image sampling, use 1 for 32 x 32, 2 for 64 x 64, etc.
+HPC_WAVE: The wavelength number, use 0 for polychromatic.
+HPC_FIELD: The field number.
+HPC_IMAGEDELTA: The image point spacing in micrometers.
+HPC_TYPE: The data type. Use 0-9 for X-Linear, Y-Linear, X-Log, Y-Log, X-Real, Y-Real,
+X-Imaginary, Y-Imaginary, X-Phase, or Y-Phase, respectively.
+Huygens PSF Cross Section
+ILL_SOURCE: The source size.
+ILL_SMOOTH: The smoothing value to use.
+ILL_DETSIZE: The detector size.
+ILL_SURFACE: The surface number.
+Illumination XY Scan
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1546
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Programming Tab
+PAGE 1547
+ISM_INPUTFILE: The input file name. This should be specified without a path.
+ISM_FIELDHEIGHT: The Y field height.
+ISM_OVERSAMPLING: Oversample value. Use 0 for none, 1 for 2X, 2 for 4x, etc.
+ISM_GUARDBAND: Guard band value. Use 0 for none, 1 for 2X, 2 for 4x, etc.
+ISM_FLIP: Flip Source. Use 0 for none, 1 for TB, 2 for LR, 3 for TB&LR.
+ISM_ROTATE: Rotate Source: Use 0 for none, 1 for 90, 2 for 180, 3 for 270.
+ISM_WAVE: Wavelength. Use 0 for RGB, 1 for 1+2+3, 2 for wave #1, 3 for wave #2, etc.
+ISM_FIELD: Field number.
+ISM_PSAMP: Pupil Sampling. Use 1 for 32x32, 2 for 64x64, etc.
+ISM_ISAMP: Image Sampling. Use 1 for 32x32, 2 for 64x64, etc.
+ISM_PSFX, ISM_PSFY: The number of PSF grid points.
+ISM_ABERRATIONS: Use 0 for none, 1 for geometric, 2 for diffraction.
+ISM_POLARIZATION: Use 0 for no, 1 for yes.
+ISM_FIXEDAPERTURES: Use 0 for no, 1 for yes.
+ISM_USERI: Use 0 for no, 1 for yes.
+ISM_SHOWAS: Use 0 for Simulated Image, 1 for Source Bitmap, and 2 for PSF Grid.
+ISM_REFERENCE: Use 0 for chief ray, 1 for vertex, 2 for primary chief ray.
+ISM_SUPPRESS: Use 0 for no, 1 for yes.
+ISM_PIXELSIZE: Use 0 for default or the size in lens units.
+ISM_XSIZE, ISM_YSIZE: Use 0 for default or the number of pixels.
+ISM_FLIPIMAGE: Use 0 for none, 1 for top-bottom, etc.
+ISM_OUTPUTFILE: The output file name or empty string for no output file.
+Image Simulation
+MTF_SAMP: The pupil sampling, use 1 for 32, 2 for 64, etc.
+MTF_WAVE: The wavelength number, use 0 for all.
+MTF_FIELD: The field number, use 0 for all.
+MTF_TYPE: Use 0 for modulation, 1 for real, 2 for imaginary, 3 for phase, 4 for square
+wave.
+MTF_SURF: The surface number, use 0 for image.
+MTF_MAXF: The maximum frequency, use 0 for default.
+MTF_SDLI: Show diffraction limit, 0 for no, 1 for yes.
+MTF_POLAR: Polarization, 0 for no, 1 for yes.
+MTF_DASH: Use dashes, 0 for no, 1 for yes.
+MTF - FFT
+SHA_ROTX: The x rotation in degrees.
+SHA_ROTY: The y rotation in degrees.
+SHA_ROTZ: The z rotation in degrees.
+NSC Object Viewer
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1547
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Programming Tab
+PAGE 1548
+SHA_ROTX: The x rotation in degrees.
+SHA_ROTY: The y rotation in degrees.
+SHA_ROTZ: The z rotation in degrees.
+NSC Shaded Model
+PCI_FIELD: The field number.
+PCI_FILESIZE: The file size.
+PCI_WAVE: The wavelength number.
+PCI_RESAMPLE: The resample image setting, 0 for no 1 for yes.
+PCI_RSNX: The resample number x
+PCI_RSNY: The resample number y
+PCI_RSDCX: The resample decenter x
+PCI_RSDCY: The resample decenter y
+PCI_RSDLX: The resample delta x
+PCI_RSDLY: The resample delta y
+Partially Coherent Image
+Analysis
+PPM_SAMP: The sampling, use 0 for 3x3, 1 for 5x5, 2 for 7x7, etc.
+PPM_FIELD: The field number.
+PPM_WAVE: The wavelength number.
+PPM_SURFACE: The surface number.
+PPM_JX: The Jx amplitude.
+PPM_JY: The Jy amplitude.
+PPM_PX: The Px phase.
+PPM_PY: The Py phase.
+PPM_ADDCONFIG: The add configs string.
+PPM_SUBCONFIGS: The subtract configs string.
+Polarization Pupil Map
+POP_END: The end surface.
+POP_FIELD: The field number.
+POP_START: The starting surface.
+POP_WAVE: The wavelength number.
+PhysicalOpticsPropagation
+- General Tab
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1548
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Programming Tab
+PAGE 1549
+POP_AUTO: Simulates the pressing of the "auto" button which chooses appropriate
+X and Y beam widths based upon the sampling and other settings.
+POP_BEAMTYPE: Selects thebeamtype.Use 0 forGaussianWaist, 1 forGaussianAngle,
+2 for Gaussian Size + Angle, 3 for Top Hat, 4 for File, 5 for DLL and 6 for Multimode.
+POP_PARAMn: Sets beam parameter n, for example, use POP_PARAM3 to set
+parameter3. For example iftheBeamType isGaussianWaist,therewillbe 8parameters
+listed in that order.
+The parameters are read row by row.
+POP_PEAKIRRAD: Sets the normalization by peak irradiance.
+POP_POWER: Sets the normalization by total beam power.
+POP_SAMPX: The X direction sampling, use 1 for 32, 2 for 64, etc.
+POP_SAMPY: The Y direction sampling, use 1 for 32, 2 for 64, etc.
+POP_SOURCEFILE: The file name if the starting beam is defined by a ZBF file, DLL, or
+multimode file.
+POP_WIDEX: The X direction width. POP_WIDEY: The Y direction width.
+PhysicalOpticsPropagation
+- Beam Definition Tab
+POP_COMPUTE: Use 1 to check the fiber coupling integral on, 0 to check it off.
+POP_FIBERFILE: The file name if the fiber mode is defined by a ZBF or DLL.
+POP_FIBERTYPE:Use the same values asPOP_BEAMTYPEabove, exceptformultimode
+which is not yet supported.
+POP_FPARAMn: Sets fiber parameter n, for example, use POP_FPARAM3 to set fiber
+parameter3.
+POP_IGNOREPOL: Use 1 to ignore polarization, 0 to consider polarization.
+POP_POSITION: Fiber position setting. Use 0 for chief ray, 1 for surface vertex.
+POP_TILTX: The X-Tilt.
+POP_TILTY: The Y-Tilt.
+PhysicalOpticsPropagation
+- Fiber Data Tab
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1549
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Programming Tab
+PAGE 1550
+REL_RAYDENSITY: The number of rays.
+REL_FIELDDENSITY: The number of field points.
+REL_WAVE: The wavelength number, use 0 for all.
+REL_POLAR: Use 1 to use polarization, 0 to ignore polarization
+REL_LOG: Use 1 for a log scale, 0 for linear.
+REL_REMOVEVIGNETTING: Use 1 to remove vignetting factors, otherwise 0.
+REL_SCANTYPE: Use 0 for +y, 1 for +x, 2 for -y, or 3 for -x scan direction.
+Relative Illumination
+SHA_ROTX: The x rotation in degrees.
+SHA_ROTY: The y rotation in degrees.
+SHA_ROTZ: The z rotation in degrees.
+Shaded Model
+Spot Diagram SPT_RAYS: The ray density.
+SRS_SAMP: The sampling. Use 1 for 33x33, 2 for 65x65, etc.
+SRS_SURF: The surface number.
+Surface Sag
+UN1_CATEGORY: Use 0 for surface, 1 for system, 2 for config.
+UN1_PARAMETER: Use 0 for first option, 1 for second option, etc.
+UN1_SURFACE: The surface or configuration number.
+UN1_STARTVAL: The start value for the independent variable.
+UN1_STOPVAL: The stop value for the independent variable.
+UN1_STEPS: The number of steps between start and stop.
+UN1_OPERAND: The optimization operand name.
+UN1_MFLINE: The optimization operand line number. Use 0 for MF value.
+UN1_PAR1: Operand parameter 1.
+UN1_PAR2: Operand parameter 2.
+UN1_PAR3: Operand parameter 3.
+UN1_PAR4: Operand parameter 4.
+UN1_PAR5: Operand parameter 5.
+UN1_PAR6: Operand parameter 6.
+UN1_PAR7: Operand parameter 7.
+UN1_PAR8: Operand parameter 8.
+UN1_PLOTMIN: The minimum plot value for the dependent variable.
+UN1_PLOTMAX: The maximum plot value for the dependent variable.
+UN1_TITLE: The plot title.
+Universal Plot 1D
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1550
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Programming Tab
+PAGE 1551
+UN2_CATEGORYX: Use 0 for surface, 1 for system, 2 for config.
+UN2_PARAMETERX: Use 0 for first option, 1 for second option, etc.
+UN2_SURFACEX: The surface or configuration number.
+UN2_STARTVALX: The start value for the independent variable.
+UN2_STOPVALX: The stop value for the independent variable.
+UN2_STEPSX: The number of steps between start and stop.
+UN2_CATEGORYY: Use 0 for surface, 1 for system, 2 for config.
+UN2_PARAMETERY: Use 0 for first option, 1 for second option, etc.
+UN2_SURFACEY: The surface or configuration number.
+UN2_STARTVALY: The start value for the independent variable.
+UN2_STOPVALY: The stop value for the independent variable.
+UN2_STEPSY: The number of steps between start and stop.
+UN2_OPERAND: The optimization operand name.
+UN2_MFLINE: The optimization operand line number. Use 0 for MF value.
+UN2_PAR1: Operand parameter 1.
+UN2_PAR2: Operand parameter 2.
+UN2_PAR3: Operand parameter 3.
+UN2_PAR4: Operand parameter 4.
+UN2_PAR5: Operand parameter 5.
+UN2_PAR6: Operand parameter 6.
+UN2_PAR7: Operand parameter 7.
+UN2_PAR8: Operand parameter 8.
+UN2_SHOWAS: Data display. Use 0 for surface, 1 for contour, etc.
+UN2_CONTOURFORMAT: Contour format string.
+UN2_PLOTMIN: The minimum plot value for the dependent variable.
+UN2_PLOTMAX: The maximum plot value for the dependent variable.
+UN2_TITLE: The plot title.
+Universal Plot 2D
+WFM_SAMP: The sampling, use 1 for 32, 2 for 64, etc.
+WFM_FIELD: The field number.
+WFM_WAVE: The wavelength number.
+WFM_SUBSR: The sub aperture radius.
+WFM_SUBSX: The sub aperture X decenter.
+WFM_SUBSY: The sub aperture Y decenter.
+Wavefront Map
+Table 2: DVW_SHOW Example
+Value Graphic Window, Detector Color Text Window, Detector Polar
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1551
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Programming Tab
+PAGE 1552
+0 Gray Scale Full Listing
+1 Inverse False Color Azimuth Cross Section
+2 False Color
+3 Inverse False Color
+4 True Color
+5 Cross Section Row
+6 Cross Section Column
+Table 3: DVW_DATA Example
+Graphic Window, Detector Text Window,Summarize All
+Rectangle,Source Units: Lumens
+Value
+0 Incoherent Illuminance Incoherent Illuminance
+1 Coherent Illuminance Coherent Illuminance
+2 Coherent Phase
+3 Luminous Intensity
+4 Luminance (position space)
+5 Luminance (angle space)
+The value parameteris the newdata forthe specified setting. The modified settings file iswritten back to the original
+settings file name.
+See also GETTEXTFILE .
+Example:
+MODIFYSETTINGS "C:\MySPT.CFG", SPT_RAYS, 24
+MODIFYSETTINGS "C:\MyPOP.CFG", POP_SOURCEFILE, "MyStartBeam.ZBF"
+10.2.14.93. NEXT
+See " FOR, NEXT ".
+10.2.14.94. NSLT
+Initiates a Non-sequential LightningTrace.
+Syntax:
+NSLT surf, source, ray_sampling, edge_sampling
+Discussion:
+Surf is an integer value that indicates the number of the Non-sequential surface. If the program mode is set to
+Non-Sequential, use 1. Source refers to the object number of the desired source. If source is zero, all sources will be
+traced. Ray_sampling refers to the resolution of the LightningTrace mesh, with valid values being between 0
+(corresponding to a mesh resolution of "Low (1X)") and 5 (corresponding to a mesh resolution of "1024X").
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1552
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Programming Tab
+PAGE 1553
+Edge_sampling refers to the resolution used in refining the LightningTrace mesh near the edges of objects, with
+valid values being between 0 (corresponding to a mesh resolution of "Low (1X)") and 4 (corresponding to a mesh
+resolution of "256X"). For more details on LightningTrace, see "The LightningTrace Control".
+NSLT always calls UPDATE before executing a LightningTrace to make certain all objects are correctly loaded and
+updated.
+Example:
+NSLT 1, 0, 3, 2
+10.2.14.95. NSTR
+Initiates a Non-sequential trace with ability to save data to a ZRD file.
+Syntax:
+NSTR surf, source, split, scatter, usepolar, ignore_errors, random_seed, save,
+savefilename, filter, zrd_format
+Discussion:
+Surf is an integer value that indicates the number of the Non-sequential surface. If the program mode is set to
+Non-Sequential, use 1. Source refers to the object number of the desired source. If source is zero, all sources will be
+traced. If Split is non-zero, then splitting is on, otherwise, ray splitting is off. If Scatter is non-zero, then scattering
+is on, otherwise scattering is off. If Usepolar is non-zero then polarization will be used, otherwise polarization is off.
+If splitting is on polarization is automatically selected. If ignore_errors is non-zero, then errors will be ignored,
+otherwise ray errors will terminate the non-sequential trace and macro execution and an error will be reported.
+If random_seed is zero, then the random number generator will be seeded with a random value, and every call to
+NSTR will produce different random rays. If random_seed is any integer other than zero, then the random number
+generator will be seeded with the specified value, and every call to NSTR using the same seed will produce identical
+rays. When using NSTR for optimization, it is recommended that a non-zero value be used for random_seed.
+If save is omitted or is zero, the arguments savefilename, filter, and zrd_format need not be supplied. If save is not
+zero, the rays will be saved to a file. The saved data file will have the name specified by the savefilename. The file
+naming convention and destination folder are the same as described in "Saving ray data to a file". The extension of
+savefilename should be provided, but no path should be specified. If save is not zero, then the optional filter name
+is either a string variable with the filter, or the literal filter in double quotes. If no filter is being used, enter an empty
+pair of double quotes like this: "". Forinformation on filter strings see "The filter string". For ZRDfiles,the zrd_format
+can be 0, 1, or 2 for uncompressed full data, compressed basic data, or compressed full data,respectively. For more
+information on ZRD formats see " Ray database (ZRD) files ".
+NSTR always calls UPDATE before tracing rays to make certain all objects are correctly loaded and updated.
+Related Functions:
+NSTR2
+NSDD
+Example:
+NSTR 1, 0, 0, 0, 0, 1, 0, 1, "saverays.ZRD", "h2"
+10.2.14.96. NSTR2
+Initiates a Non-sequential trace with ability to save data to a ZRD and/or PAF file.
+Syntax:
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1553
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Programming Tab
+PAGE 1554
+NSTR surf, source, split, scatter, usepolar, ignore_errors, random_seed, save,
+savefilename, filter, zrd_format, savepaths, pathfilename
+Discussion:
+Surf is an integer value that indicates the number of the Non-sequential surface. If the program mode is set to
+Non-Sequential, use 1. Source refers to the object number of the desired source. If source is zero, all sources will be
+traced. If Split is non-zero, then splitting is on, otherwise, ray splitting is off. If Scatter is non-zero, then scattering
+is on, otherwise scattering is off. If Usepolar is non-zero then polarization will be used, otherwise polarization is off.
+If splitting is on polarization is automatically selected. If ignore_errors is non-zero, then errors will be ignored,
+otherwise ray errors will terminate the non-sequential trace and macro execution and an error will be reported.
+Save, savefilename, and zrd_formatreferto saving ZRD, DAT, or SDF files. If save is omitted oris zero,the arguments
+savefilename, filter, and zrd_format need not be supplied. If save is not zero, the rays will be saved to a file. The
+saved data file will have the name specified by the savefilename. The file naming convention and destination folder
+are the same as described in "Saving ray data to a file". The extension of savefilename should be provided, but no
+path should be specified. For ZRD files, the zrd_format can be 0, 1, or 2 for uncompressed full data, compressed
+basic data, or compressed full data, respectively. For more information on ZRD formats see "Ray database (ZRD)
+files".
+SavepathsandpathfilenamecontrolthesavingofaPAFfileandhavesimilarrequirements tothesaveandsavefilename
+arguments above. If savepaths is not zero,the rays will be saved to a PAF file with a name specified by pathfilename.
+The extension .paf should be specified at the end of the savefilename string.
+If either save or savepaths is not zero, then the optional filter name is either a string variable with the filter, or the
+literalfilterindoublequotes. Ifnofilterisbeingused, enter anemptypairofdoublequotes like this: "". Forinformation
+on filter strings see "The Filter String".
+NSTR2 always calls UPDATE before tracing rays to make certain all objects are correctly loaded and updated.
+Related Functions:
+NSTR
+NSDD
+Example:
+NSTR2 1, 0, 0, 0, 0, 1, 0, 1, "saverays.ZRD", "h2", 0, 1, "saverays.PAF"
+10.2.14.97. NUMFIELD
+This command is obsolete. See " SETSYSTEMPROPERTY, SYSP ".
+10.2.14.98. NUMWAVE
+This command is obsolete. See " SETSYSTEMPROPERTY, SYSP ".
+10.2.14.99. OPEN
+Opens an existing text file for reading by the READ command.
+Syntax:
+OPEN "filename"
+OPEN A$
+Discussion:
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1554
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Programming Tab

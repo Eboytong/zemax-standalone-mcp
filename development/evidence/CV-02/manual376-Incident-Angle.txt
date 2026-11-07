@@ -1,0 +1,373 @@
+PAGE 931
+This feature calculates the surface phase as a cross section across the full clear diameter or diameter of the surface.
+This feature defines phase slope in units of 2p radians perlens units. TheGraph section will display (0,0) atthe vertex
+of the aperture, including for off-axis apertures. The Text data X and Y coordinates are given with respect to the
+vertex of the surface.
+Surfaces which do not impart a phase change to the ray, such as the Standard surface, will display a phase of zero
+everywhere on the surface phase display.
+3.4.3.Coatings (polarizationandsurfacephysics group,the analyze tab, sequential
+ui mode)
+For more information on coating calculations, see "Polarization Analysis".
+3.4.3.1.Reflectionvs.Angle (coatings,polarizationandsurfacephysics group)
+Computes the S, P, and average polarization intensity coefficients forreflection forthe specified surface as a function
+of incident angle.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 931
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+
+PAGE 932
+Min Angle The minimum angle of incidence to plot. This defines the left edge of the plot.
+Max Angle The maximum angle of incidence to plot. This defines the right edge of the plot.
+Min Y The minimum y value to plot. This defines the bottom edge of the plot.
+Max Y The maximum y value to plot. This defines the top edge of the plot.
+Surface The surface number which defines the interface to use.
+Object The object number if the surface is a Non-sequential Components surface.
+Face The face number which defines the interface to use, if the surface is a Non-sequential Components surface.
+Wavelength The wavelength number to use.
+ReverseDirection Ifthe selected surface is aNon-sequential Components surface, choosing this option willreverse
+the incident media and substrate.
+Discussion: The incident angle is measured in the medium prior to the specified surface.
+3.4.3.2. Transmission vs. Angle (coatings, polarization and surface physics
+group)
+Computes the S, P and average polarization intensity coefficients for transmission for the specified surface as a
+function of incident angle.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 932
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+
+PAGE 933
+See " Reflectivity vs. Angle " for settings.
+Discussion The incident angle is measured in the medium prior to the specified surface.
+3.4.3.3.Absorptionvs.Angle (coatings,polarizationandsurfacephysics group)
+Computes the S, P, and average polarization intensity coefficients for absorption for the specified surface as a
+function of incident angle.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 933
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+
+PAGE 934
+See "Reflectivity vs. Angle" for settings
+Discussion The incident angle is measured in the medium prior to the specified surface.
+3.4.3.4. Diattenuation vs. Angle (coatings, polarization and surface physics
+group)
+Computes the R (reflected) and T (transmitted) diattenuation forthe specified surface as a function ofincident angle.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 934
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+
+PAGE 935
+See "Reflectivity vs. Angle" for settings.
+Discussion The incident angle is measured in the medium prior to the specified surface.
+3.4.3.5. Phase vs. Angle (coatings, polarization and surface physics group)
+For sequential surfaces, this feature computes the S and P polarization phase for reflection (if the glass is MIRROR)
+orfortransmission (ifthe glass is notMIRROR) as a function ofincident angle. For non-sequential objects,this feature
+computes the S and P polarization phase forreflection (ifthe material is MIRROR) orfortransmission (ifthe material
+is not MIRROR) as a function of incident angle.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 935
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+
+PAGE 936
+See " Reflectivity vs. Angle " for settings.
+Discussion The incident angle is measured in the medium prior to the specified surface.
+3.4.3.6.Retardancevs.Angle (coatings,polarizationandsurfacephysicsgroup)
+Computes the retardance for the specified surface as a function of incident angle.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 936
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+
+PAGE 937
+See "Reflectivity vs. Angle" for settings.
+Discussion The incident angle is measured in the medium prior to the specified surface.
+3.4.3.7. Reflection vs. Wavelength (coatings, polarization and surface physics
+group)
+Computes the S, P, and average polarization intensity coefficients forreflection forthe specified surface as a function
+of incident wavelength.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 937
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+
+PAGE 944
+3.4.4.1. Diffraction Efficiency (sequential ui mode)
+Graph of Diffraction Efficiency for volume hologram surfaces as a function of incident angle and wavelength using
+the Kogelnik approximation method for thick holograms. For more information about calculation methods, see
+Calculation assumptions and limitations. The diffraction efficiency is determined by tracing a ray from the object
+to the specified surface and calculating the transmission rate. The polarization state ofthe traced ray is determined
+by the settings in System Explorer...Polarization.
+Considering diffraction efficiency allows advanced analyses and comprehensive understanding of the effects of
+incident angles and wavelengths on the hologram.
+The Field Type must be Angle in the System Explorer. During analysis, the Y value of the Field is varied and the X
+value is fixed.
+This analysis can be used with Hologram 1, Hologram 2, Toroidal Hologram, and Optically Fabricated Hologram
+surface types when they are set up as a volume hologram. Details of how to set the volume hologram parameters
+are in the respective Surface type help files.
+Sampling The size of the sampling grid used. The sampling may be 33x33, 65x65, etc.
+Surface Selects the surface at which the diffraction efficiency is to be evaluated.
+Wavelength Selects the wavelength number as defined in the System Explorer to use for the analysis.
+Field Selects the field as defined in the System Explorer to use for the analysis.
+Show As Chooses the display option.
+Minimum Angle Minimum incident angle of the chief ray in degrees. If both Minimum Angle and Maximum Angle
+are equal to zero, Minimum Angle will be internally set to 99% of the selected Field's Y value.
+Maximum Angle Maximum incident angle of the chief ray in degrees. If both Minimum Angle and Maximum Angle
+are equal to zero, Maximum Angle will be internally set to 101% of the selected Field's Y value.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 944
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+
+PAGE 945
+Minimum Wavelength Minimum wavelength of the incident ray in microns. If both Minimum Wavelength and
+Maximum Wavelength are setto zero, Minimum Wavelength will be internally setto 99% ofthe selectedWavelength.
+Maximum Wavelength Maximum Wavelength of the incident ray in microns. If both Minimum Wavelength and
+MaximumWavelengthare settozero,MaximumWavelengthwillbe internally setto101%ofthe selectedWavelength.
+3.4.4.2. Efficiency vs. Angle (sequential ui mode)
+Graphs of Diffraction Efficiency for volume hologram surfaces as a function of incident angle using the Kogelnik
+approximation method for thick holograms. For more information about calculation methods, see Calculation
+assumptions andlimitations. Thediffractionefficiency isdeterminedby tracing a ray fromthe objectto the specified
+surface and calculating the transmission rate. The polarization state of the traced ray is determined by the settings
+in System Explorer...Polarization.
+Considering diffraction efficiency allows advanced analyses and comprehensive understanding of the effects of
+incident angles on the hologram.
+The Field Type must be Angle in the System Explorer. During analysis, the Y value of the Field is varied and the X
+value is fixed.
+This analysis can be used with Hologram 1, Hologram 2, Toroidal Hologram, and Optically Fabricated Hologram
+surface types when they are set up as a volume hologram. Details of how to set the volume hologram parameters
+are in the respective Surface type help files.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 945
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+
+PAGE 946
+Sampling The number of the sampling points used. The sampling may be 33, 65, etc.
+Surface Selects the surface at which the diffraction efficiency is to be evaluated.
+Wavelength Selects the wavelength number as defined in the System Explorer to use for the analysis.
+Field Selects the field as defined in the System Explorer to use for the analysis.
+Minimum Angle Minimum incident angle of the chief ray in degrees. If both Minimum Angle and Maximum Angle
+are equal to zero, Minimum Angle will be internally set to 99% of the selected Field's Y value.
+Maximum Angle Maximum incident angle of the chief ray in degrees. If both Minimum Angle and Maximum Angle
+are equally to zero, Maximum Angle will be internally set to 101% of the selected Field's Y value.
+3.4.4.3. Efficiency vs. Wavelength (sequential ui mode)
+Graphs of Diffraction Efficiency for volume hologram surfaces as a function of wavelength using the Kogelnik
+approximation method for thick holograms. For more information about calculation methods, see Calculation
+assumptions andlimitations. Thediffractionefficiency isdeterminedby tracing a ray fromthe objectto the specified
+surface and calculating the transmission rate. The polarization state of the traced ray is determined by the settings
+in System Explorer...Polarization.
+Considering diffraction efficiency allows advanced analyses and comprehensive understanding of the effects of
+wavelengths on the hologram.
+The Field Type must be Angle in the System Explorer.
+This analysis can be used with Hologram 1, Hologram 2, Toroidal Hologram, and Optically Fabricated Hologram
+surface types when they are set up as a volume hologram. Details of how to set the volume hologram parameters
+are in the respective Surface type help files.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 946
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+
+PAGE 1014
+rectangle objects. The exported image is at the full resolution of the detector, not the screen, and will use the same
+number of pixels in the vertical and horizontal directions as the detector does. However, the pixels in the exported
+image are assumed to be square, so if the detector pixels are not square some distortion of the aspect ratio of the
+image will be introduced.
+Suppress Frame If checked,the frame is not drawn and the entire window is used to display the image. This feature
+is not supported for polar detectors.
+Discussion
+Once ray data has been recorded on the detectors, or from rays stored in a ray database, the Show Data option
+determines what aspect of the data is displayed as follows:
+IncoherentIrradiance: This is incoherent power per area as a function of spatial position on the detector. The power
+of each ray that strikes the same pixel is summed without regard to the phase of the ray. This option becomes
+Incoherent Illuminance when using photometric rather than radiometric units.
+CoherentIrradiance: This is coherent power per area as a function of spatial position on the detector. The complex
+amplitudeof eachray that strikes the samepixel is summed, keeping trackofthe real andimaginaryparts separately
+considering the phase of each ray. The final amplitude is then squared to yield the coherent power. This option
+becomes Coherent Illuminance when using photometric rather than radiometric units.
+Coherent Phase: The phase angle of the complex amplitude sum used in Coherent Irradiance.
+Radiant Intensity: The power per solid angle in steradians as a function of incident angle upon the detector. This
+option becomes Luminous Intensity when using photometric rather than radiometric units.
+Radiance (Position Space): The power per area per solid angle in steradians as a function of spatial position on the
+detector. Since it is not possible to display the variation in angle space and position space at the same time, this
+plot is effectively identical to the Incoherent Irradiance display, with the data values divided by two pi. Note this
+scaling assumes the detector is collecting data over a hemisphere, no matter what angular range the detector
+actually collects rays over. This option becomes Luminance when using photometric rather than radiometric units.
+Radiance (AngleSpace): The power per area per solid angle in steradians as a function of incident angle upon the
+detector. Since it is not possible to display the variation in angle space and position space at the same time, this
+plotis similarto the RadiantIntensity display, with the data values divided by the product ofthe area ofthe detector
+and the cosine of the angle at the center of the pixel. This option becomes Luminance when using photometric
+rather than radiometric units.
+Incident Flux: For detector volumes, the incident flux is the flux entering each voxel, measured in source units
+(watts, lumens, or joules).
+Absorbed Flux: For detector volumes, the absorbed flux is the flux absorbed within each voxel, measured in source
+units (watts, lumens, or joules).
+Absorbed Flux/Volume: For detector volumes, the absorbed flux/volume is the flux absorbed within each voxel,
+measured in source units (watts, lumens, or joules) per unit volume measured in cubic lens units.
+Flux vs. Wavelength: For detector color objects, the spectral distribution of the flux incident on the detector. The
+plot will be shown as a bar chart. To obtain the spectral distribution on any object (other than a detector color), use
+the Flux vs. Wavelength analysis (see "Flux vs. Wavelength" ).
+A Beam Info tab on the Detector Viewer is shown when the viewer is looking at data from a Detector Rectangle or
+Detector Color object. On this tab is summary information about the beam landing on the detector, including:
+• Beam centroid in X and Y
+• RMS beam radius
+• RMS beam width in X and Y
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1014
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (non-sequential ui mode)
+
+PAGE 1031
+Computes the S, P, and average polarization intensity coefficients forreflection forthe specified surface as a function
+of incident angle.
+Min Angle The minimum angle of incidence to plot. This defines the left edge of the plot.
+Max Angle The maximum angle of incidence to plot. This defines the right edge of the plot.
+Min Y The minimum y value to plot. This defines the bottom edge of the plot.
+Max Y The maximum y value to plot. This defines the top edge of the plot.
+Surface The surface number which defines the interface to use.
+Object The object number if the surface is a Non-sequential Components surface.
+Face The face number which defines the interface to use, if the surface is a Non-sequential Components surface.
+Wavelength The wavelength number to use.
+ReverseDirection Ifthe selected surface is aNon-sequential Components surface, choosing this option willreverse
+the incident media and substrate.
+Discussion
+In non-sequential mode, the default Incident Media is air. The analysis is done on Object / Face basis. There is no
+way to determine that allthe area ofthe Face of anObjectis in contact with allthe area ofthe Face of anotherObject
+l. To change the Incident Media, use the "Inside Of" flag.
+4.6.2.2. Transmission vs. Angle (coatings, polarization group)
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1031
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (non-sequential ui mode)
+
+PAGE 1032
+Computes the S, P and average polarization intensity coefficients for transmission for the specified surface as a
+function of incident angle.
+See "Reflection vs. Angle" for settings
+4.6.2.3. Absorption vs. Angle (coatings, polarization group)
+Computes the S, P, and average polarization intensity coefficients for absorption for the specified surface as a
+function of incident angle.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1032
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (non-sequential ui mode)
+
+PAGE 1033
+See "Reflection vs. Angle" for settings
+4.6.2.4. Diattenuation vs. Angle (coatings, polarization group)
+Computes the R (reflected) and T (transmitted) diattenuation forthe specified surface as a function ofincident angle.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1033
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (non-sequential ui mode)
+
+PAGE 1034
+See "Reflection vs. Angle" for settings
+4.6.2.5. Phase vs. Angle (coatings, polarization group)
+For sequential surfaces, this feature computes the S and P polarization phase for reflection (if the glass is MIRROR)
+orfortransmission (ifthe glass is notMIRROR) as a function ofincident angle. For non-sequential objects,this feature
+computes the S and P polarization phase forreflection (ifthe material is MIRROR) orfortransmission (ifthe material
+is not MIRROR) as a function of incident angle.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1034
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (non-sequential ui mode)
+
+PAGE 1035
+See "Reflection vs. Angle" for settings
+4.6.2.6. Retardance vs. Angle (coatings, polarization group)
+Computes the retardance for the specified surface as a function of incident angle.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1035
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (non-sequential ui mode)
+
+PAGE 1043
+These analyses can be used withHologram Lens, ToroidalHologram, andHologram Surface objecttypes when they
+are set up as a volume hologram. Details of how to setthe volume hologram parameters are in the respectiveObject
+type help files.
+4.6.3.1. Diffraction Efficiency (non-sequential ui mode)
+Graph of Diffraction Efficiency for volume hologram objects as a function of incident angle and wavelength using
+the Kogelnik approximation method for thick holograms. For more information about calculation methods, see
+Calculation assumptions and limitations.
+Considering diffraction efficiency allows advanced analyses and comprehensive understanding of the effects of
+incident angles and wavelengths on the hologram.
+To perform the calculations, a copy ofthe selected hologram objectwith the settings belowis created and the power
+of rays after diffraction is measured. Results over the selected scanning range are reported in the analysis window.
+This analysis can be used with Hologram Lens, Toroidal Hologram, and Hologram Surface object types when they
+are set up as a volume hologram. Details of how to setthe volume hologram parameters are in the respectiveObject
+type help files.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1043
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (non-sequential ui mode)
+
+PAGE 1044
+Sampling The size of the sampling grid used. The sampling may be 33x33, 65x65, etc.
+Wavelength Selects the wavelength number as defined in the System Explorer to use for the analysis.
+Show As Chooses the display option.
+Hologram Object Chooses the hologram object that will have it's diffraction efficiency measured.
+AmbientObjectIfthe diffractive face ofthe hologram object exactly overlaps another object,this other object must
+be selected here. By default this option is set to None.
+Detector Object Chooses the detector object. By default this option is set to Automatic.
+Minimum Angle Minimum incident angle of the chief ray in degrees. If both Minimum Angle and Maximum Angle
+are equal to zero, Minimum Angle will be internally set to -0.01.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1044
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (non-sequential ui mode)
+
+PAGE 1045
+Maximum Angle Maximum incident angle of the chief ray in degrees. If both Minimum Angle and Maximum Angle
+are equal to zero, Maximum Angle will be internally set to 0.01.
+Minimum Wavelength Minimum wavelength of the incident ray in microns. If both Minimum Wavelength and
+Maximum Wavelength are setto zero, Minimum Wavelength will be internally setto 99% ofthe selectedWavelength.
+Maximum Wavelength Maximum Wavelength of the incident ray in microns. If both Minimum Wavelength and
+MaximumWavelengthare settozero,MaximumWavelengthwillbe internally setto101%ofthe selectedWavelength.
+PositionX/Y/ZPosition ofthe testing ray relative to theHologram Object. This option allows the diffraction efficiency
+to be tested on different positions of the Hologram Object.
+Polarization: Unpolarized/Jx/Jy Chooses the polarization of the testing ray.
+Inside of Object If the test ray starts inside of an object, that object must be selected here.
+Pre-propagation Chooses the ray's starting position. This should be selected such the the ray's starting position
+does not overlap or begin behind the holographic surface. This functions in the sameway as the parameter available
+in Sources in Object Properties. By default this is 1000 times the Glue Distance.
+Tilt about Choose which axis to rotate the ray used for testing.
+4.6.3.2. Efficiency vs. Angle (non-sequential ui mode)
+Graphs of Diffraction Efficiency for volume hologram objects as a function of incident angle using the Kogelnik
+approximation method for thick holograms. For more information about calculation methods, see Calculation
+assumptions and limitations.
+Considering diffraction efficiency allows advanced analyses and comprehensive understanding of the effects of
+incident angles on the hologram.
+To perform the calculations, a copy ofthe selected hologram objectwith the settings belowis created and the power
+of rays after diffraction is measured. Results over the selected scanning range are reported in the analysis window.
+This analysis can be used with Hologram Lens, Toroidal Hologram, and Hologram Surface object types when they
+are set up as a volume hologram. Details of how to setthe volume hologram parameters are in the respectiveObject
+type help files.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1045
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (non-sequential ui mode)
+
+PAGE 1047
+Minimum Angle Minimum incident angle of the chief ray in degrees. If both Minimum Angle and Maximum Angle
+are equal to zero, Minimum Angle will be internally set to -0.01.
+Maximum Angle Maximum incident angle of the chief ray in degrees. If both Minimum Angle and Maximum Angle
+are equal to zero, Maximum Angle will be internally set to 0.01.
+PositionX/Y/ZPosition ofthe testing ray relative to theHologram Object. This option allows the diffraction efficiency
+to be tested on different positions of the Hologram Object.
+Polarization: Unpolarized/Jx/Jy Chooses the polarization of the testing ray.
+Inside of Object If the test ray starts inside of an object, that object must be selected here.
+Pre-propagation Chooses the ray's starting position. This should be selected such the the ray's starting position
+does not overlap or begin behind the holographic surface. This functions in the sameway as the parameter available
+in Sources in Object Properties. By default this is 1000 times the Glue Distance.
+Tilt about Choose which axis to rotate the ray used for testing.
+4.6.3.3. Efficiency vs. Wavelength (non-sequential ui mode)
+Graphs of Diffraction Efficiency for volume hologram objects as a function of wavelength using the Kogelnik
+approximation method for thick holograms. For more information about calculation methods, see Calculation
+assumptions and limitations.
+Considering diffraction efficiency allows advanced analyses and comprehensive understanding of the effects of
+wavelengths on the hologram.
+To perform the calculations, a copy ofthe selected hologram objectwith the settings belowis created and the power
+of rays after diffraction is measured. Results over the selected scanning range are reported in the analysis window.
+This analysis can be used with Hologram Lens, Toroidal Hologram, and Hologram Surface object types when they
+are set up as a volume hologram. Details of how to setthe volume hologram parameters are in the respectiveObject
+type help files.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1047
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (non-sequential ui mode)
+
+PAGE 1048
+Sampling The size of the sampling grid used. The sampling may be 33x33, 65x65, etc.
+Wavelength Selects the wavelength number as defined in the System Explorer to use for the analysis.
+Hologram Object Chooses the hologram object that will have it's diffraction efficiency measured.
+AmbientObjectIfthe diffractive face ofthe hologram object exactly overlaps another object,this other object must
+be selected here. By default this option is set to None.
+Detector Object Chooses the detector object. By default this option is set to Automatic.
+Angle Chooses the incident angle of the chief ray in degrees. By default this option is set to 0.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1048
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (non-sequential ui mode)

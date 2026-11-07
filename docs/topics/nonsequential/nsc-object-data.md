@@ -18,6 +18,6 @@ get_detector_data增加read_mode，full沿用既有读取；region只按NCE.GetD
 
 原生检查已覆盖矩形flux/irradiance/intensity及体积flux/absorbed_flux/absorbed_density与全量切片一致、独立点光线占用像素1W、保存重载及模型保持，并访问128^3体积中的单个角点像素。普通检查覆盖边界、单位/类型、快速索引、部分和、非有限值及大尺寸安全路径。
 
-NS-04的Rectangle/Polar/Color/Volume/Surface全量读取及文件保存/加载沿用docs/nonsequential-validation.md和现有源测试。对象查看器继续按台账探查；Sag专题见nsc-surface-sag.md。
+NS-04的Rectangle/Polar/Color/Volume/Surface全量读取及文件保存/加载沿用docs/topics/nonsequential/nonsequential-validation.md和现有源测试。对象查看器继续按台账探查；Sag专题见nsc-surface-sag.md。
 
-接口证据：.local/evidence/development/NS-04/probe029.json；示例examples/nsc029_requests.json；历史汇总verification/nsc-object-data029-summary.json。本轮154项相关普通检查及原生证据见.local/evidence/development/NS-04/acceptance065.json。
+接口证据：.local/evidence/development/NS-04/probe029.json；示例examples/requests/nsc029_requests.json；历史汇总development/evidence/nsc-object-data029-summary.json。本轮154项相关普通检查及原生证据见.local/evidence/development/NS-04/acceptance065.json。

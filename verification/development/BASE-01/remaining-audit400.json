@@ -24,5 +24,5 @@
   "source_record_count": 144,
   "canonical_group_count": 133,
   "gate": "B0052/10; YYbar and incident angle done",
-  "queue": "development/generated/queue.json"
+  "queue": "docs/development-queue.json"
 }

@@ -1,0 +1,301 @@
+PAGE 1134
+PhysicalOpticsPropagationData. Forimportantdetails see the sectionon"PhysicalOpticsPropagation".
+To use this operand, first define the settings on the POP analysis feature as desired, then press
+Save on the settings box. The operand will return data based upon the selected settings.
+IfSurf is zero, then the saved ending surface number will be used; otherwise, the specified surface will
+beusedas the ending surface.IfWave is zero,thenthe savedwavelengthnumberwillbeused;otherwise,
+the specified wavelength number will be used. If Field is zero,then the saved field number will be used;
+otherwise, the specified field number will be used.
+Data determines what data the POP feature will compute and return as follows:
+0, 1, 2: The total (Ex + Ey), Ex only, or Ey only Irradiance.
+3, 4, 5, 6: Ex-real, Ex-Imaginary, Ey-real, Ey-imaginary.
+7, 8: Ex, Ey phase in radians. Undefined Data values will return 0.
+The Pix# refers to the desired pixel of the beam. The pixel number is greater than or equal to zero, and
+less than nx*ny, where nx and ny are the number of columns and rows, respectively. The pixel number
+is generallydefinedasp= x + y*nxwhere x is the integerrownumber andy is the integer column number,
+and 0 <= x < nx and 0 <= y < ny.
+If adjacent POPI operands all have the sameSurf, Wave, and Field values, then the POP analysis is
+done just once and all data returned at one time. Note the POPI operands must be on adjacent rows
+in the MFE for this efficiency to be implemented.
+POPI
+5.2.1.2.31. Best Fit Sphere Data
+Operands for Best FitSphere data
+BFSD
+NAME Description
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1134
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Optimize Tab (sequential ui mode)
+
+PAGE 1135
+Best Fit Sphere (BFS) data. For a complete description,
+see "Sag Table". BFSD uses the Minimum Volume
+criterion. The data is computed for the surface defined
+bySurf. The value returned depends upon the value of
+Data as follows:
+0 - BFS curvature in inverse lens units
+1 - BFS radius of curvature in lens units
+2 - Vertex offset from BFS in lens units
+3 - Maximum depth of material to remove in lens units
+4 - Total volume of material to use in cubic lens units
+5 - The maximum slope (dz/dr) difference between the
+surface and BFS (dimensionless)
+6 - RMS of the depth of material to remove in lens units
+7 - RMS of the slope (dz/dr) difference between the
+surface and BFS (dimensionless)
+The MinR and MaxR are the minimum and maximum
+radial coordinate over which the BFS data is computed.
+If both values are zero, the minimum radial coordinate
+used is zero and the maximum radial coordinate used is
+the clear semi-diameter or semi-diameter ofthe surface.
+BFSD
+5.2.1.2.32. Tolerance Sensitivity Data
+Operands for tolerance sensitivity data
+TOLR
+NAME Description
+Tolerance data. Data is 0 for RSS estimated change in performance, 1 for nominal
+performance, and 2 for estimated performance (nominal plus estimated change). File is
+the integer number corresponding to the tolerance settings file to use. Config# is -2 for
+the configuration defined by the last CONF operand, -1 for all configurations, 0 to use
+the configuration set in the tolerance settings file and 1 or greater for a specific
+configuration number. For details, see "Optimizing tolerance sensitivity" .
+TOLR
+5.2.1.2.33. Thermal Coefficient of Expansion Data
+Operands forThermal Coefficient of Expansion data
+TCGT, TCLT, TCVA
+NAME Description
+Thermal Coefficient of expansion greater than. This boundary operand constrains the TCE of
+the surface defined bySurf to be greater than the specified target value.
+TCGT
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1135
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Optimize Tab (sequential ui mode)
+
+PAGE 1137
+Angular aberration y direction measured in image space at the wavelength defined by Wave with
+respect to the primary wavelength chief ray. This quantity is defined as:ε = m-mc where m is the y
+direction cosine of the ray and the c subscript indicates the chief ray. See "Hx, Hy, Px, and Py".
+ANAY
+Angular aberration x direction measured in image space at the wavelength defined by Wave with
+respect to the centroid. This quantity is defined as:ε = l-lcwhere l is the x direction cosine of the ray
+and the c subscript indicates the centroid. ANCX has the same restrictions that TRAC does; see TRAC
+for a detailed discussion. See "Hx, Hy, Px, and Py" in Modifying the merit function.
+ANCX
+Angular aberration y direction measured in image space at the wavelength defined by Wave with
+respect to the centroid. This quantity is defined as:ε = m-mc where m is the y direction cosine of the
+ray and the c subscript indicates the centroid. ANCY has the same restrictions that TRAC does; see
+TRAC for a detailed discussion. See "Hx, Hy, Px, and Py" in Modifying the merit function.
+ANCY
+Arcsine of the value of the operand defined by Op#. If Flag is 0, then the units are radians, otherwise,
+degrees.
+ASIN
+Astigmatism in waves contributed by the surface defined by Surf at the wavelength defined by Wave.
+If Surf is zero, the sum for the entire system is used. This is the third order astigmatism calculated
+from the Seidel coefficients, and is not valid for non-paraxial systems.
+ASTI
+Arctangent ofthe value ofthe operand defined byOp#. If Flag is 0,then the units are radians, otherwise,
+degrees.
+ATAN
+Axial color, measured in lens units forfocal systems and diopters for afocal systems. This is the image
+separation between the two wavelengths defined by Wave1 and Wave2. If Zone is zero, paraxial rays
+are used to determine the paraxial image locations. If Zone is greater than 0.0 and less than or equal
+to 1.0, real marginal rays are used to determine the image locations. In this case, Zone corresponds
+to the Py coordinate of the real marginal ray.See "Hx, Hy, Px, and Py".
+AXCL
+Best Fit Sphere (BFS) data. For a complete description, see "Sag Table". BFSD uses the Minimum
+Volume criterion. The data is computed for the surface defined by Surf. The value returned depends
+upon the value of Data as follows:0 - BFS curvature in inverse lens units1 - BFS radius of curvature in
+lens units2 - Vertex offsetfrom BFS in lens units3 -Maximum depth of materialto remove in lens units4
+- Total volume of materialto use in cubic lens units5 - The maximum slope (dz/dr) difference between
+the surface and BFS (dimensionless)6 - RMS of the depth of material to remove in lens units7 - RMS of
+the slope (dz/dr) difference between the surface and BFS (dimensionless)The MinR and MaxR are the
+minimum and maximum radial coordinate over which the BFS data is computed. If both values are
+zero,theminimumradial coordinate usedis zero andthemaximumradial coordinate usedis the clear
+semi-diameter or semi-diameter of the surface.
+BFSD
+Biocular Convergence. Returns the convergence between two eye configurations in milliradians. The
+left and right eye configurations are specified using the Left and Right values. The other parameters
+are:Wave: The wavelength number to use.UseCos: If 0 field units are degrees, otherwise field is in
+direction cosine units.Xang/Yang: The X and Y angle or cosines atwhich to compute the convergence.If
+the chief rays from both configurations at the specified angles do not pass through to the image
+without vignetting, an error is reported. See "Divergence/Convergence" for more information and
+important assumptions.
+BIOC
+Biocular Dipvergence. Returns the dipvergence between two eye configurations in milliradians. See
+BIOC above for details.
+BIOD
+BIPF Unused.
+Does nothing. Used for separating portions of the operand list. A comment line may optionally be
+typed in the space to the right of the operand name; this comment will be displayed in the editor as
+well as in the merit function listing.
+BLNK
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1137
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Optimize Tab (sequential ui mode)
+
+PAGE 1178
+RMS wavefront error with respect to the centroid in waves. This operand uses a rectangular grid of
+rays to estimate the RMS. This operand considers vignetting. A Samp value of n will trace an n x n grid
+perpupilquadrant.IfWave is zero;thenawavelengthweightedpolychromatic calculationisperformed;
+otherwise, the specified wavelength number will be used. See "Hx, Hy, Px, and Py".
+RWRE
+RMS wavefront error with respect to the chief ray in waves. This operand uses a rectangular grid of
+rays to estimate the RMS. This operand considers vignetting. A Samp value of n will trace an n x n grid
+perpupilquadrant.IfWave is zero;thenawavelengthweightedpolychromatic calculationisperformed;
+otherwise, the specified wavelength number will be used. See "Hx, Hy, Px, and Py".
+RWRH
+The sag in lens units of the surface defined by Surf at X = the clear semi-diameter or semi-diameter,
+and Y = 0. See also SSAG.
+SAGX
+The sag in lens units of the surface defined by Surf at Y = the clear semi-diameter or semi-diameter,
+and X = 0. See also SSAG.
+SAGY
+The curvature in lens units of the surface defined by Surf at the coordinate defined by X and Y, as
+measured in Lens Units within the coordinate system being used (see "Off-axis" below). This operand
+has mode, off-axis, remove, best-fit sphere (BFS), and Orientation flags.
+• Mode = 0 to use Mech Semi-Dia and Mode = 1 (default) to use Clear Semi-Dia value displayed on the
+Lens Data Editor.
+• Off-axis = 0 (default) the computation is calculated with respect to the system coordinates and
+Off-axis = 1 the computation is calculatedwith respectto a tilted and decentered coordinate system,
+where the origin of the coordinate system falls at the vertex of the off-axis part. The X and Y inputs
+will then refer to coordinates in the new off-axis coordinate system.
+• Remove = 0 (default) no data is removed. Remove = 1 the base radius of curvature is removed from
+the data before calculation. Remove = 2 the best-fit sphere is removed from the data before
+calculation.
+• BFS selects which type of best-fit sphere to remove from the data if Remove is set to 2. BFS = 0
+(default) for minimum volume best-fit sphere. BFS = 1 for Minimum RMS best-fit sphere. BFS = 2 for
+Minimum RMS best-fit sphere with offset. BFS = 3 for Minimum volume best-fit sphere, reverse
+direction. The offset allows the calculation to shift the vertex of the BFS away from the data value
+at the vertex if it results in a lower RMS.
+• Orientation selects the direction of the curvature calculation. Orientation = 0 (default) calculated
+along the tangential direction (radially outward). Orientation = 1 calculated along the sagittal
+direction (orthogonal to radially outward). Orientation = 2 calculated along the X-axis direction.
+Orientation = 3 calculated along the Y-axis direction. Orientation = 4 is the modulus or length of the
+curvature vector, at the orientation angle that contains the full length of the vector (The angle is
+not explicitly calculated and can vary between points on the curvature map).
+SCRV
+SurfaceCurvature.Computes curvature andrelateddataofthe surfacedefinedbySurf atthe coordinate
+definedby X andY.Inall casesbelow,the "maximum"data isdeterminedby calculationofthe curvature
+at 50 points equally spaced from the vertex of the surface to the specified X and Y coordinate, and the
+largest absolute value found is returned.If data is 0-3, the returned value is the tangential, sagittal,
+tangential-sagittal, or maximum tangential-sagittal curvature,respectively.If data is 4-7,the returned
+value is the x, y, x-y, or maximum x-y curvature, respectively.If data is 8-9, the returned value is the
+absolute value of (R*Sc), where R is the radial coordinate and Sc is the sagittal curvature, or the
+maximum of this value, respectively.
+SCUR
+Surface Derivative. Computes the first or second derivative of the surface sag (along the local Z axis)
+of the surface defined by Surf at the coordinate defined by X and Y.If data is 0 or 1, the returned value
+is the first derivative in the tangential or sagittal direction.If data is 2 or 3, the returned value is the
+second derivative in the tangential or sagittal direction.
+SDRV
+Sagittal working F/#, computed at the field point defined by Field and the wavelength defined by
+Wave. See TFNO.
+SFNO
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1178
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Optimize Tab (sequential ui mode)
+
+PAGE 1179
+Sine of the value of the operand defined by Op#. If Flag is 0, then the units are radians, otherwise,
+degrees.
+SINE
+SKIN Skip if not symmetric. See SKIS.
+Skipif symmetric.Ifthe lens is rotationally symmetric,thencomputationofthemeritfunctioncontinues
+at the operand defined by Op#.
+SKIS
+SMIA-TV Distortion. Field is the zero distortion reference field position, or use zero to indicate the field
+position (0, 0). Wave is the wavelength number, or use zero for the primary wavelength. X- Width and
+Y-Width are the full field width in field units. For more information see "SMIA-TV Distortion".
+SMIA
+Spherochromatism in lens units. This is the difference between the real marginal axial color and the
+paraxial axial color of the two extreme wavelengths defined by Minw and Maxw. The distance is
+measured along the Z axis. Zone defines the zone for which the real marginal axial coloris computed.
+Zone corresponds to the Py coordinate of the real marginal ray. Not valid for non-paraxial systems.
+SPCH
+Spherical aberration in waves contributed by the surface defined by Surf at the wavelength defined
+byWave. If Surfis zero,the sum forthe entire system is used. This is the third order spherical aberration
+calculated from the Seidel coefficients, and is not valid for non-paraxial systems.
+SPHA
+The phase in waves atthe primary system wavelength ofthe surface defined by Surf atthe coordinate
+defined by X and Y, as measured in Lens Units. This operand has data and remove flags.
+• Data = 0 (default) display the surface phase. Data = 1 display the tilt term within the phase when
+Remove is also set to 2. Data = 2 display the power term within the phase when Remove is also set
+to 3.
+• Remove = 0 (default) no data is removed. Remove = 1 constant value at the vertex of the part is
+removed from the data . Remove = 2 the tilt term is removed from the data. Remove = 3 the power
+term is removed from the data.
+Note that sampling is set to 33x33. See also DPHS.
+SPHS
+SQRT Square root of the operand defined by Op#.
+The sag in lens units of the surface defined by Surf at the coordinate defined by X and Y, as measured
+in LensUnits within the coordinate system being used (see "Off-axis" below). This operand has mode,
+off-axis, remove, and best-fit sphere (BFS) flags.
+• Mode = 0 to use Mech Semi-Dia and Mode = 1 (default) to use Clear Semi-Dia value displayed on the
+Lens Data Editor.
+• Off-axis = 0 (default) the computation is calculated with respect to the system coordinates and
+Off-axis = 1 the computation is calculatedwith respectto a tilted and decentered coordinate system,
+where the origin of the coordinate system falls at the vertex of the off-axis part. The X and Y inputs
+will then refer to coordinates in the new off-axis coordinate system.
+• Remove = 0 (default) no data is removed. Remove = 1 the base radius of curvature is removed from
+the data before calculation. Remove = 2 the best-fit sphere is removed from the data before
+calculation.
+• BFS selects which type of best-fit sphere to remove from the data if Remove is set to 2. BFS = 0
+(default) for minimum volume best-fit sphere. BFS = 1 for Minimum RMS best-fit sphere. BFS = 2 for
+Minimum RMS best-fit sphere with offset. BFS = 3 for Minimum volume best-fit sphere, reverse
+direction.
+The offset allows the calculation to shiftthe vertex ofthe BFS away from the data value atthe vertex
+if it results in a lower RMS.
+Note that sampling is set to 33x33. See also DSAG, SAGX, SAGY.
+SSAG
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1179
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Optimize Tab (sequential ui mode)
+
+PAGE 1180
+The slope in lens units ofthe surface defined by Surf atthe coordinate defined by X and Y, as measured
+in LensUnits within the coordinate system being used (see "Off-axis" below). This operand has mode,
+off-axis, remove, best-fit sphere (BFS), and Orientation flags.
+• Mode = 0 to use Mech Semi-Dia and Mode = 1 (default) to use Clear Semi-Dia value displayed on the
+Lens Data Editor.
+• Off-axis = 0 (default) the computation is calculated with respect to the system coordinates and
+Off-axis = 1 the computation is calculatedwith respectto a tilted and decentered coordinate system,
+where the origin of the coordinate system falls at the vertex of the off-axis part. The X and Y inputs
+will then refer to coordinates in the new off-axis coordinate system.
+• Remove = 0 (default) no data is removed. Remove = 1 the base radius of curvature is removed from
+the data before calculation. Remove = 2 the best-fit sphere is removed from the data before
+calculation.
+• BFS selects which type of best-fit sphere to remove from the data if Remove is set to 2. BFS = 0
+(default) for minimum volume best-fit sphere. BFS = 1 for Minimum RMS best-fit sphere. BFS = 2 for
+Minimum RMS best-fit sphere with offset. BFS = 3 for Minimum volume best-fit sphere, reverse
+direction.
+The offset allows the calculation to shiftthe vertex ofthe BFS away from the data value atthe vertex
+if it results in a lower RMS.
+• Orientation selects the direction of the slope calculation. Orientation = 0 (default) calculated along
+the tangential direction (radially outward). Orientation = 1 calculated along the sagittal direction
+(orthogonal to radially outward). Orientation = 2 calculated along the X-axis direction. Orientation
+= 3 calculated along the Y-axis direction.Orientation = 4 is the modulus orlength ofthe slope vector,
+attheorientationangle that contains the full lengthofthe vector(The angle isnot explicitly calculated
+and can vary between points on the slope map).
+Note that sampling is set to 33x33. See also DSLP.
+SSLP
+Surface Thickness. This operand computes the thickness of the surface defined by Surf to the next
+surface at the coordinate defined by X and Y on the surface. This operand has a mode flag. Mode = 0
+(default) to use Mech Semi-Dia and Mode = 1 to use Clear Semi-Dia value displayed on the Lens Data
+Editor. The calculation accounts forthe sag and centerthickness ofthe surface and the sag ofthe next
+surface, but not any tilts and decenters between the surfaces.
+STHI
+StrehlRatio.Thisoperandcomputes theStrehlRatiousingtheHuygensPSF computation(see "Huygens
+PSF"). The parameters are:Samp: The pupil sampling, where 1 yields 32 x 32, 2 yields 64 x 64 etc. The
+sampling is assumed to be the same for both pupil and image.Wave: The wavelength number to use
+(use 0 forpolychromatic).Field: The fieldnumber.Pol?: Setto0 toignorepolarizationand1 toconsider
+it.All Conf?: Setto 0 to use the current configuration (defined by the last CONF operand preceding this
+operand), and 1 to sum over all configurations. See "HuygensPSF" for a full discussion ofthis option.By
+default, the image delta used in the Huygens PSF computation for the evaluation of this operand is
+2x smallerthan the nominal defaultimage delta. See "Huygens PSF" forthe formula used to calculate
+the nominal default image delta. This is done to zoom in on the peak of the PSF, allowing for a more
+accurate computation of the Strehl ratio. As a result, the value reported will, in general, be different
+than the value reported using the nominal default image delta in the Huygens PSF analysis.
+STRH
+SUMM Sum of two operands (Op#1 + Op#2). See OSUM.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1180
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Optimize Tab (sequential ui mode)

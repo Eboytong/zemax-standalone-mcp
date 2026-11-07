@@ -1,6 +1,6 @@
 # AN-03 基础分析
 
-四项功能通过run_analysis调用，返回任务编号；用get_task_status查询终态，get_task_result按start/count分页读取rows。请求示例见examples/basic-analyses.json。
+四项功能通过run_analysis调用，返回任务编号；用get_task_status查询终态，get_task_result按start/count分页读取rows。请求示例见examples/requests/basic-analyses.json。
 
 | kind | 参数 | 结果 |
 | --- | --- | --- |
@@ -19,6 +19,6 @@ Grid Distortion的field_width为X方向总宽度，aspect为Y/X比。网格初�
 
 位置采用镜头单位，波长以编号选择。角度视场的网格数据用度表示。原生文本解析失败返回具体错误及文本文件路径。
 
-普通测试：tests/test_basic_analyses.py。原生验收：tests/test_basic_analyses_live.py，覆盖单光线/批量追迹、网格/主光线、Seidel逐面求和、独立球面三阶S1及厚透镜矩阵、偏心局部/全局坐标。三阶S1容差1e-6镜头单位，厚透镜基点容差1e-4 mm，文本光线坐标容差1e-8 mm，网格文本坐标容差1e-5 mm。实际记录见verification/basic-analyses-summary.json。
+普通测试：tests/unit/test_basic_analyses.py。原生验收：tests/native/test_basic_analyses_live.py，覆盖单光线/批量追迹、网格/主光线、Seidel逐面求和、独立球面三阶S1及厚透镜矩阵、偏心局部/全局坐标。三阶S1容差1e-6镜头单位，厚透镜基点容差1e-4 mm，文本光线坐标容差1e-8 mm，网格文本坐标容差1e-5 mm。实际记录见development/evidence/basic-analyses-summary.json。
 
 全局光线坐标相对系统全局参考面；验证时显式将global_reference_surface设为1。对不同曲面范围的CARD结果比较，应先统一物方和像方位置参考面。

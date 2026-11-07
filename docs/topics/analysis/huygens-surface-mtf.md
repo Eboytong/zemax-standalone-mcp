@@ -2,7 +2,7 @@
 
 `run_analysis` 的 `kind="huygens_surface_mtf"` 适配本机 `IAS_HuygensSurfaceMtf`。支持视场、波长、瞳面与像面采样、六种 coherent/incoherent 调制/实部/虚部、显示方式、偏振及 `image_delta`。波长与视场使用原生编号；默认均为1。`image_delta` 是像面点间距，单位微米，0采用原生自动值。配置使用当前配置。
 
-设置写入并回读 `PupilSampleSize`、`ImageSampleSize`、`Type`、`ShowAs`、`UsePolarization`、`ImageDelta` 和 `Configuration`，实际采用值保留在任务设置中。有类型请求schema见 `tool-schemas.json`，完整调用序列见 `../examples/huygens-surface-mtf287.json`。
+设置写入并回读 `PupilSampleSize`、`ImageSampleSize`、`Type`、`ShowAs`、`UsePolarization`、`ImageDelta` 和 `Configuration`，实际采用值保留在任务设置中。有类型请求schema见 `tool-schemas.json`，完整调用序列见 `../examples/requests/huygens-surface-mtf287.json`。
 
 ```json
 {"request":{"kind":"huygens_surface_mtf","field":3,"wavelength":1,"sampling":"S_256x256","image_sampling":"S_512x512","mtf_type":"MTF_Incoherent","show_as":"FalseColor","use_polarization":false,"image_delta":1}}

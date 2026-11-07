@@ -1,11 +1,11 @@
 {
   "version": "0.1.46",
   "ordinary_passed": 163,
-  "ordinary_report": ".local/evidence/development/ED-03/ordinary048.xml",
+  "ordinary_report": "verification/development/ED-03/ordinary048.xml",
   "native_reports": [
-    ".local/evidence/development/ED-02/native048.xml",
-    ".local/evidence/development/ED-03/native048-final.xml",
-    ".local/evidence/development/ED-04/native048.xml"
+    "verification/development/ED-02/native048.xml",
+    "verification/development/ED-03/native048-final.xml",
+    "verification/development/ED-04/native048.xml"
   ],
   "runs": [
     {

@@ -2,7 +2,7 @@
   "version": "0.1.56",
   "state": "implemented",
   "native": {
-    "evidence": ".local/runs/diff_efficiency_offaxis059_native_cd86bda788/calls.json",
+    "evidence": "outputs/runs/diff_efficiency_offaxis059_native_cd86bda788/calls.json",
     "comparisons": 384,
     "maximum_absolute_error": 5.385047963102352e-11,
     "all_passed": true,
@@ -13,7 +13,7 @@
     }
   },
   "dll": {
-    "evidence": ".local/runs/diff_efficiency_offaxis059_dll_671840542e/calls.json",
+    "evidence": "outputs/runs/diff_efficiency_offaxis059_dll_671840542e/calls.json",
     "reference_status": {
       "surface_model": "dll",
       "physical_reference_passed": false,
@@ -26,7 +26,7 @@
       "terminal": "cancelled",
       "closed": true
     },
-    "probe": ".local/runs/hologram_dll059_9db0cb773b/calls.json",
+    "probe": "outputs/runs/hologram_dll059_9db0cb773b/calls.json",
     "pytest_scope": "Characterization completed: S references pass; P physical references remain failed and projection diagnostics pass. Green pytest is not a P-physics acceptance."
   },
   "model": {
@@ -93,7 +93,7 @@
   "release_evidence": "verification\\development\\BASE-04\\release056.json",
   "candidate_install_failure": "native-wheel056-release.xml: new metadata read GetSurfaceTypeSettings default file instead of active file; corrected to CurrentTypeSettings and final package verified.",
   "installed_native": {
-    "evidence": ".local/runs/diff_efficiency_offaxis059_native_277a858202/calls.json",
+    "evidence": "outputs/runs/diff_efficiency_offaxis059_native_277a858202/calls.json",
     "reference_status": {
       "surface_model": "native",
       "physical_reference_passed": true,
@@ -103,7 +103,7 @@
     }
   },
   "installed_dll": {
-    "evidence": ".local/runs/diff_efficiency_offaxis059_dll_0de796e6a1/calls.json",
+    "evidence": "outputs/runs/diff_efficiency_offaxis059_dll_0de796e6a1/calls.json",
     "reference_status": {
       "surface_model": "dll",
       "physical_reference_passed": false,

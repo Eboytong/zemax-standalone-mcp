@@ -6,17 +6,17 @@
   "native_version": "24.2.0 build240529 PremiumEdition",
   "scope": "All documented4configuration/angle-cosine/window/non-square sampling controls through native STOP direct ray alternative, refined multi-loop pass boundaries, holes/disconnected regions, scan-border provenance, raw ray statuses and public lifecycle.",
   "native_probe": [
-    ".local/evidence/development/CV-02/probe415-fov-outlets/probe.json",
-    ".local/evidence/development/CV-02/probe417-fov-scatter/probe.json"
+    "verification/development/CV-02/probe415-fov-outlets/probe.json",
+    "verification/development/CV-02/probe417-fov-scatter/probe.json"
   ],
   "native_reports": [
-    ".local/evidence/development/CV-02/native416-fov.xml",
-    ".local/evidence/development/CV-02/native419-fov-topology.xml",
-    ".local/evidence/development/CV-02/native420-fov-lifecycle.xml",
-    ".local/evidence/development/CV-02/native422-fov-precondition.xml"
+    "verification/development/CV-02/native416-fov.xml",
+    "verification/development/CV-02/native419-fov-topology.xml",
+    "verification/development/CV-02/native420-fov-lifecycle.xml",
+    "verification/development/CV-02/native422-fov-precondition.xml"
   ],
   "native_unique_cases": 5,
-  "ordinary_report": ".local/evidence/development/CV-02/ordinary421-fov.xml",
+  "ordinary_report": "verification/development/CV-02/ordinary421-fov.xml",
   "ordinary_passed": 116,
   "command": ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_biocular_fov_live.py --run-zemax -q (incremental serial reports preserved)",
   "reference": "At distance d circular aperture: (d*tanX)^2+(d*tanY)^2<R^2; cosine rho maps radius=d*rho/sqrt(1-rho^2). Annulus radii3/10mm, rectangular obscuration separates two regions, pre-STOP obscuration ignored.",
@@ -25,31 +25,31 @@
   "max_boundary_radius_error_mm": 0.003696618588861611,
   "sessions": [
     {
-      "folder": ".local/runs/fov416_circle_ef8aae1135",
+      "folder": "outputs/runs/fov416_circle_ef8aae1135",
       "numeric_checks": 21,
       "closed": true,
       "forced": false
     },
     {
-      "folder": ".local/runs/fov418_topology_869f800d6c",
+      "folder": "outputs/runs/fov418_topology_869f800d6c",
       "numeric_checks": 66,
       "closed": true,
       "forced": false
     },
     {
-      "folder": ".local/runs/fov419_cosines_91b4906e5f",
+      "folder": "outputs/runs/fov419_cosines_91b4906e5f",
       "numeric_checks": 0,
       "closed": true,
       "forced": false
     },
     {
-      "folder": ".local/runs/fov420_lifecycle_20bc238ebf",
+      "folder": "outputs/runs/fov420_lifecycle_20bc238ebf",
       "numeric_checks": 0,
       "closed": true,
       "forced": false
     },
     {
-      "folder": ".local/runs/fov422_precondition_21b4c790be",
+      "folder": "outputs/runs/fov422_precondition_21b4c790be",
       "numeric_checks": 0,
       "closed": true,
       "forced": false

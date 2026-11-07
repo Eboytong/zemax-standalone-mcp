@@ -2,12 +2,12 @@
   "item_id": "CV-01.RMSFieldMap",
   "date": "2026-11-05",
   "state": "done",
-  "native_interface": ".local/evidence/development/CV-01/rms-field-map031.json",
-  "native_numeric": ".local/evidence/development/CV-01/native078-rms-map-final.xml: numeric case passed; recovery case discovered native minimum clamp",
-  "native_lifecycle": ".local/evidence/development/CV-01/native078-rms-map-lifecycle-final.xml: passed after minimum-bound correction",
-  "numeric_run": ".local/runs/rmsmap078_44f9924f8e",
-  "lifecycle_run": ".local/runs/rmsmap078_cancel_6fc7c4403b",
-  "ordinary": ".local/evidence/development/CV-01/ordinary078-delivery.xml",
+  "native_interface": "verification/development/CV-01/rms-field-map031.json",
+  "native_numeric": "verification/development/CV-01/native078-rms-map-final.xml: numeric case passed; recovery case discovered native minimum clamp",
+  "native_lifecycle": "verification/development/CV-01/native078-rms-map-lifecycle-final.xml: passed after minimum-bound correction",
+  "numeric_run": "outputs/runs/rmsmap078_44f9924f8e",
+  "lifecycle_run": "outputs/runs/rmsmap078_cancel_6fc7c4403b",
+  "ordinary": "verification/development/CV-01/ordinary078-delivery.xml",
   "ordinary_passed": 131,
   "fixes": [
     "Skip generic SampleSize; native RMS map uses RayDensity.",
@@ -44,6 +44,6 @@
     "native078-rms-map-quadrature.xml",
     "native078-rms-map-final.xml"
   ],
-  "sampling_probe": ".local/runs/rmsmap078_sampling_34b419c3ff/sampling.json",
+  "sampling_probe": "outputs/runs/rmsmap078_sampling_34b419c3ff/sampling.json",
   "full_gate": "B0023/10; deferred until ten unique completed items"
 }

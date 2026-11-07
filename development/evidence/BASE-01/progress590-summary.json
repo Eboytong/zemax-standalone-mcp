@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-07",
+  "phase": "B006 ongoing",
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "target_release": "0.1.62",
+  "tools": 100,
+  "analyses": 110,
+  "batch_completed": 5,
+  "batch_target": 10,
+  "new_completed": [],
+  "implemented_increment": "SagTable typed RMS/reverse full-aperture curves and fixed-zero NoOffset semantics",
+  "evidence": [
+    "verification/development/MF-01/progress589-offset-reference.json",
+    "verification/development/MA-01/progress584-native-index.json",
+    "verification/development/EXT-EXPORT/progress585-solid-surface-layers.json"
+  ],
+  "checks": {
+    "ordinary589": 72,
+    "native582": 7,
+    "native587": 2,
+    "native585_diagnostic": 1,
+    "gradium584": "GetIndex probe completed, numeric gate remains failed"
+  },
+  "remaining": {
+    "source_records": 130,
+    "distinct_ids": 122,
+    "canonical_functions": 120,
+    "historical_baseline_documented": 38
+  },
+  "lifecycle": "All final sessions disconnected; no active native task; failure578 lacks explicit disconnect before stdio exit, retained in evidence",
+  "batch_release": "Pending10 first completions; no0.1.62wheel or full regression",
+  "next_action": "MaterialModel formal fit coefficients/definition; then FullFieldSpot and original B005 queue when new formal conditions permit"
+}

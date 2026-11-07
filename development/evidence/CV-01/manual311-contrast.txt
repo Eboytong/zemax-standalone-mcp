@@ -1,0 +1,72 @@
+Sampling The size of the grid used to sample the pupil.
+Frequency The spatial frequency (see "MTF Units") for which the data is plotted. When zero, the frequency will be
+set to 5% of the cutoff frequency for the chosen field and wavelength.
+Normalize If this box is checked, all circles are scaled so that the maximum value in the plot is displayed at the
+maximum allowed circle size.
+Wavelength The wavelength number to be used in the calculation.
+Field The field number for which the calculation is performed.
+ShowOPD If this optionis checked,wavefrontinformationis shownon the plot usinga smallindicator.See Discussion
+below.
+Discussion
+This feature displays contrast loss across the pupil using the Moore-Elliott method at a specific spatial frequency.
+The contrast loss distribution indicates which region in the pupil contributes the most to a poor MTF, and can be
+used to better evaluate the needed changes to improve the optical performance. For each sample point on the pupil,
+a circle with optionally a small indicator is shown to suggest the amount of the contrast loss and wavefront
+information.
+758Release 2024 R2 - © Ansys, Inc. All rights reserved.
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+The size of each circle represents the magnitude of the contrast loss on that position in pupil. It's at a maximum
+when contrast loss is 1 and at a minimum when contrast loss is 0.
+For each sampled pupil point (px, py) on the Contrast Loss Map, OpticStudio traces a total of 5 rays: the chief ray for
+the specified field; for the sagittal map, two rays from the specified field point to pupil coordinates (px + ẟ/2, py)
+and (px - ẟ/2, py); for the tangential map, two rays from the specified field point to pupil coordinates (px, py + ẟ/2)
+and (px, py - ẟ/2).
+ẟ is determined from the chosen Frequency setting and the cutoff frequency. For more information about ẟ, see the
+Moore-Elliott method in "Optimizing for MTF".
+The sagittal contrast loss is then calculated from the two rays specified above as:
+where φ1 and φ2 are optical path difference of the two rays with respect to the chief ray in unit of degrees.  A very
+similar equation applies to the tangential contrast loss, with the difference that φ1 and φ2 are calculated for rays
+(px, py + ẟ/2) and (px, py - ẟ/2) instead. A contrast loss of 1 means that contrast has been completely lost, and 0
+means that diffraction-limited performance is achieved.
+Note that if one of the sampling ray pupil coordinate is outside of the unit circle, the data on that point can't be
+calculated and no circle will be shown on the map at that pupil position. This would be that case for e.g. the sagittal
+contrast loss for pupil point (px, py) = (1, 0) and ẟ = 0.1: the two sample rays would then be (0.9, 0) and (1.1, 0), the
+latter being outside of the unit circle.
+If theShowOPD option is checked, wavefront information is shown as a small indicator: for each point on the pupil
+coordinate, the average OPD of the two rays (φ1 + φ2)/2 is calculated and the modulo 2p is taken. This value
+determines the orientation of the indicator as shown below. When the OPD is zero, the indicator points to the +X
+direction and rotates counter-clockwise as the average OPD increases.
+Note that the MTF and diffraction-limited MTF at the chosen frequency are also reported on the Tangential and
+Sagittal map for reference. The value is calculated in the same way as in the FFT MTF analysis, using pupil sampling
+128 x 128. If the system aberrations are too severe for the MTF to be well sampled by a grid of 128 x 128 rays, then
+an error message "Cannot compute MTF" will be displayed instead.
+Note that in some cases the maximum contrast loss on the map may be very small and, as a result, the magnitude
+of the contrast loss across the pupil may not be deduced easily. In this case, users can check theNormalize option,
+which scales all circles so that the maximum value in the plot is displayed at the maximum allowed circle size. When
+this option is checked, the message "Plot scale: 0 to xx", where xx is the largest contrast loss value in the map, will
+be displayed in the Comments area.
+759Release 2024 R2 - © Ansys, Inc. All rights reserved.
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)
+3.2.3.6.ZernikeFringeCoefficients
+Calculates the Zernike coefficients using the Fringe (also called the "University of Arizona") polynomials. The
+coefficients are given in units of waves.
+Sampling Specify the density in the pupil to use for coefficient fitting. Larger grid sizes are more accurate, although
+the computation time increases.
+Please note that the sampling is done on a uniform grid. Results will be incorrect if those rays are not uniformly
+sampled at the evaluated surface. See the section "Sampling" in the discussion below.
+MaximumTerm Specify the maximum Zernike coefficient to compute. Any value up to 37 may be specified.
+Wavelength The wavelength number to use for the calculation.
+Field The field number to use for the calculation.
+RefOPDToVertex Normally, OpticStudio references the OPD to the chief ray; which in effect subtracts out tilt from
+the wavefront phase. For interferometry, it is sometimes desirable to retain the wavefront tilt. Checking this option
+on will add tilt to the beam based upon the deviation of the chief ray from the image surface vertex. This option is
+only useful for field positions whose chief ray is reasonably close to the surface vertex, where the assumption that
+tilt is described by the deviation of the chief ray is valid.
+Surface Selects the surface at which the data is to be evaluated. This is useful for evaluating intermediate images.
+See "Evaluating results at intermediate surfaces". If Surface is set to Image, the Reference OPD setting determines
+where the data is evaluated.
+760Release 2024 R2 - © Ansys, Inc. All rights reserved.
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Analyze Tab (sequential ui mode)

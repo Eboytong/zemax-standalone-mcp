@@ -14,7 +14,7 @@
 
 原生网格和截面曲线保留原始数组、标签、文本及无效点统计，复用任务、分页、绘图、报告和关闭。曲面坐标使用镜头单位；几何斜率为无量纲sag导数，相位斜率为cycles/镜头单位，即相位弧度导数除以2π。二维为`values[y][x]`；截面XData为局部X，YData两列为局部Y和所选斜率。曲面编号在创建Analysis前检查；设置拒绝时释放已创建资源并保留错误来源。
 
-定义参考：[Surface Slope 2024 R2](https://ansyshelp.ansys.com/public/Views/Secured/Zemax/v242/en/OpticStudio_User_Guide/OpticStudio_Help/topics/Surface_Slope.html)。四个专用接口反射见`.local/evidence/development/CV-01/surface-slopes034.json`。四项均完成代表性解析参考、设置回读、分页、图像、保存重载和生命周期验收，状态done；本轮证据见acceptance075.json及acceptance077.json。相位示例见`examples/phase-slopes077.json`。
+定义参考：[Surface Slope 2024 R2](https://ansyshelp.ansys.com/public/Views/Secured/Zemax/v242/en/OpticStudio_User_Guide/OpticStudio_Help/topics/Surface_Slope.html)。四个专用接口反射见`.local/evidence/development/CV-01/surface-slopes034.json`。四项均完成代表性解析参考、设置回读、分页、图像、保存重载和生命周期验收，状态done；本轮证据见acceptance075.json及acceptance077.json。相位示例见`examples/requests/phase-slopes077.json`。
 
 
 2026-11-05：SurfaceSlope/SurfaceSlopeCross的五种量球面参考、平面、移除BaseROC、正负曲率圆锥面及三种最佳拟合球，共39613次检查最大差5.13e-10，固定容差1e-8+1e-7×参考值。保存重载、10张PNG、分页、无效面号、运行中取消与复用通过；截面取消请求前完成计算，状态succeeded/closed。见.local/evidence/development/CV-01/acceptance075.json。

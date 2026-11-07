@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-07",
+  "batch": "B006",
+  "completed_count": 5,
+  "target": 10,
+  "new_complete_count": 0,
+  "evidence": "verification/development/MF-01/progress622-dsag-fit.json",
+  "ordinary_passed": 75,
+  "native_stdio_passed": 2,
+  "active_native_session": null,
+  "next_action": "622已接入RMS的DSAG原始半径/Z偏移及SSAG一致性，617正负stdio通过。621已知piston证明原始值含顶点基准且符号相反，同形Zernike拟合半径亦不同。需明确DSAG到SagTable制造偏移的符号/基准及面型适用合同、反向摘要，保持implemented；继续固定候补中取得新正式依据的条目。"
+}

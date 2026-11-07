@@ -4,7 +4,7 @@
 
 目标：尽量完整覆盖本机 OpticStudio 2024 R2 通过公开接口和可复现路径实现的功能。执行按功能价值与依赖关系推进，以可调用、可验收的功能增量作为交付单位。
 
-当前状态：发行与源码为0.1.61、100工具/110分析；B005集中验收通过，B006已完成5/10。当前行动、最近证据及下一条命令见 development-handoff.md；执行顺序见 [后续方案](next-development-plan.md)，历史计划见 development-history-pre438.md。
+当前状态：发行与源码为0.1.61、100工具/110分析；B005集中验收通过，B006已完成5/10。当前行动、最近证据及下一条命令见 development-handoff.md；执行顺序见 [后续方案](current.md)，历史计划见 development-history-pre438.md。
 
 ## 1. Agent 的入口与执行顺序
 
@@ -15,8 +15,8 @@
 | development-plan.md | 任务执行方式、优先级、交付和验收要求 |
 | development-tasks.csv | 全部工作包、前置依赖、代码入口和当前状态 |
 | development-backlog.csv | 原生分析逐项清单、唯一条目编号和执行状态 |
-| ../能力说明.md | 已实现能力、已知差距和具体条件 |
-| ../验证记录.md | 既有执行记录和测试范围 |
+| ../docs/README.md | 已实现能力、已知差距和具体条件 |
+| ../development/evidence/verification-log.md | 既有执行记录和测试范围 |
 | ../README.md、usage.md、tools.md | 启动、安装、调用约定和工具入口 |
 | ../src/zemax_mcp/ | 实际实现；开始修改前阅读本任务相关模块和测试 |
 

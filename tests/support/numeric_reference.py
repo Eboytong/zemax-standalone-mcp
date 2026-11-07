@@ -1,3 +1,4 @@
+from zemax_mcp.config import PROJECT_ROOT
 """Independent test references; no native calls or application imports."""
 import csv
 import math
@@ -42,7 +43,7 @@ def mtf_text_values(text):
 
 
 def cie_table():
-    path = Path(__file__).parents[1] / "reference_data/CIE_xyz_1931_2deg.csv"
+    path = PROJECT_ROOT / "reference_data/CIE_xyz_1931_2deg.csv"
     with path.open(encoding="utf-8-sig", newline="") as stream:
         return {int(row[0]): tuple(map(float, row[1:4])) for row in csv.reader(stream)}
 

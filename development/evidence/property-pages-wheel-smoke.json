@@ -1,0 +1,2609 @@
+{
+  "passed": true,
+  "tool_count": 74,
+  "calls": [
+    {
+      "tool": "connect",
+      "response": {
+        "ok": true,
+        "data": {
+          "connected": true,
+          "native_system_status": "",
+          "active_task": null,
+          "running_tasks": [],
+          "task_index": {},
+          "recent_tasks": [],
+          "session_id": "42165b84aad04670b84ca9de077e91be",
+          "model_revision": 0,
+          "source_file": null,
+          "working_file": null,
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": null,
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 0,
+            "session_id": "42165b84aad04670b84ca9de077e91be"
+          }
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": "42165b84aad04670b84ca9de077e91be",
+          "model_revision": 0,
+          "source_file": null,
+          "working_file": null,
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": null,
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 0,
+            "session_id": "42165b84aad04670b84ca9de077e91be"
+          }
+        },
+        "artifacts": []
+      }
+    },
+    {
+      "tool": "open_lens",
+      "response": {
+        "ok": true,
+        "data": {
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "source_units": "Watts",
+          "source_unit_prefix": "None",
+          "analysis_units": "WattsPerCMSq",
+          "analysis_unit_prefix": "None",
+          "afocal_image_space": false,
+          "aperture": {
+            "type": "EntrancePupilDiameter",
+            "value": 10.0
+          },
+          "field_type": "Angle",
+          "field_normalization": "Radial",
+          "fields": [
+            {
+              "number": 1,
+              "x": 0.0,
+              "y": 0.0,
+              "weight": 1.0,
+              "vdx": 0.0,
+              "vdy": 0.0,
+              "vcx": 0.0,
+              "vcy": 0.0,
+              "van": 0.0
+            },
+            {
+              "number": 2,
+              "x": 0.0,
+              "y": 14.0,
+              "weight": 1.0,
+              "vdx": 0.0,
+              "vdy": 0.0,
+              "vcx": 0.0,
+              "vcy": 0.0,
+              "van": 0.0
+            },
+            {
+              "number": 3,
+              "x": 0.0,
+              "y": 20.0,
+              "weight": 1.0,
+              "vdx": 0.0,
+              "vdy": 0.0,
+              "vcx": 0.0,
+              "vcy": 0.0,
+              "van": 0.0
+            }
+          ],
+          "wavelength_unit": "micrometers (environmental air reference)",
+          "wavelengths": [
+            {
+              "number": 1,
+              "wavelength_um": 0.48,
+              "weight": 0.800000012,
+              "primary": false
+            },
+            {
+              "number": 2,
+              "wavelength_um": 0.55,
+              "weight": 1.0,
+              "primary": true
+            },
+            {
+              "number": 3,
+              "wavelength_um": 0.65,
+              "weight": 0.800000012,
+              "primary": false
+            }
+          ],
+          "temperature_c": 20.0,
+          "pressure_atm": 1.0,
+          "adjust_index_to_environment": false,
+          "afocal_mode_units": "Milliradians",
+          "settings_activity": {
+            "apodization_factor_is_used": false
+          },
+          "author": "",
+          "aperture_options": {
+            "apodization_type": "Uniform",
+            "apodization_factor": 0.0,
+            "semi_diameter_margin": 0.0,
+            "semi_diameter_margin_pct": 0.0,
+            "telecentric_object_space": false,
+            "afocal_image_space": false,
+            "iterate_solves_when_updating": false,
+            "fast_semi_diameters": true,
+            "check_grin_apertures": false
+          },
+          "advanced": {
+            "reference_opd": "ExitPupil",
+            "paraxial_rays": "IgnoreCoordinateBreaks",
+            "f_num_method": "TracingRays",
+            "dont_print_coordinate_break_data": false,
+            "turn_off_threading": false,
+            "opd_modulo_2pi": false,
+            "include_calculated_data_in_session_file": true,
+            "include_tolerance_data_in_session_file": true,
+            "huygens_integral_method": "Auto"
+          },
+          "global_reference_surface": 1,
+          "material_catalogs": [
+            "SCHOTT"
+          ],
+          "polarization": {
+            "unpolarized": true,
+            "jx": 0.0,
+            "jy": 1.0,
+            "x_phase": 0.0,
+            "y_phase": 0.0,
+            "method": "XAxisMethod",
+            "convert_thin_film_phase": true
+          },
+          "ray_aiming": {
+            "mode": "Off",
+            "method": "Heuristic",
+            "cache": true,
+            "robust": false,
+            "scale_pupil_shift_by_field": false,
+            "auto_pupil_shift": true,
+            "enhanced": false,
+            "advanced_convergence": false,
+            "fallback_search": false,
+            "pupil_shift_x": 0.0,
+            "pupil_shift_y": 0.0,
+            "pupil_shift_z": 0.0,
+            "pupil_compress_x": 0.0,
+            "pupil_compress_y": 0.0,
+            "cache_steps": 10
+          },
+          "files": {
+            "coating_file": "COATING.DAT",
+            "scatter_profile": "SCATTER_PROFILE.DAT",
+            "abg_file": "ABG_DATA.DAT",
+            "gradium_profile": "PROFILE.GRD"
+          },
+          "title": "A SIMPLE COOKE TRIPLET.",
+          "notes": "Notes...\r\n \r\n ",
+          "surface_count": 8,
+          "native_system_status": "",
+          "first_order": {
+            "effective_focal_length": 49.99999950000002,
+            "paraxial_working_f_number": 4.999999950000002,
+            "real_working_f_number": 4.978219667181909,
+            "paraxial_image_height": 18.19851153132502,
+            "paraxial_magnification": 0.0
+          }
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": "42165b84aad04670b84ca9de077e91be",
+          "model_revision": 1,
+          "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\working_901e2e50.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": null,
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 1,
+            "session_id": "42165b84aad04670b84ca9de077e91be"
+          }
+        },
+        "artifacts": []
+      }
+    },
+    {
+      "tool": "update_system_settings",
+      "response": {
+        "ok": true,
+        "data": {
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "source_units": "Watts",
+          "source_unit_prefix": "None",
+          "analysis_units": "WattsPerCMSq",
+          "analysis_unit_prefix": "None",
+          "afocal_image_space": false,
+          "aperture": {
+            "type": "EntrancePupilDiameter",
+            "value": 10.0
+          },
+          "field_type": "Angle",
+          "field_normalization": "Radial",
+          "fields": [
+            {
+              "number": 1,
+              "x": 0.0,
+              "y": 0.0,
+              "weight": 1.0,
+              "vdx": 0.0,
+              "vdy": 0.0,
+              "vcx": 0.0,
+              "vcy": 0.0,
+              "van": 0.0
+            },
+            {
+              "number": 2,
+              "x": 0.0,
+              "y": 14.0,
+              "weight": 1.0,
+              "vdx": 0.0,
+              "vdy": 0.0,
+              "vcx": 0.0,
+              "vcy": 0.0,
+              "van": 0.0
+            },
+            {
+              "number": 3,
+              "x": 0.0,
+              "y": 20.0,
+              "weight": 1.0,
+              "vdx": 0.0,
+              "vdy": 0.0,
+              "vcx": 0.0,
+              "vcy": 0.0,
+              "van": 0.0
+            }
+          ],
+          "wavelength_unit": "micrometers (environmental air reference)",
+          "wavelengths": [
+            {
+              "number": 1,
+              "wavelength_um": 0.48,
+              "weight": 0.800000012,
+              "primary": false
+            },
+            {
+              "number": 2,
+              "wavelength_um": 0.55,
+              "weight": 1.0,
+              "primary": true
+            },
+            {
+              "number": 3,
+              "wavelength_um": 0.65,
+              "weight": 0.800000012,
+              "primary": false
+            }
+          ],
+          "temperature_c": 20.0,
+          "pressure_atm": 1.0,
+          "adjust_index_to_environment": false,
+          "afocal_mode_units": "Milliradians",
+          "settings_activity": {
+            "apodization_factor_is_used": false
+          },
+          "author": "wheel016",
+          "aperture_options": {
+            "apodization_type": "Uniform",
+            "apodization_factor": 0.0,
+            "semi_diameter_margin": 0.0,
+            "semi_diameter_margin_pct": 0.0,
+            "telecentric_object_space": false,
+            "afocal_image_space": false,
+            "iterate_solves_when_updating": false,
+            "fast_semi_diameters": true,
+            "check_grin_apertures": false
+          },
+          "advanced": {
+            "reference_opd": "ExitPupil",
+            "paraxial_rays": "IgnoreCoordinateBreaks",
+            "f_num_method": "TracingRays",
+            "dont_print_coordinate_break_data": false,
+            "turn_off_threading": false,
+            "opd_modulo_2pi": false,
+            "include_calculated_data_in_session_file": true,
+            "include_tolerance_data_in_session_file": true,
+            "huygens_integral_method": "Auto"
+          },
+          "global_reference_surface": 1,
+          "material_catalogs": [
+            "SCHOTT"
+          ],
+          "polarization": {
+            "unpolarized": true,
+            "jx": 0.0,
+            "jy": 1.0,
+            "x_phase": 0.0,
+            "y_phase": 0.0,
+            "method": "XAxisMethod",
+            "convert_thin_film_phase": true
+          },
+          "ray_aiming": {
+            "mode": "Off",
+            "method": "Heuristic",
+            "cache": true,
+            "robust": false,
+            "scale_pupil_shift_by_field": false,
+            "auto_pupil_shift": true,
+            "enhanced": false,
+            "advanced_convergence": false,
+            "fallback_search": false,
+            "pupil_shift_x": 0.0,
+            "pupil_shift_y": 0.0,
+            "pupil_shift_z": 0.0,
+            "pupil_compress_x": 0.0,
+            "pupil_compress_y": 0.0,
+            "cache_steps": 10
+          },
+          "files": {
+            "coating_file": "COATING.DAT",
+            "scatter_profile": "SCATTER_PROFILE.DAT",
+            "abg_file": "ABG_DATA.DAT",
+            "gradium_profile": "PROFILE.GRD"
+          },
+          "title": "A SIMPLE COOKE TRIPLET.",
+          "notes": "Notes...\r\n \r\n "
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": "42165b84aad04670b84ca9de077e91be",
+          "model_revision": 2,
+          "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\working_901e2e50.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\checkpoint_r1_settings_cce00366.zos",
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 2,
+            "session_id": "42165b84aad04670b84ca9de077e91be"
+          }
+        },
+        "artifacts": []
+      }
+    },
+    {
+      "tool": "update_surfaces",
+      "response": {
+        "ok": true,
+        "data": {
+          "surfaces": [
+            {
+              "surface": 1,
+              "surface_type": "Standard",
+              "comment": "",
+              "is_object": false,
+              "is_image": false,
+              "is_stop": false,
+              "cells": {
+                "radius": {
+                  "value": 22.013592508427536,
+                  "solve": {
+                    "type": "Variable"
+                  },
+                  "writable": true,
+                  "header": "曲率半径",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "MarginalRayAngle",
+                    "ChiefRayAngle",
+                    "MarginalRayNormal",
+                    "ChiefRayNormal",
+                    "Aplanatic",
+                    "ElementPower",
+                    "CocentricSurface",
+                    "CocentricSurface",
+                    "CocentricRadius",
+                    "CocentricRadius",
+                    "FNumber"
+                  ]
+                },
+                "thickness": {
+                  "value": 3.25895583,
+                  "solve": {
+                    "type": "Variable"
+                  },
+                  "writable": true,
+                  "header": "厚度",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "MarginalRayHeight",
+                    "ChiefRayHeight",
+                    "EdgeThickness",
+                    "OpticalPathDifference",
+                    "Position",
+                    "Compensator",
+                    "CenterOfCurvature",
+                    "PupilPosition"
+                  ]
+                },
+                "material": {
+                  "value": "SK16",
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "材料",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "MaterialSubstitute",
+                    "MaterialOffset",
+                    "MaterialModel"
+                  ]
+                },
+                "semi_diameter": {
+                  "value": 9.5,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "净口径",
+                  "available_solves": [
+                    "Fixed",
+                    "SurfacePickup",
+                    "ZPLMacro",
+                    "Automatic",
+                    "Maximum"
+                  ]
+                },
+                "conic": {
+                  "value": 0.0,
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": true,
+                  "header": "圆锥系数",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup",
+                    "ZPLMacro"
+                  ]
+                },
+                "tce": {
+                  "value": "Infinity",
+                  "solve": {
+                    "type": "Fixed"
+                  },
+                  "writable": false,
+                  "header": "TCE x 1E-6",
+                  "available_solves": [
+                    "Fixed",
+                    "Variable",
+                    "SurfacePickup"
+                  ]
+                }
+              },
+              "properties": {
+                "property_activity": {
+                  "has_mirror_settings": false,
+                  "can_be_stop": true,
+                  "can_be_gcr": false
+                },
+                "scattering": {
+                  "type": "None"
+                },
+                "drawing": {
+                  "hide_rays_to_this_surface": false,
+                  "skip_rays_to_this_surface": false,
+                  "do_not_draw_this_surface": false,
+                  "do_not_draw_edges_from_this_surface": false,
+                  "draw_local_axis": true,
+                  "draw_edges_as": "Squared",
+                  "mirror_substrate": "Curved",
+                  "mirror_thickness": 0.0
+                },
+                "type_properties": {
+                  "surface_color": "Default",
+                  "surface_opacity": "P100",
+                  "row_color": "Default",
+                  "ignore_surface": false,
+                  "surface_cannot_be_hyperhemispheric": false
+                },
+                "composite": {
+                  "is_composite_surface": false
+                },
+                "physical_optics": {
+                  "use_rays_to_propagate_to_next_surface": false,
+                  "do_not_rescale_beam_size_using_ray_data": false,
+                  "use_angular_spectrum_propagator": false,
+                  "draw_this_lens_on_shaded_model": false,
+                  "re_compute_pilot_beam_parameters": false,
+                  "use_xaxis_reference": false,
+                  "resample_after_refraction": false,
+                  "auto_resample": false,
+                  "x_sampling": "S32",
+                  "y_sampling": "S32",
+                  "x_width": 1.0,
+                  "y_width": 1.0,
+                  "output_pilot_radius": "BestFit",
+                  "x_radius": 0.0,
+                  "y_radius": 0.0
+                },
+                "disable_clear_semi_diameter_margins": false,
+                "surface_file": null,
+                "coating": "AR",
+                "material_catalog": "SCHOTT.AGF",
+                "mechanical": {
+                  "mechanical_semi_diameter": {
+                    "value": 9.5,
+                    "solve": "Automatic"
+                  },
+                  "chip_zone": {
+                    "value": 0.0,
+                    "solve": "Automatic"
+                  }
+                },
+                "aperture": {
+                  "type": "FloatingAperture",
+                  "pickup_from": null
+                },
+                "tilt_decenter": {
+                  "before_order": "Decenter_Tilt",
+                  "before_decenter_x": 0.0,
+                  "before_decenter_y": 0.0,
+                  "before_tilt_x": 0.0,
+                  "before_tilt_y": 0.0,
+                  "before_tilt_z": 0.0,
+                  "after_order": "Decenter_Tilt",
+                  "after_decenter_x": 0.0,
+                  "after_decenter_y": 0.0,
+                  "after_tilt_x": 0.0,
+                  "after_tilt_y": 0.0,
+                  "after_tilt_z": 0.0,
+                  "after_mode": "Explicit"
+                }
+              }
+            }
+          ]
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": "42165b84aad04670b84ca9de077e91be",
+          "model_revision": 3,
+          "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\working_901e2e50.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\checkpoint_r2_surfaces_811d7c48.zos",
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 3,
+            "session_id": "42165b84aad04670b84ca9de077e91be"
+          }
+        },
+        "artifacts": []
+      }
+    },
+    {
+      "tool": "get_capabilities",
+      "response": {
+        "ok": true,
+        "data": {
+          "connected": true,
+          "implemented_tools": [
+            "copy_system",
+            "create_archive",
+            "load_archive",
+            "get_project_settings",
+            "update_project_settings",
+            "get_external_dependencies",
+            "load_merit_function",
+            "save_merit_function",
+            "get_system_resources",
+            "copy_surfaces",
+            "get_surface_geometry",
+            "connect",
+            "get_status",
+            "get_capabilities",
+            "new_system",
+            "open_lens",
+            "save_lens_as",
+            "disconnect",
+            "get_system_summary",
+            "get_system_settings",
+            "update_system_settings",
+            "get_surfaces",
+            "update_surfaces",
+            "insert_surfaces",
+            "delete_surfaces",
+            "get_variables",
+            "set_variables",
+            "get_merit_function",
+            "update_merit_function",
+            "evaluate_merit_function",
+            "run_quick_focus",
+            "run_fft_mtf",
+            "run_spot_analysis",
+            "run_local_optimization",
+            "get_task_status",
+            "get_task_result",
+            "cancel_task",
+            "run_batch_ray_trace",
+            "run_parameter_scan",
+            "run_batch_evaluation",
+            "compare_results",
+            "export_evaluation_report",
+            "run_configuration_evaluation",
+            "run_multistart_optimization",
+            "run_analysis",
+            "get_configurations",
+            "set_configuration",
+            "update_configurations",
+            "get_constraint_coverage",
+            "run_global_optimization",
+            "run_hammer_optimization",
+            "get_tolerances",
+            "update_tolerances",
+            "generate_tolerances",
+            "run_tolerance_analysis",
+            "summarize_tolerance_results",
+            "get_nsc_objects",
+            "insert_nsc_objects",
+            "delete_nsc_objects",
+            "copy_nsc_objects",
+            "update_nsc_objects",
+            "clear_detectors",
+            "get_detector_data",
+            "run_nsc_ray_trace",
+            "read_zrd",
+            "run_pop",
+            "get_beam_file",
+            "run_pop_convergence",
+            "run_cad_export",
+            "run_layout_export",
+            "run_zrd_replay",
+            "save_detector_data",
+            "load_detector_data",
+            "export_analysis_image"
+          ],
+          "modes": {
+            "Sequential": "implemented",
+            "NonSequential": "implemented"
+          },
+          "implemented_surface_types": [
+            "Standard",
+            "EvenAspheric",
+            "CoordinateBreak",
+            "OddAsphere",
+            "Toroidal",
+            "Biconic",
+            "Paraxial"
+          ],
+          "implemented_solves": {
+            "fixed": "Fixed",
+            "variable": "Variable",
+            "surface_pickup": "SurfacePickup",
+            "f_number": "FNumber",
+            "marginal_ray_height": "MarginalRayHeight",
+            "chief_ray_height": "ChiefRayHeight",
+            "edge_thickness": "EdgeThickness",
+            "position": "Position",
+            "pickup_chief_ray": "PickupChiefRay"
+          },
+          "analysis_scope": "typed sequential curve/grid/text analyses, POP and NSC tracing",
+          "validation": "See docs/capabilities.md for implementation and validation scope.",
+          "pending_verification": [
+            "additional_surface_type_numeric_references",
+            "advanced_NSC_physics_numeric_references",
+            "nonzero_aberration_and_complex_pupil_analysis_references"
+          ],
+          "runtime_availability": "未连接时不判定许可或本机任务可运行性。",
+          "verification": {
+            "gui_fft_mtf": "passed_Cooke_image_all_fields_waves_64x64_Modulation_50cycles_per_mm_unpolarized_606_displayed_values",
+            "gui_quick_focus": "passed_radial_chief_ray_Cooke",
+            "native_diagnostic_root": "unknown",
+            "evidence": "docs/capabilities.md"
+          },
+          "property_pages": {
+            "system": {
+              "aperture_options": [
+                "apodization_type",
+                "apodization_factor",
+                "semi_diameter_margin",
+                "semi_diameter_margin_pct",
+                "telecentric_object_space",
+                "afocal_image_space",
+                "iterate_solves_when_updating",
+                "fast_semi_diameters",
+                "check_grin_apertures"
+              ],
+              "advanced": [
+                "reference_opd",
+                "paraxial_rays",
+                "f_num_method",
+                "dont_print_coordinate_break_data",
+                "turn_off_threading",
+                "opd_modulo_2pi",
+                "include_calculated_data_in_session_file",
+                "include_tolerance_data_in_session_file",
+                "huygens_integral_method"
+              ]
+            },
+            "surface": {
+              "drawing": [
+                "hide_rays_to_this_surface",
+                "skip_rays_to_this_surface",
+                "do_not_draw_this_surface",
+                "do_not_draw_edges_from_this_surface",
+                "draw_local_axis",
+                "draw_edges_as",
+                "mirror_substrate",
+                "mirror_thickness"
+              ],
+              "type_properties": [
+                "surface_color",
+                "surface_opacity",
+                "row_color",
+                "ignore_surface",
+                "surface_cannot_be_hyperhemispheric"
+              ],
+              "composite": [
+                "is_composite_surface"
+              ],
+              "physical_optics": [
+                "use_rays_to_propagate_to_next_surface",
+                "do_not_rescale_beam_size_using_ray_data",
+                "use_angular_spectrum_propagator",
+                "draw_this_lens_on_shaded_model",
+                "re_compute_pilot_beam_parameters",
+                "use_xaxis_reference",
+                "resample_after_refraction",
+                "auto_resample",
+                "x_sampling",
+                "y_sampling",
+                "x_width",
+                "y_width",
+                "output_pilot_radius",
+                "x_radius",
+                "y_radius"
+              ]
+            },
+            "units": "lengths in current lens units; angles follow native page units",
+            "evidence": "docs/property-pages.md"
+          },
+          "solve_validation": {
+            "reference": "docs/solve-support.json",
+            "native_enumeration_is_numeric_validation": false,
+            "runtime_checks": "native support, return status and actual adopted mode are checked per request",
+            "persistence_limits": [
+              {
+                "surface_type": "Hologram2",
+                "cell": "parameter_13",
+                "mode": "Variable",
+                "required_value": 1,
+                "rejected_value": 0,
+                "reference": "docs/solve-support.md#hologram2-模式持久化"
+              }
+            ],
+            "status": "recorded",
+            "environment": {
+              "opticstudio_version": "24.2.0",
+              "build": "240529",
+              "license": "PremiumEdition",
+              "python": "3.14.6",
+              "platform": "Windows x64"
+            },
+            "scope": {
+              "surface_types": [
+                "Biconic",
+                "CoordinateBreak",
+                "EvenAspheric",
+                "GridPhase",
+                "GridSag",
+                "OddAsphere",
+                "Paraxial",
+                "Standard",
+                "Toroidal"
+              ],
+              "fixture_scope": "Cooke controlled surface replacements and empty-system controls; see each baseline",
+              "rtol": 1e-07,
+              "atol": 1e-08,
+              "enumeration_does_not_guarantee_adoption": true,
+              "registry_note": "Combination registry spans the stated fixtures; it is not a claim that all cells work in every model."
+            },
+            "focused_cases": {
+              "total": 59,
+              "numeric_passed": 46,
+              "native_rejected": 13,
+              "numeric_reference_pending": 0
+            },
+            "matrix": {
+              "total": 936,
+              "status_counts": {
+                "state_value_persistence_passed": 279,
+                "numeric_passed": 46,
+                "native_unsupported": 580,
+                "native_rejected": 13,
+                "not_applicable": 18
+              },
+              "reference": "outputs/solve_final_20261023/matrix.json",
+              "note": "State/value/persistence checks and optical numeric checks are distinct levels."
+            },
+            "detailed_records": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\wheel-release016\\zemax_mcp\\resources\\solve-support.json"
+          },
+          "zrd_wavelength_filter_validation": {
+            "status": "partial_native_validation",
+            "wavelength_unit": "micrometers",
+            "endpoints": "inclusive",
+            "verified": "Seven unconverted fixed wavelengths; matched DetectorPolar/DetectorRectangle/DetectorColor models in uniform N-BK7; closed intervals, shared/exact endpoints, empty selection and pagination",
+            "known_difference": "Installed 2024 R2 sample_3 fluorescence ZRD: converted rays pass X_WAVERANGE near 0.55 um despite independent segment wavelengths spanning 0.500-0.734 um; fine-band selection is not validated",
+            "known_difference_formats": [
+              "UncompressedFullData",
+              "CompressedFullData"
+            ],
+            "detector_types_tested": [
+              "DetectorPolar",
+              "DetectorRectangle",
+              "DetectorColor"
+            ],
+            "native_paths_tested": [
+              "Ray Database Reader (property and legacy wrappers)",
+              "Detector Viewer replay"
+            ],
+            "trace_options_tested": [
+              {
+                "use_polarization": false,
+                "split_rays": false
+              },
+              {
+                "use_polarization": true,
+                "split_rays": false
+              },
+              {
+                "use_polarization": true,
+                "split_rays": true
+              }
+            ],
+            "internal_root_cause": "unconfirmed; no reliable native fine-band workaround established for the recorded sample_3 model",
+            "selection_scope": "native ray/path selection; returned segments are not individually filtered",
+            "fallback": "none; native filter expressions and results are preserved",
+            "reference": "docs/nonsequential-validation.md#原生波长区间过滤"
+          },
+          "detector_adapters": {
+            "DetectorRectangle": {
+              "kinds": [
+                "flux",
+                "irradiance",
+                "intensity",
+                "coherent"
+              ],
+              "mode": "NonSequential",
+              "implemented": true,
+              "validation_status": "native_numeric_reference",
+              "verified_scope": [
+                "direct source flux",
+                "equal-path coherent phase and normalization",
+                "controlled reflection/refraction",
+                "flux/coherent Power: Watts/Lumens/Joules, source prefixes None/Milli"
+              ],
+              "vector_interference_status": "Polarization=0 intentionally uses scalar intensity/geometric phase; flags 1/2 select local Ex/Ey, separately verified for orthogonal axial inputs",
+              "coordinates": "native spatial or angular matrix; coherent data uses detector normalization",
+              "coherent_types": [
+                "Real",
+                "Imaginary",
+                "Amplitude",
+                "Power"
+              ],
+              "verification": "See docs/nonsequential-validation.md for model-specific native evidence",
+              "api_available": true
+            },
+            "DetectorPolar": {
+              "kinds": [
+                "flux",
+                "intensity"
+              ],
+              "mode": "NonSequential",
+              "implemented": true,
+              "validation_status": "native_numeric_reference",
+              "verified_scope": [
+                "four angular quadrants",
+                "azimuth seam and polar limits",
+                "power and solid angle",
+                "radiometric Power under lumen sources; energy in joules; prefixes None/Milli"
+              ],
+              "native_types": {
+                "flux": "Power",
+                "intensity": "PowerSolidAngle"
+              },
+              "coordinates": "rows azimuth, columns polar; local +Z polar axis, +X azimuth origin",
+              "verification": "See docs/nonsequential-validation.md for model-specific native evidence",
+              "api_available": true
+            },
+            "DetectorColor": {
+              "kinds": [
+                "flux",
+                "irradiance",
+                "intensity",
+                "spectral"
+              ],
+              "mode": "NonSequential",
+              "implemented": true,
+              "validation_status": "native_flux_and_file_roundtrip",
+              "coordinates": "native x-fast pixels reshaped into rows Y and columns X",
+              "channels": [
+                "radiometric_flux",
+                "radiometric_density",
+                "photometric_flux",
+                "photometric_density",
+                "chromaticity_x",
+                "chromaticity_y",
+                "u_prime",
+                "v_prime",
+                "tristimulus_x",
+                "tristimulus_y",
+                "tristimulus_z"
+              ],
+              "spectral_scope": "native spectral-bin centroid and RMS; no spectral power spectrum adapter",
+              "verification": "1W, x-fast non-square pixels and spectral-bin centroid; official CIE1931 2deg XYZ/xy/u-prime/v-prime/lumens at 450/550/650nm, unequal three-line mixture and 360-830nm discrete/trapezoidal flat spectra; radiometric spectra remain separate",
+              "api_available": true
+            },
+            "DetectorVolume": {
+              "kinds": [
+                "flux",
+                "absorbed_flux",
+                "absorbed_density"
+              ],
+              "mode": "NonSequential",
+              "implemented": true,
+              "validation_status": "native_incident_absorption_density_and_file_roundtrip",
+              "coordinates": "values[z][y][x]; native x-fast voxel index",
+              "maximum_voxels": 1000000,
+              "verification": "N-BK7 catalog transmittance at 0.3um, bulk absorption and density per lens-unit^3; incident flux repeats over traversed voxels",
+              "api_available": true
+            },
+            "DetectorSurface": {
+              "kinds": [
+                "flux",
+                "irradiance"
+              ],
+              "mode": "NonSequential",
+              "implemented": true,
+              "validation_status": "native_controlled_facet_hits",
+              "coordinates": "native triangular pixel rows; FastRayTrace can reorder pixels",
+              "geometry": {
+                "option": "include_geometry",
+                "frames": [
+                  "local",
+                  "global"
+                ],
+                "interface": "INCERow.GetFacetedObjectData / IFaceData",
+                "pagination": "start/count",
+                "face_index": "zero based",
+                "pixel_index": "one based; face and pixel radiometry cross-checked"
+              },
+              "verification": "plane/spherical/annular, signed tilt/decenter, FastRayTrace off/on; centroid hits, area and global vertices, save/reload",
+              "api_available": true
+            },
+            "ReverseRadianceDetector": {
+              "kinds": [],
+              "mode": "NonSequential",
+              "implemented": false,
+              "validation_status": "removed_since_23_2",
+              "reason": "官方23.2版本说明移除Reverse Radiance、REVR及相关Detector/Target；本机2024 R2不提供此能力。",
+              "evidence": "outputs/specialized_routes_20261024/routes.json; reverse.txt"
+            }
+          },
+          "feature_registry": "docs/capabilities.md",
+          "parameter_ranges": {
+            "LDE": {
+              "first": 1,
+              "last": 254,
+              "default_read_count": 20
+            },
+            "NCE": {
+              "first": 1,
+              "last": 250,
+              "default_read_count": 20
+            },
+            "availability": "only native active writable cells; enumeration bounds are not a model support claim"
+          },
+          "wavefront_pupil_mapping": {
+            "option": "include_pupil_mapping",
+            "scope": "axisymmetric focused, untilted/undecentered circular unobscured; angular Y fields, radial normalization, selected primary wavelength",
+            "method": "real chief/marginal-ray F-numbers and analytic apparent-display inverse; per-point raw OPD check",
+            "invalid": "null coordinates with reason for unsupported scope, aperture/ray failures or OPD mismatch",
+            "limitation": "non-primary wavelength mapping remains unverified; not a physical pupil-surface reconstruction",
+            "evidence": "docs/model-adaptation.md"
+          },
+          "source_backed_nsc_dll_validation": {
+            "object_geometry": [
+              "HalfCylinder.DLL",
+              "EllipticalVolume.DLL"
+            ],
+            "object_transmission": [
+              "CoatingSample.DLL"
+            ],
+            "source_distributions": [
+              "Cone.dll",
+              "fiber1.DLL",
+              "Lambertian_Overfill.dll"
+            ],
+            "bulk_first_event_distributions": [
+              "bulk_samp_1.DLL",
+              "Henyey-Greenstein-bulk.DLL",
+              "poly_bulk_scat.DLL",
+              "Rayleigh.DLL"
+            ],
+            "pending": [
+              "DiffractionGrating.DLL optical trace"
+            ],
+            "scope": "explicit installed-source parameter fixtures; other parameters require independent references",
+            "evidence": "docs/model-adaptation.md"
+          },
+          "mixed_mode_objects": {
+            "interfaces": [
+              "get_nsc_objects",
+              "insert_nsc_objects",
+              "update_nsc_objects",
+              "delete_nsc_objects",
+              "copy_nsc_objects"
+            ],
+            "selector": "nsc_surface: sequential NonSequential-component surface number; required in mixed mode",
+            "identity": "(nsc_surface, object); ref_object and inside_of are group-local",
+            "coordinates": "NSC group entrance coordinates; combine with get_surface_geometry(nsc_surface) for sequential global coordinates",
+            "trace_scope": "NSC tracing and detector tools remain pure NonSequential only",
+            "validation": "docs/nonsequential-validation.md"
+          },
+          "active_nsc_surface": 0,
+          "validated_surface_model_scope": [
+            "Standard",
+            "EvenAspheric",
+            "OddAsphere",
+            "Toroidal",
+            "Biconic",
+            "Paraxial",
+            "CoordinateBreak",
+            "GridSag",
+            "GridPhase",
+            "Polynomial",
+            "Periodic",
+            "ExtendedAsphere",
+            "ExtendedOddAsphere",
+            "ExtendedPolynomial",
+            "Conjugate",
+            "ABCD",
+            "RetroReflect",
+            "JonesMatrix"
+          ],
+          "surface_numeric_reference_scopes": {
+            "OddAsphere": "signed radial coefficients; cusp Sag only at vertex; smooth normals/refraction away from cusp",
+            "Biconic": "unequal/swapped principal radii and conics; infinite X radius; Sag/normal/refraction",
+            "Conjugate": "real/virtual/off-axis construction points; vertex branch distance equation and reflection",
+            "ABCD": "separate X/Y first-order matrices on (height, l/n or m/n); geometric rays only, no OPD reference",
+            "RetroReflect": "air/glass plane and MIRROR reverse propagation; raw sequential cosines distinguished from physical propagation",
+            "JonesMatrix": "axial incidence, normalized X/Y/45deg/circular input; identity/linear/quarter-wave/real rotation; common phase removed with identity reference",
+            "extended_parameters": "term participation, signed coefficients and normalization; supported Fixed/Variable/same-column pickup, protection and zos/zmx reload; see evidence",
+            "evidence": "docs/model-adaptation.md#顺序面型与求解范围"
+          },
+          "surface_type_scope_note": "原生可选枚举与上述受控模型数值范围分别解释；其他面型不自动视为已适配。",
+          "beam_file_formats": {
+            "zbf_binary_v1": "native_asymmetric_polarized_field_reference",
+            "zbf_text_v1": "native_asymmetric_polarized_field_reference"
+          },
+          "analysis_image_sources": {
+            "data_plot": "saved_data_only",
+            "native": "existing_native_image_artifact_only; no general IAR bitmap export"
+          },
+          "pop_dll_adapters": {
+            "parameter_metadata": "ZOS-API first; known installed DLL UserParamNames queried in a bounded isolated no-window process on metadata failure",
+            "supported_files": [
+              "beamsamp1.DLL",
+              "Laguerre beam.dll",
+              "Ince-Gaussian-64.dll"
+            ],
+            "beam_and_receiver": "native calls and identical-mode coupling verified for the three listed files",
+            "independent_field_reference": {
+              "beamsamp1.DLL": "installed Gaussian source second moments",
+              "Laguerre beam.dll": "installed n=0,l=1 source second moments",
+              "Ince-Gaussian-64.dll": "p=m=2, even/odd, f0=0.05/0.1mm, w0=0.1mm: independent whole-waist irradiance and signed relative complex field; other orders/propagated phase pending"
+            }
+          },
+          "pop_coupling_definition": "polarized receiver efficiency is a power-weighted mean of separately normalized component overlaps; not a single normalized vector inner product",
+          "tolerance_trial_status": {
+            "verified_format": "OpticStudio 2024 R2 Chinese Monte Carlo trial table",
+            "mapping": "complete one-based trial IDs, zero-based row indices, displayed criterion precision and traceable count must agree",
+            "failed_trials": "explicit untraceable trials excluded from moments and counted as failed in requested-sample yield; raw finite sentinel retained",
+            "unrecognized_format": "SAMPLE_STATUS_UNAVAILABLE when failures cannot be mapped"
+          },
+          "analyses": {
+            "rms_vs_field": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "rms_vs_focus": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "through_focus_spot": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "single_ray_trace": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "cardinal_points": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "seidel_coefficients": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "grid_distortion": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "geometric_mtf_vs_field": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "huygens_mtf_vs_field": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "fft_mtf_map": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "geometric_mtf_map": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "relative_illumination": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "fft_mtf_vs_field": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "vignetting": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md",
+              "methods": [
+                "auto",
+                "ray_trace"
+              ],
+              "native_settings_readback": false,
+              "source": "native_batch_ray_trace"
+            },
+            "footprint": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md",
+              "methods": [
+                "auto",
+                "ray_trace"
+              ],
+              "native_settings_readback": false,
+              "source": "native_batch_ray_trace"
+            },
+            "huygens_mtf": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "geometric_mtf": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "fft_through_focus_mtf": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "huygens_through_focus_mtf": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "geometric_through_focus_mtf": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "fft_psf": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "fft_psf_cross": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "huygens_psf": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "huygens_psf_cross": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "diffraction_encircled_energy": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "geometric_encircled_energy": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "wavefront": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "zernike_standard": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "zernike_fringe": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "zernike_annular": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "ray_fan": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "opd_fan": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "field_curvature_distortion": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "longitudinal_aberration": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "lateral_color": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "focal_shift": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "surface_sag": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "surface_curvature": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "surface_phase": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "surface_sag_cross": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "surface_curvature_cross": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            },
+            "surface_phase_cross": {
+              "implemented": true,
+              "api_available": true,
+              "license_checked_per_run": true,
+              "verification": "调用和数值验证范围见 docs/capabilities.md"
+            }
+          },
+          "property_enums": {
+            "aperture_options": {
+              "apodization_type": [
+                "Uniform",
+                "Gaussian",
+                "CosineCubed"
+              ]
+            },
+            "advanced": {
+              "reference_opd": [
+                "Absolute",
+                "Infinity",
+                "ExitPupil",
+                "Absolute2"
+              ],
+              "paraxial_rays": [
+                "ConsiderCoordinateBreaks",
+                "IgnoreCoordinateBreaks"
+              ],
+              "f_num_method": [
+                "TracingRays",
+                "PupilSizePosition"
+              ],
+              "huygens_integral_method": [
+                "Auto",
+                "Planar",
+                "Spherical"
+              ]
+            },
+            "drawing": {
+              "draw_edges_as": [
+                "Squared",
+                "Tapered",
+                "Flat"
+              ],
+              "mirror_substrate": [
+                "None",
+                "Flat",
+                "Curved"
+              ]
+            },
+            "type_properties": {
+              "surface_color": [
+                "Default",
+                "Color1",
+                "Color2",
+                "Color3",
+                "Color4",
+                "Color5",
+                "Color6",
+                "Color7",
+                "Color8",
+                "Color9",
+                "Color10",
+                "Color11",
+                "Color12",
+                "Color13",
+                "Color14",
+                "Color15",
+                "Color16",
+                "Color17",
+                "Color18",
+                "Color19",
+                "Color20",
+                "Color21",
+                "Color22",
+                "Color23",
+                "Color24",
+                "NoColor"
+              ],
+              "surface_opacity": [
+                "P100",
+                "P90",
+                "P80",
+                "P70",
+                "P60",
+                "P50",
+                "P40",
+                "P30",
+                "P20",
+                "P10",
+                "P00"
+              ],
+              "row_color": [
+                "Default",
+                "Color1",
+                "Color2",
+                "Color3",
+                "Color4",
+                "Color5",
+                "Color6",
+                "Color7",
+                "Color8",
+                "Color9",
+                "Color10",
+                "Color11",
+                "Color12",
+                "Color13",
+                "Color14",
+                "Color15",
+                "Color16",
+                "Color17",
+                "Color18",
+                "Color19",
+                "Color20",
+                "Color21",
+                "Color22",
+                "Color23",
+                "Color24",
+                "NoColor"
+              ]
+            },
+            "composite": {},
+            "physical_optics": {
+              "x_sampling": [
+                "S32",
+                "S64",
+                "S128",
+                "S256",
+                "S512",
+                "S1024",
+                "S2048",
+                "S4096",
+                "S8192",
+                "S16384"
+              ],
+              "y_sampling": [
+                "S32",
+                "S64",
+                "S128",
+                "S256",
+                "S512",
+                "S1024",
+                "S2048",
+                "S4096",
+                "S8192",
+                "S16384"
+              ],
+              "output_pilot_radius": [
+                "BestFit",
+                "Shorter",
+                "Longer",
+                "X",
+                "Y",
+                "Plane",
+                "User"
+              ]
+            }
+          },
+          "available_settings": {
+            "aperture_type": [
+              "EntrancePupilDiameter",
+              "ImageSpaceFNum",
+              "ObjectSpaceNA",
+              "FloatByStopSize",
+              "ParaxialWorkingFNum",
+              "ObjectConeAngle"
+            ],
+            "field_type": [
+              "Angle",
+              "ObjectHeight",
+              "ParaxialImageHeight",
+              "RealImageHeight",
+              "TheodoliteAngle"
+            ],
+            "lens_units": [
+              "Millimeters",
+              "Centimeters",
+              "Inches",
+              "Meters"
+            ],
+            "mtf_units": [
+              "CyclesPerMillimeter",
+              "CyclesPerMilliradian"
+            ],
+            "source_units": [
+              "Watts",
+              "Lumens",
+              "Joules"
+            ],
+            "source_unit_prefix": [
+              "Femto",
+              "Pico",
+              "Nano",
+              "Micro",
+              "Milli",
+              "None",
+              "Kilo",
+              "Mega",
+              "Giga",
+              "Tera"
+            ],
+            "analysis_units": [
+              "WattsPerMMSq",
+              "WattsPerCMSq",
+              "WattsPerinSq",
+              "WattsPerMSq",
+              "WattsPerftSq"
+            ],
+            "analysis_unit_prefix": [
+              "Femto",
+              "Pico",
+              "Nano",
+              "Micro",
+              "Milli",
+              "None",
+              "Kilo",
+              "Mega",
+              "Giga",
+              "Tera"
+            ],
+            "polarization_method": [
+              "XAxisMethod",
+              "YAxisMethod",
+              "ZAxisMethod"
+            ],
+            "ray_aiming_mode": [
+              "Off",
+              "Paraxial",
+              "Real"
+            ],
+            "ray_aiming_method": [
+              "Heuristic",
+              "Optimize"
+            ],
+            "field_normalization": [
+              "Radial",
+              "Rectangular"
+            ]
+          },
+          "available_nsc_object_types": [
+            "AnnularAsphericLens",
+            "AnnularAxialLens",
+            "AnnularVolume",
+            "Annulus",
+            "Array",
+            "ArrayRing",
+            "AsphericSurface",
+            "AsphericSurface2",
+            "AxiconSurface",
+            "BiconicLens",
+            "BiconicSurface",
+            "BiconicZernike",
+            "BiconicZernikeSurface",
+            "Binary1",
+            "Binary2",
+            "Binary2A",
+            "Boolean",
+            "BooleanCAD",
+            "CADAssemblyAutodeskInventor",
+            "CADAssemblyCreoParametric",
+            "CADAssemblySolidWorks",
+            "CADPartAutodeskInventor",
+            "CADPartCreoParametric",
+            "CADPartSolidWorks",
+            "CADPartSTEPIGESSAT",
+            "CADPartSTL",
+            "CADPartZPD",
+            "Cone",
+            "CPC",
+            "CPCRectangular",
+            "CylinderPipe",
+            "CylinderVolume",
+            "Cylinder2Pipe",
+            "Cylinder2Volume",
+            "DetectorColor",
+            "DetectorPolar",
+            "DetectorRectangle",
+            "DetectorSurface",
+            "DetectorVolume",
+            "DiffractionGrating",
+            "DualBEFSurface",
+            "Ellipse",
+            "EllipticalVolume",
+            "EvenAsphereLens",
+            "ExtendedOddAsphereLens",
+            "ExtendedPolynomialLens",
+            "ExtendedPolynomialSurface",
+            "Extruded",
+            "FacetedSurface",
+            "FreeformZ",
+            "Fresnel1",
+            "Fresnel2",
+            "GridSagLens",
+            "GridSagSurface",
+            "GridSagFrontBack",
+            "HexagonalLensletArray",
+            "HologramLens",
+            "HologramSurface",
+            "JonesMatrix",
+            "LensletArray1",
+            "LensletArray2",
+            "MEMS",
+            "NullObject",
+            "OddAsphereLens",
+            "ParaxialLens",
+            "PolygonObject",
+            "RayRotator",
+            "RectangularCorner",
+            "Rectangle",
+            "RectangularPipe",
+            "RectangularPipeGrating",
+            "RectangularRoof",
+            "RectangularTorusSurface",
+            "RectangularTorusVolume",
+            "RectangularVolume",
+            "RectangularVolumeGrating",
+            "ReverseRadianceDetector",
+            "ReverseRadianceTarget",
+            "Slide",
+            "SourceDiffractive",
+            "SourceDiode",
+            "SourceDLL",
+            "SourceEllipse",
+            "SourceEULUMDATFile",
+            "SourceFilament",
+            "SourceFile",
+            "SourceGaussian",
+            "SourceIESNAFile",
+            "SourceImported",
+            "SourceObject",
+            "SourcePoint",
+            "SourceRadial",
+            "SourceRay",
+            "SourceRectangle",
+            "SourceTube",
+            "SourceTwoAngle",
+            "SourceVolumeCylindrical",
+            "SourceVolumeElliptical",
+            "SourceVolumeRectangular",
+            "Sphere",
+            "StandardLens",
+            "StandardSurface",
+            "Swept",
+            "TabulatedFactedRadial",
+            "TabulatedFactedToroid",
+            "TabulatedFrenselRadial",
+            "ToroidalHologram",
+            "ToroidalLens",
+            "ToroidalSurface",
+            "ToroidalSurfaceOddASphere",
+            "TorusSurface",
+            "TorusVolume",
+            "TriangularCorner",
+            "Triangle",
+            "UserDefinedObject",
+            "WolterSurface",
+            "ZernikeSurface",
+            "BooleanNative",
+            "CompoundLens",
+            "QTypeAsphereSurface",
+            "OffAxisMirror"
+          ],
+          "available_cad_formats": [
+            "IGES",
+            "STEP",
+            "SAT",
+            "STL",
+            "SAB",
+            "ASAT",
+            "ASAB",
+            "MODEL",
+            "CATPART",
+            "CATPRODUCT",
+            "XCGM",
+            "ZMO",
+            "XT",
+            "XB",
+            "PRC",
+            "JT",
+            "N3MF",
+            "U3D",
+            "VRML",
+            "OBJ"
+          ],
+          "cad_formats": {
+            "STEP": {
+              "extensions": [
+                ".step",
+                ".stp"
+              ],
+              "local_2024_r2_test": "native_succeeded",
+              "reason": null,
+              "license_checked_per_run": true
+            },
+            "IGES": {
+              "extensions": [
+                ".iges",
+                ".igs"
+              ],
+              "local_2024_r2_test": "native_succeeded",
+              "reason": null,
+              "license_checked_per_run": true
+            },
+            "SAT": {
+              "extensions": [
+                ".sat"
+              ],
+              "local_2024_r2_test": "native_succeeded",
+              "reason": null,
+              "license_checked_per_run": true
+            },
+            "STL": {
+              "extensions": [
+                ".stl"
+              ],
+              "local_2024_r2_test": "native_succeeded",
+              "reason": null,
+              "license_checked_per_run": true
+            },
+            "SAB": {
+              "extensions": [
+                ".sab"
+              ],
+              "local_2024_r2_test": "native_succeeded",
+              "reason": null,
+              "license_checked_per_run": true
+            },
+            "OBJ": {
+              "extensions": [
+                ".obj"
+              ],
+              "local_2024_r2_test": "native_succeeded",
+              "reason": null,
+              "license_checked_per_run": true
+            },
+            "VRML": {
+              "extensions": [
+                ".wrl"
+              ],
+              "local_2024_r2_test": "native_succeeded",
+              "reason": null,
+              "license_checked_per_run": true
+            },
+            "VisualizationJSON": {
+              "extensions": [
+                ".json"
+              ],
+              "local_2024_r2_test": "native_succeeded",
+              "reason": null,
+              "license_checked_per_run": true
+            },
+            "ASAT": {
+              "extensions": [
+                ".asat"
+              ],
+              "local_2024_r2_test": "native_rejected",
+              "reason": "Unsupported export format",
+              "license_checked_per_run": true
+            },
+            "ASAB": {
+              "extensions": [
+                ".asab"
+              ],
+              "local_2024_r2_test": "native_rejected",
+              "reason": "Unsupported export format",
+              "license_checked_per_run": true
+            },
+            "MODEL": {
+              "extensions": [
+                ".model"
+              ],
+              "local_2024_r2_test": "native_rejected",
+              "reason": "Unsupported export format",
+              "license_checked_per_run": true
+            },
+            "CATPART": {
+              "extensions": [
+                ".catpart"
+              ],
+              "local_2024_r2_test": "native_rejected",
+              "reason": "Unsupported export format",
+              "license_checked_per_run": true
+            },
+            "CATPRODUCT": {
+              "extensions": [
+                ".catproduct"
+              ],
+              "local_2024_r2_test": "native_rejected",
+              "reason": "Unsupported export format",
+              "license_checked_per_run": true
+            },
+            "XCGM": {
+              "extensions": [
+                ".xcgm"
+              ],
+              "local_2024_r2_test": "native_rejected",
+              "reason": "Unsupported export format",
+              "license_checked_per_run": true
+            },
+            "ZMO": {
+              "extensions": [
+                ".zmo"
+              ],
+              "local_2024_r2_test": "native_succeeded",
+              "reason": null,
+              "license_checked_per_run": true
+            },
+            "XT": {
+              "extensions": [
+                ".x_t"
+              ],
+              "local_2024_r2_test": "native_succeeded",
+              "reason": null,
+              "license_checked_per_run": true
+            },
+            "XB": {
+              "extensions": [
+                ".x_b"
+              ],
+              "local_2024_r2_test": "native_succeeded",
+              "reason": null,
+              "license_checked_per_run": true
+            },
+            "PRC": {
+              "extensions": [
+                ".prc"
+              ],
+              "local_2024_r2_test": "native_succeeded",
+              "reason": null,
+              "license_checked_per_run": true
+            },
+            "JT": {
+              "extensions": [
+                ".jt"
+              ],
+              "local_2024_r2_test": "native_succeeded",
+              "reason": null,
+              "license_checked_per_run": true
+            },
+            "N3MF": {
+              "extensions": [
+                ".3mf"
+              ],
+              "local_2024_r2_test": "native_succeeded",
+              "reason": null,
+              "license_checked_per_run": true
+            },
+            "U3D": {
+              "extensions": [
+                ".u3d"
+              ],
+              "local_2024_r2_test": "native_succeeded",
+              "reason": null,
+              "license_checked_per_run": true
+            }
+          },
+          "layout_exports": {
+            "cross_section": {
+              "api_available": true,
+              "mode": "Sequential",
+              "license_checked_per_run": true
+            },
+            "viewer_3d": {
+              "api_available": true,
+              "mode": "Sequential",
+              "license_checked_per_run": true
+            },
+            "shaded_model": {
+              "api_available": true,
+              "mode": "Sequential",
+              "license_checked_per_run": true
+            },
+            "nsc_3d": {
+              "api_available": true,
+              "mode": "NonSequential",
+              "license_checked_per_run": true
+            },
+            "nsc_shaded": {
+              "api_available": true,
+              "mode": "NonSequential",
+              "license_checked_per_run": true
+            }
+          }
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": "42165b84aad04670b84ca9de077e91be",
+          "model_revision": 3,
+          "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\working_901e2e50.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\checkpoint_r2_surfaces_811d7c48.zos",
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 3,
+            "session_id": "42165b84aad04670b84ca9de077e91be"
+          }
+        },
+        "artifacts": []
+      }
+    },
+    {
+      "tool": "run_spot_analysis",
+      "response": {
+        "ok": true,
+        "data": {
+          "task_id": "6d0d1e5c2658490294b49e5598a8fabe",
+          "request_id": "96685c29088a4b36900302c4ea2ef34d",
+          "kind": "spot",
+          "state": "running",
+          "created_at": "2026-11-04T13:28:03.081798+00:00",
+          "progress": null,
+          "can_cancel": true,
+          "cancel_requested": false,
+          "settings": {
+            "field": 1,
+            "wavelength": 1,
+            "reference": "Centroid",
+            "pattern": "Hexapolar",
+            "ray_density": 6,
+            "configuration": 1,
+            "use_polarization": false,
+            "ignore_lateral_color": false,
+            "scatter_rays": false,
+            "delta_focus": 0.0,
+            "direction_cosines": false
+          },
+          "context": {
+            "session_id": "42165b84aad04670b84ca9de077e91be",
+            "model_revision": 3,
+            "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+            "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\working_901e2e50.zos",
+            "opticstudio_version": "24.2.0",
+            "opticstudio_build": "240529",
+            "license": "PremiumEdition",
+            "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\checkpoint_r2_surfaces_811d7c48.zos",
+            "requires_reconnect": false,
+            "mode": "Sequential",
+            "configuration": 1,
+            "lens_units": "Millimeters",
+            "mtf_units": "CyclesPerMillimeter",
+            "geometry": {
+              "state": "pending",
+              "model_revision": 3,
+              "session_id": "42165b84aad04670b84ca9de077e91be"
+            }
+          },
+          "elapsed_seconds": 0.027
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": "42165b84aad04670b84ca9de077e91be",
+          "model_revision": 3,
+          "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\working_901e2e50.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\checkpoint_r2_surfaces_811d7c48.zos",
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 3,
+            "session_id": "42165b84aad04670b84ca9de077e91be"
+          }
+        },
+        "artifacts": []
+      }
+    },
+    {
+      "tool": "get_task_status",
+      "response": {
+        "ok": true,
+        "data": {
+          "task_id": "6d0d1e5c2658490294b49e5598a8fabe",
+          "request_id": "96685c29088a4b36900302c4ea2ef34d",
+          "kind": "spot",
+          "state": "running",
+          "created_at": "2026-11-04T13:28:03.081798+00:00",
+          "progress": null,
+          "can_cancel": true,
+          "cancel_requested": false,
+          "settings": {
+            "field": 1,
+            "wavelength": 1,
+            "reference": "Centroid",
+            "pattern": "Hexapolar",
+            "ray_density": 6,
+            "configuration": 1,
+            "use_polarization": false,
+            "ignore_lateral_color": false,
+            "scatter_rays": false,
+            "delta_focus": 0.0,
+            "direction_cosines": false
+          },
+          "context": {
+            "session_id": "42165b84aad04670b84ca9de077e91be",
+            "model_revision": 3,
+            "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+            "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\working_901e2e50.zos",
+            "opticstudio_version": "24.2.0",
+            "opticstudio_build": "240529",
+            "license": "PremiumEdition",
+            "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\checkpoint_r2_surfaces_811d7c48.zos",
+            "requires_reconnect": false,
+            "mode": "Sequential",
+            "configuration": 1,
+            "lens_units": "Millimeters",
+            "mtf_units": "CyclesPerMillimeter",
+            "geometry": {
+              "state": "pending",
+              "model_revision": 3,
+              "session_id": "42165b84aad04670b84ca9de077e91be"
+            }
+          },
+          "elapsed_seconds": 0.033
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": "42165b84aad04670b84ca9de077e91be",
+          "model_revision": 3,
+          "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\working_901e2e50.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\checkpoint_r2_surfaces_811d7c48.zos",
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 3,
+            "session_id": "42165b84aad04670b84ca9de077e91be"
+          }
+        },
+        "artifacts": []
+      }
+    },
+    {
+      "tool": "get_task_status",
+      "response": {
+        "ok": true,
+        "data": {
+          "task_id": "6d0d1e5c2658490294b49e5598a8fabe",
+          "request_id": "96685c29088a4b36900302c4ea2ef34d",
+          "kind": "spot",
+          "state": "succeeded",
+          "created_at": "2026-11-04T13:28:03.081798+00:00",
+          "finished_at": "2026-11-04T13:28:03.156569+00:00",
+          "progress": 100,
+          "can_cancel": true,
+          "cancel_requested": false,
+          "settings": {
+            "field": 1,
+            "wavelength": 1,
+            "reference": "Centroid",
+            "pattern": "Hexapolar",
+            "ray_density": 6,
+            "configuration": 1,
+            "use_polarization": false,
+            "ignore_lateral_color": false,
+            "scatter_rays": false,
+            "delta_focus": 0.0,
+            "direction_cosines": false
+          },
+          "context": {
+            "session_id": "42165b84aad04670b84ca9de077e91be",
+            "model_revision": 3,
+            "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+            "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\working_901e2e50.zos",
+            "opticstudio_version": "24.2.0",
+            "opticstudio_build": "240529",
+            "license": "PremiumEdition",
+            "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\checkpoint_r2_surfaces_811d7c48.zos",
+            "requires_reconnect": false,
+            "mode": "Sequential",
+            "configuration": 1,
+            "lens_units": "Millimeters",
+            "mtf_units": "CyclesPerMillimeter",
+            "geometry": {
+              "state": "pending",
+              "model_revision": 3,
+              "session_id": "42165b84aad04670b84ca9de077e91be"
+            }
+          },
+          "result_path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\6d0d1e5c2658490294b49e5598a8fabe.json",
+          "result_artifacts": [
+            {
+              "kind": "native_text",
+              "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\6d0d1e5c2658490294b49e5598a8fabe_native.txt"
+            },
+            {
+              "kind": "json",
+              "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\6d0d1e5c2658490294b49e5598a8fabe.json"
+            }
+          ],
+          "elapsed_seconds": 0.075
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": "42165b84aad04670b84ca9de077e91be",
+          "model_revision": 3,
+          "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\working_901e2e50.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\checkpoint_r2_surfaces_811d7c48.zos",
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 3,
+            "session_id": "42165b84aad04670b84ca9de077e91be"
+          }
+        },
+        "artifacts": []
+      }
+    },
+    {
+      "tool": "get_task_result",
+      "response": {
+        "ok": true,
+        "data": {
+          "native_header": [
+            "角（度）",
+            "像单位: 毫米",
+            "参考: 质心",
+            "参考: 质心",
+            "面    : 像",
+            "波长: 单色光在 0.48 μm",
+            "X                Y",
+            "视场坐标  :   0.00000000E+00   0.00000000E+00",
+            "像坐标  :  -4.36672942E-20   2.79741235E-20",
+            "RMS光斑半径   :   3.85712268E+00 µm",
+            "RMS X方向光斑尺寸   :   2.72739760E+00 µm",
+            "RMS Y方向光斑尺寸   :   2.72739760E+00 µm"
+          ],
+          "native_messages": [],
+          "artifacts": [
+            {
+              "kind": "native_text",
+              "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\6d0d1e5c2658490294b49e5598a8fabe_native.txt"
+            },
+            {
+              "kind": "json",
+              "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\6d0d1e5c2658490294b49e5598a8fabe.json"
+            }
+          ],
+          "metrics": [
+            {
+              "field_number": 1,
+              "wavelength_selection": 1,
+              "aggregation": "monochromatic",
+              "rms_radius": 3.8571226817048068,
+              "geo_radius": 6.115320371506178,
+              "reference_x": -4.3667294211308584e-20,
+              "reference_y": 2.7974123455122056e-20
+            }
+          ],
+          "radius_unit": "micrometers",
+          "reference_coordinate_unit": "lens units",
+          "native_wavelength_slot": 1,
+          "task": {
+            "task_id": "6d0d1e5c2658490294b49e5598a8fabe",
+            "request_id": "96685c29088a4b36900302c4ea2ef34d",
+            "kind": "spot",
+            "state": "succeeded",
+            "created_at": "2026-11-04T13:28:03.081798+00:00",
+            "finished_at": "2026-11-04T13:28:03.156569+00:00",
+            "progress": 100,
+            "can_cancel": true,
+            "cancel_requested": false,
+            "settings": {
+              "field": 1,
+              "wavelength": 1,
+              "reference": "Centroid",
+              "pattern": "Hexapolar",
+              "ray_density": 6,
+              "configuration": 1,
+              "use_polarization": false,
+              "ignore_lateral_color": false,
+              "scatter_rays": false,
+              "delta_focus": 0.0,
+              "direction_cosines": false
+            },
+            "context": {
+              "session_id": "42165b84aad04670b84ca9de077e91be",
+              "model_revision": 3,
+              "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+              "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\working_901e2e50.zos",
+              "opticstudio_version": "24.2.0",
+              "opticstudio_build": "240529",
+              "license": "PremiumEdition",
+              "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\checkpoint_r2_surfaces_811d7c48.zos",
+              "requires_reconnect": false,
+              "mode": "Sequential",
+              "configuration": 1,
+              "lens_units": "Millimeters",
+              "mtf_units": "CyclesPerMillimeter",
+              "geometry": {
+                "state": "pending",
+                "model_revision": 3,
+                "session_id": "42165b84aad04670b84ca9de077e91be"
+              }
+            },
+            "result_path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\6d0d1e5c2658490294b49e5598a8fabe.json",
+            "result_artifacts": [
+              {
+                "kind": "native_text",
+                "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\6d0d1e5c2658490294b49e5598a8fabe_native.txt"
+              },
+              {
+                "kind": "json",
+                "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\6d0d1e5c2658490294b49e5598a8fabe.json"
+              }
+            ],
+            "elapsed_seconds": 0.075
+          },
+          "context": {
+            "session_id": "42165b84aad04670b84ca9de077e91be",
+            "model_revision": 3,
+            "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+            "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\working_901e2e50.zos",
+            "opticstudio_version": "24.2.0",
+            "opticstudio_build": "240529",
+            "license": "PremiumEdition",
+            "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\checkpoint_r2_surfaces_811d7c48.zos",
+            "requires_reconnect": false,
+            "mode": "Sequential",
+            "configuration": 1,
+            "lens_units": "Millimeters",
+            "mtf_units": "CyclesPerMillimeter",
+            "geometry": {
+              "state": "pending",
+              "model_revision": 3,
+              "session_id": "42165b84aad04670b84ca9de077e91be"
+            }
+          },
+          "system_settings": {
+            "mode": "Sequential",
+            "configuration": 1,
+            "lens_units": "Millimeters",
+            "mtf_units": "CyclesPerMillimeter",
+            "source_units": "Watts",
+            "source_unit_prefix": "None",
+            "analysis_units": "WattsPerCMSq",
+            "analysis_unit_prefix": "None",
+            "afocal_image_space": false,
+            "aperture": {
+              "type": "EntrancePupilDiameter",
+              "value": 10.0
+            },
+            "field_type": "Angle",
+            "field_normalization": "Radial",
+            "fields": [
+              {
+                "number": 1,
+                "x": 0.0,
+                "y": 0.0,
+                "weight": 1.0,
+                "vdx": 0.0,
+                "vdy": 0.0,
+                "vcx": 0.0,
+                "vcy": 0.0,
+                "van": 0.0
+              },
+              {
+                "number": 2,
+                "x": 0.0,
+                "y": 14.0,
+                "weight": 1.0,
+                "vdx": 0.0,
+                "vdy": 0.0,
+                "vcx": 0.0,
+                "vcy": 0.0,
+                "van": 0.0
+              },
+              {
+                "number": 3,
+                "x": 0.0,
+                "y": 20.0,
+                "weight": 1.0,
+                "vdx": 0.0,
+                "vdy": 0.0,
+                "vcx": 0.0,
+                "vcy": 0.0,
+                "van": 0.0
+              }
+            ],
+            "wavelength_unit": "micrometers (environmental air reference)",
+            "wavelengths": [
+              {
+                "number": 1,
+                "wavelength_um": 0.48,
+                "weight": 0.800000012,
+                "primary": false
+              },
+              {
+                "number": 2,
+                "wavelength_um": 0.55,
+                "weight": 1.0,
+                "primary": true
+              },
+              {
+                "number": 3,
+                "wavelength_um": 0.65,
+                "weight": 0.800000012,
+                "primary": false
+              }
+            ],
+            "temperature_c": 20.0,
+            "pressure_atm": 1.0,
+            "adjust_index_to_environment": false,
+            "afocal_mode_units": "Milliradians",
+            "settings_activity": {
+              "apodization_factor_is_used": false
+            },
+            "author": "wheel016",
+            "aperture_options": {
+              "apodization_type": "Uniform",
+              "apodization_factor": 0.0,
+              "semi_diameter_margin": 0.0,
+              "semi_diameter_margin_pct": 0.0,
+              "telecentric_object_space": false,
+              "afocal_image_space": false,
+              "iterate_solves_when_updating": false,
+              "fast_semi_diameters": true,
+              "check_grin_apertures": false
+            },
+            "advanced": {
+              "reference_opd": "ExitPupil",
+              "paraxial_rays": "IgnoreCoordinateBreaks",
+              "f_num_method": "TracingRays",
+              "dont_print_coordinate_break_data": false,
+              "turn_off_threading": false,
+              "opd_modulo_2pi": false,
+              "include_calculated_data_in_session_file": true,
+              "include_tolerance_data_in_session_file": true,
+              "huygens_integral_method": "Auto"
+            },
+            "global_reference_surface": 1,
+            "material_catalogs": [
+              "SCHOTT"
+            ],
+            "polarization": {
+              "unpolarized": true,
+              "jx": 0.0,
+              "jy": 1.0,
+              "x_phase": 0.0,
+              "y_phase": 0.0,
+              "method": "XAxisMethod",
+              "convert_thin_film_phase": true
+            },
+            "ray_aiming": {
+              "mode": "Off",
+              "method": "Heuristic",
+              "cache": true,
+              "robust": false,
+              "scale_pupil_shift_by_field": false,
+              "auto_pupil_shift": true,
+              "enhanced": false,
+              "advanced_convergence": false,
+              "fallback_search": false,
+              "pupil_shift_x": 0.0,
+              "pupil_shift_y": 0.0,
+              "pupil_shift_z": 0.0,
+              "pupil_compress_x": 0.0,
+              "pupil_compress_y": 0.0,
+              "cache_steps": 10
+            },
+            "files": {
+              "coating_file": "COATING.DAT",
+              "scatter_profile": "SCATTER_PROFILE.DAT",
+              "abg_file": "ABG_DATA.DAT",
+              "gradium_profile": "PROFILE.GRD"
+            },
+            "title": "A SIMPLE COOKE TRIPLET.",
+            "notes": "Notes...\r\n \r\n "
+          }
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": "42165b84aad04670b84ca9de077e91be",
+          "model_revision": 3,
+          "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+          "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\working_901e2e50.zos",
+          "opticstudio_version": "24.2.0",
+          "opticstudio_build": "240529",
+          "license": "PremiumEdition",
+          "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\checkpoint_r2_surfaces_811d7c48.zos",
+          "requires_reconnect": false,
+          "mode": "Sequential",
+          "configuration": 1,
+          "lens_units": "Millimeters",
+          "mtf_units": "CyclesPerMillimeter",
+          "geometry": {
+            "state": "pending",
+            "model_revision": 3,
+            "session_id": "42165b84aad04670b84ca9de077e91be"
+          }
+        },
+        "artifacts": [
+          {
+            "kind": "native_text",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\6d0d1e5c2658490294b49e5598a8fabe_native.txt"
+          },
+          {
+            "kind": "json",
+            "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\6d0d1e5c2658490294b49e5598a8fabe.json"
+          }
+        ]
+      }
+    },
+    {
+      "tool": "disconnect",
+      "response": {
+        "ok": true,
+        "data": {
+          "connected": false,
+          "last_session": {
+            "session_id": "42165b84aad04670b84ca9de077e91be",
+            "model_revision": 3,
+            "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+            "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\working_901e2e50.zos",
+            "opticstudio_version": "24.2.0",
+            "opticstudio_build": "240529",
+            "license": "PremiumEdition",
+            "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\outputs\\wheel-smoke016-final\\42165b84aad04670b84ca9de077e91be\\checkpoint_r3_disconnect_6f0228be.zos",
+            "requires_reconnect": false,
+            "mode": "Sequential",
+            "configuration": 1,
+            "lens_units": "Millimeters",
+            "mtf_units": "CyclesPerMillimeter",
+            "geometry": {
+              "state": "pending",
+              "model_revision": 3,
+              "session_id": "42165b84aad04670b84ca9de077e91be"
+            }
+          }
+        },
+        "error": null,
+        "warnings": [],
+        "context": {
+          "session_id": null,
+          "model_revision": 3,
+          "source_file": null,
+          "working_file": null,
+          "opticstudio_version": null,
+          "opticstudio_build": null,
+          "license": null,
+          "checkpoint": null,
+          "requires_reconnect": false,
+          "geometry": {
+            "state": "pending",
+            "model_revision": 3,
+            "session_id": null
+          }
+        },
+        "artifacts": []
+      }
+    }
+  ]
+}

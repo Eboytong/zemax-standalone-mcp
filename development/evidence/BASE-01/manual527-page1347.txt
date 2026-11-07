@@ -1,0 +1,38 @@
+The wavelength must always be in units of micrometers and should be listed in ascending order. The index of
+refraction must be a positive value. The transmission is the internal transmittance of the glass and should be a
+positive value. The thickness is the thickness of glass in millimeters for the specified internal transmittance. The
+transmission and thickness values are used to determine the internal transmission per unit length. If both the
+transmission and thickness values are omitted the material is assumed to be 100% transmitting.
+Up to 1200 lines of wavelength data may be defined in the file. At least 5 data points should be defined to provide a
+reasonable spline fit. If fewer than 5 points are provided, dummy points are added before and after the specified
+wavelength range to provide a smooth fit. The data should be checked for accuracy and reasonable fitting by using
+the dispersion plot data, see Dispersion Diagram.
+To use the table data, enter the file name in the glass column for the desired surface, including the extension. For
+example, if the file name is "MYGLASS.ZTG" then "MYGLASS.ZTG" should be entered in for the glass name. Note the
+total name, including the extension, may not exceed 20 characters.
+Whencomputing thedata for a specificwavelength,OpticStudiowilluse a cubic spline interpolationifthewavelength
+is between the shortest and longest wavelengths defined in the ZTG file. For wavelengths outside of the defined
+range, the data for the nearest data point is used; no extrapolation of the data is performed.
+The advantage of a table glass is the index at the defined points is exactly the index specified in the table, unlike
+fitted functions which may deviate from the data being fitted at the data points.
+Table glasses arenotusedby the glass substitutionfeature (seeOptimizing glass selection). Table glasses are always
+assumed to be defined at a pressure of 1.0 ATM. No thermal properties are defined for table glasses. If thermal
+analysis is important, a catalog glass should be used instead. For information on converting measured index and
+thermal data into a catalog glass see Glass Fitting.
+8.1.2.17.3. Using Model Glasses
+OpticStudio can idealize the dispersion of glass using the index at d-light(.5875618 micrometers),the Abbe number,
+and a term which describes the deviation of the partial dispersion from the "Normal Line". The index at d-light is
+given the symbol Nd. The Abbe number (also called the V-number) is given the symbol Vd and is defined by
+where
+and
+are the indices of refraction at 0.4861327 and 0.6562725 micrometers, respectively. The partial dispersion term is
+. OpticStudio uses a formula based upon the typical dispersion of standard glasses in the visible range to
+estimate the index at any defined wavelength within the visible range as a function of the Nd and Vd
+values. This
+formula is accurate to roughly 0.0001 for typical glasses.
+The
+,
+and
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1348
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Libraries Tab

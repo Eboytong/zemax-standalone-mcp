@@ -1,0 +1,305 @@
+{
+  "date": "2026-11-07",
+  "item_id": "TO-01.QuickYield",
+  "state": "done",
+  "completion_count": 1,
+  "batch": "B006",
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build240529 Premium",
+  "scope": "Typed native fitted-wavefront yield; selected field/wavelength/configuration, statistics/precision/compensation; zero and controlled finite perturbations; lifecycle and results",
+  "formal_definition": "Installed2024R2 manual1291/1292: sensitivity-fitted wavefront reconstructed by modified Rimmer method; exact reconstruction proprietary. Formal interface/settings probe083 retained.",
+  "controlled_reference_equivalence": "Primary-dependent solves evaluated at selected wavelength explain Cooke discrepancy; independent refractor OPD RMS removes piston and linear pupil tilt. These are observed equivalent references for the controlled cases, not a reconstructed proprietary algorithm.",
+  "inputs": "Official Cooke model with original surface6 MarginalRayAngle radius solve, then fixed-radius control; owned N-BK7 plano-convex3/6degree models; prior analytic mirrors and finite Uniform thickness model",
+  "requests": "All explicit requests and final native settings/field/wavelength readback are in each run calls.json and result JSON. Reference manipulations apply only to controlled test models, with source primary restored.",
+  "tolerance": "1e-5waves+1%reference; unchanged",
+  "solve_results": [
+    {
+      "fixed": false,
+      "wavelength": 1,
+      "active_reference": 0.21533457746139173,
+      "selected_reference": 0.24567709160067416,
+      "native": 0.24567772661945006,
+      "active_error": 0.03034314915805833,
+      "selected_error": 6.350187758963344e-07,
+      "source_radius": -18.395332603040327,
+      "reference_radius": -18.398367999259037
+    },
+    {
+      "fixed": false,
+      "wavelength": 3,
+      "active_reference": 0.2717594256621669,
+      "selected_reference": 0.14985209272272654,
+      "native": 0.14985275537782589,
+      "active_error": 0.12190667028434099,
+      "selected_error": 6.626550993482638e-07,
+      "source_radius": -18.395332603040327,
+      "reference_radius": -18.378296011836376
+    },
+    {
+      "fixed": true,
+      "wavelength": 1,
+      "active_reference": 0.21533457746139173,
+      "selected_reference": 0.2153346280567443,
+      "native": 0.21533526795421623,
+      "active_error": 6.904928245010655e-07,
+      "selected_error": 6.398974719268313e-07,
+      "source_radius": -18.395332603040327,
+      "reference_radius": -18.395332603040327
+    },
+    {
+      "fixed": true,
+      "wavelength": 3,
+      "active_reference": 0.2717594256621669,
+      "selected_reference": 0.27175936145597124,
+      "native": 0.2717599935457742,
+      "active_error": 5.678836073053084e-07,
+      "selected_error": 6.320898029432698e-07,
+      "source_radius": -18.395332603040327,
+      "reference_radius": -18.395332603040327
+    }
+  ],
+  "refractive_results": [
+    {
+      "model": "N-BK7 plano-convex R50mm,thickness5mm,clear semi6mm,entrance pupil10mm;fields0/3degrees;lambda.55um",
+      "field": 1,
+      "raw_piston_only_reference": 0.12545510236802065,
+      "independent_piston_tilt_removed_reference": 0.12545510236802065,
+      "coefficients": [
+        -0.2699904642216033,
+        -6.406333796782344e-15,
+        4.713243684228984e-15
+      ],
+      "results": [
+        {
+          "precision": "Standard",
+          "native": 0.12547570615771458,
+          "raw_reference_error": 2.0603789693929286e-05,
+          "matched_reference_error": 2.0603789693929286e-05,
+          "matched_tolerance": 0.0012645510236802065
+        },
+        {
+          "precision": "VeryHigh",
+          "native": 0.12547293050332387,
+          "raw_reference_error": 1.782813530321059e-05,
+          "matched_reference_error": 1.782813530321059e-05,
+          "matched_tolerance": 0.0012645510236802065
+        }
+      ]
+    },
+    {
+      "model": "N-BK7 plano-convex R50mm,thickness5mm,clear semi6mm,entrance pupil10mm;fields0/3degrees;lambda.55um",
+      "field": 2,
+      "raw_piston_only_reference": 0.19253773305191196,
+      "independent_piston_tilt_removed_reference": 0.18191245984208337,
+      "coefficients": [
+        0.15484673804466978,
+        -4.342706749760339e-14,
+        0.12615285336403181
+      ],
+      "results": [
+        {
+          "precision": "Standard",
+          "native": 0.1819193530919167,
+          "raw_reference_error": 0.010618379959995261,
+          "matched_reference_error": 6.8932498333285075e-06,
+          "matched_tolerance": 0.0018291245984208338
+        },
+        {
+          "precision": "VeryHigh",
+          "native": 0.18192787378467365,
+          "raw_reference_error": 0.010609859267238314,
+          "matched_reference_error": 1.541394259027551e-05,
+          "matched_tolerance": 0.0018291245984208338
+        }
+      ]
+    },
+    {
+      "model": "N-BK7 plano-convex R50mm,thickness5mm,clear semi6mm,entrance pupil10mm;fields0/6degrees;lambda.55um",
+      "field": 1,
+      "raw_piston_only_reference": 0.4893672497121064,
+      "independent_piston_tilt_removed_reference": 0.4893672497121064,
+      "coefficients": [
+        -0.9035080346363971,
+        -6.3733740507387845e-15,
+        4.7045700668491e-15
+      ],
+      "results": [
+        {
+          "precision": "Standard",
+          "native": 0.48943086833770977,
+          "raw_reference_error": 6.361862560338993e-05,
+          "matched_reference_error": 6.361862560338993e-05,
+          "matched_tolerance": 0.0049036724971210635
+        },
+        {
+          "precision": "VeryHigh",
+          "native": 0.4894275976635075,
+          "raw_reference_error": 6.034795140114069e-05,
+          "matched_reference_error": 6.034795140114069e-05,
+          "matched_tolerance": 0.0049036724971210635
+        }
+      ]
+    },
+    {
+      "model": "N-BK7 plano-convex R50mm,thickness5mm,clear semi6mm,entrance pupil10mm;fields0/6degrees;lambda.55um",
+      "field": 2,
+      "raw_piston_only_reference": 0.7311379201455365,
+      "independent_piston_tilt_removed_reference": 0.7190078753652328,
+      "coefficients": [
+        0.7985864166742369,
+        -3.737288256644433e-14,
+        0.2652571087644179
+      ],
+      "results": [
+        {
+          "precision": "Standard",
+          "native": 0.7190411744924878,
+          "raw_reference_error": 0.012096745653048635,
+          "matched_reference_error": 3.3299127255026484e-05,
+          "matched_tolerance": 0.0072000787536523276
+        },
+        {
+          "precision": "VeryHigh",
+          "native": 0.7190618030219011,
+          "raw_reference_error": 0.012076117123635322,
+          "matched_reference_error": 5.3927656668339985e-05,
+          "matched_tolerance": 0.0072000787536523276
+        }
+      ]
+    }
+  ],
+  "run_evidence": {
+    "quickyield568_refractive_223d18f988": {
+      "run": "outputs\\runs\\quickyield568_refractive_223d18f988",
+      "requests_actual_settings": "outputs\\runs\\quickyield568_refractive_223d18f988\\calls.json",
+      "result_files": [
+        "conditions.json",
+        "refractive.json"
+      ],
+      "checks": 2,
+      "all_numeric_assertions_passed": true,
+      "disconnect_ok": true
+    },
+    "quickyield569_wavelength_identity_7559afe686": {
+      "run": "outputs\\runs\\quickyield569_wavelength_identity_7559afe686",
+      "requests_actual_settings": "outputs\\runs\\quickyield569_wavelength_identity_7559afe686\\calls.json",
+      "result_files": [
+        "conditions.json",
+        "wavelength-identity.json"
+      ],
+      "checks": 0,
+      "all_numeric_assertions_passed": true,
+      "disconnect_ok": true
+    },
+    "quickyield570_solve_reference_False_72cdd65759": {
+      "run": "outputs\\runs\\quickyield570_solve_reference_False_72cdd65759",
+      "requests_actual_settings": "outputs\\runs\\quickyield570_solve_reference_False_72cdd65759\\calls.json",
+      "result_files": [
+        "conditions.json",
+        "solve-reference.json"
+      ],
+      "checks": 198,
+      "all_numeric_assertions_passed": true,
+      "disconnect_ok": true
+    },
+    "quickyield570_solve_reference_True_f96e2eb137": {
+      "run": "outputs\\runs\\quickyield570_solve_reference_True_f96e2eb137",
+      "requests_actual_settings": "outputs\\runs\\quickyield570_solve_reference_True_f96e2eb137\\calls.json",
+      "result_files": [
+        "conditions.json",
+        "solve-reference.json"
+      ],
+      "checks": 198,
+      "all_numeric_assertions_passed": true,
+      "disconnect_ok": true
+    },
+    "quickyield572_refractive_3_f2257704f6": {
+      "run": "outputs\\runs\\quickyield572_refractive_3_f2257704f6",
+      "requests_actual_settings": "outputs\\runs\\quickyield572_refractive_3_f2257704f6\\calls.json",
+      "result_files": [
+        "conditions.json",
+        "refractive.json"
+      ],
+      "checks": 398,
+      "all_numeric_assertions_passed": true,
+      "disconnect_ok": true
+    },
+    "quickyield572_refractive_6_6f430763ed": {
+      "run": "outputs\\runs\\quickyield572_refractive_6_6f430763ed",
+      "requests_actual_settings": "outputs\\runs\\quickyield572_refractive_6_6f430763ed\\calls.json",
+      "result_files": [
+        "conditions.json",
+        "refractive.json"
+      ],
+      "checks": 398,
+      "all_numeric_assertions_passed": true,
+      "disconnect_ok": true
+    },
+    "quickyield084zero_ae757af728": {
+      "run": "outputs\\runs\\quickyield084zero_ae757af728",
+      "requests_actual_settings": "outputs\\runs\\quickyield084zero_ae757af728\\calls.json",
+      "result_files": [
+        "reference.json"
+      ],
+      "checks": 99,
+      "all_numeric_assertions_passed": true,
+      "disconnect_ok": true
+    },
+    "quickyield502_uniform_dfccbf5a7c": {
+      "run": "outputs\\runs\\quickyield502_uniform_dfccbf5a7c",
+      "requests_actual_settings": "outputs\\runs\\quickyield502_uniform_dfccbf5a7c\\calls.json",
+      "result_files": [
+        "uniform-defocus.json"
+      ],
+      "checks": 10,
+      "all_numeric_assertions_passed": true,
+      "disconnect_ok": true
+    },
+    "quickyield570_solve_reference_False_bdb3ad45d7": {
+      "run": "outputs\\runs\\quickyield570_solve_reference_False_bdb3ad45d7",
+      "requests_actual_settings": "outputs\\runs\\quickyield570_solve_reference_False_bdb3ad45d7\\calls.json",
+      "result_files": [
+        "conditions.json",
+        "solve-reference.json"
+      ],
+      "checks": 198,
+      "all_numeric_assertions_passed": true,
+      "disconnect_ok": true
+    },
+    "quickyield570_solve_reference_True_30c045c32d": {
+      "run": "outputs\\runs\\quickyield570_solve_reference_True_30c045c32d",
+      "requests_actual_settings": "outputs\\runs\\quickyield570_solve_reference_True_30c045c32d\\calls.json",
+      "result_files": [
+        "conditions.json",
+        "solve-reference.json"
+      ],
+      "checks": 198,
+      "all_numeric_assertions_passed": true,
+      "disconnect_ok": true
+    }
+  },
+  "reports": [
+    "verification/development/TO-01/native568-refractive.xml",
+    "verification/development/TO-01/native569-wavelength-identity.xml",
+    "verification/development/TO-01/native570-solve-reference.xml",
+    "verification/development/TO-01/native571-fixed-solve.xml",
+    "verification/development/TO-01/native572-refractive-reference.xml",
+    "verification/development/TO-01/native573-refractive-clear.xml",
+    "verification/development/TO-01/native574-final-reference.xml",
+    "verification/development/TO-01/ordinary574-targeted.xml",
+    "verification/development/TO-01/ordinary575-final.xml"
+  ],
+  "final_native": "5744passed: original Cooke Standard with matched reference, Uniform finite perturbation/cancel/reuse/reload and both dynamic/fixed solve controls",
+  "ordinary": "57580passed; final targeted QuickYield/distribution/basic/RMS/historystdio/status checks",
+  "lifecycle": "Native analysis tasks reached succeeded/close_attempted without cleanup warnings; finite100k trial cancellation closed then reuse; surfaces/solves/settings/MFE/MCE/TDE retained. Reference primary restored. Save/reload, series paging, PNG exports and disconnect passed. Uniform PNG viewed.",
+  "implementation": "Evaluation exposes source primary/selected wavelength identity and qualified reference-equivalence metadata. Rejects empty, negative/nonfinite or dimensionally mismatched wavefront axes; native numeric values preserved.",
+  "retained_history": {
+    "original_cooke_difference": ".029788/.030342waves and red.121907 retained; new controls explain model-evaluation conditions rather than replacing native values or loosening tolerance",
+    "standard_high_order": "r8/r10/r12 Standard fit remains outside original raw OPD numerical gate; VeryHigh all four r6-r12 passed550. Precision-dependent native approximation is documented and not converted into a claim of Standard high-order exactness.",
+    "failure570": "fixed-radius control initially refused because replace_solves not explicit; corrected571, original refusal retained",
+    "failure572": "6degree clear semi5mm clipped15/4096 rays at stop; source clipping retained,573 uses declared clear semi6mm with all nodes valid",
+    "initial568": "off-axis raw-piston-only comparison failed; corrected reference equivalence first observed in568, repeated3degree and predicted6degree in573"
+  },
+  "next_action": "Count once; B0065/10. Continue fixed fallback queue; SagTable criterion, CAD versions/layers, MaterialModel dispersion, FullFieldSpot and originalB005 candidates retain specific conditions."
+}

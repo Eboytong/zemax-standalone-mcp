@@ -3,11 +3,11 @@
   "item_id": "CV-01.FftPsfLineEdgeSpread",
   "state": "implemented",
   "source_version": "0.1.59",
-  "ordinary_report": ".local/evidence/development/CV-01/ordinary320-related.xml",
+  "ordinary_report": "verification/development/CV-01/ordinary320-related.xml",
   "ordinary_passed": 74,
-  "native_reference_report": ".local/evidence/development/CV-01/native317-spread-reference.xml",
+  "native_reference_report": "verification/development/CV-01/native317-spread-reference.xml",
   "native_reference_passed": 2,
-  "lifecycle_report": ".local/evidence/development/CV-01/native319-lifecycle.xml",
+  "lifecycle_report": "verification/development/CV-01/native319-lifecycle.xml",
   "lifecycle_passed": 1,
   "changes": [
     "Recognize actual Chinese FFT edge-spread title; original native315 NO_RESULT_DATA retained",
@@ -30,19 +30,19 @@
     "Finish current pupil-map probe, update acceptance only after explained and checked; add meaningful reference coverage as indicated by probe."
   ],
   "runs": [
-    ".local/runs/fft_spread315_3d1f2a34cd",
-    ".local/runs/fft_spread315_8a6457b819",
-    ".local/runs/fft_spread319_lifecycle_0f142b647b"
+    "outputs/runs/fft_spread315_3d1f2a34cd",
+    "outputs/runs/fft_spread315_8a6457b819",
+    "outputs/runs/fft_spread319_lifecycle_0f142b647b"
   ],
   "failed_reports": [
-    ".local/evidence/development/CV-01/native315-fft-spread.xml",
-    ".local/evidence/development/CV-01/native318-coherent.xml",
-    ".local/evidence/development/CV-01/native320-coherent.xml",
-    ".local/evidence/development/CV-01/native321-coherent-pupil.xml"
+    "verification/development/CV-01/native315-fft-spread.xml",
+    "verification/development/CV-01/native318-coherent.xml",
+    "verification/development/CV-01/native320-coherent.xml",
+    "verification/development/CV-01/native321-coherent-pupil.xml"
   ],
   "latest_probe": {
-    "report": ".local/evidence/development/CV-01/native321-coherent-pupil.xml",
-    "run": ".local/runs/fft_spread318_coherent_3adb3e3c9f",
+    "report": "verification/development/CV-01/native321-coherent-pupil.xml",
+    "run": "outputs/runs/fft_spread318_coherent_3adb3e3c9f",
     "observation": "Paraxial focal100, real working f-number10.00625. FFT native output128 dx1.884954um. Entrance/exit wavefront64 both3001 valid samples, center row1..63. Explicit plot scale aligned to FFT display field did not remove .260975929 discrepancy.",
     "conclusion": "Independent guard-sampled 1D FFT bins do not yet represent native coherent output sampling; no production scaling correction or tolerance change.",
     "next_action": "Resolve native pupil-to-image transform/resampling using complex PSF and physical image positions; preserve this model as diagnostic. Continue geometric spread while this reference remains in progress."

@@ -8,7 +8,7 @@
   "full_batch_gate": "B006 2/10; no new full regression or wheel",
   "item_id": "NS-03.NSCGeometricMtf",
   "scope": "Determine detector-local axis assignment and compare exact pixel DFT for X-only, Y-only and asymmetric 1W images",
-  "command": ".venv/Scripts/python.exe -m pytest tests/test_nsc_mtf_live.py::test_nsc_asymmetric_detector_mtf_dft_diagnostic -q -s --run-zemax --junitxml=.local/evidence/development/NS-03/native491-asymmetric.xml",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_nsc_mtf_live.py::test_nsc_asymmetric_detector_mtf_dft_diagnostic -q -s --run-zemax --junitxml=verification/development/NS-03/native491-asymmetric.xml",
   "inputs": "Owned SourceRay objects at pixel centers; 7x5 detector, half widths 1x2mm; sources/powers/matrix and all queries retained in run JSON",
   "requests": {
     "kind": "nsc_geometric_mtf",

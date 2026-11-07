@@ -7,9 +7,9 @@
   "installed_release": "0.1.61",
   "native": "24.2.0 build 240529 Premium",
   "input_source": "Owned X-only, Y-only and asymmetric 1W sources on 7x5 detector pixel centers",
-  "command": ".venv/Scripts/python.exe -m pytest tests/test_nsc_mtf_live.py::test_nsc_asymmetric_detector_mtf_dft_diagnostic -q -s --run-zemax --junitxml=.local/evidence/development/NS-03/native496-endpoint.xml",
-  "requests_and_settings": ".local/runs/nsc_mtf491_asymmetric_0048fec6c8/calls.json",
-  "results": ".local/runs/nsc_mtf491_asymmetric_0048fec6c8/asymmetric-dft.json",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_nsc_mtf_live.py::test_nsc_asymmetric_detector_mtf_dft_diagnostic -q -s --run-zemax --junitxml=verification/development/NS-03/native496-endpoint.xml",
+  "requests_and_settings": "outputs/runs/nsc_mtf491_asymmetric_0048fec6c8/calls.json",
+  "results": "outputs/runs/nsc_mtf491_asymmetric_0048fec6c8/asymmetric-dft.json",
   "reference": "Exact discrete Fourier sum of native detector pixel W values at native cycles/mm coordinates",
   "tolerance": "1e-7 absolute + 1e-7 relative",
   "endpoints": [

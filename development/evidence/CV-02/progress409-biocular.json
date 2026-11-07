@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-07",
+  "item_id": "CV-02.BiocularDipvergenceConvergence",
+  "state": "implemented",
+  "completion_count": 0,
+  "ordinary_report": "verification/development/CV-02/ordinary409-biocular-related.xml",
+  "ordinary_passed": 98,
+  "native_report": "verification/development/CV-02/native408-biocular.xml",
+  "run_folder": "outputs/runs/biocular408_full_4723567e7a",
+  "numeric_checks": 284,
+  "max_absolute_error_mrad": 3.5365679474708145e-05,
+  "preset_numeric_atol_mrad": 0.001,
+  "passed_scope": [
+    "Six offsets126 worksheet points",
+    "2D cosine reference",
+    "Convergence compensation",
+    "Same eyes/constant range",
+    "Current config2 surfaces/settings/MCE/MFE retained",
+    "Rows/series paging",
+    "PNG exported and viewed",
+    "Bad config rejection",
+    "Cancel/reuse",
+    "Save/reload and normal close receipt"
+  ],
+  "execution_issue": "Serial scheduling requirement was violated: probe407 remained live when native408 started. Native408 passed, but its evidence is provisional and must be repeated serially before acceptance.",
+  "probe407": {
+    "session_handle": 7977,
+    "python_pids": [
+      7732,
+      13692
+    ],
+    "native_pid": 21456,
+    "observed": "Handle live with no output; no probe.json produced, exact blocked stage unconfirmed.",
+    "cancellation": "Explicit Ctrl-C requested; session terminated exit1. Follow-up Win32Process queries found all three owned PIDs absent. Formal native Close was not recorded.",
+    "next_action": "Instrumented script now saves before/after each dispatch and native query; use clipping_only mode to isolate failure contract. Do not launch another native session until current handle is terminal."
+  },
+  "remaining": [
+    "Serial repeat408 after stage-instrumented clipped query probe",
+    "Confirm native clipped/error response and handle it without silently treating zero as valid",
+    "Eye swap and restore-failure/error-preservation ordinary tests"
+  ],
+  "source_version": "0.1.60 plus B005",
+  "native_version": "24.2.0 build240529 PremiumEdition",
+  "batch": "B0052/10 unchanged"
+}

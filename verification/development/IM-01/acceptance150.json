@@ -3,34 +3,34 @@
   "completed": [
     "IM-01.ImageSimulation"
   ],
-  "ordinary": ".local/evidence/development/IM-01/ordinary149-final.xml",
+  "ordinary": "verification/development/IM-01/ordinary149-final.xml",
   "ordinary_passed": 64,
-  "native": ".local/evidence/development/IM-01/native149-image-delivery.xml",
+  "native": "verification/development/IM-01/native149-image-delivery.xml",
   "native_passed": 4,
   "runs": [
     {
-      "run": ".local/runs/image145_ideal_edce5596f4",
+      "run": "outputs/runs/image145_ideal_edce5596f4",
       "checks": 14036,
       "max_error": 1,
       "closed_without_warning": true,
       "disconnect_confirmed": true
     },
     {
-      "run": ".local/runs/imaging023_image_simulation_point_a572f0bcfa",
+      "run": "outputs/runs/imaging023_image_simulation_point_a572f0bcfa",
       "checks": 0,
       "max_error": 0,
       "closed_without_warning": true,
       "disconnect_confirmed": true
     },
     {
-      "run": ".local/runs/imaging023_image_simulation_bars_e9aceab1f7",
+      "run": "outputs/runs/imaging023_image_simulation_bars_e9aceab1f7",
       "checks": 0,
       "max_error": 0,
       "closed_without_warning": true,
       "disconnect_confirmed": true
     },
     {
-      "run": ".local/runs/imaging023_image_simulation_edge_b318be3cbf",
+      "run": "outputs/runs/imaging023_image_simulation_edge_b318be3cbf",
       "checks": 0,
       "max_error": 0,
       "closed_without_warning": true,

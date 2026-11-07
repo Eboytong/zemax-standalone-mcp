@@ -1,10 +1,10 @@
 {
   "version": "0.1.47",
   "ordinary_passed": 1701,
-  "ordinary_report": ".local/evidence/development/BASE-04/ordinary049.xml",
-  "initial_report": ".local/evidence/development/ED-04/native049.xml",
-  "fix_report": ".local/evidence/development/ED-04/native049-fix.xml",
-  "wheel_report": ".local/evidence/development/BASE-04/wheel-native047.xml",
+  "ordinary_report": "verification/development/BASE-04/ordinary049.xml",
+  "initial_report": "verification/development/ED-04/native049.xml",
+  "fix_report": "verification/development/ED-04/native049-fix.xml",
+  "wheel_report": "verification/development/BASE-04/wheel-native047.xml",
   "wheel_passed": 4,
   "runs": [
     {

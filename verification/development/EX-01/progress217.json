@@ -15,37 +15,37 @@
     "Native216 CVVA GreyScale async primary owner normal close; production native217 TTHI/CVVA plus1D regression passed."
   ],
   "evidence": [
-    ".local/runs/universal212_sync_source_552efbaa47/probe.json",
-    ".local/runs/universal212_async_source_eb191f3707/probe.json",
-    ".local/runs/universal215_sync_source_6b47ea7f0f/probe.json",
-    ".local/runs/universal215_async_source_261d33737a/probe.json",
-    ".local/runs/universal216_grey_async_source_91f756c285/probe.json",
-    ".local/evidence/development/EX-01/windows-fault217.json"
+    "outputs/runs/universal212_sync_source_552efbaa47/probe.json",
+    "outputs/runs/universal212_async_source_eb191f3707/probe.json",
+    "outputs/runs/universal215_sync_source_6b47ea7f0f/probe.json",
+    "outputs/runs/universal215_async_source_261d33737a/probe.json",
+    "outputs/runs/universal216_grey_async_source_91f756c285/probe.json",
+    "verification/development/EX-01/windows-fault217.json"
   ],
   "checks": {
-    "ordinary": ".local/evidence/development/EX-01/ordinary217.xml",
+    "ordinary": "verification/development/EX-01/ordinary217.xml",
     "ordinary_passed": 118,
-    "native": ".local/evidence/development/EX-01/native217-grey.xml",
+    "native": "verification/development/EX-01/native217-grey.xml",
     "native_passed": 3,
     "numeric_checks": 33
   },
   "runs": [
     {
-      "path": ".local/runs/universal206_TTHI_32a153ffc2",
+      "path": "outputs/runs/universal206_TTHI_32a153ffc2",
       "numeric_checks": 15,
       "close_confirmed": true,
       "disconnect": true,
       "cleanup_warnings": []
     },
     {
-      "path": ".local/runs/universal206_CVVA_890ff2c0c8",
+      "path": "outputs/runs/universal206_CVVA_890ff2c0c8",
       "numeric_checks": 15,
       "close_confirmed": true,
       "disconnect": true,
       "cleanup_warnings": []
     },
     {
-      "path": ".local/runs/universal200_cvva_Radius_51fe3536a0",
+      "path": "outputs/runs/universal200_cvva_Radius_51fe3536a0",
       "numeric_checks": 3,
       "close_confirmed": true,
       "disconnect": true,

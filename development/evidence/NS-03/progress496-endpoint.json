@@ -1,0 +1,164 @@
+{
+  "item_id": "NS-03.NSCGeometricMtf",
+  "state": "implemented",
+  "date": "2026-11-07",
+  "scope": "Compare exact detector DFT at native curve interior versus repeated native maximum-frequency endpoints",
+  "source_version": "0.1.61 B006 source",
+  "installed_release": "0.1.61",
+  "native": "24.2.0 build 240529 Premium",
+  "input_source": "Owned X-only, Y-only and asymmetric 1W sources on 7x5 detector pixel centers",
+  "command": ".venv/Scripts/python.exe -m pytest tests/test_nsc_mtf_live.py::test_nsc_asymmetric_detector_mtf_dft_diagnostic -q -s --run-zemax --junitxml=verification/development/NS-03/native496-endpoint.xml",
+  "requests_and_settings": "outputs/runs/nsc_mtf491_asymmetric_0048fec6c8/calls.json",
+  "results": "outputs/runs/nsc_mtf491_asymmetric_0048fec6c8/asymmetric-dft.json",
+  "reference": "Exact discrete Fourier sum of native detector pixel W values at native cycles/mm coordinates",
+  "tolerance": "1e-7 absolute + 1e-7 relative",
+  "endpoints": [
+    {
+      "case": "x",
+      "probes": [
+        {
+          "requested_maximum": 0.0020903010033444815,
+          "label": "Tangential",
+          "native": 0.9999999999999997,
+          "reference": 1.0,
+          "error": 3.3306690738754696e-16
+        },
+        {
+          "requested_maximum": 0.0020903010033444815,
+          "label": "Sagittal",
+          "native": 0.999994719540914,
+          "reference": 0.9999947195409142,
+          "error": 2.220446049250313e-16
+        },
+        {
+          "requested_maximum": 0.1,
+          "label": "Tangential",
+          "native": 1.0,
+          "reference": 1.0,
+          "error": 0.0
+        },
+        {
+          "requested_maximum": 0.1,
+          "label": "Sagittal",
+          "native": 0.9879716982231328,
+          "reference": 0.987971698223133,
+          "error": 2.220446049250313e-16
+        },
+        {
+          "requested_maximum": 0.3,
+          "label": "Tangential",
+          "native": 1.0,
+          "reference": 1.0,
+          "error": 0.0
+        },
+        {
+          "requested_maximum": 0.3,
+          "label": "Sagittal",
+          "native": 0.8959356831979483,
+          "reference": 0.8959356831979484,
+          "error": 1.1102230246251565e-16
+        }
+      ]
+    },
+    {
+      "case": "y",
+      "probes": [
+        {
+          "requested_maximum": 0.0020903010033444815,
+          "label": "Tangential",
+          "native": 0.9999586017822641,
+          "reference": 0.9999586017822639,
+          "error": 2.220446049250313e-16
+        },
+        {
+          "requested_maximum": 0.0020903010033444815,
+          "label": "Sagittal",
+          "native": 0.9999999999999999,
+          "reference": 1.0,
+          "error": 1.1102230246251565e-16
+        },
+        {
+          "requested_maximum": 0.1,
+          "label": "Tangential",
+          "native": 0.908809687512806,
+          "reference": 0.9088096875128058,
+          "error": 2.220446049250313e-16
+        },
+        {
+          "requested_maximum": 0.1,
+          "label": "Sagittal",
+          "native": 0.9999999999999994,
+          "reference": 1.0,
+          "error": 5.551115123125783e-16
+        },
+        {
+          "requested_maximum": 0.3,
+          "label": "Tangential",
+          "native": 0.5029482945662215,
+          "reference": 0.5029482945662215,
+          "error": 0.0
+        },
+        {
+          "requested_maximum": 0.3,
+          "label": "Sagittal",
+          "native": 0.9999999999999997,
+          "reference": 1.0,
+          "error": 3.3306690738754696e-16
+        }
+      ]
+    },
+    {
+      "case": "asymmetric",
+      "probes": [
+        {
+          "requested_maximum": 0.0020903010033444815,
+          "label": "Tangential",
+          "native": 0.9999138919758211,
+          "reference": 0.999913891975821,
+          "error": 1.1102230246251565e-16
+        },
+        {
+          "requested_maximum": 0.0020903010033444815,
+          "label": "Sagittal",
+          "native": 0.9999828209628617,
+          "reference": 0.9999828209628622,
+          "error": 4.440892098500626e-16
+        },
+        {
+          "requested_maximum": 0.1,
+          "label": "Tangential",
+          "native": 0.811457296476423,
+          "reference": 0.811457296476423,
+          "error": 0.0
+        },
+        {
+          "requested_maximum": 0.1,
+          "label": "Sagittal",
+          "native": 0.9611622853969102,
+          "reference": 0.9611622853969104,
+          "error": 2.220446049250313e-16
+        },
+        {
+          "requested_maximum": 0.3,
+          "label": "Tangential",
+          "native": 0.22896329188765052,
+          "reference": 0.2289632918876503,
+          "error": 2.220446049250313e-16
+        },
+        {
+          "requested_maximum": 0.3,
+          "label": "Sagittal",
+          "native": 0.6847228942778524,
+          "reference": 0.6847228942778527,
+          "error": 3.3306690738754696e-16
+        }
+      ]
+    }
+  ],
+  "maximum_endpoint_error": 5.551115123125783e-16,
+  "checks": 30,
+  "native_analyses": 12,
+  "lifecycle": "All 12 analyses succeeded and closed without cleanup warnings; stdio disconnected.",
+  "conclusion": "18 axis comparisons at maximum frequencies .625/299, .1 and .3 cycles/mm match DFT within 5.551115123125783e-16. Same low-frequency point in the full .625 curve differs by up to 6.233949225109559e-5. Discrepancy depends on native requested frequency range/resampling; original numerical gate remains open for full curves.",
+  "next_action": "Inspect native raw knot/result outlet or formally supported exact-frequency sampling without replacing original raw curves; verify behavior across rectangular pixels and ZRD replay."
+}

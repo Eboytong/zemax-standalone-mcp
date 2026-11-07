@@ -6,13 +6,13 @@
   "native_version": "24.2.0 build240529",
   "license": "PremiumEdition",
   "scope": "Typed computed/reference/difference shadowgrams; adopted selection/display/knife/registration/Source; independent FFT reference, paging/PNG, failure/cancel/reuse/save-reload and normal closure",
-  "ordinary_report": ".local/evidence/development/BASE-04/ordinary300-foucault-related.xml",
+  "ordinary_report": "verification/development/BASE-04/ordinary300-foucault-related.xml",
   "ordinary_passed": 66,
   "native_reports": [
-    ".local/evidence/development/BASE-04/native297-foucault-reference.xml",
-    ".local/evidence/development/BASE-04/native298-foucault.xml",
-    ".local/evidence/development/BASE-04/native299-foucault-lifecycle.xml",
-    ".local/evidence/development/BASE-04/native300-foucault-lifecycle.xml"
+    "verification/development/BASE-04/native297-foucault-reference.xml",
+    "verification/development/BASE-04/native298-foucault.xml",
+    "verification/development/BASE-04/native299-foucault-lifecycle.xml",
+    "verification/development/BASE-04/native300-foucault-lifecycle.xml"
   ],
   "reference_conditions": {
     "atol": 1e-07,
@@ -28,7 +28,7 @@
     "normalization": "maximum cropped intensity"
   },
   "max_pixel_error": 1.2676613092565958e-09,
-  "native_files_probe": ".local/evidence/development/CV-01/foucault297-files/probe.json",
+  "native_files_probe": "verification/development/CV-01/foucault297-files/probe.json",
   "limitations": [
     {
       "member": "IAS_Foucault.SaveBMP",
@@ -38,14 +38,14 @@
     }
   ],
   "historical_failure": {
-    "report": ".local/evidence/development/BASE-04/native298-foucault.xml",
+    "report": "verification/development/BASE-04/native298-foucault.xml",
     "cause": "Path import missing on public Source path",
     "fix": "Import pathlib.Path; public BMP input and failure paths passed in native299/native300"
   },
-  "image_viewed": ".local/runs/foucault298_lifecycle_e9dd6a2b2a/foucault.png",
+  "image_viewed": "outputs/runs/foucault298_lifecycle_e9dd6a2b2a/foucault.png",
   "runs": [
     {
-      "path": ".local/runs/foucault297_8ce8d336a1",
+      "path": "outputs/runs/foucault297_8ce8d336a1",
       "disconnect": true,
       "checks": [
         {
@@ -120,7 +120,7 @@
       }
     },
     {
-      "path": ".local/runs/foucault298_lifecycle_e9dd6a2b2a",
+      "path": "outputs/runs/foucault298_lifecycle_e9dd6a2b2a",
       "disconnect": true,
       "checks": [],
       "close_receipt": {
@@ -147,7 +147,7 @@
     }
   ],
   "additional_related_checks": {
-    "report": ".local/evidence/development/BASE-04/ordinary303-related.xml",
+    "report": "verification/development/BASE-04/ordinary303-related.xml",
     "passed": 32,
     "earlier_failure": "ordinary302-related.xml: synthetic collector fixture omitted requested settings; fixture updated to real typed task shape"
   }

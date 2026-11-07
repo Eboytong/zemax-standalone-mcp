@@ -1,0 +1,501 @@
+{
+  "analyses": [
+    {
+      "native_id": "GeometricImageAnalysis",
+      "phases": [
+        {
+          "phase": "before_apply",
+          "keys": [
+            {
+              "key": "GBM_FIELDSIZE",
+              "value": 1,
+              "accepted": true
+            },
+            {
+              "key": "GBM_RAYS",
+              "value": 10,
+              "accepted": true
+            },
+            {
+              "key": "GBM_XPIX",
+              "value": 33,
+              "accepted": true
+            },
+            {
+              "key": "GBM_YPIX",
+              "value": 33,
+              "accepted": true
+            },
+            {
+              "key": "GBM_XSIZ",
+              "value": 0.01,
+              "accepted": true
+            },
+            {
+              "key": "GBM_YSIZ",
+              "value": 0.01,
+              "accepted": true
+            },
+            {
+              "key": "GBM_INPUT",
+              "value": "Gdff00b0f.IMA",
+              "accepted": true
+            },
+            {
+              "key": "GBM_OUTPUT",
+              "value": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\IM-01\\cfg351-gbm-output\\0_before_apply.bmp",
+              "accepted": true
+            },
+            {
+              "key": "GBM_SURFACE",
+              "value": 6,
+              "accepted": true
+            },
+            {
+              "key": "GBM_ROTATION",
+              "value": 0,
+              "accepted": true
+            }
+          ],
+          "saved": true,
+          "loaded": true,
+          "valid": true,
+          "counts": {
+            "NumberOfDataSeries": 0,
+            "NumberOfDataGrids": 0,
+            "NumberOfDataGridsRgb": 0,
+            "NumberOfDataScatterPoints": 0,
+            "NumberOfMessages": 0
+          },
+          "messages": [],
+          "text_exported": true,
+          "text": "几何像分析光线列表\n\n文件 : C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\IM-01\\cfg351-gbm-output\\native\\3392971422944d57b14a33499e0280d0\\working_92b5d009.zos\n题目: A SIMPLE COOKE TRIPLET.\n日期 : 2026/11/7\n\n\nConsider changing the field type to object height for improved accuracy. See Help Files for more details.\n\n物方视场: 0.00 (度)\n视场宽度                         : 28.2843 度数\n\n光线/像素/单位强度: 715\n\n光线 #      X-视场      Y-视场      px      py  w    Wgt      X-coord      Y-coord\n     1\t -7.0360E+00\t  1.2848E+01\t-0.7965\t 0.4601\t 2\t1.0000\t -6.1563E+00\t  1.1385E+01\n     2\t -6.8866E+00\t  8.9588E+00\t 0.0295\t-0.4602\t 3\t1.0000\t -6.0102E+00\t  7.8447E+00\n     3\t -8.0295E+00\t  5.6914E+00\t 0.4716\t-0.2968\t 3\t1.0000\t -7.0163E+00\t  4.9571E+00\n     4\t -9.0650E+00\t  2.4514E-01\t 0.0440\t 0.9073\t 3\t1.0000\t -7.9481E+00\t  2.0648E-01\n     5\t -8.2010E+00\t -5.5568E+00\t 0.0733\t-0.0880\t 1\t1.0000\t -7.1774E+00\t -4.8455E+00\n     6\t -6.8255E+00\t -9.4799E+00\t 0.1618\t 0.6478\t 1\t1.0000\t -5.9550E+00\t -8.3120E+00\n     7\t -8.8115E+00\t -1.1481E+01\t 0.5624\t 0.2222\t 3\t1.0000\t -7.7157E+00\t -1.0105E+01\n     8\t -2.2186E+00\t  1.1602E+01\t-0.7856\t 0.5565\t 3\t1.0000\t -1.9317E+00\t  1.0249E+01\n     9\t -3.5325E+00\t -6.6637E-02\t-0.6669\t 0.0624\t 2\t1.0000\t -3.0813E+00\t -5.7519E-02\n    10\t  2.0128E+00\t  1.2539E+01\t-0.5149\t-0.2348\t 2\t1.0000\t  1.7553E+00\t  1.1073E+01\n    11\t  1.7061E+00\t  5.7863E-01\t 0.2026\t 0.5255\t 2\t1.0000\t  1.4858E+00\t  5.0861E-01\n    12\t  4.3480E+00\t  1.2492E+01\t 0.1017\t-0.2204\t 3\t1.0000\t  3.7857E+00\t  1.1032E+01\n    13\t  4.2965E+00\t  1.3790E+00\t-0.9077\t 0.4185\t 1\t1.0000\t  3.7464E+00\t  1.1948E+00\n    14\t  6.0799E+00\t  1.0403E+01\t 0.4522\t 0.8832\t 1\t1.0000\t  5.3221E+00\t  9.1736E+00\n    15\t -6.4200E+00\t  1.1624E+01\t 0.5222\t 0.2547\t 2\t1.0000\t -5.6118E+00\t  1.0243E+01\n    16\t -8.8814E+00\t  9.6911E+00\t-0.4736\t 0.2700\t 1\t1.0000\t -7.7886E+00\t  8.5140E+00\n    17\t -7.3287E+00\t  2.2056E+00\t 0.4470\t 0.2747\t 3\t1.0000\t -6.3981E+00\t  1.9190E+00\n    18\t -6.9869E+00\t  1.2463E+00\t-0.7405\t 0.1734\t 1\t1.0000\t -6.1145E+00\t  1.0856E+00\n    19\t -8.6008E+00\t -3.5792E+00\t-0.6476\t-0.7097\t 3\t1.0000\t -7.5542E+00\t -3.1252E+00\n    20\t -9.9147E+00\t -8.7031E+00\t 0.0803\t-0.4186\t 3\t1.0000\t -8.7116E+00\t -7.6277E+00\n    21\t -9.0975E+00\t -1.1905E+01\t 0.1423\t-0.6244\t 3\t1.0000\t -7.9870E+00\t -1.0508E+01\n    22\t -3.7772E+00\t  1.4029E+01\t 0.0176\t-0.9047\t 3\t1.0000\t -3.2801E+00\t  1.2421E+01\n    23\t -3.6800E+00\t  4.4407E-01\t 0.6101\t-0.7629\t 3\t1.0000\t -3.2039E+00\t  3.8856E-01\n    24\t  5.1882E-02\t  1.1226E+01\t-0.0158\t-0.9512\t 3\t1.0000\t  4.5148E-02\t  9.8692E+00\n    25\t  3.7312E-01\t -7.9561E-01\t-0.9643\t 0.0493\t 3\t1.0000\t  3.2380E-01\t -6.9175E-01\n    26\t  5.7101E+00\t  1.0383E+01\t 0.8763\t 0.0144\t 3\t1.0000\t  4.9814E+00\t  9.1389E+00\n    27\t  4.0613E+00\t  1.1096E+00\t 0.0207\t 0.3111\t 3\t1.0000\t  3.5368E+00\t  9.7119E-01\n    28\t  8.4259E+00\t  1.0237E+01\t-0.5064\t-0.3412\t 2\t1.0000\t  7.3737E+00\t  8.9872E+00\n    29\t -6.2572E+00\t  1.1576E+01\t-0.6596\t-0.0285\t 1\t1.0000\t -5.4566E+00\t  1.0210E+01\n    30\t -6.1453E+00\t  8.5058E+00\t-0.5295\t 0.8447\t 1\t1.0000\t -5.3793E+00\t",
+          "output_exists": false
+        },
+        {
+          "phase": "after_apply",
+          "keys": [
+            {
+              "key": "GBM_FIELDSIZE",
+              "value": 1,
+              "accepted": true
+            },
+            {
+              "key": "GBM_RAYS",
+              "value": 10,
+              "accepted": true
+            },
+            {
+              "key": "GBM_XPIX",
+              "value": 33,
+              "accepted": true
+            },
+            {
+              "key": "GBM_YPIX",
+              "value": 33,
+              "accepted": true
+            },
+            {
+              "key": "GBM_XSIZ",
+              "value": 0.01,
+              "accepted": true
+            },
+            {
+              "key": "GBM_YSIZ",
+              "value": 0.01,
+              "accepted": true
+            },
+            {
+              "key": "GBM_INPUT",
+              "value": "Gdff00b0f.IMA",
+              "accepted": true
+            },
+            {
+              "key": "GBM_OUTPUT",
+              "value": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\IM-01\\cfg351-gbm-output\\0_after_apply.bmp",
+              "accepted": true
+            },
+            {
+              "key": "GBM_SURFACE",
+              "value": 6,
+              "accepted": true
+            },
+            {
+              "key": "GBM_ROTATION",
+              "value": 0,
+              "accepted": true
+            }
+          ],
+          "saved": true,
+          "loaded": true,
+          "valid": true,
+          "counts": {
+            "NumberOfDataSeries": 0,
+            "NumberOfDataGrids": 0,
+            "NumberOfDataGridsRgb": 0,
+            "NumberOfDataScatterPoints": 0,
+            "NumberOfMessages": 0
+          },
+          "messages": [],
+          "text_exported": true,
+          "text": "几何像分析光线列表\n\n文件 : C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\IM-01\\cfg351-gbm-output\\native\\3392971422944d57b14a33499e0280d0\\working_92b5d009.zos\n题目: A SIMPLE COOKE TRIPLET.\n日期 : 2026/11/7\n\n\nConsider changing the field type to object height for improved accuracy. See Help Files for more details.\n\n物方视场: 0.00 (度)\n视场宽度                         : 28.2843 度数\n\n光线/像素/单位强度: 715\n\n光线 #      X-视场      Y-视场      px      py  w    Wgt      X-coord      Y-coord\n     1\t -1.0019E+01\t  1.1405E+01\t-0.7781\t-0.4602\t 1\t1.0000\t -8.7893E+00\t  1.0063E+01\n     2\t -7.6438E+00\t  7.8229E+00\t-0.4210\t-0.4061\t 1\t1.0000\t -6.6813E+00\t  6.8465E+00\n     3\t -9.4906E+00\t  5.4859E+00\t 0.3111\t 0.3245\t 1\t1.0000\t -8.3262E+00\t  4.7807E+00\n     4\t -8.5115E+00\t  1.4194E+00\t 0.4201\t 0.3902\t 1\t1.0000\t -7.4498E+00\t  1.2323E+00\n     5\t -6.4856E+00\t -5.3985E+00\t 0.1530\t 0.1034\t 2\t1.0000\t -5.6588E+00\t -4.7042E+00\n     6\t -8.2174E+00\t -6.1654E+00\t 0.0170\t-0.0573\t 3\t1.0000\t -7.1927E+00\t -5.3810E+00\n     7\t -9.6779E+00\t -1.2639E+01\t-0.1313\t 0.7280\t 1\t1.0000\t -8.4846E+00\t -1.1172E+01\n     8\t -3.6556E+00\t  1.0820E+01\t-0.5924\t 0.5217\t 2\t1.0000\t -3.1847E+00\t  9.5342E+00\n     9\t -2.8115E+00\t -4.5382E-03\t-0.2333\t 0.9601\t 3\t1.0000\t -2.4473E+00\t -3.7221E-03\n    10\t -5.0737E-01\t  1.2429E+01\t 0.3417\t-0.7947\t 2\t1.0000\t -4.4518E-01\t  1.0966E+01\n    11\t  7.0590E-01\t -1.5096E+00\t-0.0239\t-0.8517\t 1\t1.0000\t  6.1389E-01\t -1.3153E+00\n    12\t  2.3143E+00\t  1.0570E+01\t 0.8659\t 0.4423\t 1\t1.0000\t  2.0111E+00\t  9.3085E+00\n    13\t  4.3913E+00\t  1.2204E+00\t-0.1918\t 0.4990\t 1\t1.0000\t  3.8228E+00\t  1.0646E+00\n    14\t  7.0892E+00\t  1.0368E+01\t-0.1481\t-0.5688\t 1\t1.0000\t  6.1885E+00\t  9.1077E+00\n    15\t -8.6699E+00\t  1.1900E+01\t-0.1861\t-0.4153\t 2\t1.0000\t -7.5895E+00\t  1.0499E+01\n    16\t -1.0006E+01\t  6.9030E+00\t-0.7613\t 0.4050\t 3\t1.0000\t -8.8119E+00\t  6.0467E+00\n    17\t -9.5166E+00\t  5.5313E+00\t 0.4509\t 0.5884\t 3\t1.0000\t -8.3516E+00\t  4.8185E+00\n    18\t -7.9457E+00\t -4.6577E-01\t 0.1151\t 0.9727\t 3\t1.0000\t -6.9518E+00\t -4.1284E-01\n    19\t -9.4494E+00\t -5.4360E+00\t 0.0557\t 0.3682\t 1\t1.0000\t -8.2858E+00\t -4.7388E+00\n    20\t -9.5317E+00\t -9.6780E+00\t 0.5732\t-0.4099\t 3\t1.0000\t -8.3683E+00\t -8.4877E+00\n    21\t -7.4424E+00\t -1.2577E+01\t 0.0808\t 0.4251\t 1\t1.0000\t -6.5032E+00\t -1.1111E+01\n    22\t -3.3465E+00\t  1.4001E+01\t 0.4785\t 0.6864\t 3\t1.0000\t -2.9221E+00\t  1.2437E+01\n    23\t -5.2971E+00\t  2.3957E-02\t 0.2475\t-0.2740\t 1\t1.0000\t -4.6134E+00\t  1.8117E-02\n    24\t  6.7551E-01\t  1.3508E+01\t-0.5911\t 0.1203\t 1\t1.0000\t  5.9629E-01\t  1.1967E+01\n    25\t  7.4369E-01\t -9.6559E-01\t-0.5338\t-0.2629\t 2\t1.0000\t  6.4157E-01\t -8.4180E-01\n    26\t  2.6278E+00\t  1.2416E+01\t-0.3937\t-0.0793\t 3\t1.0000\t  2.2861E+00\t  1.0962E+01\n    27\t  3.7627E+00\t  9.5784E-01\t-0.1299\t-0.3598\t 3\t1.0000\t  3.2721E+00\t  8.2563E-01\n    28\t  8.4246E+00\t  1.2533E+01\t 0.5148\t-0.4173\t 2\t1.0000\t  7.3667E+00\t  1.1081E+01\n    29\t -8.8137E+00\t  1.3593E+01\t-0.9065\t-0.3579\t 3\t1.0000\t -7.7141E+00\t  1.2059E+01\n    30\t -9.7388E+00\t  8.3048E+00\t 0.7500\t-0.0533\t 3\t1.0000\t -8.5414E+00\t",
+          "output_exists": false
+        }
+      ],
+      "runtime_type": "ZemaxUI.ZOSAPI.Analysis.ExtendedScene.AS_GeometricImageAnalysis",
+      "closed": true
+    },
+    {
+      "native_id": "GeometricBitmapImageAnalysis",
+      "phases": [
+        {
+          "phase": "before_apply",
+          "keys": [
+            {
+              "key": "GBM_FIELDSIZE",
+              "value": 1,
+              "accepted": true
+            },
+            {
+              "key": "GBM_RAYS",
+              "value": 10,
+              "accepted": true
+            },
+            {
+              "key": "GBM_XPIX",
+              "value": 33,
+              "accepted": true
+            },
+            {
+              "key": "GBM_YPIX",
+              "value": 33,
+              "accepted": true
+            },
+            {
+              "key": "GBM_XSIZ",
+              "value": 0.01,
+              "accepted": true
+            },
+            {
+              "key": "GBM_YSIZ",
+              "value": 0.01,
+              "accepted": true
+            },
+            {
+              "key": "GBM_INPUT",
+              "value": "Gdff00b0f.IMA",
+              "accepted": true
+            },
+            {
+              "key": "GBM_OUTPUT",
+              "value": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\IM-01\\cfg351-gbm-output\\1_before_apply.bmp",
+              "accepted": true
+            },
+            {
+              "key": "GBM_SURFACE",
+              "value": 6,
+              "accepted": true
+            },
+            {
+              "key": "GBM_ROTATION",
+              "value": 0,
+              "accepted": true
+            }
+          ],
+          "saved": true,
+          "loaded": true,
+          "valid": true,
+          "counts": {
+            "NumberOfDataSeries": 0,
+            "NumberOfDataGrids": 0,
+            "NumberOfDataGridsRgb": 0,
+            "NumberOfDataScatterPoints": 0,
+            "NumberOfMessages": 0
+          },
+          "messages": [],
+          "text_exported": true,
+          "text": "",
+          "output_exists": false
+        },
+        {
+          "phase": "after_apply",
+          "keys": [
+            {
+              "key": "GBM_FIELDSIZE",
+              "value": 1,
+              "accepted": true
+            },
+            {
+              "key": "GBM_RAYS",
+              "value": 10,
+              "accepted": true
+            },
+            {
+              "key": "GBM_XPIX",
+              "value": 33,
+              "accepted": true
+            },
+            {
+              "key": "GBM_YPIX",
+              "value": 33,
+              "accepted": true
+            },
+            {
+              "key": "GBM_XSIZ",
+              "value": 0.01,
+              "accepted": true
+            },
+            {
+              "key": "GBM_YSIZ",
+              "value": 0.01,
+              "accepted": true
+            },
+            {
+              "key": "GBM_INPUT",
+              "value": "Gdff00b0f.IMA",
+              "accepted": true
+            },
+            {
+              "key": "GBM_OUTPUT",
+              "value": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\IM-01\\cfg351-gbm-output\\1_after_apply.bmp",
+              "accepted": true
+            },
+            {
+              "key": "GBM_SURFACE",
+              "value": 6,
+              "accepted": true
+            },
+            {
+              "key": "GBM_ROTATION",
+              "value": 0,
+              "accepted": true
+            }
+          ],
+          "saved": true,
+          "loaded": true,
+          "valid": true,
+          "counts": {
+            "NumberOfDataSeries": 0,
+            "NumberOfDataGrids": 0,
+            "NumberOfDataGridsRgb": 0,
+            "NumberOfDataScatterPoints": 0,
+            "NumberOfMessages": 0
+          },
+          "messages": [],
+          "text_exported": true,
+          "text": "",
+          "output_exists": false
+        }
+      ],
+      "runtime_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+      "closed": true
+    }
+  ],
+  "manual": "verification/development/BASE-01/manual349-modifysettings.txt",
+  "connect": {
+    "connected": true,
+    "native_system_status": "",
+    "native_startup": {
+      "events": [
+        {
+          "stage": "install_check",
+          "event": "started",
+          "timestamp": "2026-11-06T16:41:44.664+00:00",
+          "elapsed_seconds": 2.3199998395284638e-05
+        },
+        {
+          "stage": "install_check",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:41:44.665+00:00",
+          "elapsed_seconds": 0.00028730000121868216,
+          "duration_seconds": 0.00027580000096349977
+        },
+        {
+          "stage": "environment",
+          "event": "started",
+          "timestamp": "2026-11-06T16:41:44.665+00:00",
+          "elapsed_seconds": 0.0002967000000353437
+        },
+        {
+          "stage": "environment",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:41:44.675+00:00",
+          "elapsed_seconds": 0.010541399999056011,
+          "duration_seconds": 0.010233299999526935
+        },
+        {
+          "stage": "clr_load",
+          "event": "started",
+          "timestamp": "2026-11-06T16:41:44.675+00:00",
+          "elapsed_seconds": 0.01055629999973462
+        },
+        {
+          "stage": "clr_load",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:41:44.952+00:00",
+          "elapsed_seconds": 0.2881262000009883,
+          "duration_seconds": 0.2775523999989673
+        },
+        {
+          "stage": "nethelper_assembly",
+          "event": "started",
+          "timestamp": "2026-11-06T16:41:44.952+00:00",
+          "elapsed_seconds": 0.28814839999904507
+        },
+        {
+          "stage": "nethelper_assembly",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:41:44.959+00:00",
+          "elapsed_seconds": 0.2945556000013312,
+          "duration_seconds": 0.006398699999408564
+        },
+        {
+          "stage": "zos_initialize",
+          "event": "started",
+          "timestamp": "2026-11-06T16:41:44.959+00:00",
+          "elapsed_seconds": 0.2945666000014171
+        },
+        {
+          "stage": "zos_initialize",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:41:44.965+00:00",
+          "elapsed_seconds": 0.30080630000156816,
+          "duration_seconds": 0.006223799999133917
+        },
+        {
+          "stage": "api_assemblies",
+          "event": "started",
+          "timestamp": "2026-11-06T16:41:44.965+00:00",
+          "elapsed_seconds": 0.3008220000010624
+        },
+        {
+          "stage": "api_assemblies",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:41:44.980+00:00",
+          "elapsed_seconds": 0.31591560000015306,
+          "duration_seconds": 0.015083100002811989
+        },
+        {
+          "stage": "connection_create",
+          "event": "started",
+          "timestamp": "2026-11-06T16:41:44.980+00:00",
+          "elapsed_seconds": 0.3159267000010004
+        },
+        {
+          "stage": "connection_create",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:41:45.259+00:00",
+          "elapsed_seconds": 0.595078199999989,
+          "duration_seconds": 0.2791326000005938
+        },
+        {
+          "stage": "application_create",
+          "event": "started",
+          "timestamp": "2026-11-06T16:41:45.259+00:00",
+          "elapsed_seconds": 0.5950967999997374
+        },
+        {
+          "stage": "application_create",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:41:52.502+00:00",
+          "elapsed_seconds": 7.837419499999669,
+          "duration_seconds": 7.242291800001112
+        },
+        {
+          "stage": "license_check",
+          "event": "started",
+          "timestamp": "2026-11-06T16:41:52.502+00:00",
+          "elapsed_seconds": 7.837456500001281
+        },
+        {
+          "stage": "license_check",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:41:52.505+00:00",
+          "elapsed_seconds": 7.841080300000613,
+          "duration_seconds": 0.0035991000004287343
+        },
+        {
+          "stage": "primary_system",
+          "event": "started",
+          "timestamp": "2026-11-06T16:41:52.505+00:00",
+          "elapsed_seconds": 7.841111800000363
+        },
+        {
+          "stage": "primary_system",
+          "event": "completed",
+          "timestamp": "2026-11-06T16:41:52.509+00:00",
+          "elapsed_seconds": 7.844973700000992,
+          "duration_seconds": 0.0038430999993579462
+        }
+      ],
+      "observer_warnings": []
+    },
+    "active_task": null,
+    "running_tasks": [],
+    "task_index": {},
+    "recent_tasks": [],
+    "session_id": "3392971422944d57b14a33499e0280d0",
+    "model_revision": 0,
+    "source_file": null,
+    "working_file": null,
+    "opticstudio_version": "24.2.0",
+    "opticstudio_build": "240529",
+    "license": "PremiumEdition",
+    "checkpoint": null,
+    "requires_reconnect": false,
+    "mode": "Sequential",
+    "configuration": 1,
+    "lens_units": "Millimeters",
+    "mtf_units": "CyclesPerMillimeter",
+    "geometry": {
+      "state": "pending",
+      "model_revision": 0,
+      "session_id": "3392971422944d57b14a33499e0280d0"
+    }
+  },
+  "disconnect": {
+    "ok": true,
+    "data": {
+      "connected": false,
+      "last_session": {
+        "session_id": "3392971422944d57b14a33499e0280d0",
+        "model_revision": 1,
+        "source_file": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+        "working_file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\IM-01\\cfg351-gbm-output\\native\\3392971422944d57b14a33499e0280d0\\working_92b5d009.zos",
+        "opticstudio_version": "24.2.0",
+        "opticstudio_build": "240529",
+        "license": "PremiumEdition",
+        "checkpoint": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\IM-01\\cfg351-gbm-output\\native\\3392971422944d57b14a33499e0280d0\\checkpoint_r1_disconnect_3af980af.zos",
+        "requires_reconnect": false,
+        "mode": "Sequential",
+        "configuration": 1,
+        "lens_units": "Millimeters",
+        "mtf_units": "CyclesPerMillimeter",
+        "geometry": {
+          "state": "pending",
+          "model_revision": 1,
+          "session_id": "3392971422944d57b14a33499e0280d0"
+        }
+      }
+    },
+    "error": null,
+    "warnings": [],
+    "context": {
+      "session_id": null,
+      "model_revision": 1,
+      "source_file": null,
+      "working_file": null,
+      "opticstudio_version": null,
+      "opticstudio_build": null,
+      "license": null,
+      "checkpoint": null,
+      "requires_reconnect": false,
+      "geometry": {
+        "state": "pending",
+        "model_revision": 1,
+        "session_id": null
+      }
+    },
+    "artifacts": []
+  }
+}

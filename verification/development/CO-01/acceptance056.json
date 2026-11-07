@@ -1,8 +1,8 @@
 {
   "version": "0.1.53",
   "state": "implemented",
-  "native_evidence": ".local/runs/diff_efficiency056_probe_12b6e71a38/calls.json",
-  "checks": ".local/runs/diff_efficiency056_probe_12b6e71a38/checks.json",
+  "native_evidence": "outputs/runs/diff_efficiency056_probe_12b6e71a38/calls.json",
+  "checks": "outputs/runs/diff_efficiency056_probe_12b6e71a38/checks.json",
   "native_test": "native056-final.xml",
   "ordinary_test": "ordinary056-final.xml",
   "comparisons": 192,

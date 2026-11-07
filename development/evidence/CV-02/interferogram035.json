@@ -1,0 +1,184 @@
+{
+  "item_id": "CV-02.Interferogram",
+  "version": "0.1.35",
+  "date": "2026-11-05",
+  "status": "implemented",
+  "request": {
+    "request": {
+      "kind": "interferogram"
+    }
+  },
+  "probe": {
+    "source": "verification/development/BASE-01/probe/api-interfaces.json",
+    "interface": {
+      "properties": [
+        {
+          "name": "Field",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Field",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Surface",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Surface",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Wavelength",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Wavelength",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Sampling",
+          "type": "ZOSAPI.Analysis.SampleSizes",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ShowAs",
+          "type": "ZOSAPI.Analysis.ShowAs",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Beam_1",
+          "type": "ZOSAPI.Analysis.Beam",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Beam_2",
+          "type": "ZOSAPI.Analysis.Beam",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Ref_Beam_1_To_Vertex",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Ref_Beam_2_To_Vertex",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "UseExitPupil",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ConsiderOPL",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ScaleFactor",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "X_Tilt",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Y_Tilt",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Subaperture_X",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Subaperture_Y",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Subaperture_R",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ContourFormat",
+          "type": "System.String",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    },
+    "enums": {
+      "ZOSAPI.Analysis.Beam": {
+        "Reference": 0,
+        "Configuration_1": 1,
+        "Configuration_2": 2,
+        "Configuration_3": 3,
+        "Configuration_4": 4,
+        "Configuration_5": 5,
+        "Configuration_6": 6,
+        "Configuration_7": 7,
+        "Configuration_8": 8,
+        "Configuration_9": 9,
+        "Configuration_10": 10,
+        "Configuration_11": 11,
+        "Configuration_12": 12,
+        "Configuration_13": 13,
+        "Configuration_14": 14,
+        "Configuration_15": 15,
+        "Configuration_16": 16,
+        "Configuration_17": 17,
+        "Configuration_18": 18,
+        "Configuration_19": 19,
+        "Configuration_20": 20
+      },
+      "ZOSAPI.Analysis.Settings.Aberrations.FieldScanDirections": {
+        "Plus_Y": 0,
+        "Plus_X": 1,
+        "Minus_Y": 2,
+        "Minus_X": 3
+      },
+      "ZOSAPI.Analysis.Settings.Aberrations.ZernikeCoefficientTypes": {
+        "Fringe": 0,
+        "Standard": 1,
+        "Annular": 2
+      }
+    }
+  },
+  "implementation": "Typed request, checked native setting writes/readback, shared result extraction/paging/artifacts/plots, task cancel and native resource close",
+  "ordinary": {
+    "passed": 1450,
+    "failures": 0,
+    "errors": 0,
+    "deselected": 508,
+    "report": "verification/development/CV-01/ordinary045.xml"
+  },
+  "release": {
+    "status": "passed",
+    "wheel": "wheels/zemax_standalone_mcp-0.1.35-py3-none-any.whl",
+    "independent_install": "verification/development/CV-01/wheel-install035",
+    "stdio_smoke": "verification/development/CV-01/stdio-smoke045.json"
+  },
+  "native": {
+    "status": "not_run",
+    "reason": "BASE-04 initialization timed out after 180.578 seconds; environment change not recorded",
+    "next_action": "Restore startup; execute tests/test_wavefront_topics_live.py; verify settings, result shapes/axes/labels, controlled numeric references, persistence and resource release on success/failure/cancel",
+    "reference": "docs/wavefront-topics.md",
+    "tolerance": "Zernike 1e-5 waves + 1% reference; normalized interferogram intensity 0.005 and fringe period 1%"
+  }
+}

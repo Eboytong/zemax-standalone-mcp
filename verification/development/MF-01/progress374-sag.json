@@ -11,16 +11,16 @@
   "native_version": "24.2.0 build240529 PremiumEdition",
   "declared_implemented_scope": "SagTable MinimumVolume formal BFSD eight scalar quantities + GetSag/SSLP rows; surface selection, radius interval, point density; row/curve paging, plotting, task cancellation/reuse and model persistence.",
   "commands": [
-    ".venv/Scripts/python.exe -X utf8 tests/support/sag_table_probe.py .local/evidence/development/MF-01/probe367-bfs",
-    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_sag_table_live.py --run-zemax -q --junitxml=.local/evidence/development/MF-01/native371-sag.xml",
-    ".venv/Scripts/python.exe -X utf8 -m pytest \"tests/test_sag_table_live.py::test_sag_table_degenerate_and_signed_surfaces[plane]\" tests/test_sag_table_live.py::test_sag_table_paging_cancel_export_reload --run-zemax -q --junitxml=.local/evidence/development/MF-01/native373-lifecycle.xml",
-    ".venv/Scripts/python.exe -X utf8 tests/support/sag_cfg_transfer_probe.py .local/evidence/development/MF-01/probe374-cfg-transfer"
+    ".venv/Scripts/python.exe -X utf8 tests/support/sag_table_probe.py verification/development/MF-01/probe367-bfs",
+    ".venv/Scripts/python.exe -X utf8 -m pytest tests/test_sag_table_live.py --run-zemax -q --junitxml=verification/development/MF-01/native371-sag.xml",
+    ".venv/Scripts/python.exe -X utf8 -m pytest \"tests/test_sag_table_live.py::test_sag_table_degenerate_and_signed_surfaces[plane]\" tests/test_sag_table_live.py::test_sag_table_paging_cancel_export_reload --run-zemax -q --junitxml=verification/development/MF-01/native373-lifecycle.xml",
+    ".venv/Scripts/python.exe -X utf8 tests/support/sag_cfg_transfer_probe.py verification/development/MF-01/probe374-cfg-transfer"
   ],
   "ordinary": {
     "passed": 81,
-    "report": ".local/evidence/development/MF-01/ordinary372-sag.xml",
-    "original_owner_tuple_failure": ".local/evidence/development/MF-01/ordinary368-sag.xml",
-    "corrected_owner_report": ".local/evidence/development/MF-01/ordinary369-sag.xml"
+    "report": "verification/development/MF-01/ordinary372-sag.xml",
+    "original_owner_tuple_failure": "verification/development/MF-01/ordinary368-sag.xml",
+    "corrected_owner_report": "verification/development/MF-01/ordinary369-sag.xml"
   },
   "numerical": {
     "reference": "Independent parabola sag and derivative, vertex/edge tangent BFS radius, radial-area quadrature for volume/RMS; plane and sphere zero-removal limits; signed concave sag/derivative.",
@@ -31,37 +31,37 @@
     "volume_atol": 1e-05
   },
   "native_reports": [
-    ".local/evidence/development/MF-01/native368-sag.xml",
-    ".local/evidence/development/MF-01/native371-sag.xml",
-    ".local/evidence/development/MF-01/native373-lifecycle.xml",
-    ".local/evidence/development/MF-01/native375-capability.xml"
+    "verification/development/MF-01/native368-sag.xml",
+    "verification/development/MF-01/native371-sag.xml",
+    "verification/development/MF-01/native373-lifecycle.xml",
+    "verification/development/MF-01/native375-capability.xml"
   ],
   "native_unique_cases_passed": 5,
   "discoveries": [
     {
-      "evidence": ".local/evidence/development/MF-01/probe366-sag/probe.json",
+      "evidence": "verification/development/MF-01/probe366-sag/probe.json",
       "result": "SagTable AS_Default, arrays empty; GetTextFile true with all eight row columns and manufacturing scalar statistics; all analysis instances closed."
     },
     {
-      "evidence": ".local/evidence/development/MF-01/probe367-bfs/probe.json",
+      "evidence": "verification/development/MF-01/probe367-bfs/probe.json",
       "result": "BFSD data0..7 and SSLP parameter headers and values confirmed; baseline surfaces and MFE retained."
     },
     {
-      "evidence": ".local/evidence/development/MF-01/probe369-concave/probe.json",
+      "evidence": "verification/development/MF-01/probe369-concave/probe.json",
       "result": "Material removal = sag - unshifted sphere sag - native vertex_offset; concave offset negative. Native table finite-difference slopes differ from SSLP queried slopes near concave vertex, sources retained explicitly."
     },
     {
-      "evidence": ".local/evidence/development/MF-01/probe370-plane/probe.json",
+      "evidence": "verification/development/MF-01/probe370-plane/probe.json",
       "result": "Native text Infinity corresponds to curvature0, BFSD radius1e12. Finite native radius preserved; planar state explicit. Infinite native radius if encountered is represented as null/state."
     },
     {
-      "evidence": ".local/evidence/development/MF-01/probe374-cfg-transfer/probe.json",
+      "evidence": "verification/development/MF-01/probe374-cfg-transfer/probe.json",
       "result": "Typed SurfaceSlopeCross setters/readback adopted requested surface2 and each BFS criterion; donor SaveTo true, SagTable LoadFrom false for all3. Output remains surface1/MinimumVolume. Donor and target analyses closed; disconnect normal."
     }
   ],
   "failures_preserved": [
     {
-      "report": ".local/evidence/development/MF-01/native371-sag.xml",
+      "report": "verification/development/MF-01/native371-sag.xml",
       "reason": "Plane test expected infinite radius, native BFSD actually finite sentinel1e12; test corrected without tolerance change, original numeric result preserved."
     }
   ],

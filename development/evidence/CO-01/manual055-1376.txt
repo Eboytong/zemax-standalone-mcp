@@ -1,0 +1,44 @@
+COAT <coating name>
+material thickness is_absolute loop_index tapername
+material thickness is_absolute loop_index tapername
+...
+COAT <next coating name>
+material thickness is_absolute loop_index tapername
+material thickness is_absolute loop_index tapername
+...
+COAT I.transmission
+ENCRYPTED filename
+! For information on the IDEAL format see "The IDEAL data section" below.
+IDEAL <name> <Transmitted intensity> <Reflected intensity>
+! For information on the IDEAL2 format see "The IDEAL2 data section" below.
+IDEAL2 <name> s_rr s_ri s_tr s_ti p_rr p_ri p_tr p_ti no_pi_flag
+! For information on the TABLE format see "The TABLE data section" below.
+TABLE <coating name>
+ANGL <angle in degrees>
+WAVE <wavelength 1 in micrometers> Rs Rp Ts Tp Ars Arp Ats Atp
+WAVE <wavelength 2 in micrometers> Rs Rp Ts Tp Ars Arp Ats Atp
+WAVE <wavelength 3 in micrometers> Rs Rp Ts Tp Ars Arp Ats Atp
+...
+ANGL <next angle in degrees>
+WAVE <wavelength 1 in micrometers> Rs Rp Ts Tp Ars Arp Ats Atp
+WAVE <wavelength 2 in micrometers> Rs Rp Ts Tp Ars Arp Ats Atp
+WAVE <wavelength 3 in micrometers> Rs Rp Ts Tp Ars Arp Ats Atp
+...
+For details on each of these coating definition keywords, see the discussions which follow.
+8.4.3.3. The MATE Data Section
+Syntax:
+MATE <material name>
+wavelength real imaginary
+wavelength real imaginary
+....
+Thematerialnamesmaybe anyuserdefinednameupto32 characters inlength,withnospecial characterspermitted.
+Note that spaces are not allowed.
+OpticStudio uses the material data in the following way:
+The wavelength argument is always in micrometers. The wavelengths must be specified in ascending order.
+The real value is the real index of refraction of the material at that wavelength.
+The imaginary value is the extinction coefficient.
+If a single wavelength value is provided for a material, then the real and imaginary parts of the index of refraction
+are used no matter what wavelength is being traced. Dispersion of the coating material is therefore ignored.
+Release 2024 R2 - © Ansys, Inc. All rights reserved. 1377
+Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
+The Libraries Tab

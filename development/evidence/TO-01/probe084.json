@@ -1,0 +1,44 @@
+{
+  "state": "implemented",
+  "items": [
+    "TO-01.ToleranceYield",
+    "TO-01.ToleranceHistogram",
+    "TO-01.QuickYield"
+  ],
+  "fix": "Native tolerance Operand is one-based; public index remains zero-based, with explicit mapping and final readback",
+  "ordinary": {
+    "passed": 62,
+    "evidence": "verification/development/TO-01/ordinary084.xml"
+  },
+  "numerical": {
+    "passed": 4,
+    "evidence": "verification/development/TO-01/native084-numeric.xml",
+    "scope": "Criterion/TTHI columns: empirical CDF interior values, histogram bin centers/counts, paging and PNG"
+  },
+  "quick_yield": {
+    "state": "reference_deviation",
+    "native": 0.24512342752844274,
+    "reference": 0.21532002492833044,
+    "atol": 1e-05,
+    "rtol": 0.01,
+    "evidence": "verification/development/TO-01/native084-index-fixed.xml",
+    "run": "outputs/runs/quickyield084zero_bfc5a09198"
+  },
+  "remaining": [
+    "Tolerance distribution range tails, failed samples and saved/reloaded file selection",
+    "QuickYield reference definition, finite perturbation numeric and cancellation"
+  ],
+  "batch": "B0026/10; numerical diagnosis not counted as completed functionality",
+  "delivery": {
+    "native_passed": 4,
+    "evidence": "verification/development/TO-01/native084-delivery.xml",
+    "runs": [
+      "outputs/runs/tolerance-special-analyses_c145565539",
+      "outputs/runs/tolerance-special-analyses_a460ab2381",
+      "outputs/runs/tolerance-special-analyses_fd7641140b",
+      "outputs/runs/tolerance-special-analyses_64a821ca69"
+    ],
+    "numeric_comparisons": 178,
+    "scope": "Final setting readback, numeric CDF/counts, paging/PNG, source preservation, out-of-range errors and successful reuse, native close and disconnect"
+  }
+}

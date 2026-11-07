@@ -22,4 +22,4 @@
 
 原生空曲线及无结构数据返回 `NO_RESULT_DATA`，包含原生消息、文本路径和前导说明；原生结果无效返回 `ANALYSIS_FAILED` 并保留消息及头信息。
 
-请求例子见 [`examples/diffraction_efficiency_requests.json`](../examples/diffraction_efficiency_requests.json)，完整请求模型见 [`tool-schemas.json`](tool-schemas.json)。本轮普通检查、反射清单及原生阻塞记录见 [`.local/evidence/development/CO-01/diffraction-efficiency028.json`](../.local/evidence/development/CO-01/diffraction-efficiency028.json)。
+请求例子见 [`examples/requests/diffraction_efficiency_requests.json`](../../../examples/requests/diffraction_efficiency_requests.json)，完整请求模型见 [`tool-schemas.json`](../../reference/tool-schemas.json)。本轮普通检查、反射清单及原生阻塞记录见 [`.local/evidence/development/CO-01/diffraction-efficiency028.json`](../../../development/evidence/CO-01/diffraction-efficiency028.json)。

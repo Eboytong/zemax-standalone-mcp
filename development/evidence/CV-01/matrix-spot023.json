@@ -1,0 +1,48 @@
+{
+  "version": "0.1.23",
+  "date": "2026-11-05",
+  "item_id": "CV-01.MatrixSpot",
+  "native_api": {
+    "probe": "verification/development/BASE-01/probe/api-interfaces.json",
+    "analysis_id": "ZOSAPI.Analysis.AnalysisIDM.MatrixSpot",
+    "factory": "ZOSAPI.Analysis.IA_ New_MatrixSpot()",
+    "settings_interface": "ZOSAPI.Analysis.Settings.Spot.IAS_Spot",
+    "adapter_properties": [
+      "Pattern",
+      "ReferTo",
+      "ShowScale",
+      "ColorRaysBy",
+      "RayDensity",
+      "DirectionCosines",
+      "UseSymbols",
+      "UsePolarization",
+      "ScatterRays",
+      "ShowAiryDisk",
+      "IgnoreLateralColor"
+    ],
+    "native_execution": "not_run",
+    "blocker": "BASE-04/connection019/supervisor.json: initialization_timeout after 180.526 seconds",
+    "unlock_condition": "successful native startup and a multi-field, multi-wavelength controlled system, followed by settings/result-axis/data and close verification"
+  },
+  "implementation": {
+    "entry": "run_analysis",
+    "kind": "matrix_spot",
+    "shared_request": "ConfigurationMatrixSpot",
+    "result_path": "standard native analysis task, text/data collection and close lifecycle"
+  },
+  "ordinary_tests": {
+    "targeted": "33 passed across matrix spot, configuration matrix spot, FFT Surface MTF and MTF extensions",
+    "file": "tests/test_configuration_matrix_spot.py",
+    "live_case": "tests/test_configuration_matrix_spot_live.py",
+    "live_case_status": "prepared, skipped unless --run-zemax",
+    "schema": "docs/tool-schemas.json contains MatrixSpot discriminator mapping"
+  },
+  "documentation": [
+    "docs/matrix-spot.md",
+    "examples/matrix-spot023.json",
+    "docs/tools.md",
+    "能力说明.md"
+  ],
+  "resource_close": "owned by standard analysis lifecycle; live runtime close check pending",
+  "output_semantics": "field/wavelength matrix axes require native result inspection"
+}

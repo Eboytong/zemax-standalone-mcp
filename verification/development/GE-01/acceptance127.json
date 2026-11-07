@@ -3,31 +3,31 @@
   "completed": [
     "GE-01.SourceRepresentation"
   ],
-  "ordinary": ".local/evidence/development/GE-01/ordinary126.xml",
+  "ordinary": "verification/development/GE-01/ordinary126.xml",
   "ordinary_passed": 62,
-  "native": ".local/evidence/development/GE-01/native126-source-final.xml",
+  "native": "verification/development/GE-01/native126-source-final.xml",
   "native_passed": 4,
   "runs": [
     {
-      "run": ".local/runs/geometry124_sphere_Millimeters_041dda4412",
+      "run": "outputs/runs/geometry124_sphere_Millimeters_041dda4412",
       "checks": 8,
       "max_error": 2.1316282072803006e-14,
       "disconnect_confirmed": true
     },
     {
-      "run": ".local/runs/geometry124_asphere_Millimeters_2787e1b686",
+      "run": "outputs/runs/geometry124_asphere_Millimeters_2787e1b686",
       "checks": 6,
       "max_error": 2.5566346550931485e-07,
       "disconnect_confirmed": true
     },
     {
-      "run": ".local/runs/geometry124_asphere_Centimeters_357297b02c",
+      "run": "outputs/runs/geometry124_asphere_Centimeters_357297b02c",
       "checks": 6,
       "max_error": 2.5566346550931485e-07,
       "disconnect_confirmed": true
     },
     {
-      "run": ".local/runs/geometry125_transform_5762770335",
+      "run": "outputs/runs/geometry125_transform_5762770335",
       "checks": 37,
       "max_error": 1.7763568394002505e-14,
       "disconnect_confirmed": true

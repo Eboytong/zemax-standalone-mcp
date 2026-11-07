@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-06",
+  "item_id": "ED-01.Scattering",
+  "scope": "Eight typed sequential scattering requests and resource discovery; native adoption/geometry/persistence status per type",
+  "source_version": "0.1.59",
+  "native_version": "24.2.0/build240529/PremiumEdition",
+  "state": "implemented",
+  "ordinary": {
+    "passed": 26,
+    "evidence": "verification/development/ED-01/ordinary268.xml"
+  },
+  "native": {
+    "passed": 4,
+    "evidence": "verification/development/ED-01/native268.xml",
+    "runs": [
+      {
+        "folder": "outputs/runs/scatter268_builtins_7377530639",
+        "disconnect_ok": true,
+        "close_receipt": "outputs\\runs\\scatter268_builtins_7377530639\\state\\close_receipt.json",
+        "native_closed": true,
+        "forced": false
+      },
+      {
+        "folder": "outputs/runs/property_scatter_resources_33ce81183a",
+        "disconnect_ok": true,
+        "close_receipt": "outputs\\runs\\property_scatter_resources_33ce81183a\\state\\close_receipt.json",
+        "native_closed": true,
+        "forced": false
+      },
+      {
+        "folder": "outputs/runs/property_preflight_state_0666a803b2",
+        "disconnect_ok": true,
+        "close_receipt": "outputs\\runs\\property_preflight_state_0666a803b2\\state\\close_receipt.json",
+        "native_closed": true,
+        "forced": false
+      },
+      {
+        "folder": "outputs/runs/property_pages_38d18ce1a5",
+        "disconnect_ok": true,
+        "close_receipt": "outputs\\runs\\property_pages_38d18ce1a5\\state\\close_receipt.json",
+        "native_closed": true,
+        "forced": false
+      }
+    ]
+  },
+  "adoption": [
+    "None",
+    "Lambertian",
+    "Gaussian",
+    "ABg",
+    "ABgFile"
+  ],
+  "geometry_scope": "Sequential direct geometric trace smoke; position and direction against a plane-system analytic reference",
+  "numeric_tolerance": {
+    "atol": 1e-08,
+    "rtol": 1e-07
+  },
+  "numeric_checks": 40,
+  "resources": "Project-owned ABG_DATA.DAT and ED01.ABGF plus a BrownVinyl.bsdf test copy; sources and final selections in calls.json/resource-discovery.json",
+  "blocked": {
+    "User": "CreateScatteringTypeSettings still raises UILDEScatterData serialization error; needs a corrected formal native endpoint.",
+    "BSDF": "GetAvailableFileNames still returns ED01.ABGF and the native none item; needs a BSDF selector that adopts and reloads an actual BSDF.",
+    "ISScatterCatalog": "Native list contains only the none item; needs a valid ISX data file and matching catalog selection."
+  },
+  "parent_completion": "Parent remains implemented until all declared types satisfy their acceptance conditions; existing ABgFile completion counted only once.",
+  "next_action": "Continue MaterialModel/MaterialOffset dispersion diagnosis while the three scatter prerequisites remain unchanged."
+}

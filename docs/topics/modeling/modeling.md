@@ -52,7 +52,7 @@ solve 使用 changes[].solves：
 
 保留 fixed、variable、surface_pickup、f_number。surface_pickup 返回 supports_scale、supports_offset；不支持的参数返回 null，指定不支持的非默认比例或偏移会报 UNSUPPORTED_SOLVE_PARAMETER。半径拾取的比例作用于曲率，例如源半径 50、scale=2 时结果为 25，不支持 offset。单元格必须支持对应 solve，替换原关系需要 replace_solves=true。面型切换同样需要此标志；原生设置失败返回结构化错误；设置后同时回读 Solve，未采用请求模式时报告错误。改变面型后的单元格按新面型核对，失败可能已有部分修改。
 
-Hologram2的`parameter_13`（Volume Hologram?）接受0/1。值为0时Variable不能持久化，`update_surfaces`与`set_variables`在写入前返回UNSUPPORTED_SOLVE；值为1时Variable已有`.zos/.zmx`保存重载依据。关闭已有Variable的体全息须同时显式设为Fixed。该状态限制与原生枚举分别返回，详见[Hologram2模式持久化](solve-support.md#hologram2-模式持久化)。
+Hologram2的`parameter_13`（Volume Hologram?）接受0/1。值为0时Variable不能持久化，`update_surfaces`与`set_variables`在写入前返回UNSUPPORTED_SOLVE；值为1时Variable已有`.zos/.zmx`保存重载依据。关闭已有Variable的体全息须同时显式设为Fixed。该状态限制与原生枚举分别返回，详见[Hologram2模式持久化](../analysis/solve-support.md#hologram2-模式持久化)。
 
 ## 复制与几何
 
@@ -72,10 +72,10 @@ Sag 返回原生 sag 和 alternateSag 两个解；不将 alternateSag 自动选�
 
 ## 验证与运行
 
-`tests/test_modeling_live.py` 通过真实 stdio 调用资源、系统设置、适配面型、五类 solve、孔径、复制、Sag、变换和保存重载。`tests/test_modeling_reference_live.py` 另核对完整带符号旋转矩阵、平移、三条光线的全局交点与方向，以及包含光阑和带拾取曲面的多种复制位置。球面 Sag、矩阵与光线解析参考采用 rtol=1e-7、atol=1e-8；结果范围以实际调用记录为准。
+`tests/native/test_modeling_live.py` 通过真实 stdio 调用资源、系统设置、适配面型、五类 solve、孔径、复制、Sag、变换和保存重载。`tests/native/test_modeling_reference_live.py` 另核对完整带符号旋转矩阵、平移、三条光线的全局交点与方向，以及包含光阑和带拾取曲面的多种复制位置。球面 Sag、矩阵与光线解析参考采用 rtol=1e-7、atol=1e-8；结果范围以实际调用记录为准。
 
 ```powershell
-& '.\.venv\Scripts\python.exe' -B -m pytest tests/test_modeling_live.py tests/test_modeling_reference_live.py --run-zemax -q -p no:cacheprovider
+& '.\.venv\Scripts\python.exe' -B -m pytest tests/native/test_modeling_live.py tests/native/test_modeling_reference_live.py --run-zemax -q -p no:cacheprovider
 ```
 
 仅在需要定位原生异常时使用诊断程序（历史参考）。GUI对照、普通测试和原生数值分别评定；运行时串行访问原生实例。
@@ -84,7 +84,7 @@ Sag 返回原生 sag 和 alternateSag 两个解；不将 alternateSag 自动选�
 
 set_variables 对顺序曲面、MCE 和非序列对象单元格共用原生返回值与 cell.Solve 回读检查。原生报告成功但实际模式不符时返回 SOLVE_UPDATE_FAILED，包含 requested、actual、native_return、failed_index（从0起）及 completed_count。同批请求在失败项停止；先前修改可能已生效，使用响应中的检查点和修订号恢复。默认保持 solve/pickup 替换保护。
 
-求解的当前模型支持表与独立数值依据见[重点面型求解支持](solve-support.md)。PARTIAL_UPDATE.cause 保留原生拒绝的结构化错误；available_solves 表示原生列表，不表示光学数值验收结论。
+求解的当前模型支持表与独立数值依据见[重点面型求解支持](../analysis/solve-support.md)。PARTIAL_UPDATE.cause 保留原生拒绝的结构化错误；available_solves 表示原生列表，不表示光学数值验收结论。
 
 ## 全局参考面与热安装
 

@@ -3,18 +3,18 @@
   "release_baseline": "0.1.56; B001; no full regression or wheel build",
   "native": "OpticStudio 24.2.0 build 240529 PremiumEdition; Python 3.14",
   "completed_item_ids": ["NS-04.ObjectFacets", "NS-04.DetectorRegions", "NS-04.NSCSurfaceSag"],
-  "ordinary": {"passed":154,"evidence":".local/evidence/development/NS-04/ordinary065-delivery.xml"},
+  "ordinary": {"passed":154,"evidence":"verification/development/NS-04/ordinary065-delivery.xml"},
   "facets": {
     "inputs": "Analytic rectangular box; owned tetrahedron ASCII STL with vertices (0,0,0),(2,0,0),(0,3,0),(0,0,4), translated (3,0,5), tilted 30 degrees about Y; explicit ObjectIsADetector=true.",
     "checks": "Local/global bounds, all STL vertices and cross-product normals, triangle areas, pagination, cursor/frame restoration, model preservation and save/reload. Absorbing box independent 1W incident and absorbed flux sums. Borrowed IFaceData has no Close; owning stdio application disconnected successfully.",
     "tolerance": "absolute 1e-8 + 1e-7 * abs(reference)",
     "fix": "Native global GetVertexNormal includes object translation. Return rotation times local normal; retain raw native_vertex_normals and normal_source. No implicit detector-mode mutation.",
-    "evidence": [".local/runs/object_data029_geometry_0284a4ab8d", ".local/runs/facets065_stl_ab38eda3b5", ".local/runs/facets065_radiometry_271a076072", ".local/evidence/development/NS-04/native065-facets-reference-final.xml"],
+    "evidence": ["outputs/runs/object_data029_geometry_0284a4ab8d", "outputs/runs/facets065_stl_ab38eda3b5", "outputs/runs/facets065_radiometry_271a076072", "verification/development/NS-04/native065-facets-reference-final.xml"],
     "resources": "Owned STL copied into run evidence and deleted from user CAD resource directory after native close. Fresh CAD reload initializes inactive spectral fields; comparisons start from saved/reloaded baseline."
   },
   "regions": {
     "checks": "Rectangle flux/irradiance/intensity and volume flux/absorbed_flux/absorbed_density bounded regions match corresponding native full-grid slices. Independent point-ray occupied cell is 1 W. Save/reload baseline, source model retained, no full allocation for 128 cubed detector corner cell, normal application disconnect.",
-    "evidence": [".local/runs/object_data029_regions_ef1b5d06ce", ".local/runs/object_data029_regions_e1c28016ac", ".local/runs/object_data029_large_fbfc1aa4eb", ".local/evidence/development/NS-04/native065-facets-regions-reference.xml"],
+    "evidence": ["outputs/runs/object_data029_regions_ef1b5d06ce", "outputs/runs/object_data029_regions_e1c28016ac", "outputs/runs/object_data029_large_fbfc1aa4eb", "verification/development/NS-04/native065-facets-regions-reference.xml"],
     "result_scope": "Partial region only; incident voxel flux repeats along paths. Absorbed quantities in this nonabsorbing detector cross-check are zero; full-reader physical absorption references retain their existing independent scope."
   },
   "sag": {
@@ -22,7 +22,7 @@
     "checks": "5445 analytic point comparisons, fixed tolerance 1e-8 + 1e-7 * abs(reference), save/reload baseline, setting readback, grid orientation, pagination, five PNG exports, both generated ZRDs parsed, source model retained. All-invalid face returns NO_RESULT_DATA with raw artifacts; next valid analysis succeeds. Running 1025x1025 cancellation returns cancelled, closes, preserves model and allows next analysis.",
     "maximum_absolute_sag_error_lens_units": 3.552713678800501e-15,
     "fixes": ["ZRDFilename requires file name beside SystemFile, not an absolute path", "All-invalid native grids are rejected with original text/messages retained", "Return valid/invalid sample counts, lens units and confirmed values[y][x] axes"],
-    "evidence": [".local/runs/sag065_numeric_1ab9ec8631", ".local/runs/sag065_cancel_711a66a07b", ".local/evidence/development/NS-04/native065-sag-final.xml"],
+    "evidence": ["outputs/runs/sag065_numeric_1ab9ec8631", "outputs/runs/sag065_cancel_711a66a07b", "verification/development/NS-04/native065-sag-final.xml"],
     "coordinates": "Width=2 yields native endpoint grid -2..2, step .125. Native decenter is added to sampling-plane coordinates in the tested untilted sphere case; arbitrary object tilts remain governed by retained native settings."
   },
   "historical_failures": [

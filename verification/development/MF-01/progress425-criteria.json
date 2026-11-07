@@ -9,10 +9,10 @@
   "source_version": "0.1.60 plus B005",
   "native_version": "24.2.0 build240529 PremiumEdition",
   "probe_commands": [
-    ".venv/Scripts/python.exe -X utf8 tests/support/sag_criteria_probe.py .local/evidence/development/MF-01/probe423-criteria",
-    ".venv/Scripts/python.exe -X utf8 tests/support/sag_criterion_reports.py .local/evidence/development/MF-01/probe424-reports"
+    ".venv/Scripts/python.exe -X utf8 tests/support/sag_criteria_probe.py verification/development/MF-01/probe423-criteria",
+    ".venv/Scripts/python.exe -X utf8 tests/support/sag_criterion_reports.py verification/development/MF-01/probe424-reports"
   ],
-  "ordinary_report": ".local/evidence/development/MF-01/ordinary425-sag-fit.xml",
+  "ordinary_report": "verification/development/MF-01/ordinary425-sag-fit.xml",
   "ordinary_passed": 80,
   "checks": [
     {

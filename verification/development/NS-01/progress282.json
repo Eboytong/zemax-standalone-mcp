@@ -7,8 +7,8 @@
   "license": "PremiumEdition",
   "scope": "Controlled plane plate pure-conversion polarized rays, mapping, reload and checkpoint restore; mixed-group start defect and recovery",
   "commands": [
-    ".venv/Scripts/python.exe -m pytest tests/test_conversion.py tests/test_development_status_report.py -q --junitxml=.local/evidence/development/NS-01/ordinary278.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_conversion_optical_reference_live.py --run-zemax -q --junitxml=.local/evidence/development/NS-01/native282.xml"
+    ".venv/Scripts/python.exe -m pytest tests/test_conversion.py tests/test_development_status_report.py -q --junitxml=verification/development/NS-01/ordinary278.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_conversion_optical_reference_live.py --run-zemax -q --junitxml=verification/development/NS-01/native282.xml"
   ],
   "ordinary_passed": 23,
   "native_passed": 1,
@@ -16,7 +16,7 @@
   "runs": [
     {
       "mode": "pure",
-      "path": ".local/runs/conversion277_pure_f3457e1675",
+      "path": "outputs/runs/conversion277_pure_f3457e1675",
       "checks": 379,
       "failed_checks": 0,
       "max_ray_error": 2.815423927327032e-08,
@@ -45,7 +45,7 @@
     },
     {
       "mode": "group",
-      "path": ".local/runs/conversion277_group_7ecb1706f1",
+      "path": "outputs/runs/conversion277_group_7ecb1706f1",
       "checks": 187,
       "failed_checks": 0,
       "max_ray_error": 0.0,

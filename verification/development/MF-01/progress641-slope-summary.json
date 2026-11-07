@@ -7,16 +7,16 @@
   "native": "OpticStudio 24.2.0 build240529 Premium",
   "scope": "non-default criteria and reverse curves slope summaries",
   "ordinary": {
-    "source": ".local/evidence/development/MF-01/ordinary640-slope-summary.xml",
+    "source": "verification/development/MF-01/ordinary640-slope-summary.xml",
     "passed": 45
   },
   "native_test": {
-    "source": ".local/evidence/development/MF-01/native641-slope-summary.xml",
+    "source": "verification/development/MF-01/native641-slope-summary.xml",
     "passed": 2
   },
   "raw_results": [
-    ".local/runs/sag587_criteria_-1_06b8830fd9/results.json",
-    ".local/runs/sag587_criteria_1_1d327c8895/results.json"
+    "outputs/runs/sag587_criteria_-1_06b8830fd9/results.json",
+    "outputs/runs/sag587_criteria_1_1d327c8895/results.json"
   ],
   "fields": [
     "maximum_slope_difference",
@@ -38,7 +38,7 @@
       "rtol": 1e-05,
       "passed": true,
       "absolute_error": 1.6653345369377348e-15,
-      "source": ".local/runs/sag587_criteria_-1_06b8830fd9/checks.json"
+      "source": "outputs/runs/sag587_criteria_-1_06b8830fd9/checks.json"
     },
     {
       "label": "MinimumRMS RMS slope summary",
@@ -48,7 +48,7 @@
       "rtol": 1e-05,
       "passed": true,
       "absolute_error": 1.5688947536951492e-15,
-      "source": ".local/runs/sag587_criteria_-1_06b8830fd9/checks.json"
+      "source": "outputs/runs/sag587_criteria_-1_06b8830fd9/checks.json"
     },
     {
       "label": "MinimumRMSWithOffset maximum slope summary",
@@ -58,7 +58,7 @@
       "rtol": 1e-05,
       "passed": true,
       "absolute_error": 1.6653345369377348e-15,
-      "source": ".local/runs/sag587_criteria_-1_06b8830fd9/checks.json"
+      "source": "outputs/runs/sag587_criteria_-1_06b8830fd9/checks.json"
     },
     {
       "label": "MinimumRMSWithOffset RMS slope summary",
@@ -68,7 +68,7 @@
       "rtol": 1e-05,
       "passed": true,
       "absolute_error": 1.2073404342255456e-15,
-      "source": ".local/runs/sag587_criteria_-1_06b8830fd9/checks.json"
+      "source": "outputs/runs/sag587_criteria_-1_06b8830fd9/checks.json"
     },
     {
       "label": "MinimumVolume maximum slope summary",
@@ -78,7 +78,7 @@
       "rtol": 1e-05,
       "passed": true,
       "absolute_error": 1.6653345369377348e-15,
-      "source": ".local/runs/sag587_criteria_-1_06b8830fd9/checks.json"
+      "source": "outputs/runs/sag587_criteria_-1_06b8830fd9/checks.json"
     },
     {
       "label": "MinimumVolume RMS slope summary",
@@ -88,7 +88,7 @@
       "rtol": 1e-05,
       "passed": true,
       "absolute_error": 1.2089125273756496e-15,
-      "source": ".local/runs/sag587_criteria_-1_06b8830fd9/checks.json"
+      "source": "outputs/runs/sag587_criteria_-1_06b8830fd9/checks.json"
     },
     {
       "label": "MinimumRMS maximum slope summary",
@@ -98,7 +98,7 @@
       "rtol": 1e-05,
       "passed": true,
       "absolute_error": 1.6653345369377348e-15,
-      "source": ".local/runs/sag587_criteria_1_1d327c8895/checks.json"
+      "source": "outputs/runs/sag587_criteria_1_1d327c8895/checks.json"
     },
     {
       "label": "MinimumRMS RMS slope summary",
@@ -108,7 +108,7 @@
       "rtol": 1e-05,
       "passed": true,
       "absolute_error": 1.5688947536951492e-15,
-      "source": ".local/runs/sag587_criteria_1_1d327c8895/checks.json"
+      "source": "outputs/runs/sag587_criteria_1_1d327c8895/checks.json"
     },
     {
       "label": "MinimumRMSWithOffset maximum slope summary",
@@ -118,7 +118,7 @@
       "rtol": 1e-05,
       "passed": true,
       "absolute_error": 1.6653345369377348e-15,
-      "source": ".local/runs/sag587_criteria_1_1d327c8895/checks.json"
+      "source": "outputs/runs/sag587_criteria_1_1d327c8895/checks.json"
     },
     {
       "label": "MinimumRMSWithOffset RMS slope summary",
@@ -128,7 +128,7 @@
       "rtol": 1e-05,
       "passed": true,
       "absolute_error": 1.2073404342255456e-15,
-      "source": ".local/runs/sag587_criteria_1_1d327c8895/checks.json"
+      "source": "outputs/runs/sag587_criteria_1_1d327c8895/checks.json"
     },
     {
       "label": "MinimumVolume maximum slope summary",
@@ -138,7 +138,7 @@
       "rtol": 1e-05,
       "passed": true,
       "absolute_error": 1.6653345369377348e-15,
-      "source": ".local/runs/sag587_criteria_1_1d327c8895/checks.json"
+      "source": "outputs/runs/sag587_criteria_1_1d327c8895/checks.json"
     },
     {
       "label": "MinimumVolume RMS slope summary",
@@ -148,7 +148,7 @@
       "rtol": 1e-05,
       "passed": true,
       "absolute_error": 1.2081535858549097e-15,
-      "source": ".local/runs/sag587_criteria_1_1d327c8895/checks.json"
+      "source": "outputs/runs/sag587_criteria_1_1d327c8895/checks.json"
     }
   ],
   "maximum_slope_summary_error": 1.6653345369377348e-15,

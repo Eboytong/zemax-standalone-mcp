@@ -37,8 +37,8 @@ IHPCSettings属性均为只读；查询创建零个SystemTool。`is_configured=f
 
 ## 当前证据
 
-本机设置接口、规格枚举及四个工厂已反射；有类型请求、实际设置核对和普通检查已实现。证据见 `.local/evidence/development/EXT-HPC/probe040.json`，例子 `examples/hpc040.json`。
+本机设置接口、规格枚举及四个工厂已反射；有类型请求、实际设置核对和普通检查已实现。证据见 `.local/evidence/development/EXT-HPC/probe040.json`，例子 `examples/requests/hpc040.json`。
 
-原生初始化仍受既有180.578秒超时影响，配置、节点和实际HPC许可状态待查询。恢复后串行运行 `tests/test_hpc_live.py`，验证配置及四类最小任务、状态/取消、结果回收与关闭；配置确认为false的原生用例记录具体状态及配置条件。直接光线探测器功率采用参考1、容差 `1e-8 + 1e-7×参考值`。公差与优化的分布、数值一致性及保存重载继续列入原生交叉验收。
+原生初始化仍受既有180.578秒超时影响，配置、节点和实际HPC许可状态待查询。恢复后串行运行 `tests/native/test_hpc_live.py`，验证配置及四类最小任务、状态/取消、结果回收与关闭；配置确认为false的原生用例记录具体状态及配置条件。直接光线探测器功率采用参考1、容差 `1e-8 + 1e-7×参考值`。公差与优化的分布、数值一致性及保存重载继续列入原生交叉验收。
 
 接口参考：[IHPCSettings 2024 R2](https://developer.synopsys.com/docs/zos-api-interface-2024-r2-sp02/interface_z_o_s_a_p_i_1_1_tools_1_1_i_h_p_c_settings.xhtml)。各条目为implemented，原生验收待补。

@@ -1,3 +1,4 @@
+from zemax_mcp.config import PROJECT_ROOT
 """Bounded, staged native probe with a separate evidence directory per attempt."""
 import argparse
 from datetime import datetime, timezone
@@ -8,7 +9,7 @@ import sys
 import time
 import uuid
 
-ROOT=Path(__file__).resolve().parents[2]
+ROOT=PROJECT_ROOT
 sys.path.insert(0,str(ROOT/'src'))
 
 

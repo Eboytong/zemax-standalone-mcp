@@ -207,17 +207,17 @@
   "maximum_coherent_error": 0.0008109807835486871,
   "maximum_incoherent_line_error": 0.004682579424659525,
   "maximum_incoherent_edge_error": 0.0002864584002840731,
-  "ordinary_report": ".local/evidence/development/BASE-01/ordinary547-targeted.xml",
+  "ordinary_report": "verification/development/BASE-01/ordinary547-targeted.xml",
   "ordinary_passed": 120,
   "native_reports": [
-    ".local/evidence/development/CV-01/native545-stretched.xml",
-    ".local/evidence/development/CV-01/native546-spread-final.xml"
+    "verification/development/CV-01/native545-stretched.xml",
+    "verification/development/CV-01/native546-spread-final.xml"
   ],
   "native_passed": 5,
   "commands": [
     ".venv/Scripts/python.exe -X utf8 tests/support/coherent_stretched544.py",
-    ".venv/Scripts/python.exe -m pytest tests/test_fft_spread_coherent_live.py -k \"fft_stretched and psf_auto\" -q -s --run-zemax --junitxml=.local/evidence/development/CV-01/native545-stretched.xml",
-    ".venv/Scripts/python.exe -m pytest tests/test_fft_spread_lifecycle_live.py tests/test_fft_spread_reference_live.py -q -s --run-zemax --junitxml=.local/evidence/development/CV-01/native546-spread-final.xml"
+    ".venv/Scripts/python.exe -m pytest tests/test_fft_spread_coherent_live.py -k \"fft_stretched and psf_auto\" -q -s --run-zemax --junitxml=verification/development/CV-01/native545-stretched.xml",
+    ".venv/Scripts/python.exe -m pytest tests/test_fft_spread_lifecycle_live.py tests/test_fft_spread_reference_live.py -q -s --run-zemax --junitxml=verification/development/CV-01/native546-spread-final.xml"
   ],
   "retained_failures": [
     "progress320 original index-based.260975929 mismatch",
@@ -227,7 +227,7 @@
   ],
   "conclusion": "Remaining coherent reference gap explained by documented default pupil stretching; exact newly traced stretched nodes pass original tolerances at both samplings/defocuses. Production native values and coordinates unchanged.",
   "lifecycle": "546 selection, polarization/polychromatic, series pagination, PNG export/view, invalid wavelength, running cancellation/native close, reuse, surfaces/settings/MFE/solves preserved and save/reload succeeded.545/546 all sessions disconnected.",
-  "image_viewed": ".local/runs/fft_spread319_lifecycle_4d06f2364f/fft-edge.png",
+  "image_viewed": "outputs/runs/fft_spread319_lifecycle_4d06f2364f/fft-edge.png",
   "batch": "B006 third first-completed common function;3/10. No new release/wheel.",
   "next_action": "Continue TO-01.QuickYield controlled fit definition, then fixed fallback queue."
 }

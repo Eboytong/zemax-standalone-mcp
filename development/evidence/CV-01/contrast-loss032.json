@@ -1,0 +1,127 @@
+{
+  "item_id": "CV-01.ContrastLoss",
+  "version": "0.1.32",
+  "date": "2026-11-05",
+  "status": "implemented",
+  "probe": {
+    "source": "verification/development/BASE-01/probe/api-interfaces.json",
+    "interface": {
+      "properties": [
+        {
+          "name": "Field",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Field",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "Wavelength",
+          "type": "ZOSAPI.Analysis.Settings.IAS_Wavelength",
+          "can_read": true,
+          "can_write": false
+        },
+        {
+          "name": "SampleSize",
+          "type": "ZOSAPI.Analysis.SampleSizes_ContrastLoss",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Frequency",
+          "type": "System.Double",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "Normalize",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        },
+        {
+          "name": "ShowOPD",
+          "type": "System.Boolean",
+          "can_read": true,
+          "can_write": true
+        }
+      ],
+      "methods": []
+    },
+    "enums": {
+      "ZOSAPI.Analysis.SampleSizes_ContrastLoss": {
+        "S_3x3": 1,
+        "S_5x5": 2,
+        "S_7x7": 3,
+        "S_9x9": 4,
+        "S_11x11": 5,
+        "S_13x13": 6,
+        "S_15x15": 7,
+        "S_17x17": 8,
+        "S_19x19": 9,
+        "S_21x21": 10,
+        "S_23x23": 11,
+        "S_25x25": 12,
+        "S_27x27": 13,
+        "S_29x29": 14,
+        "S_31x31": 15,
+        "S_33x33": 16,
+        "S_35x35": 17,
+        "S_37x37": 18,
+        "S_39x39": 19,
+        "S_41x41": 20,
+        "S_43x43": 21,
+        "S_45x45": 22,
+        "S_47x47": 23,
+        "S_49x49": 24,
+        "S_51x51": 25,
+        "S_53x53": 26,
+        "S_55x55": 27,
+        "S_57x57": 28,
+        "S_59x59": 29,
+        "S_61x61": 30,
+        "S_63x63": 31,
+        "S_65x65": 32,
+        "S_67x67": 33,
+        "S_69x69": 34,
+        "S_71x71": 35,
+        "S_73x73": 36,
+        "S_75x75": 37,
+        "S_77x77": 38,
+        "S_79x79": 39,
+        "S_81x81": 40,
+        "S_83x83": 41
+      }
+    }
+  },
+  "request": {
+    "request": {
+      "kind": "contrast_loss",
+      "field": 1,
+      "wavelength": 1,
+      "sampling": "S_41x41",
+      "frequency": 50,
+      "normalize": true,
+      "show_opd": false
+    }
+  },
+  "implementation": {
+    "settings": "Each setting uses checked_setting write/readback; selectors use Set/GetFieldNumber and Set/GetWavelengthNumber",
+    "result": "Shared native text/series/grid extraction, paging and artifact pipeline",
+    "lifecycle": "Shared analysis task cancel/close path"
+  },
+  "native": {
+    "status": "not_run",
+    "reason": "BASE-04 isolated initialization timed out at 180.578 seconds",
+    "next_action": "Restore native startup; execute Cooke case, verify settings, output form, normalize/OPD behavior and Analysis closure"
+  },
+  "ordinary": {
+    "command": ".venv/Scripts/python.exe -B -m pytest -q -m 'not zemax' --junitxml=verification/development/CV-01/ordinary042.xml",
+    "passed": 1370,
+    "deselected": 500
+  },
+  "release": {
+    "wheel": "wheels/zemax_standalone_mcp-0.1.32-py3-none-any.whl",
+    "independent_install": "verification/development/CV-01/wheel-install032",
+    "stdio_smoke": "verification/development/CV-01/stdio-smoke042.json",
+    "status": "passed"
+  }
+}

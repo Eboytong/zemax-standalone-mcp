@@ -24,7 +24,7 @@
 
 ZPL solve 已沿 `update_surfaces` 的 `mode=zpl_macro`、`get_system_resources.kind=solve_macros` 实现选择与回读；独立任意宏运行仍需确认正式启动入口及生命周期。
 
-各操作的状态、具体接口、样例路径和解除条件见 `.local/evidence/development/EX-01/probe036.json` 与 `development/ledgers/operations.csv`。资源发现已实现；宿主/回调条目保留 blocked。连接恢复后先运行 `tests/test_extension_resources_live.py`，核对实际根目录、分页和模型状态，再运行官方宿主最小用例。
+各操作的状态、具体接口、样例路径和解除条件见 `.local/evidence/development/EX-01/probe036.json` 与 `development/ledgers/operations.csv`。资源发现已实现；宿主/回调条目保留 blocked。连接恢复后先运行 `tests/native/test_extension_resources_live.py`，核对实际根目录、分页和模型状态，再运行官方宿主最小用例。
 
 ## 0.1.45 .NET回调受控输入
 
@@ -34,11 +34,11 @@ ZPL solve 已沿 `update_surfaces` 的 `mode=zpl_macro`、`get_system_resources.
 
 无宿主时，静态Transform(1.5)返回3；实例构造在APINetCallback..ctor抛NullReferenceException，没有返回回调实例，未执行Dispose。该结果与编译成功分别记录在callback-build045.json、callback-offline045.json。LoadNETCallback、实际设置读回、Execute及释放仍等待应用创建恢复。
 
-准备的tests/test_net_callback_live.py会编译独立受控DLL，通过正式加载器读取实际Settings、比较output=3（绝对及相对容差各1e-12），并分别记录回调Dispose和应用关闭。该用例已收集，未执行。完成加载与生命周期探查后再接入有类型公开执行请求；EX-01.NETCallback保持blocked。
+准备的tests/native/test_net_callback_live.py会编译独立受控DLL，通过正式加载器读取实际Settings、比较output=3（绝对及相对容差各1e-12），并分别记录回调Dispose和应用关闭。该用例已收集，未执行。完成加载与生命周期探查后再接入有类型公开执行请求；EX-01.NETCallback保持blocked。
 
 ## 本轮继承接口与输入复核
 
-通过 tests/support/inherited_contract_probe.py 读取安装目录的两份公开程序集，枚举 615 个接口及其继承方法、属性。169 个接口包含额外继承方法，完整记录见 .local/evidence/development/BASE-01/inherited-contracts045.json。IZOSAPI_Callback 的继承释放入口同样适用于 LoadCCallback 返回对象；C 回调的导出函数 ABI、受控输入和实际宿主执行仍缺证据。
+通过 scripts/probes/BASE-01/inherited_contract_probe.py 读取安装目录的两份公开程序集，枚举 615 个接口及其继承方法、属性。169 个接口包含额外继承方法，完整记录见 .local/evidence/development/BASE-01/inherited-contracts045.json。IZOSAPI_Callback 的继承释放入口同样适用于 LoadCCallback 返回对象；C 回调的导出函数 ABI、受控输入和实际宿主执行仍缺证据。
 
 应用接口没有继承的注销方法；MCE 继承 IEditor 的行操作及只读属性，未发现独立文件 Load/Save。反射确认 RunCommand(String)；正式应用参考本次读取返回 HTTP 403，未取得任意 ZPL 执行的正式命令和停止协议；继续沿用已有 ZPL solve 入口。
 

@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-06",
+  "item": "GE-01.Gaps",
+  "state": "implemented",
+  "ordinary": "verification/development/GE-01/ordinary131.xml",
+  "ordinary_passed": 69,
+  "native": "verification/development/GE-01/native131-gaps-final.xml",
+  "native_passed": 2,
+  "runs": [
+    {
+      "run": "outputs/runs/geometry129_object_gap_f0ddc6612c",
+      "checks": 3,
+      "max_error": 2.220446049250313e-16,
+      "disconnect_confirmed": true
+    },
+    {
+      "run": "outputs/runs/geometry104_selected_dab796cb18",
+      "checks": 7,
+      "max_error": 2.842170943040401e-14,
+      "disconnect_confirmed": true
+    }
+  ],
+  "implemented": [
+    "Explicit object/other_object closed-solid minimum distance in global mm",
+    "Global XYZ box clipping with positive-volume intersections; clipped solid distance definition retained",
+    "Coaxial selected surface XY rectangle intersected with actual circular boundary",
+    "Typed selector and complete region shape/range constraints",
+    "Uncertain threshold/empty region remain unverified with concrete reason"
+  ],
+  "references": [
+    "Rotated boxes: minimum4*cos30-2mm, satisfied/violated and empty clip",
+    "Nonadjacent plane/sphere disk/annulus/rectangle, MCE6/8mm, restore and reload",
+    "Physical uncertainty intervals retained; ROI clipping adds conservative kernel allowance"
+  ],
+  "remaining": "Noncoaxial sequential surface-pair distance adapter; keep Gaps implemented until that selector path is completed",
+  "batch": "B0034/10; no full regression or wheel"
+}
