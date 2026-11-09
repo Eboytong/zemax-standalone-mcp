@@ -19,19 +19,13 @@
 脚本通过工作副本执行修改并生成输出。`run_*` 先返回任务编号，查询至终态后读取结果；重启后的任务使用历史结果接口查询。
 
 
-高斯光束：`gaussian-beams.json` 提供近轴M²和skew双轴调用；来源、单位、输出和验收见 `../docs/topics/propagation/gaussian-beams.md`。
+高斯光束：`gaussian-beams.json` 提供近轴 M² 和 skew 双轴调用；参数、单位和输出见 `../docs/topics/propagation/README.md`。
 
+`sag-table.json` 提供制造表 MinimumVolume 查询；字段说明见 `../docs/topics/analysis/README.md`。
 
-`sag-table.json`提供制造表MinimumVolume查询，当前implemented；完整状态见`../docs/topics/analysis/sag-table.md`。
+`ray-diagrams.json` 提供 Y-Ybar 及入射角随像高请求；参数和坐标定义见 `../docs/topics/analysis/README.md`。
 
-
-`ray-diagrams.json`提供Y-Ybar及入射角随像高请求，已完成本机原生验收；参数和坐标定义见`../docs/topics/analysis/ray-diagrams.md`。
-
-
-`biocular.json`提供双配置会聚/发散扫描；已完成本机原生验收，副本真实追迹验证与数据状态见`../docs/topics/analysis/biocular.md`。
-
-
-`biocular-fov.json`提供四槽配置和非方形网格示例，已完成本机原生验收；详见`../docs/topics/analysis/biocular-fov.md`。
+`biocular.json` 提供双配置会聚/发散扫描；`biocular-fov.json` 提供四槽配置和非方形网格示例。
 
 - `test-plates.json`：样板目录资源发现、原生活动目录读取及显式TPD文件读取。
 
@@ -39,6 +33,6 @@ IMA/BIM 查看示例：[`ima-bim-viewer.json`](requests/ima-bim-viewer.json)。
 
 请求模板位于 `requests/`，工作流脚本位于 `workflows/`，配置模板位于 `config/`。运行输出默认位于 `.local/runs/`。
 
-当前源码新增默认报告示例见 `requests/native-text-reports.json`，六种STAR默认分析见 `requests/star-analyses.json`，三类卸载见 `requests/star-unload.json`。实际原生条件与验收范围见对应专题及开发台账。
+默认报告示例见 `requests/native-text-reports.json`，STAR 分析见 `requests/star-analyses.json`，STAR 卸载见 `requests/star-unload.json`。参数和资源条件见对应专题文档。
 
 NSC光源模式请求见[nsc-source-spectra.json](requests/nsc-source-spectra.json)：十种原生模式使用专属参数；NCE源设置与独立光谱查看器的输入分别记录。

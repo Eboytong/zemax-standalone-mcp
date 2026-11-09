@@ -2,7 +2,7 @@
 
 Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2024 R2 的 stdio MCP 服务。当前发布版本为 **1.0.0**，提供 **101 个工具**与 **132 种 `run_analysis` 请求类型**；接口、适用条件和结果格式见使用文档与工具参考。
 
-项目当前处于维护阶段。1.0.0 的版本基线、安装验证和运行条件见 [发行记录](development/evidence/BASE-04/release100.md)。
+当前版本为 1.0.0；安装、连接和调用方式见下方入口及 `docs/` 使用文档。
 
 ## 可以用它做什么
 
@@ -24,7 +24,6 @@ Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2024
 
 
 - [使用文档](docs/README.md) · [工具参考](docs/reference/tools.md) · [请求schema](docs/reference/tool-schemas.json)
-- [维护与开发记录](development/README.md) · [1.0.0发行记录](development/evidence/BASE-04/release100.md)
 - [调用示例](examples/README.md) · [测试说明](tests/README.md)
 
 安装：`powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -PythonExe C:\Users\tonge\anaconda3\python.exe -WithReports -WithGeometry`。

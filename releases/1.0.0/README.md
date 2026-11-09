@@ -8,4 +8,4 @@
 
     powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -PythonExe C:\Users\tonge\anaconda3\python.exe -WithReports -WithGeometry
 
-安装生成 `.local/config/mcp.config.json`；发行验证见 `development/evidence/BASE-04/release100.md`。
+安装生成 `.local/config/mcp.config.json`。

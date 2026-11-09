@@ -13,7 +13,7 @@ def solve_validation_summary():
                   basis='local 2024 R2 native boundary probe; ASCII and Chinese names'),
               runtime_checks="native support, return status and actual adopted mode are checked per request",
               persistence_limits=[dict(surface_type="Hologram2",cell="parameter_13",mode="Variable",
-                  required_value=1,rejected_value=0,reference="docs/topics/analysis/solve-support.md#hologram2-模式持久化")])
+                  required_value=1,rejected_value=0,reference="docs/topics/modeling/README.md")])
     if not path.is_file() and isinstance(__loader__, zipimporter):
         path = files("zemax_mcp").joinpath("resources/solve-support.json")
     if not path.is_file():return dict(base,status="evidence_unavailable")

@@ -11,7 +11,7 @@ def test_solve_support_scope_is_compact():
     assert sum(r["matrix"]["status_counts"].values())==936
     assert "cases"not in r
     assert r["persistence_limits"]==[dict(surface_type="Hologram2",cell="parameter_13",mode="Variable",
-        required_value=1,rejected_value=0,reference="docs/topics/analysis/solve-support.md#hologram2-模式持久化")]
+        required_value=1,rejected_value=0,reference="docs/topics/modeling/README.md")]
 
 def test_missing_solve_evidence_is_explicit(tmp_path,monkeypatch):
     import zemax_mcp.solve_support as module

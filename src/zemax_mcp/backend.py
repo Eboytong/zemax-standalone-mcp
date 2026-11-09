@@ -377,7 +377,7 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
                         file_version='ACIS formats only; SAT/SAB actual file header checked, local explicit V25-V30 not adopted'),
                     adoption='final scalar/enum readback; explicit sequential IGES lens layers with number_of_rays=0 checked against closed output directory levels; unsupported indirect level references remain explicit',
                     completion='native success, confirmed Close, output file present; all_by_file returns unique directory, paths and per-configuration artifacts',
-                    native_acceptance='STEP/STL/SAT Current extended settings and file creation passed; sequential cylinder and transformed NSC box geometry accepted; NSC scatter/split/polarization adoption and subsequent trace passed; ACIS explicit version mismatch remains',validation='docs/topics/delivery/special-exports.md')
+                    native_acceptance='STEP/STL/SAT Current extended settings and file creation passed; sequential cylinder and transformed NSC box geometry accepted; NSC scatter/split/polarization adoption and subsequent trace passed; ACIS explicit version mismatch remains',validation='docs/topics/delivery/README.md')
             if tool=='export_point_cloud':
                 value['point_cloud']=dict(interface='ILensDataEditor.CanExportPointCloud/RunTool_ExportPointCloudFile',
                     formats=['ASCII','Binary','CompressedBinary'],scope='sequential supported native surface; owned synchronous copy',
@@ -402,7 +402,7 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
         result = {"connected": connected, "implemented_tools": list(COMMAND_MODELS),
                   "standalone_macro": {"tool": "run_standalone_macro", "launch": "OpticStudio.exe -zpl=<absolute .ZPL path> -v<Name>=<value>",
                     "arguments": "string values read by ZPL $GETARG(name)", "output": "optional expected_output is passed using output_argument_name and checked after process exit",
-                    "lifecycle": "requires disconnected Standalone session; owned process polled, timeout/cancel supported, process log retained", "validation": "docs/topics/extensions/extensions.md"},
+                    "lifecycle": "requires disconnected Standalone session; owned process polled, timeout/cancel supported, process log retained", "validation": "docs/topics/extensions/README.md"},
                   "editor_extensions": {"editors":["MFE","MCE","TDE"],"tde_modes":["replace","append","insert","update","delete"],"metadata":"get_editor_metadata","rows":["insert_editor_rows","copy_editor_rows"],"tolerance_files":["load_tolerance_file","save_tolerance_file"],"native_adoption":"pending_connection","validation":"docs/editor-extensions.md"},
                   "task_history": {"discovery":"list_task_history","request_lookup":"get_request_status","results":"get_historical_result","result_schema_version":1,"legacy_result_versions":[0],"history_root":str(self.config.output_dir),"validation":"docs/task-history.md"},
                   "lens_catalogs": {"search":"run_lens_catalog_search","selection":"run_catalog_lens","evaluation":"run_catalog_evaluation","dimension_unit":"millimeters","native_adoption":"pending_connection","validation":"docs/lens-catalogs.md"},
@@ -434,7 +434,7 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
             license_requirement=STAR_LICENSE_REQUIREMENT, license_requirement_source=STAR_LICENSE_SOURCE,
             length_units='FEA file coordinates and displacement must match current lens units',
             cancellation='cooperative between native calls with checkpoint restoration on failure/cancel',
-            native_acceptance='module enablement and per-operation controlled FEA acceptance required', validation='docs/topics/extensions/star.md')
+            native_acceptance='module enablement and per-operation controlled FEA acceptance required', validation='docs/topics/extensions/README.md')
         result['property_pages']={'system':{k:list(m) for k,(_,m) in SYSTEM_PAGES.items()},'surface':{k:list(m) for k,(_,m) in SURFACE_PAGES.items()},'units':'lengths in current lens units; angles follow native page units','evidence':'docs/property-pages.md'}
         result['property_page_local_limitations']={
             'User':'settings creation raises UILDEScatterData serialization exception; raw exception retained',
@@ -490,7 +490,7 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
             auxiliary_line='show_diffraction_limit=true rejected; native interface has no setting',
             grid_dimensions='5..101 points per axis, even sizes supported',
             validation='offset7x5 grid;128x128 spot/ChiefRayOPD quadrature, native options, paging/save-reload/cancellation and reuse passed;64sampling convergence evidence retained',evidence='docs/rms-field-map.md')
-        result['nsc_ray_analyses']=dict(kinds=['path_analysis','critical_ray_trace','nsc_single_ray_trace'],scope='pure NSC current configuration',units='path flux watts; CRT positions lens units, angles degrees; single-ray segments global',results='native paths/rows and uncategorized, CRT Pass and endpoints, single-ray segments/ZRD; paged rows',validation='CRT and single-ray references/reload/cancellation passed; path threshold-excluded uncategorized flux remains open',path_database_controls=dict(zrd='ray range, filter and relative threshold',paf='all recorded paths only; nondefault ray range, filter and threshold rejected after native adoption controls'),evidence='docs/topics/nonsequential/nsc-paths.md')
+        result['nsc_ray_analyses']=dict(kinds=['path_analysis','critical_ray_trace','nsc_single_ray_trace'],scope='pure NSC current configuration',units='path flux watts; CRT positions lens units, angles degrees; single-ray segments global',results='native paths/rows and uncategorized, CRT Pass and endpoints, single-ray segments/ZRD; paged rows',validation='CRT and single-ray references/reload/cancellation passed; path threshold-excluded uncategorized flux remains open',path_database_controls=dict(zrd='ray range, filter and relative threshold',paf='all recorded paths only; nondefault ray range, filter and threshold rejected after native adoption controls'),evidence='docs/topics/nonsequential/README.md')
         result['nsc_conversion']=dict(tool='run_nsc_conversion',source='IConvertToNSCGroup',modes=['group','pure'],checkpoint='before conversion; failure/cancel retain checkpoint for explicit recovery',validation='implemented; native adoption and ray equivalence pending',evidence='docs/nsc-conversion.md')
         result['material_analyses']=dict(kinds=['internal_transmission_vs_wavelength'],resource_identity='explicit loaded catalog; catalog names accept an optional .AGF suffix; ambiguous aliases and duplicate material names rejected',
             properties_tool='get_material_properties',units='wavelength micrometers; transmission thickness millimeters; raw native catalog formula/thermal/mechanical properties',
