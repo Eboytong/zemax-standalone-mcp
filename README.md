@@ -2,11 +2,9 @@
 
 Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2024 R2 的 stdio MCP 服务。当前发布版本为 **1.0.0**，提供 **101 个工具**与 **132 种 `run_analysis` 请求类型**；接口、适用条件和结果格式见使用文档与工具参考。
 
-当前版本为 1.0.0；安装、连接和调用方式见下方入口及 `docs/` 使用文档。
-
 ## 可以用它做什么
 
-通过 MCP 客户端连接后，可以直接调用本机 OpticStudio 完成下列工作；每项调用都会返回任务编号、实际采用的设置、结果数据和输出文件位置。
+通过 MCP 客户端连接后，可以调用本机 OpticStudio 完成下列工作。读取和修改类工具直接返回结果；长时间运行的任务返回任务编号，供后续查询状态和结果。
 
 | 工作类别 | 可用能力 |
 | --- | --- |
@@ -26,9 +24,19 @@ Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2024
 - [使用文档](docs/README.md) · [工具参考](docs/reference/tools.md) · [请求schema](docs/reference/tool-schemas.json)
 - [调用示例](examples/README.md) · [测试说明](tests/README.md)
 
-安装：`powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -PythonExe C:\Users\tonge\anaconda3\python.exe -WithReports -WithGeometry`。
-启动：`powershell -NoProfile -ExecutionPolicy Bypass -File .\start.ps1`。
-安装生成的客户端配置位于 `.local/config/mcp.config.json`。
+## 安装和连接
+
+准备 Windows x64、Python 3.14 x64、OpticStudio 2024 R2 和适用的 ZOS-API 许可。在仓库根目录的 PowerShell 中运行：
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -PythonExe python
+```
+
+`python` 应指向 Python 3.14 x64；也可将它替换为该版本 `python.exe` 的绝对路径。需要报告和几何相关可选依赖时，在命令末尾添加 `-WithReports -WithGeometry`。脚本安装 `releases/1.0.0/` 中的 wheel，并生成 `.local/config/mcp.config.json`。
+
+将生成配置中的 `zemax` 项添加到 MCP 客户端配置；安装目录不同时修改 `ZEMAX_INSTALL_DIR`。客户端启动后依次调用 `connect`、`open_lens`（使用镜头文件的绝对路径）、`get_system_summary`。执行分析后，通过 `get_task_status` 查询至终态，再用 `get_task_result` 读取结果；结束时调用 `disconnect`。完整调用与分页规则见[使用指南](docs/guides/usage.md)。
+
+也可运行 `powershell -NoProfile -ExecutionPolicy Bypass -File .\start.ps1` 启动 stdio 服务，供 MCP 客户端连接。
 
 | 目录 | 用途 |
 | --- | --- |

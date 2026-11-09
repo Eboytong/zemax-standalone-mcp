@@ -4,7 +4,7 @@
 
 发行记录列出全量普通测试、wheel 构建、独立安装、stdio 和本机原生冒烟的实际结果；未通过或未运行的检查按记录中的状态说明。
 
-依次阅读 [长期规范](plan.md)、[当前计划](current.md)、[当前交接](handoff.md)。三份台账位于 `ledgers/`；共同功能、D00x分组和集中检查周期位于 `tracking/`；生成汇总位于 `generated/`。
+依次阅读 [当前状态](current.md)、[维护交接](handoff.md)和[长期规范](plan.md)。三份台账位于 `ledgers/`；共同功能、D00x 分组和集中检查周期位于 `tracking/`；生成汇总位于 `generated/`。
 
 历史开发范围：OpticStudio内建功能、官方STAR和HPC，原计划96组；发行前记录为7组完整验收、89组未完成。逐项状态见[scope.json](tracking/scope.json)、[原生功能表](remaining-origin-classification.md)及归档。
 

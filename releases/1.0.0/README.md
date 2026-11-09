@@ -6,6 +6,8 @@
 
 在仓库根目录执行安装：
 
-    powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -PythonExe C:\Users\tonge\anaconda3\python.exe -WithReports -WithGeometry
+    powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -PythonExe python -WithReports -WithGeometry
+
+`python` 应指向 Python 3.14 x64，也可使用该版本解释器的绝对路径。`-WithReports` 和 `-WithGeometry` 安装对应可选依赖。
 
 安装生成 `.local/config/mcp.config.json`。

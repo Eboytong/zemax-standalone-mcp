@@ -1,5 +1,26 @@
 # 调用、状态与故障处理
 
+## 首次调用
+
+在 MCP 客户端依次调用下列工具，`arguments` 为每次调用的参数；将文件路径替换为本机绝对路径：
+
+```json
+{"tool":"connect","arguments":{}}
+{"tool":"open_lens","arguments":{"path":"C:/optics/example.zmx"}}
+{"tool":"get_system_summary","arguments":{}}
+{"tool":"run_analysis","arguments":{"request":{"kind":"relative_illumination"}}}
+```
+
+从 `run_analysis` 的响应取得 `task_id`，代入下列请求并轮询状态；任务成功后读取结果，结束时断开：
+
+```json
+{"tool":"get_task_status","arguments":{"task_id":"<task_id>"}}
+{"tool":"get_task_result","arguments":{"task_id":"<task_id>","start":0,"count":100}}
+{"tool":"disconnect","arguments":{}}
+```
+
+每一行表示一次独立工具调用；实际客户端以其自身的工具调用界面提交。结果数据量较大时，根据 `next_start` 继续读取。
+
 ## 响应与编号
 
 工具响应包含 `ok`、`data`、`error`、`warnings`、`context` 和 `artifacts`。先检查 `ok`；长任务还应读取最终 `state` 和逐行失败状态。

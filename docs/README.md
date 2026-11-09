@@ -15,4 +15,4 @@ Zemax Standalone MCP 1.0.0 在 Windows x64、Python 3.14 与 Ansys Zemax OpticSt
 
 服务支持顺序与非序列建模、批量光线追迹、像质与波前分析、优化、公差、物理光学传播，以及图像、报告、CAD、Speos 和数值数据导出。每个请求的参数、单位、输出结构和资源条件以请求 schema 及对应专题文档为准。
 
-任务结果包含请求编号、实际设置、模型修订、数据分页入口和输出文件位置。使用结束时调用 `disconnect` 关闭服务创建的 OpticStudio Standalone 实例。
+同步工具直接返回结果；长任务返回任务编号，使用 `get_task_status` 查询终态并通过 `get_task_result` 读取数据、实际设置和输出文件。使用结束时调用 `disconnect` 关闭服务创建的 OpticStudio Standalone 实例。

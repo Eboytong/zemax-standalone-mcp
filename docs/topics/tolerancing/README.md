@@ -3,3 +3,8 @@
 优化工具包括局部优化、全局优化、Hammer 优化、多起点优化、参数扫描、快速调焦和评价函数编辑。
 
 公差工具支持 TDE 操作数、补偿器、灵敏度、逆灵敏度、Monte Carlo、良率汇总与公差结果统计。
+
+## 专题说明
+
+- [顺序设计评估](evaluation.md)
+- [Quick Yield](tolerancing-quick-yield.md)
