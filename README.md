@@ -4,6 +4,24 @@ Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2024
 
 项目当前处于维护阶段。1.0.0 的版本基线、安装验证和运行条件见 [发行记录](development/evidence/BASE-04/release100.md)。
 
+## 可以用它做什么
+
+通过 MCP 客户端连接后，可以直接调用本机 OpticStudio 完成下列工作；每项调用都会返回任务编号、实际采用的设置、结果数据和输出文件位置。
+
+| 工作类别 | 可用能力 |
+| --- | --- |
+| 连接与工程管理 | 连接或关闭 Standalone 实例；新建、打开、另存、复制和归档镜头；读取系统摘要、单位、波长、视场、配置和外部依赖。 |
+| 顺序系统建模 | 读取、插入、复制、删除和批量修改曲面；设置曲率、厚度、材料、孔径、坐标、拾取与求解；管理多重结构、变量和评价函数。 |
+| 非序列系统建模 | 读取、插入、复制、删除和修改 NSC 对象；执行顺序/非序列转换；读取对象几何和探测器数据。 |
+| 光线追迹与光束传播 | 执行顺序批量光线追迹、非序列光线追迹、ZRD 回放与读取；执行 POP 物理光学传播及收敛分析；读取 ZBF 复场文件。 |
+| 成像与像质分析 | 运行光斑、FFT MTF、相对照度、波前、RMS、畸变、场曲/畸变、PSF、FWHM、Seidel、偏振和材料相关分析；结果支持曲线、网格、文本报告和分页读取。 |
+| 优化与设计辅助 | 运行局部、全局、Hammer 与多起点优化；生成或编辑优化向导和评价函数；执行快速调焦、参数扫描、目录镜头检索与评价。 |
+| 公差与制造分析 | 编辑 TDE 公差与补偿器；运行灵敏度、逆灵敏度和 Monte Carlo 公差分析；汇总通过率和分位数结果。 |
+| 数据、图像与交付 | 导出布局、分析图像、CAD、Speos、点云、报告、探测器数据、评价函数和公差文件；以 Markdown、JSON 或 CSV 导出已完成的分析结果。 |
+| 任务控制 | 查询任务状态、读取历史结果、取消可取消任务，并对曲线、行数据和二维网格进行分页读取。 |
+
+完整工具名、参数、单位和适用条件见 [工具参考](docs/reference/tools.md)、[请求 schema](docs/reference/tool-schemas.json) 与 [能力说明](docs/reference/capabilities.md)。
+
 
 - [使用文档](docs/README.md) · [工具参考](docs/reference/tools.md) · [请求schema](docs/reference/tool-schemas.json)
 - [维护与开发记录](development/README.md) · [1.0.0发行记录](development/evidence/BASE-04/release100.md)
