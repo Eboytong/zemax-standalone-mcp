@@ -1,0 +1,15 @@
+{
+  "item_id": "MA-01.AthermalGlassMap",
+  "date": "2026-11-07",
+  "opticstudio": "24.2.0 build 240529 PremiumEdition",
+  "status": "blocked",
+  "runtime_probe": ".local/evidence/development/MA-01/athermal-outlet-20261107/summary.json",
+  "analysis": "AthermalGlassMap",
+  "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+  "settings_readback": ["IsValid", "IsActiveWindow"],
+  "task_state": "succeeded",
+  "output": "native text report and JSON result; no usable material curve grid/series",
+  "analysis_closed": true,
+  "session_disconnected": true,
+  "unlock_condition": "Obtain official material/configuration/temperature selection keys or a dedicated settings/result interface that exposes an identifiable curve and axis units."
+}

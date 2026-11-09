@@ -1,8 +1,0 @@
-See "Reflectivity vs. Angle" for settings
-Discussion The incident angle is measured in the medium prior to the specified surface.
-3.4.3.4. Diattenuation vs. Angle (coatings, polarization and surface physics
-group)
-Computes the R (reflected) and T (transmitted) diattenuation forthe specified surface as a function ofincident angle.
-Release 2024 R2 - © Ansys, Inc. All rights reserved. 934
-Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
-The Analyze Tab (sequential ui mode)

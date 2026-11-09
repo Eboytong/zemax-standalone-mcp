@@ -1,0 +1,90 @@
+[
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "phase_aberration"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "polarization_ray_trace"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "polarization_transmission"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "fiber_coupling_settings"
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "polarization_transmission",
+        "field": 2,
+        "wavelength": 0,
+        "sampling": 32,
+        "polarization": {
+          "jx": 1,
+          "jy": 1,
+          "x_phase": 30,
+          "y_phase": 120
+        }
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "fiber_coupling_settings",
+        "method": "operand",
+        "sampling": 64,
+        "field": 1,
+        "wavelength": 2,
+        "ignore_source": true,
+        "source_na": 0.1,
+        "receiver_na": 0.1,
+        "integration": "huygens",
+        "use_polarization": false
+      }
+    }
+  },
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "polarization_ray_trace",
+        "method": "operand",
+        "field": 1,
+        "wavelength": 1,
+        "surface": 0,
+        "pupil_x": 0,
+        "pupil_y": 1
+      }
+    }
+  },
+  {
+    "tool": "get_task_result",
+    "arguments": {
+      "task_id": "<polarization_ray_trace operand task_id>",
+      "start": 24,
+      "count": 5
+    }
+  }
+]

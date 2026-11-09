@@ -30,3 +30,15 @@ def test_installed_native_session_requires_package(monkeypatch,tmp_path):
     monkeypatch.setenv("ZEMAX_TEST_WHEEL_DIR",str(tmp_path))
     with pytest.raises(ValueError,match="independently installed"):
         server_parameters(tmp_path/"output")
+
+
+def test_clr_switch_not_forwarded_when_caller_absent(monkeypatch,tmp_path):
+    monkeypatch.delenv("COMPLUS_LoadFromRemoteSources",raising=False)
+    p=server_parameters(tmp_path)
+    assert "COMPLUS_LoadFromRemoteSources" not in p.env
+
+
+def test_clr_switch_forwarded_verbatim_when_caller_sets_it(monkeypatch,tmp_path):
+    monkeypatch.setenv("COMPLUS_LoadFromRemoteSources","1")
+    p=server_parameters(tmp_path)
+    assert p.env["COMPLUS_LoadFromRemoteSources"]=="1"

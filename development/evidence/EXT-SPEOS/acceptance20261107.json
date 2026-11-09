@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-07",
+  "opticstudio": "24.2.0 build 240529 PremiumEdition",
+  "lens_system": {
+    "cartesian": {
+      "status": "native_export_passed",
+      "run": ".local/runs/runs/speos_cartesian_8699a59b71",
+      "output": "cartesian.OPTDistortion",
+      "source_model_preserved": true,
+      "tool_and_copy_closed": true,
+      "stdio_disconnected": true,
+      "note": "Fixed native suffix normalization from .optdistortion to .OPTDistortion."
+    },
+    "radial": {
+      "status": "native_export_passed",
+      "run": ".local/runs/runs/speos_radial_ca87f35cc2",
+      "source_model_preserved": true,
+      "tool_and_copy_closed": true,
+      "stdio_disconnected": true
+    },
+    "receiver_import": {
+      "status": "blocked",
+      "reason": "No runnable Speos receiver installation or version was identified in the local v242 directory or uninstall inventory.",
+      "unlock_condition": "Provide or install a runnable Speos receiver and import the generated OPTDistortion to verify geometry and units."
+    }
+  },
+  "whitebox": {
+    "status": "native_export_passed",
+    "run": ".local/runs/runs/speos_whitebox_ee472b630b",
+    "output": "whitebox/input.odx",
+    "support_files": ["input.odx.log", "input.ZDA"],
+    "native_error_code": 0,
+    "task_state": "succeeded",
+    "source_model_preserved": true,
+    "tool_and_copy_closed": true,
+    "stdio_disconnected": true,
+    "receiver_import": "blocked_pending_receiver"
+  },
+  "ordinary_tests": {"command": "pytest tests/unit/test_speos.py -q", "passed": 29},
+  "native_tests": [
+    {"mode": "cartesian", "command": "pytest tests/native/test_speos_live.py::test_speos_owned_copy_native -m zemax --run-zemax -k cartesian -q -s", "passed": 1},
+    {"mode": "radial", "command": "pytest tests/native/test_speos_live.py::test_speos_owned_copy_native -m zemax --run-zemax -k radial -q -s", "passed": 1},
+    {"mode": "whitebox", "command": "pytest tests/native/test_speos_live.py::test_speos_owned_copy_native -m zemax --run-zemax -k whitebox -q -s", "passed": 1}
+  ]
+}

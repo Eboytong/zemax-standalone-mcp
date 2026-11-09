@@ -1,0 +1,635 @@
+{
+  "schema_version": 1,
+  "effective_date": "2026-11-08",
+  "worker_id": "zemax-p01-runtime",
+  "groups": [
+    "D009",
+    "D013"
+  ],
+  "plan_source": "development/tracking/development-groups.json",
+  "status_source": "development/ledgers/operations.csv",
+  "scope_note": "Only D009 (5 items) and D013 (5 items). Other groups are owned by other workers.",
+  "native_startup_policy": {
+    "decision": "defer_native_startup_for_this_pass",
+    "reason": "application_create has three independent 180s timeout records (runtime-recovery-01/02/05); no repeated native launch this pass.",
+    "evidence": "development/tracking/d00x-pass-20261108.json#repeated_environment_blocker"
+  },
+  "read_only_environment_observations": {
+    "services_running": [
+      "ANSYS, Inc. License Manager CVD",
+      "ANSYSLicensingTomcat",
+      "FlexNet Licensing Service 64"
+    ],
+    "processes_present": [
+      "ansyslmd.exe (14964)",
+      "lmgrd.exe x4"
+    ],
+    "opticstudio_process_present": false,
+    "env": {
+      "ANSYSLMD_LICENSE_FILE": "1055@localhost",
+      "ANSYSLIC_DIR": "C:\\Program Files\\ANSYS Inc\\Shared Files\\Licensing"
+    },
+    "caveat": "Service Running does NOT prove license availability; must be confirmed by execution results (GetHPCSettingsFromPrefs / export run)."
+  },
+  "items": [
+    {
+      "canonical_item_id": "EXT-EXPORT.CadSettings",
+      "development_group": "D009",
+      "title": "CAD实际格式与版本",
+      "difficulty": "受阻待定",
+      "ledger_state": "implemented",
+      "depends_on_item_ids": [],
+      "current_formal_interface": {
+        "tool": "run_cad_export(request: CadExport)",
+        "endpoint": "src/zemax_mcp/server.py:447",
+        "contract": "src/zemax_mcp/export_models.py::CadExport (21 format literals + 13 optional settings)",
+        "format_table": "src/zemax_mcp/exports.py::CAD_EXTENSIONS",
+        "capability_source": "src/zemax_mcp/backend.py:645 get_capabilities -> cad_formats (native_succeeded/native_rejected, offline)"
+      },
+      "existing_inputs": [
+        "examples/requests/cad-settings044.json",
+        "examples/requests/cad-nsc186.json",
+        "examples/requests/cad-multiple175.json"
+      ],
+      "existing_results": {
+        "evidence_doc": "development/evidence/EXT-EXPORT/cad-settings-repeat20261108.md",
+        "format_matrix": "15 of 21 succeed; 6 rejected (ASAT, ASAB, MODEL, CATPART, CATPRODUCT, XCGM) with native 'Unsupported export format'",
+        "acis_version": "SAT/SAB V30 accepted by getter but actual output header version_code=500 (major 5) -> SETTING_REJECTED; Current reuses with header 500"
+      },
+      "offline_completable": "Capability table and request validation already covered by unit tests; no additional offline content.",
+      "actual_checks": [
+        {
+          "command": "pytest tests/unit/test_cad_adoption.py -q",
+          "result": "63 passed",
+          "xml": ".local/evidence/development/BASE-04/parallel-01/review-d009-cad.xml"
+        }
+      ],
+      "external_blocker": "Local OpticStudio 24.2 exporter limits which formats/versions are honored; ASAT/ASAB Run rejected; SAT/SAB explicit version header still 500.",
+      "release_condition": "Exporter supports ASAT/ASAB and honors explicit ACIS version (or upstream provides formal version-setting path); then run tests/native/test_cad_formats_live.py, test_cad_acis_live.py, test_cad_advanced_acis_live.py.",
+      "recommended_decision": "keep_implemented_pending_native_format_matrix",
+      "repeat_native_launch_this_pass": false,
+      "offline_development": {
+        "status": "already_implemented_and_covered",
+        "refs": [
+          "tests/unit/test_cad_adoption.py (63)"
+        ],
+        "note": "settings/format/config-encoding all unit-covered (incl. ACIS header parse & SETTING_REJECTED)"
+      },
+      "actual_checks_this_round": [
+        {
+          "command": "pytest tests/unit/test_cad_adoption.py -q",
+          "result": "63 passed",
+          "xml": ".local/evidence/development/BASE-04/parallel-01/review-d009-cad.xml"
+        }
+      ]
+    },
+    {
+      "canonical_item_id": "EXT-EXPORT.CadMultipleConfigurations",
+      "development_group": "D009",
+      "title": "CAD多配置分层",
+      "difficulty": "受阻待定",
+      "ledger_state": "blocked",
+      "depends_on_item_ids": [],
+      "current_formal_interface": {
+        "tool": "run_cad_export(request: CadExport)",
+        "config_selection": "SetSingleConfiguration; output modes current/single/all_by_layer/all_at_once/all_by_file"
+      },
+      "existing_inputs": [
+        "examples/requests/cad-multiple175.json",
+        "tests/native/test_cad_multiple_live.py",
+        "tests/native/test_cad_layer_modes_live.py"
+      ],
+      "existing_results": {
+        "evidence_doc": "development/evidence/EXT-EXPORT/cad-multiple-configurations-repeat20261108.md",
+        "step_modes": "five STEP configuration modes pass volume checks (tolerance 1e-5 mm^3 + 1e-6 x ref); model/config/surface preserved; all tasks close_attempted=true without cleanup warnings",
+        "iges_layers": "all_by_layer actual {65535} expected {10,11}; all_at_once actual {65535} expected {10}"
+      },
+      "offline_completable": "Could add pure unit assertions on layer-mode name mapping; real layer assignment is native-only. No new offline work added this pass.",
+      "actual_checks": [
+        {
+          "command": "pytest tests/unit/test_cad_adoption.py -q",
+          "result": "63 passed (shared CAD ordinary coverage; no dedicated unit file for this item)",
+          "xml": ".local/evidence/development/BASE-04/parallel-01/review-d009-cad.xml"
+        }
+      ],
+      "external_blocker": "IGES layer setting reads back but native output uses default 65535 only; needs formal layer-assignment export capability or upstream fix.",
+      "release_condition": "Obtain a formal export path that emits requested layer numbers (or upstream fix), then re-verify both IGES modes' layer assignment.",
+      "recommended_decision": "keep_blocked_output_mismatch",
+      "repeat_native_launch_this_pass": false,
+      "offline_development": {
+        "status": "already_implemented_and_covered",
+        "refs": [
+          "tests/unit/test_cad_adoption.py (config mode encoding L167, conflict rejection L176, factory selection L192)"
+        ],
+        "note": "pure config-mode->native encoding mapping and rejection already covered; actual IGES layer output is native-only"
+      },
+      "actual_checks_this_round": [
+        {
+          "command": "pytest tests/unit/test_cad_adoption.py -q",
+          "result": "63 passed",
+          "xml": ".local/evidence/development/BASE-04/parallel-01/review-d009-cad.xml"
+        }
+      ]
+    },
+    {
+      "canonical_item_id": "EXT-EXPORT.LegacyLinework",
+      "development_group": "D009",
+      "title": "旧线框导出",
+      "difficulty": "受阻待定",
+      "ledger_state": "blocked",
+      "depends_on_item_ids": [],
+      "current_formal_interface": {
+        "status": "absent",
+        "detail": "908-type public scan found no Linework/DXF/IGES creation method; run_cad_export solid CAD cannot cover this scope",
+        "scan": ".local/evidence/development/EXT-EXPORT/public-types042.json"
+      },
+      "existing_inputs": [],
+      "existing_results": {
+        "evidence_doc": "development/evidence/EXT-EXPORT/legacy-linework-interface-followup-20261108.md",
+        "manual_ref": "manual pages 49-51 describe GUI 2D DXF / 3D DXF / IGES Linework"
+      },
+      "offline_completable": "None (no interface, no contract; fabricating a request is prohibited).",
+      "actual_checks": [
+        {
+          "command": "read-only interface recheck via existing scan",
+          "result": "no creation interface; no tool created, model unchanged"
+        }
+      ],
+      "external_blocker": "Installed public API has no legacy linework creation/export factory.",
+      "release_condition": "This version provides a legacy-linework creation factory / automation protocol, parameters, and license notes.",
+      "recommended_decision": "keep_blocked_interface_absent",
+      "repeat_native_launch_this_pass": false,
+      "offline_development": {
+        "status": "not_applicable_interface_absent",
+        "refs": [],
+        "note": "no public creation interface; no contract to develop offline"
+      },
+      "actual_checks_this_round": [
+        {
+          "command": "pytest tests/unit/test_cad_adoption.py -q",
+          "result": "63 passed",
+          "xml": ".local/evidence/development/BASE-04/parallel-01/review-d009-cad.xml"
+        }
+      ]
+    },
+    {
+      "canonical_item_id": "EXT-EXPORT.BlackBox",
+      "development_group": "D009",
+      "title": "黑盒创建",
+      "difficulty": "受阻待定",
+      "ledger_state": "blocked",
+      "depends_on_item_ids": [],
+      "current_formal_interface": {
+        "status": "absent",
+        "detail": "ISurfaceBlackBoxLens only consumes existing ZBB; IOpticalSystemTools covers CAD/layout/Speos; no ZBB creation factory",
+        "scan": ".local/evidence/development/EXT-EXPORT/public-types042.json"
+      },
+      "existing_inputs": [],
+      "existing_results": {
+        "evidence_doc": "development/evidence/EXT-EXPORT/blackbox-interface-followup-20261108.md",
+        "manual_ref": "manual documents GUI ZBB creation; no ZBB sample input in sample catalog"
+      },
+      "offline_completable": "None.",
+      "actual_checks": [
+        {
+          "command": "read-only recheck of 908 public types",
+          "result": "no creation factory; model unchanged"
+        }
+      ],
+      "external_blocker": "No supported ZBB creation protocol/factory in this version.",
+      "release_condition": "This version provides a supported ZBB creation protocol/factory, parameters, and license notes.",
+      "recommended_decision": "keep_blocked_interface_absent",
+      "repeat_native_launch_this_pass": false,
+      "offline_development": {
+        "status": "not_applicable_interface_absent",
+        "refs": [],
+        "note": "no ZBB creation factory; no contract to develop offline"
+      },
+      "actual_checks_this_round": [
+        {
+          "command": "pytest tests/unit/test_cad_adoption.py -q",
+          "result": "63 passed",
+          "xml": ".local/evidence/development/BASE-04/parallel-01/review-d009-cad.xml"
+        }
+      ]
+    },
+    {
+      "canonical_item_id": "EXT-EXPORT.EncryptedCoating",
+      "development_group": "D009",
+      "title": "加密镀膜创建",
+      "difficulty": "受阻待定",
+      "ledger_state": "blocked",
+      "depends_on_item_ids": [],
+      "current_formal_interface": {
+        "status": "absent",
+        "detail": "908-type scan found no EncryptedCoating/ZEC creation interface; CAD/layout/Speos/point-cloud cannot express coating encryption scope/name/reload conditions",
+        "scan": ".local/evidence/development/EXT-EXPORT/public-types042.json"
+      },
+      "existing_inputs": [],
+      "existing_results": {
+        "evidence_doc": "development/evidence/EXT-EXPORT/encrypted-coating-interface-followup-20261108.md",
+        "manual_ref": "manual pages 54 and 283 describe GUI Export Encrypted Coating and .ZEC"
+      },
+      "offline_completable": "None.",
+      "actual_checks": [
+        {
+          "command": "read-only interface recheck",
+          "result": "no creation factory; no tool created"
+        }
+      ],
+      "external_blocker": "No ZEC creation factory / automation protocol in this version.",
+      "release_condition": "Obtain an installed-version-supported ZEC creation factory / automation protocol, parameters, and license notes.",
+      "recommended_decision": "keep_blocked_interface_absent",
+      "repeat_native_launch_this_pass": false,
+      "offline_development": {
+        "status": "not_applicable_interface_absent",
+        "refs": [],
+        "note": "no ZEC creation interface; no contract to develop offline"
+      },
+      "actual_checks_this_round": [
+        {
+          "command": "pytest tests/unit/test_cad_adoption.py -q",
+          "result": "63 passed",
+          "xml": ".local/evidence/development/BASE-04/parallel-01/review-d009-cad.xml"
+        }
+      ]
+    },
+    {
+      "canonical_item_id": "EXT-HPC.Settings",
+      "development_group": "D013",
+      "title": "HPC配置读取与采用",
+      "difficulty": "低",
+      "ledger_state": "implemented",
+      "depends_on_item_ids": [],
+      "current_formal_interface": {
+        "tool": "get_hpc_settings(request: HpcSelection)",
+        "endpoint": "src/zemax_mcp/server.py:252",
+        "contract": "src/zemax_mcp/hpc_models.py (HpcPreferences{mode:preferences} | HpcCustom{mode:custom,node_count>=1,instance_type in Default/Tiny/Small/Medium/Large/XLarge})",
+        "adapter": "src/zemax_mcp/hpc.py::prepare_hpc",
+        "error_codes": [
+          "HPC_SETTINGS_UNAVAILABLE",
+          "HPC_NOT_CONFIGURED",
+          "UNSUPPORTED_INTERFACE",
+          "HPC_SETTINGS_ERROR"
+        ]
+      },
+      "existing_inputs": [
+        "examples/requests/hpc040.json"
+      ],
+      "existing_results": {
+        "evidence_doc": "development/evidence/EXT-HPC/settings-preferences-20261108.md",
+        "native_result": "GetHPCSettingsFromPrefs returned null -> HPC_SETTINGS_UNAVAILABLE, partial_changes_possible=false; no node/instance/thread/shutdown values",
+        "lifecycle": "stdio disconnected normally; no residual process",
+        "calls": ".local/runs/runs/hpc_settings_a5fe9c5bd1/calls.json"
+      },
+      "offline_completable": "HpcSelection union validation, custom node/spec validation, and error mapping already covered by 34 unit tests.",
+      "actual_checks": [
+        {
+          "command": "pytest tests/unit/test_hpc.py tests/unit/test_hpc_execution.py -q",
+          "result": "34 passed",
+          "xml": ".local/evidence/development/BASE-04/parallel-01/review-d013-hpc.xml"
+        }
+      ],
+      "external_blocker": "Observed fact only: the historical formal query GetHPCSettingsFromPrefs returned null (HPC_SETTINGS_UNAVAILABLE). This is a concrete blocker. The cause is NOT yet distinguished - configuration, license, service and version conditions are all still open; do not record \"local preferences not configured\" as a confirmed root cause.",
+      "release_condition": "Formal query returns a non-null IHPCSettings and its actual fields read back, with no SystemTool created and a normal disconnect (is_configured=false counts as a completed query); then rerun tests/native/test_hpc_live.py::test_hpc_native_configuration_query.",
+      "recommended_decision": "keep_implemented_pending_configured_preferences",
+      "repeat_native_launch_this_pass": false,
+      "offline_development": {
+        "status": "already_implemented_and_covered",
+        "refs": [
+          "tests/unit/test_hpc.py (22): HpcSelection union, custom node/instance validation, HPC_NOT_CONFIGURED, factory errors"
+        ],
+        "note": "typed union + validation + error mapping covered"
+      },
+      "actual_checks_this_round": [
+        {
+          "command": "pytest tests/unit/test_hpc.py tests/unit/test_hpc_execution.py -q",
+          "result": "34 passed",
+          "xml": ".local/evidence/development/BASE-04/parallel-01/review-d013-hpc.xml"
+        }
+      ],
+      "causal_status": {
+        "observed": "GetHPCSettingsFromPrefs returned null (historical)",
+        "distinguished": false,
+        "open_conditions": [
+          "configuration",
+          "license",
+          "service",
+          "version"
+        ],
+        "note": "A null return is a real blocker, but its cause is unseparated; do not assert preferences-unconfigured as confirmed root cause."
+      },
+      "declared_scope": "configuration query only: read the native IHPCSettings and report the actual fields. It does not submit, run, observe or cancel any HPC job.",
+      "completion_gate": "non-null IHPCSettings object + actual field readback (node count/max node count/instance type/threads per task/shutdown ticks) + zero SystemTool created + normal disconnect. is_configured=false still completes this query.",
+      "not_in_scope": "HPC node/job readiness is NOT part of this item; it belongs to the four execution items (NSCTrace/Tolerancing/GlobalOptimization/HammerOptimization)."
+    },
+    {
+      "canonical_item_id": "EXT-HPC.NSCTrace",
+      "development_group": "D013",
+      "title": "HPC非序列追迹",
+      "difficulty": "受阻待定",
+      "ledger_state": "implemented",
+      "depends_on_item_ids": [
+        "EXT-HPC.Settings"
+      ],
+      "current_formal_interface": {
+        "tool": "run_nsc_ray_trace (optional hpc object)",
+        "hpc_factory": "OpenNSCRayTrace_HPC",
+        "adapter": "src/zemax_mcp/hpc.py::open_execution_tool/check_tool_values/close_failed_setup"
+      },
+      "existing_inputs": [
+        "tests/native/test_hpc_live.py::test_hpc_minimal_native_job_result_and_close[nsc]"
+      ],
+      "existing_results": {
+        "evidence_doc": "development/evidence/EXT-HPC/nsc-trace-preflight20261108.md",
+        "preflight": "connect ok -> HPC_SETTINGS_UNAVAILABLE (partial_changes_possible=false, model revision 0) -> no NSC tool opened, no detector clear/mutation -> disconnect ok, no residual process; native test 1 skipped in 12.98s",
+        "calls": ".local/runs/runs/hpc_nsc_e100e36be9/calls.json"
+      },
+      "offline_completable": "NSC factory selection / config validation / cleanup ordering covered by the 34 unit tests; none new.",
+      "actual_checks": [
+        {
+          "command": "pytest tests/unit/test_hpc.py tests/unit/test_hpc_execution.py -q",
+          "result": "34 passed",
+          "xml": ".local/evidence/development/BASE-04/parallel-01/review-d013-hpc.xml"
+        }
+      ],
+      "external_blocker": "Observed fact only: the historical formal query GetHPCSettingsFromPrefs returned null (HPC_SETTINGS_UNAVAILABLE). This is a concrete blocker. The cause is NOT yet distinguished - configuration, license, service and version conditions are all still open; do not record \"local preferences not configured\" as a confirmed root cause.",
+      "release_condition": "Formal query returns a non-null IHPCSettings plus node/license availability AND this item's own job terminal-state evidence (submit/status/cancel/result/close) against the local reference; then run the item-specific native job test.",
+      "recommended_decision": "keep_implemented_pending_native_acceptance",
+      "repeat_native_launch_this_pass": false,
+      "offline_development": {
+        "status": "already_implemented_and_covered",
+        "refs": [
+          "tests/unit/test_hpc.py + test_hpc_execution.py (34): OpenNSCRayTrace_HPC selection/cleanup"
+        ],
+        "note": "factory selection/cleanup covered; native job blocked by preferences"
+      },
+      "actual_checks_this_round": [
+        {
+          "command": "pytest tests/unit/test_hpc.py tests/unit/test_hpc_execution.py -q",
+          "result": "34 passed",
+          "xml": ".local/evidence/development/BASE-04/parallel-01/review-d013-hpc.xml"
+        }
+      ],
+      "causal_status": {
+        "observed": "GetHPCSettingsFromPrefs returned null (historical)",
+        "distinguished": false,
+        "open_conditions": [
+          "configuration",
+          "license",
+          "service",
+          "version"
+        ],
+        "note": "A null return is a real blocker, but its cause is unseparated; do not assert preferences-unconfigured as confirmed root cause."
+      }
+    },
+    {
+      "canonical_item_id": "EXT-HPC.Tolerancing",
+      "development_group": "D013",
+      "title": "HPC公差任务",
+      "difficulty": "受阻待定",
+      "ledger_state": "implemented",
+      "depends_on_item_ids": [
+        "EXT-HPC.Settings"
+      ],
+      "current_formal_interface": {
+        "tool": "run_tolerance_analysis (optional hpc object)",
+        "hpc_factory": "OpenTolerancing_HPC",
+        "adapter": "src/zemax_mcp/hpc.py::open_execution_tool/check_tool_values/close_failed_setup"
+      },
+      "existing_inputs": [
+        "tests/native/test_hpc_live.py::test_hpc_minimal_native_job_result_and_close[tolerance]"
+      ],
+      "existing_results": {
+        "evidence_doc": "development/evidence/EXT-HPC/tolerancing-preflight20261108.md",
+        "preflight": "connect ok -> HPC_SETTINGS_UNAVAILABLE (partial_changes_possible=false, model revision 0) -> no lens/tolerance task opened -> disconnect ok, no residual process; native test 1 skipped in 12.86s",
+        "calls": ".local/runs/runs/hpc_tolerance_050d84f49e/calls.json"
+      },
+      "offline_completable": "Tolerance HPC factory selection / config validation / failed-setup cleanup covered by the 34 unit tests; none new.",
+      "actual_checks": [
+        {
+          "command": "pytest tests/unit/test_hpc.py tests/unit/test_hpc_execution.py -q",
+          "result": "34 passed",
+          "xml": ".local/evidence/development/BASE-04/parallel-01/review-d013-hpc.xml"
+        }
+      ],
+      "external_blocker": "Observed fact only: the historical formal query GetHPCSettingsFromPrefs returned null (HPC_SETTINGS_UNAVAILABLE). This is a concrete blocker. The cause is NOT yet distinguished - configuration, license, service and version conditions are all still open; do not record \"local preferences not configured\" as a confirmed root cause.",
+      "release_condition": "Formal query returns a non-null IHPCSettings plus node/license availability AND this item's own job terminal-state evidence (submit/status/cancel/result/close) against the local reference; then run the item-specific native job test.",
+      "recommended_decision": "keep_implemented_pending_native_acceptance",
+      "repeat_native_launch_this_pass": false,
+      "offline_development": {
+        "status": "already_implemented_and_covered",
+        "refs": [
+          "tests/unit/test_hpc.py + test_hpc_execution.py (34): OpenTolerancing_HPC"
+        ],
+        "note": "same"
+      },
+      "actual_checks_this_round": [
+        {
+          "command": "pytest tests/unit/test_hpc.py tests/unit/test_hpc_execution.py -q",
+          "result": "34 passed",
+          "xml": ".local/evidence/development/BASE-04/parallel-01/review-d013-hpc.xml"
+        }
+      ],
+      "causal_status": {
+        "observed": "GetHPCSettingsFromPrefs returned null (historical)",
+        "distinguished": false,
+        "open_conditions": [
+          "configuration",
+          "license",
+          "service",
+          "version"
+        ],
+        "note": "A null return is a real blocker, but its cause is unseparated; do not assert preferences-unconfigured as confirmed root cause."
+      }
+    },
+    {
+      "canonical_item_id": "EXT-HPC.GlobalOptimization",
+      "development_group": "D013",
+      "title": "HPC全局优化",
+      "difficulty": "受阻待定",
+      "ledger_state": "implemented",
+      "depends_on_item_ids": [
+        "EXT-HPC.Settings"
+      ],
+      "current_formal_interface": {
+        "tool": "run_global_optimization (optional hpc object)",
+        "hpc_factory": "OpenGlobalOptimization_HPC",
+        "adapter": "src/zemax_mcp/hpc.py::open_execution_tool/check_tool_values/close_failed_setup"
+      },
+      "existing_inputs": [
+        "tests/native/test_hpc_live.py::test_hpc_minimal_native_job_result_and_close[global]"
+      ],
+      "existing_results": {
+        "evidence_doc": "development/evidence/EXT-HPC/global-optimization-preflight20261108.md",
+        "preflight": "connect ok -> get_hpc_settings(mode=preferences) HPC_SETTINGS_UNAVAILABLE (partial_changes_possible=false, model revision 0) -> no model opened, no optimization job -> disconnect ok (connected=false), no residual process; native test 1 skipped in 12.89s",
+        "calls": ".local/runs/runs/hpc_global_b4c8326146/calls.json"
+      },
+      "offline_completable": "Global-optimization HPC path unit coverage exists in the 34 tests; none new.",
+      "actual_checks": [
+        {
+          "command": "pytest tests/unit/test_hpc.py tests/unit/test_hpc_execution.py -q",
+          "result": "34 passed",
+          "xml": ".local/evidence/development/BASE-04/parallel-01/review-d013-hpc.xml"
+        }
+      ],
+      "external_blocker": "Observed fact only: the historical formal query GetHPCSettingsFromPrefs returned null (HPC_SETTINGS_UNAVAILABLE). This is a concrete blocker. The cause is NOT yet distinguished - configuration, license, service and version conditions are all still open; do not record \"local preferences not configured\" as a confirmed root cause.",
+      "release_condition": "Formal query returns a non-null IHPCSettings plus node/license availability AND this item's own job terminal-state evidence (submit/status/cancel/result/close) against the local reference; then run the item-specific native job test.",
+      "recommended_decision": "keep_implemented_pending_native_acceptance",
+      "repeat_native_launch_this_pass": false,
+      "offline_development": {
+        "status": "already_implemented_and_covered",
+        "refs": [
+          "tests/unit/test_hpc.py + test_hpc_execution.py (34): OpenGlobalOptimization_HPC"
+        ],
+        "note": "same"
+      },
+      "actual_checks_this_round": [
+        {
+          "command": "pytest tests/unit/test_hpc.py tests/unit/test_hpc_execution.py -q",
+          "result": "34 passed",
+          "xml": ".local/evidence/development/BASE-04/parallel-01/review-d013-hpc.xml"
+        }
+      ],
+      "causal_status": {
+        "observed": "GetHPCSettingsFromPrefs returned null (historical)",
+        "distinguished": false,
+        "open_conditions": [
+          "configuration",
+          "license",
+          "service",
+          "version"
+        ],
+        "note": "A null return is a real blocker, but its cause is unseparated; do not assert preferences-unconfigured as confirmed root cause."
+      }
+    },
+    {
+      "canonical_item_id": "EXT-HPC.HammerOptimization",
+      "development_group": "D013",
+      "title": "HPC Hammer优化",
+      "difficulty": "受阻待定",
+      "ledger_state": "implemented",
+      "depends_on_item_ids": [
+        "EXT-HPC.Settings"
+      ],
+      "current_formal_interface": {
+        "tool": "run_hammer_optimization (optional hpc object)",
+        "hpc_factory": "OpenHammerOptimization_HPC",
+        "adapter": "src/zemax_mcp/hpc.py::open_execution_tool/check_tool_values/close_failed_setup"
+      },
+      "existing_inputs": [
+        "tests/native/test_hpc_live.py::test_hpc_minimal_native_job_result_and_close[hammer]"
+      ],
+      "existing_results": {
+        "evidence_doc": "development/evidence/EXT-HPC/hammer-optimization-preflight20261108.md",
+        "preflight": "connect ok -> preferences query HPC_SETTINGS_UNAVAILABLE from GetHPCSettingsFromPrefs (partial_changes_possible=false, model revision 0) -> no model opened, no Hammer tool/task -> disconnect ok, no residual process; native test 1 skipped in 13.02s",
+        "calls": ".local/runs/runs/hpc_hammer_e5b2191e4c/calls.json"
+      },
+      "offline_completable": "Both OpenHammerOptimization_HPC and configured/unconfigured preflight are covered by the 34 unit tests; none new.",
+      "actual_checks": [
+        {
+          "command": "pytest tests/unit/test_hpc.py tests/unit/test_hpc_execution.py -q",
+          "result": "34 passed",
+          "xml": ".local/evidence/development/BASE-04/parallel-01/review-d013-hpc.xml"
+        }
+      ],
+      "external_blocker": "Observed fact only: the historical formal query GetHPCSettingsFromPrefs returned null (HPC_SETTINGS_UNAVAILABLE). This is a concrete blocker. The cause is NOT yet distinguished - configuration, license, service and version conditions are all still open; do not record \"local preferences not configured\" as a confirmed root cause.",
+      "release_condition": "Formal query returns a non-null IHPCSettings plus node/license availability AND this item's own job terminal-state evidence (submit/status/cancel/result/close) against the local reference; then run the item-specific native job test.",
+      "recommended_decision": "keep_implemented_pending_native_acceptance",
+      "repeat_native_launch_this_pass": false,
+      "offline_development": {
+        "status": "already_implemented_and_covered",
+        "refs": [
+          "tests/unit/test_hpc.py + test_hpc_execution.py (34): OpenHammerOptimization_HPC"
+        ],
+        "note": "same"
+      },
+      "actual_checks_this_round": [
+        {
+          "command": "pytest tests/unit/test_hpc.py tests/unit/test_hpc_execution.py -q",
+          "result": "34 passed",
+          "xml": ".local/evidence/development/BASE-04/parallel-01/review-d013-hpc.xml"
+        }
+      ],
+      "causal_status": {
+        "observed": "GetHPCSettingsFromPrefs returned null (historical)",
+        "distinguished": false,
+        "open_conditions": [
+          "configuration",
+          "license",
+          "service",
+          "version"
+        ],
+        "note": "A null return is a real blocker, but its cause is unseparated; do not assert preferences-unconfigured as confirmed root cause."
+      }
+    }
+  ],
+  "recommended_sequence": [
+    "D009-3/4/5 LegacyLinework/BlackBox/EncryptedCoating: close as blocked (interface absent); keep evidence + release conditions; no native.",
+    "D009-2 CadMultipleConfigurations: keep blocked (output mismatch); wait for formal layer assignment; no native.",
+    "D009-1 CadSettings: interface complete; run three CAD native suites once startup recovered.",
+    "D013-1 Settings: first unlock step is configuring local HPC preferences to non-null; needs one native read call after startup recovery.",
+    "D013-2..5: depend on Settings; run minimal jobs item by item after unlock."
+  ],
+  "ledger_discrepancies": [
+    {
+      "where": "development/ledgers/operations.csv (EXT-HPC.* evidence column)",
+      "issue": "references docs/hpc.md which does not exist; actual doc is docs/topics/extensions/hpc.md",
+      "action": "report to coordinator; do not edit public ledger"
+    },
+    {
+      "where": "development/ledgers/operations.csv (EXT-HPC.NSCTrace/Tolerancing/GlobalOptimization/HammerOptimization)",
+      "issue": "execution_state=implemented with empty blocked_reason, but native tests actually skip (implemented-pending-acceptance, completion count 0)",
+      "action": "recommend coordinator annotate per preflight evidence; do not edit public ledger"
+    }
+  ],
+  "not_done": [
+    "No repeated application_create native launch (01/02/05 evidence exists; defer this pass).",
+    "No 180s retest; no HPC preference change (environment operation, to be done by user/coordinator before verification).",
+    "No git commit; no public ledger/version change; no self-release."
+  ],
+  "progress_this_round": {
+    "date": "2026-11-08",
+    "native_launched": false,
+    "ordinary_checks": [
+      {
+        "scope": "D009",
+        "command": "pytest tests/unit/test_cad_adoption.py -q",
+        "result": "63 passed",
+        "xml": ".local/evidence/development/BASE-04/parallel-01/review-d009-cad.xml"
+      },
+      {
+        "scope": "D013",
+        "command": "pytest tests/unit/test_hpc.py tests/unit/test_hpc_execution.py -q",
+        "result": "34 passed",
+        "xml": ".local/evidence/development/BASE-04/parallel-01/review-d013-hpc.xml"
+      },
+      {
+        "scope": "D009+D013 broad",
+        "command": "pytest tests/unit -k \"cad or hpc or export\" -q",
+        "result": "120 passed, 2636 deselected",
+        "xml": ".local/evidence/development/BASE-04/parallel-01/review-d009-d013-broad.xml"
+      }
+    ],
+    "offline_development_surface": "verified_complete",
+    "offline_development_conclusion": "All offline-coverable behavior of D009/D013 is already implemented and unit-covered (63 CAD + 22+12 HPC = 97 tests). No additional safe offline code change advances these items; remaining progress requires native startup recovery or missing native interfaces.",
+    "blocked_items_unchanged": [
+      "EXT-EXPORT.CadMultipleConfigurations",
+      "EXT-EXPORT.LegacyLinework",
+      "EXT-EXPORT.BlackBox",
+      "EXT-EXPORT.EncryptedCoating",
+      "EXT-HPC.Settings",
+      "EXT-HPC.NSCTrace",
+      "EXT-HPC.Tolerancing",
+      "EXT-HPC.GlobalOptimization",
+      "EXT-HPC.HammerOptimization"
+    ],
+    "evidence_summary": "development/evidence/BASE-04/pass-d009-d013-20261108.md",
+    "schema_refresh": "deferred until coordinator review of all integrated product patches this round",
+    "release_vs_source": {
+      "release": "0.1.62: ordinary 2590 passed / 819 skipped, tools 101, analyses 118",
+      "source": "current worktree tests/unit collects 2756; not yet released",
+      "note": "keep the two counts distinct; do not conflate"
+    }
+  }
+}

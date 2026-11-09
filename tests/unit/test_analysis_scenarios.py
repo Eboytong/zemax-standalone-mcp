@@ -14,7 +14,7 @@ def test_cooke_scenario_is_a_valid_public_request(kind):
 def test_specialized_routes_have_existing_native_test_owners():
     assert set(SPECIALIZED) <= set(ANALYSES)
     for kind, (owner, condition) in SPECIALIZED.items():
-        assert (Path(__file__).parent / owner).is_file(), (kind, owner)
+        assert (Path(__file__).parents[1] / 'native' / owner).is_file(), (kind, owner)
         assert condition
 
 

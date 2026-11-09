@@ -3,23 +3,39 @@
   "baseline_release": "0.1.61",
   "target_release": "0.1.62",
   "target": 10,
-  "completed_count": 5,
+  "completed_count": 10,
   "completed_item_ids": [
     "RL-01.pop.Workflow",
     "RL-01.delivery.Workflow",
     "CV-01.FftPsfLineEdgeSpread",
     "NS-03.NSCGeometricMtf",
-    "TO-01.QuickYield"
+    "TO-01.QuickYield",
+    "CV-01.YNIContributions",
+    "EXT-SPEOS.LensSystem",
+    "EXT-SPEOS.Whitebox",
+    "ED-01.Aperture.FloatingToNone",
+    "PO-01.TransmissionFan"
   ],
-  "verification_state": "in_progress",
+  "verification_state": "passed",
   "completed_evidence": [
     "verification/development/RL-01/native483-pop-workflow.xml",
     "verification/development/RL-01/native484-delivery-workflow.xml",
     "verification/development/CV-01/acceptance547-spread.json",
     "verification/development/NS-03/acceptance565-endpoints.json",
-    "verification/development/TO-01/acceptance574-reference.json"
+    "verification/development/TO-01/acceptance574-reference.json",
+    ".local/evidence/development/RL-01/native483-pop-workflow.xml",
+    ".local/evidence/development/RL-01/native484-delivery-workflow.xml",
+    ".local/evidence/development/BASE-04/batch-B006.json",
+    ".local/evidence/development/CV-01/acceptance547-spread.json",
+    ".local/evidence/development/NS-03/acceptance565-endpoints.json",
+    ".local/evidence/development/TO-01/acceptance574-reference.json",
+    ".local/evidence/development/MA-01/progress641-monomials.json",
+    ".local/evidence/development/MF-01/progress641-slope-summary.json",
+    "development/evidence/CV-01/yni-explicit-wavelength-acceptance20261108.md",
+    "development/evidence/BASE-04/b006-completion-reconciliation-20261108.md",
+    "development/evidence/PO-01/transmission-fan-selectable-acceptance20261108.md"
   ],
-  "current_item": "B006 remaining gaps after evidence637–641 synchronization",
+  "current_item": "B006 released 0.1.62",
   "diagnostic_outcomes": {
     "NS-03.NSCGeometricMtf": {
       "state": "done",
@@ -158,9 +174,49 @@
       "positive636": "verification/development/MA-01/progress636-positive-profile.json"
     }
   },
-  "next_action": "637–639单项式0–9阶为浮点精度；10/11阶单位幅度误差5.104e-9/6.124e-10，zmax1/5.8归一化结果一致。继续确认高阶正式求值、左端capping及专题选择，保持in_progress。 640普通45项、641正负原生2项通过；新增1001节点径向加权斜率摘要。继续制造偏移符号/基准、面型拟合适用性及反向制造摘要，保持implemented。",
+  "next_action": "Continue B007 from remaining-ranked.md; next executable item PO-01.PhaseAberration.",
   "evidence": [
     "verification/development/MA-01/progress641-monomials.json",
     "verification/development/MF-01/progress641-slope-summary.json"
-  ]
+  ],
+  "current_tracking": "development/tracking/batches.json",
+  "ordinary": {
+    "passed": 2590,
+    "skipped": 819,
+    "failed": 0,
+    "evidence": ".local/evidence/development/BASE-04/batch-B006-ordinary-final-20261108.xml"
+  },
+  "native_initial": {
+    "passed": 19,
+    "failed": 3,
+    "deselected": 8,
+    "evidence": ".local/evidence/development/BASE-04/batch-B006-native-20261108.xml",
+    "failures": [
+      "two INVALID_LICENSE connections",
+      "128 dft_knots independent reference exceeded unaliased domain"
+    ]
+  },
+  "installed_schema": {
+    "tools": 101,
+    "analyses": 118,
+    "closed": true,
+    "evidence": ".local/evidence/development/BASE-04/installed-schema062/summary.json"
+  },
+  "native_final": {
+    "passed_distinct_cases": 23,
+    "failed": 0,
+    "evidence": [
+      ".local/evidence/development/BASE-04/batch-B006-native-20261108.xml",
+      ".local/evidence/development/BASE-04/batch-B006-native-repeat-20261108.xml"
+    ],
+    "repeat_passed": 4,
+    "note": "Two initial INVALID_LICENSE connections passed on repeat. FFT reference restricted to its unaliased domain; original tolerance unchanged and full raw discrepancy retained."
+  },
+  "installed_native": {
+    "passed": 2,
+    "failed": 0,
+    "evidence": ".local/evidence/development/BASE-04/installed-native062-20261108.xml",
+    "closed": true,
+    "forced": false
+  }
 }

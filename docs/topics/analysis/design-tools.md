@@ -51,6 +51,10 @@ Model与Offset已拆成独立基线执行，原生舍入谱线阿贝数分别为
 - `convert_asphere`：必填`surface/asphere_type`；支持Even/Extended/QType0/QType1。`number_of_terms`省略采用原生自动模式，显式传入时使用正整数；另有二阶项排除及半径/圆锥系数可变开关。返回`ResidualRMSError`，单位为执行前镜头单位。本机`IsAutomatic`只有setter，结果明确记录该模式没有直接回读出口；其余公开设置逐项及最终回读。
 - `ray_aiming_wizard`：默认`apply=false`，运行原生推荐计算并返回建议，核对系统设置保持原值；`apply=true`建立检查点、调用`ApplyRecommendedSettings`，逐项核对实际Ray Aiming设置。建议以主波长为基础，原生未给建议时返回具体结果错误。
 
+## Ray Aiming 本机复测 2026-11-08
+
+OpticStudio 24.2.0 的 `OpenRayAimingWizard` 只读选项查询可正常创建并关闭；Cooke 样例的系统设置及曲面数据保持。适配器目前返回空 `settings` 字典。推荐计算的原生任务仍受生命周期问题阻塞：10秒等待返回 `TimedOut`，取消后仍 `IsRunning=true`，`Close()` 返回false。该项继续blocked，待任务能进入终态且关闭成功后再验推荐与Apply结果及保存重载。
+
 模型修改前创建检查点并递增修订号。结果保存执行前后曲面类型、半径、厚度、圆锥系数、配置和单位；系数完整数据仍由`get_surfaces`读取。模型修改失败或取消后保留实际状态及检查点恢复入口。SystemTool由既有任务所有者负责关闭；关闭失败触发现有重连处理。
 
 ## 优化向导设置

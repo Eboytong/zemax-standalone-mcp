@@ -1,0 +1,38 @@
+[
+  {
+    "tool": "run_analysis",
+    "arguments": {
+      "request": {
+        "kind": "geometric_bitmap_image",
+        "input_file": "C:/path/source.bmp",
+        "field_size": 1,
+        "rays_per_pixel": 1000,
+        "x_pixels": 17,
+        "y_pixels": 11,
+        "x_pixel_size": 0.1,
+        "y_pixel_size": 0.1
+      }
+    }
+  },
+  {
+    "tool": "get_task_result",
+    "arguments": {
+      "task_id": "REPLACE_WITH_COMPLETED_TASK_ID",
+      "grid": 3,
+      "x_start": 2,
+      "y_start": 1,
+      "width": 7,
+      "height": 5
+    }
+  },
+  {
+    "tool": "export_analysis_image",
+    "arguments": {
+      "request": {
+        "task_id": "REPLACE_WITH_COMPLETED_TASK_ID",
+        "item": 3,
+        "path": "C:/path/intensity.png"
+      }
+    }
+  }
+]

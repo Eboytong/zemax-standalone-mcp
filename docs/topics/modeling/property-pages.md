@@ -1,5 +1,8 @@
 # ED-01 属性页扩展（0.1.6）
 
+2026-11-08当前计划：内建属性及BSDF、IS散射目录验收继续保留；User散射DLL的后续开发已移入[历史归档](../../../development/archive/scope-native-only-20261108/README.md)。已有请求与执行记录沿用。
+
+
 update_system_settings新增author、afocal_mode_units、aperture_options和advanced。口径选项与Advanced分别覆盖本机9项可写属性。字段名称与类型见tool-schemas.json；get_capabilities连接后提供property_enums。
 
 update_surfaces新增drawing、type_properties、composite、physical_optics、scattering及disable_clear_semi_diameter_margins。局部属性页省略字段保持原值；aperture和scattering为指定类型的设置集合。长度使用镜头单位，散射角度参数沿原生属性定义。
@@ -22,7 +25,7 @@ get_surfaces的properties包含各页、散射类型及property_activity；系�
 
 真实stdio已覆盖系统设置、全部Advanced当前值回写、无焦开关、内置散射与ABg、Spider/Floating/UserAperture/UserObscuration、绘图、类型属性、Composite当前标志及POP各字段回写。既有建模、POP和扩展光线回归通过。
 
-本机创建User散射设置时出现UILDEScatterData不可序列化异常，原始NATIVE_ERROR保留。ABgFile、BSDF及ISScatterCatalog返回的列表只有原生空选项，仍需有效输入文件。FloatingAperture切至None的实测结果保持FloatingAperture，适配层返回SETTING_REJECTED（批量外层PARTIAL_UPDATE）。FRU__delta_init诊断继续保留。
+User散射工厂在`GetParamData()`因`UILDScatterData`未标记可序列化而抛出SerializationException；本机虽有5个SurfaceScatter DLL，活动容器`_S_User`为空，参数和DLL名均不可读，资源查询保留原始异常并返回`UNSUPPORTED_SETTING`。见`development/evidence/ED-01/user-scatter-factory-probe20261108.md`。BSDF的`GetAvailableFileNames()`在本机仅返回占位项“无”；即使测试项目包含`BrownVinyl.bsdf`，原生setter也未采用其文件名，资源查询会明确返回`UNSUPPORTED_SETTING`，见`development/evidence/ED-01/bsdf-resource-selector-probe20261108.md`。2026-11-08在OpticStudio 24.2中，FloatingAperture连续三轮切至None均回读成功，曲面其他属性保持；见`development/evidence/ED-01/floating-aperture-clear-acceptance20261108.md`。
 
 ED-01状态为implemented。待补验收：孔径已知瞳点通过率、Composite非零叠加数值、镜面绘图与导出、逐面POP设置变化的数值对照、各资源型散射有效输入。现有回归验证调用链路，数值范围见原有专题记录。
 

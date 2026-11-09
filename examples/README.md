@@ -12,6 +12,7 @@
 | [universal-targets236.json](requests/universal-targets236.json) | Universal 操作数及评价函数目标 |
 | [universal-numeric-mce261.json](requests/universal-numeric-mce261.json) | Universal 多配置数值扫描轴 |
 | [point-cloud179.json](requests/point-cloud179.json) | 点云导出请求 |
+| [bitmap-intensity.json](requests/bitmap-intensity.json) | 几何位图、原生强度网格分页与图像导出 |
 
 其余 JSON 按专题提供请求模板，字段说明见 [docs](../docs/reference/capabilities.md) 和 [请求模型](../docs/reference/tool-schemas.json)。将路径、模型编号和任务编号替换为实际值，并核对模板中的前置条件。
 
@@ -37,3 +38,7 @@
 IMA/BIM 查看示例：[`ima-bim-viewer.json`](requests/ima-bim-viewer.json)。
 
 请求模板位于 `requests/`，工作流脚本位于 `workflows/`，配置模板位于 `config/`。运行输出默认位于 `.local/runs/`。
+
+当前源码新增默认报告示例见 `requests/native-text-reports.json`，六种STAR默认分析见 `requests/star-analyses.json`，三类卸载见 `requests/star-unload.json`。实际原生条件与验收范围见对应专题及开发台账。
+
+NSC光源模式请求见[nsc-source-spectra.json](requests/nsc-source-spectra.json)：十种原生模式使用专属参数；NCE源设置与独立光谱查看器的输入分别记录。

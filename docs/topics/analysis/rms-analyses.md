@@ -1,5 +1,7 @@
 # AN-04 RMS与五焦面光斑
 
+2026-11-09：ThroughFocus原生任务使用当前配置选择器`Configuration=1`，`resolved_configuration`记录实际物理配置号；五面标准光斑子任务分别记录`configuration`和`native_configuration_selector`。双配置真实stdio已检查配置2零焦移、保存重载、分页/PNG及模型恢复，见[证据](../../../development/evidence/CV-01/spot-current-configuration-20261109.md)。
+
 通过run_analysis调用，返回任务编号。RMS曲线使用series；五焦面统计使用rows分页，另附可直接绘制的RMS/GEO曲线。
 
 RMS Field Map另见[`rms-field-map.md`](rms-field-map.md)，它输出二维RMS/波前/像斑网格。

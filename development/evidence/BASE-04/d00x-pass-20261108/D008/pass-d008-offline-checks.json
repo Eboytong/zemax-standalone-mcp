@@ -1,0 +1,563 @@
+{
+ "plate_catalog": {
+  "catalog_file": "Applied.tpd",
+  "tpd_path": "C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\ZemaxData\\Testplate\\Applied.tpd",
+  "tpd_exists": true,
+  "parsed_rows": 899,
+  "native_rows": 899,
+  "headers": [
+   "Applied Optics, Inc.",
+   "3349 Vincent Road",
+   "Pleasant Hill, CA 94523",
+   "USA",
+   "",
+   "Gery K. Koch - President",
+   "Phone: 925-932-5686",
+   "Email: service@applied-optics.com",
+   "Web:   www.applied-optics.com",
+   "",
+   "Catalog Last Updated 16th Oct 2020",
+   ""
+  ],
+  "max_radius_difference": 0.0,
+  "max_diameter_difference": 0.0,
+  "row_tolerance": 5.00001e-05,
+  "rows_outside_tolerance": 0,
+  "identity_or_code_mismatches": 0,
+  "passed": true
+ },
+ "slope_summary_641": {
+  "comparisons": [
+   {
+    "label": "MinimumRMS maximum slope summary",
+    "absolute_error": 1.6653345369377348e-15,
+    "limit": 1.006288620505544e-06,
+    "passed": true,
+    "stored_passed": true,
+    "stored_error": 1.6653345369377348e-15
+   },
+   {
+    "label": "MinimumRMS RMS slope summary",
+    "absolute_error": 1.5688947536951492e-15,
+    "limit": 1.0026679928855788e-06,
+    "passed": true,
+    "stored_passed": true,
+    "stored_error": 1.5688947536951492e-15
+   },
+   {
+    "label": "MinimumRMSWithOffset maximum slope summary",
+    "absolute_error": 1.6653345369377348e-15,
+    "limit": 1.0050208678051104e-06,
+    "passed": true,
+    "stored_passed": true,
+    "stored_error": 1.6653345369377348e-15
+   },
+   {
+    "label": "MinimumRMSWithOffset RMS slope summary",
+    "absolute_error": 1.2073404342255456e-15,
+    "limit": 1.002050014876211e-06,
+    "passed": true,
+    "stored_passed": true,
+    "stored_error": 1.2073404342255456e-15
+   },
+   {
+    "label": "MinimumVolume maximum slope summary",
+    "absolute_error": 1.6653345369377348e-15,
+    "limit": 1.0050249340561343e-06,
+    "passed": true,
+    "stored_passed": true,
+    "stored_error": 1.6653345369377348e-15
+   },
+   {
+    "label": "MinimumVolume RMS slope summary",
+    "absolute_error": 1.2089125273756496e-15,
+    "limit": 1.0020516776973182e-06,
+    "passed": true,
+    "stored_passed": true,
+    "stored_error": 1.2089125273756496e-15
+   },
+   {
+    "label": "MinimumRMS maximum slope summary",
+    "absolute_error": 1.6653345369377348e-15,
+    "limit": 1.006288620505544e-06,
+    "passed": true,
+    "stored_passed": true,
+    "stored_error": 1.6653345369377348e-15
+   },
+   {
+    "label": "MinimumRMS RMS slope summary",
+    "absolute_error": 1.5688947536951492e-15,
+    "limit": 1.0026679928855788e-06,
+    "passed": true,
+    "stored_passed": true,
+    "stored_error": 1.5688947536951492e-15
+   },
+   {
+    "label": "MinimumRMSWithOffset maximum slope summary",
+    "absolute_error": 1.6653345369377348e-15,
+    "limit": 1.0050208678203454e-06,
+    "passed": true,
+    "stored_passed": true,
+    "stored_error": 1.6653345369377348e-15
+   },
+   {
+    "label": "MinimumRMSWithOffset RMS slope summary",
+    "absolute_error": 1.2073404342255456e-15,
+    "limit": 1.002050014882436e-06,
+    "passed": true,
+    "stored_passed": true,
+    "stored_error": 1.2073404342255456e-15
+   },
+   {
+    "label": "MinimumVolume maximum slope summary",
+    "absolute_error": 1.6653345369377348e-15,
+    "limit": 1.0050231613531259e-06,
+    "passed": true,
+    "stored_passed": true,
+    "stored_error": 1.6653345369377348e-15
+   },
+   {
+    "label": "MinimumVolume RMS slope summary",
+    "absolute_error": 1.2081535858549097e-15,
+    "limit": 1.0020509524593793e-06,
+    "passed": true,
+    "stored_passed": true,
+    "stored_error": 1.2081535858549097e-15
+   }
+  ],
+  "count": 12,
+  "max_absolute_error": 1.6653345369377348e-15,
+  "all_pass": true,
+  "stored_verdict_agreement": true,
+  "stored_error_agreement": true,
+  "tolerance": "1e-6 absolute + 1e-5 relative"
+ },
+ "offset_622": {
+  "rows": [
+   {
+    "sign": 1,
+    "criterion": "MinimumRMS",
+    "sampling": 1,
+    "radius": 39.80078212526673,
+    "native_offset": 0.0,
+    "independent_offset": 0.0,
+    "opposite_signs": false,
+    "magnitude_difference": 0.0,
+    "radius_error": 9.814868917601416e-10
+   },
+   {
+    "sign": 1,
+    "criterion": "MinimumRMS",
+    "sampling": 3,
+    "radius": 39.80078212526673,
+    "native_offset": 0.0,
+    "independent_offset": 0.0,
+    "opposite_signs": false,
+    "magnitude_difference": 0.0,
+    "radius_error": 9.814868917601416e-10
+   },
+   {
+    "sign": 1,
+    "criterion": "MinimumRMSWithOffset",
+    "sampling": 1,
+    "radius": 39.840039682665214,
+    "native_offset": -0.0002083725004988426,
+    "independent_offset": 0.00020837252184727607,
+    "opposite_signs": true,
+    "magnitude_difference": 2.1348433464811814e-11,
+    "radius_error": 5.378943512823753e-09
+   },
+   {
+    "sign": 1,
+    "criterion": "MinimumRMSWithOffset",
+    "sampling": 3,
+    "radius": 39.840039682665214,
+    "native_offset": -0.0002083725004988426,
+    "independent_offset": 0.00020837252184727607,
+    "opposite_signs": true,
+    "magnitude_difference": 2.1348433464811814e-11,
+    "radius_error": 5.378943512823753e-09
+   },
+   {
+    "sign": -1,
+    "criterion": "MinimumRMS",
+    "sampling": 1,
+    "radius": -39.80078212526673,
+    "native_offset": 0.0,
+    "independent_offset": 0.0,
+    "opposite_signs": false,
+    "magnitude_difference": 0.0,
+    "radius_error": 9.814868917601416e-10
+   },
+   {
+    "sign": -1,
+    "criterion": "MinimumRMS",
+    "sampling": 3,
+    "radius": -39.80078212526673,
+    "native_offset": 0.0,
+    "independent_offset": 0.0,
+    "opposite_signs": false,
+    "magnitude_difference": 0.0,
+    "radius_error": 9.814868917601416e-10
+   },
+   {
+    "sign": -1,
+    "criterion": "MinimumRMSWithOffset",
+    "sampling": 1,
+    "radius": -39.840039683137455,
+    "native_offset": 0.00020837250272411276,
+    "independent_offset": -0.00020837252184731755,
+    "opposite_signs": true,
+    "magnitude_difference": 1.9123204782938233e-11,
+    "radius_error": 4.90671681063759e-09
+   },
+   {
+    "sign": -1,
+    "criterion": "MinimumRMSWithOffset",
+    "sampling": 3,
+    "radius": -39.840039683137455,
+    "native_offset": 0.00020837250272411276,
+    "independent_offset": -0.00020837252184731755,
+    "opposite_signs": true,
+    "magnitude_difference": 1.9123204782938233e-11,
+    "radius_error": 4.90671681063759e-09
+   }
+  ],
+  "opposite_sign_rows": 4,
+  "max_magnitude_difference": 2.1348433464811814e-11,
+  "max_radius_error": 5.378943512823753e-09,
+  "stated_max_opposite_sign_offset_error": 2.1348433464811814e-11,
+  "stated_max_radius_error": 5.378943512823753e-09,
+  "tolerance": {
+   "radius_absolute": 5e-06,
+   "raw_opposite_sign_offset": "1e-8mm+1e-6relative on EvenAspheric control",
+   "rows": "1e-8+1e-6relative unchanged"
+  },
+  "piston_cases": [
+   {
+    "piston": 0.0,
+    "vertex_sag": 0.0,
+    "queries": [
+     {
+      "operand": "BFSD",
+      "arguments": [
+       1,
+       2,
+       0,
+       5,
+       0,
+       0,
+       0,
+       0
+      ],
+      "value": 0.0
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       9,
+       1,
+       0,
+       2,
+       0,
+       0
+      ],
+      "value": 39.8401000907035
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       10,
+       1,
+       0,
+       2,
+       0,
+       0
+      ],
+      "value": -5.248517264298932e-07
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       9,
+       1,
+       0,
+       2,
+       1,
+       0
+      ],
+      "value": 39.80075131949389
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       10,
+       1,
+       0,
+       2,
+       1,
+       0
+      ],
+      "value": 0.0
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       9,
+       1,
+       0,
+       2,
+       2,
+       0
+      ],
+      "value": 39.840001302599156
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       10,
+       1,
+       0,
+       2,
+       2,
+       0
+      ],
+      "value": -0.00020827449928608065
+     }
+    ],
+    "closed": true,
+    "preserved": true
+   },
+   {
+    "piston": 0.003,
+    "vertex_sag": 0.003,
+    "queries": [
+     {
+      "operand": "BFSD",
+      "arguments": [
+       1,
+       2,
+       0,
+       5,
+       0,
+       0,
+       0,
+       0
+      ],
+      "value": 0.0
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       9,
+       1,
+       0,
+       2,
+       0,
+       0
+      ],
+      "value": 39.84009984211472
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       10,
+       1,
+       0,
+       2,
+       0,
+       0
+      ],
+      "value": -0.0030005248529655984
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       9,
+       1,
+       0,
+       2,
+       1,
+       0
+      ],
+      "value": 39.2439438542662
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       10,
+       1,
+       0,
+       2,
+       1,
+       0
+      ],
+      "value": 0.0
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       9,
+       1,
+       0,
+       2,
+       2,
+       0
+      ],
+      "value": 39.84000130363633
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       10,
+       1,
+       0,
+       2,
+       2,
+       0
+      ],
+      "value": -0.0032082745037776013
+     }
+    ],
+    "closed": true,
+    "preserved": true
+   },
+   {
+    "piston": -0.003,
+    "vertex_sag": -0.003,
+    "queries": [
+     {
+      "operand": "BFSD",
+      "arguments": [
+       1,
+       2,
+       0,
+       5,
+       0,
+       0,
+       0,
+       0
+      ],
+      "value": -0.0030000031307268753
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       9,
+       1,
+       0,
+       2,
+       0,
+       0
+      ],
+      "value": 39.84012882766822
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       10,
+       1,
+       0,
+       2,
+       0,
+       0
+      ],
+      "value": 0.002999246010700222
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       9,
+       1,
+       0,
+       2,
+       1,
+       0
+      ],
+      "value": 40.37376808221666
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       10,
+       1,
+       0,
+       2,
+       1,
+       0
+      ],
+      "value": 0.0
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       9,
+       1,
+       0,
+       2,
+       2,
+       0
+      ],
+      "value": 39.840001303951375
+     },
+     {
+      "operand": "DSAG",
+      "arguments": [
+       1,
+       0,
+       10,
+       1,
+       0,
+       2,
+       2,
+       0
+      ],
+      "value": 0.0027917254945267057
+     }
+    ],
+    "closed": true,
+    "preserved": true
+   }
+  ],
+  "production_scope": {
+   "result": "native_bfs_fit: raw radius,vertex_z_offset,formal parameter identity and SSAG curve_radius_check",
+   "offset": "summary manufacturing offset unchanged; raw DSAG sign/vertex-reference conversion remains unconfirmed",
+   "reverse": "No production DSAG BFS3 query: installed DSAG documentation lists0\u20132; direct3 diagnostic retained separately",
+   "failures": "Native original error/arguments retained; cancellation preserves completed radius; radius discrepancy retains raw values and failed consistency flag"
+  }
+ }
+}

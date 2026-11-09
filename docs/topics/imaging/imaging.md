@@ -1,5 +1,7 @@
 # 成像与扩展源
 
+2026-11-09：几何位图已通过正式GBM配置和RGB文本接入，受控输入、旋转、17×11通道网格、分页与PNG已有真实stdio证据。当前请求及剩余范围见[几何位图](geometric-bitmap.md)。以下发行验收记录保留其历史范围。
+
 ## 0.1.48 位图/道路向导及成像运行时验收
 
 完成NSCBitmapWizard和NSCRoadwayLightingWizard两项：实际Apply、评价函数输出及保存重载通过；位图使用原生资源列表中的square.bmp。GeometricImage点源/条纹/边缘已完成设置采用、结果读取、分页及图像导出，独立数值参考仍待补，保持implemented。
@@ -15,7 +17,7 @@ IM-01 已接入六项有类型分析；原生设置采用、非对称网格方�
 | --- | --- |
 | image_simulation | 必填 input_file；视场1；RGB波长或1+2+3或明确编号；物方全Y高 field_height；翻转/90度旋转；过采样/保护带；瞳及像面采样；像差模式；PSF场点数5×5；固定孔径、相对照度、偏振；像元与像素数量0采用原生自动值 |
 | geometric_image | 必填 input_file；视场1、波长1；物方全X宽 field_size；image_size为接收区域大小，SpotDiagram下为标尺；光线数量约为rays_x1000×1000；Uniform/Lambertian、NA、总功率、奇偶、旋转、显示及像素参数 |
-| geometric_bitmap_image | 必填 input_file；与几何成像共用 `IAS_GeometricImageAnalysis` 设置面，使用独立 `GeometricBitmapImageAnalysis` 分析 ID；结果沿用通用原生网格/曲线/散点读取 |
+| geometric_bitmap_image | 必填BMP/JPG/PNG的input_file；正式GBM配置：field_size为全Y高、rotation为度、rays_per_pixel为每源像素每颜色光线数，独立X/Y像素及像素大小；RGB文本读取，详见geometric-bitmap.md |
 | fft_line_edge_spread | 视场1、波长1、64×64采样；Line/Edge；完整原生X/Y强度、对数、相位及实虚部类型；相干PSF、偏振、显示尺度 |
 | geometric_line_edge_spread | 视场1、波长1、像面、64×64采样；LineEdge/Line/Edge、偏振；radius_maximum为微米，0自动 |
 | extended_source_encircled_energy | 必填 image_name；视场1、波长1、像面、Centroid；Encircled/X_Only/Y_Only/Ensquared/X_Distrib/Y_Distrib；物方全X宽、旋转、最大距离、光线数量、偏振、渐晕；衍射极限修正适用于Encircled |
@@ -81,3 +83,11 @@ Encircled为圆形区域能量分数，X_Only/Y_Only为指定半宽的无限长�
 2026-11-07 B006执行544–547：FFT线边扩散完成声明范围验收。相干参考改用手册明确的默认FFT瞳网格拉伸：`p=(i-N/2)*sqrt(N/32)/(N/2-1)`，仅追迹严格瞳内节点。64/128采样分别有43/63个一维节点；独立新追迹的OPD/强度经物理Fraunhofer求和，在焦面−100/−100.02mm的最大强度差分别为0.000692780、0.000810981、0.000418584、0.000263290，均低于原0.005门槛。544的旧相位插值仅为假设实验，最终545使用准确节点的新光线。
 
 546重新执行Cooke轴上/离轴PSF边缘积分、ESF累积、原FFT节点复振幅强度/相位和生命周期，共3原生通过；545独立参考2原生通过。最大LSF/ESF差0.004682579/0.000286458，强度恒等式差9.97405e-7、相位差0.00239177degrees，沿用原门槛。偏振/多色、设置回读、分页、PNG导出与查看、失败/取消/复用、曲面/solve/系统/MFE保持、保存重载及关闭均通过。ordinary547定向120通过。原0.260976及489/500/513失败实验保留；生产原生曲线/坐标未作补偿。条目CV-01.FftPsfLineEdgeSpread现为done，计入B006第3项。证据`.local/evidence/development/CV-01/acceptance547-spread.json`；请求沿用`examples/requests/imaging023_requests.json`。
+# 几何位图更新（2026-11-09）
+
+几何位图现返回RGB及原生正常化强度网格，支持强度区域分页和PNG；原生效率百分数保留实际值并标记独立定义待验。调用与结果字段见[几何位图](bitmap-image.md)。
+
+
+## 2026-11-09公共方法探查
+
+七种分析的ToFile后缀对照实际均输出结果文本；showSettings仅为StandardSpot列出专用设置，六种AS_Default未取得输入选择器。CreateSettingsFromParent两类parent均返回空键字典。具体结果与生命周期见[证据](../../../development/evidence/D005/common-analysis-outlets-20261109.md)。几何位图已确认的GBM路径及正常化强度支持见[专题](bitmap-image.md)。

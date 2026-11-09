@@ -3,6 +3,8 @@
 # These tests exercise their own model/resource and failure contracts. Listing
 # them here routes coverage; their presence is not evidence of a native pass.
 SPECIALIZED = {
+    'extended_diffraction_image':('test_scene_images_live.py','scene input and explicit source/display widths'),
+    'partially_coherent_image':('test_scene_images_live.py','scene CFG, field/wavelength selection and native grid'),
     'biocular_field_of_view':('test_biocular_fov_live.py','native STOP-launched multi-configuration pass boundary'),
     'biocular_dipvergence_convergence':('test_biocular_live.py','controlled two-configuration chief-ray matching'),
     'yybar_diagram':('test_ray_diagrams_live.py','native first-order ray diagram'),
@@ -37,7 +39,14 @@ SPECIALIZED = {
     'surface_phase_cross': ('test_phase_slope_reference_live.py', 'phase surface'),
     'surface_phase_slope': ('test_phase_slope_reference_live.py', 'phase surface'),
     'surface_phase_slope_cross': ('test_phase_slope_reference_live.py', 'phase surface'),
+    # Kind-only requests by contract: the native settings object exposes no documented
+    # section or surface selector, so adding a Cooke default would be a fabricated field.
+    'prescription_data': ('test_native_text_reports_live.py', 'default report scope only; no documented section selector'),
+    'surface_data': ('test_native_text_reports_live.py', 'default report scope only; no documented surface selector'),
 }
+for kind in ('star_align_check','star_sys_viewer','star_2d_def_plot',
+             'star_perf_change','star_index_vs_temp','star_inspect_fea'):
+    SPECIALIZED[kind] = ('test_star_analysis_live.py', 'enabled STAR module and controlled FEA input')
 for metric in ['reflection','transmission','absorption','diattenuation','phase','retardance']:
     for axis in ['angle','wavelength']:
         SPECIALIZED[f'{metric}_vs_{axis}'] = ('test_coatings_live.py', 'selected coating surface and polarization reference')
@@ -47,7 +56,9 @@ for kind in ['diff_efficiency_2d','diff_efficiency_angular','diff_efficiency_chr
 
 # Confirmed by outlets265: all public result arrays empty, GetTextFile=false.
 # Reproducing a limitation is kept separate from successful analysis coverage.
-EXPECTED_LIMITATIONS = {'seidel_diagram': 'EXPORT_FAILED'}
+EXPECTED_LIMITATIONS = {}
+# seidel_diagram auto now builds a documented bar chart from native coefficients;
+# explicit method=native retains the outlet limitation in test_seidel_slopes_live.
 
 
 def cooke_request(kind):

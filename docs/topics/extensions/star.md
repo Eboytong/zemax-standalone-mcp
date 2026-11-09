@@ -36,6 +36,16 @@
 
 本机反射和逐项状态见 `.local/evidence/development/EXT-STAR/probe037.json`。当前实现等待原生初始化及实际STAR许可验收。已准备受控恒定变形、温度及折射率用例，容差分别为 `1e-8镜头单位+1e-6×参考值`、`1e-6°C+1e-6×参考值`、`1e-8+1e-7×参考值`。
 
+## 卸载
+
+`kind` 可选 `unload_deformation/unload_temperature/unload_direct_index`，前置条件为对应数据已导入（原生 `AreDeformationsImported`/`AreTemperaturesImported`/`IsDirectIndexImported` 为真）。请求前读入导入标志、点数与原文件名；调用原生 `FEAData.UnloadData()` 后核对导入标志已清除，未清除则返回 `SETTING_REJECTED`。
+
+```json
+{"request":{"kind":"unload_deformation","surface":1}}
+```
+
+卸载记录前后状态（导入标志/点数/文件名）与 `source_file`（源文件身份、`exists_before`/`exists_after` 存在性事实、`no_source_delete_performed=true`）；源文件为导入时暂存的工作副本，卸载只清除原生引用，不删除磁盘副本。成功范围以导入标志清除为判据；详细 Fits/坐标/热控读取为尽力而为（成功记 `detail`，不可用记 `detail_unavailable`），空数据下读取失败不会把成功卸载误报为失败。沿用检查点与边界取消；失败或取消恢复基线，原始异常与恢复异常分开保留，恢复失败要求重连。
+
 ## 刚体、坐标、组件与更新控制
 
 继续使用 `run_star_operation`：
@@ -69,3 +79,28 @@ fit_type采用本机整数代码，具体可用代码的语义待原生运行确
 2026-11-06：v242/build240529 Premium应用的API许可有效，IsSTARModuleEnabled=False，STARData正式对象可取得。公开STAR读取/控制在修改前返回FEATURE_UNAVAILABLE。材料工具单独执行：N-BK7/N-F2、三种目录标识及六组环境/材料条件下GetRefractiveIndex/GetDNDT均返回0；公开适配保留INVALID_RESULT_DATA。普通目录查询与失败后复用成功，源模型保持，原生实例正常关闭。24个操作条目记录具体阻塞，不计完成数。
 
 恢复条件及首个动作见.local/evidence/development/EXT-STAR/readiness193.json：启用原生STAR模块后执行既有受控FEA导入/拟合/坐标/组件用例；材料工具须返回有效正折射率后继续独立色散及热参考。native190材料数值尝试失败与native192错误/复用检查通过分别保留；当前证据未完成数值验收。
+
+## 六项默认专题分析
+
+通过 `run_analysis` 调用下列 kind；当前请求只包含 `kind`，采用原生默认设置。每次运行读取模块可用性，取得一次设置对象并记录实际可读值和公开成员。完整输入选择及数值范围仍待原生验收。
+
+| kind | 正式枚举 | 编号 |
+| --- | --- | ---: |
+| `star_align_check` | `STARAlignCheck` | 155 |
+| `star_sys_viewer` | `STARSysViewer` | 156 |
+| `star_2d_def_plot` | `STAR2DDefPlot` | 157 |
+| `star_perf_change` | `STARPerfChange` | 158 |
+| `star_index_vs_temp` | `STARIndexVsTemp` | 159 |
+| `star_inspect_fea` | `STARInspectFEA` | 160 |
+
+```json
+{"request":{"kind":"star_inspect_fea"}}
+```
+
+曲线返回 `series`，网格返回完整 `values[y][x]`，散点明细返回 `rows` 并保留有效点绘图数据 `scatter`。结果使用现有曲线/区域/行分页和图像导出。文本导出结果单独记录；原生失败消息及可取得的部分数据保留在错误详情。
+
+本轮主仓相关 421 项定向检查通过，覆盖请求、模块门槛、设置回读、结果采集、分页、绘图及既有消费者。新增原生准备用例尚未执行；需要可创建的应用、已启用的 STAR 模块及受控 FEA。`star_sys_viewer` 的正式原生图像出口也待确认。示例见 `examples/requests/star-analyses.json`，状态见开发台账。
+
+## 本机许可与恢复条件
+
+2024 R2手册The STAR Tab、p.1708要求Enterprise级许可。当前已有原生证据为PremiumEdition、IsSTARModuleEnabled=false。FEATURE_UNAVAILABLE详情及get_capabilities.star_operations返回该要求和来源；先确认可用Enterprise许可，再创建新实例读取模块标志。模块可用后按受控FEA逐项验收。D011/D012共30组的具体条件见[许可记录](../../../development/evidence/EXT-STAR/license-requirement-20261109.md)。

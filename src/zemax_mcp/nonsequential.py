@@ -6,6 +6,7 @@ from .data import unwrap,dotnet_array
 from .files import input_path,output_path
 from .errors import ZemaxError
 from .detectors import checked_setting, check_setting_readback, polar_coordinates, detector_metadata
+from .source_spectrum import read_settings as read_source_spectrum, requested_values
 
 OBJECT_FIELDS=dict(x="XPosition",y="YPosition",z="ZPosition",tilt_x="TiltAboutX",tilt_y="TiltAboutY",tilt_z="TiltAboutZ",ref_object="RefObject",inside_of="InsideOf",material="Material",comment="Comment")
 
@@ -226,8 +227,7 @@ class NonSequentialMixin:
                     volume["parameters"]=[dict(index=j,name=str(obj.GetParameterName(j)),value=float(obj.GetParameterValue(j)))for j in range(obj.NumberOfParameters)]
             spectrum=None
             if r.SourcesData.IsSourcesAvailable:
-                mode=str(r.SourcesData.SourceColor)
-                spectrum=dict(mode=mode,settings=scalar_settings(getattr(r.SourcesData.SourceColorSettings,"_S_"+mode)))
+                spectrum=read_source_spectrum(r.SourcesData)
             rows.append(dict(object=i,type=str(r.Type),**{k:getattr(r,v) for k,v in OBJECT_FIELDS.items()},data=scalar_settings(unwrap(r.ObjectData)),sources=scalar_settings(r.SourcesData),type_settings=scalar_settings(r.TypeData),faces=faces,volume=volume,diffraction=scalar_settings(r.DiffractionData)if r.DiffractionData.IsDiffractionAvailable else None,available_types=[str(x) for x in r.AvailableObjectTypes()],file1=str(r.CurrentTypeSettings.FileName1),file2=str(r.CurrentTypeSettings.FileName2),available_files1=[str(x)for x in r.CurrentTypeSettings.GetFileNames1()]if r.CurrentTypeSettings.RequiresFile1 else [],available_files2=[str(x)for x in r.CurrentTypeSettings.GetFileNames2()]if r.CurrentTypeSettings.RequiresFile2 else []))
             rows[-1]["spectrum"]=spectrum
             rows[-1]['parameter_cells']=self._object_parameters(r,getattr(req,'parameter_start',1),getattr(req,'parameter_count',20))
@@ -397,7 +397,7 @@ class NonSequentialMixin:
                     if not r.SourcesData.IsSourcesAvailable:raise ZemaxError("UNSUPPORTED_SETTING","此对象无光源设置。")
                     checked_setting(self.native,r.SourcesData,"SourceColor",p.spectrum.mode)
                     obj=getattr(r.SourcesData.SourceColorSettings,"_S_"+p.spectrum.mode)
-                    for key,value in p.spectrum.settings.items():checked_setting(self.native,obj,key,value)
+                    for key,value in requested_values(p.spectrum).items():checked_setting(self.native,obj,key,value)
                 if p.diffraction:
                     if not r.DiffractionData.IsDiffractionAvailable:raise ZemaxError("UNSUPPORTED_SETTING","此对象无衍射设置。")
                     for key,value in p.diffraction.items():checked_setting(self.native,r.DiffractionData,key,value)

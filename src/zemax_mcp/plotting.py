@@ -27,7 +27,7 @@ def export_image(result,request,path):
         import matplotlib.pyplot as plt
         import numpy as np
     except ImportError as exc:raise ZemaxError("MISSING_DEPENDENCY","绘图需要项目reports依赖。") from exc
-    items=[("series",s) for s in result.get("series",[])]+[("grid",g) for g in result.get("grids",[])]+[("scatter",s) for s in result.get("scatter",[])]
+    items=[("series",s) for s in result.get("series",[])]+[("grid",g) for g in result.get("grids",[])]+[("scatter",s) for s in result.get("scatter",[]) if s.get("points")]
     if not items and result.get("rows"):
         rows=[r for r in result["rows"] if r.get("metrics")]
         if rows:items=[("metrics",rows)]
@@ -39,12 +39,22 @@ def export_image(result,request,path):
         fig,ax=plt.subplots(figsize=(request.width/100,request.height/100),dpi=100,layout="constrained")
         try:
             if kind=="series":
-                for i,label in enumerate(data["labels"]):ax.plot(data["x"],[row[i] for row in data["y"]],label=label,marker="o" if data.get("point_labels") else None)
+                for i,label in enumerate(data["labels"]):
+                    if data.get('plot_kind')=='bar':
+                        width=.8/len(data['labels'])
+                        ax.bar([x-.4+width*(i+.5) for x in data['x']],[row[i] for row in data['y']],width=width,label=label)
+                    else:ax.plot(data['x'],[row[i] for row in data['y']],label=label,marker='o' if data.get('point_labels') else None)
+                if data.get('plot_kind')=='bar':
+                    ax.set_xticks(data['x'],data.get('tick_labels',data['x']))
+                    ax.set_frame_on(not data.get('suppress_frame',False))
+                    plot_settings.update(plot_kind='bar',suppress_frame=data.get('suppress_frame',False))
                 ax.set(xlabel=str(data.get("x_label","X"))+" ("+str(data.get("x_unit")or"单位见结果")+")",title=data.get("description",""));ax.legend();ax.grid(alpha=.25)
                 if data.get('y_label'):ax.set_ylabel(data['y_label']+' ('+str(data.get('y_unit')or'单位见结果')+')')
                 if data.get('axis_limits'):
                     ax.set_xlim(*data['axis_limits']);ax.set_ylim(*data['axis_limits'])
                     plot_settings['axis_limits']=data['axis_limits']
+                if data.get('y_limits'):
+                    ax.set_ylim(*data['y_limits']);plot_settings['y_limits']=data['y_limits']
                 if data.get('aspect'):
                     ax.set_aspect(data['aspect'],adjustable='box');plot_settings['aspect']=data['aspect']
                 for i,(x,y,label) in enumerate(zip(data['x'],data['y'],data.get('point_labels',[]))):
@@ -58,8 +68,12 @@ def export_image(result,request,path):
                 plot_settings.update(extent=extent,origin="lower",array_order="values[y][x]",x_unit=data.get("x_unit"),y_unit=data.get("y_unit"),value_unit=data.get("value_unit"))
             elif kind=="scatter":
                 points=data["points"]
-                image=ax.scatter([p["x"] for p in points],[p["y"] for p in points],c=[p.get("value",0) for p in points])
-                fig.colorbar(image,ax=ax);ax.set(xlabel=data.get("x_label","X"),ylabel=data.get("y_label","Y"))
+                if any("value" in p for p in points):
+                    image=ax.scatter([p["x"] for p in points],[p["y"] for p in points],c=[p.get("value",0) for p in points])
+                    fig.colorbar(image,ax=ax)
+                else:ax.scatter([p["x"] for p in points],[p["y"] for p in points])
+                ax.set(xlabel=data.get("x_label","X"),ylabel=data.get("y_label","Y"))
+                if data.get("x_axis_direction")=="decreasing_left_to_right":ax.invert_xaxis()
             else:
                 for key in dict.fromkeys(m["key"] for row in data for m in row["metrics"]):
                     selected=[(r.get("index",i),m) for i,r in enumerate(data) for m in r["metrics"] if m["key"]==key]

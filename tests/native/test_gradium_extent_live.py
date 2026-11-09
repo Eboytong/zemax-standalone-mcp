@@ -9,7 +9,7 @@ def test_gradium_profile_capping_boundary_diagnostic():
     async def work(e):
         record=dict(conditions=dict(profiles=['G14SFN','G14SFP'],offsets=[1.,-.2,5.6],thickness=.4,
             bounds=[0,5.8],wavelengths_um=[.58756,.55],
-            pass_rule='Lower extension requires capping2/3; upper extension requires1/3; forbidden crossing has nonzero ray error',
+            pass_rule='Negative-side extension is expected to require capping2/3; positive-side extension is expected to require1/3; record any native disagreement',
             direction_absolute_tolerance=1e-10,reference_index_atol=1e-10,reference_index_rtol=1e-9),cases=[])
         def save():(e.folder/'extent.json').write_text(json.dumps(record,ensure_ascii=False,indent=2),encoding='utf-8')
         save();await e.model();await e.call('insert_surfaces',dict(at=2))

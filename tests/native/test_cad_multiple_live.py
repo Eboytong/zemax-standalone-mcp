@@ -1,5 +1,5 @@
 """Native configuration selection and exported STEP volume references."""
-import asyncio,math,json
+import asyncio,math,json,time
 from pathlib import Path
 import pytest
 from tests.support.native import execute
@@ -42,7 +42,20 @@ def test_native_cad_multiple_configurations():
             assert await e.call('get_configurations',dict(request={}))==baseline
             assert await e.call('get_surfaces')==surfaces and await e.call('get_system_settings')==settings
         for mode,expected in [('all_by_layer',{10,11}),('all_at_once',{10})]:
-            result=await e.finish(await e.call('run_cad_export',dict(request=dict(path=str(e.folder/(mode+'.igs')),format='IGES',end=2,configuration_mode=mode,lens_layer=10,ray_layer=20))))
+            task=await e.call('run_cad_export',dict(request=dict(path=str(e.folder/(mode+'.igs')),format='IGES',end=2,configuration_mode=mode,lens_layer=10,ray_layer=20)))
+            deadline=time.monotonic()+90
+            while task['state'] not in {'succeeded','failed','cancelled'}:
+                assert time.monotonic()<deadline
+                await asyncio.sleep(.02);task=await e.call('get_task_status',dict(task_id=task['task_id']))
+            if task['state']=='failed':
+                assert task['error']['code']=='SETTING_REJECTED' and task['error']['details']['setting']=='lens_layer',task
+                assert task['close_attempted'] and not task.get('cleanup_warnings')
+                details=task['error']['details']
+                assert details['requested']==sorted(expected)
+                assert Path(details['path']).is_file()
+                layer_failures.append(dict(mode=mode,actual=details['actual']['levels'],expected=sorted(expected),rejected=True))
+                continue
+            result=await e.finish(task)
             directory=[line for line in Path(result['path']).read_text(encoding='ascii').splitlines()if len(line)>=73 and line[72]=='D']
             levels={int(line[32:40])for line in directory[::2]}-{0}
             (e.folder/(mode+'-layers.json')).write_text(json.dumps(dict(levels=sorted(levels),expected=sorted(expected))),encoding='utf-8')
@@ -50,3 +63,25 @@ def test_native_cad_multiple_configurations():
         assert await e.call('get_configurations',dict(request={}))==baseline and await e.call('get_surfaces')==surfaces
     asyncio.run(execute('cad169_multiple',work))
     if layer_failures:pytest.xfail('v242 CAD IGES layer output differs from adopted settings: '+str(layer_failures))
+
+
+@pytest.mark.zemax
+def test_iges_layer_rejection_and_reuse():
+    async def work(e):
+        await e.call('open_lens',dict(path=str(Path.home()/'Documents/Zemax/Samples/Sequential/Objectives/Cooke 40 degree field.zos')))
+        before={tool:await e.call(tool) for tool in ('get_surfaces','get_system_settings','get_merit_function')}
+        q=dict(path=str(e.folder/'explicit_layer.igs'),format='IGES',end=2,lens_layer=10,number_of_rays=0)
+        task=await e.call('run_cad_export',dict(request=q));deadline=time.monotonic()+90
+        while task['state'] not in {'succeeded','failed','cancelled'}:
+            assert time.monotonic()<deadline
+            await asyncio.sleep(.02);task=await e.call('get_task_status',dict(task_id=task['task_id']))
+        assert task['state']=='failed' and task['error']['code']=='SETTING_REJECTED',task
+        details=task['error']['details']
+        assert details['setting']=='lens_layer' and details['requested']==[10]
+        assert set(details['actual']['levels'])-{0}=={65535} and Path(details['path']).is_file()
+        assert task['close_attempted'] and not task.get('cleanup_warnings')
+        result=await e.finish(await e.call('run_cad_export',dict(request=dict(path=str(e.folder/'reuse.step'),format='STEP',end=2))))
+        assert Path(result['path']).is_file()
+        after={tool:await e.call(tool) for tool in before}
+        assert before==after
+    asyncio.run(execute('cad_iges_adoption',work))

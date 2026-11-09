@@ -1,0 +1,250 @@
+{
+ "generated": "2026-11-08",
+ "item": "ED-02.SolveExtensions018",
+ "source": "src/zemax_mcp/modeling.py SOLVES/SOLVE_FIELDS/SOLVE_ALIASES",
+ "total_solves": 27,
+ "with_unit_test_reference": 15,
+ "without_doc": 6,
+ "aliases": {
+  "ConcentricSurface": "CocentricSurface",
+  "ConcentricRadius": "CocentricRadius"
+ },
+ "limitation_source": "docs/topics/modeling/solve-extensions.md",
+ "solves": [
+  {
+   "request_key": "aplanatic",
+   "native_enum": "Aplanatic",
+   "writable_fields": [],
+   "documented": true,
+   "unit_test_reference": false
+  },
+  {
+   "request_key": "automatic",
+   "native_enum": "Automatic",
+   "writable_fields": [],
+   "documented": true,
+   "unit_test_reference": true
+  },
+  {
+   "request_key": "center_of_curvature",
+   "native_enum": "CenterOfCurvature",
+   "writable_fields": [
+    "source_surface"
+   ],
+   "documented": true,
+   "unit_test_reference": false
+  },
+  {
+   "request_key": "chief_ray_angle",
+   "native_enum": "ChiefRayAngle",
+   "writable_fields": [
+    "angle"
+   ],
+   "documented": true,
+   "unit_test_reference": false
+  },
+  {
+   "request_key": "chief_ray_height",
+   "native_enum": "ChiefRayHeight",
+   "writable_fields": [
+    "height"
+   ],
+   "documented": false,
+   "unit_test_reference": true
+  },
+  {
+   "request_key": "chief_ray_normal",
+   "native_enum": "ChiefRayNormal",
+   "writable_fields": [],
+   "documented": true,
+   "unit_test_reference": false
+  },
+  {
+   "request_key": "compensator",
+   "native_enum": "Compensator",
+   "writable_fields": [
+    "source_surface",
+    "sum"
+   ],
+   "documented": true,
+   "unit_test_reference": false
+  },
+  {
+   "request_key": "concentric_radius",
+   "native_enum": "CocentricRadius",
+   "writable_fields": [
+    "source_surface"
+   ],
+   "documented": true,
+   "unit_test_reference": false
+  },
+  {
+   "request_key": "concentric_surface",
+   "native_enum": "CocentricSurface",
+   "writable_fields": [
+    "source_surface"
+   ],
+   "documented": true,
+   "unit_test_reference": true
+  },
+  {
+   "request_key": "edge_thickness",
+   "native_enum": "EdgeThickness",
+   "writable_fields": [
+    "radial_height",
+    "thickness"
+   ],
+   "documented": false,
+   "unit_test_reference": true
+  },
+  {
+   "request_key": "element_power",
+   "native_enum": "ElementPower",
+   "writable_fields": [
+    "power"
+   ],
+   "documented": true,
+   "unit_test_reference": false
+  },
+  {
+   "request_key": "f_number",
+   "native_enum": "FNumber",
+   "writable_fields": [],
+   "documented": false,
+   "unit_test_reference": true
+  },
+  {
+   "request_key": "fixed",
+   "native_enum": "Fixed",
+   "writable_fields": [],
+   "documented": true,
+   "unit_test_reference": true
+  },
+  {
+   "request_key": "marginal_ray_angle",
+   "native_enum": "MarginalRayAngle",
+   "writable_fields": [
+    "angle"
+   ],
+   "documented": true,
+   "unit_test_reference": true
+  },
+  {
+   "request_key": "marginal_ray_height",
+   "native_enum": "MarginalRayHeight",
+   "writable_fields": [
+    "height",
+    "pupil_zone"
+   ],
+   "documented": false,
+   "unit_test_reference": true
+  },
+  {
+   "request_key": "marginal_ray_normal",
+   "native_enum": "MarginalRayNormal",
+   "writable_fields": [],
+   "documented": true,
+   "unit_test_reference": false
+  },
+  {
+   "request_key": "material_model",
+   "native_enum": "MaterialModel",
+   "writable_fields": [
+    "abbe_vd",
+    "dpgf",
+    "index_nd",
+    "vary_abbe",
+    "vary_dpgf",
+    "vary_index"
+   ],
+   "documented": true,
+   "unit_test_reference": false
+  },
+  {
+   "request_key": "material_offset",
+   "native_enum": "MaterialOffset",
+   "writable_fields": [
+    "nd_offset",
+    "vd_offset"
+   ],
+   "documented": true,
+   "unit_test_reference": true
+  },
+  {
+   "request_key": "material_substitute",
+   "native_enum": "MaterialSubstitute",
+   "writable_fields": [
+    "catalog"
+   ],
+   "documented": true,
+   "unit_test_reference": false
+  },
+  {
+   "request_key": "maximum",
+   "native_enum": "Maximum",
+   "writable_fields": [],
+   "documented": true,
+   "unit_test_reference": true
+  },
+  {
+   "request_key": "optical_path_difference",
+   "native_enum": "OpticalPathDifference",
+   "writable_fields": [
+    "opd",
+    "pupil_zone"
+   ],
+   "documented": true,
+   "unit_test_reference": false
+  },
+  {
+   "request_key": "pickup_chief_ray",
+   "native_enum": "PickupChiefRay",
+   "writable_fields": [
+    "field",
+    "wavelength"
+   ],
+   "documented": false,
+   "unit_test_reference": true
+  },
+  {
+   "request_key": "position",
+   "native_enum": "Position",
+   "writable_fields": [
+    "length",
+    "source_surface"
+   ],
+   "documented": true,
+   "unit_test_reference": true
+  },
+  {
+   "request_key": "pupil_position",
+   "native_enum": "PupilPosition",
+   "writable_fields": [],
+   "documented": true,
+   "unit_test_reference": false
+  },
+  {
+   "request_key": "surface_pickup",
+   "native_enum": "SurfacePickup",
+   "writable_fields": [],
+   "documented": true,
+   "unit_test_reference": true
+  },
+  {
+   "request_key": "variable",
+   "native_enum": "Variable",
+   "writable_fields": [],
+   "documented": false,
+   "unit_test_reference": true
+  },
+  {
+   "request_key": "zpl_macro",
+   "native_enum": "ZPLMacro",
+   "writable_fields": [
+    "macro"
+   ],
+   "documented": true,
+   "unit_test_reference": true
+  }
+ ]
+}

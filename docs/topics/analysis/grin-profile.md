@@ -27,3 +27,8 @@
 637–639单项式0–9阶为浮点精度；10/11阶单位幅度误差5.104e-9/6.124e-10，zmax1/5.8归一化结果一致。继续确认高阶正式求值、左端capping及专题选择，保持in_progress。
 
 当前状态以[交接](../../../development/handoff.md)为准，历史计数属于对应执行记录。
+
+
+## 曲线波长归属
+
+每条曲线的`wavelength_number`标识选定系统波长，`index_definition`说明原生曲线的折射率定义。Gradium的`source_surface.gradium.reference_vertex_index`为材料族参考波长下的顶点参数。G14SFN受控模型在0.58756与0.55 µm的原生波长回读分别为1、2，101个相同坐标的曲线不同，顶点参考参数保持。见[波长证据](../../../development/evidence/MA-01/gradium-wavelength-20261109.md)。

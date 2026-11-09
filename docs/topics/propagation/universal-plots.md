@@ -1,5 +1,8 @@
 # Universal Plot
 
+2026-11-08计划范围：Universal Plot属于已完成的原生分析，沿用既有证据；EX-01工作包的用户代码宿主及回调后续开发已归档。当前计划见[原生功能收口](../../../development/current.md)。
+
+
 本机正式接口为AS_Default，使用手册UN1/UN2配置键及SaveTo/ModifySettings/LoadFrom。原生194确认1D无数组、文本含变量身份和两列数值；2D有5×3非方形网格、轴范围和采样头信息。
 
 当前1D/2D共用Surface/System/Configuration/NSC扫描轴：Surface支持Radius、Curvature、Thickness、Conic、TCE和SurfaceParameter；System支持孔径、切趾、温压、视场和波长；Configuration提供有类型的数值ConfigurationValue及THIC/CRVT别名；NSC支持纯模式及显式混合组的位置、倾斜和对象参数。保留TTHI/CVVA旧入口，并支持一般数值操作数和整体/指定行评价函数target。1D扫描在独立原生副本执行；2D采用GreyScale及原生内部副本。samples默认21，范围2–1001，start<stop。两项声明范围已完成，最终证据为.local/evidence/development/EX-01/acceptance261.json；下文保留各轮探查与修复记录。

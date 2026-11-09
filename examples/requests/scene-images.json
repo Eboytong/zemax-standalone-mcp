@@ -1,0 +1,18 @@
+[
+  {
+    "request": {
+      "kind": "extended_diffraction_image",
+      "field": 2,
+      "wavelength": 1,
+      "source_width": 0.1,
+      "display_width": 0.2
+    }
+  },
+  {
+    "request": {
+      "kind": "partially_coherent_image",
+      "field": 2,
+      "wavelength": 1
+    }
+  }
+]

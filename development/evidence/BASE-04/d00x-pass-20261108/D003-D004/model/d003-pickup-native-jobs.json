@@ -1,0 +1,75 @@
+{
+  "assignment_id": "D003.SURFACE_PICKUP",
+  "item_ids": ["ED-02.SurfacePickup.ChipZone", "ED-02.SurfacePickup.MechanicalSemiDiameter"],
+  "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-model\\Zemax_MCP",
+  "branch": "codex/d002-material-model",
+  "baseline_commit": "34e1a18494015c2b383ec700b958015020b660fe",
+  "python": "C:/Users/tonge/Desktop/Zemax_MCP/.venv/Scripts/python.exe",
+  "native_environment": "OpticStudio 24.2.0 build240529 PremiumEdition, one exclusive instance",
+  "status": "prepared, not executed; both items stay blocked",
+  "prerequisites": [
+    "Run serially in the runtime queue; no other native job may hold the instance.",
+    "Do not run before d003-pickup-implementation-report.md is reviewed.",
+    "The probe creates its own sequential system; no sample lens or user file is modified.",
+    "The native connection is currently blocked by an application_create timeout; do not retry automatically.",
+    "Diagnostic only: the probe records adoption behaviour and changes no product contract."
+  ],
+  "shared_rules": {
+    "task_polling": "bounded at 180 s via time.monotonic(); TimeoutError carries the last task state",
+    "task_failure": "non-succeeded states raise TaskFailure(state, task, result); payloads stored under error.task_state/task/task_result",
+    "cleanup": "backend.shutdown() runs in finally inside its own try/except; failure recorded as cleanup_error, never replacing the original exception",
+    "close_evidence": "active_task_after_shutdown plus parsed close_receipt content",
+    "record_only": "no gate is asserted; adopted/first_adoption_step/variants are evidence, not acceptance"
+  },
+  "jobs": [
+    {
+      "id": "JOB-ED02-01",
+      "purpose": "C2/C3: decide whether a SurfacePickup solve is never adopted, or adopted only after an update, for ChipZone and MechanicalSemiDiameter.",
+      "cwd": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-model\\Zemax_MCP",
+      "command": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.venv\\Scripts\\python.exe -B scripts/probes/ED-02/pickup_solve_adoption018.py .local/evidence/development/ED-02/pickup-adoption/",
+      "inputs": {
+        "cells": ["chip_zone", "mechanical_semi_diameter"],
+        "values": {"chip_zone": {"source": 0.5, "target": 0.2}, "mechanical_semi_diameter": {"source": 5.5, "target": 5.2}},
+        "model": "surface 1 radius 50, thickness 50, material N-BK7, semi_diameter 8, is_stop; one wavelength 0.5875618 um; one on-axis field",
+        "c2_readback_moments": ["immediate", "after_update_status", "after_ray_trace", "after_save_reload"],
+        "c2_single_variable": "readback moment only; the submitted request is identical",
+        "c3_variants_when_c2_never_adopts": ["make_pickup_from_current_column", "make_solve_fixed_first"],
+        "three_way_readback": ["cell.Solve", "GetSolveData().Type", "GetSolveData()._S_SurfacePickup{Surface,Column,ScaleFactor,Offset}"]
+      },
+      "outputs": {
+        "directory": ".local/evidence/development/ED-02/pickup-adoption/",
+        "files": ["anchors.json", "state/close_receipt.json", "reload.zos", "native/"],
+        "anchors_fields": [
+          "cases[].before.source/target",
+          "cases[].steps[].set_status",
+          "cases[].steps[].supported",
+          "cases[].steps[].is_solve_type_supported",
+          "cases[].steps[].solve_valid",
+          "cases[].steps[].supports_scale/supports_offset",
+          "cases[].steps[].immediate|after_update_status|after_ray_trace|after_save_reload",
+          "cases[].steps[].adopted_at",
+          "cases[].first_adoption_step",
+          "cases[].adopted",
+          "cases[].variants[]",
+          "cases[].update_status_text",
+          "cleanup_error",
+          "active_task_after_shutdown",
+          "close_receipt.content"
+        ]
+      },
+      "expected_duration_seconds": "60-120",
+      "close_conditions": [
+        "anchors.json records closed=true after a successful disconnect.",
+        "state/close_receipt.json exists and its parsed content is stored under close_receipt.content.",
+        "active_task_after_shutdown must be false.",
+        "A shutdown failure is recorded as cleanup_error and must not replace the original exception."
+      ],
+      "interpretation_rules": [
+        "adopted=true at any step proves the native side can adopt the mode; first_adoption_step names when.",
+        "adopted=false at every step and variant supports a native limitation, but does not by itself prove one.",
+        "A failed variant never widens the contract: both items stay blocked until adoption, parameters, linkage, save/reload and close all pass.",
+        "Enum legality was verified offline only as a name check; binding and cell-activity conditions remain unproven."
+      ]
+    }
+  ]
+}

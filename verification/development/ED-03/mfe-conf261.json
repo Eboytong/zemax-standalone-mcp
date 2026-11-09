@@ -1,9 +1,0 @@
-{
-  "execution_state": "done",
-  "scope": "Multi-configuration MFE replace safety and final readback; shared fix, not an additional batch item",
-  "original_failure": "outputs/runs/universal253_mce_23703bbd47/calls.json",
-  "cause": "Implicit native CONF insertion changed requested TTHI/PMVA replacement to CONF1/PMVA/BLNK; incorrect merit reference retained in native255.xml",
-  "fix": "Require explicit leading CONF for multi-configuration replace; preserve omitted fields through stdio; skip implicit CONF targets/weights; reject explicit inactive fields; reread final row types/values",
-  "evidence": "verification/development/EX-01/acceptance261.json",
-  "related_native": "verification/development/EX-01/native259.xml"
-}

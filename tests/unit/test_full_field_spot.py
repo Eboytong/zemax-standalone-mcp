@@ -11,8 +11,8 @@ def test_full_field_invalid(extra):
 
 def test_full_field_settings():
     q=RunAnalysis(request=dict(kind='full_field_spot',exaggerate=3,reference='ChiefRay')).request
-    writes={};values=configure(q,2,lambda n,v:writes.update({n:v}))
-    assert values==writes and values['Configuration']==2
+    writes={};values=configure(q,lambda n,v:writes.update({n:v}))
+    assert values==writes and values['Configuration']==1
     assert values['ReferTo']=='ChiefRay' and values['Exaggerate']==3
     assert values['DeltaFocus']==0
 

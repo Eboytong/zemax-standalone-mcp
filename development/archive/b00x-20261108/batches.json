@@ -1,0 +1,28 @@
+{
+  "baseline_release": "0.1.62",
+  "next_release": "0.1.63",
+  "batch_id": "B007",
+  "target": 10,
+  "completed_item_ids": [],
+  "verification_state": "not_started",
+  "evidence": [
+    "development/evidence/BASE-04/release062.json",
+    "development/evidence/BASE-01/native-scope-change-20261108.md"
+  ],
+  "counting": "Unique completed functional items; blocked probes, duplicate rows and historical evidence maintenance excluded.",
+  "current_item": "PO-01.PhaseAberration",
+  "previous_batch": "development/evidence/BASE-04/release062.json",
+  "candidate_item_ids": [
+    "PO-01.PhaseAberration",
+    "PO-01.PolarizationRayTrace",
+    "PO-01.Transmission",
+    "WP-01.FiberCouplingSettings"
+  ],
+  "completed_count": 0,
+  "next_action": "Reuse the six dispatched workers. Review feature patches and existing native evidence; runtime completes bounded netfx configuration controls, then serializes integration and native jobs in D00x priority.",
+  "scope": "development/tracking/scope.json",
+  "development_plan": "development/tracking/development-groups.json",
+  "current_development_group": "D001",
+  "ordering": "D00x priority and group member order; selected independent assignments may prepare in parallel; integrate and execute local native jobs serially; B00x counts ten first completions.",
+  "parallel_dispatch": "development/tracking/parallel-dispatch.json"
+}

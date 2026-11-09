@@ -1,0 +1,43 @@
+{
+  "valid": [
+    {
+      "tool": "run_analysis",
+      "arguments": {
+        "request": {
+          "kind": "path_analysis",
+          "path": "C:/data/trace.paf"
+        }
+      }
+    },
+    {
+      "tool": "run_analysis",
+      "arguments": {
+        "request": {
+          "kind": "path_analysis",
+          "path": "C:/data/trace.zrd",
+          "first_ray": 1,
+          "last_ray": 10,
+          "relative_minimum_flux": 0.5
+        }
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "reason": "PAF未实际采用非默认阈值",
+      "request": {
+        "kind": "path_analysis",
+        "path": "C:/data/trace.paf",
+        "relative_minimum_flux": 0.5
+      }
+    },
+    {
+      "reason": "PAF未实际采用光线范围",
+      "request": {
+        "kind": "path_analysis",
+        "path": "C:/data/trace.paf",
+        "last_ray": 10
+      }
+    }
+  ]
+}

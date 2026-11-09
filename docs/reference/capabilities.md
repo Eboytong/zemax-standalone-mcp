@@ -1,6 +1,6 @@
 # 能力与文档索引
 
-当前功能范围见 [能力说明](../README.md)，版本与发行状态见 [README](../../README.md#当前状态)。
+当前发行范围见[1.0.0 能力说明](../README.md)，逐项请求见[工具清单](tools.md)和[原生分析矩阵](native-analysis-matrix.csv)。1.0.0 提供 101 个工具、132 种分析请求；原生计划中的 89 组未完成项保留原状态并冻结，不纳入已完成声明。验证结果见[发行记录](../../development/evidence/BASE-04/release100.md)。
 
 - [工具清单](tools.md)
 - [完整请求模型](tool-schemas.json)
@@ -8,11 +8,25 @@
 - [使用示例](../../examples/README.md)
 
 - [样板目录：原生活动目录和显式TPD文件读取](../topics/delivery/test-plates.md)
+- [透射扇图：原生默认报告与可选择视场、波长、采样和Jones输入的批量偏振追迹](../topics/analysis/polarization-transmission-fan.md)
 
 Power Map增量448：run_analysis新增power_field_map/power_pupil_map，implemented；正式POWF/POWP、单位、范围与验收缺口见[屈光力分布](../topics/propagation/power-maps.md)。
 
 - `ima_bim_viewer`：读取 IMA/BIM 原始图层并可通过 ImageSimulation SourceBitmap 取得原生 RGB 显示；详见 [IMA/BIM 查看](../topics/imaging/ima-bim-viewer.md)。
 - `ray_database_viewer`：通过正式 RayDatabaseReader 查询 ZRD 光线段并分页；详见 [ZRD 查看](../topics/nonsequential/ray-database-viewer.md)。
+- `dispersion_diagram`：读取当前顺序系统的原生折射率-波长材料曲线并解析为 `series`；支持最多四种目录/表格玻璃、波长及温压选择，详见 [色散图](../topics/analysis/dispersion-diagram.md)。
+- `dispersion_vs_wavelength`：保留原生默认报告并支持正式原生折射率的显式五点四阶导数及材料/温压选择，保留 `1/micrometer` 单位和材料列身份；详见 [色散随波长](../topics/analysis/dispersion-vs-wavelength.md)。
+- `glass_map`：读取当前加载材料目录的原生玻璃图，返回可分页 Nd/Vd 行和具方向信息的散点数据；详见 [玻璃图](../topics/analysis/glass-map.md)。
+- `athermal_glass_map`：读取当前系统波长条件下的原生无热玻璃图，返回玻璃色散/热光焦行、缩放、波长条件和散点；详见 [材料目录及内部透过率](../topics/imaging/materials.md)。
+- `yni_contributions`：解析原生 YNI 逐面贡献文本，返回可分页曲面行与曲线；波长和镜头单位来自原生报告及任务上下文，详见 [YNI Contributions](../topics/analysis/yni-contributions.md)。
+- `source_spectrum_viewer`：在NSC模式读取原生XYZ拟合光谱文本，输入归属与选择仍待正式接口验收，返回波长/相对权重曲线、XYZ、CRI及CCT；详见 [Source Spectrum Viewer](../topics/nonsequential/source-spectrum-viewer.md)。
+- `directivity_plot`：在NSC模式读取原生IES方向性报告，返回分扫描角曲线、光强和总光通量；详见 [Directivity Plot](../topics/nonsequential/directivity-plot.md)。
+- `polarization_transmission_fan`：解析原生偏振透射扇图文本，返回按弧矢/子午、视场和波长分组的瞳曲线；详见 [Polarization Transmission Fan](../topics/analysis/polarization-transmission-fan.md)。
+
+以下带日期的增量属于历史开发记录。当前正式接口基线为 1.0.0：101 个工具、132 种分析请求；逐项能力状态以原生分析矩阵与专题文档为准。历史 96 组原生计划保留 7 组完整验收、89 组未完成的实际状态，后续开发已冻结。
+
+parallel-02已加固[HPC成功查询检查](../topics/extensions/hpc.md)及[MaterialModel/SurfacePickup验收探针](../topics/modeling/solve-extensions.md)。本轮原生启动受阻，完整验收累计3/10；工具和分析入口数量沿用当前基线。
+
 
 2026-11-07 B006增量519：`sag_table`返回`statistics_sampling`，明确BFSD摘要独立于请求rows采样，列出本机高阶正/负及环形条件验证的1000区间含端点规则；原生摘要保持原值。能力回读指向MF-01/progress519-statistics.json。Power Map新增离轴球面/双轴与非中心瞳数值证据524/526，范围见power-maps.md。ASAT/ASAB在521正式Run再次拒绝，沿用原cad_formats状态。完整条目仍按剩余验收缺口记录。
 
@@ -51,3 +65,13 @@ SagTable589更新：MinimumRMS无偏移约束返回vertex_offset=0，其余待�
 640普通45项、641正负原生2项通过；新增1001节点径向加权斜率摘要。继续制造偏移符号/基准、面型拟合适用性及反向制造摘要，保持implemented。
 
 当前状态以[交接](../../development/handoff.md)为准，历史计数属于对应执行记录。
+
+- YNI显式波长：`yni_contributions`新增可选`wavelength`，通过正式YNIP取得逐面贡献；默认报告保留。Cooke及独立正负球面参考已验收。
+# 光斑当前配置修复（2026-11-09）
+
+几何位图新增原生正常化强度网格`grids[3]`及`native_efficiency`报告字段。强度支持区域分页及`item=3`图像导出；RGB索引沿用0/1/2。效率定义及完整设置继续验收，见[结果说明](../topics/imaging/bitmap-image.md)。
+
+标准光斑、FullField及ThroughFocus区分物理配置编号与原生当前配置选择器1。双配置真实stdio检查通过，标准光斑保存重载及五焦面零面一致。两类矩阵仍缺逐光线出口及完整参考选项对应，完整验收计数保持4/10。见[证据](../../development/evidence/CV-01/spot-current-configuration-20261109.md)。
+
+
+Seidel图支持正式未转换系数的逐面/范围和条形图，含波长、面范围及显示设置，见[专题](../topics/analysis/seidel-diagram.md)。

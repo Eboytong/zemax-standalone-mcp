@@ -12,7 +12,7 @@ def build(folder):
     folder=Path(folder);folder.mkdir(parents=True,exist_ok=True)
     compiler=Path('C:/Windows/Microsoft.NET/Framework64/v4.0.30319/csc.exe')
     install=Config.from_env().install_dir
-    source=PROJECT_ROOT/'fixtures/net_callback/ScalarCallback.cs'
+    source=PROJECT_ROOT/'tests/fixtures/net_callback/ScalarCallback.cs'
     output=folder/'net-callback.dll'
     command=[str(compiler),'/nologo','/target:library','/platform:x64','/out:'+str(output.resolve()),
         '/reference:'+str(install/'ZOSAPI_Interfaces.dll'),'/reference:'+str(install/'ZOSAPI.dll'),str(source)]

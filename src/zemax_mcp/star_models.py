@@ -38,6 +38,11 @@ class StarImport(Request):
     length_unit: Literal['Millimeters', 'Centimeters', 'Inches', 'Meters']
 
 
+class StarUnload(Request):
+    kind: Literal['unload_deformation', 'unload_temperature', 'unload_direct_index']
+    surface: PositiveIndex
+
+
 class StarFitSettings(Request):
     grid_1: Annotated[int, Field(strict=True, ge=1)] | None = None
     grid_2: Annotated[int, Field(strict=True, ge=1)] | None = None
@@ -181,7 +186,7 @@ class StarUpdateMode(Request):
         return self
 
 
-StarOperation = Annotated[StarImport | StarFit | StarRigidBody | StarCoordinateTransform |
+StarOperation = Annotated[StarImport | StarFit | StarUnload | StarRigidBody | StarCoordinateTransform |
     StarDefineComponent | StarRemoveComponent | StarComponentRbm | StarThermalControls |
     StarVolumeControls | StarUpdateMode, Field(discriminator='kind')]
 

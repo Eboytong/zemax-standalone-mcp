@@ -1,0 +1,151 @@
+{
+  "finished_at_utc": "2026-11-08T09:02:46.719600+00:00",
+  "source_version": "0.1.62",
+  "source_capabilities": {
+    "tools": 101,
+    "analyses": 130
+  },
+  "release_capabilities": {
+    "version": "0.1.62",
+    "tools": 101,
+    "analyses": 118
+  },
+  "pass_review": {
+    "total": 96,
+    "states": {
+      "reviewed_partial": 38,
+      "reviewed_deferred": 55,
+      "accepted": 3
+    }
+  },
+  "remaining": {
+    "source_records": 100,
+    "unique_item_ids": 95,
+    "canonical_functions": 93
+  },
+  "verification_cycle": {
+    "schema_version": 1,
+    "effective_date": "2026-11-08",
+    "baseline_release": "0.1.62",
+    "next_release": "0.1.63",
+    "interval": 10,
+    "last_verified_item_ids": [],
+    "verification_state": "not_due",
+    "development_plan": "development/tracking/development-groups.json",
+    "counting": "Derive first completions from D00x members and all corresponding ledger records; count each canonical function once.",
+    "evidence": [
+      "development/evidence/BASE-04/release062.json"
+    ],
+    "next_action": "Review D00x item evidence and update its ledger records; run concentrated checks after ten accepted completions.",
+    "completed_since_check_item_ids": [
+      "CO-01.DiffEfficiencyAngular",
+      "CO-01.DiffEfficiencyChromatic",
+      "CO-01.DiffEfficiency2D"
+    ],
+    "completed_since_check_count": 3,
+    "remaining_until_check": 7,
+    "due": false
+  },
+  "ordinary_checks": [
+    {
+      "name": "star_scatter",
+      "command_source": ".local/evidence/development/BASE-04/parallel-01/review-star-analyses-scattering.xml",
+      "passed": 421,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "development_status",
+      "command_source": ".local/evidence/development/BASE-04/parallel-01/review-pass-status.xml",
+      "passed": 17,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "power_pickup",
+      "command_source": ".local/evidence/development/BASE-04/parallel-01/review-d003-power-pickup.xml",
+      "passed": 53,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "d005_controls",
+      "command_source": ".local/evidence/development/BASE-04/parallel-01/review-d005-controls.xml",
+      "passed": 94,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "star_unload",
+      "command_source": ".local/evidence/development/BASE-04/parallel-01/review-d011-star-unload.xml",
+      "passed": 83,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "star_native_probe": {
+    "passed": 6,
+    "evidence": "star-native-probe-check.json",
+    "native_collected_cases": 1,
+    "analysis_kinds_in_case": 6,
+    "native_executed": false
+  },
+  "stdio_schema": {
+    "command": ".venv/Scripts/python.exe -B -X utf8 scripts/development/export_tool_schemas.py",
+    "exit_code": 0,
+    "tool_count": 101,
+    "method": "real stdio list_tools; async client scope exited normally",
+    "native_connect_called": false
+  },
+  "request_examples": {
+    "star_analysis_typed_requests": 6,
+    "native_text_report_typed_requests": 2
+  },
+  "supervision": {
+    "interval_seconds": 60,
+    "state": "stopped_after_pass_completion",
+    "session_id": 47462,
+    "workers": [
+      {
+        "workerId": "zemax-p01-runtime",
+        "status": "idle",
+        "nextSeq": 3600
+      },
+      {
+        "workerId": "zemax-p01-polarization",
+        "status": "idle",
+        "nextSeq": 2562
+      },
+      {
+        "workerId": "zemax-p01-material-reports",
+        "status": "idle",
+        "nextSeq": 2471
+      },
+      {
+        "workerId": "zemax-p01-material-model",
+        "status": "idle",
+        "nextSeq": 2520
+      },
+      {
+        "workerId": "zemax-p01-gradium",
+        "status": "idle",
+        "nextSeq": 2402
+      },
+      {
+        "workerId": "zemax-p01-hologram",
+        "status": "idle",
+        "nextSeq": 1847
+      }
+    ]
+  },
+  "native_environment_evidence": "../runtime-phase-environment-20261108.md",
+  "new_native_execution": false,
+  "concentrated_release_checks_started": false,
+  "git_committed": false,
+  "new_wheel_released": false
+}

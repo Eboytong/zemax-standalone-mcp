@@ -12,6 +12,14 @@ class TestPlateList(Request):
     kind: Literal['test_plate_list']
     catalog_file: str | None = None
     method: Literal['auto', 'native', 'file'] = 'auto'
+    native_settings_file: str | None = None
+
+    @field_validator('native_settings_file')
+    @classmethod
+    def cfg_filename(cls, value):
+        if value is not None and (not value.strip() or not Path(value).is_absolute() or Path(value).suffix.lower() != '.cfg'):
+            raise ValueError('native_settings_file须为原生CFG文件的绝对路径。')
+        return value
 
     @field_validator('catalog_file')
     @classmethod
@@ -22,6 +30,8 @@ class TestPlateList(Request):
 
     @model_validator(mode='after')
     def file_required(self):
+        if self.native_settings_file is not None and self.method == 'file':
+            raise ValueError('native_settings_file要求auto或native方法。')
         if self.method == 'file' and self.catalog_file is None:
             raise ValueError('file方法要求catalog_file。')
         return self
@@ -92,6 +102,9 @@ def parse_native(text, names):
 def run_test_plates(b, q):
     b._require_sequential()
     b._require_work()
+    cfg = Path(q.native_settings_file) if q.native_settings_file else None
+    if cfg is not None and not cfg.is_file():
+        raise ZemaxError('INVALID_RESOURCE', '原生CFG文件不存在。', path=str(cfg))
     directory, names = catalog_resources(b.native.application)
     requested = next((n for n in names if q.catalog_file and n.casefold() == q.catalog_file.casefold()), None)
     if q.catalog_file and requested is None:
@@ -107,7 +120,14 @@ def run_test_plates(b, q):
             tool, original = None, None
             try:
                 tool = b.system.Analyses.New_Analysis_SettingsFirst(b.native.enum(b.native.api.Analysis.AnalysisIDM, 'TestPlateList'))
-                payload['settings_type'] = str(unwrap(tool.GetSettings()).GetType().FullName)
+                native_settings = unwrap(tool.GetSettings())
+                payload['settings_type'] = str(native_settings.GetType().FullName)
+                if cfg is not None:
+                    payload['native_configuration'] = dict(path=str(cfg), source='native LoadFrom', loaded=False,
+                                                          adoption_source='native report catalog header')
+                    if not native_settings.LoadFrom(str(cfg)):
+                        raise ZemaxError('CFG_LOAD_FAILED', '原生样板配置加载被拒绝。', path=str(cfg))
+                    payload['native_configuration']['loaded'] = True
                 tool.Apply()
                 while tool.IsRunning():
                     b._cancel_boundary(task)
@@ -121,6 +141,8 @@ def run_test_plates(b, q):
                 payload['artifacts'].append(dict(kind='native_text', path=str(path)))
                 actual, rows = parse_native(path.read_text(encoding='utf-16'), names)
                 payload['native_catalog_file'] = actual
+                if cfg is not None:
+                    payload['native_configuration']['actual_catalog_file'] = actual
             except BaseException as exc:
                 original = exc
                 raise
@@ -135,7 +157,7 @@ def run_test_plates(b, q):
                         elif original is None:
                             raise ZemaxError('CLEANUP_FAILED', 'TestPlateList原生关闭未确认。', cleanup_warnings=warnings)
             if requested is not None and actual != requested:
-                if q.method == 'native':
+                if q.method == 'native' or cfg is not None:
                     raise ZemaxError('SETTING_NOT_SUPPORTED', '原生接口不能确认请求目录的选择。', requested=requested, actual=actual, native_text=payload['artifacts'][0]['path'])
                 payload['fallback_reason'] = dict(reason='native active catalog differs from requested catalog; no typed selection interface', requested=requested, actual=actual)
                 rows = None

@@ -1,0 +1,16 @@
+{
+  "item_id": "NS-04.SurfaceDataSettings",
+  "date": "2026-11-07",
+  "opticstudio": "24.2.0 build 240529 PremiumEdition",
+  "status": "blocked",
+  "native_run": ".local/evidence/development/NS-04/surface-runtime-20261107/summary.json",
+  "mode": "Sequential",
+  "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+  "settings_readback": {"IsValid": true, "IsActiveWindow": true},
+  "task_state": "succeeded",
+  "output": "native text report and JSON result generated",
+  "analysis_closed": true,
+  "session_disconnected": true,
+  "selection_readback": "No formal surface selector or adopted surface identity was exposed.",
+  "unlock_condition": "Identify official ModifySettings keys or a dedicated surface selection interface with reliable adopted-selection readback."
+}

@@ -850,6 +850,8 @@ COMMAND_MODELS = {
 }
 
 COMMAND_MODELS["run_analysis"] = RunAnalysis
+from .macro_models import StandaloneMacro
+COMMAND_MODELS["run_standalone_macro"] = StandaloneMacro
 from .configuration_models import ConfigurationRange, ConfigurationSelect, ConfigurationPatch, GlobalOptimization
 COMMAND_MODELS.update(get_configurations=ConfigurationRange,set_configuration=ConfigurationSelect,update_configurations=ConfigurationPatch,get_constraint_coverage=Empty,run_global_optimization=GlobalOptimization,run_hammer_optimization=GlobalOptimization)
 from .tolerance_models import ToleranceRange,TolerancePatch,ToleranceWizard,ToleranceAnalysis,ToleranceSummary

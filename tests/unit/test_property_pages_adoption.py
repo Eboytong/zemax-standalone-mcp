@@ -70,3 +70,17 @@ def test_bsdf_native_abgf_list_is_capability_error():
     with pytest.raises(ZemaxError)as error:resource_names(N(GetAvailableFileNames=lambda:['ED01.ABGF']),'BSDF')
     assert error.value.code=='UNSUPPORTED_SETTING'
     assert error.value.details['native_filenames']==['ED01.ABGF']
+
+
+@pytest.mark.parametrize('names',[[],['无'],['BrownVinyl.bsdf','ED01.ABGF']])
+def test_bsdf_resource_list_requires_unambiguous_native_bsdf_names(names):
+    from zemax_mcp.scattering_pages import resource_names
+    with pytest.raises(ZemaxError)as error:resource_names(N(GetAvailableFileNames=lambda:names),'BSDF')
+    assert error.value.code=='UNSUPPORTED_SETTING'
+    assert error.value.details['native_filenames']==names
+
+
+def test_bsdf_resource_list_returns_only_native_bsdf_files():
+    from zemax_mcp.scattering_pages import resource_names
+    obj=N(GetAvailableFileNames=lambda:['BrownVinyl.bsdf','MetalVelvet_VIS.bsdf'])
+    assert resource_names(obj,'BSDF')==['BrownVinyl.bsdf','MetalVelvet_VIS.bsdf']

@@ -71,6 +71,8 @@ def run_speos_export(backend, q):
         if q.configuration > system.MCE.NumberOfConfigurations:
             raise ZemaxError('INDEX_OUT_OF_RANGE','Speos导出配置越界。',configuration=q.configuration)
         target = output_path(q.path,{'.optdistortion'},q.overwrite)
+        # OpticStudio 2024 R2 normalizes this native filename suffix to uppercase.
+        target = target.with_suffix('.OPTDistortion')
         directory = backend.directory/('speos_input_'+uuid.uuid4().hex)
     else:
         target = None

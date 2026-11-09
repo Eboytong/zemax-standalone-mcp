@@ -1,0 +1,697 @@
+{
+  "schema_version": 1,
+  "pass": "d00x-pass-20261108",
+  "development_group": "D008",
+  "worker_id": "zemax-p01-hologram",
+  "workspace": "C:/Users/tonge/.codex/worktrees/zemax-p01-hologram/Zemax_MCP",
+  "plan_source": "development/tracking/d00x-pass-20261108.json",
+  "not_owned": [
+    "NS-04.PrescriptionDataSettings",
+    "NS-04.SurfaceDataSettings"
+  ],
+  "native_startup": {
+    "state": "deferred_for_this_pass",
+    "stage": "application_create",
+    "attempts": [
+      "runtime-recovery-01",
+      "runtime-recovery-02",
+      "runtime-recovery-05"
+    ],
+    "timeout_seconds": 180,
+    "evidence": "development/evidence/BASE-04/runtime-phase-environment-20261108.md"
+  },
+  "items": [
+    {
+      "canonical_item_id": "MF-01.SagTable",
+      "aliases": [
+        "MA-01.SagTable"
+      ],
+      "title": "SagTable完整制造范围",
+      "formal_members": {
+        "mcp_entry": "run_analysis: sag_table",
+        "request_model": "src/zemax_mcp/sag_table.py::SagTable (surface, best_fit_sphere, reverse, minimum_radius, maximum_radius, samples)",
+        "native_operands": [
+          "BFSD",
+          "SSAG",
+          "DSAG",
+          "SSLP",
+          "LDE.GetSag"
+        ],
+        "dedicated_settings_object": "not adopted; analysis exposes generic AS_Default/CFG only, so parameters are explicit operand arguments",
+        "result_outlets": [
+          "summary",
+          "rows",
+          "series(Sag/Removal|Deviation/Slope)",
+          "sphere_reconstruction",
+          "native_bfs_fit",
+          "statistics_sampling",
+          "slope_query_copy"
+        ]
+      },
+      "existing_evidence": [
+        "development/evidence/MF-01/progress641-slope-summary.json",
+        "development/evidence/MF-01/ordinary640-slope-summary.xml",
+        "development/evidence/MF-01/native641-slope-summary.xml",
+        "development/evidence/MF-01/progress622-dsag-fit.json",
+        "development/evidence/MF-01/progress582-criterion-curves.json",
+        "development/evidence/MF-01/progress589-offset-reference.json",
+        "development/evidence/MF-01/progress558-applicability.json",
+        "development/evidence/MF-01/sag-table-repeat20261108.md"
+      ],
+      "completed_scope": {
+        "slope_summary_640_641": {
+          "state": "completed",
+          "ordinary_passed": 45,
+          "native_passed": 2,
+          "sampling": "1000 intervals / 1001 endpoint-inclusive radial nodes; rms=sqrt(sum(r*d^2)/sum(r))",
+          "fields": [
+            "maximum_slope_difference",
+            "rms_slope_difference",
+            "slope_summary_source"
+          ],
+          "max_absolute_error": 1.6653345369377348e-15,
+          "tolerance": "1e-6 absolute + 1e-5 relative"
+        }
+      },
+      "remaining_scope": [
+        {
+          "gap": "manufacturing_offset_reference_and_sign",
+          "state": "open",
+          "known_numbers": {
+            "evenaspheric_native_raw_offset_minus": -0.0002083725005,
+            "evenaspheric_native_raw_offset_plus": 0.0002083725027,
+            "independent_additive_sphere_offset": 0.00020837252184727607,
+            "opposite_sign_offset_error": 2.1348433464811814e-11,
+            "unit": "mm"
+          },
+          "blocked_by": "no formal contract mapping DSAG Data10 raw Z offset to SagTable manufacturing vertex_offset",
+          "unblock": "formal input selection plus adopted readback, or reviewed equivalence acceptance stating baseline and sign convention"
+        },
+        {
+          "gap": "surface_type_fit_applicability",
+          "state": "open",
+          "known_numbers": {
+            "zernike_fringe_sag_radius": 39.8400013026,
+            "evenaspheric_radius": 39.8400396827,
+            "difference": 3.838e-05,
+            "tolerance": 5e-06,
+            "unit": "mm"
+          },
+          "blocked_by": "no applicability table mapping declared surface types to independent-reference agreement",
+          "unblock": "applicability table with counterexamples over declared surface set"
+        },
+        {
+          "gap": "reverse_manufacturing_summary",
+          "state": "open",
+          "blocked_by": "reverse (BFS3) returns curves only; vertex_offset/removal_depth null, manufacturing_state=unavailable; DSAG manual lists BFS 0-2 so no production BFS3 query",
+          "unblock": "obtain a formal reverse manufacturing summary, or pass review with native applicability evidence under the original declared scope (scope is not reduced or scoped out)"
+        }
+      ],
+      "offline_work_this_pass": [
+        "recompute 641 slope-summary comparison errors and tolerance verdicts from progress641-slope-summary.json",
+        "recompute 622 offset sign relation, radius discrepancy and piston baseline arithmetic from progress622-dsag-fit.json",
+        "run tests/unit/test_sag_table.py and tests/unit/test_sag_fit.py"
+      ],
+      "tolerances": {
+        "rows": "1e-8 + 1e-6 relative",
+        "statistics": "1e-6 + 1e-5 relative; volume absolute 1e-5",
+        "radius_consistency": 5e-06,
+        "opposite_sign_offset": "1e-8 mm + 1e-6 relative"
+      },
+      "implementation_files": [
+        "src/zemax_mcp/sag_table.py",
+        "src/zemax_mcp/sag_fit.py",
+        "src/zemax_mcp/analysis_models.py",
+        "src/zemax_mcp/analyses.py",
+        "tests/unit/test_sag_table.py",
+        "tests/unit/test_sag_fit.py"
+      ],
+      "native_tests": [
+        "tests/native/test_sag_criteria_live.py",
+        "tests/native/test_sag_table_statistics_live.py",
+        "tests/native/test_sag_table_applicability_live.py",
+        "tests/native/test_sag_table_live.py",
+        "tests/native/test_sag_table_units_configuration_live.py"
+      ],
+      "completion_gate": "manufacturing offset contract or reviewed equivalence; applicability table with counterexamples; reverse summary defined or explicitly scoped out; all with ordinary+native evidence, save/reload and close receipts",
+      "external_blocker": "native startup deferred this pass (application_create 180 s x3); no dedicated SagTable settings object",
+      "pass_state": "checked_remaining_gap_pending_coordinator",
+      "offline_check_outcomes": {
+        "slope_summary_recomputed": "12 comparisons max 1.6653345369377348e-15 all pass",
+        "offset_sign_relation": "4 opposite-sign rows, max magnitude diff 2.1348433464811814e-11 mm, max radius error 5.378943512823753e-09 mm"
+      },
+      "actual_checks_this_pass": [
+        {
+          "check": "O3 recompute 640/641 slope-summary comparisons",
+          "method": "pass_d008_offline.py",
+          "result": {
+            "count": 12,
+            "max_absolute_error": 1.6653345369377348e-15,
+            "all_pass": true,
+            "stored_verdict_agreement": true,
+            "stored_error_agreement": true
+          }
+        },
+        {
+          "check": "O4 recompute 622 offset sign / radius",
+          "method": "pass_d008_offline.py",
+          "result": {
+            "opposite_sign_rows": 4,
+            "max_magnitude_difference_mm": 2.1348433464811814e-11,
+            "max_radius_error_mm": 5.378943512823753e-09
+          }
+        },
+        {
+          "check": "ordinary tests sag_table + sag_fit",
+          "method": "pytest",
+          "result": "included in 71 passed"
+        }
+      ],
+      "historical_native": [
+        "development/evidence/MF-01/native641-slope-summary.xml",
+        "development/evidence/MF-01/ordinary640-slope-summary.xml"
+      ],
+      "offline_this_pass": [
+        "pass-d008-offline-checks.json"
+      ],
+      "remaining_gap": [
+        "manufacturing_offset_reference_and_sign",
+        "surface_type_fit_applicability",
+        "reverse_manufacturing_summary"
+      ],
+      "partial_achievement": "640/641 slope summary recomputed and accepted as completed scope"
+    },
+    {
+      "canonical_item_id": "MF-01.TestPlateList",
+      "title": "样板目录",
+      "formal_members": {
+        "mcp_entry": "run_analysis: test_plate_list",
+        "request_model": "src/zemax_mcp/test_plates.py::TestPlateList (catalog_file, method in {auto, native, file})",
+        "source_files": [
+          "src/zemax_mcp/test_plates.py",
+          "src/zemax_mcp/analysis_models.py",
+          "src/zemax_mcp/analyses.py",
+          "src/zemax_mcp/backend.py",
+          "src/zemax_mcp/modeling.py",
+          "src/zemax_mcp/models.py"
+        ],
+        "result_outlets": [
+          "active catalog identity",
+          "catalog rows (plate_id, radius_mm, diameter_mm, concave, convex, availability_code, source_line)",
+          "paging"
+        ]
+      },
+      "existing_evidence": [
+        "development/evidence/MF-01/test-plate-list-acceptance20261108.md",
+        "development/evidence/MF-01/progress435-plates.json",
+        "development/evidence/MF-01/native435-plates-final.xml",
+        "development/evidence/MF-01/native429-plates.xml",
+        "development/evidence/MF-01/native430-plates.xml",
+        "development/evidence/MF-01/native431-plates.xml",
+        "development/evidence/MF-01/native433-lifecycle.xml"
+      ],
+      "existing_results": {
+        "ordinary_passed": 26,
+        "native_passed": 2,
+        "native_runtime_seconds": 30.17,
+        "row_tolerance": "0.0000500001 mm (native rounds dimensions to four decimals)",
+        "covered": [
+          "row-by-row native vs independent TPD parse",
+          "paging",
+          "active catalog identity",
+          "mismatch fallback",
+          "forced native rejection",
+          "missing/corrupt resources",
+          "cancellation",
+          "task reuse",
+          "save/reload",
+          "system preservation",
+          "normal close"
+        ]
+      },
+      "remaining_gap": [
+        "native_catalog_selection_and_adopted_readback"
+      ],
+      "offline_work_this_pass": [
+        "re-parse installed TPD with parse_tpd and compare against saved native rows in plates429_native_f9120956a3"
+      ],
+      "completion_condition": "formal catalog selection plus adopted readback, or reviewed acceptance of active-catalog + explicit TPD file as the declared scope",
+      "external_blocker": "none for file method; native selector absent in installed public API",
+      "pass_state": "checked_remaining_gap_pending_coordinator",
+      "offline_check_outcomes": {
+        "applied_tpd_row_match": "899/899 rows, max radius diff 0.0 mm, max diameter diff 0.0 mm, 0 outside tolerance, 0 identity/code mismatch"
+      },
+      "actual_checks_this_pass": [
+        {
+          "check": "O2 independent parse_tpd vs saved native rows (Applied.tpd)",
+          "method": "pass_d008_offline.py",
+          "result": {
+            "catalog_file": "Applied.tpd",
+            "parsed_rows": 899,
+            "native_rows": 899,
+            "max_radius_difference_mm": 0.0,
+            "max_diameter_difference_mm": 0.0,
+            "rows_outside_tolerance": 0,
+            "identity_or_code_mismatches": 0,
+            "passed": true
+          }
+        }
+      ],
+      "historical_native": [
+        "development/evidence/MF-01/test-plate-list-acceptance20261108.md",
+        "development/evidence/MF-01/native435-plates-final.xml",
+        ".local/runs/runs/plates429_native_f9120956a3/native-result.json"
+      ],
+      "offline_this_pass": [
+        "pass-d008-offline-checks.json"
+      ],
+      "partial_achievement": "active-catalog + explicit TPD file parsing verified (899/899 zero diff)"
+    },
+    {
+      "canonical_item_id": "CV-01.ISOElementDrawing",
+      "title": "ISO元件图",
+      "formal_members": {
+        "mcp_entry": null,
+        "source_member_search": "no ISOElementDrawing typed request found in src/zemax_mcp (searched ISOElementDrawing, iso_element)",
+        "native_enum": "ISOElementDrawing",
+        "settings_object_observed": "generic AS_Default only (IsValid, IsActiveWindow)"
+      },
+      "existing_evidence": [
+        "development/evidence/CV-01/iso-element-drawing-probe20261108.md",
+        "development/evidence/CV-01/runtime071/settings.json"
+      ],
+      "existing_results": {
+        "input": "Cooke 40 degree field sequential sample (working copy)",
+        "structured_counts": {
+          "messages": 0,
+          "series": 0,
+          "grids": 0,
+          "rgb_grids": 0,
+          "scatter": 0
+        },
+        "text_export": false,
+        "image_or_file_member": "none exposed on the result type",
+        "lifecycle": "surface snapshots unchanged; native task close and MCP disconnect succeeded"
+      },
+      "offline_work_this_pass": [
+        "re-check stored static reflection for any drawing/selection member (read-only)"
+      ],
+      "external_blocker": "no formal drawing result or image outlet; no selection contract",
+      "unblock_condition": "installed public API or official integration exposes a meaningful drawing result/image outlet and an applicable selection contract",
+      "pass_state": "checked_blocked_external_pending_coordinator",
+      "actual_checks_this_pass": [
+        {
+          "check": "static reflection + raw result extraction",
+          "method": "pass_d008_native_evidence.py",
+          "result": {
+            "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+            "static_properties": [
+              "Analysis",
+              "TheDataID",
+              "IsValid",
+              "IsActiveWindow",
+              "Parent"
+            ],
+            "static_methods_count": 25,
+            "result_type": "ZemaxUI.ZOSAPI.Analysis.AR_Default",
+            "counts": {
+              "NumberOfMessages": 0,
+              "NumberOfDataSeries": 0,
+              "NumberOfDataGrids": 0,
+              "NumberOfDataGridsRgb": 0,
+              "NumberOfDataScatterPoints": 0,
+              "NumberOfDataScatterPointsRgb": 0
+            },
+            "counts_all_zero": true,
+            "text_export": false,
+            "image_vector_outlet_members": [],
+            "model_unchanged": true,
+            "close": true,
+            "disconnect_ok": true
+          }
+        }
+      ],
+      "historical_native": [
+        ".local/evidence/development/CV-01/iso-element-drawing-20261108/summary.json",
+        "development/evidence/CV-01/runtime071/settings.json"
+      ],
+      "offline_this_pass": [
+        "pass-d008-native-evidence.json"
+      ],
+      "remaining_gap": [
+        "formal_drawing_result_or_image_outlet"
+      ]
+    },
+    {
+      "canonical_item_id": "MF-01.ZemaxElementDrawing",
+      "title": "Zemax元件图",
+      "formal_members": {
+        "mcp_entry": null,
+        "source_member_search": "no typed request in the current run_analysis union (analyses.csv records this)",
+        "native_enum": "ZemaxElementDrawing",
+        "settings_object_observed": "AS_Default with generic properties; IsActiveWindow=false"
+      },
+      "existing_evidence": [
+        "development/evidence/MF-01/zemax-element-drawing-probe20261108.md",
+        "development/evidence/MF-01/runtime078/settings.json",
+        "development/evidence/MF-01/probe427-viewers/probe.json"
+      ],
+      "existing_results": {
+        "input": "Cooke 40 degree field sequential sample",
+        "structured_counts": "all eight result kinds zero",
+        "text_export": false,
+        "drawing_or_vector_outlet": "none in settings or result interfaces",
+        "lifecycle": "analysis closed and MCP session disconnected normally"
+      },
+      "offline_work_this_pass": [
+        "re-check stored static reflection for drawing/vector members (read-only)"
+      ],
+      "external_blocker": "no formal drawing data, image or vector outlet",
+      "unblock_condition": "formal drawing result outlet plus input-to-drawing geometry identity contract",
+      "pass_state": "checked_blocked_external_pending_coordinator",
+      "actual_checks_this_pass": [
+        {
+          "check": "static reflection + raw probe extraction",
+          "method": "pass_d008_native_evidence.py",
+          "result": {
+            "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+            "static_properties": [
+              "Analysis",
+              "TheDataID",
+              "IsValid",
+              "IsActiveWindow",
+              "Parent"
+            ],
+            "counts": {
+              "NumberOfDataSeries": 0,
+              "NumberOfDataGrids": 0,
+              "NumberOfDataSeriesRgb": 0,
+              "NumberOfDataGridsRgb": 0,
+              "NumberOfDataScatterPoints": 0,
+              "NumberOfDataScatterPointsRgb": 0,
+              "NumberOfRayData": 0,
+              "NumberOfMessages": 0
+            },
+            "counts_all_zero": true,
+            "result_methods_count": 21,
+            "result_properties_count": 27,
+            "text_export": false,
+            "cfg_saved": true,
+            "image_vector_outlet_members": [],
+            "closed": true,
+            "disconnect_ok": true
+          }
+        }
+      ],
+      "historical_native": [
+        ".local/evidence/development/MF-01/zemax-element-drawing-repeat-20261108/probe.json",
+        "development/evidence/MF-01/runtime078/settings.json"
+      ],
+      "offline_this_pass": [
+        "pass-d008-native-evidence.json"
+      ],
+      "remaining_gap": [
+        "formal_drawing_data_image_or_vector_outlet"
+      ]
+    },
+    {
+      "canonical_item_id": "NS-04.PrescriptionGraphic",
+      "title": "系统说明图",
+      "formal_members": {
+        "mcp_entry": null,
+        "source_member_search": "no PrescriptionGraphic typed request found in src/zemax_mcp",
+        "native_enum": "PrescriptionGraphic"
+      },
+      "existing_evidence": [
+        "development/evidence/NS-04/prescription-graphic-repeat20261108.md",
+        "verification/development/NS-04/runtime066/summary.json",
+        "verification/development/NS-04/runtime068-sequential/summary.json"
+      ],
+      "existing_results": {
+        "sequential": {
+          "input": "Cooke 40 degree field sample",
+          "settings": "AS_Default/AR_Default valid",
+          "structured_counts": "zero",
+          "text_export": false
+        },
+        "pure_nsc": {
+          "input": "Colorimetry two-color sample",
+          "factory": "New_Analysis_SettingsFirst returned null",
+          "analysis_object": "none created",
+          "disconnect": "succeeded"
+        },
+        "lifecycle": "close/disconnect succeeded in both modes"
+      },
+      "offline_work_this_pass": [
+        "re-check stored sequential settings/result member lists (read-only)"
+      ],
+      "external_blocker": "no usable sequential graphic/text outlet; pure NSC factory unavailable",
+      "unblock_condition": "formal sequential graphic export path, and a supported NSC factory if that mode is in the declared scope",
+      "pass_state": "checked_blocked_external_pending_coordinator",
+      "actual_checks_this_pass": [
+        {
+          "check": "static reflection + sequential/NSC result extraction",
+          "method": "pass_d008_native_evidence.py",
+          "result": {
+            "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+            "sequential_counts": {
+              "NumberOfMessages": 0,
+              "NumberOfDataSeries": 0,
+              "NumberOfDataGrids": 0,
+              "NumberOfDataGridsRgb": 0,
+              "NumberOfDataScatterPoints": 0,
+              "NumberOfDataScatterPointsRgb": 0
+            },
+            "sequential_counts_all_zero": true,
+            "sequential_text_export": false,
+            "sequential_objects_ok": false,
+            "nsc_error": {
+              "type": "AttributeError",
+              "message": "'NoneType' object has no attribute 'GetSettings'"
+            },
+            "nsc_objects_total": 5,
+            "image_vector_outlet_members": [],
+            "close": true,
+            "disconnect_ok": true
+          }
+        }
+      ],
+      "historical_native": [
+        ".local/evidence/development/NS-03/prescription-graphic-sequential-20261108/summary.json",
+        ".local/evidence/development/NS-03/prescription-graphic-nsc-20261108/summary.json",
+        "development/evidence/NS-04/runtime066/settings.json"
+      ],
+      "offline_this_pass": [
+        "pass-d008-native-evidence.json"
+      ],
+      "remaining_gap": [
+        "sequential_graphic_export_path",
+        "supported_nsc_factory_if_in_scope"
+      ]
+    },
+    {
+      "canonical_item_id": "NS-04.NSCObjectViewer",
+      "title": "NSC对象查看器",
+      "formal_members": {
+        "mcp_entry": null,
+        "source_member_search": "no NSCObjectViewer typed request found in src/zemax_mcp",
+        "native_enum": "NSCObjectViewer",
+        "alternative_data_entry": "get_nsc_objects (existing, usable for current object data)"
+      },
+      "existing_evidence": [
+        "development/evidence/NS-04/nsc-object-viewer-repeat20261108.md",
+        "verification/development/NS-04/runtime066/settings.json",
+        "verification/development/NS-04/runtime068-sequential/summary.json",
+        "verification/development/NS-04/outlets068/summary.json"
+      ],
+      "existing_results": {
+        "input": "Colorimetry/Example 1 Two-color mixing gives white.zos",
+        "settings": "AS_Default valid and active",
+        "results": "AR_Default valid but zero messages/series/grids/rgb_grids/scatter",
+        "text_export": false,
+        "object_data": "get_nsc_objects returned 8 objects with native types and per-object attributes",
+        "viewer_identity": "result did not identify or render a selected object",
+        "lifecycle": "close and disconnect succeeded"
+      },
+      "offline_work_this_pass": [
+        "compare get_nsc_objects fields against viewer result fields from stored evidence (read-only)"
+      ],
+      "external_blocker": "no formal object selection/readback and no graphical result outlet",
+      "unblock_condition": "formal object selection with adopted readback plus usable graphic result outlet",
+      "pass_state": "checked_blocked_external_pending_coordinator",
+      "actual_checks_this_pass": [
+        {
+          "check": "viewer result extraction + get_nsc_objects object list",
+          "method": "pass_d008_native_evidence.py",
+          "result": {
+            "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+            "viewer_counts": {
+              "NumberOfMessages": 0,
+              "NumberOfDataSeries": 0,
+              "NumberOfDataGrids": 0,
+              "NumberOfDataGridsRgb": 0,
+              "NumberOfDataScatterPoints": 0,
+              "NumberOfDataScatterPointsRgb": 0
+            },
+            "viewer_counts_all_zero": true,
+            "viewer_text_export": false,
+            "image_vector_outlet_members": [],
+            "objects_total": 5,
+            "object_types": [
+              "SourceEllipse",
+              "SourceEllipse",
+              "SourceEllipse",
+              "SourceEllipse",
+              "DetectorColor"
+            ],
+            "close": true,
+            "disconnect_ok": true
+          }
+        }
+      ],
+      "historical_native": [
+        ".local/evidence/development/NS-03/nsc-object-viewer-repeat-20261108/summary.json",
+        "development/evidence/NS-04/runtime066/settings.json"
+      ],
+      "offline_this_pass": [
+        "pass-d008-native-evidence.json"
+      ],
+      "remaining_gap": [
+        "viewer_object_selection_and_readback",
+        "viewer_graphic_result_outlet"
+      ],
+      "partial_achievement": "get_nsc_objects reads complete current object data (total=5)",
+      "review_finding": "prior note said 8 objects; stored summary reports total=5 (used here)"
+    },
+    {
+      "canonical_item_id": "NS-04.PartViewer",
+      "title": "零件查看器",
+      "formal_members": {
+        "mcp_entry": null,
+        "source_member_search": "no PartViewer typed request found in src/zemax_mcp",
+        "native_enum": "PartViewer"
+      },
+      "existing_evidence": [
+        "development/evidence/NS-04/part-viewer-repeat20261108.md",
+        "verification/development/NS-04/runtime066/settings.json",
+        "verification/development/NS-04/runtime068-sequential/summary.json"
+      ],
+      "existing_results": {
+        "colorimetry_sample": "no part geometry present",
+        "boolean_lens_mount": {
+          "objects": [
+            "RectangularVolume",
+            "CylinderVolume x3",
+            "BooleanNative",
+            "NullObject"
+          ],
+          "settings": "AS_Default/AR_Default valid and active",
+          "structured_counts": "zero",
+          "text_export": false,
+          "identity": "result did not identify or group part geometry"
+        },
+        "lifecycle": "both tasks closed and both sessions disconnected normally"
+      },
+      "offline_work_this_pass": [
+        "re-check stored part geometry inventory against result fields (read-only)"
+      ],
+      "external_blocker": "no part selection/readback contract and no usable result outlet",
+      "unblock_condition": "documented part selection/readback contract plus usable part data or image/vector outlet",
+      "pass_state": "checked_blocked_external_pending_coordinator",
+      "actual_checks_this_pass": [
+        {
+          "check": "colorimetry + lens-mount part result extraction",
+          "method": "pass_d008_native_evidence.py",
+          "result": {
+            "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+            "colorimetry_counts": {
+              "NumberOfMessages": 0,
+              "NumberOfDataSeries": 0,
+              "NumberOfDataGrids": 0,
+              "NumberOfDataGridsRgb": 0,
+              "NumberOfDataScatterPoints": 0,
+              "NumberOfDataScatterPointsRgb": 0
+            },
+            "colorimetry_objects_total": 5,
+            "lens_mount_counts": {
+              "NumberOfMessages": 0,
+              "NumberOfDataSeries": 0,
+              "NumberOfDataGrids": 0,
+              "NumberOfDataGridsRgb": 0,
+              "NumberOfDataScatterPoints": 0,
+              "NumberOfDataScatterPointsRgb": 0
+            },
+            "lens_mount_counts_all_zero": true,
+            "lens_mount_objects_total": 6,
+            "lens_mount_object_types": [
+              "RectangularVolume",
+              "CylinderVolume",
+              "CylinderVolume",
+              "CylinderVolume",
+              "BooleanNative",
+              "NullObject"
+            ],
+            "text_export": false,
+            "image_vector_outlet_members": [],
+            "close": true,
+            "disconnect_ok": true
+          }
+        }
+      ],
+      "historical_native": [
+        ".local/evidence/development/NS-03/part-viewer-repeat-20261108/summary.json",
+        ".local/evidence/development/NS-03/part-viewer-lens-mount-20261108/summary.json",
+        "development/evidence/NS-04/runtime066/settings.json"
+      ],
+      "offline_this_pass": [
+        "pass-d008-native-evidence.json"
+      ],
+      "remaining_gap": [
+        "part_selection_and_readback_contract",
+        "usable_part_data_or_image_vector_outlet"
+      ]
+    }
+  ],
+  "offline_checks_this_pass": {
+    "script": ".local/coordination/pass_d008_offline.py",
+    "result": ".local/coordination/pass-d008-offline-checks.json",
+    "ordinary_tests": "pytest tests/unit/test_sag_table.py tests/unit/test_sag_fit.py tests/unit/test_test_plates.py -q -> 71 passed in 0.56s",
+    "plate_catalog": {
+      "catalog_file": "Applied.tpd",
+      "parsed_rows": 899,
+      "native_rows": 899,
+      "max_radius_difference": 0.0,
+      "max_diameter_difference": 0.0,
+      "rows_outside_tolerance": 0,
+      "identity_or_code_mismatches": 0,
+      "passed": true
+    },
+    "slope_summary_641": {
+      "count": 12,
+      "max_absolute_error": 1.6653345369377348e-15,
+      "all_pass": true,
+      "stored_verdict_agreement": true,
+      "stored_error_agreement": true
+    },
+    "offset_622": {
+      "opposite_sign_rows": 4,
+      "max_magnitude_difference": 2.1348433464811814e-11,
+      "max_radius_error": 5.378943512823753e-09
+    }
+  },
+  "this_pass_checks": {
+    "native_runs_this_pass": 0,
+    "native_startup": "deferred (application_create 180 s x3; development/evidence/BASE-04/runtime-phase-environment-20261108.md)",
+    "offline_scripts": [
+      "pass_d008_offline.py",
+      "pass_d008_native_evidence.py"
+    ],
+    "offline_outputs": [
+      "pass-d008-offline-checks.json",
+      "pass-d008-native-evidence.json"
+    ],
+    "ordinary_tests": "pytest tests/unit/test_sag_table.py tests/unit/test_sag_fit.py tests/unit/test_test_plates.py -q -> 71 passed in 0.56s",
+    "report": "pass-d008-report.md",
+    "completion_adjudication": "coordinator (completion conditions keep declared scope; no scoped-out closure)"
+  }
+}

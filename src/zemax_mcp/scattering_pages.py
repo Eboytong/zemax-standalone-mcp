@@ -38,10 +38,22 @@ Scattering=Annotated[NoScatter|Lambertian|Gaussian|ABg|ABgFile|BSDF|User|Catalog
 MAP={'scatter_fraction':'ScatterFraction','sigma':'Sigma','abg_name':'ABgName','file_name':'FileName','dll_name':'DLLName','angle':'Angle','sample_side':'SampleSide','sampling':'Sampling'}
 RESOURCES={'ABg':'GetAvailableABgNames','ABgFile':'GetAvailableFileNames','BSDF':'GetAvailableFileNames','User':'GetAvailableDLLNames','ISScatterCatalog':'GetAvailableFiles'}
 def resource_names(obj,kind):
+    from .scatter_capabilities import is_placeholder, valid_names
     names=[str(x) for x in getattr(obj,RESOURCES[kind])()]
-    if kind=='BSDF' and any(x.lower().endswith('.abgf') for x in names):
-        raise ZemaxError('UNSUPPORTED_SETTING','本机BSDF资源接口返回ABgFile列表，无法确认BSDF文件采用。',capability='sequential_bsdf_resource_selection',native_filenames=names)
-    return names
+    usable=valid_names(names)
+    placeholders=[x for x in names if is_placeholder(x)]
+    if kind=='BSDF':
+        bsdf_names=[x for x in usable if x.lower().endswith('.bsdf')]
+        if any(x.lower().endswith('.abgf') for x in usable) or not bsdf_names:
+            raise ZemaxError('UNSUPPORTED_SETTING','本机BSDF资源接口未返回可确认的BSDF文件名。',
+                             capability='sequential_bsdf_resource_selection',native_filenames=names,
+                             valid_bsdf_names=bsdf_names,placeholder_values=placeholders)
+        return bsdf_names
+    if not usable:
+        raise ZemaxError('UNSUPPORTED_SETTING','本机该散射类型的资源接口没有返回可用资源。',
+                         type=kind,resource_query=RESOURCES[kind],
+                         placeholder_values=placeholders,native_names=names)
+    return usable
 
 def settings(native,row,kind):
     data=row.ScatteringData
@@ -66,11 +78,24 @@ def read_scattering(row):
 
 def set_scattering(native,row,patch,validate=False):
     from .detectors import checked_setting
+    from .scatter_capabilities import catalog_diagnostics,require_capability,require_resource
+    require_capability(patch.type,'type')
     holder,obj=settings(native,row,patch.type)
     vals=patch.model_dump(exclude={'type','parameters'})
+    if 'scatter_fraction' in vals:require_capability(patch.type,'scatter_fraction')
     resource=next((k for k in ('abg_name','file_name','dll_name') if k in vals),None)
-    if resource and vals[resource] not in resource_names(obj,patch.type):
-        raise ZemaxError('INVALID_RESOURCE','散射资源不在可用列表中。',type=patch.type,value=vals[resource])
+    if resource:
+        # Reject before any native write: the resource list is read first, so a bad or
+        # placeholder-only enumeration fails without touching the model.
+        available=resource_names(obj,patch.type)
+        if patch.type=='ISScatterCatalog':
+            diagnostics=catalog_diagnostics(vals[resource],available)
+            if not diagnostics['matched']:
+                raise ZemaxError('INVALID_RESOURCE','散射目录文件不在可用列表中。',type=patch.type,**diagnostics)
+            # Adopt the native exact-cased name so SetFile and the GetFile readback agree.
+            vals[resource]=diagnostics['matched_name']
+        else:
+            vals[resource]=require_resource(patch.type,vals[resource],available)
     for k,v in vals.items():
         if patch.type=='ISScatterCatalog' and k=='file_name':
             status=obj.SetFile(v)

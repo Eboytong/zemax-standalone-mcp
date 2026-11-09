@@ -20,7 +20,7 @@ def test_missing_solve_evidence_is_explicit(tmp_path,monkeypatch):
 
 def test_invalid_solve_evidence_is_explicit(tmp_path,monkeypatch):
     import zemax_mcp.solve_support as module
-    (tmp_path/"docs").mkdir()
+    (tmp_path/"docs/reference").mkdir(parents=True)
     (tmp_path/"docs/reference/solve-support.json").write_text("{}",encoding="utf-8")
     monkeypatch.setattr(module,"__file__",str(tmp_path/"a/b/module.py"))
     r=module.solve_validation_summary()

@@ -2,7 +2,61 @@ import pytest
 from pydantic import ValidationError
 
 from zemax_mcp.analysis_models import RunAnalysis
-from zemax_mcp.analyses import configure_diff_efficiency
+from zemax_mcp.analyses import DIFF_EFFICIENCY_2D_TITLE, configure_diff_efficiency, label_diff_efficiency
+
+
+NATIVE_2D_TITLE="最大波长 =  0.45，最小波长 = 0.65  (µm)"
+
+
+def _grid(**overrides):
+    grid=dict(grid=0,description=NATIVE_2D_TITLE,x_label="None",y_label="None",value_label="None",
+              nx=2,ny=2,dx=0.2,dy=0.003125,min_x=20.16505117707799,min_y=0.45,
+              values=[[0.1,0.2],[0.3,0.4]],invalid_count=0,
+              array_order="native Values dimension 0, dimension 1")
+    grid.update(overrides)
+    return grid
+
+
+def _series(**overrides):
+    series=dict(series=0,description="",x_label="Angle",labels=["衍射效率"],
+                x=[20.0,20.2],y=[[0.1],[0.2]],invalid_count=0)
+    series.update(overrides)
+    return series
+
+
+def test_diff_efficiency_2d_keeps_native_swapped_title_and_shows_topic_title():
+    data=dict(series=[],grids=[_grid()])
+    label_diff_efficiency(data,"diff_efficiency_2d")
+    grid=data["grids"][0]
+    assert grid["description"]==DIFF_EFFICIENCY_2D_TITLE=="Diffraction efficiency versus angle and wavelength"
+    assert "最大" not in grid["description"] and "最小" not in grid["description"]
+    assert grid["native_description"]==NATIVE_2D_TITLE
+    assert grid["native_axes"]=={"x_label":"None","y_label":"None","value_label":"None",
+                                 "min_x":20.16505117707799,"min_y":0.45,"dx":0.2,"dy":0.003125}
+    assert (grid["x_label"],grid["y_label"],grid["value_label"])==("Angle","Wavelength","Diffraction efficiency")
+    assert (grid["x_unit"],grid["y_unit"],grid["value_unit"])==("degrees","micrometers","dimensionless")
+    assert grid["values"]==[[0.1,0.2],[0.3,0.4]]
+    assert (grid["min_x"],grid["min_y"],grid["dx"],grid["dy"])==(20.16505117707799,0.45,0.2,0.003125)
+
+
+@pytest.mark.parametrize("kind,x_unit",[("diff_efficiency_angular","degrees"),("diff_efficiency_chromatic","micrometers")])
+def test_diff_efficiency_scans_keep_native_description_and_units(kind,x_unit):
+    data=dict(series=[_series()],grids=[])
+    label_diff_efficiency(data,kind)
+    series=data["series"][0]
+    assert series["description"]==""
+    assert series["native_description"]==""
+    assert series["x_label"]=="Angle" and series["labels"]==["衍射效率"]
+    assert (series["x_unit"],series["y_unit"])==(x_unit,"dimensionless")
+    assert series["value_quantity"]=="diffraction efficiency"
+    assert series["x"]==[20.0,20.2] and series["y"]==[[0.1],[0.2]]
+
+
+def test_diff_efficiency_2d_labeling_leaves_scans_untouched():
+    data=dict(series=[_series()],grids=[_grid()])
+    label_diff_efficiency(data,"diff_efficiency_2d")
+    assert data["series"][0]["description"]==""
+    assert data["grids"][0]["description"]==DIFF_EFFICIENCY_2D_TITLE
 
 
 @pytest.mark.parametrize("kind", ["diff_efficiency_2d", "diff_efficiency_angular", "diff_efficiency_chromatic"])

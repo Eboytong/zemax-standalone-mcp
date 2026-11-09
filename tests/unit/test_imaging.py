@@ -9,13 +9,6 @@ from zemax_mcp.errors import ZemaxError
 
 KINDS=['image_simulation','geometric_image','geometric_bitmap_image','fft_line_edge_spread','geometric_line_edge_spread','extended_source_encircled_energy']
 
-def test_geometric_bitmap_default_settings_preserve_interface_limit():
-    q=RunAnalysis(request=dict(kind='geometric_bitmap_image',input_file='point.IMA')).request
-    settings=NS(GetType=lambda:NS(FullName='ZOSAPI.Analysis.Settings.AS_Default'))
-    with pytest.raises(ZemaxError) as caught:im.configure(None,settings,q)
-    assert caught.value.code=='UNSUPPORTED_INTERFACE'
-    assert caught.value.details['runtime_settings_type']=='ZOSAPI.Analysis.Settings.AS_Default'
-    assert caught.value.details['missing_method']=='GetFileNames'
 def payload(kind):
     return dict(kind=kind, **({'input_file':'point.IMA'} if kind in {'image_simulation','geometric_image','geometric_bitmap_image'} else {'image_name':'point.IMA'} if kind=='extended_source_encircled_energy' else {}))
 
@@ -68,7 +61,7 @@ def adapted(monkeypatch):
     monkeypatch.setattr(im,'resource_names',lambda b,kind:['point.IMA'])
     return NS(native=None,system=NS(LDE=NS(NumberOfSurfaces=5)))
 
-@pytest.mark.parametrize('kind',KINDS)
+@pytest.mark.parametrize('kind',[k for k in KINDS if k!='geometric_bitmap_image'])
 def test_configure_explicit_settings_and_selectors(adapted,kind):
     q=RunAnalysis(request=payload(kind)).request;s=Settings(kind)
     actual=im.configure(adapted,s,q)
@@ -78,7 +71,7 @@ def test_configure_explicit_settings_and_selectors(adapted,kind):
     if kind in im.EXTRA:
         for key,name in im.EXTRA[kind].items():assert getattr(s,name)==getattr(q,key)
 
-@pytest.mark.parametrize('kind',['image_simulation','geometric_image','geometric_bitmap_image'])
+@pytest.mark.parametrize('kind',['image_simulation','geometric_image'])
 def test_resource_case_matching_and_rejection(adapted,kind):
     s=Settings(kind);q=RunAnalysis(request={**payload(kind),'input_file':'POINT.ima'}).request
     assert im.configure(adapted,s,q)['input_resource']=='point.IMA'
@@ -166,7 +159,7 @@ def test_invalid_native_result(tmp_path):
     with pytest.raises(ZemaxError)as exc:collect(tmp_path,results(IsValid=False))
     assert exc.value.code=='ANALYSIS_FAILED'
 
-@pytest.mark.parametrize('kind',KINDS)
+@pytest.mark.parametrize('kind',[k for k in KINDS if k!='geometric_bitmap_image'])
 def test_configure_failure_closes_analysis_once(monkeypatch,kind):
     tool=NS(GetSettings=lambda:None);closed=[]
     b=NS(system=NS(SystemData=NS(Fields=NS(NumberOfFields=3),Wavelengths=NS(NumberOfWavelengths=3)),Analyses=NS(New_Analysis=lambda _:tool)),

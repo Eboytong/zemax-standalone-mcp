@@ -31,10 +31,12 @@ def test_grin_profile_applies_axis_and_only_requested_ranges():
 def test_grin_profile_result_units_and_native_axes():
     from zemax_mcp.analyses import label_grin_profile
     data=dict(series=[dict(series=0,x_label='native coordinate',labels=['None'],x=[0],y=[[1.5]])])
-    label_grin_profile(data,dict(show_index_vs='Y'),'Millimeters')
+    label_grin_profile(data,dict(show_index_vs='Y',wavelength=2),'Millimeters')
     curve=data['series'][0]
     assert curve['native_axes']==dict(x_label='native coordinate',labels=['None'])
     assert curve['x_label']=='Y' and curve['x_unit']=='Millimeters' and curve['y_unit']=='dimensionless'
+    assert curve['wavelength_number']==2
+    assert curve['index_definition']=='native profile index at the selected system wavelength'
 
 
 @pytest.mark.parametrize('curves',[[],[dict(series=0,x=[],y=[],x_label='',labels=[])],[dict(series=0,x=[0],y=[[1,2]],x_label='',labels=[])]])

@@ -2,6 +2,9 @@ import json
 import logging
 import math
 import os
+import base64
+import shutil
+import subprocess
 import sys
 import time
 import uuid
@@ -13,6 +16,7 @@ from .config import Config
 from .data import clean, dotnet_array, unwrap, utc_now
 from .errors import ZemaxError
 from .models import COMMAND_MODELS
+from .macro_models import StandaloneMacro
 from .native import NativeSession
 from .solve_support import solve_validation_summary, extended_solve_summary
 
@@ -134,6 +138,81 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
         return clean({"ok": False, "data": None, "error": error, "warnings": [],
                       "context": self.context(), "artifacts": []})
 
+    def run_standalone_macro(self, req: StandaloneMacro):
+        if self.native.application is not None:
+            raise ZemaxError("SYSTEM_BUSY", "独立宏运行需要先断开本服务连接的OpticStudio实例。")
+        macro = Path(req.macro_path).expanduser()
+        if not macro.is_absolute() or not macro.is_file() or macro.suffix.lower() != ".zpl":
+            raise ZemaxError("INVALID_ARGUMENT", "macro_path必须是存在的绝对.ZPL文件。", path=str(macro))
+        macro = macro.resolve()
+        expected_output = None
+        if req.expected_output:
+            expected_output = Path(req.expected_output).expanduser()
+            if not expected_output.is_absolute():
+                raise ZemaxError("INVALID_ARGUMENT", "expected_output必须是绝对路径。", path=str(expected_output))
+            expected_output = expected_output.resolve()
+            if expected_output == macro or expected_output.exists():
+                raise ZemaxError("OUTPUT_EXISTS", "宏输出路径必须与宏文件不同且当前不存在。", path=str(expected_output))
+            if not expected_output.parent.is_dir():
+                raise ZemaxError("INVALID_ARGUMENT", "expected_output父目录必须已存在。", path=str(expected_output.parent))
+
+        executable = self.config.install_dir / "OpticStudio.exe"
+        if not executable.is_file():
+            raise ZemaxError("INSTALLATION_NOT_FOUND", "找不到OpticStudio命令行程序。", path=str(executable))
+        root = Path(self.config.output_dir).resolve()
+        run_dir = root / "standalone_macro" / uuid.uuid4().hex
+        run_dir.mkdir(parents=True, exist_ok=False)
+        log_path = run_dir / "process.log"
+        command = [str(executable), f'-zpl="{macro}"']
+        command.extend(f'-v{name}="{value}"' for name, value in sorted(req.arguments.items()))
+        if expected_output is not None:
+            command.append(f'-v{req.output_argument_name}="{expected_output}"')
+        settings = {"macro_path": str(macro), "arguments": req.arguments,
+                    "expected_output": str(expected_output) if expected_output else None,
+                    "output_argument_name": req.output_argument_name,
+                    "timeout_seconds": req.timeout_seconds,
+                    "launch_arguments": command[1:]}
+        powershell = shutil.which("powershell.exe")
+        if powershell is None:
+            raise ZemaxError("PROCESS_LIFECYCLE_UNAVAILABLE", "找不到Windows PowerShell以跟踪OpticStudio命令行启动的进程树。")
+        launch_spec = {"executable": str(executable), "arguments": command[1:],
+                       "working_directory": str(macro.parent)}
+        encoded_spec = base64.b64encode(json.dumps(launch_spec, ensure_ascii=True).encode("utf-8")).decode("ascii")
+        script = ("$ErrorActionPreference='Stop';"
+                  f"$spec=[Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('{encoded_spec}'))|ConvertFrom-Json;"
+                  "$p=Start-Process -FilePath $spec.executable -ArgumentList $spec.arguments "
+                  "-WorkingDirectory $spec.working_directory -Wait -PassThru;"
+                  "Write-Output ('OpticStudioExitCode=' + $p.ExitCode);exit $p.ExitCode")
+        encoded_script = base64.b64encode(script.encode("utf-16le")).decode("ascii")
+        worker_command = [powershell, "-NoLogo", "-NoProfile", "-EncodedCommand", encoded_script]
+        try:
+            with log_path.open("wb") as log:
+                process = subprocess.Popen(worker_command, cwd=str(macro.parent), stdin=subprocess.DEVNULL,
+                                       stdout=log, stderr=subprocess.STDOUT,
+                                       creationflags=getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0))
+        except OSError as exc:
+            raise ZemaxError("TASK_START_FAILED", "无法启动OpticStudio独立宏进程。", reason=str(exc),
+                             executable=str(executable)) from exc
+        except Exception as exc:
+            raise ZemaxError("TASK_LIFECYCLE_UNAVAILABLE", "无法启动受控的OpticStudio进程树跟踪器。",
+                             reason=str(exc), executable=str(executable)) from exc
+
+        task_id = uuid.uuid4().hex
+        task_context = {**self.context(), "session_id": uuid.uuid4().hex}
+        task = {"task_id": task_id, "request_id": self.request_id, "kind": "standalone_macro",
+                "state": "running", "created_at": utc_now(), "settings": settings,
+                "context": task_context, "system_settings": {}, "progress": None,
+                "can_cancel": True, "cancel_requested": False, "before": {}, "native": process,
+                "analysis": False, "result": None, "external_process": True,
+                "log_path": str(log_path),
+                "expected_output": str(expected_output) if expected_output else None,
+                "directory": str(run_dir), "started_monotonic": time.monotonic(),
+                "timeout_deadline": time.monotonic() + req.timeout_seconds}
+        self.tasks[task_id] = task
+        self.active = task
+        self._record_task_history(task)
+        return self._task_view(task)
+
     @staticmethod
     def _argument_errors(command, exc):
         from ast import literal_eval
@@ -183,7 +262,7 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
         return str(cell.Value)
 
     @staticmethod
-    def _write_cell(cell, value, *, zero_radius=False):
+    def _write_cell(cell, value, *, zero_radius=False, material_name=False):
         kind = str(cell.DataType)
         if cell.IsReadOnly or not cell.IsActive:
             raise ZemaxError("CELL_NOT_WRITABLE", "单元格未启用或只读。", header=str(cell.Header))
@@ -202,6 +281,8 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
         if value in ('Infinity','-Infinity')and isinstance(actual,(int,float))and math.isinf(actual):
             if (actual>0)!=(value=='Infinity'):raise ZemaxError('SETTING_REJECTED','无穷值符号未采用。')
         elif isinstance(value,str):
+            if material_name and value.casefold()==str(actual).casefold():
+                return
             check_setting_value(str(cell.Header),value,str(actual))
         else:check_setting_value(str(cell.Header),value,actual)
 
@@ -294,9 +375,9 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
                         SolidRing='sequential, at least 8 rays; native marginal-ray and caustic conditions apply',
                         nsc_ray_count='number_of_rays inactive; per-source NumberOfLayoutRays controls NSC rays',
                         file_version='ACIS formats only; SAT/SAB actual file header checked, local explicit V25-V30 not adopted'),
-                    adoption='final scalar readback and native enum value comparison',
+                    adoption='final scalar/enum readback; explicit sequential IGES lens layers with number_of_rays=0 checked against closed output directory levels; unsupported indirect level references remain explicit',
                     completion='native success, confirmed Close, output file present; all_by_file returns unique directory, paths and per-configuration artifacts',
-                    native_acceptance='STEP/STL/SAT Current extended settings and file creation passed; sequential cylinder and transformed NSC box geometry accepted; NSC scatter/split/polarization adoption and subsequent trace passed; ACIS explicit version mismatch remains',validation='docs/special-exports.md')
+                    native_acceptance='STEP/STL/SAT Current extended settings and file creation passed; sequential cylinder and transformed NSC box geometry accepted; NSC scatter/split/polarization adoption and subsequent trace passed; ACIS explicit version mismatch remains',validation='docs/topics/delivery/special-exports.md')
             if tool=='export_point_cloud':
                 value['point_cloud']=dict(interface='ILensDataEditor.CanExportPointCloud/RunTool_ExportPointCloudFile',
                     formats=['ASCII','Binary','CompressedBinary'],scope='sequential supported native surface; owned synchronous copy',
@@ -319,6 +400,9 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
             return self.optimization_diagnostics()
         connected = self.native.application is not None and getattr(self.native, "connection_ready", True)
         result = {"connected": connected, "implemented_tools": list(COMMAND_MODELS),
+                  "standalone_macro": {"tool": "run_standalone_macro", "launch": "OpticStudio.exe -zpl=<absolute .ZPL path> -v<Name>=<value>",
+                    "arguments": "string values read by ZPL $GETARG(name)", "output": "optional expected_output is passed using output_argument_name and checked after process exit",
+                    "lifecycle": "requires disconnected Standalone session; owned process polled, timeout/cancel supported, process log retained", "validation": "docs/topics/extensions/extensions.md"},
                   "editor_extensions": {"editors":["MFE","MCE","TDE"],"tde_modes":["replace","append","insert","update","delete"],"metadata":"get_editor_metadata","rows":["insert_editor_rows","copy_editor_rows"],"tolerance_files":["load_tolerance_file","save_tolerance_file"],"native_adoption":"pending_connection","validation":"docs/editor-extensions.md"},
                   "task_history": {"discovery":"list_task_history","request_lookup":"get_request_status","results":"get_historical_result","result_schema_version":1,"legacy_result_versions":[0],"history_root":str(self.config.output_dir),"validation":"docs/task-history.md"},
                   "lens_catalogs": {"search":"run_lens_catalog_search","selection":"run_catalog_lens","evaluation":"run_catalog_evaluation","dimension_unit":"millimeters","native_adoption":"pending_connection","validation":"docs/lens-catalogs.md"},
@@ -343,12 +427,14 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
             readiness='native configuration flag plus actual job initialization/license/node checks',
             native_acceptance='pending native initialization and configured execution environment',validation='docs/hpc.md')
         from .star_controls import CONTROL_KINDS
+        from .star import STAR_LICENSE_REQUIREMENT, STAR_LICENSE_SOURCE
         result['star_operations'] = dict(read='get_star_data', run='run_star_operation',
-            data_kinds=['deformation','temperature','direct_index'], operations=['import','fit',*sorted(CONTROL_KINDS)],
+            data_kinds=['deformation','temperature','direct_index'], operations=['import','fit','unload',*sorted(CONTROL_KINDS)],
             mode='Sequential current configuration', license='IsSTARModuleEnabled checked per operation',
+            license_requirement=STAR_LICENSE_REQUIREMENT, license_requirement_source=STAR_LICENSE_SOURCE,
             length_units='FEA file coordinates and displacement must match current lens units',
             cancellation='cooperative between native calls with checkpoint restoration on failure/cancel',
-            native_acceptance='pending initialization and STAR license check', validation='docs/star.md')
+            native_acceptance='module enablement and per-operation controlled FEA acceptance required', validation='docs/topics/extensions/star.md')
         result['property_pages']={'system':{k:list(m) for k,(_,m) in SYSTEM_PAGES.items()},'surface':{k:list(m) for k,(_,m) in SURFACE_PAGES.items()},'units':'lengths in current lens units; angles follow native page units','evidence':'docs/property-pages.md'}
         result['property_page_local_limitations']={
             'User':'settings creation raises UILDEScatterData serialization exception; raw exception retained',
@@ -384,6 +470,13 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
             precision_reference='controlled equal-edge-sag r6-r12: VeryHigh passes original RMS gate; Standard r8-r12 exceeds it; TO-01/progress550-high-order.json',
             evidence='verification/development/TO-01/acceptance574-reference.json')
         result['system_data_report']=dict(kind='system_data',settings='AS_Default; no business settings',results='native system/detail report and one-based rows; displayed precision retained')
+        result['prescription_data']=dict(kind='prescription_data',
+            inputs='optional sections: nonempty unique list of 15 documented section identifiers',
+            native_settings='AS_Default readback; native chapter settings not exposed',
+            output_selection='exact exported native report line intervals in native order with document header; requested/actual section identities recorded separately',
+            results='complete native report retained; selected_text UTF-8 artifact and rows pagination',
+            errors='missing or duplicate selected section fails with original report and native messages retained',
+            evidence='development/evidence/NS-04/prescription-sections-20261109.md')
         result['system_check']=dict(kind='system_check',settings='native AS_Default; no business settings',results='native UTF-16 diagnostic report; one-based rows pagination',scope='configuration scope and findings retained in original report; task success means report generation')
         result['file_comparator']=dict(kind='file_comparator',inputs='existing absolute .zos/.zmx paths; optional one-based configurations',settings='all 15 include sections plus ShowDifferencesOnly; final native readback',results='native UTF-16 report and paged one-based text lines, native markup retained',configuration_validation='explicit selections checked in owned temporary system; native silently accepts out-of-range values',validation='controlled radius/comment changes, same file, distinct configurations, section flags, paging and close passed',evidence='docs/file-comparator.md')
         result['surface_slope_analyses']=dict(kinds=['surface_slope','surface_slope_cross','surface_phase_slope','surface_phase_slope_cross'],
@@ -397,7 +490,7 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
             auxiliary_line='show_diffraction_limit=true rejected; native interface has no setting',
             grid_dimensions='5..101 points per axis, even sizes supported',
             validation='offset7x5 grid;128x128 spot/ChiefRayOPD quadrature, native options, paging/save-reload/cancellation and reuse passed;64sampling convergence evidence retained',evidence='docs/rms-field-map.md')
-        result['nsc_ray_analyses']=dict(kinds=['path_analysis','critical_ray_trace','nsc_single_ray_trace'],scope='pure NSC current configuration',units='path flux watts; CRT positions lens units, angles degrees; single-ray segments global',results='native paths/rows and uncategorized, CRT Pass and endpoints, single-ray segments/ZRD; paged rows',validation='CRT and single-ray references/reload/cancellation passed; path threshold-excluded uncategorized flux remains open',evidence='docs/nsc-paths.md')
+        result['nsc_ray_analyses']=dict(kinds=['path_analysis','critical_ray_trace','nsc_single_ray_trace'],scope='pure NSC current configuration',units='path flux watts; CRT positions lens units, angles degrees; single-ray segments global',results='native paths/rows and uncategorized, CRT Pass and endpoints, single-ray segments/ZRD; paged rows',validation='CRT and single-ray references/reload/cancellation passed; path threshold-excluded uncategorized flux remains open',path_database_controls=dict(zrd='ray range, filter and relative threshold',paf='all recorded paths only; nondefault ray range, filter and threshold rejected after native adoption controls'),evidence='docs/topics/nonsequential/nsc-paths.md')
         result['nsc_conversion']=dict(tool='run_nsc_conversion',source='IConvertToNSCGroup',modes=['group','pure'],checkpoint='before conversion; failure/cancel retain checkpoint for explicit recovery',validation='implemented; native adoption and ray equivalence pending',evidence='docs/nsc-conversion.md')
         result['material_analyses']=dict(kinds=['internal_transmission_vs_wavelength'],resource_identity='explicit loaded catalog; catalog names accept an optional .AGF suffix; ambiguous aliases and duplicate material names rejected',
             properties_tool='get_material_properties',units='wavelength micrometers; transmission thickness millimeters; raw native catalog formula/thermal/mechanical properties',
@@ -406,12 +499,76 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
             outputs=['refractive_index','dn_dt'], availability='native material getter decides actual availability',
             conditions=['wavelength_um','environment_pressure_atm','environment_temperature_c',
                         'material_pressure_atm','material_temperature_c','delta_temperature_c'])
+        result['seidel_diagram']=dict(methods=['auto','native','coefficients'],
+            default='bar chart from formal native unconverted SeidelCoefficients, manual 2024 R2 p.746',
+            selectors='first/last surface before image, one-based wavelength, chromatic/distortion visibility, plot scale and frame',
+            results='paged per-surface coefficients and selected-range sum, native text and grouped-bar PNG',
+            units='lens units',native_limit='explicit native diagram outlet returns EXPORT_FAILED on installed build',
+            evidence='development/evidence/CV-01/seidel-coefficient-diagram-20261109.md')
+        result['material_analyses']['dispersion_diagram']=dict(methods=['auto','native','index'],
+            default='native default text report; explicit selectors use formal ILDE.GetIndex on an owned system copy',
+            selectors='explicit loaded catalog and 1..4 unique catalog/ZTG glasses, wavelength range (0/0 for resource union), 2..2001 inclusive samples, independent automatic index display limits, temperature and pressure',
+            defaults=dict(minimum_wavelength_um=.4,maximum_wavelength_um=.8,samples=101,minimum_index=0,maximum_index=0,
+                          use_temperature_pressure=False,temperature_c=20,pressure_atm=1),
+            units='wavelength micrometers; refractive index dimensionless; temperature Celsius; pressure atmospheres',
+            validation='independent Sellmeier/thermal references, native-report comparison, pagination, plot, reload, cancellation/reuse and owned-copy close passed',
+            evidence='development/evidence/MA-01/selected-index-20261109.md')
+        result['material_analyses']['dispersion_vs_wavelength']=dict(methods=['auto','native','finite_difference'],
+            default='native text report; explicit selectors use numerical derivative of formal ILDE.GetIndex',
+            selectors='1..4 catalog or ZTG glasses, wavelength and display ranges, temperature/pressure, samples 2..2001',
+            algorithm='five-point fourth-order derivative, nominal step 1e-4 um, one-sided within material range at boundaries',
+            units='wavelength micrometers; dispersion 1/micrometer',
+            source='explicit numerical derivative of native refractive indices; native default internal algorithm retained as a separate source',
+            validation='256 independent reference comparisons passed 5.1e-8 /um; cancellation, reload, pagination, plot and owned-copy close',
+            evidence='development/evidence/MA-01/selected-derivative-20261109.md')
         result['polarization_analyses']=dict(kinds=['polarization_pupil_map'],scope='sequential current configuration',
             settings='documented IAS_.SaveTo/ModifySettings/LoadFrom; native text header and pupil-lattice adoption checks',
             sampling='odd pupil grid diameter 3..101; native adoption verified per run',
             results='paged pupil rows Ex/Ey amplitudes, relative intensity, relative phase and orientation; intensity scatter plot',
             units='normalized pupil; native field amplitude/intensity; phase and orientation degrees',
             validation='docs/polarization.md')
+        result['polarization_analyses']['phase_topic']=dict(kind='phase_aberration',
+            methods=['auto','native','system_copy'],
+            default='kind-only request preserves the native default report',
+            selection='explicit one-based field/wavelength and Jones input use an owned system copy; omitted wavelength follows source primary',
+            geometry='evaluated numeric dependency solves fixed only in analysis copy; all active optical cells and three source/copy ray witnesses checked',
+            primary='requested wavelength becomes primary only in analysis copy; changes to ray mapping are rejected',
+            results='native text, 401-row pupil table, four phase series, pagination and plot',
+            units='native phase values retained in waves; field units from report/system type; Jones phases degrees',
+            validation='field/Jones selection on Cooke source-primary wavelength; nonprimary selection rejected when source/copy ray mapping differs; general finite/conjugate, transformed and mirror references pending',
+            evidence='development/evidence/PO-01/phase-copy-selection-20261109.md')
+        result['polarization_analyses']['ray_trace']=dict(methods=['auto','native','operand'],
+            default='native PolarizationRayTrace text report',
+            selection='CODA operand selects one-based field/wavelength, normalized pupil point and sequential surface; surface 0 selects image surface',
+            results='29 documented S/P coating, complex E-field, phase, polarized/unpolarized cumulative intensity and polarization ellipse values; rows pagination; native per-query arguments retained',
+            units='phase results degrees converted from native radians; ellipse angle native degrees; ellipse axes use projected XY field amplitude',
+            source='formal MFE.GetOperandValue(CODA); 2024 R2 manual p.1130',
+            validation='selected complex E-field matched formal polarized batch trace at three surfaces; development/evidence/PO-01/coda-selectable-ray-20261109.md')
+        result['polarization_analyses']['transmission_pupil']=dict(kind='polarization_transmission',
+            methods=['auto','native','ray_trace'],
+            native='Default request preserves native report; explicit native selectors are rejected',
+            selection='field/wavelength 0 selects all; sampling 8/16/32/64/128 intervals with inclusive circular pupil nodes',
+            polarization='null follows system Jones/unpolarized readback; explicit Jones input normalized to unit intensity',
+            results='integrated field/wavelength power, selected wavelength-weighted totals, paged pupil statuses, optional chief-ray surface transmission',
+            source='formal normalized polarized batch trace plus geometric trace for clipping; actual arguments recorded',
+            validation='Complete transmission acceptance: inclusive-grid/apodization, bulk absorption, Jones, wavelengths, pagination/export, cancellation, reuse, reload and close passed',
+            evidence='development/evidence/PO-01/transmission-complete-20261109.md')
+        result['polarization_analyses']['fiber_topic']=dict(kind='fiber_coupling_settings',
+            integration_method=['huygens','ray_based',None],
+            method_source='first nonempty native report title; unknown titles retain null method',
+            methods=['auto','native','operand'],
+            selection='default native report; FICL selects sampling 32/64/128/256, one-based field/wavelength, source/receiver circular NA, source inclusion, integration and polarization',
+            validation='FICL columns and direct/row agreement confirmed; full elliptical/tilt/decenter coupling acceptance pending',
+            evidence='development/evidence/WP-01/fiber-operand-contract-20261109.md')
+        result['polarization_analyses']['transmission_fan']=dict(kind='polarization_transmission_fan',
+            methods=['auto','native','ray_trace'],
+            native='kind-only preserves native unpolarized text report; explicit selectors require ray_trace',
+            selection='field/wavelength 0 selects all; one-based explicit indices; odd sampling 3..1001',
+            polarization='null averages unit X and Y input powers; Jones amplitudes normalized to unit incident intensity, phases degrees',
+            source='formal normalized polarized batch ray trace; separate geometric trace identifies errors/vignetting',
+            results='series by fan/field/wavelength; paged pupil rows; null for invalid rays and per-curve invalid_count',
+            axes='sagittal normalized pupil X; tangential normalized pupil Y',
+            settings='system selection readback plus recorded CreateNormPol/AddRay arguments; native topic selectors unavailable')
         result['coating_analyses']=dict(metrics=['reflection','transmission','absorption','diattenuation','phase','retardance'],
             scans=['angle','wavelength'],listing='coating_listing (sequential)',scope='sequential current configuration, mixed NSC component, pure NSC',
             nsc_selection='paired one-based nsc_object and zero-based native optical face-group nsc_face; discover via get_nsc_objects; pure NSC surface=0, mixed component uses actual LDE surface; owned analysis copy',
@@ -447,6 +604,14 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
             coordinates='NSC group entrance coordinates; combine with get_surface_geometry(nsc_surface) for sequential global coordinates',
             trace_scope='NSC tracing and detector tools remain pure NonSequential only',
             validation='docs/nonsequential-validation.md')
+        from .source_spectrum import MODELS as source_spectrum_models
+        result['nsc_source_spectra']=dict(
+            writable_settings={mode:list(model.model_fields['settings'].annotation.model_fields)
+                               for mode,model in source_spectrum_models.items()},
+            partial_update='omitted settings retain native values; cross-mode and read-only writes rejected before mutation',
+            readback='selected ISCS interface fields and Fit; SpectrumFile also exposes resolved sampling',
+            viewer_binding='NCE color settings and SourceSpectrumViewer inputs are separate in recorded controls',
+            evidence='development/evidence/NS-03/source-spectrum-binding-20261109.md')
         if connected and not self.active and str(self.system.Mode)=='Sequential':
             result['active_nsc_surface']=int(self.system.NCE.ActiveSurface)
         result["validated_surface_model_scope"]=["Standard","EvenAspheric","OddAsphere","Toroidal","Biconic","Paraxial","CoordinateBreak","GridSag","GridPhase",
@@ -490,7 +655,12 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
                 reverse_scope='MinimumVolume full-aperture SSAG sphere only',
                 alternate_criterion_scope='full-aperture SSAG sphere curve; MinimumRMS vertex offset fixed zero, other offsets unavailable; removal statistics apply only to MinimumVolume',
                 rms_bfs_auxiliary='DSAG Data9 radius and Data10 raw native Z offset; includes SSAG radius consistency; conversion to manufacturing vertex_offset unconfirmed',
+                rms_fit_reference=dict(controlled_shape='z=0.0126*r^2, semi-diameter5mm, MinimumRMSWithOffset',
+                    radius_absolute_tolerance_mm=5e-6,EvenAspheric='passed for three equal-sag base-radius representations',
+                    ZernikeFringeSag='unresolved radius error about3.84e-5mm; base radius and33–513 grid controls did not resolve',
+                    evidence='development/evidence/MF-01/sag-fit-controls-20261109.md'),
                 summary_sampling='native BFSD; independent of requested rows; observed1000 intervals including endpoints with radial RMS weights',
+                manufacturing_direction='MinimumVolume: local signed_vertex_deviation retained; removal_depth oriented by native BFSD blank/offset and GetSag radial witnesses; glass/air side changes native fit',
                 applicability='rotational Y-section; sampled native sag meridians reject witnessed asymmetry',
                 aperture_scope='full radial blank; aperture-present SSLP uses an owned unclipped copy; active-model slope retained',
                 verification='implemented; verification/development/MF-01/progress589-offset-reference.json')
@@ -499,10 +669,18 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
                 gradium_reference_index='RefN is evaluated at the material-family reference wavelength, separate from requested system wavelength',
                 gradium_verification='in_progress; original numeric gate retained; shared-dispersion and capping diagnostics recorded separately')
             result['analyses']['full_field_spot'].update(
+                configuration_scope='current configuration; native selector1; task.settings.resolved_configuration records physical configuration',
                 coordinate_units='spatial radii: micrometers; spatial reference: lens units; direction-cosine mode: dimensionless',
                 shared_reference='all fields share reference; ChiefRay uses field1',
                 result_limitation='Cooke native text and structured outlets unavailable; no validated shared-reference substitute',
                 verification='implemented; verification/development/CV-01/progress533-full-field.json')
+            result['analyses']['through_focus_spot'].update(
+                configuration_scope='current configuration; native selector1; task.settings.resolved_configuration records physical configuration',
+                configuration_verification='development/evidence/CV-01/spot-current-configuration-20261109.md')
+            result['analyses']['geometric_bitmap_image'].update(
+                result_grids='RGB indices0/1/2; optional native normalized intensity index3',
+                efficiency='raw native report percent; independent throughput definition remains under verification',
+                intensity_verification='development/evidence/D005/bitmap-intensity-20261109.md')
             result['analyses']['fft_line_edge_spread'].update(
                 verification='accepted; verification/development/CV-01/acceptance547-spread.json',
                 independent_coherent_reference='direct OPD/intensity rays on documented FFT-stretched pupil nodes at64/128 sampling; physical Fraunhofer sum',
@@ -510,6 +688,7 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
             result['analyses']['test_plate_list'].update(methods=['auto','native','file'],
                 units={'radius':'millimeters','diameter':'millimeters'},resource_kind='test_plate_files',
                 native_settings_readback=False,native_active_catalog_readback='formatted report header',
+                native_configuration_file='absolute CFG path; formal LoadFrom; catalog adoption checked against native report header; explicit mismatch refused without file fallback',
                 requested_native_catalog_selection='unconfirmed; mismatched catalog explicitly refused',
                 file_method='documented TPD resource format; selected filename and source recorded',
                 verification='implemented; verification/development/MF-01/progress435-plates.json')
@@ -946,7 +1125,7 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
                     self._guard_cell(cell, change.replace_solves)
                     if change.replace_solves and str(cell.Solve) not in ("Fixed", "Variable"):
                         self._set_variable_mode(cell, False)
-                    self._write_cell(cell, value, zero_radius=name=='radius')
+                    self._write_cell(cell, value, zero_radius=name=='radius', material_name=name=='material')
                 if change.comment is not None:
                     row.Comment = change.comment
                 for name, spec in change.solves.items():
@@ -1319,6 +1498,7 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
         return self._start_task("fft_mtf", analysis, actual, analysis=True)
 
     def run_spot_analysis(self, req):
+        from .spot_topics import CURRENT_CONFIGURATION_SELECTOR
         self._analysis_selection(req)
         analysis = getattr(self.system.Analyses,'New_Analysis_SettingsFirst',self.system.Analyses.New_Analysis)(self.native.api.Analysis.AnalysisIDM.StandardSpot)
         try:
@@ -1329,16 +1509,19 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
             self.native.set_enum(settings, "Pattern", req.pattern)
             settings.RayDensity = req.ray_density
             settings.UsePolarization = req.use_polarization
-            settings.Configuration = self.system.MCE.CurrentConfiguration
+            settings.Configuration = CURRENT_CONFIGURATION_SELECTOR
             settings.DeltaFocus = 0
             settings.DirectionCosines = False
             settings.IgnoreLateralColor = False
             settings.ScatterRays = False
             actual = {"field": int(settings.Field.GetFieldNumber()), "wavelength": int(settings.Wavelength.GetWavelengthNumber()),
                       "reference": str(settings.ReferTo), "pattern": str(settings.Pattern), "ray_density": int(settings.RayDensity),
-                      "configuration": int(settings.Configuration), "use_polarization": bool(settings.UsePolarization),
+                      "configuration": int(self.system.MCE.CurrentConfiguration),
+                      "native_configuration_selector": int(settings.Configuration), "use_polarization": bool(settings.UsePolarization),
                       "ignore_lateral_color": bool(settings.IgnoreLateralColor), "scatter_rays": bool(settings.ScatterRays),
                       "delta_focus": float(settings.DeltaFocus), "direction_cosines": bool(settings.DirectionCosines)}
+            if actual["native_configuration_selector"] != CURRENT_CONFIGURATION_SELECTOR:
+                raise ZemaxError("SETTING_REJECTED", "光斑分析未采用当前配置选择。", actual=actual)
         except Exception:
             self._close_task_native({"native": analysis})
             raise
@@ -1560,6 +1743,16 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
                     child["cancel_requested"] = True
             return self._task_view(task)
         native = task["native"]
+        if task.get("external_process"):
+            try:
+                self._terminate_standalone_process_tree(task)
+                task["cancel_requested"] = True
+                task["state"] = "cancelling"
+                task["status"] = "已请求结束独立OpticStudio进程，等待进程退出确认"
+                self.tick()
+                return self._task_view(task)
+            except Exception as exc:
+                raise ZemaxError("CANCEL_REJECTED", "无法请求结束独立宏进程。", reason=str(exc), task_id=req.task_id) from exc
         if not task["analysis"] and not native.CanCancel:
             raise ZemaxError("CANCEL_UNSUPPORTED", "该工具当前不支持取消。", task_id=req.task_id)
         if task["analysis"]:
@@ -1571,6 +1764,16 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
         task["state"] = "cancelling"
         self.tick()
         return self._task_view(task)
+
+    @staticmethod
+    def _terminate_standalone_process_tree(task):
+        command = [str(Path(os.environ.get("SystemRoot", r"C:\Windows")) / "System32" / "taskkill.exe"),
+                   "/PID", str(task["native"].pid), "/T", "/F"]
+        completed = subprocess.run(command, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
+                                   stderr=subprocess.PIPE, text=True, timeout=15,
+                                   creationflags=subprocess.CREATE_NO_WINDOW)
+        if completed.returncode != 0 and task["native"].poll() is None:
+            raise RuntimeError(completed.stderr.strip() or completed.stdout.strip() or "taskkill failed")
 
     def _collect_analysis(self, task):
         result = unwrap(task["native"].GetResults())
@@ -1640,7 +1843,9 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
 
     def _save_task_result(self, task, result):
         result.update(result_schema_version=RESULT_VERSION, task=self._task_view(task), context=task["context"], system_settings=task["system_settings"])
-        path = self.directory / f"{task['task_id']}.json"
+        directory = Path(task.get("directory") or self.directory or self.config.output_dir)
+        directory.mkdir(parents=True, exist_ok=True)
+        path = directory / f"{task['task_id']}.json"
         artifacts = result.setdefault("artifacts", [])
         artifacts.append({"kind": "json", "path": str(path)})
         if "series" in result:
@@ -1666,6 +1871,61 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
             return
         if task.get("composite"):
             self._tick_composite(task)
+            return
+        if task.get("external_process"):
+            process = task["native"]
+            if process.poll() is None:
+                task["progress"] = None
+                task["status"] = "独立OpticStudio宏进程运行中"
+                if time.monotonic() >= task["timeout_deadline"] and not task.get("timeout_requested"):
+                    task["timeout_requested"] = True
+                    task["status"] = "宏运行超过时间限制，正在结束独立OpticStudio进程"
+                    try:
+                        self._terminate_standalone_process_tree(task)
+                    except Exception as exc:
+                        task["poll_error"] = {"code": "PROCESS_STOP_UNCONFIRMED", "message": str(exc)}
+                        task["status"] = "宏已超时，但结束独立进程失败；继续保留任务占用"
+                return
+            return_code = process.wait()
+            task["finished_at"] = utc_now()
+            task["finished_monotonic"] = time.monotonic()
+            task["close_attempted"] = True
+            log_path = Path(task["log_path"])
+            artifacts = [{"kind": "process_log", "path": str(log_path)}]
+            result = {"macro_path": task["settings"]["macro_path"],
+                      "arguments": task["settings"]["arguments"], "exit_code": return_code,
+                      "process_log": str(log_path), "artifacts": artifacts}
+            expected = task.get("expected_output")
+            if expected and Path(expected).is_file():
+                result["output_file"] = expected
+                artifacts.append({"kind": "macro_output", "path": expected})
+            if task.get("cancel_requested"):
+                task["state"] = "cancelled"
+                result["completed"] = False
+            elif task.get("timeout_requested"):
+                task["state"] = "failed"
+                task["error"] = {"code": "MACRO_TIMEOUT", "message": "独立宏超过时限并已结束。"}
+                result["completed"] = False
+            elif return_code != 0:
+                task["state"] = "failed"
+                task["error"] = {"code": "MACRO_PROCESS_FAILED", "message": "OpticStudio宏进程返回非零退出码。",
+                                  "details": {"exit_code": return_code}}
+                result["completed"] = False
+            elif expected and not Path(expected).is_file():
+                task["state"] = "failed"
+                task["error"] = {"code": "MACRO_OUTPUT_MISSING", "message": "宏进程成功退出，但未生成请求的输出文件。",
+                                  "details": {"path": expected}}
+                result["completed"] = False
+            else:
+                task["state"] = "succeeded"
+                task["progress"] = 100
+                result["completed"] = True
+            task["result"] = {**result, "task": self._task_view(task), "context": task["context"],
+                               "system_settings": task["system_settings"]}
+            self._save_task_result(task, task["result"])
+            self._record_task_history(task)
+            task["native"] = None
+            self.active = None
             return
         native = task["native"]
         stopped_confirmed = False

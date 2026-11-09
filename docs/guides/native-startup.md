@@ -1,5 +1,14 @@
 # 原生启动诊断
 
+2026-11-08重启后更新：项目外Python在未提升Medium权限下通过最小Standalone和独立真实stdio检查。Cooke相对照度设置、结果、分页、PNG及正常关闭均通过，启动统一冻结已解除。原生执行条件和自动Low上下文待办见[当前计划](../../development/current.md)，实际证据见[恢复报告](../../development/evidence/BASE-04/native-reboot-20261108.md)。
+
+产品连接继续使用Standalone，日常由MCP创建后台实例。此次交互扩展仅打开过等待窗口，由用户关闭，未执行连接，也未接入产品运行模式。
+
+## 此前诊断记录
+
+此前记录（恢复前）：0.1.62发行原生检查已通过。CLR/API/connection 三阶段已在三次受控启动中通过（runtime-recovery-01/02/05）；**当时阻塞是 `application_create`（`CreateNewApplication()`）180 秒超时**，未取得许可状态、`PrimarySystem` 或正常 `CloseApplication` 回执，均以自有进程树强制清理收尾。此前 `clr_load: Failed to resolve Python.Runtime.Loader.Initialize` 加载错误为**历史**、已不再是最新结论。后续按 HPC→MaterialModel→ChipZone→机械半口径继续原生功能；实际证据见[当前交接](../../development/handoff.md)与 development/evidence/BASE-04/。
+
+
 当前基线：0.1.61已完成原生发行验收；637–641状态见[当前交接](../../development/handoff.md)。以下为历史启动故障及诊断方法，按实际新故障选用。
 
 # 原生启动阶段与受控探测

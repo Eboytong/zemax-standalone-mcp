@@ -1,0 +1,1179 @@
+{
+  "schema_version": 1,
+  "effective_date": "2026-11-08",
+  "objective": "Complete one development pass across D001-D013; defer repeated external blockers with concrete evidence and then review remaining blockers with the user.",
+  "plan_source": "development/tracking/development-groups.json",
+  "actual_status_source": "development/ledgers/",
+  "stop_condition": "All 96 assigned canonical functions have an item review and either accepted completion or documented external blocker after feasible corrections; then stop this pass.",
+  "repeated_environment_blocker": {
+    "stage": "application_create",
+    "attempts": [
+      "runtime-recovery-01",
+      "runtime-recovery-02",
+      "runtime-recovery-05"
+    ],
+    "decision": "defer_native_startup_for_this_pass",
+    "evidence": "development/evidence/BASE-04/runtime-phase-environment-20261108.md"
+  },
+  "items": [
+    {
+      "canonical_item_id": "PO-01.PhaseAberration",
+      "development_group": "D001",
+      "worker_id": "zemax-p01-polarization",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/PO-01/pass-d001-20261108.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Default-report adapters integrated and saved native reports replayed; formal selectors, independent numeric references and new native lifecycle acceptance remain."
+    },
+    {
+      "canonical_item_id": "PO-01.PolarizationRayTrace",
+      "development_group": "D001",
+      "worker_id": "zemax-p01-polarization",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/PO-01/pass-d001-20261108.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Default-report adapters integrated and saved native reports replayed; formal selectors, independent numeric references and new native lifecycle acceptance remain."
+    },
+    {
+      "canonical_item_id": "PO-01.Transmission",
+      "development_group": "D001",
+      "worker_id": "zemax-p01-polarization",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/PO-01/pass-d001-20261108.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Default-report adapters integrated and saved native reports replayed; formal selectors, independent numeric references and new native lifecycle acceptance remain."
+    },
+    {
+      "canonical_item_id": "WP-01.FiberCouplingSettings",
+      "development_group": "D001",
+      "worker_id": "zemax-p01-polarization",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/PO-01/pass-d001-20261108.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Default-report adapters integrated and saved native reports replayed; formal selectors, independent numeric references and new native lifecycle acceptance remain."
+    },
+    {
+      "canonical_item_id": "MA-01.GlassMap",
+      "development_group": "D002",
+      "worker_id": "zemax-p01-material-reports",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/MA-01/pass-d002-reports-review-20261108.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "大小写归一后SCHOTT 346/346已匹配，七项旧缺口已解除；取得专题正式材料/目录/波长选择和采用回读，重跑原生身份用例。"
+    },
+    {
+      "canonical_item_id": "MA-01.AthermalGlassMap",
+      "development_group": "D002",
+      "worker_id": "zemax-p01-material-reports",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/MA-01/pass-d002-reports-review-20261108.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "359/364行热光参考通过，最大4.9452123175592664e-9≤5e-9；补齐F2HTI占位CD及四种缺TD材料的正式数据/默认语义，并完成专题选择与环境温变对照。"
+    },
+    {
+      "canonical_item_id": "MA-01.DispersionDiagram",
+      "development_group": "D002",
+      "worker_id": "zemax-p01-material-reports",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/MA-01/pass-d002-reports-review-20261108.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "指数参考最大4.966e-8≤5.1e-8；确认正式专题选择和dn/dλ差分定义，定位解析导数4点超限（最大5.919e-8，门槛5.1e-8）后原生重验。"
+    },
+    {
+      "canonical_item_id": "MA-01.DispersionvsWavelength",
+      "development_group": "D002",
+      "worker_id": "zemax-p01-material-reports",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/MA-01/pass-d002-reports-review-20261108.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "沿用指数与99点中心差分参考；取得材料/波长/温压正式选择及采用回读，确认dn/dλ定义后执行受控原生数值验收。"
+    },
+    {
+      "canonical_item_id": "ED-02.MaterialModel.Material",
+      "development_group": "D002",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D002-model/integration-material-model.md",
+        "development/evidence/ED-02/material-model-repeat20261108.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "保留Nd/Vd原门槛；区分精确d/F/C谱线与四位近似谱线，执行已准备的双组直接光线控制探针并取得临时ModelGlass正式色散/系数定义。原Abbe=59.99988524798844对60仍超限。"
+    },
+    {
+      "canonical_item_id": "MA-01.GradiumProfile",
+      "development_group": "D002",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D008-reports/integration-gradium-reports.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "GRD相对子目录/绝对路径和Glasscat资源根身份已修正，SGRIN绑定标明候选；E1原637–639数据复算完成。继续高阶10/11、左端capping、波长归属及正式专题选择的原生控制实验。"
+    },
+    {
+      "canonical_item_id": "ED-02.SurfacePickup.ChipZone",
+      "development_group": "D003",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D003-D004/model/integration-power-pickup-controls.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "正式接口及历史缺口已审查，三份有界控制探针已合入；主仓53项定向合同/PowerMap检查通过（9+17+27），未新增原生完成证据。"
+    },
+    {
+      "canonical_item_id": "ED-02.SurfacePickup.MechanicalSemiDiameter",
+      "development_group": "D003",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D003-D004/model/integration-power-pickup-controls.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "正式接口及历史缺口已审查，三份有界控制探针已合入；主仓53项定向合同/PowerMap检查通过（9+17+27），未新增原生完成证据。"
+    },
+    {
+      "canonical_item_id": "ED-04.RayAimingWizard",
+      "development_group": "D003",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D003-D004/support/pass-d003-d004-report.md"
+      ],
+      "support_worker_ids": [
+        "zemax-p01-material-reports"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Formal interfaces, retained native failures/outlets and 169 targeted unit checks reviewed. Native success scope remains blocked; original numerical tolerances retained."
+    },
+    {
+      "canonical_item_id": "NS-01.Conversion",
+      "development_group": "D003",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D003-D004/support/pass-d003-d004-report.md"
+      ],
+      "support_worker_ids": [
+        "zemax-p01-material-reports"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Formal interfaces, retained native failures/outlets and 169 targeted unit checks reviewed. Native success scope remains blocked; original numerical tolerances retained."
+    },
+    {
+      "canonical_item_id": "ED-02.SolveExtensions018",
+      "development_group": "D003",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D003-D004/support/pass-d003-d004-report.md"
+      ],
+      "support_worker_ids": [
+        "zemax-p01-material-reports"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Formal interfaces, retained native failures/outlets and 169 targeted unit checks reviewed. Native success scope remains blocked; original numerical tolerances retained."
+    },
+    {
+      "canonical_item_id": "CV-02.PowerFieldMapSettings",
+      "development_group": "D004",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D003-D004/model/integration-power-pickup-controls.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "正式接口及历史缺口已审查，三份有界控制探针已合入；主仓53项定向合同/PowerMap检查通过（9+17+27），未新增原生完成证据。"
+    },
+    {
+      "canonical_item_id": "CV-02.PowerPupilMapSettings",
+      "development_group": "D004",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D003-D004/model/integration-power-pickup-controls.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "正式接口及历史缺口已审查，三份有界控制探针已合入；主仓53项定向合同/PowerMap检查通过（9+17+27），未新增原生完成证据。"
+    },
+    {
+      "canonical_item_id": "CV-01.SeidelDiagram",
+      "development_group": "D004",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D003-D004/support/pass-d003-d004-report.md"
+      ],
+      "support_worker_ids": [
+        "zemax-p01-material-reports"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Formal interfaces, retained native failures/outlets and 169 targeted unit checks reviewed. Native success scope remains blocked; original numerical tolerances retained."
+    },
+    {
+      "canonical_item_id": "CV-01.FullFieldSpot",
+      "development_group": "D004",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D003-D004/support/pass-d003-d004-report.md"
+      ],
+      "support_worker_ids": [
+        "zemax-p01-material-reports"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Formal interfaces, retained native failures/outlets and 169 targeted unit checks reviewed. Native success scope remains blocked; original numerical tolerances retained."
+    },
+    {
+      "canonical_item_id": "CV-01.MatrixSpot",
+      "development_group": "D004",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D003-D004/support/pass-d003-d004-report.md"
+      ],
+      "support_worker_ids": [
+        "zemax-p01-material-reports"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Formal interfaces, retained native failures/outlets and 169 targeted unit checks reviewed. Native success scope remains blocked; original numerical tolerances retained."
+    },
+    {
+      "canonical_item_id": "CV-01.ConfigurationMatrixSpot",
+      "development_group": "D004",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D003-D004/support/pass-d003-d004-report.md"
+      ],
+      "support_worker_ids": [
+        "zemax-p01-material-reports"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Formal interfaces, retained native failures/outlets and 169 targeted unit checks reviewed. Native success scope remains blocked; original numerical tolerances retained."
+    },
+    {
+      "canonical_item_id": "CV-01.FftSurfaceMtf",
+      "development_group": "D004",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D004-FFT/fft-surface-report.md"
+      ],
+      "support_worker_ids": [
+        "zemax-p01-hologram"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Retained 605 cross-outlet baseline reproduced (6.66e-16/0.0049502); 509 raw-ray pupil independently recomputed at three spacings. Off-axis max 0.165461 remains above fixed 0.005; physical mapping is unresolved."
+    },
+    {
+      "canonical_item_id": "WP-01.BeamFileViewer",
+      "development_group": "D005",
+      "worker_id": "zemax-p01-polarization",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D005/integration-d005-controls.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "内部合同/解析器和N1/N2/N3控制探针已集成；主仓94项定向测试通过，三份原生历史报告离线重放。完整专题声明范围保留未完成。"
+    },
+    {
+      "canonical_item_id": "CV-02.BitmapFileViewer",
+      "development_group": "D005",
+      "worker_id": "zemax-p01-polarization",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D005/integration-d005-controls.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "内部合同/解析器和N1/N2/N3控制探针已集成；主仓94项定向测试通过，三份原生历史报告离线重放。完整专题声明范围保留未完成。"
+    },
+    {
+      "canonical_item_id": "IM-01.GeometricBitmapImageAnalysis",
+      "development_group": "D005",
+      "worker_id": "zemax-p01-polarization",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D005/integration-d005-controls.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "内部合同/解析器和N1/N2/N3控制探针已集成；主仓94项定向测试通过，三份原生历史报告离线重放。完整专题声明范围保留未完成。"
+    },
+    {
+      "canonical_item_id": "CV-02.LightSourceAnalysis",
+      "development_group": "D005",
+      "worker_id": "zemax-p01-polarization",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D005/integration-d005-controls.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "内部合同/解析器和N1/N2/N3控制探针已集成；主仓94项定向测试通过，三份原生历史报告离线重放。完整专题声明范围保留未完成。"
+    },
+    {
+      "canonical_item_id": "CV-02.ExtendedDiffractionImageAnalysis",
+      "development_group": "D005",
+      "worker_id": "zemax-p01-polarization",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D005/integration-d005-controls.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "内部合同/解析器和N1/N2/N3控制探针已集成；主仓94项定向测试通过，三份原生历史报告离线重放。完整专题声明范围保留未完成。"
+    },
+    {
+      "canonical_item_id": "CV-02.PartiallyCoherentImageAnalysis",
+      "development_group": "D005",
+      "worker_id": "zemax-p01-polarization",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D005/integration-d005-controls.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "内部合同/解析器和N1/N2/N3控制探针已集成；主仓94项定向测试通过，三份原生历史报告离线重放。完整专题声明范围保留未完成。"
+    },
+    {
+      "canonical_item_id": "NS-03.SourceSpectrumViewer",
+      "development_group": "D006",
+      "worker_id": "zemax-p01-material-reports",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-report-d006-d002.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/review.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-d006-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "obtain a formal input-mode / XYZ / file selector with adoption readback, then build a spectral and chromaticity reference on a controlled variable input"
+    },
+    {
+      "canonical_item_id": "NS-03.FluxvsWavelength",
+      "development_group": "D006",
+      "worker_id": "zemax-p01-material-reports",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-report-d006-d002.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/review.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-d006-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "official applicability/input contract plus a non-empty supported outlet (curve, grid or text), then build a reference"
+    },
+    {
+      "canonical_item_id": "NS-03.DirectivityPlot",
+      "development_group": "D006",
+      "worker_id": "zemax-p01-material-reports",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-report-d006-d002.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/review.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-d006-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "obtain a formal IES file / scan angle selector with adoption readback, then accept selection and normalisation with a non-rotationally-symmetric multi-scan-angle source"
+    },
+    {
+      "canonical_item_id": "CV-01.SourceColorChart1931",
+      "development_group": "D006",
+      "worker_id": "zemax-p01-material-reports",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-report-d006-d002.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/review.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-d006-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "a supported GUI/image or chart-data outlet; alternatively a substitute that carries both an official baseline and native-graphic correspondence evidence with retained identity and precision"
+    },
+    {
+      "canonical_item_id": "CV-01.SourceColorChart1976",
+      "development_group": "D006",
+      "worker_id": "zemax-p01-material-reports",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-report-d006-d002.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/review.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-d006-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "a supported GUI/image or chart-data outlet; alternatively a substitute that carries both an official baseline and native-graphic correspondence evidence with retained identity and precision"
+    },
+    {
+      "canonical_item_id": "NS-03.SourcePolarViewer",
+      "development_group": "D006",
+      "worker_id": "zemax-p01-material-reports",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-report-d006-d002.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/review.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-d006-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "official axis/unit definition, then re-check with a non-rotationally-symmetric controlled source; explain Dy=360/19 against the file's 20 degree node spacing under the official pixel-range/centre convention instead of assuming an error"
+    },
+    {
+      "canonical_item_id": "NS-03.SourceIlluminationMap",
+      "development_group": "D006",
+      "worker_id": "zemax-p01-material-reports",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-report-d006-d002.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/review.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-d006-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "a supported illumination grid/image outlet AND a documented input-selection contract, then validate coordinates, units and flux against the detector"
+    },
+    {
+      "canonical_item_id": "NS-03.PhotoluminscenceViewer",
+      "development_group": "D006",
+      "worker_id": "zemax-p01-material-reports",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-report-d006-d002.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/review.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-d006-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "a documented input contract (or official valid-model requirements), then a non-empty output and a reference condition"
+    },
+    {
+      "canonical_item_id": "NS-03.RadiantSourceModelViewerSettings",
+      "development_group": "D006",
+      "worker_id": "zemax-p01-material-reports",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-report-d006-d002.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/review.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-d006-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "flagship/Enterprise licence plus a matching Radiant source-model resource, then verify settings adoption and a non-empty result"
+    },
+    {
+      "canonical_item_id": "NS-03.RoadwayLighting",
+      "development_group": "D006",
+      "worker_id": "zemax-p01-material-reports",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-report-d006-d002.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/review.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D006/pass-d006-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "a roadway-specific model/source plus a formal settings interface with readback, then validate photometric coordinates and metrics against the NSC detector reference"
+    },
+    {
+      "canonical_item_id": "ED-01.Scattering.BSDF",
+      "development_group": "D007",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D007/pass-d007-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "散射资源过滤/精确原生名采用补丁已批准集成；保留历史原生出口及功率缺口。User扩展已移出当前计划，不作为聚合项验收前置。"
+    },
+    {
+      "canonical_item_id": "ED-01.Scattering.ISScatterCatalog",
+      "development_group": "D007",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D007/pass-d007-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "散射资源过滤/精确原生名采用补丁已批准集成；保留历史原生出口及功率缺口。User扩展已移出当前计划，不作为聚合项验收前置。"
+    },
+    {
+      "canonical_item_id": "NS-03.ScatterFunctionViewer",
+      "development_group": "D007",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D007/pass-d007-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "散射资源过滤/精确原生名采用补丁已批准集成；保留历史原生出口及功率缺口。User扩展已移出当前计划，不作为聚合项验收前置。"
+    },
+    {
+      "canonical_item_id": "NS-03.ScatterPolarPlotSettings",
+      "development_group": "D007",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D007/pass-d007-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "散射资源过滤/精确原生名采用补丁已批准集成；保留历史原生出口及功率缺口。User扩展已移出当前计划，不作为聚合项验收前置。"
+    },
+    {
+      "canonical_item_id": "NS-02.PathAnalysis",
+      "development_group": "D007",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D007/pass-d007-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "散射资源过滤/精确原生名采用补丁已批准集成；保留历史原生出口及功率缺口。User扩展已移出当前计划，不作为聚合项验收前置。"
+    },
+    {
+      "canonical_item_id": "ED-01.Scattering",
+      "development_group": "D007",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D007/pass-d007-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "散射资源过滤/精确原生名采用补丁已批准集成；保留历史原生出口及功率缺口。User扩展已移出当前计划，不作为聚合项验收前置。"
+    },
+    {
+      "canonical_item_id": "NS-04.PrescriptionDataSettings",
+      "development_group": "D008",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D008-reports/integration-gradium-reports.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "默认处方文本入口、章节/原始行解析、真实样本42项与共享生命周期4项已集成；补正式章节选择及采用回读，恢复原生后执行准备的报告用例。"
+    },
+    {
+      "canonical_item_id": "NS-04.SurfaceDataSettings",
+      "development_group": "D008",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D008-reports/integration-gradium-reports.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "默认曲面文本入口、标题/光焦面号核对、真实样本与取消关闭普通检查已集成；补正式面号选择及采用回读，执行多面/多配置原生用例。"
+    },
+    {
+      "canonical_item_id": "MF-01.TestPlateList",
+      "development_group": "D008",
+      "worker_id": "zemax-p01-hologram",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D008/pass-d008-report.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D008/pass-d008-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Applied.tpd与活动目录899行逐项误差0；补齐正式目录切换、采用回读及保存重载。"
+    },
+    {
+      "canonical_item_id": "MF-01.SagTable",
+      "development_group": "D008",
+      "worker_id": "zemax-p01-hologram",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D008/pass-d008-report.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D008/pass-d008-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "取得DSAG/BFSD制造偏移基准和符号合同；定位等形Zernike/EvenAspheric半径差3.838e-5>5e-6；补反向制造摘要正式出口。641摘要12项本轮复算最大1.665e-15通过。"
+    },
+    {
+      "canonical_item_id": "CV-01.ISOElementDrawing",
+      "development_group": "D008",
+      "worker_id": "zemax-p01-hologram",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D008/pass-d008-report.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D008/pass-d008-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "本轮复核Cooke留存结果：六类集合0、文本导出false且关闭成功；取得正式图纸设置采用与可用绘图/矢量出口后继续。"
+    },
+    {
+      "canonical_item_id": "MF-01.ZemaxElementDrawing",
+      "development_group": "D008",
+      "worker_id": "zemax-p01-hologram",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D008/pass-d008-report.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D008/pass-d008-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "本轮复核八类结果集合0、文本导出false；取得正式图纸数据/图像/矢量出口与输入身份后开发适配。"
+    },
+    {
+      "canonical_item_id": "NS-04.PrescriptionGraphic",
+      "development_group": "D008",
+      "worker_id": "zemax-p01-hologram",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D008/pass-d008-report.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D008/pass-d008-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "顺序Cooke结果集合0；纯NSC样本工厂null。补正式顺序图形出口和适用NSC工厂及输入选择/回读。"
+    },
+    {
+      "canonical_item_id": "NS-04.NSCObjectViewer",
+      "development_group": "D008",
+      "worker_id": "zemax-p01-hologram",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D008/pass-d008-report.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D008/pass-d008-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Viewer结果集合0；get_nsc_objects在同副本实际返回5对象，已更正旧8对象叙述。取得对象选择/回读及Viewer图形出口。"
+    },
+    {
+      "canonical_item_id": "NS-04.PartViewer",
+      "development_group": "D008",
+      "worker_id": "zemax-p01-hologram",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D008/pass-d008-report.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D008/pass-d008-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "含BooleanNative的Lens Mount六对象样本结果仍为空；补部件选择/采用回读及可用数据或图像/矢量出口。"
+    },
+    {
+      "canonical_item_id": "EXT-EXPORT.CadSettings",
+      "development_group": "D009",
+      "worker_id": "zemax-p01-runtime",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/pass-d009-d013-20261108.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D009-D013/pass-d009-d013-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Exporter supports ASAT/ASAB and honors explicit ACIS version (or upstream provides formal version-setting path); then run tests/native/test_cad_formats_live.py, test_cad_acis_live.py, test_cad_advanced_acis_live.py."
+    },
+    {
+      "canonical_item_id": "EXT-EXPORT.CadMultipleConfigurations",
+      "development_group": "D009",
+      "worker_id": "zemax-p01-runtime",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/pass-d009-d013-20261108.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D009-D013/pass-d009-d013-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Obtain a formal export path that emits requested layer numbers (or upstream fix), then re-verify both IGES modes' layer assignment."
+    },
+    {
+      "canonical_item_id": "EXT-EXPORT.LegacyLinework",
+      "development_group": "D009",
+      "worker_id": "zemax-p01-runtime",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/pass-d009-d013-20261108.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D009-D013/pass-d009-d013-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "This version provides a legacy-linework creation factory / automation protocol, parameters, and license notes."
+    },
+    {
+      "canonical_item_id": "EXT-EXPORT.BlackBox",
+      "development_group": "D009",
+      "worker_id": "zemax-p01-runtime",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/pass-d009-d013-20261108.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D009-D013/pass-d009-d013-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "This version provides a supported ZBB creation protocol/factory, parameters, and license notes."
+    },
+    {
+      "canonical_item_id": "EXT-EXPORT.EncryptedCoating",
+      "development_group": "D009",
+      "worker_id": "zemax-p01-runtime",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/pass-d009-d013-20261108.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D009-D013/pass-d009-d013-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Obtain an installed-version-supported ZEC creation factory / automation protocol, parameters, and license notes."
+    },
+    {
+      "canonical_item_id": "CO-01.DiffEfficiencyAngular",
+      "development_group": "D010",
+      "worker_id": "zemax-p01-hologram",
+      "pass_state": "accepted",
+      "evidence": [
+        "development/evidence/CO-01/hologram1-review-20261108/README.md"
+      ]
+    },
+    {
+      "canonical_item_id": "CO-01.DiffEfficiencyChromatic",
+      "development_group": "D010",
+      "worker_id": "zemax-p01-hologram",
+      "pass_state": "accepted",
+      "evidence": [
+        "development/evidence/CO-01/hologram1-review-20261108/README.md"
+      ]
+    },
+    {
+      "canonical_item_id": "CO-01.DiffEfficiency2D",
+      "development_group": "D010",
+      "worker_id": "zemax-p01-hologram",
+      "pass_state": "accepted",
+      "evidence": [
+        "development/evidence/CO-01/hologram1-review-20261108/README.md"
+      ]
+    },
+    {
+      "canonical_item_id": "EXT-STAR.Read",
+      "development_group": "D011",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/integration-star-unload.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/pass-d011-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "主仓三类卸载已集成；83项STAR定向检查（47 star/25 controls/11 materials，其中21卸载）及16项model_adaptation分别通过。本条原生声明范围保留待验收。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.UpdateMode",
+      "development_group": "D011",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/integration-star-unload.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/pass-d011-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "主仓三类卸载已集成；83项STAR定向检查（47 star/25 controls/11 materials，其中21卸载）及16项model_adaptation分别通过。本条原生声明范围保留待验收。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.Materials.refractive_index",
+      "development_group": "D011",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/integration-star-unload.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/pass-d011-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "主仓三类卸载已集成；83项STAR定向检查（47 star/25 controls/11 materials，其中21卸载）及16项model_adaptation分别通过。本条原生声明范围保留待验收。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.Materials.dndt",
+      "development_group": "D011",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/integration-star-unload.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/pass-d011-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "主仓三类卸载已集成；83项STAR定向检查（47 star/25 controls/11 materials，其中21卸载）及16项model_adaptation分别通过。本条原生声明范围保留待验收。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.ThermalControls",
+      "development_group": "D011",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/integration-star-unload.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/pass-d011-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "主仓三类卸载已集成；83项STAR定向检查（47 star/25 controls/11 materials，其中21卸载）及16项model_adaptation分别通过。本条原生声明范围保留待验收。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.VolumeControls",
+      "development_group": "D011",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/integration-star-unload.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/pass-d011-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "主仓三类卸载已集成；83项STAR定向检查（47 star/25 controls/11 materials，其中21卸载）及16项model_adaptation分别通过。本条原生声明范围保留待验收。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.ImportDeformation",
+      "development_group": "D011",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/integration-star-unload.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/pass-d011-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "主仓三类卸载已集成；83项STAR定向检查（47 star/25 controls/11 materials，其中21卸载）及16项model_adaptation分别通过。本条原生声明范围保留待验收。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.FitDeformation",
+      "development_group": "D011",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/integration-star-unload.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/pass-d011-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "主仓三类卸载已集成；83项STAR定向检查（47 star/25 controls/11 materials，其中21卸载）及16项model_adaptation分别通过。本条原生声明范围保留待验收。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.ImportTemperature",
+      "development_group": "D011",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/integration-star-unload.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/pass-d011-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "主仓三类卸载已集成；83项STAR定向检查（47 star/25 controls/11 materials，其中21卸载）及16项model_adaptation分别通过。本条原生声明范围保留待验收。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.FitTemperature",
+      "development_group": "D011",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/integration-star-unload.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/pass-d011-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "主仓三类卸载已集成；83项STAR定向检查（47 star/25 controls/11 materials，其中21卸载）及16项model_adaptation分别通过。本条原生声明范围保留待验收。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.ImportDirectIndex",
+      "development_group": "D011",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/integration-star-unload.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/pass-d011-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "主仓三类卸载已集成；83项STAR定向检查（47 star/25 controls/11 materials，其中21卸载）及16项model_adaptation分别通过。本条原生声明范围保留待验收。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.FitDirectIndex",
+      "development_group": "D011",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/integration-star-unload.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/pass-d011-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "主仓三类卸载已集成；83项STAR定向检查（47 star/25 controls/11 materials，其中21卸载）及16项model_adaptation分别通过。本条原生声明范围保留待验收。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.FittedSamples",
+      "development_group": "D011",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/integration-star-unload.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/pass-d011-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "主仓三类卸载已集成；83项STAR定向检查（47 star/25 controls/11 materials，其中21卸载）及16项model_adaptation分别通过。本条原生声明范围保留待验收。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.UnloadDeformation",
+      "development_group": "D011",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/integration-star-unload.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/pass-d011-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "主仓三类卸载已集成；83项STAR定向检查（47 star/25 controls/11 materials，其中21卸载）及16项model_adaptation分别通过。本条原生声明范围保留待验收。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.UnloadTemperature",
+      "development_group": "D011",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/integration-star-unload.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/pass-d011-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "主仓三类卸载已集成；83项STAR定向检查（47 star/25 controls/11 materials，其中21卸载）及16项model_adaptation分别通过。本条原生声明范围保留待验收。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.UnloadDirectIndex",
+      "development_group": "D011",
+      "worker_id": "zemax-p01-material-model",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/integration-star-unload.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D011/pass-d011-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "主仓三类卸载已集成；83项STAR定向检查（47 star/25 controls/11 materials，其中21卸载）及16项model_adaptation分别通过。本条原生声明范围保留待验收。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.Components.define",
+      "development_group": "D012",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D012/pass-d012-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "正式组件/坐标/刚体成员、既有有类型适配和离线合同已审查；本条依赖及原生验收条件具体保留。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.Components.configure",
+      "development_group": "D012",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D012/pass-d012-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "正式组件/坐标/刚体成员、既有有类型适配和离线合同已审查；本条依赖及原生验收条件具体保留。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.Components.coordinate_breaks",
+      "development_group": "D012",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D012/pass-d012-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "正式组件/坐标/刚体成员、既有有类型适配和离线合同已审查；本条依赖及原生验收条件具体保留。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.CoordinateTransform",
+      "development_group": "D012",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D012/pass-d012-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "正式组件/坐标/刚体成员、既有有类型适配和离线合同已审查；本条依赖及原生验收条件具体保留。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.RigidBody",
+      "development_group": "D012",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D012/pass-d012-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "正式组件/坐标/刚体成员、既有有类型适配和离线合同已审查；本条依赖及原生验收条件具体保留。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.Components.remove_rbms",
+      "development_group": "D012",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D012/pass-d012-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "正式组件/坐标/刚体成员、既有有类型适配和离线合同已审查；本条依赖及原生验收条件具体保留。"
+    },
+    {
+      "canonical_item_id": "CV-01.STARInspectFEA",
+      "development_group": "D012",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D012/pass-d012-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "六个独立kind、实时许可、单次设置回读、完整网格/散点和致命消息保留已审查；Backend分页/PNG定向合同通过，原生声明范围保持待验。"
+    },
+    {
+      "canonical_item_id": "CV-01.STARAlignCheck",
+      "development_group": "D012",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D012/pass-d012-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "六个独立kind、实时许可、单次设置回读、完整网格/散点和致命消息保留已审查；Backend分页/PNG定向合同通过，原生声明范围保持待验。"
+    },
+    {
+      "canonical_item_id": "CV-01.STAR2DDefPlot",
+      "development_group": "D012",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D012/pass-d012-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "六个独立kind、实时许可、单次设置回读、完整网格/散点和致命消息保留已审查；Backend分页/PNG定向合同通过，原生声明范围保持待验。"
+    },
+    {
+      "canonical_item_id": "CV-01.STARIndexVsTemp",
+      "development_group": "D012",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D012/pass-d012-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "六个独立kind、实时许可、单次设置回读、完整网格/散点和致命消息保留已审查；Backend分页/PNG定向合同通过，原生声明范围保持待验。"
+    },
+    {
+      "canonical_item_id": "CV-01.STARPerfChange",
+      "development_group": "D012",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D012/pass-d012-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "六个独立kind、实时许可、单次设置回读、完整网格/散点和致命消息保留已审查；Backend分页/PNG定向合同通过，原生声明范围保持待验。"
+    },
+    {
+      "canonical_item_id": "CV-01.STARSysViewer",
+      "development_group": "D012",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_partial",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D012/pass-d012-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "六个独立kind、实时许可、单次设置回读、完整网格/散点和致命消息保留已审查；Backend分页/PNG定向合同通过，原生声明范围保持待验。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.Components.remove",
+      "development_group": "D012",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D012/pass-d012-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "正式组件/坐标/刚体成员、既有有类型适配和离线合同已审查；本条依赖及原生验收条件具体保留。"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.Components",
+      "development_group": "D012",
+      "worker_id": "zemax-p01-gradium",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/d00x-pass-20261108/integration-star-analyses-scattering.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D012/pass-d012-report.md"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "正式组件/坐标/刚体成员、既有有类型适配和离线合同已审查；本条依赖及原生验收条件具体保留。"
+    },
+    {
+      "canonical_item_id": "EXT-HPC.Settings",
+      "development_group": "D013",
+      "worker_id": "zemax-p01-runtime",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/pass-d009-d013-20261108.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D009-D013/pass-d009-d013-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Formal query returns a non-null IHPCSettings and its actual fields read back, with no SystemTool created and a normal disconnect (is_configured=false counts as a completed query); then rerun tests/native/test_hpc_live.py::test_hpc_native_configuration_query."
+    },
+    {
+      "canonical_item_id": "EXT-HPC.NSCTrace",
+      "development_group": "D013",
+      "worker_id": "zemax-p01-runtime",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/pass-d009-d013-20261108.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D009-D013/pass-d009-d013-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Formal query returns a non-null IHPCSettings plus node/license availability AND this item's own job terminal-state evidence (submit/status/cancel/result/close) against the local reference; then run the item-specific native job test."
+    },
+    {
+      "canonical_item_id": "EXT-HPC.Tolerancing",
+      "development_group": "D013",
+      "worker_id": "zemax-p01-runtime",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/pass-d009-d013-20261108.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D009-D013/pass-d009-d013-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Formal query returns a non-null IHPCSettings plus node/license availability AND this item's own job terminal-state evidence (submit/status/cancel/result/close) against the local reference; then run the item-specific native job test."
+    },
+    {
+      "canonical_item_id": "EXT-HPC.GlobalOptimization",
+      "development_group": "D013",
+      "worker_id": "zemax-p01-runtime",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/pass-d009-d013-20261108.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D009-D013/pass-d009-d013-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Formal query returns a non-null IHPCSettings plus node/license availability AND this item's own job terminal-state evidence (submit/status/cancel/result/close) against the local reference; then run the item-specific native job test."
+    },
+    {
+      "canonical_item_id": "EXT-HPC.HammerOptimization",
+      "development_group": "D013",
+      "worker_id": "zemax-p01-runtime",
+      "pass_state": "reviewed_deferred",
+      "evidence": [
+        "development/evidence/BASE-04/pass-d009-d013-20261108.md",
+        "development/evidence/BASE-04/d00x-pass-20261108/D009-D013/pass-d009-d013-items.json"
+      ],
+      "reviewed_at": "2026-11-08",
+      "review_outcome": "Formal query returns a non-null IHPCSettings plus node/license availability AND this item's own job terminal-state evidence (submit/status/cancel/result/close) against the local reference; then run the item-specific native job test."
+    }
+  ],
+  "pass_status": "review_complete",
+  "completed_on": "2026-11-08",
+  "reviewed_count": 96,
+  "review_state_counts": {
+    "reviewed_partial": 38,
+    "reviewed_deferred": 55,
+    "accepted": 3
+  },
+  "accepted_completion_count": 3,
+  "result_summary": "D001-D013 one pass completed; three native Hologram1 functions accepted, remaining 93 retain item-specific blockers or acceptance gaps.",
+  "summary_evidence": "development/evidence/BASE-04/d00x-pass-20261108/README.md"
+}

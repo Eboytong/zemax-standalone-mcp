@@ -5,15 +5,15 @@ from importlib.resources import files
 from zipimport import zipimporter
 
 def solve_validation_summary():
-    path=Path(__file__).resolve().parents[2]/"docs/solve-support.json"
+    path=Path(__file__).resolve().parents[2]/"docs/reference/solve-support.json"
     if not path.is_file():
         path=Path(__file__).resolve().parent/"resources/solve-support.json"
-    base=dict(reference="docs/solve-support.json",native_enumeration_is_numeric_validation=False,
+    base=dict(reference="docs/reference/solve-support.json",native_enumeration_is_numeric_validation=False,
               zpl_macro_name_limit=dict(max_utf16_units=31,extension_included=False,
                   basis='local 2024 R2 native boundary probe; ASCII and Chinese names'),
               runtime_checks="native support, return status and actual adopted mode are checked per request",
               persistence_limits=[dict(surface_type="Hologram2",cell="parameter_13",mode="Variable",
-                  required_value=1,rejected_value=0,reference="docs/solve-support.md#hologram2-模式持久化")])
+                  required_value=1,rejected_value=0,reference="docs/topics/analysis/solve-support.md#hologram2-模式持久化")])
     if not path.is_file() and isinstance(__loader__, zipimporter):
         path = files("zemax_mcp").joinpath("resources/solve-support.json")
     if not path.is_file():return dict(base,status="evidence_unavailable")

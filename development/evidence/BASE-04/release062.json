@@ -1,0 +1,47 @@
+{
+  "version": "0.1.62",
+  "date": "2026-11-08",
+  "batch_id": "B006",
+  "verification_state": "passed",
+  "wheel": "releases/0.1.62/zemax_standalone_mcp-0.1.62-py3-none-any.whl",
+  "installation": ".local/builds/wheel-install062",
+  "ordinary_passed": 2590,
+  "ordinary_skipped": 819,
+  "ordinary_failures": 0,
+  "ordinary_evidence": ".local/evidence/development/BASE-04/batch-B006-ordinary-final-20261108.xml",
+  "native_passed": 23,
+  "native_failures": 0,
+  "native_evidence": [
+    ".local/evidence/development/BASE-04/batch-B006-native-20261108.xml",
+    ".local/evidence/development/BASE-04/batch-B006-native-repeat-20261108.xml"
+  ],
+  "tool_count": 101,
+  "analysis_kind_count": 118,
+  "schema_evidence": ".local/evidence/development/BASE-04/installed-schema062/summary.json",
+  "native_wheel_passed": 2,
+  "installed_stdio": {
+    "passed": 2,
+    "failed": 0,
+    "evidence": ".local/evidence/development/BASE-04/installed-native062-20261108.xml",
+    "closed": true,
+    "forced": false
+  },
+  "completed_item_ids": [
+    "RL-01.pop.Workflow",
+    "RL-01.delivery.Workflow",
+    "CV-01.FftPsfLineEdgeSpread",
+    "NS-03.NSCGeometricMtf",
+    "TO-01.QuickYield",
+    "CV-01.YNIContributions",
+    "EXT-SPEOS.LensSystem",
+    "EXT-SPEOS.Whitebox",
+    "ED-01.Aperture.FloatingToNone",
+    "PO-01.TransmissionFan"
+  ],
+  "known_gates": [
+    "FRU startup warning Attempt to start when running! remains unresolved. Successful disconnect receipts reported native.closed=true, forced=false.",
+    "56 restored analysis ledger states still require original-scope evidence audit.",
+    "Remaining feature-specific selector, license, resource and numerical-reference gaps remain in the ledgers."
+  ],
+  "next_action": "B007 0/10; plan and execute PO-01.PhaseAberration next."
+}

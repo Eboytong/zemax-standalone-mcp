@@ -1,0 +1,442 @@
+{
+  "date": "2026-11-08",
+  "snapshot": ".local/state/ledger-recovery-20261108-095555",
+  "structural_repairs": 7,
+  "analysis_restoration": [
+    {
+      "item_id": "CO-01.DiffEfficiency2D",
+      "previous": "implemented",
+      "state": "implemented",
+      "evidence": []
+    },
+    {
+      "item_id": "CO-01.DiffEfficiencyAngular",
+      "previous": "implemented",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/CO-01/diff-efficiency-angular-repeat20261108.md"
+      ]
+    },
+    {
+      "item_id": "CO-01.DiffEfficiencyChromatic",
+      "previous": "implemented",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/CO-01/diff-efficiency-chromatic-repeat20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-01.ConfigurationMatrixSpot",
+      "previous": "implemented",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/CV-01/configuration-matrix-spot-repeat20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-01.FftSurfaceMtf",
+      "previous": "implemented",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/CV-01/fft-surface-mtf-coherent-pupil-repeat20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-01.FullFieldSpot",
+      "previous": "implemented",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/CV-01/full-field-spot-repeat20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-01.ISOElementDrawing",
+      "previous": "in_progress",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/CV-01/iso-element-drawing-probe20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-01.MatrixSpot",
+      "previous": "implemented",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/CV-01/matrix-spot-repeat20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-01.STAR2DDefPlot",
+      "previous": "blocked",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/CV-01/star-analysis-readiness-20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-01.STARAlignCheck",
+      "previous": "blocked",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/CV-01/star-analysis-readiness-20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-01.STARIndexVsTemp",
+      "previous": "blocked",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/CV-01/star-analysis-readiness-20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-01.STARInspectFEA",
+      "previous": "blocked",
+      "state": "in_progress",
+      "evidence": [
+        "development/evidence/CV-01/star-analysis-readiness-20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-01.STARPerfChange",
+      "previous": "blocked",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/CV-01/star-analysis-readiness-20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-01.STARSysViewer",
+      "previous": "blocked",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/CV-01/star-analysis-readiness-20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-01.SeidelDiagram",
+      "previous": "blocked",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/CV-01/seidel-diagram-repeat20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-01.SourceColorChart1931",
+      "previous": "in_progress",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/CV-01/source-color-charts-acceptance20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-01.SourceColorChart1976",
+      "previous": "in_progress",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/CV-01/source-color-charts-acceptance20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-01.YNIContributions",
+      "previous": "in_progress",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/CV-01/yni-contributions-acceptance20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-02.BitmapFileViewer",
+      "previous": "blocked",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/CV-02/bitmap-file-viewer-probe20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-02.ExtendedDiffractionImageAnalysis",
+      "previous": "blocked",
+      "state": "blocked",
+      "evidence": []
+    },
+    {
+      "item_id": "CV-02.LightSourceAnalysis",
+      "previous": "blocked",
+      "state": "blocked",
+      "evidence": []
+    },
+    {
+      "item_id": "CV-02.PartiallyCoherentImageAnalysis",
+      "previous": "blocked",
+      "state": "blocked",
+      "evidence": []
+    },
+    {
+      "item_id": "CV-02.PowerFieldMapSettings",
+      "previous": "implemented",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/CV-02/power-maps-value-state-repeat20261108.md"
+      ]
+    },
+    {
+      "item_id": "CV-02.PowerPupilMapSettings",
+      "previous": "implemented",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/CV-02/power-maps-value-state-repeat20261108.md"
+      ]
+    },
+    {
+      "item_id": "ED-02.SolveExtensions018",
+      "previous": "implemented",
+      "state": "implemented",
+      "evidence": []
+    },
+    {
+      "item_id": "EX-01.UserDefinedCOM",
+      "previous": "pending",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/EX-01/userdefinedcom-factory-repeat20261108.md"
+      ]
+    },
+    {
+      "item_id": "IM-01.GeometricBitmapImageAnalysis",
+      "previous": "blocked",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/IM-01/geometric-bitmap-image-repeat20261108.md"
+      ]
+    },
+    {
+      "item_id": "MA-01.AthermalGlassMap",
+      "previous": "blocked",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/MA-01/athermal-glass-map-acceptance20261108.md"
+      ]
+    },
+    {
+      "item_id": "MA-01.DispersionDiagram",
+      "previous": "blocked",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/MA-01/dispersion-diagram-current-system-20261108.md"
+      ]
+    },
+    {
+      "item_id": "MA-01.DispersionvsWavelength",
+      "previous": "blocked",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/MA-01/dispersion-vs-wavelength-current-system-20261108.md"
+      ]
+    },
+    {
+      "item_id": "MA-01.GlassMap",
+      "previous": "blocked",
+      "state": "implemented",
+      "evidence": []
+    },
+    {
+      "item_id": "MF-01.SagTable",
+      "previous": "implemented",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/MF-01/sag-table-repeat20261108.md"
+      ]
+    },
+    {
+      "item_id": "MF-01.TestPlateList",
+      "previous": "implemented",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/MF-01/test-plate-list-acceptance20261108.md"
+      ]
+    },
+    {
+      "item_id": "MF-01.ZemaxElementDrawing",
+      "previous": "blocked",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/MF-01/zemax-element-drawing-probe20261108.md"
+      ]
+    },
+    {
+      "item_id": "NS-02.PathAnalysis",
+      "previous": "implemented",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/NS-02/path-analysis-uncategorized-repeat20261108.md"
+      ]
+    },
+    {
+      "item_id": "NS-03.DirectivityPlot",
+      "previous": "in_progress",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/NS-03/directivity-acceptance20261108.md"
+      ]
+    },
+    {
+      "item_id": "NS-03.FluxvsWavelength",
+      "previous": "in_progress",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/NS-03/flux-wavelength-acceptance20261108.md"
+      ]
+    },
+    {
+      "item_id": "NS-03.PhotoluminscenceViewer",
+      "previous": "in_progress",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/NS-03/photoluminescence-acceptance20261108.md"
+      ]
+    },
+    {
+      "item_id": "NS-03.RadiantSourceModelViewerSettings",
+      "previous": "in_progress",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/NS-03/radiant-source-viewer-acceptance20261108.md"
+      ]
+    },
+    {
+      "item_id": "NS-03.RoadwayLighting",
+      "previous": "in_progress",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/NS-03/roadway-lighting-acceptance20261108.md"
+      ]
+    },
+    {
+      "item_id": "NS-03.ScatterFunctionViewer",
+      "previous": "in_progress",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/NS-03/scatter-function-acceptance20261108.md"
+      ]
+    },
+    {
+      "item_id": "NS-03.ScatterPolarPlotSettings",
+      "previous": "in_progress",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/NS-03/scatter-polar-acceptance20261108.md"
+      ]
+    },
+    {
+      "item_id": "NS-03.SourceIlluminationMap",
+      "previous": "in_progress",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/NS-03/source-illumination-acceptance20261108.md"
+      ]
+    },
+    {
+      "item_id": "NS-03.SourcePolarViewer",
+      "previous": "in_progress",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/NS-03/source-polar-acceptance20261108.md"
+      ]
+    },
+    {
+      "item_id": "NS-03.SourceSpectrumViewer",
+      "previous": "in_progress",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/NS-03/source-spectrum-acceptance20261108.md"
+      ]
+    },
+    {
+      "item_id": "NS-04.NSCObjectViewer",
+      "previous": "in_progress",
+      "state": "in_progress",
+      "evidence": [
+        "development/evidence/NS-04/nsc-object-viewer-repeat20261108.md"
+      ]
+    },
+    {
+      "item_id": "NS-04.PartViewer",
+      "previous": "in_progress",
+      "state": "in_progress",
+      "evidence": [
+        "development/evidence/NS-04/part-viewer-repeat20261108.md"
+      ]
+    },
+    {
+      "item_id": "NS-04.PrescriptionDataSettings",
+      "previous": "in_progress",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/NS-04/prescription-data-settings-20261108.md"
+      ]
+    },
+    {
+      "item_id": "NS-04.PrescriptionGraphic",
+      "previous": "in_progress",
+      "state": "in_progress",
+      "evidence": [
+        "development/evidence/NS-04/prescription-graphic-repeat20261108.md"
+      ]
+    },
+    {
+      "item_id": "NS-04.SurfaceDataSettings",
+      "previous": "in_progress",
+      "state": "blocked",
+      "evidence": [
+        "development/evidence/NS-04/surface-data-settings-20261108.md"
+      ]
+    },
+    {
+      "item_id": "PO-01.PhaseAberration",
+      "previous": "blocked",
+      "state": "in_progress",
+      "evidence": [
+        "development/evidence/PO-01/phase-aberration-probe20261108.md"
+      ]
+    },
+    {
+      "item_id": "PO-01.PolarizationRayTrace",
+      "previous": "blocked",
+      "state": "in_progress",
+      "evidence": [
+        "development/evidence/PO-01/polarization-ray-trace-probe20261108.md"
+      ]
+    },
+    {
+      "item_id": "PO-01.Transmission",
+      "previous": "blocked",
+      "state": "in_progress",
+      "evidence": [
+        "development/evidence/PO-01/transmission-probe20261108.md"
+      ]
+    },
+    {
+      "item_id": "PO-01.TransmissionFan",
+      "previous": "blocked",
+      "state": "in_progress",
+      "evidence": [
+        "development/evidence/PO-01/transmission-fan-acceptance20261108.md"
+      ]
+    },
+    {
+      "item_id": "WP-01.BeamFileViewer",
+      "previous": "implemented",
+      "state": "implemented",
+      "evidence": []
+    },
+    {
+      "item_id": "WP-01.FiberCouplingSettings",
+      "previous": "implemented",
+      "state": "implemented",
+      "evidence": [
+        "development/evidence/WP-01/fiber-coupling-acceptance20261108.md"
+      ]
+    }
+  ],
+  "method": "Restore ranked actions and evidence after baseline overwrite; completed labels require scope audit before credit; no native execution in this maintenance step."
+}

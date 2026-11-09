@@ -1,0 +1,519 @@
+{
+ "note": "pure offline extraction from stored JSON; historical native runs, not this-pass executions",
+ "items": {
+  "CV-01.ISOElementDrawing": {
+   "static": {
+    "source": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\development\\evidence\\CV-01\\runtime071\\settings.json",
+    "present": true,
+    "runtime_settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+    "interfaces": [
+     "ZOSAPI.IZAPI_BaseObject",
+     "ZOSAPI.Analysis.Settings.IAS_"
+    ],
+    "methods_count": 25,
+    "methods_sample": [
+     "Boolean Equals(System.Object)",
+     "Boolean LoadFrom(System.String)",
+     "Boolean ModifySettings(System.String, System.String, System.String)",
+     "Boolean SaveTo(System.String)",
+     "Boolean get_IsActiveWindow()",
+     "Boolean get_IsValid()",
+     "Int32 GetHashCode()",
+     "System.Object GetLifetimeService()"
+    ],
+    "properties": [
+     {
+      "name": "Analysis",
+      "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses"
+     },
+     {
+      "name": "TheDataID",
+      "type": "ZOSAPI.Analysis.DataID"
+     },
+     {
+      "name": "IsValid",
+      "type": "System.Boolean"
+     },
+     {
+      "name": "IsActiveWindow",
+      "type": "System.Boolean"
+     },
+     {
+      "name": "Parent",
+      "type": "ZOSAPI.IZAPI_BaseObject"
+     }
+    ],
+    "cfg_export_returned": true,
+    "closed": true,
+    "error": null
+   },
+   "raw": {
+    "source": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\evidence\\development\\CV-01\\iso-element-drawing-20261108\\summary.json",
+    "analysis": "ISOElementDrawing",
+    "input": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+    "session_id": "f0d0098d48ad451692bfce999b792918",
+    "settings_values": {
+     "IsValid": true,
+     "IsActiveWindow": true
+    },
+    "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+    "settings_members_count": 31,
+    "result_type": "ZemaxUI.ZOSAPI.Analysis.AR_Default",
+    "result_members_count": 76,
+    "counts": {
+     "NumberOfMessages": 0,
+     "NumberOfDataSeries": 0,
+     "NumberOfDataGrids": 0,
+     "NumberOfDataGridsRgb": 0,
+     "NumberOfDataScatterPoints": 0,
+     "NumberOfDataScatterPointsRgb": 0
+    },
+    "counts_nonzero": {},
+    "messages_count": 0,
+    "text_export": false,
+    "image_vector_outlet_members": [],
+    "model_unchanged": true,
+    "close": true,
+    "disconnect_ok": true,
+    "error": null
+   }
+  },
+  "MF-01.ZemaxElementDrawing": {
+   "static": {
+    "source": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\development\\evidence\\MF-01\\runtime078\\settings.json",
+    "present": true,
+    "runtime_settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+    "interfaces": [
+     "ZOSAPI.IZAPI_BaseObject",
+     "ZOSAPI.Analysis.Settings.IAS_"
+    ],
+    "methods_count": 25,
+    "methods_sample": [
+     "Boolean Equals(System.Object)",
+     "Boolean LoadFrom(System.String)",
+     "Boolean ModifySettings(System.String, System.String, System.String)",
+     "Boolean SaveTo(System.String)",
+     "Boolean get_IsActiveWindow()",
+     "Boolean get_IsValid()",
+     "Int32 GetHashCode()",
+     "System.Object GetLifetimeService()"
+    ],
+    "properties": [
+     {
+      "name": "Analysis",
+      "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses"
+     },
+     {
+      "name": "TheDataID",
+      "type": "ZOSAPI.Analysis.DataID"
+     },
+     {
+      "name": "IsValid",
+      "type": "System.Boolean"
+     },
+     {
+      "name": "IsActiveWindow",
+      "type": "System.Boolean"
+     },
+     {
+      "name": "Parent",
+      "type": "ZOSAPI.IZAPI_BaseObject"
+     }
+    ],
+    "cfg_export_returned": true,
+    "closed": true,
+    "error": null
+   },
+   "raw": {
+    "source": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\evidence\\development\\MF-01\\zemax-element-drawing-repeat-20261108\\probe.json",
+    "analysis": "ZemaxElementDrawing",
+    "input": null,
+    "session_id": null,
+    "settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+    "settings_properties": [
+     "Analysis",
+     "TheDataID",
+     "IsValid",
+     "IsActiveWindow",
+     "Parent"
+    ],
+    "settings_methods_count": 19,
+    "cfg_saved": true,
+    "counts": {
+     "NumberOfDataSeries": 0,
+     "NumberOfDataGrids": 0,
+     "NumberOfDataSeriesRgb": 0,
+     "NumberOfDataGridsRgb": 0,
+     "NumberOfDataScatterPoints": 0,
+     "NumberOfDataScatterPointsRgb": 0,
+     "NumberOfRayData": 0,
+     "NumberOfMessages": 0
+    },
+    "counts_nonzero": {},
+    "messages": [],
+    "text_export": false,
+    "result_methods_count": 21,
+    "result_properties_count": 27,
+    "image_vector_outlet_members": [],
+    "closed": true,
+    "disconnect_ok": true
+   }
+  },
+  "NS-04.PrescriptionGraphic": {
+   "static": {
+    "source": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\verification\\development\\NS-04\\runtime068-sequential\\settings.json",
+    "present": true,
+    "runtime_settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+    "interfaces": [
+     "ZOSAPI.IZAPI_BaseObject",
+     "ZOSAPI.Analysis.Settings.IAS_"
+    ],
+    "methods_count": 25,
+    "methods_sample": [
+     "Boolean Equals(System.Object)",
+     "Boolean LoadFrom(System.String)",
+     "Boolean ModifySettings(System.String, System.String, System.String)",
+     "Boolean SaveTo(System.String)",
+     "Boolean get_IsActiveWindow()",
+     "Boolean get_IsValid()",
+     "Int32 GetHashCode()",
+     "System.Object GetLifetimeService()"
+    ],
+    "properties": [
+     {
+      "name": "Analysis",
+      "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses"
+     },
+     {
+      "name": "TheDataID",
+      "type": "ZOSAPI.Analysis.DataID"
+     },
+     {
+      "name": "IsValid",
+      "type": "System.Boolean"
+     },
+     {
+      "name": "IsActiveWindow",
+      "type": "System.Boolean"
+     },
+     {
+      "name": "Parent",
+      "type": "ZOSAPI.IZAPI_BaseObject"
+     }
+    ],
+    "cfg_export_returned": true,
+    "closed": true,
+    "error": null
+   },
+   "raw_sequential": {
+    "source": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\evidence\\development\\NS-03\\prescription-graphic-sequential-20261108\\summary.json",
+    "analysis": "PrescriptionGraphic",
+    "input": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Sequential\\Objectives\\Cooke 40 degree field.zos",
+    "session_id": "10b8bd6b2d9f4bf691de1f1bbca38a27",
+    "settings_values": {
+     "IsValid": true,
+     "IsActiveWindow": true
+    },
+    "settings_type": null,
+    "settings_members_count": null,
+    "result_type": "ZemaxUI.ZOSAPI.Analysis.AR_Default",
+    "result_members_count": null,
+    "counts": {
+     "NumberOfMessages": 0,
+     "NumberOfDataSeries": 0,
+     "NumberOfDataGrids": 0,
+     "NumberOfDataGridsRgb": 0,
+     "NumberOfDataScatterPoints": 0,
+     "NumberOfDataScatterPointsRgb": 0
+    },
+    "counts_nonzero": {},
+    "messages_count": 0,
+    "text_export": false,
+    "image_vector_outlet_members": [],
+    "model_unchanged": null,
+    "close": true,
+    "disconnect_ok": true,
+    "error": null,
+    "objects": {
+     "ok": false,
+     "count": 0,
+     "total": null,
+     "next_start": null,
+     "types": [],
+     "error": {
+      "code": "UNSUPPORTED_MODE",
+      "message": "混合模式对象操作需要显式nsc_surface。",
+      "details": {
+       "command": "get_nsc_objects",
+       "partial_changes_possible": false
+      }
+     }
+    }
+   },
+   "raw_nsc": {
+    "source": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\evidence\\development\\NS-03\\prescription-graphic-nsc-20261108\\summary.json",
+    "analysis": "PrescriptionGraphic",
+    "input": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Non-sequential\\Colorimetry\\Example 1  Two-color mixing gives white.zos",
+    "session_id": "32a45e5a23a54a63b01435f287f02641",
+    "settings_values": null,
+    "settings_type": null,
+    "settings_members_count": null,
+    "result_type": null,
+    "result_members_count": null,
+    "counts": {},
+    "counts_nonzero": {},
+    "messages_count": null,
+    "text_export": null,
+    "image_vector_outlet_members": [],
+    "model_unchanged": null,
+    "close": null,
+    "disconnect_ok": true,
+    "error": {
+     "type": "AttributeError",
+     "message": "'NoneType' object has no attribute 'GetSettings'"
+    },
+    "objects": {
+     "ok": true,
+     "count": 5,
+     "total": 5,
+     "next_start": null,
+     "types": [
+      "SourceEllipse",
+      "SourceEllipse",
+      "SourceEllipse",
+      "SourceEllipse",
+      "DetectorColor"
+     ],
+     "error": null
+    }
+   }
+  },
+  "NS-04.NSCObjectViewer": {
+   "static": {
+    "source": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\development\\evidence\\NS-04\\runtime066\\settings.json",
+    "present": true,
+    "runtime_settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+    "interfaces": [
+     "ZOSAPI.IZAPI_BaseObject",
+     "ZOSAPI.Analysis.Settings.IAS_"
+    ],
+    "methods_count": 25,
+    "methods_sample": [
+     "Boolean Equals(System.Object)",
+     "Boolean LoadFrom(System.String)",
+     "Boolean ModifySettings(System.String, System.String, System.String)",
+     "Boolean SaveTo(System.String)",
+     "Boolean get_IsActiveWindow()",
+     "Boolean get_IsValid()",
+     "Int32 GetHashCode()",
+     "System.Object GetLifetimeService()"
+    ],
+    "properties": [
+     {
+      "name": "Analysis",
+      "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses"
+     },
+     {
+      "name": "TheDataID",
+      "type": "ZOSAPI.Analysis.DataID"
+     },
+     {
+      "name": "IsValid",
+      "type": "System.Boolean"
+     },
+     {
+      "name": "IsActiveWindow",
+      "type": "System.Boolean"
+     },
+     {
+      "name": "Parent",
+      "type": "ZOSAPI.IZAPI_BaseObject"
+     }
+    ],
+    "cfg_export_returned": true,
+    "closed": true,
+    "error": null
+   },
+   "raw": {
+    "source": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\evidence\\development\\NS-03\\nsc-object-viewer-repeat-20261108\\summary.json",
+    "analysis": "NSCObjectViewer",
+    "input": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Non-sequential\\Colorimetry\\Example 1  Two-color mixing gives white.zos",
+    "session_id": "364e743f01664fd094bea80c3083140d",
+    "settings_values": {
+     "IsValid": true,
+     "IsActiveWindow": true
+    },
+    "settings_type": null,
+    "settings_members_count": null,
+    "result_type": "ZemaxUI.ZOSAPI.Analysis.AR_Default",
+    "result_members_count": null,
+    "counts": {
+     "NumberOfMessages": 0,
+     "NumberOfDataSeries": 0,
+     "NumberOfDataGrids": 0,
+     "NumberOfDataGridsRgb": 0,
+     "NumberOfDataScatterPoints": 0,
+     "NumberOfDataScatterPointsRgb": 0
+    },
+    "counts_nonzero": {},
+    "messages_count": 0,
+    "text_export": false,
+    "image_vector_outlet_members": [],
+    "model_unchanged": null,
+    "close": true,
+    "disconnect_ok": true,
+    "error": null,
+    "objects": {
+     "ok": true,
+     "count": 5,
+     "total": 5,
+     "next_start": null,
+     "types": [
+      "SourceEllipse",
+      "SourceEllipse",
+      "SourceEllipse",
+      "SourceEllipse",
+      "DetectorColor"
+     ],
+     "error": null
+    }
+   }
+  },
+  "NS-04.PartViewer": {
+   "static": {
+    "source": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\development\\evidence\\NS-04\\runtime066\\settings.json",
+    "present": true,
+    "runtime_settings_type": "ZemaxUI.ZOSAPI.Analysis.AS_Default",
+    "interfaces": [
+     "ZOSAPI.IZAPI_BaseObject",
+     "ZOSAPI.Analysis.Settings.IAS_"
+    ],
+    "methods_count": 25,
+    "methods_sample": [
+     "Boolean Equals(System.Object)",
+     "Boolean LoadFrom(System.String)",
+     "Boolean ModifySettings(System.String, System.String, System.String)",
+     "Boolean SaveTo(System.String)",
+     "Boolean get_IsActiveWindow()",
+     "Boolean get_IsValid()",
+     "Int32 GetHashCode()",
+     "System.Object GetLifetimeService()"
+    ],
+    "properties": [
+     {
+      "name": "Analysis",
+      "type": "ZemaxUI.ZOSAPI.Analysis.ZemaxAnalyses"
+     },
+     {
+      "name": "TheDataID",
+      "type": "ZOSAPI.Analysis.DataID"
+     },
+     {
+      "name": "IsValid",
+      "type": "System.Boolean"
+     },
+     {
+      "name": "IsActiveWindow",
+      "type": "System.Boolean"
+     },
+     {
+      "name": "Parent",
+      "type": "ZOSAPI.IZAPI_BaseObject"
+     }
+    ],
+    "cfg_export_returned": true,
+    "closed": true,
+    "error": null
+   },
+   "raw_colorimetry": {
+    "source": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\evidence\\development\\NS-03\\part-viewer-repeat-20261108\\summary.json",
+    "analysis": "PartViewer",
+    "input": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Non-sequential\\Colorimetry\\Example 1  Two-color mixing gives white.zos",
+    "session_id": "c0f7e7d388ad43e0b6b50a99d2987137",
+    "settings_values": {
+     "IsValid": true,
+     "IsActiveWindow": true
+    },
+    "settings_type": null,
+    "settings_members_count": null,
+    "result_type": "ZemaxUI.ZOSAPI.Analysis.AR_Default",
+    "result_members_count": null,
+    "counts": {
+     "NumberOfMessages": 0,
+     "NumberOfDataSeries": 0,
+     "NumberOfDataGrids": 0,
+     "NumberOfDataGridsRgb": 0,
+     "NumberOfDataScatterPoints": 0,
+     "NumberOfDataScatterPointsRgb": 0
+    },
+    "counts_nonzero": {},
+    "messages_count": 0,
+    "text_export": false,
+    "image_vector_outlet_members": [],
+    "model_unchanged": null,
+    "close": true,
+    "disconnect_ok": true,
+    "error": null,
+    "objects": {
+     "ok": true,
+     "count": 5,
+     "total": 5,
+     "next_start": null,
+     "types": [
+      "SourceEllipse",
+      "SourceEllipse",
+      "SourceEllipse",
+      "SourceEllipse",
+      "DetectorColor"
+     ],
+     "error": null
+    }
+   },
+   "raw_lens_mount": {
+    "source": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\evidence\\development\\NS-03\\part-viewer-lens-mount-20261108\\summary.json",
+    "analysis": "PartViewer",
+    "input": "C:\\Users\\tonge\\Documents\\Zemax\\Samples\\Non-sequential\\Geometry Creation\\Boolean Example 4-  a lens mount.zos",
+    "session_id": "b90aa5233a1e47619910f33ee1a0eeee",
+    "settings_values": {
+     "IsValid": true,
+     "IsActiveWindow": true
+    },
+    "settings_type": null,
+    "settings_members_count": null,
+    "result_type": "ZemaxUI.ZOSAPI.Analysis.AR_Default",
+    "result_members_count": null,
+    "counts": {
+     "NumberOfMessages": 0,
+     "NumberOfDataSeries": 0,
+     "NumberOfDataGrids": 0,
+     "NumberOfDataGridsRgb": 0,
+     "NumberOfDataScatterPoints": 0,
+     "NumberOfDataScatterPointsRgb": 0
+    },
+    "counts_nonzero": {},
+    "messages_count": 0,
+    "text_export": false,
+    "image_vector_outlet_members": [],
+    "model_unchanged": null,
+    "close": true,
+    "disconnect_ok": true,
+    "error": null,
+    "objects": {
+     "ok": true,
+     "count": 6,
+     "total": 6,
+     "next_start": null,
+     "types": [
+      "RectangularVolume",
+      "CylinderVolume",
+      "CylinderVolume",
+      "CylinderVolume",
+      "BooleanNative",
+      "NullObject"
+     ],
+     "error": null
+    }
+   }
+  }
+ }
+}

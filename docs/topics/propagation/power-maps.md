@@ -29,3 +29,5 @@ Power单位diopters，EFL单位为当前镜头单位。Cylinder是原生极值�
 执行634–636：两种Map在毫米/厘米等物理模型中共16分析通过。球面R50mm对应R5cm，N-BK7参考波长.5875618um；独立EFL=nR/(n−1)，Power=1000/EFL_mm。8次独立数值比较通过原物理容差：EFL绝对2e-4mm、Power绝对2e-4diopters，均加2e-5相对项。EFL输出随镜头单位缩放，Power保持diopters。平面控制保留原始零值与unresolved_native_zero_semantics，不将EFL0推断为无穷。
 
 区域分页、4组模型保存重载、源曲面/solve/系统/MFE保持与任务/光线子工具关闭通过，会话已断连。普通636的Power/GRIN定向46通过，原生634为1通过。内部环节点/状态及零EFL正式含义仍缺，完整两条保留implemented。证据CV-02/progress636-unit-scaling.json。
+
+2026-11-09控制补充：四半径的field/pupil中心Power/EFL参考通过；非对称孔径改变截光但查询差仍为浮点量级，内部采样环状态继续标记unavailable。真实stdio行/区域分页、偏置和保存重载通过。详见[原生控制证据](../../../development/evidence/CV-02/power-controls-20261109.md)。

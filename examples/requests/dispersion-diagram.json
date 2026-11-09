@@ -1,0 +1,14 @@
+{
+  "request": {
+    "kind": "dispersion_diagram",
+    "method": "index",
+    "catalog": "SCHOTT",
+    "glasses": [
+      "N-BK7",
+      "N-F2"
+    ],
+    "minimum_wavelength_um": 0.4,
+    "maximum_wavelength_um": 0.8,
+    "samples": 101
+  }
+}

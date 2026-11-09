@@ -1,0 +1,6 @@
+{
+  "request": {
+    "kind": "prescription_data",
+    "sections": ["general_data", "index_data", "files_used"]
+  }
+}

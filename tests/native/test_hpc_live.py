@@ -2,23 +2,53 @@ import asyncio
 from pathlib import Path
 import pytest
 from tests.support.native import execute
+from tests.support.hpc import check_preferences_success
 
 
 @pytest.mark.zemax
 def test_hpc_native_configuration_query():
     async def work(e):
-        actual=await e.call('get_hpc_settings',{'request':{'mode':'preferences'}})
-        assert type(actual['is_configured']) is bool
-        assert type(actual['node_count']) is int
-        assert actual['source']=='GetHPCSettingsFromPrefs'
+        response=await e.call('get_hpc_settings',{'request':{'mode':'preferences'}},okay=False)
+        # Evidence.call normalized contract: success -> data dict; failure -> {'ok':False,'error':...}.
+        if response.get('ok') is False:
+            assert response['error']['code']=='HPC_SETTINGS_UNAVAILABLE'
+            assert response['error']['details']['native_method']=='GetHPCSettingsFromPrefs'
+            assert response['error']['details']['partial_changes_possible'] is False
+        else:
+            actual=response
+            assert type(actual['is_configured']) is bool
+            assert type(actual['node_count']) is int
+            assert actual['source']=='GetHPCSettingsFromPrefs'
+            assert actual['ownership']=='IHPCSettings has no Close method; no SystemTool opened by this query'
     asyncio.run(execute('hpc_settings',work))
+
+
+@pytest.mark.zemax
+def test_hpc_native_preferences_success_readback():
+    """Independent success acceptance for get_hpc_settings (preferences).
+
+    Error path (GetHPCSettingsFromPrefs -> null -> HPC_SETTINGS_UNAVAILABLE) is
+    covered by test_hpc_native_configuration_query above and is NOT counted as a
+    completed query here: on null this case skips with the concrete reason. Only a
+    real non-null IHPCSettings asserts the six typed fields and source.
+    """
+    async def work(e):
+        outcome,payload=await check_preferences_success(e)
+        if outcome=='skipped':pytest.skip(payload)
+    asyncio.run(execute('hpc_settings_success',work))
 
 
 @pytest.mark.zemax
 @pytest.mark.parametrize('kind',['nsc','tolerance','global','hammer'])
 def test_hpc_minimal_native_job_result_and_close(kind):
     async def work(e):
-        actual=await e.call('get_hpc_settings',{'request':{'mode':'preferences'}})
+        response=await e.call('get_hpc_settings',{'request':{'mode':'preferences'}},okay=False)
+        # Evidence.call normalized contract: success -> data dict; failure -> {'ok':False,'error':...}.
+        if response.get('ok') is False:
+            assert response['error']['code']=='HPC_SETTINGS_UNAVAILABLE',response
+            await e.call('disconnect')
+            pytest.skip('GetHPCSettingsFromPrefs returned no IHPCSettings; configure HPC preferences before submitting a native job.')
+        actual=response
         if not actual['is_configured']:
             await e.call('disconnect')
             pytest.skip('Native IHPCSettings reports IsHPCConfigured=false; configure nodes and feature access.')

@@ -1,0 +1,13 @@
+{
+  "tool": "run_analysis",
+  "arguments": {
+    "request": {
+      "kind": "polarization_transmission_fan",
+      "method": "ray_trace",
+      "field": 1,
+      "wavelength": 1,
+      "sampling": 21,
+      "polarization": {"jx": 1, "jy": 1, "x_phase": 0, "y_phase": 90}
+    }
+  }
+}

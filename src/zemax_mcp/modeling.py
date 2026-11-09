@@ -42,6 +42,22 @@ def patch_values(patch):
     return data
 
 
+def validate_environment_patch(environment, patch):
+    requested = {key: getattr(patch, key) for key in ('temperature_c', 'pressure_atm')
+                 if getattr(patch, key) is not None}
+    if not requested:
+        return
+    enabled = (bool(environment.AdjustIndexToEnvironment) if patch.adjust_index_to_environment is None
+               else patch.adjust_index_to_environment)
+    if not enabled:
+        for key, fixed in (('temperature_c', 20.), ('pressure_atm', 1.)):
+            if key in requested and requested[key] != fixed:
+                raise ZemaxError('SETTING_INACTIVE', '关闭环境折射率修正时温度和压力采用固定基准。',
+                    setting=key, requested=requested[key], fixed_value=fixed,
+                    required_setting='adjust_index_to_environment=true',
+                    condition_source='OpticStudio 2024 R2 Environment help')
+
+
 class ModelingMixin:
     @staticmethod
     def _hologram2_persistence(value):
@@ -120,6 +136,8 @@ class ModelingMixin:
 
     def _validate_settings_extension(self,req):
         d=self.system.SystemData
+        if req.temperature_c is not None or req.pressure_atm is not None:
+            validate_environment_patch(d.Environment, req)
         if req.aperture_options is not None:self._require_sequential()
         apply_pages(getattr(self,"native",None),d,req,SYSTEM_PAGES,validate=True)
         if req.global_reference_surface is not None:
@@ -179,8 +197,24 @@ class ModelingMixin:
                     raise ZemaxError("RESOURCE_UPDATE_FAILED","移除目录失败。",catalog=str(name))
         for patch,obj,mapping,enums in ((req.polarization,d.Polarization,POL,{"method"}),(req.ray_aiming,d.RayAiming,AIM,{"mode","method"})):
             if patch is not None:
-                for key,value in patch_values(patch).items():
+                updates = list(patch_values(patch).items())
+                if mapping is POL:
+                    target_unpolarized = dict(updates).get("unpolarized", bool(obj.Unpolarized))
+                    # Native Jones/phase setters are inactive while Unpolarized is enabled.
+                    if any(key != "unpolarized" for key, _ in updates):
+                        if obj.Unpolarized:
+                            checked_setting(self.native,obj,"Unpolarized",False)
+                        updates = [(key, value) for key, value in updates if key != "unpolarized"]
+                        updates.append(("unpolarized", target_unpolarized))
+                    # Preserve a nonzero Jones vector while swapping X/Y polarization.
+                    updates.sort(key=lambda item: (2 if item[0] == "unpolarized" else
+                                                  0 if item[0] in {"jx", "jy"} and item[1] > 0 else 1))
+                for key,value in updates:
                     checked_setting(self.native,obj,mapping[key],value)
+                if mapping is POL:
+                    from .detectors import check_setting_readback
+                    for key,value in updates:
+                        check_setting_readback(obj,mapping[key],value)
         if req.files is not None:
             for key,value in patch_values(req.files).items():checked_setting(self.native,d.Files,FILES[key],value)
             d.Files.ReloadFiles()

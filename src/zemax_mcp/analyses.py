@@ -4,6 +4,7 @@ from pathlib import Path
 from .data import unwrap, dotnet_array
 from .errors import ZemaxError
 from .surface_slopes import SLOPE_ANALYSES, configure_surface_slope, describe_surface_slope
+from .polarization_topics import TOPIC_KINDS, parse_topic_text
 
 ANALYSES = {
     "ray_database_viewer":"RayDatabaseViewer",
@@ -17,9 +18,11 @@ ANALYSES = {
     "universal_plot_1d":"UniversalPlot1D", "universal_plot_2d":"UniversalPlot2D",
     "system_data":"SystemData", "system_check":"SystemCheck", "file_comparator":"FileComparatorSettings", "pupil_aberration_fan":"PupilAberrationFan",
     "polarization_pupil_map":"PolarizationPupilMap",
+    "phase_aberration":"PhaseAberration","polarization_ray_trace":"PolarizationRayTrace",
+    "polarization_transmission":"Transmission","fiber_coupling_settings":"FiberCouplingSettings",
     "rms_vs_field":"RMSField","rms_field_map":"RMSFieldMap","rms_vs_focus":"RMSFocus","through_focus_spot":"ThroughFocusSpot",
     "contrast_loss":"ContrastLoss", "rms_vs_wavelength":"RMSLambdaDiagram",
-    "single_ray_trace":"RayTrace","cardinal_points":"CardinalPoints","seidel_coefficients":"SeidelCoefficients","seidel_diagram":"SeidelDiagram","grid_distortion":"GridDistortion",
+    "single_ray_trace":"RayTrace","cardinal_points":"CardinalPoints","seidel_coefficients":"SeidelCoefficients","yni_contributions":"YNIContributions","source_spectrum_viewer":"SourceSpectrumViewer","directivity_plot":"DirectivityPlot","polarization_transmission_fan":"TransmissionFan","seidel_diagram":"SeidelDiagram","grid_distortion":"GridDistortion",
     "geometric_mtf_vs_field":"GeometricMtfvsField", "huygens_mtf_vs_field":"HuygensMtfvsField",
     "fft_mtf_map":"FftMtfMap", "geometric_mtf_map":"GeometricMtfMap",
     "relative_illumination":"RelativeIllumination", "fft_mtf_vs_field":"FftMtfvsField",
@@ -30,9 +33,14 @@ ANALYSES = {
     "fft_line_edge_spread":"FftPsfLineEdgeSpread", "geometric_line_edge_spread":"GeometricLineEdgeSpread", "extended_source_encircled_energy":"ExtendedSourceEncircledEnergy",
     "image_simulation":"ImageSimulation", "geometric_image":"GeometricImageAnalysis",
     "geometric_bitmap_image":"GeometricBitmapImageAnalysis",
+    "extended_diffraction_image":"ExtendedDiffractionImageAnalysis",
+    "partially_coherent_image":"PartiallyCoherentImageAnalysis",
     "diff_efficiency_2d":"DiffEfficiency2D", "diff_efficiency_angular":"DiffEfficiencyAngular",
     "diff_efficiency_chromatic":"DiffEfficiencyChromatic",
     "grin_profile":"GrinProfile",
+    "dispersion_diagram":"DispersionDiagram",
+    "dispersion_vs_wavelength":"DispersionvsWavelength",
+    "glass_map":"GlassMap", "athermal_glass_map":"AthermalGlassMap",
     "power_field_map":"PowerFieldMapSettings", "power_pupil_map":"PowerPupilMapSettings",
     "nsc_surface_sag":"NSCSurfaceSag",
     "vignetting":"VignettingDiagramSettings", "footprint":"FootprintSettings",
@@ -56,6 +64,10 @@ ANALYSES.update(critical_ray_trace='CriticalRayTracer',nsc_single_ray_trace='NSC
 ANALYSES['internal_transmission_vs_wavelength']='InternalTransmissionvsWavelength'
 ANALYSES.update(SLOPE_ANALYSES)
 ANALYSES.update(zernike_coefficients_vs_field='ZernikeCoefficientsVsField',interferogram='Interferogram')
+ANALYSES.update(prescription_data='PrescriptionDataSettings',surface_data='SurfaceDataSettings')
+ANALYSES.update(star_align_check='STARAlignCheck',star_sys_viewer='STARSysViewer',
+                star_2d_def_plot='STAR2DDefPlot',star_perf_change='STARPerfChange',
+                star_index_vs_temp='STARIndexVsTemp',star_inspect_fea='STARInspectFEA')
 
 from .coating_models import CoatingAngle,CoatingWavelength,CoatingListing
 
@@ -87,6 +99,195 @@ def parse_psf_section(text):
     if any(not math.isfinite(v)for p in points for v in p[1:]):return None
     if any(b[1]<=a[1]for a,b in zip(points,points[1:])):return None
     return dict(series=0,description="native PSF center-row cross section",x_label="position",labels=["relative irradiance"],x=[p[1]for p in points],y=[[p[2]]for p in points],x_unit="micrometers",value_units=["relative irradiance"],source="2024 R2 formatted native text",precision="native displayed digits")
+
+
+def _parse_native_material_curve(text,title_pattern,value_unit_pattern,value_unit,quantity,positive_values):
+    lines=text.splitlines()
+    title=next((line.strip() for line in lines if line.strip()),"")
+    if not re.search(title_pattern,title,re.I):
+        raise ZemaxError("INVALID_RESULT_DATA","原生文本标题与请求的材料曲线不匹配。",title=title)
+    header_index=None
+    labels=[]
+    for index,line in enumerate(lines):
+        cells=[cell.strip() for cell in re.split(r"\t+",line.strip()) if cell.strip()]
+        if len(cells)>1 and re.fullmatch(r"波长|wavelength",cells[0],re.I):
+            header_index=index
+            labels=cells[1:]
+            break
+    if header_index is None or not labels:
+        raise ZemaxError("NO_RESULT_DATA","色散报告没有材料列标题。",title=title)
+    unit_text=" ".join(lines[:header_index]).replace("μ","µ")
+    if not re.search(r"(?:波长\s*[:：]\s*µm|wavelength\s*[:=]\s*(?:µm|um|micrometers?))",unit_text,re.I):
+        raise ZemaxError("INVALID_RESULT_DATA","原生色散报告没有可识别的波长单位。",native_unit_lines=lines[:header_index])
+    if value_unit_pattern and not re.search(value_unit_pattern,unit_text,re.I):
+        raise ZemaxError("INVALID_RESULT_DATA","原生材料曲线没有可识别的纵轴单位。",native_unit_lines=lines[:header_index])
+    number=r"[-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[Ee][-+]?\d+)?"
+    points=[]
+    for line_number,line in enumerate(lines[header_index+1:],header_index+2):
+        cells=line.split()
+        if not cells or not re.fullmatch(number,cells[0]):
+            if points:break
+            continue
+        if len(cells)!=len(labels)+1 or not all(re.fullmatch(number,cell) for cell in cells):
+            raise ZemaxError("INVALID_RESULT_DATA","色散表列数与材料标题不匹配，或包含非数值字段。",line=line_number,labels=labels,cells=cells)
+        values=[float(cell) for cell in cells]
+        if any(not math.isfinite(value) for value in values) or values[0]<=0 or positive_values and any(value<=0 for value in values[1:]):
+            raise ZemaxError("INVALID_RESULT_DATA","色散表包含非有限或非正数值。",line=line_number,values=values)
+        points.append((line_number,values[0],values[1:]))
+    if len(points)<2 or any(b[1]<=a[1] for a,b in zip(points,points[1:])):
+        raise ZemaxError("INVALID_RESULT_DATA","色散表采样不足或波长未严格递增。",point_count=len(points))
+    temperatures=[]
+    pressures=[]
+    for line in lines[:header_index]:
+        match=re.search(r"(?:温度\s*[:：]?\s*|temperature\s*[:=]?\s*)([-+]?\d+(?:\.\d+)?)\s*(?:摄氏度|°?C)",line,re.I)
+        if match:temperatures.append(float(match[1]))
+        match=re.search(r"(?:压强|压力|pressure)\s*[:：]?\s*([-+]?\d+(?:\.\d+)?)\s*(?:大气压|atm)",line,re.I)
+        if match:pressures.append(float(match[1]))
+    series=dict(series=0,description=quantity+" versus wavelength",x_label="Wavelength",
+        labels=labels,x=[point[1] for point in points],y=[point[2] for point in points],
+        x_unit="micrometers",value_units=[value_unit]*len(labels),y_unit=value_unit,
+        invalid_count=0,source="native formatted material analysis text",precision="native displayed digits",
+        source_lines=[point[0] for point in points])
+    result=dict(series=[series],grids=[],structured_data_available=True,
+        computation_method="native_analysis_text_table",material_identity_source="native report column labels",
+        environment={"temperature_c":temperatures[0] if temperatures else None,
+            "pressure_atm":pressures[0] if pressures else None,
+            "source":"native report preamble"},sample_count=len(points),native_title=title)
+    return result
+
+
+def parse_dispersion_diagram(text):
+    """Parse native DispersionDiagram refractive-index columns."""
+    result=_parse_native_material_curve(text,
+        r"折射率\s*(?:vs\.?|对|与)\s*波长|refractive\s+index\s+vs\.?\s*wavelength",
+        None,"dimensionless","refractive index",True)
+    result["analysis_kind"]="dispersion_diagram"
+    return result
+
+
+def parse_dispersion_vs_wavelength(text):
+    """Parse native wavelength-derivative columns and preserve inverse-length units."""
+    result=_parse_native_material_curve(text,
+        r"色散\s*(?:vs\.?|对|与)\s*波长|dispersion\s+vs\.?\s*wavelength",
+        r"(?:色散|dispersion)\s*[:：=]\s*1\s*/\s*(?:µm|um|micrometers?)",
+        "1/micrometer","refractive-index dispersion",False)
+    result["analysis_kind"]="dispersion_vs_wavelength"
+    return result
+
+
+def parse_glass_map(text):
+    """Parse native glass-map Nd/Vd rows into page-able glass records and scatter points."""
+    lines=text.splitlines()
+    title=next((line.strip() for line in lines if line.strip()),"")
+    if not re.search(r"玻璃图数据|glass\s+map\s+data",title,re.I):
+        raise ZemaxError("INVALID_RESULT_DATA","原生文本不是玻璃图报告。",title=title)
+    header_index=next((i for i,line in enumerate(lines) if all(token in line for token in ("玻璃名称","折射率","阿贝数"))),None)
+    if header_index is None:
+        raise ZemaxError("NO_RESULT_DATA","玻璃图报告缺少材料、折射率或Abbe数列标题。",title=title)
+    number=r"[-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[Ee][-+]?\d+)?"
+    rows=[]
+    for line_number,line in enumerate(lines[header_index+1:],header_index+2):
+        cells=line.split()
+        if len(cells)==3 and re.fullmatch(number,cells[1]) and re.fullmatch(number,cells[2]):
+            index,abbe=float(cells[1]),float(cells[2])
+            if not math.isfinite(index) or not math.isfinite(abbe) or index<=0 or abbe<=0:
+                raise ZemaxError("INVALID_RESULT_DATA","玻璃图数据包含无效Nd或Abbe数。",line=line_number,cells=cells)
+            rows.append(dict(index=len(rows),material=cells[0],refractive_index_nd=index,abbe_vd=abbe,
+                source_line=line_number))
+        elif rows and ("找到" in line or re.search(r"found\s+\d+\s+glasses",line,re.I)):
+            break
+        elif rows and not line.strip():
+            continue
+        elif rows and line.strip():
+            break
+    if not rows:
+        raise ZemaxError("NO_RESULT_DATA","玻璃图报告没有可识别的玻璃数据行。",native_header=lines[header_index])
+    series=dict(scatter=0,description="Glass Map",x_label="Abbe number Vd",y_label="Refractive index Nd",
+        x_unit="dimensionless",y_unit="dimensionless",x_axis_direction="decreasing_left_to_right",
+        coordinate_definition="x=Abbe Vd; y=refractive index Nd at d-line",
+        points=[dict(x=row["abbe_vd"],y=row["refractive_index_nd"],label=row["material"]) for row in rows])
+    count_match=re.search(r"(?:找到|found\s+)(\d+)\s*(?:玻璃|glasses)"," ".join(lines),re.I)
+    return dict(analysis_kind="glass_map",rows=rows,scatter=[series],structured_data_available=True,
+        computation_method="native_analysis_text_table",sample_count=len(rows),
+        native_report_count=int(count_match[1]) if count_match else None,
+        material_identity_source="native report glass-name column",
+        coordinate_units=dict(abbe_vd="dimensionless",refractive_index_nd="dimensionless"),
+        native_title=title)
+
+
+def parse_athermal_glass_map(text):
+    """Parse the native chromatic/thermal glass-power table and preserve display scaling."""
+    lines=text.splitlines()
+    title=next((line.strip() for line in lines if line.strip()),"")
+    if not re.search(r"无热玻璃图数据|athermal\s+glass\s+map\s+data",title,re.I):
+        raise ZemaxError("INVALID_RESULT_DATA","原生文本不是无热玻璃图报告。",title=title)
+    header_index=next((i for i,line in enumerate(lines)
+        if (("玻璃名称" in line and "有色的" in " ".join(lines[max(0,i-1):i+3]) and "热的" in " ".join(lines[max(0,i-1):i+3]))
+        or (re.search(r"glass\s+name",line,re.I) and re.search(r"chromatic", " ".join(lines[max(0,i-1):i+3]),re.I)
+            and re.search(r"thermal", " ".join(lines[max(0,i-1):i+3]),re.I)))),None)
+    if header_index is None:
+        raise ZemaxError("NO_RESULT_DATA","无热玻璃图缺少玻璃、色散或热光焦列标题。",title=title)
+    # Display scales come from the native header (光焦 xE-3 / xE-6); never assume them.
+    scale_text=" ".join(lines[max(0,header_index-1):header_index+1])
+    scale_exponents=re.findall(r"xE([-+]?\d+)",scale_text)
+    if len(scale_exponents)!=2:
+        # Header contract gap, not a native analysis failure; keep the raw header text.
+        raise ZemaxError("INVALID_RESULT_DATA","无热玻璃图报告表头未给出色散/热光焦显示标尺（xE-n），无法确定显示缩放。",
+            native_header=lines[header_index],native_scale_source="native report header")
+    try:
+        chromatic_scale=10.0**int(scale_exponents[0])
+        thermal_scale=10.0**int(scale_exponents[1])
+    except OverflowError as exc:
+        raise ZemaxError("INVALID_RESULT_DATA","无热玻璃图报告表头的显示标尺超出可表示范围（xE-n），无法确定显示缩放。",
+            native_header=lines[header_index],native_scale_source="native report header",
+            scale_exponents=scale_exponents) from exc
+    if not all(math.isfinite(scale) and scale>0 for scale in (chromatic_scale,thermal_scale)):
+        raise ZemaxError("INVALID_RESULT_DATA","无热玻璃图报告表头的显示标尺非有限或为零（xE-n），无法确定显示缩放。",
+            native_header=lines[header_index],native_scale_source="native report header",
+            scale_exponents=scale_exponents)
+    display_scales=dict(chromatic_power="1e"+scale_exponents[0].lstrip("+"),
+        thermal_power="1e"+scale_exponents[1].lstrip("+"))
+    preamble="\n".join(lines[:header_index])
+    wavelength={}
+    for key,pattern in {"minimum":r"(?:最小波长|minimum\s+wavelength)\s*[:：]\s*(\S+)",
+        "center":r"(?:中心波长|center\s+wavelength)\s*[:：]\s*(\S+)",
+        "maximum":r"(?:最大波长|maximum\s+wavelength)\s*[:：]\s*(\S+)"}.items():
+        match=re.search(pattern,preamble,re.I)
+        if match:
+            try:value=float(match[1])
+            except ValueError as exc:
+                raise ZemaxError("INVALID_RESULT_DATA","无热玻璃图报告中的波长无效。",field=key,value=match[1]) from exc
+            if not math.isfinite(value) or value<=0:
+                raise ZemaxError("INVALID_RESULT_DATA","无热玻璃图报告中的波长无效。",field=key,value=match[1])
+            wavelength[key]=value
+    number=r"[-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[Ee][-+]?\d+)?"
+    rows=[]
+    for line_number,line in enumerate(lines[header_index+1:],header_index+2):
+        cells=line.split()
+        if len(cells)==3 and re.fullmatch(number,cells[1]) and re.fullmatch(number,cells[2]):
+            chromatic,thermal=map(float,cells[1:])
+            if not math.isfinite(chromatic) or not math.isfinite(thermal):
+                raise ZemaxError("INVALID_RESULT_DATA","无热玻璃图包含非有限数据。",line=line_number,cells=cells)
+            rows.append(dict(index=len(rows),material=cells[0],chromatic_power_reported=chromatic,
+                thermal_power_reported=thermal,chromatic_power=chromatic*chromatic_scale,
+                thermal_power_per_celsius=thermal*thermal_scale,source_line=line_number))
+        elif rows and line.strip():
+            break
+    if not rows:
+        raise ZemaxError("NO_RESULT_DATA","无热玻璃图没有可识别的玻璃数据行。",native_header=lines[header_index])
+    series=dict(scatter=0,description="Athermal Glass Map",x_label="Chromatic power",y_label="Thermal power",
+        x_unit="dimensionless",y_unit="1/°C",x_axis_display_scale=display_scales["chromatic_power"],
+        y_axis_display_scale=display_scales["thermal_power"],
+        points=[dict(x=row["chromatic_power"],y=row["thermal_power_per_celsius"],label=row["material"]) for row in rows])
+    count_match=re.search(r"(?:找到|found\s+)(\d+)\s*(?:玻璃|glasses)"," ".join(lines),re.I)
+    return dict(analysis_kind="athermal_glass_map",rows=rows,scatter=[series],grids=[],
+        structured_data_available=True,computation_method="native_analysis_text_table",
+        material_identity_source="native report glass-name column",sample_count=len(rows),
+        native_report_count=int(count_match[1]) if count_match else None,
+        coordinate_units=dict(chromatic_power="dimensionless",thermal_power="1/°C"),
+        native_display_scales=display_scales,native_display_scales_source="native report header (光焦 xE-n)",
+        native_header=lines[header_index],
+        wavelength_conditions=wavelength,native_title=title)
 
 
 def scalar_settings(settings):
@@ -139,6 +340,29 @@ def diff_efficiency_surface(row):
                 evidence='verification/development/CO-01/acceptance059.json')]
     return result
 
+
+DIFF_EFFICIENCY_2D_TITLE='Diffraction efficiency versus angle and wavelength'
+
+
+def label_diff_efficiency(data,kind):
+    """Attach physical units and a display title to native diff-efficiency results.
+
+    The native 2D description repeats its own swapped bounds
+    ("最大波长 =  0.45，最小波长 = 0.65  (µm)"), which would become the plot title, so the
+    displayed title is a neutral topical one while the native string is kept verbatim in
+    native_description. Angles, wavelengths, values and units are left untouched.
+    """
+    for s in data['series']:
+        s.setdefault('native_description',s.get('description',''))
+        s.update(x_unit='degrees' if kind=='diff_efficiency_angular' else 'micrometers',
+                 y_unit='dimensionless',value_quantity='diffraction efficiency')
+    for g in data['grids']:
+        g['native_axes']={key:g[key] for key in ('x_label','y_label','value_label','min_x','min_y','dx','dy')}
+        g['native_description']=g.get('description','')
+        g.update(x_label='Angle',y_label='Wavelength',value_label='Diffraction efficiency',
+                 x_unit='degrees',y_unit='micrometers',value_unit='dimensionless',
+                 description=DIFF_EFFICIENCY_2D_TITLE)
+
 def configure_grin_profile(q,setv):
     setv("ShowIndexVs",q.show_index_vs)
     names={
@@ -163,6 +387,15 @@ def grin_source_context(backend,surface):
         context['gradium']={key:float(backend._cell(row,'parameter_'+str(i)).DoubleValue)for i,key in enumerate(names,1)}
         context['gradium']['profile_file']=str(backend.system.SystemData.Files.GradiumProfile)
         context['gradium']['reference_index_definition']='vertex index at the SGRIN family reference wavelength; separate from the selected system wavelength'
+        # Declared GRD/SGRIN metadata only. This is auxiliary provenance: any problem is
+        # reported as a status record and never prevents the profile query from running.
+        try:
+            from .gradium import resource_metadata
+            context['gradium']['resource_metadata']=resource_metadata(
+                getattr(getattr(backend,'native',None),'application',None),
+                context['gradium']['profile_file'],context['material'])
+        except Exception as exc:
+            context['gradium']['resource_metadata']=dict(status='unavailable',reason=f'metadata unavailable: {exc}')
     return context
 
 
@@ -175,7 +408,9 @@ def label_grin_profile(data,requested,lens_unit):
             raise ZemaxError('INVALID_RESULT_DATA','GRIN profile must contain one index column.',series=curve['series'])
         curve['native_axes']=dict(x_label=curve['x_label'],labels=curve['labels'])
         curve.update(x_label=requested['show_index_vs'],labels=['Refractive index'],x_unit=lens_unit,
-            y_unit='dimensionless',coordinate_frame='selected surface local coordinates')
+            y_unit='dimensionless',coordinate_frame='selected surface local coordinates',
+            wavelength_number=requested.get('wavelength',1),
+            index_definition='native profile index at the selected system wavelength')
 
 def configure_contrast_loss(q,setv):
     for name,value in [('SampleSize',q.sampling),('Frequency',q.frequency),('Normalize',q.normalize),('ShowOPD',q.show_opd)]:setv(name,value)
@@ -275,6 +510,21 @@ def native_setting(native, settings, name, value):
 class AnalysesMixin:
     def run_analysis(self, req):
         q=req.request
+        if q.kind == 'phase_aberration':
+            from .phase_copy import uses_copy, run_phase_copy
+            if uses_copy(q):
+                return run_phase_copy(self, q)
+        if q.kind == 'polarization_ray_trace':
+            from .polarization_operand import uses_operand, run_polarization_operand
+            if uses_operand(q):
+                return run_polarization_operand(self, q)
+        if q.kind == 'fiber_coupling_settings':
+            from .fiber_operand import uses_operand, run_fiber_operand
+            if uses_operand(q):
+                return run_fiber_operand(self, q)
+        if q.kind in {'extended_diffraction_image','partially_coherent_image'}:
+            from .scene_images import run_scene_image
+            return run_scene_image(self,q)
         if q.kind=="ray_database_viewer":
             from .ray_database import run_viewer
             return run_viewer(self,q)
@@ -305,15 +555,28 @@ class AnalysesMixin:
         if q.kind in {'paraxial_gaussian_beam','skew_gaussian_beam'}:
             from .gaussian_beams import run_gaussian
             return run_gaussian(self,q)
+        if q.kind=='seidel_diagram':
+            from .seidel_diagram import run_seidel_diagram
+            return run_seidel_diagram(self,q)
         if q.kind=="full_field_spot":
             from .spot_topics import run_full_field
             return run_full_field(self,q)
+        if q.kind in {'dispersion_diagram','dispersion_vs_wavelength'}:
+            from .material_index import uses_index,run_material_index
+            if uses_index(q):return run_material_index(self,q)
         if q.kind=="pupil_aberration_fan":
             from .pupil_topics import run_pupil
             return run_pupil(self,q)
         if q.kind in {"system_check","system_data"}:
             from .system_check import run_system_check
             return run_system_check(self,q)
+        if q.kind in {"prescription_data","surface_data"}:
+            from .native_text_reports import run_text_report
+            return run_text_report(self,q)
+        if q.kind in {"star_align_check","star_sys_viewer","star_2d_def_plot",
+                      "star_perf_change","star_index_vs_temp","star_inspect_fea"}:
+            from .star_analyses import run_star_analysis
+            return run_star_analysis(self,q)
         if q.kind=="file_comparator":
             from .comparator import run_comparator
             return run_comparator(self,q)
@@ -353,6 +616,15 @@ class AnalysesMixin:
         if q.kind=="cardinal_points":
             from .basic_analyses import cardinal_points
             return cardinal_points(self,q)
+        if q.kind=='yni_contributions' and q.wavelength is not None:
+            from .basic_analyses import yni_operands
+            return yni_operands(self,q)
+        if q.kind=='polarization_transmission':
+            from .transmission_pupil import uses_batch,transmission_pupil
+            if uses_batch(q):return transmission_pupil(self,q)
+        if q.kind=='polarization_transmission_fan':
+            from .transmission_fan import uses_batch,transmission_fan
+            if uses_batch(q):return transmission_fan(self,q)
         if q.kind in {"vignetting","footprint"}:
             from .field_analyses import sampled_analysis
             return sampled_analysis(self,q)
@@ -360,10 +632,11 @@ class AnalysesMixin:
         return self._run_general_analysis(q)
 
     def _run_general_analysis(self,q):
-        self._require_sequential(focused=q.kind not in {"single_ray_trace","seidel_coefficients","seidel_diagram","grin_profile",*SLOPE_ANALYSES})
+        if q.kind not in {'source_spectrum_viewer','directivity_plot'}:
+            self._require_sequential(focused=q.kind not in {"single_ray_trace","seidel_coefficients","seidel_diagram","grin_profile",*SLOPE_ANALYSES})
         if hasattr(q,"field") and q.field>self.system.SystemData.Fields.NumberOfFields:
             raise ZemaxError("INDEX_OUT_OF_RANGE","视场越界。")
-        if hasattr(q,"wavelength") and q.wavelength>self.system.SystemData.Wavelengths.NumberOfWavelengths:
+        if getattr(q,"wavelength",None) is not None and q.wavelength>self.system.SystemData.Wavelengths.NumberOfWavelengths:
             raise ZemaxError("INDEX_OUT_OF_RANGE","波长越界。")
         if getattr(q,"surface",None) is not None: self._row(q.surface)
         if q.kind=='interferogram':
@@ -382,7 +655,7 @@ class AnalysesMixin:
             s=unwrap(tool.GetSettings())
             if q.kind=="grid_distortion":s.Reset()
             for key, setter, reader in (("field","SetFieldNumber","GetFieldNumber"),("wavelength","SetWavelengthNumber","GetWavelengthNumber"),("surface","SetSurfaceNumber","GetSurfaceNumber")):
-                if hasattr(q,key) and getattr(q,key) is not None and not (q.kind=="quick_yield" and key=="field"):
+                if hasattr(q,key) and getattr(q,key) is not None and q.kind not in {'polarization_transmission_fan','polarization_transmission','fiber_coupling_settings','polarization_ray_trace','seidel_diagram'} and not (q.kind=="quick_yield" and key=="field"):
                     obj=getattr(s,key.title())
                     getattr(obj,setter)(getattr(q,key))
                     if int(getattr(obj,reader)())!=getattr(q,key):
@@ -442,7 +715,7 @@ class AnalysesMixin:
                                    ("UsePolarization",q.use_polarization),("ImageDelta",q.image_delta),
                                    ("Configuration",self.system.MCE.CurrentConfiguration)):
                     setv(name,value)
-            if hasattr(q,"sampling") and not q.kind.startswith("rms_vs_") and q.kind not in {*SLOPE_ANALYSES,'rms_field_map','interferogram','zernike_coefficients_vs_field'}:
+            if hasattr(q,"sampling") and not q.kind.startswith("rms_vs_") and q.kind not in {*SLOPE_ANALYSES,'rms_field_map','interferogram','zernike_coefficients_vs_field','polarization_transmission_fan','polarization_transmission','fiber_coupling_settings','polarization_ray_trace'}:
                 sample=q.sampling
                 if q.kind=="fft_psf":
                     setv("SampleSize",sample.replace("S_","PsfS_")); setv("OutputSize",q.image_sampling.replace("S_","PsfS_"))
@@ -456,6 +729,8 @@ class AnalysesMixin:
             mapping=dict(maximum_frequency="MaximumFrequency",frequency="Frequency",delta_focus="DeltaFocus",number_of_steps="NumberOfSteps",use_polarization="UsePolarization",image_delta="ImageDelta",normalize="Normalize",reference="ReferTo",maximum_radius="RadiusMaximum",remove_tilt="RemoveTilt",use_exit_pupil="UseExitPupil",maximum_terms="MaximumNumberOfTerms",number_of_rays="NumberOfRays",check_apertures="CheckApertures",vignetted_pupil="VignettedPupil",ignore_vignette="IgnoreVignette")
             for key,name in mapping.items():
                 if hasattr(q,key):
+                    if q.kind in {"fiber_coupling_settings","polarization_ray_trace"}: continue
+                    if q.kind=="fiber_coupling_settings": continue
                     if key=="image_delta" and q.kind=="geometric_mtf": continue
                     if key=="image_delta" and q.kind=="fft_psf_cross": continue
                     setv(name,getattr(q,key))
@@ -567,9 +842,14 @@ class AnalysesMixin:
             if q.kind=='contrast_loss':configure_contrast_loss(q,setv)
             if q.kind=='seidel_diagram':configure_seidel_diagram(q,setv)
             if q.kind=='through_focus_spot':
-                for name,value in [('ReferTo',q.reference),('Pattern',q.pattern),('RayDensity',q.ray_density),('DeltaFocus',q.delta_focus_um),('Configuration',self.system.MCE.CurrentConfiguration),('DirectionCosines',False),('IgnoreLateralColor',False),('ScatterRays',False)]:setv(name,value)
+                from .spot_topics import CURRENT_CONFIGURATION_SELECTOR
+                for name,value in [('ReferTo',q.reference),('Pattern',q.pattern),('RayDensity',q.ray_density),('DeltaFocus',q.delta_focus_um),('Configuration',CURRENT_CONFIGURATION_SELECTOR),('DirectionCosines',False),('IgnoreLateralColor',False),('ScatterRays',False)]:setv(name,value)
             if q.kind=='quick_yield':verify_quick_yield(self.native,s,q)
-            actual={"kind":q.kind,"requested":q.model_dump(),"native":scalar_settings(s)}
+            actual={"kind":q.kind,"requested":q.model_dump(exclude_unset=q.kind=='seidel_diagram'),"native":scalar_settings(s)}
+            if q.kind=='through_focus_spot':actual['resolved_configuration']=int(self.system.MCE.CurrentConfiguration)
+            if q.kind in TOPIC_KINDS:
+                actual["settings_type"]=str(s.GetType().FullName)
+                actual["settings_note"]="native settings object exposes no topic-specific selector; inputs are read back from the native report header"
             if q.kind=='grin_profile':actual['source_surface']=grin_source_context(self,q.surface)
             if q.kind.startswith('diff_efficiency_') and q.surface is not None:
                 actual['evaluation_conditions']=diff_efficiency_surface(self._row(q.surface))
@@ -635,10 +915,66 @@ class AnalysesMixin:
         data["structured_data_available"]=bool(data["series"] or data["grids"])
         settings=task.get("settings",{})
         kind=settings.get("kind","")
+        if kind in TOPIC_KINDS:
+            try:
+                data.update(parse_topic_text(kind,text,dict(system_settings=task.get("system_settings"),requested_kind=kind,
+                    native_settings=settings.get("native"),native_settings_type=settings.get("settings_type","AS_Default"))))
+            except ZemaxError as exc:
+                exc.details['native_text']=str(path)
+                raise
         if kind in {'tolerance_yield','tolerance_histogram'}:
             from .tolerance_distributions import describe_distribution
             describe_distribution(data,kind,text)
         if kind=='quick_yield':describe_quick_yield(data,settings['requested'],task.get('system_settings'))
+        if kind=='dispersion_diagram':
+            try:data.update(parse_dispersion_diagram(text))
+            except ZemaxError as exc:
+                exc.details['native_text']=str(path)
+                raise
+        if kind=='dispersion_vs_wavelength':
+            try:data.update(parse_dispersion_vs_wavelength(text))
+            except ZemaxError as exc:
+                exc.details['native_text']=str(path)
+                raise
+        if kind=='yni_contributions':
+            from .basic_analyses import parse_yni_contributions
+            try:
+                parsed=parse_yni_contributions(text,task.get('context',{}).get('lens_units','unknown'))
+                data.update(parsed)
+            except ZemaxError as exc:
+                exc.details['native_text']=str(path)
+                raise
+        if kind=='source_spectrum_viewer':
+            from .basic_analyses import parse_source_spectrum
+            try:
+                data.update(parse_source_spectrum(text))
+            except ZemaxError as exc:
+                exc.details['native_text']=str(path)
+                raise
+        if kind=='directivity_plot':
+            from .basic_analyses import parse_directivity_plot
+            try:
+                data.update(parse_directivity_plot(text))
+            except ZemaxError as exc:
+                exc.details['native_text']=str(path)
+                raise
+        if kind=='polarization_transmission_fan':
+            from .basic_analyses import parse_polarization_transmission_fan
+            try:
+                data.update(parse_polarization_transmission_fan(text))
+            except ZemaxError as exc:
+                exc.details['native_text']=str(path)
+                raise
+        if kind=='glass_map':
+            try:data.update(parse_glass_map(text))
+            except ZemaxError as exc:
+                exc.details['native_text']=str(path)
+                raise
+        if kind=='athermal_glass_map':
+            try:data.update(parse_athermal_glass_map(text))
+            except ZemaxError as exc:
+                exc.details['native_text']=str(path)
+                raise
         if kind in {'fft_surface_mtf','huygens_surface_mtf'}:
             from .surface_mtf import describe_surface_mtf
             describe_surface_mtf(data,settings['requested'],task['system_settings']['mtf_units'])
@@ -646,13 +982,7 @@ class AnalysesMixin:
             raise ZemaxError('NO_RESULT_DATA','衍射效率分析没有返回曲线或网格；请检查体全息模型及原生消息。',
                 native_messages=data['native_messages'],native_preamble=preamble,native_text=str(path))
         if kind.startswith('diff_efficiency_'):
-            for s in data['series']:
-                s.update(x_unit='degrees' if kind=='diff_efficiency_angular' else 'micrometers',
-                         y_unit='dimensionless',value_quantity='diffraction efficiency')
-            for g in data['grids']:
-                g['native_axes']={key:g[key] for key in ('x_label','y_label','value_label','min_x','min_y','dx','dy')}
-                g.update(x_label='Angle',y_label='Wavelength',value_label='Diffraction efficiency',
-                         x_unit='degrees',y_unit='micrometers',value_unit='dimensionless')
+            label_diff_efficiency(data,kind)
         if kind in {"fft_psf_cross","huygens_psf_cross"}and not data.get("series"):
             section=parse_psf_section(text)
             if section:data["series"]=[section];data["structured_data_available"]=True

@@ -72,6 +72,19 @@ def test_design_cooke(kind):
     asyncio.run(execute('design_cooke020_'+kind,work))
 
 @pytest.mark.zemax
+def test_ray_aiming_wizard_options_closes_without_mutation():
+    async def work(e):
+        await e.call('open_lens',dict(path=str(Path.home()/'Documents/Zemax/Samples/Sequential/Objectives/Cooke 40 degree field.zos')))
+        before_settings=await e.call('get_system_settings')
+        before_surfaces=await e.call('get_surfaces')
+        options=await e.call('get_design_tool_options',dict(request=dict(kind='ray_aiming_wizard')))
+        assert options['kind']=='ray_aiming_wizard'
+        assert options['settings']=={}
+        assert await e.call('get_system_settings')==before_settings
+        assert await e.call('get_surfaces')==before_surfaces
+    asyncio.run(execute('ray_aiming_options_repeat20261108',work))
+
+@pytest.mark.zemax
 @pytest.mark.parametrize('kind',['nsc','bitmap','roadway'])
 def test_design_nsc_wizard_options(kind):
     async def work(e):

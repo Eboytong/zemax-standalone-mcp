@@ -1,9 +1,0 @@
-{
-  "version": "0.1.50",
-  "wheel": "wheels/zemax_standalone_mcp-0.1.50-py3-none-any.whl",
-  "installation": "verification/development/BASE-04/wheel-install050-final",
-  "ordinary_passed": 1712,
-  "native_wheel_passed": 2,
-  "evidence": "verification\\development\\CO-01\\acceptance052\\summary.json",
-  "schema": "Existing request schema retained. Read access temporarily enables native layer snapshots then restores original flag; restore failure reports possible mutation and requires reconnect."
-}

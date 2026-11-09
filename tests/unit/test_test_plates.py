@@ -70,7 +70,7 @@ def test_resource_discovery_and_explicit_file_rows(tmp_path):
     assert error.value.code == 'INVALID_RESOURCE'
 
 
-def fake_native(tmp_path, *, export=True, closed=True, running=False, malformed=False):
+def fake_native(tmp_path, *, export=True, closed=True, running=False, malformed=False, cfg_loaded=True):
     directory = tmp_path / 'Testplate'
     directory.mkdir()
     (directory / 'Active.tpd').write_text('A 1 2 0')
@@ -81,7 +81,10 @@ def fake_native(tmp_path, *, export=True, closed=True, running=False, malformed=
             return False
         Path(path).write_text('unknown' if malformed else '目录 Active.tpd\nA\t1.0000\t2.0000\tX\tX\n', encoding='utf-16')
         return True
-    tool = NS(GetSettings=lambda: NS(GetType=lambda: NS(FullName='AS_Default')),
+    def load(path):
+        state['loaded_path'] = path
+        return cfg_loaded
+    tool = NS(GetSettings=lambda: NS(GetType=lambda: NS(FullName='AS_Default'), LoadFrom=load),
               Apply=lambda: None, IsRunning=lambda: running,
               GetResults=lambda: NS(GetTextFile=text, NumberOfMessages=0))
     def close(owner):
@@ -138,3 +141,47 @@ def test_close_failure_retains_original_export_error(tmp_path):
         list(task['iterator'])
     assert error.value.code == 'NO_RESULT_DATA'
     assert error.value.details['cleanup_warnings'] == ['native Close refused']
+
+
+@pytest.mark.parametrize('value', ['', 'relative.CFG', 'C:\\bad.txt'])
+def test_cfg_path_contract(value):
+    with pytest.raises(ValidationError):
+        RunAnalysis(request=dict(kind='test_plate_list', native_settings_file=value))
+
+
+def test_cfg_file_method_conflict(tmp_path):
+    with pytest.raises(ValidationError):
+        RunAnalysis(request=dict(kind='test_plate_list', catalog_file='Active.tpd', method='file',
+                                 native_settings_file=str(tmp_path / 'native.CFG')))
+
+
+@pytest.mark.parametrize('accepted', [True, False])
+def test_native_configuration_load_and_close(tmp_path, accepted):
+    b, task, state = fake_native(tmp_path, cfg_loaded=accepted)
+    cfg = tmp_path / 'native.CFG'
+    cfg.write_bytes(b'owned native configuration')
+    run_test_plates(b, RunAnalysis(request=dict(kind='test_plate_list', method='native',
+        catalog_file='Active.tpd', native_settings_file=str(cfg))).request)
+    if accepted:
+        list(task['iterator'])
+        assert task['payload']['native_configuration']['actual_catalog_file'] == 'Active.tpd'
+        assert task['payload']['computation_method'] == 'native_TestPlateList_text'
+    else:
+        with pytest.raises(ZemaxError, match='配置加载') as error:
+            list(task['iterator'])
+        assert error.value.code == 'CFG_LOAD_FAILED'
+    assert state['loaded_path'] == str(cfg)
+    assert state['close_count'] == 1
+
+
+def test_explicit_cfg_mismatch_never_uses_file_fallback(tmp_path):
+    b, task, state = fake_native(tmp_path)
+    cfg = tmp_path / 'native.CFG'
+    cfg.write_bytes(b'owned native configuration')
+    run_test_plates(b, RunAnalysis(request=dict(kind='test_plate_list', method='auto',
+        catalog_file='Other.tpd', native_settings_file=str(cfg))).request)
+    with pytest.raises(ZemaxError) as error:
+        list(task['iterator'])
+    assert error.value.details['actual'] == 'Active.tpd'
+    assert state['close_count'] == 1
+    assert 'fallback_reason' not in task['payload']

@@ -1,0 +1,205 @@
+{
+  "round": "parallel-02",
+  "started_at": "2026-11-08T09:24:02.491849+00:00",
+  "state": "closed_native_blocked",
+  "goal": "restore_native_and_accept_three_new_functions",
+  "baseline": {
+    "version": "0.1.62",
+    "source_tools": 101,
+    "source_analyses": 130,
+    "accepted_since_check": 3,
+    "remaining_functions": 93
+  },
+  "target_new_acceptances": 3,
+  "accepted_this_round": [],
+  "queue": [
+    "EXT-HPC.Settings",
+    "ED-02.MaterialModel.Material",
+    "ED-02.SurfacePickup.ChipZone",
+    "ED-02.SurfacePickup.MechanicalSemiDiameter"
+  ],
+  "workers": {
+    "zemax-p01-runtime": {
+      "task": "development/assignments/parallel-02/runtime.md",
+      "state": "idle_reusable",
+      "sessionId": "session-a0bef4ab-ed11-492b-8bdc-a7e6f8328ee2",
+      "workspace": "C:\\Users\\tonge\\Desktop\\Zemax_MCP",
+      "status": "idle",
+      "nextSeq": 4340,
+      "checkedAt": "2026-11-08T10:08:11.011Z",
+      "review_result": "startup_diagnostic_closed_blocked_and_offline_integration_approved"
+    },
+    "zemax-p01-material-model": {
+      "task": "development/assignments/parallel-02/material-model.md",
+      "state": "idle_reusable",
+      "sessionId": "session-d835e885-44ad-4a22-b102-f3023b763288",
+      "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-model\\Zemax_MCP",
+      "status": "idle",
+      "nextSeq": 3108,
+      "checkedAt": "2026-11-08T10:08:11.058Z",
+      "review_result": "model_probe_fix_approved_integrated_full_scope_pending"
+    },
+    "zemax-p01-polarization": {
+      "task": "development/assignments/parallel-02/polarization.md",
+      "state": "idle_reusable",
+      "sessionId": "session-d7099139-d9de-40dd-ac92-0bc63a0ab2e3",
+      "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-polarization\\Zemax_MCP",
+      "status": "idle",
+      "nextSeq": 3223,
+      "checkedAt": "2026-11-08T10:08:11.026Z",
+      "review_result": "pickup_probe_fix_approved_integrated_native_pending"
+    },
+    "zemax-p01-material-reports": {
+      "task": "development/assignments/parallel-02/material-reports.md",
+      "state": "idle_reusable",
+      "sessionId": "session-77083914-74d1-4c3b-a4a3-0c2f6394a67b",
+      "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-reports\\Zemax_MCP",
+      "status": "idle",
+      "nextSeq": 2789,
+      "checkedAt": "2026-11-08T10:08:11.043Z",
+      "review_result": "hpc_test_fix_approved_integrated_native_pending"
+    },
+    "zemax-p01-hologram": {
+      "task": "development/assignments/parallel-02/hologram.md",
+      "state": "idle_reusable",
+      "sessionId": "session-da391898-d135-4e0c-80ea-321231072b9d",
+      "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-hologram\\Zemax_MCP",
+      "status": "idle",
+      "nextSeq": 2152,
+      "checkedAt": "2026-11-08T10:08:11.089Z",
+      "review_result": "independent_review_recorded_with_observation_limits"
+    },
+    "zemax-p01-gradium": {
+      "task": "development/assignments/parallel-02/gradium.md",
+      "state": "idle_reusable",
+      "sessionId": "session-fb3221ce-907f-4072-99d2-1a3fb5d62f96",
+      "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-gradium\\Zemax_MCP",
+      "status": "idle",
+      "nextSeq": 2604,
+      "checkedAt": "2026-11-08T10:08:11.075Z",
+      "review_result": "official_definition_review_approved"
+    }
+  },
+  "standby_worker": "zemax-p01-gradium",
+  "supervision_interval_seconds": 60,
+  "native_owner": "zemax-p01-runtime",
+  "monitor_session_id": 37428,
+  "supervision_state": "stopped",
+  "reviews": [
+    {
+      "worker": "zemax-p01-runtime",
+      "decision": "approved_with_corrections",
+      "notes": [
+        "GUI observed by coordinator sky; no targetable owned window and no Alt+F4. Cleanup was forced.",
+        "two bounded startup groups",
+        "startup results do not establish root cause without direct evidence"
+      ]
+    },
+    {
+      "worker": "zemax-p01-material-model",
+      "decision": "approved_with_corrections",
+      "notes": [
+        "readback, roundtrip and recovery coverage",
+        "formal spectral definition search",
+        "retain original numeric tolerances"
+      ]
+    },
+    {
+      "worker": "zemax-p01-material-reports",
+      "decision": "approved_with_corrections",
+      "notes": [
+        "separate actual success acceptance from null error path",
+        "record actual disconnect and tool ownership evidence"
+      ]
+    },
+    {
+      "worker": "zemax-p01-polarization",
+      "decision": "approved_with_corrections",
+      "notes": [
+        "retain mode after source change and save/reload",
+        "classify prevalidation versus partial native failure",
+        "minimal helper only; no shared capability field"
+      ]
+    },
+    {
+      "worker": "zemax-p01-hologram",
+      "decision": "corrections_requested",
+      "notes": [
+        "unconfigured non-null HPC object is valid query",
+        "derive actual close from receipt and process; void native return allowed",
+        "diagnostic attempts may close as blocked"
+      ]
+    },
+    {
+      "worker": "zemax-p01-runtime",
+      "decision": "offline_integration_approved",
+      "files": [
+        "tests/support/hpc.py",
+        "tests/native/test_hpc_live.py",
+        "tests/unit/test_hpc_success_driver.py",
+        "scripts/probes/D002-MODEL_GLASS/solve_contract.py",
+        "scripts/probes/D002-MODEL_GLASS/model_glass_control018.py",
+        "tests/unit/test_material_model_reference.py",
+        "scripts/probes/ED-02/pickup_adoption_helper.py",
+        "tests/unit/test_pickup_adoption_helper.py"
+      ],
+      "native_acceptance": "not_executed",
+      "notes": []
+    }
+  ],
+  "native_recovery": {
+    "state": "blocked",
+    "queue": "paused",
+    "root_cause": "not_located",
+    "gui_review_aborted_pid": 41804,
+    "gui_completed_pid": 12736,
+    "api_opticstudio_pid": 1236,
+    "gui_result": "180s_no_operable_main_ui_forced_cleanup",
+    "api_result": "application_create_timeout",
+    "api_elapsed_seconds": 180.1439575,
+    "normal_close_observed": false,
+    "owned_opticstudio_remaining": 0,
+    "gate_first_process": "not_passed",
+    "gate_stdio_process": "not_executed",
+    "evidence": "development/evidence/BASE-04/parallel-02-runtime-20261108.md",
+    "last_process_check_at": "2026-11-08T10:10:16.971175+00:00"
+  },
+  "actual_new_acceptances": 0,
+  "accepted_since_check": 3,
+  "ended_at": "2026-11-08T10:10:16.971175+00:00",
+  "completion_target_met": false,
+  "supervision_closeout": "development/evidence/BASE-04/parallel-02-supervision.json",
+  "checks": "development/evidence/BASE-04/parallel-02-checks.json",
+  "summary": "development/evidence/BASE-04/dsh-parallel-02-20261108.md",
+  "next_action": "先取得新的启动依据或明确修复并恢复常规OpticStudio，再通过两进程恢复门槛。离线先补Model Glass公式/PgF/环境参考和持久/恢复探针；原生恢复后按固定队列验收。",
+  "feature_results": [
+    {
+      "item": "EXT-HPC.Settings",
+      "state": "implemented",
+      "native": "not_executed",
+      "complete": false,
+      "evidence": "development/evidence/EXT-HPC/parallel-02-query-checks-20261108.md"
+    },
+    {
+      "item": "ED-02.MaterialModel.Material",
+      "state": "implemented",
+      "native": "not_executed",
+      "complete": false,
+      "evidence": "development/evidence/ED-02/parallel-02-material-model-20261108.md"
+    },
+    {
+      "item": "ED-02.SurfacePickup.ChipZone",
+      "state": "blocked",
+      "native": "not_executed",
+      "complete": false,
+      "evidence": "development/evidence/ED-02/parallel-02-pickup-20261108.md"
+    },
+    {
+      "item": "ED-02.SurfacePickup.MechanicalSemiDiameter",
+      "state": "blocked",
+      "native": "not_executed",
+      "complete": false,
+      "evidence": "development/evidence/ED-02/parallel-02-pickup-20261108.md"
+    }
+  ]
+}

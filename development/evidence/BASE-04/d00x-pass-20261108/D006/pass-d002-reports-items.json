@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "task": "D002.MATERIAL_REPORTS",
+  "group": "D002",
+  "group_name": "材料、色散与GRIN模型",
+  "agent": "Agent 2 (四类材料图表与色散 / zemax-p01-material-reports)",
+  "effective_date": "2026-11-08",
+  "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-reports\\Zemax_MCP",
+  "branch": "codex/d002-material-reports",
+  "source_baseline": "34e1a18494015c2b383ec700b958015020b660fe",
+  "source_version": "0.1.62",
+  "opticstudio": "24.2.0 build 240529 PremiumEdition",
+  "executed_native_this_round": false,
+  "changes_product_code": false,
+  "changes_shared_ledgers": false,
+  "report_documents": [
+    ".local/coordination/final-report.md",
+    ".local/coordination/athermal-reference-plan.md"
+  ],
+  "items": [
+    {
+      "canonical_item_id": "MA-01.GlassMap",
+      "report_title": "玻璃图",
+      "ledger_status_analyses_csv": "implemented",
+      "ledger_status_operations_csv": "blocked",
+      "finding": "346/346",
+      "latest_finding": "346/346",
+      "detail": "All 346 report rows resolve against the installed SCHOTT.AGF (365 NM entries) after case-insensitive normalisation; zero unmatched, zero numeric mismatches. Exactly seven names differ only in spelling: LF5HTI/LF5HTi, LLF1HTI/LLF1HTi, N-BK7HTI/N-BK7HTi, N-SF57HTULTRA/N-SF57HTultra, N-SF6HTULTRA/N-SF6HTultra, N-SK5HTI/N-SK5HTi, SF57HTULTRA/SF57HTultra.",
+      "checks": [
+        {
+          "name": "catalog_identity_offline",
+          "artifact": ".local/coordination/offline-check.out.json",
+          "report_rows": 346,
+          "matched_case_insensitive": 346,
+          "unmatched": 0,
+          "mismatches": 0,
+          "catalog_nm_entries": 365,
+          "catalog_sha256": "8eb91c9ade15a1b70cd9548026465b059739e1e2cb59ad712dec226d2bace8c0",
+          "result": "pass"
+        }
+      ],
+      "open_gaps": [
+        "formal analysis-level selection: AS_Default exposes only IsValid/IsActiveWindow; the only formal selection is the system-level update_system_settings(material_catalogs=[...])",
+        "native identity test remains xfail until it compares case-normalised names; the seven items are spelling variants, not missing catalog data"
+      ],
+      "formal_selection_gap": true,
+      "proposed_ledger_action": "keep analyses.csv implemented; keep operations.csv blocked; xfail may be lifted only after switching to normalised comparison and re-running native",
+      "evidence": [
+        ".local/coordination/offline-check.out.json",
+        "development/evidence/MA-01/**",
+        "tests/unit/test_material_reports_reference.py",
+        "tests/native/test_glass_map_live.py"
+      ]
+    },
+    {
+      "canonical_item_id": "MA-01.AthermalGlassMap",
+      "report_title": "消热差玻璃图",
+      "ledger_status_analyses_csv": "implemented",
+      "ledger_status_operations_csv": "blocked",
+      "finding": "temperature 359/364 with five resource gaps",
+      "latest_finding": "temperature 359/364 + five resource gaps",
+      "detail": "Independent offline reference reproduces 359 of 364 retained native rows within 5e-9. Five rows are skipped with their catalog and native values retained: F2HTi (CD record starts with a placeholder) and P-SK57Q1 / REALVIEW_2.0 / LF5G15 / SF66 (empty TD records).",
+      "checks": [
+        {
+          "name": "thermal_power_359_of_364",
+          "artifact": ".local/coordination/athermal-reference.out.json",
+          "native_rows": 364,
+          "compared": 359,
+          "within_5e_9": 359,
+          "max_abs_difference": 4.9452123175592664e-09,
+          "median_abs_difference": 2.4374183316216225e-09,
+          "tolerance": 5e-09,
+          "result": "pass for the 359 compared rows"
+        },
+        {
+          "name": "chromatic_power_equal_wavelength",
+          "artifact": ".local/coordination/athermal-reference.out.json",
+          "compared": 363,
+          "max_abs_difference": 0.0,
+          "native_nonzero": 0,
+          "note": "the system uses 0.55/0.55/0.55 um, so phi=0 is forced by definition and only proves the chain, not the implementation",
+          "result": "pass"
+        }
+      ],
+      "resource_gaps": [
+        {
+          "glass": "F2HTi",
+          "cause": "CD record starts with a catalog placeholder",
+          "catalog_line": "NM F2HTi 2 620364.360 1.62004 36.37 0 1 ; CD _ 9.977438710E-03 2.090731760E-01 ... (remaining five coefficients identical to F2)",
+          "native_thermal_power": 5.91e-06,
+          "action": "skip; record incomplete"
+        },
+        {
+          "glass": "P-SK57Q1",
+          "cause": "TD record carries no thermal coefficients",
+          "catalog_line": "NM P-SK57Q1 2 586595.301 1.586 59.5 0 1 ; ED 7.230000 8.900000 3.012000 -0.002400 0 ; TD empty",
+          "native_thermal_power": -4.71e-06,
+          "action": "skip; no D0..Ltk"
+        },
+        {
+          "glass": "REALVIEW_2.0",
+          "cause": "TD record carries no thermal coefficients",
+          "catalog_line": "NM REALVIEW_2.0 2 001291.510 2.001017 29.14 0 1 ; TD empty",
+          "native_thermal_power": -5.55e-06,
+          "action": "skip; no D0..Ltk"
+        },
+        {
+          "glass": "LF5G15",
+          "cause": "TD record carries no thermal coefficients",
+          "catalog_line": "NM LF5G15 2 584408.322 1.58397 40.83 0 2 ; TD empty",
+          "native_thermal_power": -6.78e-06,
+          "action": "skip; no D0..Ltk"
+        },
+        {
+          "glass": "SF66",
+          "cause": "TD record carries no thermal coefficients",
+          "catalog_line": "NM SF66 2 923209.603 1.92286 20.88 0 2 - ; TD empty",
+          "native_thermal_power": -7.08e-06,
+          "action": "skip; no D0..Ltk"
+        }
+      ],
+      "closed_gap": {
+        "glass": "B270",
+        "cause": "dispersion formula 1",
+        "resolution": "official Schott power series implemented; reference -5.3900e-06 matches native -5.39e-06 within 5e-9"
+      },
+      "temperature_semantics": {
+        "validated_scope": "catalog reference temperature only (TD field 7; BK7G18 = 20 C), 0.55 um, 1 atm",
+        "implemented": "D1/D2/E1 retained in the analytic derivative; relative_index_at_temperature and relative_dn_dt(temperature_c=...) apply a real delta and recompute the air term at that temperature",
+        "gate": "any temperature other than the catalog reference raises ValueError unless allow_unvalidated_temperature=True",
+        "product_limitation": "no system environment temperature setter: SystemPatch (src/zemax_mcp/models.py:186) has no temperature field and backend.py:749 is read-only; MCE TEMP (src/zemax_mcp/universal_configuration.py:17) changes the configuration temperature, not the environment temperature",
+        "not_a_substitute": "the 359/364 comparison holds at the catalog reference temperature only"
+      },
+      "open_gaps": [
+        "five resource gaps above remain explicit skips",
+        "environment-temperature sweep has no native evidence and no formal product setter (job ma01-athermal-temperature-sweep is not_executable_this_pass)",
+        "formal analysis-level selection missing"
+      ],
+      "formal_selection_gap": true,
+      "proposed_ledger_action": "keep implemented without declaring completion; keep operations.csv blocked",
+      "evidence": [
+        ".local/coordination/athermal-reference.out.json",
+        ".local/coordination/athermal-gaps.json",
+        ".local/coordination/athermal-reference-plan.md",
+        "tests/support/athermal_reference.py",
+        "tests/unit/test_athermal_reference.py"
+      ]
+    },
+    {
+      "canonical_item_id": "MA-01.DispersionDiagram",
+      "report_title": "色散图",
+      "ledger_status_analyses_csv": "implemented",
+      "ledger_status_operations_csv": "blocked",
+      "finding": "index reference max 4.966e-8 below the 5.1e-8 gate",
+      "latest_finding": "index reference 4.966168343223387e-08 < 5.1e-8",
+      "detail": "101 native index points over 0.4-0.8 um reproduced by the catalog dispersion formulas; the worst absolute index difference stays below the 5.1e-8 gate.",
+      "checks": [
+        {
+          "name": "refractive_index_reference",
+          "artifact": ".local/coordination/offline-check.out.json",
+          "points": 101,
+          "wavelength_range_um": [0.4, 0.8],
+          "max_index_error": 4.966168343223387e-08,
+          "tolerance": 5.1e-08,
+          "result": "pass"
+        }
+      ],
+      "open_gaps": [
+        "formal analysis-level selection missing",
+        "the native catalogue screening rule behind the plotted glass subset is not defined"
+      ],
+      "formal_selection_gap": true,
+      "proposed_ledger_action": "keep implemented; keep operations.csv blocked",
+      "evidence": [
+        ".local/coordination/offline-check.out.json",
+        "tests/unit/test_dispersion_diagram.py"
+      ]
+    },
+    {
+      "canonical_item_id": "MA-01.DispersionvsWavelength",
+      "report_title": "色散随波长",
+      "ledger_status_analyses_csv": "implemented",
+      "ledger_status_operations_csv": "blocked",
+      "finding": "centred difference within gate, four analytic derivative points over",
+      "latest_finding": "centred difference 3.4899999992843433e-05 < 5e-5; 4 analytic derivative points over 5.1e-8",
+      "detail": "99 centred-difference values stay under the 5e-5 gate, but the analytic derivative comparison exceeds the 5.1e-8 gate at four wavelengths. That comparison remains a diagnostic only; the native difference step and algorithm are not defined, so it is not used to accept or reject the report adaptation.",
+      "checks": [
+        {
+          "name": "centred_difference",
+          "artifact": ".local/coordination/offline-check.out.json",
+          "points": 99,
+          "max_centered_difference_error": 3.4899999992843433e-05,
+          "tolerance": 5e-05,
+          "result": "pass"
+        },
+        {
+          "name": "analytic_derivative_diagnostic",
+          "artifact": ".local/coordination/offline-check.out.json",
+          "max_analytic_error": 5.9190213202997555e-08,
+          "tolerance": 5.1e-08,
+          "points_over_tolerance": [
+            {"wavelength_um": 0.408, "error": 5.7254190610755984e-08},
+            {"wavelength_um": 0.416, "error": 5.9190213202997555e-08},
+            {"wavelength_um": 0.432, "error": 5.155125624989321e-08},
+            {"wavelength_um": 0.488, "error": 5.4155366496777546e-08}
+          ],
+          "result": "over tolerance at 4 points; retained as diagnostic, not an acceptance basis"
+        }
+      ],
+      "open_gaps": [
+        "formal analysis-level selection missing",
+        "the native dn/dlambda difference step and algorithm are undefined, which is why the analytic comparison cannot gate acceptance"
+      ],
+      "formal_selection_gap": true,
+      "proposed_ledger_action": "keep implemented; keep operations.csv blocked",
+      "evidence": [
+        ".local/coordination/offline-check.out.json",
+        "tests/unit/test_dispersion_diagram.py"
+      ]
+    }
+  ],
+  "shared_findings": {
+    "formal_selection_gap_all_four": "All four analyses run as AS_Default and expose only IsValid/IsActiveWindow; no wavelength, temperature/pressure, material or catalog selector exists at the analysis level. The only formal selection is the system-level update_system_settings(material_catalogs=[...]).",
+    "operations_vs_analyses_inconsistency": "analyses.csv records implemented for all four while operations.csv keeps all four blocked; the coordinator must adjudicate rather than the worker unifying them.",
+    "thresholds": {
+      "thermal_and_chromatic": "5e-9 = half the displayed least significant bit (thermal 2 decimals x 1e-6; chromatic 5 decimals x 1e-3)",
+      "index_reference": "5.1e-8",
+      "centred_difference": "5e-5",
+      "note": "derived from displayed resolution, never fitted to native output"
+    }
+  },
+  "summary": {
+    "items_total": 4,
+    "items_with_independent_reference_passing": 4,
+    "items_with_open_data_gaps": 1,
+    "items_with_scope_reductions": 1,
+    "new_done_this_round": 0,
+    "ledger_status_unchanged": true
+  }
+}

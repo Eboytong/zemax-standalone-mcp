@@ -1,5 +1,13 @@
 # 样板目录
 
+`native_settings_file` 接受原生保存的 CFG 绝对路径，限 `auto/native`。分析对象在执行前调用正式 `LoadFrom`，结果记录路径、加载返回值及报告头中的实际目录。配合 `catalog_file` 时核对目录身份；不一致返回 `SETTING_NOT_SUPPORTED`，保留原生报告。Applied活动目录的正式 SaveTo/LoadFrom独立stdio重放通过；1798次尺寸对照误差0。另一原生配置重放仍采用Applied，第二目录选择尚未通过验收。
+
+```json
+{"request":{"kind":"test_plate_list","method":"native","catalog_file":"Atoptical.tpd","native_settings_file":"C:/Users/tonge/Desktop/mcp/.local/evidence/development/MF-01/Atoptical.CFG"}}
+```
+
+2026-11-09当前接口和真实stdio续验：2项原生用例通过，1798次目录尺寸检查最大误差0；正式原生目录选择仍待接口。详见[本轮证据](../../../development/evidence/MF-01/manufacturing-controls-20261109.md)。
+
 新增 `run_analysis` 的 `test_plate_list`，复用任务查询、取消、结果文件及 `start/count` 行分页。资源发现使用 `get_system_resources` 的 `test_plate_files`，目录来自当前原生应用的 `ZemaxDataDir/Testplate`。
 
 ```json

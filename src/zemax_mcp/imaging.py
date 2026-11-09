@@ -90,10 +90,6 @@ def check(native,s,name,value):
 
 def configure(backend,s,q):
     if q.kind in EXTRA:return configure_extra(backend,s,q)
-    if q.kind=='geometric_bitmap_image' and not callable(getattr(s,'GetFileNames',None)):
-        raise ZemaxError('UNSUPPORTED_INTERFACE','本机几何位图分析未公开专题设置接口。',
-            kind=q.kind,analysis_id=IDS[q.kind],runtime_settings_type=str(s.GetType().FullName),
-            missing_method='GetFileNames',next_action='Inspect native CFG settings adoption and a formal result export before enabling this request.')
     available=[str(x)for x in (s.GetInputFileNames()if q.kind=='image_simulation'else s.GetFileNames())]
     matches=[name for name in available if name.casefold()==q.input_file.casefold()]
     extensions={'.bmp','.jpg','.png','.ima','.bim'}if q.kind=='image_simulation'else {'.ima','.bim'}
@@ -134,6 +130,9 @@ def configure(backend,s,q):
     return result
 
 def run_imaging(backend,q):
+    if q.kind=='geometric_bitmap_image':
+        from .bitmap_image import run_bitmap_image
+        return run_bitmap_image(backend,q)
     backend._require_sequential(focused=True)
     if q.field>backend.system.SystemData.Fields.NumberOfFields:
         raise ZemaxError('INDEX_OUT_OF_RANGE','图像中心视场编号越界。')

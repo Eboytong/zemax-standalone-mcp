@@ -1,0 +1,106 @@
+{
+  "assignment_id": "D002.MODEL_GLASS",
+  "item_id": "ED-02.MaterialModel.Material",
+  "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-model\\Zemax_MCP",
+  "branch": "codex/d002-material-model",
+  "baseline_commit": "34e1a18494015c2b383ec700b958015020b660fe",
+  "source_version": "0.1.62",
+  "python": "C:/Users/tonge/Desktop/Zemax_MCP/.venv/Scripts/python.exe",
+  "native_environment": "OpticStudio 24.2.0 build240529 PremiumEdition, one exclusive instance",
+  "status": "prepared, not executed; no functional completion is claimed",
+  "prerequisites": [
+    "Run serially in the runtime queue; no other native job may hold the instance.",
+    "Do not run either job before the implementation report is reviewed.",
+    "Both jobs create their own scratch system; no sample lens or user file is modified.",
+    "Judge the wavelength table by native_wavelength_count / active_wavelengths from get_system_settings; the saved-file WAVM slots (including the repeated 0.550 entries) are not evidence of active wavelengths."
+  ],
+  "jobs": [
+    {
+      "id": "JOB-D002-01",
+      "purpose": "Reproduce the existing Nd=1.6/Vd=60/dPgF=0.001 baseline under the unchanged gates.",
+      "cwd": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-model\\Zemax_MCP",
+      "command": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.venv\\Scripts\\python.exe -B -m pytest \"tests/native/test_extended_solves_live.py::test_material_solves_numeric_stdio[model]\" -q --run-zemax -p no:cacheprovider",
+      "inputs": {
+        "request": "material_model index_nd=1.6 abbe_vd=60 dpgf=0.001 vary_index=true vary_dpgf=true",
+        "wavelengths_um": [0.5875618, 0.5876, 0.4861327, 0.4861, 0.6562725, 0.6563],
+        "incidence_sines": [0.1, 0.2],
+        "model": "new system, plane interface at surface 1, six wavelengths, primary wavelength 2"
+      },
+      "outputs": {
+        "directory": ".local/runs/runs/material_model_numeric048_<hex>/",
+        "files": ["checks.json", "calls.json", "model-index.zos", "state/close_receipt.json"]
+      },
+      "expected_duration_seconds": "15-25",
+      "close_conditions": [
+        "The pytest harness disconnects the MCP session and shuts down the instance it created.",
+        "state/close_receipt.json exists and records native.closed=true."
+      ],
+      "success_criteria": "checks.json contains passing 'model rounded d index from Snell' and 'model rounded Abbe from Snell' entries.",
+      "failure_criteria": "Retain the original checks.json/calls.json and the failing actual value; the historical expectation is a Vd failure at 59.99988524798844 against 60 with atol=1e-5, rtol=1e-7.",
+      "notes": "Unchanged from the recorded repeat; it re-establishes the baseline before the control matrix."
+    },
+    {
+      "id": "JOB-D002-02",
+      "purpose": "A/B/C single-variable control matrix: line convention, fit residual, environment/air.",
+      "cwd": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-model\\Zemax_MCP",
+      "command": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.venv\\Scripts\\python.exe -B scripts/probes/D002-MODEL_GLASS/model_glass_control018.py .local/evidence/development/D002.MODEL_GLASS/parallel-01/model-control/",
+      "inputs": {
+        "settings_plan": [
+          {"id": "B0", "kind": "model", "request": "Nd=1.6, Vd=60, dPgF=0.001"},
+          {"id": "C1", "kind": "environment", "change": {"adjust_index_to_environment": false}, "restored": true},
+          {"id": "C2", "kind": "environment", "change": {"pressure_atm": 0}, "restored": true},
+          {"id": "C3", "kind": "environment", "change": {"temperature_c": 10}, "restored": true},
+          {"id": "B1", "kind": "model", "request": "only index_nd=1.5"},
+          {"id": "B2", "kind": "model", "request": "only abbe_vd=50"},
+          {"id": "B3", "kind": "model", "request": "only dpgf=0"}
+        ],
+        "write_budget": 12,
+        "planned_writes": 10,
+        "wavelengths_um": [0.5875618, 0.5876, 0.4861327, 0.4861, 0.6562725, 0.6563],
+        "model": "new system, plane interface at surface 1, six wavelengths, primary wavelength 2",
+        "direct_outlet": "ILDE.GetIndex(1, 6, double[6]) inside this probe only",
+        "task_timeout_seconds": 180
+      },
+      "outputs": {
+        "directory": ".local/evidence/development/D002.MODEL_GLASS/parallel-01/model-control/",
+        "files": ["anchors.json", "calls.json", "state/close_receipt.json", "native/"],
+        "anchors_fields": [
+          "cases[].active_wavelength_count",
+          "cases[].active_wavelengths",
+          "cases[].native_wavelength_count",
+          "cases[].solve_readback",
+          "cases[].get_index",
+          "cases[].get_index_return",
+          "cases[].snell",
+          "cases[].snell_minus_direct",
+          "cases[].snell_vs_direct",
+          "cases[].angle_agreement",
+          "cases[].diagnostics_passed",
+          "cases[].vd_classic",
+          "cases[].vd_physical",
+          "cases[].gates.nd",
+          "cases[].gates.vd_classic",
+          "cases[].gates.vd_physical",
+          "acceptance.per_case",
+          "acceptance.diagnostics_passed",
+          "acceptance.acceptance_passed",
+          "cleanup_error",
+          "active_task_after_shutdown",
+          "close_receipt.content"
+        ]
+      },
+      "expected_duration_seconds": "45-90",
+      "close_conditions": [
+        "anchors.json records closed=true after a successful disconnect.",
+        "state/close_receipt.json exists and its parsed content is stored under close_receipt.content with native.closed=true.",
+        "active_task_after_shutdown must be false.",
+        "Any shutdown failure is recorded as cleanup_error and must not replace the original exception.",
+        "On any exception the record keeps error{type,message} plus task_state/task/task_result for native task failures, the original exception is re-raised, and the process still disconnects and shuts down."
+      ],
+      "success_criteria": "Diagnostic run completes: all seven cases recorded, writes<=12, no error field, close receipt parsed and closed, diagnostics_passed=true.",
+      "failure_criteria": "Retain anchors.json with the original error and the partially recorded cases; do not re-run with adjusted tolerances.",
+      "expected_outcome": "acceptance_passed=false is the expected outcome (Vd gate unchanged at 1e-5+1e-7*|ref| and the residual is unexplained). A false acceptance flag is not a job failure; the job fails only on error/close problems.",
+      "notes": "Gate results are recorded, not asserted. The reference is the requested Nd/Vd input; no native curve is fitted and re-compared."
+    }
+  ]
+}

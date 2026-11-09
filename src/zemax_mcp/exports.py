@@ -27,6 +27,35 @@ def acis_metadata(path,format,requested_version=None):
     return actual
 
 
+def iges_layer_metadata(path,requested_levels):
+    """Read direct IGES DE field5 after writer close for an explicit lens-only layer request."""
+    levels=set();pointers=set();records=0
+    try:
+        with path.open('r',encoding='ascii') as stream:
+            for line in stream:
+                if len(line)<73 or line[72]!='D':continue
+                sequence=int(line[73:80])
+                if sequence%2==0:continue
+                records+=1
+                field=line[32:40].strip();level=int(field) if field else 0
+                if level<0:pointers.add(-level)
+                else:levels.add(level)
+    except (ValueError,UnicodeError) as exc:
+        raise ZemaxError('INVALID_RESULT_DATA','IGES目录层号无法读取。',path=str(path),native_error=str(exc)) from exc
+    actual=dict(source='native IGES directory entry field5, columns33–40 of first DE record',
+        directory_entries=records,levels=sorted(levels),indirect_level_pointers=sorted(pointers),
+        requested_levels=sorted(requested_levels),scope='explicit sequential lens layers with no exported rays')
+    if records==0:raise ZemaxError('INVALID_RESULT_DATA','IGES未提供目录层号记录。',path=str(path),actual=actual)
+    if pointers:
+        raise ZemaxError('SETTING_UNAVAILABLE','IGES使用间接层定义，当前未能确认请求层号采用。',setting='lens_layer',path=str(path),actual=actual)
+    meaningful=levels if requested_levels=={0} else levels-{0}
+    if meaningful!=requested_levels:
+        raise ZemaxError('SETTING_REJECTED','IGES实际层号未采用请求。',setting='lens_layer',
+            requested=sorted(requested_levels),actual=actual,path=str(path))
+    actual['adopted']=True
+    return actual
+
+
 class ExportsMixin:
     def export_point_cloud(self,req):
         from .point_cloud import export
@@ -179,9 +208,14 @@ class ExportsMixin:
                 if sorted(p['configuration']for p in selected)!=list(range(1,configurations+1)):
                     raise ZemaxError('NO_RESULT_DATA','CAD多配置文件集合与请求配置不符。',directory=str(multi_directory),expected_configurations=configurations,files=[str(p)for p in files])
                 metadata=[dict(path=str(p),metadata=acis_metadata(p,req.format,req.file_version))for p in files]if req.format in {'SAT','SAB'}else []
+                if sequential and req.format=='IGES' and req.lens_layer is not None and req.number_of_rays==0:
+                    metadata=[dict(path=str(p),metadata=iges_layer_metadata(p,{req.lens_layer}))for p in files]
                 return dict(file_metadata=metadata,path=str(multi_directory),paths=[str(p)for p in files],configurations=selected,format=req.format,artifacts=[dict(kind='cad',path=str(p))for p in files])
             if not path.is_file():raise ZemaxError("NO_RESULT_DATA","CAD原生工具报告成功但没有生成输出文件。",path=str(path))
             metadata=acis_metadata(path,req.format,req.file_version)
+            if sequential and req.format=='IGES' and req.lens_layer is not None and req.number_of_rays==0:
+                expected_layers={req.lens_layer+i for i in range(configurations)} if mode=='all_by_layer' else {req.lens_layer}
+                metadata=iges_layer_metadata(path,expected_layers)
             return dict(path=str(path),format=req.format,**({"file_metadata":metadata}if metadata else {}),artifacts=[dict(kind="cad",path=str(path))])
         return self._start_task("cad_export",tool,actual,collector=collect)
 

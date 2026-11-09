@@ -1,6 +1,0 @@
-6.3. Global Optimizers Group (optimize tab, non-sequential)
-These are the Global Optimization Tools available in Non-sequential UI Mode.
-6.3.1. Global Optimizer (optimize tab, non-sequential)
-See also Global Optimizer .
-6.3.2. Hammer Optimizer (optimize tab, non-sequential)
-See also Hammer Optimizer .

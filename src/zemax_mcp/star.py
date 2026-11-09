@@ -18,6 +18,8 @@ BRANCHES = {
 FIT_FIELDS = dict(grid_1='Grid1', grid_2='Grid2', grid_3='Grid3', mba_max_level='MBAMaxLevel',
                   mba_tolerance='MBATol', mba_min_fill='MBAMinFill')
 FIT_RESULT_FIELDS = ('Points', 'FitLevels', 'FitAccuracy', 'FitFill', 'FitNorm', 'FitAverage', 'FitRMS', 'FitPV')
+STAR_LICENSE_REQUIREMENT = 'Ansys Zemax OpticStudio Enterprise-level license'
+STAR_LICENSE_SOURCE = 'OpticStudio User Manual 2024 R2, The STAR Tab, printed p.1708'
 
 
 def read_fields(obj, names):
@@ -48,7 +50,10 @@ class StarMixin:
     def _require_star(self):
         self._require_sequential()
         if not bool(self.native.application.IsSTARModuleEnabled):
-            raise ZemaxError('FEATURE_UNAVAILABLE', '当前原生应用未启用 STAR。', feature='STAR', enabled=False)
+            raise ZemaxError('FEATURE_UNAVAILABLE', '当前原生应用未启用 STAR。', feature='STAR', enabled=False,
+                             required_license=STAR_LICENSE_REQUIREMENT,
+                             requirement_source=STAR_LICENSE_SOURCE,
+                             next_action='Check Enterprise-level license availability, then verify IsSTARModuleEnabled in a new native application.')
 
     def _star_branch(self, surface, data_kind):
         self._require_star()
@@ -126,11 +131,68 @@ class StarMixin:
                           fit_evaluation_source='native fitted-data GetFitted* methods; native coordinate convention retained')
         return result
 
+    def _run_star_unload(self, q, data_kind):
+        imported_attr = BRANCHES[data_kind][1]
+        probe = self._star_branch(q.surface, data_kind).FEAData
+        if not bool(getattr(probe, imported_attr)):
+            raise ZemaxError('MISSING_FEA_DATA', 'No STAR data is loaded to unload.', data_kind=data_kind)
+
+        def read_state(data):
+            return dict(imported=bool(getattr(data, imported_attr)),
+                        total=int(data.NumberOfDataPoints), filename=str(data.Filename))
+
+        def flow(task):
+            self._cancel_boundary(task)
+            source, work = self.source_path, self.work_path
+            baseline_context = self.context()
+            self._mutate('star_' + q.kind)
+            snapshot = self.last_checkpoint
+            task['baseline'] = dict(path=snapshot, context=baseline_context)
+            task['payload'] = dict(operation=q.kind, data_kind=data_kind,
+                                   cancellation='cooperative between native calls; an active unload call completes before cancellation',
+                                   resource_ownership='STAR data objects owned by the optical system; no standalone native tool created')
+            try:
+                data = self._star_branch(q.surface, data_kind).FEAData
+                before = read_state(data)
+                src_file = Path(before['filename']) if before['filename'] else None
+                exists_before = src_file.exists() if src_file else None
+                task['payload']['before'] = before
+                data.UnloadData()
+                task['progress'] = 60
+                yield
+                self._cancel_boundary(task)
+                after = read_state(data)
+                exists_after = src_file.exists() if src_file else None
+                task['payload']['after'] = after
+                task['payload']['source_file'] = dict(
+                    path=(str(src_file) if src_file else None),
+                    exists_before=exists_before, exists_after=exists_after,
+                    no_source_delete_performed=True)
+                if after['imported']:
+                    raise ZemaxError('SETTING_REJECTED', 'Native STAR unload did not clear the imported flag.',
+                                     data_kind=data_kind, before=before, after=after)
+                # Detailed STAR read is best-effort; unavailability is recorded, not fatal.
+                try:
+                    task['payload']['detail'] = self.get_star_data(StarRead(surface=q.surface, data_kind=data_kind))
+                except Exception as detail_error:
+                    task['payload']['detail_unavailable'] = self._evaluation_error(detail_error)
+                task['payload']['final_context'] = self.context()
+            except Exception as original:
+                try: self._restore_model(task, snapshot, source, work)
+                except Exception as restore:
+                    raise ZemaxError('STAR_RESTORE_FAILED', 'STAR unload failed and baseline restoration failed.',
+                                     original_error=self._evaluation_error(original), restoration_error=self._evaluation_error(restore),
+                                     checkpoint=snapshot) from original
+                raise
+        return self._composite('star_operation', q.model_dump(), flow)
+
     def run_star_operation(self, req):
         q = req.request
         from .star_controls import CONTROL_KINDS, run_control
         if q.kind in CONTROL_KINDS: return run_control(self, q)
         data_kind = q.kind.split('_', 1)[1]
+        if q.kind.startswith('unload_'):
+            return self._run_star_unload(q, data_kind)
         branch = self._star_branch(q.surface, data_kind)
         source_file = None
         if q.kind.startswith('import_'):

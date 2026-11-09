@@ -19,10 +19,11 @@ def test_saved_task_products_are_exposed_only_after_successful_save(tmp_path):
 
 def test_failed_save_does_not_publish_a_result_path(tmp_path):
     backend = Backend.__new__(Backend)
-    backend.directory = tmp_path / "unavailable"
+    backend.directory = tmp_path
+    (tmp_path / 'failed.json').mkdir()
     task = {"task_id": "failed", "context": {}, "system_settings": {}}
     import pytest
-    with pytest.raises(FileNotFoundError):
+    with pytest.raises(OSError):
         backend._save_task_result(task, {})
     assert "result_path" not in backend._task_view(task)
     assert "result_artifacts" not in backend._task_view(task)

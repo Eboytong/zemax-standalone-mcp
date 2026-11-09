@@ -7,16 +7,19 @@ from .schema import Request,FiniteFloat,PositiveIndex,Index,Positive
 class PathAnalysis(Request):
     kind: Literal['path_analysis']
     path: Annotated[str,Field(min_length=1,max_length=32767)]
-    first_ray: PositiveIndex = 1
-    last_ray: Annotated[int,Field(strict=True,ge=-1)] = -1
+    first_ray: Annotated[PositiveIndex,Field(description='ZRD起始光线；PAF仅支持默认1。')] = 1
+    last_ray: Annotated[int,Field(strict=True,ge=-1,description='ZRD末光线，-1为全部；PAF仅支持-1。')] = -1
     filter: Annotated[str,Field(max_length=4096)] = ''
     generate_path_filters: bool = False
-    relative_minimum_flux: Annotated[FiniteFloat,Field(ge=0,le=1)] = 0
+    relative_minimum_flux: Annotated[FiniteFloat,Field(ge=0,le=1,description='ZRD支路末端/发射功率阈值；本机PAF仅支持默认0。')] = 0
     sort_by: Literal['TotalEndingFlux','NumberOfObjectsStruck','NumberOfBranches','LastObjectStruck','NumberOfUniqueObjectsStruck','AverageOpticalPathLength','NumberOfDiffractionEvents'] = 'TotalEndingFlux'
     @model_validator(mode='after')
     def conditions(self):
         if self.last_ray!=-1 and self.last_ray<self.first_ray:raise ValueError('last_ray须为-1（全部剩余光线）或不小于first_ray。')
-        if Path(self.path).suffix.lower()=='.paf' and self.filter:raise ValueError('PAF筛选须在追迹时设置，路径分析不接受追加filter。')
+        if Path(self.path).suffix.lower()=='.paf':
+            if self.filter:raise ValueError('PAF路径分析不接受追加filter。')
+            if self.relative_minimum_flux!=0:raise ValueError('本机PAF分析未实际采用relative_minimum_flux；PAF仅支持默认0，阈值分析请使用ZRD。')
+            if self.first_ray!=1 or self.last_ray!=-1:raise ValueError('本机PAF分析未实际采用首末光线范围；PAF仅支持first_ray=1、last_ray=-1，范围分析请使用ZRD。')
         return self
 
 

@@ -7,8 +7,8 @@ from tests.support import runtime_settings_probe as probe
 @pytest.mark.parametrize('state',['blocked','pending'])
 @pytest.mark.parametrize('fail_settings,close_ok',[(False,True),(True,True),(False,False)])
 def test_runtime_probe_closes_analysis_and_disconnects(tmp_path,monkeypatch,fail_settings,close_ok,state):
-    docs=tmp_path/'docs';docs.mkdir()
-    with (docs/'development-backlog.csv').open('w',encoding='utf-8',newline='') as stream:
+    docs=tmp_path/'development/ledgers';docs.mkdir(parents=True)
+    with (docs/'analyses.csv').open('w',encoding='utf-8',newline='') as stream:
         writer=csv.DictWriter(stream,fieldnames=['work_package','execution_state','item_id','native_enum'])
         writer.writeheader();writer.writerow(dict(work_package='PO-01',execution_state=state,item_id='PO-01.Transmission',native_enum='Transmission'))
     events=[]
@@ -31,8 +31,8 @@ def test_runtime_probe_closes_analysis_and_disconnects(tmp_path,monkeypatch,fail
 
 
 def test_runtime_probe_null_factory_in_explicit_mode(tmp_path,monkeypatch):
-    docs=tmp_path/'docs';docs.mkdir()
-    with (docs/'development-backlog.csv').open('w',encoding='utf-8',newline='')as stream:
+    docs=tmp_path/'development/ledgers';docs.mkdir(parents=True)
+    with (docs/'analyses.csv').open('w',encoding='utf-8',newline='')as stream:
         writer=csv.DictWriter(stream,fieldnames=['work_package','execution_state','item_id','native_enum'])
         writer.writeheader();writer.writerow(dict(work_package='NS-04',execution_state='in_progress',item_id='NS-04.Viewer',native_enum='Viewer'))
     events=[]

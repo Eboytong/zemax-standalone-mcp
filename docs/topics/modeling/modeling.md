@@ -91,3 +91,7 @@ set_variables 对顺序曲面、MCE 和非序列对象单元格共用原生返�
 `update_system_settings` 的 `global_reference_surface` 选择顺序系统的正编号全局参考面；原生布尔返回及实际编号均核对。`get_system_settings` 和 `get_surface_geometry` 返回当前参考面。默认编号保留原生行为，插入曲面可能改变其编号；不能将参考面自身的单位矩阵误作绝对世界姿态。
 
 非平面空气间隔的热拾取按手册2.1.1.4.4.2沿机械边缘长度计算，并考虑径向接触点变化。受控模型使用5度共同倾斜、前端R=50mm、接触半径3mm、CTE=100ppm/°C；半径保持固定，后端为平面。中心距离由边缘膨胀和新接触点Sag恢复，再用完整旋转矩阵转为全局端点。相互倾斜的非对称元件需要单独核对。
+## 环境设置条件（2024 R2）
+
+修改`temperature_c`或`pressure_atm`时，最终`adjust_index_to_environment`须为true；可在同一请求中启用。关闭修正时原生采用20°C和1 atm，非基准请求在模型写入前返回`SETTING_INACTIVE`，包含所需设置及条件来源。只关闭修正时，原生温压恢复该基准。实际值通过`get_system_settings`读取。
+

@@ -1,0 +1,1511 @@
+{
+ "schema_version": 1,
+ "scope": "CO-01.DiffEfficiencyAngular/Chromatic/2D native Hologram1 (native-only declaration)",
+ "source_run": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\runs\\runs\\diff_efficiency_offaxis059_native_bdfaeee137",
+ "session": "d5946d8262334d3cb2ff2ca6358a2622",
+ "files": [
+  "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\runs\\runs\\diff_efficiency_offaxis059_native_bdfaeee137\\calls.json",
+  "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\runs\\runs\\diff_efficiency_offaxis059_native_bdfaeee137\\checks.json",
+  "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\runs\\runs\\diff_efficiency_offaxis059_native_bdfaeee137\\reference_status.json",
+  "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\runs\\runs\\diff_efficiency_offaxis059_native_bdfaeee137\\cancellation.json",
+  "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\runs\\runs\\diff_efficiency_offaxis059_native_bdfaeee137\\state\\close_receipt.json"
+ ],
+ "call_counts": {
+  "cancel_task": 1,
+  "connect": 1,
+  "disconnect": 1,
+  "export_analysis_image": 6,
+  "get_surfaces": 5,
+  "get_system_settings": 2,
+  "get_task_result": 14,
+  "get_task_status": 17,
+  "open_lens": 2,
+  "run_analysis": 10,
+  "save_lens_as": 1,
+  "update_surfaces": 3,
+  "update_system_settings": 5
+ },
+ "reference": {
+  "implementation": "tests\\support\\kogelnik.py",
+  "atol": 1e-06,
+  "rtol": 1e-05,
+  "function": "unslanted_transmission(angle_deg, wavelength_um, polarization)"
+ },
+ "reference_status": {
+  "surface_model": "native",
+  "physical_reference_passed": true,
+  "physical_reference_failures": 0,
+  "maximum_physical_error": 0,
+  "interpretation": "Native independent S/P reference passed."
+ },
+ "checks_total": 384,
+ "checks_passed": 384,
+ "hologram1_surface": {
+  "snapshots": 5,
+  "last": {
+   "call_index": 63,
+   "units": "Millimeters",
+   "surface_type": "Hologram1",
+   "thickness": 100.0,
+   "thickness_header": "\u539a\u5ea6",
+   "material": "",
+   "parameter_headers": {
+    "parameter_1": "\u8bb0\u5f55\u70b9X1",
+    "parameter_2": "\u8bb0\u5f55\u70b9Y1",
+    "parameter_3": "\u8bb0\u5f55\u70b9Z1",
+    "parameter_4": "\u8bb0\u5f55\u70b9X2",
+    "parameter_5": "\u8bb0\u5f55\u70b9Y2",
+    "parameter_6": "\u8bb0\u5f55\u70b9Z2",
+    "parameter_7": "\u8bb0\u5f55\u6ce2\u957f",
+    "parameter_8": "\u884d\u5c04\u7ea7\u6b21",
+    "parameter_13": "\u4f53\u5168\u606f\uff1f",
+    "parameter_14": "Hologram Thickness",
+    "parameter_15": "n1",
+    "parameter_16": "n2",
+    "parameter_17": "n",
+    "parameter_18": "dn",
+    "parameter_19": "Shrinkage",
+    "parameter_20": "Index Shift"
+   },
+   "parameters": {
+    "parameter_1": 0.0,
+    "parameter_2": -100.0,
+    "parameter_3": -200.0,
+    "parameter_4": 0.0,
+    "parameter_5": 100.0,
+    "parameter_6": -200.0,
+    "parameter_7": 0.55,
+    "parameter_8": 1.0,
+    "parameter_13": 1,
+    "parameter_14": 0.01,
+    "parameter_15": 1.0,
+    "parameter_16": 1.0,
+    "parameter_17": 1.5,
+    "parameter_18": 0.02,
+    "parameter_19": 0.0,
+    "parameter_20": 0.0
+   },
+   "solve_types": {
+    "parameter_1": {
+     "type": "Fixed"
+    },
+    "parameter_2": {
+     "type": "Fixed"
+    },
+    "parameter_3": {
+     "type": "Fixed"
+    },
+    "parameter_4": {
+     "type": "Fixed"
+    },
+    "parameter_5": {
+     "type": "Fixed"
+    },
+    "parameter_6": {
+     "type": "Fixed"
+    },
+    "parameter_7": {
+     "type": "Fixed"
+    },
+    "parameter_8": {
+     "type": "Fixed"
+    },
+    "parameter_13": {
+     "type": "Fixed"
+    },
+    "parameter_14": {
+     "type": "Fixed"
+    },
+    "parameter_15": {
+     "type": "Fixed"
+    },
+    "parameter_16": {
+     "type": "Fixed"
+    },
+    "parameter_17": {
+     "type": "Fixed"
+    },
+    "parameter_18": {
+     "type": "Fixed"
+    },
+    "parameter_19": {
+     "type": "Fixed"
+    },
+    "parameter_20": {
+     "type": "Fixed"
+    }
+   }
+  },
+  "first": {
+   "call_index": 6,
+   "units": "Millimeters",
+   "surface_type": "Hologram1",
+   "thickness": 100.0,
+   "thickness_header": "\u539a\u5ea6",
+   "material": "",
+   "parameter_headers": {
+    "parameter_1": "\u8bb0\u5f55\u70b9X1",
+    "parameter_2": "\u8bb0\u5f55\u70b9Y1",
+    "parameter_3": "\u8bb0\u5f55\u70b9Z1",
+    "parameter_4": "\u8bb0\u5f55\u70b9X2",
+    "parameter_5": "\u8bb0\u5f55\u70b9Y2",
+    "parameter_6": "\u8bb0\u5f55\u70b9Z2",
+    "parameter_7": "\u8bb0\u5f55\u6ce2\u957f",
+    "parameter_8": "\u884d\u5c04\u7ea7\u6b21",
+    "parameter_13": "\u4f53\u5168\u606f\uff1f",
+    "parameter_14": "Hologram Thickness",
+    "parameter_15": "n1",
+    "parameter_16": "n2",
+    "parameter_17": "n",
+    "parameter_18": "dn",
+    "parameter_19": "Shrinkage",
+    "parameter_20": "Index Shift"
+   },
+   "parameters": {
+    "parameter_1": 0.0,
+    "parameter_2": -100.0,
+    "parameter_3": -200.0,
+    "parameter_4": 0.0,
+    "parameter_5": 100.0,
+    "parameter_6": -200.0,
+    "parameter_7": 0.55,
+    "parameter_8": 1.0,
+    "parameter_13": 1,
+    "parameter_14": 0.01,
+    "parameter_15": 1.0,
+    "parameter_16": 1.0,
+    "parameter_17": 1.5,
+    "parameter_18": 0.02,
+    "parameter_19": 0.0,
+    "parameter_20": 0.0
+   },
+   "solve_types": {
+    "parameter_1": {
+     "type": "Fixed"
+    },
+    "parameter_2": {
+     "type": "Fixed"
+    },
+    "parameter_3": {
+     "type": "Fixed"
+    },
+    "parameter_4": {
+     "type": "Fixed"
+    },
+    "parameter_5": {
+     "type": "Fixed"
+    },
+    "parameter_6": {
+     "type": "Fixed"
+    },
+    "parameter_7": {
+     "type": "Fixed"
+    },
+    "parameter_8": {
+     "type": "Fixed"
+    },
+    "parameter_13": {
+     "type": "Fixed"
+    },
+    "parameter_14": {
+     "type": "Fixed"
+    },
+    "parameter_15": {
+     "type": "Fixed"
+    },
+    "parameter_16": {
+     "type": "Fixed"
+    },
+    "parameter_17": {
+     "type": "Fixed"
+    },
+    "parameter_18": {
+     "type": "Fixed"
+    },
+    "parameter_19": {
+     "type": "Fixed"
+    },
+    "parameter_20": {
+     "type": "Fixed"
+    }
+   }
+  },
+  "all_equal": true,
+  "get_surfaces_parameter_count": 20,
+  "write_readback": [
+   {
+    "call_index": 3,
+    "ok": true,
+    "warnings": [],
+    "written": {
+     "surface_type": "Hologram1",
+     "thickness": 100
+    },
+    "returned": {}
+   },
+   {
+    "call_index": 4,
+    "ok": true,
+    "warnings": [],
+    "written": {
+     "1": 0,
+     "2": -100,
+     "3": -200,
+     "4": 0,
+     "5": 100,
+     "6": -200,
+     "7": 0.55,
+     "8": 1,
+     "13": 1
+    },
+    "returned": {}
+   },
+   {
+    "call_index": 5,
+    "ok": true,
+    "warnings": [],
+    "written": {
+     "14": 0.01,
+     "15": 1,
+     "16": 1,
+     "17": 1.5,
+     "18": 0.02,
+     "19": 0,
+     "20": 0,
+     "21": 0
+    },
+    "returned": {
+     "14": {
+      "value": 0.01,
+      "solve": "Fixed"
+     },
+     "15": {
+      "value": 1.0,
+      "solve": "Fixed"
+     },
+     "16": {
+      "value": 1.0,
+      "solve": "Fixed"
+     },
+     "17": {
+      "value": 1.5,
+      "solve": "Fixed"
+     },
+     "18": {
+      "value": 0.02,
+      "solve": "Fixed"
+     },
+     "19": {
+      "value": 0.0,
+      "solve": "Fixed"
+     },
+     "20": {
+      "value": 0.0,
+      "solve": "Fixed"
+     },
+     "21": {
+      "value": 0,
+      "solve": "Fixed"
+     }
+    }
+   }
+  ],
+  "parameter_21": {
+   "requested": 0,
+   "get_surfaces_exposed": false,
+   "sources": [
+    {
+     "kind": "api_readback",
+     "file": "calls.json",
+     "call_index": 5,
+     "ok": true,
+     "warnings": [],
+     "json_path": "response.data.updated_parameters[0].cells['21']",
+     "value": 0,
+     "solve": "Fixed"
+    },
+    {
+     "kind": "saved_lens_text",
+     "file": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\runs\\runs\\diff_efficiency_offaxis059_native_bdfaeee137\\offaxis_saved.zos",
+     "location": "SURF 1, XDAT 9 (HOLOGRM1 extended data, Par13..Par21 -> XDAT 1..9)",
+     "value": 0.0,
+     "solve": "Fixed",
+     "note": "XDAT 1..9 equal the written Par13..Par21 values in order: 1, 0.01, 1, 1, 1.5, 0.02, 0, 0, 0."
+    }
+   ]
+  },
+  "saved_lens": {
+   "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\runs\\runs\\diff_efficiency_offaxis059_native_bdfaeee137\\offaxis_saved.zos",
+   "exists": true,
+   "surf1_xdat": [
+    {
+     "word": 1,
+     "value": 1.0
+    },
+    {
+     "word": 2,
+     "value": 0.01
+    },
+    {
+     "word": 3,
+     "value": 1.0
+    },
+    {
+     "word": 4,
+     "value": 1.0
+    },
+    {
+     "word": 5,
+     "value": 1.5
+    },
+    {
+     "word": 6,
+     "value": 0.02
+    },
+    {
+     "word": 7,
+     "value": 0.0
+    },
+    {
+     "word": 8,
+     "value": 0.0
+    },
+    {
+     "word": 9,
+     "value": 0.0
+    }
+   ],
+   "surf1_parm": {
+    "1": 0.0,
+    "2": -100.0,
+    "3": -200.0,
+    "4": 0.0,
+    "5": 100.0,
+    "6": -200.0,
+    "7": 0.55,
+    "8": 1.0
+   }
+  }
+ },
+ "items": {
+  "diff_efficiency_angular": {
+   "S": {
+    "found": true,
+    "task_id": "c984787ec273403597bc4e84e1133cff",
+    "result_state": "succeeded",
+    "close": {
+     "source": {
+      "file": "calls.json",
+      "call_index": 11,
+      "tool": "get_task_status",
+      "task_id": "c984787ec273403597bc4e84e1133cff",
+      "status_seen": true
+     },
+     "close_attempted": true,
+     "state": "succeeded"
+    },
+    "requested": {
+     "field": 1,
+     "wavelength": 1,
+     "surface": 1,
+     "kind": "diff_efficiency_angular",
+     "sample_size": "S_65",
+     "min_angle": 20.16505117707799,
+     "max_angle": 32.96505117707799
+    },
+    "readback": {
+     "MinAngle": {
+      "requested": 20.16505117707799,
+      "actual": 20.16505117707799,
+      "matches": true
+     },
+     "MaxAngle": {
+      "requested": 32.96505117707799,
+      "actual": 32.96505117707799,
+      "matches": true
+     },
+     "SampleSize": {
+      "requested": "S_65",
+      "actual": "S_65",
+      "matches": true
+     }
+    },
+    "native_readback_key_count": 20,
+    "native_readback": {
+     "SampleSize": "S_65",
+     "MinAngle": 20.16505117707799,
+     "MaxAngle": 32.96505117707799,
+     "HologramObject": -1,
+     "AmbientObject": -1,
+     "DetectorObject": -1,
+     "srcPositionX": -1.0,
+     "srcPositionY": -1.0,
+     "srcPositionZ": -1.0,
+     "srcUnpolarized": false,
+     "srcXTitled": true,
+     "srcPolJx": -1.0,
+     "srcPolJy": -1.0,
+     "srcPrePropagation": -1.0,
+     "InsideOfObject": -1,
+     "IsValid": true,
+     "IsActiveWindow": true,
+     "Field": 1,
+     "Wavelength": 1,
+     "Surface": 1
+    },
+    "evaluation_conditions": {
+     "surface_type": "Hologram1",
+     "material": ""
+    },
+    "kogelnik": {
+     "count": 64,
+     "passed": 64,
+     "failed": 0,
+     "max_absolute_error": 5.212286158240431e-11,
+     "worst_label": "S diff_efficiency_angular angle=26.76505117707799 wave=0.55",
+     "atol": 1e-06,
+     "rtol": 1e-05
+    },
+    "paging": [
+     {
+      "arguments": {}
+     },
+     {
+      "arguments": {
+       "series": 0,
+       "start": 1,
+       "count": 3
+      },
+      "points": 3,
+      "x_match": true,
+      "values_match_full_series": true,
+      "max_absolute_difference": 0.0
+     }
+    ],
+    "images": [
+     {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\runs\\runs\\diff_efficiency_offaxis059_native_bdfaeee137\\S_diff_efficiency_angular.png",
+      "name": "S_diff_efficiency_angular.png",
+      "exists": true
+     }
+    ],
+    "series": {
+     "description": "",
+     "x_count": 64,
+     "x_first": 20.16505117707799,
+     "x_last": 32.76505117707799,
+     "x_unit": "degrees",
+     "y_unit": "dimensionless",
+     "value_quantity": "diffraction efficiency",
+     "labels": [
+      "\u884d\u5c04\u6548\u7387"
+     ],
+     "labels_source": "native",
+     "invalid_count": 0
+    }
+   },
+   "P": {
+    "found": true,
+    "task_id": "5fc28006ec8043a1896a7cde92629462",
+    "result_state": "succeeded",
+    "close": {
+     "source": {
+      "file": "calls.json",
+      "call_index": 30,
+      "tool": "get_task_status",
+      "task_id": "5fc28006ec8043a1896a7cde92629462",
+      "status_seen": true
+     },
+     "close_attempted": true,
+     "state": "succeeded"
+    },
+    "requested": {
+     "field": 1,
+     "wavelength": 1,
+     "surface": 1,
+     "kind": "diff_efficiency_angular",
+     "sample_size": "S_65",
+     "min_angle": 20.16505117707799,
+     "max_angle": 32.96505117707799
+    },
+    "readback": {
+     "MinAngle": {
+      "requested": 20.16505117707799,
+      "actual": 20.16505117707799,
+      "matches": true
+     },
+     "MaxAngle": {
+      "requested": 32.96505117707799,
+      "actual": 32.96505117707799,
+      "matches": true
+     },
+     "SampleSize": {
+      "requested": "S_65",
+      "actual": "S_65",
+      "matches": true
+     }
+    },
+    "native_readback_key_count": 20,
+    "native_readback": {
+     "SampleSize": "S_65",
+     "MinAngle": 20.16505117707799,
+     "MaxAngle": 32.96505117707799,
+     "HologramObject": -1,
+     "AmbientObject": -1,
+     "DetectorObject": -1,
+     "srcPositionX": -1.0,
+     "srcPositionY": -1.0,
+     "srcPositionZ": -1.0,
+     "srcUnpolarized": false,
+     "srcXTitled": true,
+     "srcPolJx": -1.0,
+     "srcPolJy": -1.0,
+     "srcPrePropagation": -1.0,
+     "InsideOfObject": -1,
+     "IsValid": true,
+     "IsActiveWindow": true,
+     "Field": 1,
+     "Wavelength": 1,
+     "Surface": 1
+    },
+    "evaluation_conditions": {
+     "surface_type": "Hologram1",
+     "material": ""
+    },
+    "kogelnik": {
+     "count": 64,
+     "passed": 64,
+     "failed": 0,
+     "max_absolute_error": 4.1728842603561134e-11,
+     "worst_label": "P diff_efficiency_angular angle=26.76505117707799 wave=0.55",
+     "atol": 1e-06,
+     "rtol": 1e-05
+    },
+    "paging": [
+     {
+      "arguments": {}
+     },
+     {
+      "arguments": {
+       "series": 0,
+       "start": 1,
+       "count": 3
+      },
+      "points": 3,
+      "x_match": true,
+      "values_match_full_series": true,
+      "max_absolute_difference": 0.0
+     }
+    ],
+    "images": [
+     {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\runs\\runs\\diff_efficiency_offaxis059_native_bdfaeee137\\P_diff_efficiency_angular.png",
+      "name": "P_diff_efficiency_angular.png",
+      "exists": true
+     }
+    ],
+    "series": {
+     "description": "",
+     "x_count": 64,
+     "x_first": 20.16505117707799,
+     "x_last": 32.76505117707799,
+     "x_unit": "degrees",
+     "y_unit": "dimensionless",
+     "value_quantity": "diffraction efficiency",
+     "labels": [
+      "\u884d\u5c04\u6548\u7387"
+     ],
+     "labels_source": "native",
+     "invalid_count": 0
+    }
+   }
+  },
+  "diff_efficiency_chromatic": {
+   "S": {
+    "found": true,
+    "task_id": "3c8de77dd88c4ba8b71c636623ad15a1",
+    "result_state": "succeeded",
+    "close": {
+     "source": {
+      "file": "calls.json",
+      "call_index": 17,
+      "tool": "get_task_status",
+      "task_id": "3c8de77dd88c4ba8b71c636623ad15a1",
+      "status_seen": true
+     },
+     "close_attempted": true,
+     "state": "succeeded"
+    },
+    "requested": {
+     "field": 1,
+     "wavelength": 1,
+     "surface": 1,
+     "kind": "diff_efficiency_chromatic",
+     "sample_size": "S_65",
+     "min_wavelength": 0.45,
+     "max_wavelength": 0.65
+    },
+    "readback": {
+     "MinWavelength": {
+      "requested": 0.45,
+      "actual": 0.45,
+      "matches": true
+     },
+     "MaxWavelength": {
+      "requested": 0.65,
+      "actual": 0.65,
+      "matches": true
+     },
+     "SampleSize": {
+      "requested": "S_65",
+      "actual": "S_65",
+      "matches": true
+     }
+    },
+    "native_readback_key_count": 20,
+    "native_readback": {
+     "SampleSize": "S_65",
+     "MinWavelength": 0.45,
+     "MaxWavelength": 0.65,
+     "HologramObject": -1,
+     "AmbientObject": -1,
+     "DetectorObject": -1,
+     "srcPositionX": -1.0,
+     "srcPositionY": -1.0,
+     "srcPositionZ": -1.0,
+     "srcUnpolarized": false,
+     "srcXTitled": true,
+     "srcPolJx": -1.0,
+     "srcPolJy": -1.0,
+     "srcPrePropagation": -1.0,
+     "InsideOfObject": -1,
+     "IsValid": true,
+     "IsActiveWindow": true,
+     "Field": 1,
+     "Wavelength": 1,
+     "Surface": 1
+    },
+    "evaluation_conditions": {
+     "surface_type": "Hologram1",
+     "material": ""
+    },
+    "kogelnik": {
+     "count": 64,
+     "passed": 64,
+     "failed": 0,
+     "max_absolute_error": 5.219868981498621e-11,
+     "worst_label": "S diff_efficiency_chromatic angle=26.56505117707799 wave=0.553125",
+     "atol": 1e-06,
+     "rtol": 1e-05
+    },
+    "paging": [
+     {
+      "arguments": {}
+     },
+     {
+      "arguments": {
+       "series": 0,
+       "start": 1,
+       "count": 3
+      },
+      "points": 3,
+      "x_match": true,
+      "values_match_full_series": true,
+      "max_absolute_difference": 0.0
+     }
+    ],
+    "images": [
+     {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\runs\\runs\\diff_efficiency_offaxis059_native_bdfaeee137\\S_diff_efficiency_chromatic.png",
+      "name": "S_diff_efficiency_chromatic.png",
+      "exists": true
+     }
+    ],
+    "series": {
+     "description": "",
+     "x_count": 64,
+     "x_first": 0.45,
+     "x_last": 0.6468750000000001,
+     "x_unit": "micrometers",
+     "y_unit": "dimensionless",
+     "value_quantity": "diffraction efficiency",
+     "labels": [
+      "\u884d\u5c04\u6548\u7387"
+     ],
+     "labels_source": "native",
+     "invalid_count": 0
+    }
+   },
+   "P": {
+    "found": true,
+    "task_id": "16915c77f99d452880bd4049fcb20ebd",
+    "result_state": "succeeded",
+    "close": {
+     "source": {
+      "file": "calls.json",
+      "call_index": 36,
+      "tool": "get_task_status",
+      "task_id": "16915c77f99d452880bd4049fcb20ebd",
+      "status_seen": true
+     },
+     "close_attempted": true,
+     "state": "succeeded"
+    },
+    "requested": {
+     "field": 1,
+     "wavelength": 1,
+     "surface": 1,
+     "kind": "diff_efficiency_chromatic",
+     "sample_size": "S_65",
+     "min_wavelength": 0.45,
+     "max_wavelength": 0.65
+    },
+    "readback": {
+     "MinWavelength": {
+      "requested": 0.45,
+      "actual": 0.45,
+      "matches": true
+     },
+     "MaxWavelength": {
+      "requested": 0.65,
+      "actual": 0.65,
+      "matches": true
+     },
+     "SampleSize": {
+      "requested": "S_65",
+      "actual": "S_65",
+      "matches": true
+     }
+    },
+    "native_readback_key_count": 20,
+    "native_readback": {
+     "SampleSize": "S_65",
+     "MinWavelength": 0.45,
+     "MaxWavelength": 0.65,
+     "HologramObject": -1,
+     "AmbientObject": -1,
+     "DetectorObject": -1,
+     "srcPositionX": -1.0,
+     "srcPositionY": -1.0,
+     "srcPositionZ": -1.0,
+     "srcUnpolarized": false,
+     "srcXTitled": true,
+     "srcPolJx": -1.0,
+     "srcPolJy": -1.0,
+     "srcPrePropagation": -1.0,
+     "InsideOfObject": -1,
+     "IsValid": true,
+     "IsActiveWindow": true,
+     "Field": 1,
+     "Wavelength": 1,
+     "Surface": 1
+    },
+    "evaluation_conditions": {
+     "surface_type": "Hologram1",
+     "material": ""
+    },
+    "kogelnik": {
+     "count": 64,
+     "passed": 64,
+     "failed": 0,
+     "max_absolute_error": 4.155475963329991e-11,
+     "worst_label": "P diff_efficiency_chromatic angle=26.56505117707799 wave=0.553125",
+     "atol": 1e-06,
+     "rtol": 1e-05
+    },
+    "paging": [
+     {
+      "arguments": {}
+     },
+     {
+      "arguments": {
+       "series": 0,
+       "start": 1,
+       "count": 3
+      },
+      "points": 3,
+      "x_match": true,
+      "values_match_full_series": true,
+      "max_absolute_difference": 0.0
+     }
+    ],
+    "images": [
+     {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\runs\\runs\\diff_efficiency_offaxis059_native_bdfaeee137\\P_diff_efficiency_chromatic.png",
+      "name": "P_diff_efficiency_chromatic.png",
+      "exists": true
+     }
+    ],
+    "series": {
+     "description": "",
+     "x_count": 64,
+     "x_first": 0.45,
+     "x_last": 0.6468750000000001,
+     "x_unit": "micrometers",
+     "y_unit": "dimensionless",
+     "value_quantity": "diffraction efficiency",
+     "labels": [
+      "\u884d\u5c04\u6548\u7387"
+     ],
+     "labels_source": "native",
+     "invalid_count": 0
+    }
+   }
+  },
+  "diff_efficiency_2d": {
+   "S": {
+    "found": true,
+    "task_id": "65879ef9acd24bfa8a3cc71b47177a89",
+    "result_state": "succeeded",
+    "close": {
+     "source": {
+      "file": "calls.json",
+      "call_index": 23,
+      "tool": "get_task_status",
+      "task_id": "65879ef9acd24bfa8a3cc71b47177a89",
+      "status_seen": true
+     },
+     "close_attempted": true,
+     "state": "succeeded"
+    },
+    "requested": {
+     "field": 1,
+     "wavelength": 1,
+     "surface": 1,
+     "kind": "diff_efficiency_2d",
+     "sample_size": "S_64x64",
+     "min_wavelength": 0.45,
+     "max_wavelength": 0.65,
+     "min_angle": 20.16505117707799,
+     "max_angle": 32.96505117707799
+    },
+    "readback": {
+     "MinAngle": {
+      "requested": 20.16505117707799,
+      "actual": 20.16505117707799,
+      "matches": true
+     },
+     "MaxAngle": {
+      "requested": 32.96505117707799,
+      "actual": 32.96505117707799,
+      "matches": true
+     },
+     "MinWavelength": {
+      "requested": 0.45,
+      "actual": 0.45,
+      "matches": true
+     },
+     "MaxWavelength": {
+      "requested": 0.65,
+      "actual": 0.65,
+      "matches": true
+     },
+     "SampleSize": {
+      "requested": "S_64x64",
+      "actual": "S_64x64",
+      "matches": true
+     }
+    },
+    "native_readback_key_count": 22,
+    "native_readback": {
+     "SampleSize": "S_64x64",
+     "MinWavelength": 0.45,
+     "MaxWavelength": 0.65,
+     "MinAngle": 20.16505117707799,
+     "MaxAngle": 32.96505117707799,
+     "HologramObject": -1,
+     "AmbientObject": -1,
+     "DetectorObject": -1,
+     "srcPositionX": -1.0,
+     "srcPositionY": -1.0,
+     "srcPositionZ": -1.0,
+     "srcUnpolarized": false,
+     "srcXTitled": true,
+     "srcPolJx": -1.0,
+     "srcPolJy": -1.0,
+     "srcPrePropagation": -1.0,
+     "InsideOfObject": -1,
+     "IsValid": true,
+     "IsActiveWindow": true,
+     "Field": 1,
+     "Wavelength": 1,
+     "Surface": 1
+    },
+    "evaluation_conditions": {
+     "surface_type": "Hologram1",
+     "material": ""
+    },
+    "kogelnik": {
+     "count": 64,
+     "passed": 64,
+     "failed": 0,
+     "max_absolute_error": 5.385047963102352e-11,
+     "worst_label": "S diff_efficiency_2d angle=23.36505117707799 wave=0.47500000000000003",
+     "atol": 1e-06,
+     "rtol": 1e-05
+    },
+    "paging": [
+     {
+      "arguments": {}
+     },
+     {
+      "arguments": {
+       "grid": 0,
+       "x_start": 2,
+       "y_start": 1,
+       "width": 3,
+       "height": 2
+      },
+      "shape": {
+       "rows": 2,
+       "cols": 3
+      },
+      "values_match_full_grid": true,
+      "max_absolute_difference": 0.0,
+      "axes": {
+       "x_start": 2,
+       "y_start": 1,
+       "next_x": 5,
+       "next_y": 3
+      }
+     }
+    ],
+    "images": [
+     {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\runs\\runs\\diff_efficiency_offaxis059_native_bdfaeee137\\S_diff_efficiency_2d.png",
+      "name": "S_diff_efficiency_2d.png",
+      "exists": true
+     }
+    ],
+    "grid": {
+     "nx": 64,
+     "ny": 64,
+     "dx": 0.19999999999999996,
+     "dy": 0.003125,
+     "min_x": 20.16505117707799,
+     "min_y": 0.45,
+     "x_label": "Angle",
+     "y_label": "Wavelength",
+     "value_label": "Diffraction efficiency",
+     "x_unit": "degrees",
+     "y_unit": "micrometers",
+     "value_unit": "dimensionless",
+     "array_order": "native Values dimension 0, dimension 1",
+     "invalid_count": 0,
+     "last_column_angle": 32.76505117707799,
+     "last_row_wavelength": 0.6468750000000001
+    }
+   },
+   "P": {
+    "found": true,
+    "task_id": "672d09570c814f4b93452ee621f11eaa",
+    "result_state": "succeeded",
+    "close": {
+     "source": {
+      "file": "calls.json",
+      "call_index": 42,
+      "tool": "get_task_status",
+      "task_id": "672d09570c814f4b93452ee621f11eaa",
+      "status_seen": true
+     },
+     "close_attempted": true,
+     "state": "succeeded"
+    },
+    "requested": {
+     "field": 1,
+     "wavelength": 1,
+     "surface": 1,
+     "kind": "diff_efficiency_2d",
+     "sample_size": "S_64x64",
+     "min_wavelength": 0.45,
+     "max_wavelength": 0.65,
+     "min_angle": 20.16505117707799,
+     "max_angle": 32.96505117707799
+    },
+    "readback": {
+     "MinAngle": {
+      "requested": 20.16505117707799,
+      "actual": 20.16505117707799,
+      "matches": true
+     },
+     "MaxAngle": {
+      "requested": 32.96505117707799,
+      "actual": 32.96505117707799,
+      "matches": true
+     },
+     "MinWavelength": {
+      "requested": 0.45,
+      "actual": 0.45,
+      "matches": true
+     },
+     "MaxWavelength": {
+      "requested": 0.65,
+      "actual": 0.65,
+      "matches": true
+     },
+     "SampleSize": {
+      "requested": "S_64x64",
+      "actual": "S_64x64",
+      "matches": true
+     }
+    },
+    "native_readback_key_count": 22,
+    "native_readback": {
+     "SampleSize": "S_64x64",
+     "MinWavelength": 0.45,
+     "MaxWavelength": 0.65,
+     "MinAngle": 20.16505117707799,
+     "MaxAngle": 32.96505117707799,
+     "HologramObject": -1,
+     "AmbientObject": -1,
+     "DetectorObject": -1,
+     "srcPositionX": -1.0,
+     "srcPositionY": -1.0,
+     "srcPositionZ": -1.0,
+     "srcUnpolarized": false,
+     "srcXTitled": true,
+     "srcPolJx": -1.0,
+     "srcPolJy": -1.0,
+     "srcPrePropagation": -1.0,
+     "InsideOfObject": -1,
+     "IsValid": true,
+     "IsActiveWindow": true,
+     "Field": 1,
+     "Wavelength": 1,
+     "Surface": 1
+    },
+    "evaluation_conditions": {
+     "surface_type": "Hologram1",
+     "material": ""
+    },
+    "kogelnik": {
+     "count": 64,
+     "passed": 64,
+     "failed": 0,
+     "max_absolute_error": 4.838918155058991e-11,
+     "worst_label": "P diff_efficiency_2d angle=23.36505117707799 wave=0.47500000000000003",
+     "atol": 1e-06,
+     "rtol": 1e-05
+    },
+    "paging": [
+     {
+      "arguments": {}
+     },
+     {
+      "arguments": {
+       "grid": 0,
+       "x_start": 2,
+       "y_start": 1,
+       "width": 3,
+       "height": 2
+      },
+      "shape": {
+       "rows": 2,
+       "cols": 3
+      },
+      "values_match_full_grid": true,
+      "max_absolute_difference": 0.0,
+      "axes": {
+       "x_start": 2,
+       "y_start": 1,
+       "next_x": 5,
+       "next_y": 3
+      }
+     }
+    ],
+    "images": [
+     {
+      "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\runs\\runs\\diff_efficiency_offaxis059_native_bdfaeee137\\P_diff_efficiency_2d.png",
+      "name": "P_diff_efficiency_2d.png",
+      "exists": true
+     }
+    ],
+    "grid": {
+     "nx": 64,
+     "ny": 64,
+     "dx": 0.19999999999999996,
+     "dy": 0.003125,
+     "min_x": 20.16505117707799,
+     "min_y": 0.45,
+     "x_label": "Angle",
+     "y_label": "Wavelength",
+     "value_label": "Diffraction efficiency",
+     "x_unit": "degrees",
+     "y_unit": "micrometers",
+     "value_unit": "dimensionless",
+     "array_order": "native Values dimension 0, dimension 1",
+     "invalid_count": 0,
+     "last_column_angle": 32.76505117707799,
+     "last_row_wavelength": 0.6468750000000001
+    }
+   }
+  }
+ },
+ "central_slices": {
+  "S": {
+   "available": true,
+   "grid_task": "65879ef9acd24bfa8a3cc71b47177a89",
+   "center_x": 32,
+   "center_y": 32,
+   "center_angle": 26.56505117707799,
+   "center_wavelength": 0.55,
+   "angle_axis_matches_angular_scan": 0.0,
+   "wavelength_axis_matches_chromatic_scan": 0.0,
+   "row_center_wave_vs_angular": {
+    "points": 64,
+    "max_absolute_difference": 0.0,
+    "identical": true
+   },
+   "column_center_angle_vs_chromatic": {
+    "points": 64,
+    "max_absolute_difference": 0.0,
+    "identical": true
+   }
+  },
+  "P": {
+   "available": true,
+   "grid_task": "672d09570c814f4b93452ee621f11eaa",
+   "center_x": 32,
+   "center_y": 32,
+   "center_angle": 26.56505117707799,
+   "center_wavelength": 0.55,
+   "angle_axis_matches_angular_scan": 0.0,
+   "wavelength_axis_matches_chromatic_scan": 0.0,
+   "row_center_wave_vs_angular": {
+    "points": 64,
+    "max_absolute_difference": 0.0,
+    "identical": true
+   },
+   "column_center_angle_vs_chromatic": {
+    "points": 64,
+    "max_absolute_difference": 0.0,
+    "identical": true
+   }
+  }
+ },
+ "full_grid_reference": {
+  "S": {
+   "available": true,
+   "nodes": 4096,
+   "nodes_outside_tolerance": 0,
+   "max_absolute_error": 5.752720522167465e-11,
+   "max_error_node": {
+    "absolute_error": 5.752720522167465e-11,
+    "angle": 21.765051177077993,
+    "wavelength": 0.4625,
+    "actual": 0.9589711384313674,
+    "expected": 0.9589711384888946
+   },
+   "median_absolute_error": 4.405351083924813e-12,
+   "p95_absolute_error": 4.467770597926801e-11,
+   "recorded_sample_nodes": 64,
+   "recorded_sample_max_absolute_error": 5.385047963102352e-11,
+   "recorded_sample_outside_tolerance": 0,
+   "atol": 1e-06,
+   "rtol": 1e-05
+  },
+  "P": {
+   "available": true,
+   "nodes": 4096,
+   "nodes_outside_tolerance": 0,
+   "max_absolute_error": 5.245337497683522e-11,
+   "max_error_node": {
+    "absolute_error": 5.245337497683522e-11,
+    "angle": 21.765051177077993,
+    "wavelength": 0.4625,
+    "actual": 0.8743794080916774,
+    "expected": 0.8743794081441307
+   },
+   "median_absolute_error": 3.546718474467525e-12,
+   "p95_absolute_error": 3.69849706416403e-11,
+   "recorded_sample_nodes": 64,
+   "recorded_sample_max_absolute_error": 4.838918155058991e-11,
+   "recorded_sample_outside_tolerance": 0,
+   "atol": 1e-06,
+   "rtol": 1e-05
+  }
+ },
+ "lifecycle": {
+  "close_source": "last get_task_status response per task_id in calls.json",
+  "close_attempted_all": true,
+  "close_attempted_by_task": {
+   "c984787ec273403597bc4e84e1133cff": {
+    "call_index": 11,
+    "state": "succeeded",
+    "close_attempted": true
+   },
+   "3c8de77dd88c4ba8b71c636623ad15a1": {
+    "call_index": 17,
+    "state": "succeeded",
+    "close_attempted": true
+   },
+   "65879ef9acd24bfa8a3cc71b47177a89": {
+    "call_index": 23,
+    "state": "succeeded",
+    "close_attempted": true
+   },
+   "5fc28006ec8043a1896a7cde92629462": {
+    "call_index": 30,
+    "state": "succeeded",
+    "close_attempted": true
+   },
+   "16915c77f99d452880bd4049fcb20ebd": {
+    "call_index": 36,
+    "state": "succeeded",
+    "close_attempted": true
+   },
+   "672d09570c814f4b93452ee621f11eaa": {
+    "call_index": 42,
+    "state": "succeeded",
+    "close_attempted": true
+   },
+   "9a813f49dbd945caa79dee3c6c42d196": {
+    "call_index": 53,
+    "state": "failed",
+    "close_attempted": true
+   },
+   "d4d355416c4f44839fc93dc599ffe128": {
+    "call_index": 56,
+    "state": "succeeded",
+    "close_attempted": true
+   },
+   "2ee3342a2c054642abd9ff1877870b2c": {
+    "call_index": 62,
+    "state": "cancelled",
+    "close_attempted": true
+   },
+   "ff1676e0d513430389b3211cfb683dd7": {
+    "call_index": 65,
+    "state": "succeeded",
+    "close_attempted": true
+   }
+  },
+  "succeeded_all_have_payload": true,
+  "outcomes": {
+   "succeeded": [
+    {
+     "task_id": "c984787ec273403597bc4e84e1133cff",
+     "kind": "diff_efficiency_angular",
+     "sample_size": "S_65",
+     "call_index": 11,
+     "close_attempted": true,
+     "has_result_payload": true,
+     "task_error": null
+    },
+    {
+     "task_id": "3c8de77dd88c4ba8b71c636623ad15a1",
+     "kind": "diff_efficiency_chromatic",
+     "sample_size": "S_65",
+     "call_index": 17,
+     "close_attempted": true,
+     "has_result_payload": true,
+     "task_error": null
+    },
+    {
+     "task_id": "65879ef9acd24bfa8a3cc71b47177a89",
+     "kind": "diff_efficiency_2d",
+     "sample_size": "S_64x64",
+     "call_index": 23,
+     "close_attempted": true,
+     "has_result_payload": true,
+     "task_error": null
+    },
+    {
+     "task_id": "5fc28006ec8043a1896a7cde92629462",
+     "kind": "diff_efficiency_angular",
+     "sample_size": "S_65",
+     "call_index": 30,
+     "close_attempted": true,
+     "has_result_payload": true,
+     "task_error": null
+    },
+    {
+     "task_id": "16915c77f99d452880bd4049fcb20ebd",
+     "kind": "diff_efficiency_chromatic",
+     "sample_size": "S_65",
+     "call_index": 36,
+     "close_attempted": true,
+     "has_result_payload": true,
+     "task_error": null
+    },
+    {
+     "task_id": "672d09570c814f4b93452ee621f11eaa",
+     "kind": "diff_efficiency_2d",
+     "sample_size": "S_64x64",
+     "call_index": 42,
+     "close_attempted": true,
+     "has_result_payload": true,
+     "task_error": null
+    },
+    {
+     "task_id": "d4d355416c4f44839fc93dc599ffe128",
+     "kind": "diff_efficiency_angular",
+     "sample_size": "S_65",
+     "call_index": 56,
+     "close_attempted": true,
+     "has_result_payload": true,
+     "task_error": null
+    },
+    {
+     "task_id": "ff1676e0d513430389b3211cfb683dd7",
+     "kind": "diff_efficiency_angular",
+     "sample_size": "S_65",
+     "call_index": 65,
+     "close_attempted": true,
+     "has_result_payload": true,
+     "task_error": null
+    }
+   ],
+   "failed": [
+    {
+     "task_id": "9a813f49dbd945caa79dee3c6c42d196",
+     "kind": "diff_efficiency_angular",
+     "sample_size": "S_65",
+     "call_index": 53,
+     "close_attempted": true,
+     "has_result_payload": false,
+     "task_error": "NO_RESULT_DATA"
+    }
+   ],
+   "cancelled": [
+    {
+     "task_id": "2ee3342a2c054642abd9ff1877870b2c",
+     "kind": "diff_efficiency_2d",
+     "sample_size": "S_2048x2048",
+     "call_index": 62,
+     "close_attempted": true,
+     "has_result_payload": false,
+     "task_error": null
+    }
+   ]
+  },
+  "task_states": {
+   "c984787ec273403597bc4e84e1133cff": "succeeded",
+   "3c8de77dd88c4ba8b71c636623ad15a1": "succeeded",
+   "65879ef9acd24bfa8a3cc71b47177a89": "succeeded",
+   "5fc28006ec8043a1896a7cde92629462": "succeeded",
+   "16915c77f99d452880bd4049fcb20ebd": "succeeded",
+   "672d09570c814f4b93452ee621f11eaa": "succeeded",
+   "9a813f49dbd945caa79dee3c6c42d196": "failed",
+   "d4d355416c4f44839fc93dc599ffe128": "succeeded",
+   "2ee3342a2c054642abd9ff1877870b2c": "cancelled",
+   "ff1676e0d513430389b3211cfb683dd7": "succeeded"
+  },
+  "failed_tasks": [
+   {
+    "task_id": "9a813f49dbd945caa79dee3c6c42d196",
+    "error": {
+     "code": "NO_RESULT_DATA",
+     "message": "\u539f\u751f\u5206\u6790\u8fd4\u56de\u4e86\u6ca1\u6709\u5750\u6807\u6216\u6570\u503c\u7684\u66f2\u7ebf\u3002",
+     "details": {
+      "series": 0,
+      "native_messages": [
+       {
+        "code": "Success",
+        "text": "\u8bbe\u7f6e\u89c6\u573a\u7c7b\u578b\u4e3a\u89d2\u5ea6"
+       }
+      ],
+      "native_preamble": [
+       "\u8bbe\u7f6e\u89c6\u573a\u7c7b\u578b\u4e3a\u89d2\u5ea6",
+       ""
+      ],
+      "native_text": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\runs\\runs\\diff_efficiency_offaxis059_native_bdfaeee137\\d5946d8262334d3cb2ff2ca6358a2622\\9a813f49dbd945caa79dee3c6c42d196_native.txt"
+     }
+    },
+    "source": {
+     "file": "calls.json",
+     "call_index": 53,
+     "tool": "get_task_status",
+     "task_id": "9a813f49dbd945caa79dee3c6c42d196",
+     "status_seen": true
+    },
+    "close_attempted": true,
+    "state": "failed",
+    "requested": {
+     "field": 1,
+     "wavelength": 1,
+     "surface": 1,
+     "kind": "diff_efficiency_angular",
+     "sample_size": "S_65",
+     "min_angle": 20.16505117707799,
+     "max_angle": 32.96505117707799
+    }
+   }
+  ],
+  "cancel_calls": [
+   {
+    "call_index": 60,
+    "arguments": {
+     "task_id": "2ee3342a2c054642abd9ff1877870b2c"
+    }
+   }
+  ],
+  "cancellation_file": {
+   "active_at_request": true,
+   "terminal": "cancelled",
+   "closed": true
+  },
+  "close_receipt": {
+   "schema_version": 1,
+   "generation": null,
+   "session_id": null,
+   "started_at": "2026-11-07T20:24:43.019787+00:00",
+   "active_cancelled": false,
+   "forced": false,
+   "checkpoint": {
+    "attempted": false,
+    "path": null,
+    "ok": false,
+    "error": null
+   },
+   "was_connected": false,
+   "native": {
+    "attempted": true,
+    "closed": true,
+    "error": null
+   },
+   "closed_at": "2026-11-07T20:24:43.019867+00:00"
+  },
+  "disconnect_present": true,
+  "system_settings_before_after_equal": true,
+  "save_lens_calls": [
+   {
+    "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\runs\\runs\\diff_efficiency_offaxis059_native_bdfaeee137\\offaxis_saved.zos"
+   }
+  ],
+  "open_lens_calls": [
+   {
+    "path": "C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio\\ZemaxData\\Samples\\Sequential\\Diffractive components\\Transmission hologram.zos"
+   },
+   {
+    "path": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\runs\\runs\\diff_efficiency_offaxis059_native_bdfaeee137\\offaxis_saved.zos"
+   }
+  ]
+ },
+ "missing_fields": {
+  "2ee3342a2c054642abd9ff1877870b2c": {
+   "kind": "diff_efficiency_2d",
+   "state": "cancelled",
+   "absent": [
+    "native_preamble",
+    "native_messages",
+    "native_header",
+    "structured_data_available",
+    "units_source"
+   ]
+  },
+  "9a813f49dbd945caa79dee3c6c42d196": {
+   "kind": "diff_efficiency_angular",
+   "state": "failed",
+   "absent": [
+    "native_preamble",
+    "native_messages",
+    "native_header",
+    "system_settings",
+    "structured_data_available",
+    "units_source"
+   ]
+  }
+ },
+ "bragg_degrees": 26.56505117707799
+}

@@ -12,9 +12,28 @@ def test_seidel_slopes_native_settings_results_and_close(kind):
         sample = Path.home() / 'Documents/Zemax/Samples/Sequential/Objectives/Cooke 40 degree field.zos'
         await e.call('open_lens', {'path': str(sample)})
         request = {'kind': kind}
+        if kind=='seidel_diagram':request['method']='native'
         if kind.startswith('surface_'):
             request['surface'] = 1
-        result = await e.finish(await e.call('run_analysis', {'request': request}))
+        task = await e.call('run_analysis', {'request': request})
+        if kind == 'seidel_diagram':
+            while task['state'] not in {'succeeded', 'failed', 'cancelled'}:
+                await asyncio.sleep(.02)
+                task = await e.call('get_task_status', {'task_id': task['task_id']})
+            assert task['state'] == 'failed'
+            assert task['error']['code'] == 'EXPORT_FAILED'
+            assert task['close_attempted'] is True
+            native = task['settings']['native']
+            assert native['IgnoreChromatic'] is False
+            assert native['IgnoreDistortion'] is False
+            assert native['SuppressFrame'] is False
+            assert native['PlotScale'] == 0
+            result = await e.call('get_task_result', {'task_id': task['task_id']})
+            assert result['completed'] is False
+            assert result['task']['error']['code'] == 'EXPORT_FAILED'
+            assert result['artifacts'] == []
+            return
+        result = await e.finish(task)
         assert result['analysis_kind'] == kind
         assert result['artifacts']
         native = result['task']['settings']['native']

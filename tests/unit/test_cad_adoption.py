@@ -239,3 +239,61 @@ def test_malformed_acis_header_keeps_format_error(tmp_path,format,payload):
     path=tmp_path/'native';path.write_bytes(payload)
     with pytest.raises(ZemaxError)as error:acis_metadata(path,format)
     assert error.value.code=='INVALID_RESULT_DATA'
+
+
+
+def write_iges_levels(path,levels):
+    lines=[]
+    for index,level in enumerate(levels):
+        lines.append('     128'+' '*24+f'{level:8d}'+' '*32+'D'+f'{2*index+1:7d}')
+        lines.append('     128'+' '*64+'D'+f'{2*index+2:7d}')
+    path.write_text('\n'.join(lines)+'\n',encoding='ascii')
+    return path
+
+
+@pytest.mark.parametrize('levels,expected', [([10,11,0],{10,11}),([0],{0})])
+def test_iges_direct_layer_adoption(tmp_path,levels,expected):
+    from zemax_mcp.exports import iges_layer_metadata
+    path=write_iges_levels(tmp_path/'model.igs',levels)
+    assert iges_layer_metadata(path,expected)['adopted']
+
+
+@pytest.mark.parametrize('levels,code', [([65535],'SETTING_REJECTED'),([-13],'SETTING_UNAVAILABLE'),([], 'INVALID_RESULT_DATA')])
+def test_iges_ignored_or_unresolved_layer_preserves_output(tmp_path,levels,code):
+    from zemax_mcp.exports import iges_layer_metadata
+    path=write_iges_levels(tmp_path/'model.igs',levels)
+    with pytest.raises(ZemaxError) as caught:iges_layer_metadata(path,{10,11})
+    assert caught.value.code==code and path.is_file()
+    assert caught.value.details['actual']['requested_levels']==[10,11]
+
+
+def test_iges_layer_rejection_occurs_after_owned_writer_closes(tmp_path,monkeypatch):
+    b,tool=backend(tmp_path,monkeypatch)
+    def close():
+        tool.closes+=1;write_iges_levels(Path(tool.OutputFileName),[65535]);return True
+    tool.Close=close
+    task=b.run_cad_export(CadExport(path=str(tmp_path/'layers.igs'),format='IGES',lens_layer=10))
+    b.tick();result=b.get_task_result(TaskResult(task_id=task['task_id']))
+    assert result['task']['state']=='failed' and result['task']['error']['code']=='SETTING_REJECTED'
+    assert result['task']['error']['details']['actual']['levels']==[65535]
+    assert tool.closes==1 and not b.requires_reconnect
+
+
+
+@pytest.mark.parametrize('levels,success', [([10],True),([65535],False)])
+def test_iges_all_by_file_checks_each_closed_output(tmp_path,monkeypatch,levels,success):
+    b,tool=backend(tmp_path,monkeypatch)
+    tool.SetConfigurationAllByFile=lambda:setattr(tool,'Configuration',5)
+    def close():
+        tool.closes+=1
+        path=Path(tool.OutputFileName)
+        for config in range(1,5):write_iges_levels(path.with_name(path.stem+f'_config{config:04d}.igs'),levels)
+        return True
+    tool.Close=close
+    task=b.run_cad_export(CadExport(path=str(tmp_path/'multi.igs'),format='IGES',configuration_mode='all_by_file',lens_layer=10))
+    b.tick();result=b.get_task_result(TaskResult(task_id=task['task_id']))
+    if success:
+        assert result['task']['state']=='succeeded' and len(result['file_metadata'])==4
+        assert all(item['metadata']['adopted'] for item in result['file_metadata'])
+    else:assert result['task']['error']['code']=='SETTING_REJECTED'
+    assert tool.closes==1

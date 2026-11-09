@@ -44,8 +44,14 @@
     },
     {
       "original_path": "docs/development-batches.json",
-      "current_path": "development/tracking/batches.json",
+      "current_path": "development/archive/b00x-20261108/batches.json",
       "purpose": "workspace organization",
+      "tracked": true
+    },
+    {
+      "original_path": "development/tracking/batches.json",
+      "current_path": "development/archive/b00x-20261108/batches.json",
+      "purpose": "historical batch snapshot; current progress uses D00x",
       "tracked": true
     },
     {

@@ -1,0 +1,3 @@
+# MaterialModel 正式定义独立检索
+
+parallel-02机动任务：独立查明ED-02.MaterialModel.Material的正式谱线/环境定义。主仓C:/Users/tonge/Desktop/Zemax_MCP；你复用当前worker/session/worktree。源码0.1.62 101工具/130分析；本轮原生恢复未通过。其他worker正补MaterialModel探针；你只做资料检索与报告，不改产品/测试/台账，不运行原生，不改配置。已有scripts/probes/D002-MODEL_GLASS/model_glass_control018.py对Nd=1.6/Vd=60，经典d/F/C=.5876/.4861/.6563得到Vd59.99988524798844，精确谱线得到60.02418808；原门槛Nd1e-6+1e-7*ref、Vd1e-5+1e-7*ref。请从本机正式帮助/已保留手册优先定位Model Glass、Index Nd、Abbe Vd、dPgF、空气/绝对折射率、温度/压力修正定义；必要时只用Ansys官方原始资料。分别回答临时模型使用哪套谱线、Nd是相对空气还是绝对、评价温压基准、dPgF定义能否构成独立参考。给精确文档标题/位置/短摘录及可检验假设；资料没找到时列实际查过的位置，不推测系数。报告落本工作区.local/coordination/parallel-02/material-model-definition-review.md，结束简洁给路径和结论。限本专题一次检索，复用既有材料，不扩展Gradium。

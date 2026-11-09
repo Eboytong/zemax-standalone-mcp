@@ -1,0 +1,59 @@
+{
+  "id": "ansys-native-only",
+  "effective_date": "2026-11-08",
+  "retained_categories": [
+    "OpticStudio内建功能",
+    "官方STAR模块",
+    "官方HPC能力"
+  ],
+  "definition": "后续开发针对本机已确认产品能力；许可、正式接口、结果出口和数值验收条件逐项记录。",
+  "excluded_item_ids": [
+    "CO-01.KogelnikDLL.PProjection",
+    "ED-01.Scattering.User",
+    "ED-02.CA_fill.LDEDiscovery",
+    "ED-02.DIA_fill.LDEDiscovery",
+    "ED-02.DuplicateSag.LDEDiscovery",
+    "ED-02.InvertSag.LDEDiscovery",
+    "ED-02.MarginPercent.LDEDiscovery",
+    "ED-02.ZPLMacro.ChipZone",
+    "ED-02.ZPLMacro.MechanicalSemiDiameter",
+    "ED-03.MCE.independent_file",
+    "EX-01.CCallback",
+    "EX-01.NETCallback",
+    "EX-01.RegisterOperandCallback",
+    "EX-01.StandaloneMacro",
+    "EX-01.UserAnalysisHost",
+    "EX-01.UserDefinedCOM",
+    "EX-01.UserOperandHost",
+    "EXT-SPEOS.Receiver.LensSystem",
+    "EXT-SPEOS.Receiver.Whitebox"
+  ],
+  "excluded_package_ids": [
+    "EX-01",
+    "EXT-SPEOS"
+  ],
+  "exclusion_reasons": {
+    "CO-01.KogelnikDLL.PProjection": "自定义代码、宏、宿主或DLL扩展",
+    "ED-01.Scattering.User": "自定义代码、宏、宿主或DLL扩展",
+    "ED-02.CA_fill.LDEDiscovery": "原生适用入口尚未确认",
+    "ED-02.DIA_fill.LDEDiscovery": "原生适用入口尚未确认",
+    "ED-02.DuplicateSag.LDEDiscovery": "原生适用入口尚未确认",
+    "ED-02.InvertSag.LDEDiscovery": "原生适用入口尚未确认",
+    "ED-02.MarginPercent.LDEDiscovery": "原生适用入口尚未确认",
+    "ED-02.ZPLMacro.ChipZone": "自定义代码、宏、宿主或DLL扩展",
+    "ED-02.ZPLMacro.MechanicalSemiDiameter": "自定义代码、宏、宿主或DLL扩展",
+    "ED-03.MCE.independent_file": "原生适用入口尚未确认",
+    "EX-01.CCallback": "自定义代码、宏、宿主或DLL扩展",
+    "EX-01.NETCallback": "自定义代码、宏、宿主或DLL扩展",
+    "EX-01.RegisterOperandCallback": "自定义代码、宏、宿主或DLL扩展",
+    "EX-01.StandaloneMacro": "自定义代码、宏、宿主或DLL扩展",
+    "EX-01.UserAnalysisHost": "自定义代码、宏、宿主或DLL扩展",
+    "EX-01.UserDefinedCOM": "自定义代码、宏、宿主或DLL扩展",
+    "EX-01.UserOperandHost": "自定义代码、宏、宿主或DLL扩展",
+    "EXT-SPEOS.Receiver.LensSystem": "跨产品接收端联动",
+    "EXT-SPEOS.Receiver.Whitebox": "跨产品接收端联动"
+  },
+  "archive": "development/archive/scope-native-only-20261108",
+  "history_policy": "历史发行、已完成记录、产品实现和原始证据保留；范围调整不改变执行状态或批次完成数。",
+  "completion_policy": "按收窄后的原生声明范围逐项验收，达到十个首次完成的共同功能后集中检查。"
+}

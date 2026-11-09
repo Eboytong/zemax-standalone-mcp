@@ -46,5 +46,5 @@ def test_final_volume_parameters():
     ns.verify_patch(NS(native=None),row,ObjectPatch(object=1,volume=dict(model='DLLDefinedScattering',settings=dict(Range=1),parameters={0:3})),{})
 
 def test_final_spectrum_settings():
-    row=NS(SourcesData=NS(SourceColor='Wavelength',SourceColorSettings=NS(_S_Wavelength=NS(Wavelength=.55))))
-    ns.verify_patch(NS(native=None),row,ObjectPatch(object=1,spectrum=dict(mode='Wavelength',settings=dict(Wavelength=.55))),{})
+    row=NS(SourcesData=NS(SourceColor='UniformPowerSpectrum',SourceColorSettings=NS(_S_UniformPowerSpectrum=NS(WavelengthFrom=.55))))
+    ns.verify_patch(NS(native=None),row,ObjectPatch(object=1,spectrum=dict(mode='UniformPowerSpectrum',settings=dict(WavelengthFrom=.55))),{})

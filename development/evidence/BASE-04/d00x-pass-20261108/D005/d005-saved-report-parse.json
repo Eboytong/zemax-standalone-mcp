@@ -1,0 +1,108 @@
+{
+  "schema": "d005-saved-report-parse/1",
+  "evidence": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\evidence\\development\\CV-02\\probe442-b005",
+  "application_created": false,
+  "items": [
+    {
+      "kind": "light_source",
+      "report": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\evidence\\development\\CV-02\\probe442-b005\\LightSourceAnalysis.txt",
+      "exists": true,
+      "encoding": "utf-16",
+      "characters": 19,
+      "parsed": {
+        "kind": "light_source",
+        "available": false,
+        "reason": "finite_conjugate_only",
+        "message": "仅有限共轭系统可以使用该功能."
+      },
+      "checks": {
+        "dimensions_match_header": null
+      }
+    },
+    {
+      "kind": "partially_coherent_image",
+      "report": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\evidence\\development\\CV-02\\probe442-b005\\PartiallyCoherentImageAnalysis.txt",
+      "exists": true,
+      "encoding": "utf-16",
+      "characters": 1975,
+      "parsed": {
+        "kind": "partially_coherent_image",
+        "wavelength_um": 0.55,
+        "field_deg": 0.0,
+        "width": 1.8571,
+        "pixels": [
+          13,
+          13
+        ],
+        "imaging": "incoherent",
+        "aberration_included": true,
+        "normalization": "relative_intensity",
+        "size_units": "mm",
+        "wavelength_units": "um",
+        "axes": {
+          "x": "image space about the field centre",
+          "y": "image space about the field centre"
+        },
+        "pixel_size": 0.14285384615384616,
+        "row_count": 13,
+        "column_count": 13,
+        "cell_count": 169,
+        "minimum": 2.221e-07,
+        "maximum": 1.0,
+        "value_semantics": "relative_intensity"
+      },
+      "checks": {
+        "dimensions_match_header": true,
+        "cell_count": 169,
+        "minimum": 2.221e-07,
+        "maximum": 1.0,
+        "non_negative": true
+      }
+    },
+    {
+      "kind": "extended_diffraction_image",
+      "report": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\evidence\\development\\CV-02\\probe442-b005\\ExtendedDiffractionImageAnalysis.txt",
+      "exists": true,
+      "encoding": "utf-16",
+      "characters": 655920,
+      "parsed": {
+        "kind": "extended_diffraction_image",
+        "wavelength_um": 0.55,
+        "field_deg": 0.0,
+        "source_width": 0.05,
+        "source_pixels": [
+          7,
+          7
+        ],
+        "display_width": 0.1,
+        "display_pixels": [
+          256,
+          256
+        ],
+        "aberration_included": true,
+        "normalization": "relative_intensity",
+        "size_units": "mm",
+        "wavelength_units": "um",
+        "axes": {
+          "x": "image space about the field centre",
+          "y": "image space about the field centre"
+        },
+        "source_pixel_size": 0.0071428571428571435,
+        "display_pixel_size": 0.000390625,
+        "row_count": 256,
+        "column_count": 256,
+        "cell_count": 65536,
+        "minimum": 0.001034,
+        "maximum": 1.0,
+        "value_semantics": "relative_intensity"
+      },
+      "checks": {
+        "dimensions_match_header": true,
+        "cell_count": 65536,
+        "minimum": 0.001034,
+        "maximum": 1.0,
+        "non_negative": true
+      }
+    }
+  ]
+}

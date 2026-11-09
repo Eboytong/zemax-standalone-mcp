@@ -1,0 +1,132 @@
+{
+  "assignment_id": "D004.POWER_MAPS",
+  "item_ids": ["CV-02.PowerFieldMapSettings", "CV-02.PowerPupilMapSettings"],
+  "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-model\\Zemax_MCP",
+  "branch": "codex/d002-material-model",
+  "baseline_commit": "34e1a18494015c2b383ec700b958015020b660fe",
+  "python": "C:/Users/tonge/Desktop/Zemax_MCP/.venv/Scripts/python.exe",
+  "native_environment": "OpticStudio 24.2.0 build240529 PremiumEdition, one exclusive instance",
+  "status": "prepared, not executed; no functional conclusion is claimed",
+  "prerequisites": [
+    "Run serially in the runtime queue; no other native job may hold the instance.",
+    "Do not run before the implementation report is reviewed.",
+    "Both probes create their own scratch system; no sample lens or user file is modified.",
+    "The native connection is currently blocked by an application_create timeout; do not retry automatically.",
+    "Neither job changes a product contract: results are recorded evidence only."
+  ],
+  "shared_rules": {
+    "task_polling": "bounded at 180 s via time.monotonic(); TimeoutError carries the last task state",
+    "task_failure": "non-succeeded states raise TaskFailure(state, task, result); the original payloads are stored under error.task_state/task/task_result",
+    "cleanup": "backend.shutdown() runs in finally inside its own try/except; a failure is recorded as cleanup_error and never replaces the original exception",
+    "close_evidence": "active_task_after_shutdown plus the parsed close_receipt content, not just its existence",
+    "record_only": "numeric gates are recorded, never asserted; acceptance_passed is not used as a job success criterion"
+  },
+  "jobs": [
+    {
+      "id": "JOB-CV02-01",
+      "purpose": "E2 radius-magnitude sweep: bound where a native zero could appear in Power/EFL.",
+      "cwd": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-model\\Zemax_MCP",
+      "command": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.venv\\Scripts\\python.exe -B scripts/probes/CV-02/power_radius_sweep018.py .local/evidence/development/CV-02/power-radius-sweep/",
+      "inputs": {
+        "single_variable": "surface 1 radius",
+        "radii_mm": [50, 1000, 1000000, 1000000000],
+        "surface": "surface 1, thickness 50, material N-BK7, semi_diameter 8, is_stop, replace_solves",
+        "wavelength_um": [0.5875618],
+        "fields": [{"x": 0, "y": 0}, {"x": 2, "y": 2}],
+        "fields_note": "field 1 stays on axis as the pupil/centre reference; field 2 gives the non-zero X and Y normalisation scale that run_power_map requires (power_maps.py:71)",
+        "analyses_per_radius": ["power_field_map Power", "power_field_map EFL", "power_pupil_map Power", "power_pupil_map EFL"],
+        "analytic_reference": {
+          "index": 1.5168000345005883,
+          "source": "native material tool at 0.5875618 um (power-maps.md:11)",
+          "formula": "EFL = n*R/(n-1); Power = 1000/EFL[mm]",
+          "tolerance": {"atol": 0.0002, "rtol": 0.00002, "source": "test_power_map_value_states_live.py:47-48"}
+        }
+      },
+      "outputs": {
+        "directory": ".local/evidence/development/CV-02/power-radius-sweep/",
+        "files": ["anchors.json", "state/close_receipt.json", "native/"],
+        "anchors_fields": [
+          "cases[].radius_mm",
+          "cases[].radius_readback",
+          "cases[].analytic_efl_mm",
+          "cases[].analytic_power_d",
+          "cases[].pupil_power.raw_value",
+          "cases[].pupil_efl.raw_value",
+          "cases[].field_power.raw_value",
+          "cases[].field_efl.raw_value",
+          "cases[].zero_observed",
+          "cases[].gate_power",
+          "cases[].gate_efl",
+          "summary.zero_radii",
+          "summary.smallest_power_tested_d",
+          "cleanup_error",
+          "active_task_after_shutdown",
+          "close_receipt.content"
+        ]
+      },
+      "expected_duration_seconds": "20-40",
+      "close_conditions": [
+        "anchors.json records closed=true after a successful disconnect.",
+        "state/close_receipt.json exists and its parsed content is stored under close_receipt.content.",
+        "active_task_after_shutdown must be false.",
+        "A shutdown failure is recorded as cleanup_error and must not replace the original exception."
+      ],
+      "success_criteria": "Diagnostic run completes: four radii recorded, no error field, close evidence complete.",
+      "interpretation_limit": [
+        "A finite result at every radius does NOT prove that zero occurs only at exactly zero power.",
+        "A lower threshold cannot be excluded by this experiment.",
+        "zero_interpretation must stay unresolved_native_zero_semantics regardless of the outcome."
+      ]
+    },
+    {
+      "id": "JOB-CV02-02",
+      "purpose": "E3 decentered-aperture clipping with a verified unchanged pupil/field mapping.",
+      "cwd": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-model\\Zemax_MCP",
+      "command": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.venv\\Scripts\\python.exe -B scripts/probes/CV-02/power_asymmetric_aperture018.py .local/evidence/development/CV-02/power-asymmetric-aperture/",
+      "inputs": {
+        "single_variable": "surface 1 aperture decenter",
+        "base_model": "surface 1 radius 50, thickness 50, material N-BK7, semi_diameter 8, is_stop",
+        "cases": [
+          {"id": "base", "aperture": null},
+          {"id": "sym_r4", "aperture": {"type": "CircularAperture", "maximum_radius": 4, "x_decenter": 0}},
+          {"id": "dec_1p5", "aperture": {"type": "CircularAperture", "maximum_radius": 4, "x_decenter": 1.5}},
+          {"id": "dec_3p0", "aperture": {"type": "CircularAperture", "maximum_radius": 4, "x_decenter": 3.0}}
+        ],
+        "fixed_coordinates": [[-1.0, 0.0], [-0.6, 0.0], [-0.2, 0.0], [0.0, 0.0], [0.2, 0.0], [0.6, 0.0], [1.0, 0.0]],
+        "why_not_vignetting_factors": "VCX/VCY remap the normalized pupil to different real rays; an aperture only clips, so (hx,hy,px,py) keep mapping to the same rays",
+        "mapping_tolerance": 1e-12
+      },
+      "outputs": {
+        "directory": ".local/evidence/development/CV-02/power-asymmetric-aperture/",
+        "files": ["anchors.json", "state/close_receipt.json", "native/"],
+        "anchors_fields": [
+          "cases[].aperture_readback",
+          "cases[].mapping[].max_abs_diff",
+          "cases[].mapping_unchanged",
+          "cases[].rows[].vignette_code",
+          "cases[].rows[].power.raw_value",
+          "cases[].rows[].efl.raw_value",
+          "cases[].versus_baseline[].power_delta",
+          "cases[].versus_baseline[].vignette_changed",
+          "cases[].value_changed",
+          "cleanup_error",
+          "active_task_after_shutdown",
+          "close_receipt.content"
+        ]
+      },
+      "expected_duration_seconds": "30-60",
+      "close_conditions": [
+        "anchors.json records closed=true after a successful disconnect.",
+        "state/close_receipt.json exists and its parsed content is stored under close_receipt.content.",
+        "active_task_after_shutdown must be false.",
+        "A shutdown failure is recorded as cleanup_error and must not replace the original exception."
+      ],
+      "success_criteria": "Diagnostic run completes: four cases recorded with per-point mapping diffs and native values, no error field, close evidence complete.",
+      "interpretation_limit": [
+        "If mapping_unchanged is false for a case, that case is diagnostic only and supports no inference.",
+        "A value change and the absence of a change are both evidence only; neither proves the internal differential-ring algorithm.",
+        "The probe queries the native operand directly, so its values are native values, not adapter output."
+      ]
+    }
+  ]
+}

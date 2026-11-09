@@ -1,0 +1,8 @@
+[
+  {"tool":"run_analysis","arguments":{"request":{"kind":"star_align_check"}}},
+  {"tool":"run_analysis","arguments":{"request":{"kind":"star_sys_viewer"}}},
+  {"tool":"run_analysis","arguments":{"request":{"kind":"star_2d_def_plot"}}},
+  {"tool":"run_analysis","arguments":{"request":{"kind":"star_perf_change"}}},
+  {"tool":"run_analysis","arguments":{"request":{"kind":"star_index_vs_temp"}}},
+  {"tool":"run_analysis","arguments":{"request":{"kind":"star_inspect_fea"}}}
+]

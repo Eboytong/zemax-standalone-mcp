@@ -52,11 +52,21 @@ def test_fft_coherent_line_pupil_slice(pupil_size,plot_sampling,pupil_nodes):
             pupil_positions=5*(np.arange(pupil_size)-half)/radius
             amplitude=np.exp(-2j*np.pi*positions[:,None]*pupil_positions[None,:]/(.55*abs(thickness)))@pupil
             expected=abs(amplitude)**2;expected/=expected.max()
+            nyquist_um=.55*abs(thickness)/(2*(5/radius))
+            valid_reference=np.abs(positions)<nyquist_um
+            assert valid_reference.any()
+            outside=np.abs(positions)>nyquist_um+1e-7
             records.append(dict(thickness=thickness,pupil_real=pupil.real.tolist(),pupil_imag=pupil.imag.tolist(),
                 positions_um=positions.tolist(),pupil_positions_mm=pupil_positions.tolist(),
-                expected=expected.tolist(),actual=actual.tolist(),psf=psf,wavefronts=wavefronts,summary=summary,result=result))
+                expected=expected.tolist(),actual=actual.tolist(),psf=psf,wavefronts=wavefronts,summary=summary,result=result,
+                independent_reference_nyquist_um=nyquist_um,valid_reference_mask=valid_reference.tolist(),
+                reference_domain='Discrete pupil quadrature is unaliased only inside lambda*distance/(2*pupil_step). Full raw arrays retained.',
+                full_window_max_difference=float(abs(actual-expected).max())))
             (e.folder/'comparisons.json').write_text(json.dumps(records,ensure_ascii=False,indent=2),encoding='utf-8')
-            try:e.check(str(thickness)+' coherent pupil slice',float(abs(actual-expected).max()),0,atol=.005,rtol=0)
+            try:
+                e.check(str(thickness)+' unaliased coherent pupil slice',float(abs(actual[valid_reference]-expected[valid_reference]).max()),0,atol=.005,rtol=0)
+                if outside.any():
+                    e.check(str(thickness)+' native samples outside Fourier support',float(abs(actual[outside]).max()),0,atol=1e-12,rtol=0)
             except AssertionError:failures.append(e.checks[-1])
         await e.call('disconnect')
         assert not failures,failures

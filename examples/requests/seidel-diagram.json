@@ -1,0 +1,12 @@
+{
+  "request": {
+    "kind": "seidel_diagram",
+    "method": "coefficients",
+    "first_surface": 1,
+    "wavelength": 1,
+    "ignore_chromatic": false,
+    "ignore_distortion": false,
+    "plot_scale": 0,
+    "suppress_frame": false
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "schema": "d00x-pass-items/1",
+  "development_group": "D005",
+  "worker_id": "zemax-p01-polarization",
+  "pass_date": "2026-11-08",
+  "plan_source": "development/tracking/d00x-pass-20261108.json",
+  "plan": ".local/coordination/pass-d005-plan.md",
+  "correction": ".local/coordination/d005-interface-correction.md",
+  "final_report": ".local/coordination/pass-d005-report.md",
+  "delivery_report": ".local/coordination/final-report.md",
+  "revision": "input definitions corrected from the 2024 R2 manual; MODIFYSETTINGS attribution re-derived from the manual export layout (key block precedes its own heading) and from existing source usage; wrong XSE_/PPM_/IMA_ mappings removed",
+  "status": "offline_delivery_closed_native_pending",
+  "interface_evidence": {
+    "analysis_ids": ".local/evidence/development/BASE-01/probe/api-interfaces.json (enum ZOSAPI.Analysis.AnalysisIDM)",
+    "settings_surfaces": ".local/evidence/development/CV-02/probe442-b005/probe.json and CV-02/bitmap-viewer-repeat-20261108/probe.json (all AS_Default)",
+    "modify_settings_keys": ".local/evidence/development/BASE-01/manual349-modifysettings.txt, verified per key block with its own heading line",
+    "key_attribution": {
+      "extended_diffraction_image": {"prefix": "EXD_", "key_lines": "45-48", "heading_lines": "49-50"},
+      "partially_coherent_image": {"prefix": "PCI_", "key_lines": "274-283", "heading_lines": "284-285"},
+      "geometric_bitmap_image": {"prefix": "GBM_", "key_lines": "127-136", "heading_lines": "137-138"}
+    },
+    "rejected_prefixes": {
+      "XSE_": "Extended Source Encircled Energy (51-62, heading 63-64)",
+      "PPM_": "Polarization Pupil Map (286-295, heading 296; already used by polarization.py)",
+      "IMA_": "Geometric Image Analysis (139-146, heading 147)"
+    },
+    "manual_sections": ".local/evidence/development/EXT-EXPORT/manual042.txt lines 35661 (3.2.8.3), 35792 (3.2.8.4), 35877 (3.2.8.5), 36225 (3.2.8.6), 36432 (3.2.8.9), 38246 (3.3.4)",
+    "real_reports": ".local/evidence/development/CV-02/probe442-b005/*.txt (UTF-16)"
+  },
+  "offline_control_probe": {
+    "script": "scripts/probes/D005/parse_saved_reports.py",
+    "output": ".local/coordination/d005-saved-report-parse.json",
+    "application_created": false
+  },
+  "items": [
+    {
+      "canonical_item_id": "WP-01.BeamFileViewer",
+      "pass_state": "offline_contract_ready",
+      "confirmed_interface": {"native_id": "BeamFileViewer", "analysis_id": 96, "settings_class": "no IAS_ settings class found; not probed natively", "documented_keys": [], "result_channel": "image window; viewer settings are a subset of POP (unverified)"},
+      "corrected_input_definition": "ZBF only, files in <pop>; viewing/analysis of a beam already propagated by POP without re-propagation",
+      "offline_artifacts": ["image_viewers.ANALYSIS_IDS['beam_file_viewer']", "image_viewers.accepts_source('beam_file_viewer', ...)", "image_viewers.declared_scope('beam_file_viewer')", "existing beam_files.read_beam (unchanged, no new tests)"],
+      "checks_run": "tests/unit/test_image_viewers.py (identity, acceptance, scope, result-channel contract, no-wiring guard)",
+      "native_jobs": [{"id": "D5-B1", "status": "not_run", "purpose": "reflect the analysis settings object and export a viewer report for a ZBF", "unblock": "application_create recovers"}],
+      "evidence": [".local/evidence/development/EXT-EXPORT/manual042.txt:38246"],
+      "unblock_conditions": "native reflection shows whether a settings object exists; viewer display channel captured and compared with read_beam identity",
+      "verified": false
+    },
+    {
+      "canonical_item_id": "CV-02.BitmapFileViewer",
+      "pass_state": "offline_contract_ready",
+      "confirmed_interface": {"native_id": "BitmapFileViewer", "analysis_id": 62, "settings_class": "AS_Default", "documented_keys": [], "result_channel": "0 data grids, no text export (saved probe); the image window is the only channel"},
+      "corrected_input_definition": "BMP/JPG/PNG displayed without any processing, files in <images>",
+      "offline_artifacts": ["image_viewers.RESULT_CHANNELS['bitmap_file_viewer']", "image_viewers.accepts_source(...)", "image_viewers.bitmap_identity + sniff_bitmap_header (header-only, matching the no-processing semantics)"],
+      "checks_run": "tests/unit/test_image_viewers.py::test_result_channels_match_the_saved_probes and acceptance cases",
+      "native_jobs": [{"id": "D5-B2", "status": "not_run", "purpose": "capture the viewer channel and confirm no numeric output", "unblock": "application_create recovers"}],
+      "evidence": [".local/evidence/development/EXT-EXPORT/manual042.txt:36432", ".local/evidence/development/CV-02/bitmap-viewer-repeat-20261108/probe.json"],
+      "unblock_conditions": "native probe confirms the channel and the empty data set",
+      "verified": false
+    },
+    {
+      "canonical_item_id": "IM-01.GeometricBitmapImageAnalysis",
+      "pass_state": "implemented_pending_native_verification",
+      "confirmed_interface": {"native_id": "GeometricBitmapImageAnalysis", "analysis_id": 61, "settings_class": "IAS_GeometricImageAnalysis (public properties)", "documented_keys": ["GBM_FIELDSIZE", "GBM_RAYS", "GBM_XPIX", "GBM_YPIX", "GBM_XSIZ", "GBM_YSIZ", "GBM_INPUT", "GBM_OUTPUT", "GBM_SURFACE", "GBM_ROTATION"], "result_channel": "RGB data grid through the existing adapter"},
+      "corrected_input_definition": "BMP/JPG/PNG source in <images>; Field Y Size defines the source size in field space; Show Source Bitmap traces no rays; GBM_* keys are this analysis' documented MODIFYSETTINGS surface (IMA_* belong to Geometric Image Analysis)",
+      "offline_artifacts": ["existing analyses/imaging.py adapter (unchanged)", "image_viewers.MODIFY_SETTINGS['geometric_bitmap_image'] = GBM_* with provenance lines", "image_viewers.declared_scope('geometric_bitmap_image')"],
+      "checks_run": "tests/unit/test_image_viewers.py::test_geometric_bitmap_adapter_contract_is_unchanged and documented-key/attribution tests",
+      "native_jobs": [{"id": "D5-B3", "status": "not_run", "purpose": "numeric RGB grid verification against a controlled bitmap", "unblock": "application_create recovers"}],
+      "evidence": [".local/evidence/development/EXT-EXPORT/manual042.txt:35661", ".local/evidence/development/BASE-01/manual349-modifysettings.txt:127-138"],
+      "unblock_conditions": "native run compares the RGB grid against a controlled source bitmap",
+      "verified": false
+    },
+    {
+      "canonical_item_id": "CV-02.LightSourceAnalysis",
+      "pass_state": "offline_parse_and_contract_ready",
+      "confirmed_interface": {"native_id": "LightSourceAnalysis", "analysis_id": 63, "settings_class": "AS_Default", "documented_keys": [], "result_channel": "1 message, 0 data grids for the supplied system"},
+      "corrected_input_definition": "NSC Source File ray list (DAT or SDF/TM25RAY binary, binary only) traced geometrically through a sequential system; DAT uses system wavelengths (monochromatic or the defined set), SDF/TM25RAY always use the wavelengths stored in the file; flux in Watts or Lumens; Fraction selects a reproducible ray subset; finite conjugate systems only",
+      "offline_artifacts": ["image_viewers.parse_light_source_text (finite-conjugate refusal, unknown shapes rejected rather than guessed)", "image_viewers.declared_scope('light_source') with wavelength rules", "image_viewers.accepts_source('light_source', ...) for .dat/.sdf/.tm25ray"],
+      "checks_run": "tests/unit/test_image_viewers.py (message parse, unknown-shape rejection, wavelength/notes contract); saved-report probe parsed probe442-b005/LightSourceAnalysis.txt to finite_conjugate_only",
+      "native_jobs": [{"id": "D5-B4", "status": "not_run", "purpose": "finite-conjugate system image with a DAT and an SDF source; compare pixels and flux", "unblock": "application_create recovers and a finite conjugate lens file is available"}],
+      "evidence": [".local/evidence/development/EXT-EXPORT/manual042.txt:35792", ".local/evidence/development/CV-02/probe442-b005/LightSourceAnalysis.txt", ".local/coordination/d005-saved-report-parse.json"],
+      "unblock_conditions": "native image report for a finite conjugate lens parses and the detector flux matches the file flux",
+      "verified": false
+    },
+    {
+      "canonical_item_id": "CV-02.ExtendedDiffractionImageAnalysis",
+      "pass_state": "offline_parse_and_contract_ready",
+      "confirmed_interface": {"native_id": "ExtendedDiffractionImageAnalysis", "analysis_id": 65, "settings_class": "AS_Default", "documented_keys": ["EXD_DISPLAYSIZE", "EXD_FIELD", "EXD_FILESIZE", "EXD_WAVE"], "result_channel": "1 data grid plus the text report"},
+      "corrected_input_definition": "source image is IMA/BIM only (not ZBF) and defines the ideal image in image space; illumination must be fully coherent or fully incoherent; the OTF may vary across the field (OTF Grid); Data Type is incoherent image or coherent image, a complex ZBF being only an optional output; EXD_* is the only documented MODIFYSETTINGS subset (no OTF Grid/Oversampling keys)",
+      "offline_artifacts": ["image_viewers.parse_extended_diffraction_text (wavelength, field, source/display sizes, pixel counts, pixel sizes, axes, aberration flag, grid stats)", "image_viewers.declared_scope('extended_diffraction_image')", "image_viewers.MODIFY_SETTINGS['extended_diffraction_image'] = EXD_* with provenance lines"],
+      "checks_run": "tests/unit/test_image_viewers.py (synthetic + saved 256x256 report; 65536 cells, max 1.0, display pixel size 0.3906 um, shape/non-finite rejection); probe confirmed 0.05 mm / 7x7 source and 0.1 mm / 256x256 display",
+      "native_jobs": [{"id": "D5-B5", "status": "not_run", "purpose": "controlled EXD_* ModifySettings run with read-back; confirm coherent vs incoherent data type", "unblock": "application_create recovers"}],
+      "evidence": [".local/evidence/development/EXT-EXPORT/manual042.txt:36225", ".local/evidence/development/BASE-01/manual349-modifysettings.txt:45-50", ".local/evidence/development/CV-02/probe442-b005/ExtendedDiffractionImageAnalysis.txt"],
+      "unblock_conditions": "native grid matches the offline parse and read-back confirms EXD_* took effect",
+      "verified": false
+    },
+    {
+      "canonical_item_id": "CV-02.PartiallyCoherentImageAnalysis",
+      "pass_state": "offline_parse_and_contract_ready",
+      "confirmed_interface": {"native_id": "PartiallyCoherentImageAnalysis", "analysis_id": 64, "settings_class": "AS_Default", "documented_keys": ["PCI_FIELD", "PCI_FILESIZE", "PCI_WAVE", "PCI_RESAMPLE", "PCI_RSNX", "PCI_RSNY", "PCI_RSDCX", "PCI_RSDCY", "PCI_RSDLX", "PCI_RSDLY"], "result_channel": "1 data grid plus the text report"},
+      "corrected_input_definition": "IMA/BIM inputs carry relative irradiance and live in <images>; the ZBF subset carries relative complex amplitude and lives in <pop>; coherence is chosen by Data Type (incoherent/coherent/raw, transfer functions, partially coherent image/PSF/gamma); Gamma is the complex degree of coherence form, Alpha its scale parameter, Fraction the encircled-energy fraction; detector resampling (Number X/Y, Delta X/Y, Decenter X/Y) is separate from Oversampling and Zero Padding; PCI_* is the documented MODIFYSETTINGS subset",
+      "offline_artifacts": ["image_viewers.parse_partially_coherent_text (wavelength, field, width, pixel size, pixels, imaging type, aberration flag, grid stats/axes)", "image_viewers._imaging exact-line coherence classification", "image_viewers.declared_scope('partially_coherent_image')", "image_viewers.MODIFY_SETTINGS['partially_coherent_image'] = PCI_* with provenance lines"],
+      "checks_run": "tests/unit/test_image_viewers.py (three imaging types, diffraction-limited variant, ragged/empty/non-finite/shape-mismatch rejection, saved 13x13 report max 1.0, pixel size 0.14285 mm); probe confirmed 1.8571 mm / 13x13 / incoherent",
+      "native_jobs": [{"id": "D5-B6", "status": "not_run", "purpose": "IMA vs ZBF input comparison, Gamma/Alpha/Fraction sweep, resampling read-back via PCI_* keys", "unblock": "application_create recovers"}],
+      "evidence": [".local/evidence/development/EXT-EXPORT/manual042.txt:35877", ".local/evidence/development/BASE-01/manual349-modifysettings.txt:274-285", ".local/evidence/development/CV-02/probe442-b005/PartiallyCoherentImageAnalysis.txt"],
+      "unblock_conditions": "native IMA and ZBF inputs both parse; PCI_* read-back confirms the resampling stage",
+      "verified": false
+    }
+  ],
+  "checks_summary": {
+    "image_viewers_tests": "53 passed",
+    "combined_suite": "220 passed (D001 parsers + native-controls + polarization + transmission_fan + image_viewers); run before the probe-only review revision, which touches no product module",
+    "native_controls_after_review": "41 passed (.local/coordination/native-controls-review-report.md)",
+    "text_revision_run": "test_image_viewers.py + test_native_controls.py together: 94 passed",
+    "offline_control_probe": "parsed all three saved reports; see .local/coordination/d005-saved-report-parse.json",
+    "application_created": false,
+    "product_wiring": "none; guard test asserts no product module references image_viewers"
+  },
+  "notes": "No item claims done. Viewers keep their full declared scope unverified. The earlier XSE_/PPM_/IMA_ key assignments were wrong and were removed; documented keys are EXD_ (Extended Diffraction Image), PCI_ (Partially Coherent Image) and GBM_ (Geometric Bitmap Image) only, each tied to the manual key-block/heading line numbers. Light Source, Bitmap File Viewer and Beam File Viewer have no documented keys and stay that way. The N1/N2/N3 probe review corrections are delivered in .local/coordination/native-controls-review-report.md; no OpticStudio application was created."
+}

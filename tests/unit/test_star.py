@@ -104,8 +104,17 @@ def test_star_point_paging_preserves_data_kind_and_native_state(tmp_path, kind):
 
 def test_star_feature_flag_checked_before_data_access(tmp_path):
     b = Backend(tmp_path); b.native.application.IsSTARModuleEnabled = False
+    def unexpected_access(index):
+        raise AssertionError('STAR data must not be accessed while the module is disabled')
+    b._row = unexpected_access
     with pytest.raises(ZemaxError) as exc: b.get_star_data(StarRead(surface=1))
     assert exc.value.code == 'FEATURE_UNAVAILABLE'
+    assert exc.value.details['enabled'] is False
+    assert 'Enterprise-level' in exc.value.details['required_license']
+    assert '2024 R2' in exc.value.details['requirement_source']
+    assert '1708' in exc.value.details['requirement_source']
+    assert 'IsSTARModuleEnabled' in exc.value.details['next_action']
+    assert b.events == [] and b.revision == 0
 
 
 @pytest.mark.parametrize('kind', BRANCHES)
@@ -197,3 +206,113 @@ def test_star_native_fitted_sample_values(tmp_path, kind):
     if kind == 'deformation': assert (row['dx'],row['dy'],row['dz']) == (1,2,.25)
     else: assert row['refractive_index'] == 1.5
     if kind == 'temperature': assert row['temperature'] == 21.
+
+
+def unload_request(kind):
+    return RunStar(request=dict(kind='unload_'+kind, surface=1))
+
+
+def _wire_unload(b, kind, clears=True, raises=False):
+    attr = BRANCHES[kind][1]
+
+    def _unload():
+        b.events.append('unload')
+        if raises:
+            raise ZemaxError('NATIVE_UNLOAD', 'fixture unload failure')
+        if clears:
+            setattr(b.fea, attr, False)
+    b.fea.UnloadData = _unload
+    b.fea.Filename = 'loaded_fea.txt'
+
+
+@pytest.mark.parametrize('kind', BRANCHES)
+def test_star_unload_success_clears_flag_and_retains_source(tmp_path, kind):
+    b = Backend(tmp_path)
+    _wire_unload(b, kind, clears=True)
+    srcfile = tmp_path / 'fea_src.txt'; srcfile.write_text('fixture')
+    b.fea.Filename = str(srcfile)
+    attr = BRANCHES[kind][1]
+    assert getattr(b.fea, attr) is True
+    b.run_star_operation(unload_request(kind)); list(b.flow)
+    payload = b.task['payload']
+    assert payload['before'] == dict(imported=True, total=2, filename=str(srcfile))
+    assert payload['after']['imported'] is False
+    sf = payload['source_file']
+    assert sf['path'] == str(srcfile)
+    assert sf['exists_before'] is True and sf['exists_after'] is True
+    assert sf['no_source_delete_performed'] is True
+    assert srcfile.exists()  # adapter did not delete the staged source
+    assert payload['detail']['imported'] is False
+    assert b.events == ['checkpoint', 'unload']
+    assert b.task['baseline']['context']['model_revision'] == 0
+
+
+@pytest.mark.parametrize('kind', BRANCHES)
+def test_star_unload_succeeds_when_detail_read_unavailable(tmp_path, kind):
+    """Empty-data Fits objects may be inaccessible; a successful unload must not fail on it."""
+    b = Backend(tmp_path)
+    _wire_unload(b, kind, clears=True)
+
+    def boom(req):
+        raise ZemaxError('INVALID_RESULT_DATA', 'Fits unavailable on empty data')
+
+    b.get_star_data = boom
+    b.run_star_operation(unload_request(kind)); list(b.flow)
+    payload = b.task['payload']
+    assert payload['after']['imported'] is False
+    assert 'detail' not in payload
+    assert payload['detail_unavailable']['code'] == 'INVALID_RESULT_DATA'
+    assert b.events == ['checkpoint', 'unload']  # success, no restore
+
+
+@pytest.mark.parametrize('kind', BRANCHES)
+def test_star_unload_requires_imported_data(tmp_path, kind):
+    b = Backend(tmp_path)
+    _wire_unload(b, kind)
+    setattr(b.fea, BRANCHES[kind][1], False)
+    with pytest.raises(ZemaxError) as exc:
+        b.run_star_operation(unload_request(kind))
+    assert exc.value.code == 'MISSING_FEA_DATA'
+    assert b.events == []
+
+
+@pytest.mark.parametrize('kind', BRANCHES)
+def test_star_unload_rejects_when_flag_not_cleared(tmp_path, kind):
+    b = Backend(tmp_path)
+    _wire_unload(b, kind, clears=False)
+    b.run_star_operation(unload_request(kind))
+    with pytest.raises(ZemaxError) as exc:
+        list(b.flow)
+    assert exc.value.code == 'SETTING_REJECTED'
+    assert b.events == ['checkpoint', 'unload', 'restore']
+
+
+@pytest.mark.parametrize('kind', BRANCHES)
+def test_star_unload_cancel_restores_at_boundary(tmp_path, kind):
+    b = Backend(tmp_path)
+    _wire_unload(b, kind)
+    b.run_star_operation(unload_request(kind)); next(b.flow)
+    b.task['cancel_requested'] = True
+    with pytest.raises(Cancelled): next(b.flow)
+    assert b.events[-1] == 'restore'
+
+
+@pytest.mark.parametrize('kind', BRANCHES)
+def test_star_unload_native_failure_restores_and_preserves_error(tmp_path, kind):
+    b = Backend(tmp_path); b.restore_fails = True
+    _wire_unload(b, kind, raises=True)
+    b.run_star_operation(unload_request(kind))
+    with pytest.raises(ZemaxError) as exc:
+        list(b.flow)
+    assert exc.value.code == 'STAR_RESTORE_FAILED'
+    assert exc.value.details['original_error']['code'] == 'NATIVE_UNLOAD'
+    assert b.events == ['checkpoint', 'unload', 'restore']
+
+
+@pytest.mark.parametrize('payload', [
+    dict(kind='unload_deformation', surface=0),
+    dict(kind='unload_temperature'),
+    dict(kind='unload_scan', surface=1),
+])
+def test_star_unload_parameter_contract(payload):
+    with pytest.raises(ValidationError): RunStar(request=payload)

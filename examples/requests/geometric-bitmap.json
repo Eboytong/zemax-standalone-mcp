@@ -1,0 +1,13 @@
+{
+  "request": {
+    "kind": "geometric_bitmap_image",
+    "input_file": "C:/controlled/source.bmp",
+    "field_size": 1,
+    "rotation": 0,
+    "rays_per_pixel": 10,
+    "x_pixels": 17,
+    "y_pixels": 11,
+    "x_pixel_size": 0.05,
+    "y_pixel_size": 0.05
+  }
+}

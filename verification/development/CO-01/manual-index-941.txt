@@ -1,7 +1,0 @@
-See "Reflectivity vs. Wavelength" for settings
-3.4.3.12.Retardancevs.Wavelength(coatings,polarizationandsurfacephysics
-group)
-Computes the retardance for the specified surface as a function of incident wavelength.
-Release 2024 R2 - © Ansys, Inc. All rights reserved. 942
-Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
-The Analyze Tab (sequential ui mode)

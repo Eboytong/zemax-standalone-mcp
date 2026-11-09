@@ -1,0 +1,67 @@
+{
+  "description": "NSC source object 1; source-color settings and the separate spectrum viewer are independently owned.",
+  "calls": [
+    {
+      "tool": "update_nsc_objects",
+      "arguments": {
+        "request": {
+          "changes": [
+            {
+              "object": 1,
+              "spectrum": {
+                "mode": "BlackBodySpectrum",
+                "settings": {
+                  "TemperatureK": 3000,
+                  "SpectrumCount": 20,
+                  "WavelengthFrom": 0.4,
+                  "WavelengthTo": 0.7
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool": "get_nsc_objects",
+      "arguments": {
+        "request": {
+          "start": 1,
+          "count": 1
+        }
+      }
+    },
+    {
+      "tool": "update_nsc_objects",
+      "arguments": {
+        "request": {
+          "changes": [
+            {
+              "object": 1,
+              "spectrum": {
+                "mode": "CIE1931Tristimulus",
+                "settings": {
+                  "X": 1.5,
+                  "Y": 0.5,
+                  "Z": 0.1
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool": "get_capabilities",
+      "arguments": {}
+    },
+    {
+      "tool": "run_analysis",
+      "arguments": {
+        "request": {
+          "kind": "source_spectrum_viewer"
+        }
+      }
+    }
+  ]
+}

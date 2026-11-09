@@ -1,0 +1,10 @@
+# Ray Aiming wizard lifecycle repeat, 2026-11-08
+
+- Item: `ED-04.RayAimingWizard`; OpticStudio 24.2.0 build 240529 PremiumEdition.
+- Plan: run the ordinary request/resource lifecycle checks, then use a bounded read-only native query to verify the installed wizard factory, option response, close path and model preservation. Retain the previous execution/cancel diagnostic because the original native task did not stop or close.
+- Ordinary check: `.venv\Scripts\python.exe -m pytest tests/unit/test_design_tools.py -q` passed 39 tests.
+- Native read-only check: `.venv\Scripts\python.exe -m pytest tests/native/test_design_tools_live.py::test_ray_aiming_wizard_options_closes_without_mutation -q --run-zemax` passed 1 test in 15.62 s. `get_design_tool_options(kind=ray_aiming_wizard)` returned successfully with `settings={}`; before/after system settings and surface rows were equal. The formal options route closed the wizard successfully; OpticStudio close receipt reports `attempted=true`, `closed=true`, `error=null`, and stdio disconnected normally.
+- Existing controlled execution evidence: `.local/evidence/development/ED-04/ray-aiming276/probe.json`, OpticStudio 24.2.0, controlled baseline. `RunAndWaitWithTimeout(10)` returned `TimedOut` after 15.061 s; `IsRunning=true`; `Cancel()` returned true; `WaitWithTimeout(10)` also returned `TimedOut`; `IsRunning` remained true; `Close()` returned false. The RayAiming settings before/after were equal. The session disconnected but required reconnect because the tool handle remained unclosed.
+- Conclusion: keep `blocked`. Read-only factory/query/close is available; recommendation execution, cancellation, Apply and model preservation have no reliable completed run. Unlock condition: native build or formal API path where the task reaches a terminal state and `Close()` succeeds; then compare preview and Apply values, save/reload all Ray Aiming fields, and confirm full model state.
+- Current run: `.local/runs/runs/ray_aiming_options_repeat20261108_0b7e0b1abc/calls.json` and `state/close_receipt.json`.
+- Completion count: 0.

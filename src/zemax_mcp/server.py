@@ -32,6 +32,7 @@ from .pop_models import Pop,BeamRead,PopConvergence
 from .export_models import CadExport,LayoutExport
 from .nsc_models import DetectorSave,DetectorLoad
 from .export_models import AnalysisImage
+from .macro_models import StandaloneMacro
 
 
 def create_server():
@@ -315,7 +316,7 @@ def create_server():
     @tool
     async def run_analysis(request: AnalysisRequest) -> ToolResponse:
         """执行本机适配的顺序成像/像差/曲面分析，返回任务；实际设置和曲线、网格或原生文本随结果保存。"""
-        return await call("run_analysis", {"request":request.model_dump()})
+        return await call("run_analysis", {"request":request.model_dump(exclude_unset=request.kind in {'polarization_transmission_fan','polarization_transmission','fiber_coupling_settings','polarization_ray_trace','dispersion_diagram','dispersion_vs_wavelength','seidel_diagram'})})
 
     @tool
     async def get_configurations(request: ConfigurationRange) -> ToolResponse:
@@ -511,6 +512,11 @@ def create_server():
     async def run_optimization_wizard(request: WizardRequest) -> ToolResponse:
         """配置顺序/非序列优化向导，apply开启后生成评价函数，返回任务。"""
         return await call("run_optimization_wizard", {"request": request.model_dump(exclude_unset=True)})
+
+    @tool
+    async def run_standalone_macro(request: StandaloneMacro) -> ToolResponse:
+        """在独立OpticStudio进程中运行绝对路径ZPL宏；返回可轮询、可取消的任务。"""
+        return await call("run_standalone_macro", request.model_dump())
 
     @tool
     async def get_optimization_wizard_options(request: WizardOptions) -> ToolResponse:

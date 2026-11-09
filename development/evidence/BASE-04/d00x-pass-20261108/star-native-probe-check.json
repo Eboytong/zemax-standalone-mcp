@@ -1,0 +1,22 @@
+{
+  "worker_id": "zemax-p01-runtime",
+  "source": "DSH progress tool events",
+  "result": {
+    "ordinary_passed": 6,
+    "native_collected": 1,
+    "native_kinds_in_case": 6,
+    "native_executed": false
+  },
+  "events": [
+    {
+      "seq": 3591,
+      "type": "tool/call",
+      "text": "[工具调用] pwsh (call_00_ET_LQzJvGaTLcjPU2r3jUaa6371) {\"command\":\"cd C:\\\\Users\\\\tonge\\\\Desktop\\\\Zemax_MCP\\nWrite-Host \\\"=== new unit ===\\\"\\n& .\\\\.venv\\\\Scripts\\\\python.exe -B -X utf8 -m pytest tests/unit/test_star_analysis_probe.py -q -p no:cacheprovider 2>&1 | Select-String -Pattern \\\"passed|failed|error|ERROR|FAILED\\\" | Select-Object -Last 8 | Out-String -Width 160\\n\\\"[unit exit: $LASTEXITCODE]\\\"\\nWrite-Host \\\"=== native collect-only ===\\\"\\n& .\\\\.venv\\\\Scripts\\\\python.exe -B -X utf8 -m pytest tests/native/test_star_analysis_live.py --collect-only -q -p no:cacheprovider 2>&1 | Select-Object -Last 8 | Out-String -Width 160\\n\\\"[collect exit: $LASTEXITCODE]\\\"\",\"description\":\"Run new unit and collect native\",\"timeoutMs\":300000}"
+    },
+    {
+      "seq": 3594,
+      "type": "tool/result",
+      "text": "=== new unit ===\n\r\n6 passed in 0.08s\r\n\r\n\r\n\r\n[unit exit: 0]\r\n=== native collect-only ===\ntests/native/test_star_analysis_live.py::test_star_analysis_availability_and_generic_creation\r\n\r\n1 test collected in 0.49s\r\n\r\n[collect exit: 0]\r\n"
+    }
+  ]
+}

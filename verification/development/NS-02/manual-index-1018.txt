@@ -1,6 +1,0 @@
-4.5.1. Ray Database Viewer
-The Ray Database Viewerreads in a previously saved ZRD file, and displays the data in a textformat. Forinformation
-on creating a ZRD file, see the previous section.
-Release 2024 R2 - © Ansys, Inc. All rights reserved. 1019
-Contains proprietary and confidential information of ANSYS, Inc. and its subsidiaries and affiliates.
-The Analyze Tab (non-sequential ui mode)

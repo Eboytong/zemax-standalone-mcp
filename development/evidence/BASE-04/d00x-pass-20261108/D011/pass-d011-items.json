@@ -1,0 +1,529 @@
+{
+ "schema_version": 1,
+ "pass": "d011",
+ "effective_date": "2026-11-08",
+ "worker_id": "zemax-p01-material-model",
+ "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-model\\Zemax_MCP",
+ "branch": "codex/d002-material-model",
+ "baseline_commit": "34e1a18494015c2b383ec700b958015020b660fe",
+ "sources": {
+  "tracking": "development/tracking/d00x-pass-20261108.json",
+  "ledger": "development/ledgers/operations.csv",
+  "ledger_snapshot": ".local/coordination/d011-ledger.json",
+  "plan": ".local/coordination/pass-d011-plan.md",
+  "report": ".local/coordination/pass-d011-report.md"
+ },
+ "environment_blocker": {
+  "stage": "application_create",
+  "symptom": "180 s timeout on native startup",
+  "evidence": [
+   "development/evidence/BASE-04/runtime-phase-environment-20261108.md",
+   "verification/development/EXT-STAR/probe039.json:native"
+  ],
+  "decision": "defer_native_startup_for_this_pass",
+  "reused_native_evidence_date": "2026-11-05/2026-11-06 (readiness193, probe037/038/039); 2026-11-08 is static reconciliation only"
+ },
+ "shared_native_state": {
+  "IsSTARModuleEnabled": false,
+  "IsValidLicenseForAPI": true,
+  "STARData_type": "ZemaxUI.ZOSAPI.Editors.ZOSAPI_STAR_Data",
+  "evidence": "verification/development/EXT-STAR/readiness193.json"
+ },
+ "tolerances": {
+  "deformation": "1e-8 lens units + 1e-6 x reference",
+  "temperature": "1e-6 degC + 1e-6 x reference",
+  "direct_index": "1e-8 + 1e-7 x reference"
+ },
+ "actual_checks": [
+  {
+   "command": "python -B -m pytest tests/unit/test_star.py tests/unit/test_star_controls.py tests/unit/test_star_materials.py -q",
+   "result": "83 passed in 0.65s"
+  },
+  {
+   "command": "python -B -m pytest tests/unit/test_star.py -q",
+   "result": "47 passed (26 pre-existing + 21 new unload tests)"
+  },
+  {
+   "command": "existence check of probe037/038/039, parameters038, readiness193, control-evidence-reconciliation",
+   "result": "all present"
+  },
+  {
+   "command": "pre-implementation grep 'UnloadData|unload' src/zemax_mcp",
+   "result": "no matches (gap); post-implementation star.py has _run_star_unload and star_models.py has StarUnload"
+  }
+ ],
+ "items": [
+  {
+   "canonical_item_id": "EXT-STAR.Read",
+   "development_group": "D011",
+   "ledger_state": "blocked",
+   "scope": "Read native STAR state, fit metadata and paged FEA points",
+   "formal_interface": "ILDERow.STARData.{Deformations,Temperatures,DirectIndex}.FEAData (Are*Imported, NumberOfDataPoints, Filename, GetFEAPointsSafe); Fits.Settings/FitResults*",
+   "adapter_entry": "src/zemax_mcp/star.py:get_star_data (StarRead)",
+   "existing_evidence": [
+    "verification/development/EXT-STAR/probe037.json",
+    "verification/development/EXT-STAR/readiness193.json",
+    "development/evidence/EXT-STAR/control-evidence-reconciliation-20261108.md"
+   ],
+   "offline_completable": [
+    "StarRead model validation (remove_rigid_body deformation-only, z==0 for deformation samples)",
+    "paging guarantees (full native array materialized, rows<=1000)"
+   ],
+   "actual_checks": [
+    "test_star_point_paging_preserves_data_kind_and_native_state",
+    "test_star_feature_flag_checked_before_data_access",
+    "test_star_typed_conditions",
+    "part of 62 passed"
+   ],
+   "external_blocker": "IsSTARModuleEnabled=false; no controlled FEA instance",
+   "release_conditions": [
+    "Application reports IsSTARModuleEnabled=True with a controlled FEA model",
+    "verify value readback, paging, save/reload, recovery and close with original tolerances"
+   ],
+   "status_after_pass": "blocked (offline audit complete; native acceptance pending)"
+  },
+  {
+   "canonical_item_id": "EXT-STAR.UpdateMode",
+   "development_group": "D011",
+   "ledger_state": "blocked",
+   "scope": "Read/write STAR update mode and manual update lifecycle",
+   "formal_interface": "ISTARSubsystem.UpdateMode (STARUpdateMode Normal=0/Suspended=1) + DoManualUpdate()",
+   "adapter_entry": "src/zemax_mcp/star_controls.py:update_mode / check_mode",
+   "existing_evidence": [
+    "verification/development/EXT-STAR/probe038.json",
+    "verification/development/EXT-STAR/parameters038.json"
+   ],
+   "offline_completable": [
+    "StarUpdateMode nonempty validation",
+    "enum adopt via Equals + rollback to mode_before on failure"
+   ],
+   "actual_checks": [
+    "test_update_mode_manual_update_and_cancel_mode_restore",
+    "test_restore_error_retains_control_error_and_requires_reconnect",
+    "part of 62 passed"
+   ],
+   "external_blocker": "IsSTARModuleEnabled=false",
+   "release_conditions": [
+    "enable module",
+    "verify enum adoption, DoManualUpdate effect, save/reload and mode restore on cancel"
+   ],
+   "status_after_pass": "blocked (offline audit complete; native acceptance pending)"
+  },
+  {
+   "canonical_item_id": "EXT-STAR.Materials.refractive_index",
+   "development_group": "D011",
+   "ledger_state": "blocked",
+   "scope": "Query native material refractive index under explicit environment/material conditions",
+   "formal_interface": "ISTARMaterials.GetRefractiveIndex(String catalog, String material, Double wavelength, Double envP, Double envT, Double matP, Double matT)",
+   "adapter_entry": "src/zemax_mcp/star_materials.py:evaluate_material",
+   "existing_evidence": [
+    "verification/development/EXT-STAR/probe039.json",
+    "verification/development/EXT-STAR/readiness193.json",
+    "verification/development/EXT-STAR/native190-materials.xml",
+    "docs/topics/imaging/materials.md"
+   ],
+   "offline_completable": [
+    "parameter order and canonical identity tests",
+    "index<=0 / non-finite -> INVALID_RESULT_DATA guard test"
+   ],
+   "actual_checks": [
+    "test_star_material_parameter_order_and_canonical_identity",
+    "test_invalid_native_index_closes_catalog",
+    "test_material_utility_availability_is_decided_by_native_getter",
+    "part of 62 passed"
+   ],
+   "external_blocker": "ISTARMaterials returned index 0 for N-BK7/N-F2 across 3 catalog ids and 6 condition sets; native190 passed 0/failed 1",
+   "release_conditions": [
+    "ISTARMaterials returns finite positive index for a confirmed catalog/material",
+    "establish absolute/relative index convention with independent reference"
+   ],
+   "status_after_pass": "blocked (offline audit complete; native acceptance pending)"
+  },
+  {
+   "canonical_item_id": "EXT-STAR.Materials.dndt",
+   "development_group": "D011",
+   "ledger_state": "blocked",
+   "scope": "Query native material dn/dT with explicit temperature interval",
+   "formal_interface": "ISTARMaterials.GetDNDT(String catalog, String material, Double wavelength, Double envP, Double envT, Double matP, Double matT, Double deltaT)",
+   "adapter_entry": "src/zemax_mcp/star_materials.py:evaluate_material",
+   "existing_evidence": [
+    "verification/development/EXT-STAR/probe039.json",
+    "verification/development/EXT-STAR/readiness193.json",
+    "docs/topics/imaging/materials.md"
+   ],
+   "offline_completable": [
+    "dn/dT parameter order test",
+    "finiteness-only guard is correct (dn/dT may be zero or negative); zero values are judged by an independent thermal-optical reference and input identity, no value>0 constraint"
+   ],
+   "actual_checks": [
+    "test_dndt_error_preserves_method_conditions_and_close_warning",
+    "part of 83 passed"
+   ],
+   "external_blocker": "ISTARMaterials GetDNDT returned 0; no independent thermal-optical reference yet",
+   "release_conditions": [
+    "ISTARMaterials returns meaningful finite dn/dT for a confirmed material",
+    "independent thermal reference (central finite difference of native n at fixed environment)"
+   ],
+   "status_after_pass": "blocked (offline audit complete; native acceptance pending)"
+  },
+  {
+   "canonical_item_id": "EXT-STAR.ThermalControls",
+   "development_group": "D011",
+   "ledger_state": "blocked",
+   "scope": "Control thermal FEA fit type, working wavelength and GRIN steps",
+   "formal_interface": "ISTAR_Temperatures.{SetThermalFEAFitType,GetThermalFEAFitType,SetWorkingWavelength,GetWorkingWavelength,PrimaryWavelengthValue}",
+   "adapter_entry": "src/zemax_mcp/star_controls.py:thermal_controls",
+   "existing_evidence": [
+    "verification/development/EXT-STAR/probe038.json",
+    "verification/development/EXT-STAR/parameters038.json"
+   ],
+   "offline_completable": [
+    "StarThermalControls nonempty validation",
+    "working wavelength index range preflight"
+   ],
+   "actual_checks": [
+    "test_thermal_wavelength_preflight_and_final_combination_readback",
+    "part of 62 passed"
+   ],
+   "external_blocker": "IsSTARModuleEnabled=false; fit_type integer semantics unconfirmed",
+   "release_conditions": [
+    "enable module",
+    "verify fit_type/wavelength adoption readback, save/reload, restore"
+   ],
+   "status_after_pass": "blocked (offline audit complete; native acceptance pending)"
+  },
+  {
+   "canonical_item_id": "EXT-STAR.VolumeControls",
+   "development_group": "D011",
+   "ledger_state": "blocked",
+   "scope": "Set data/Fits GRINStep members and read final combination",
+   "formal_interface": "ISTAR_* branch GRINStep + branch.Fits.GRINStep",
+   "adapter_entry": "src/zemax_mcp/star_controls.py:volume_controls",
+   "existing_evidence": [
+    "verification/development/EXT-STAR/probe038.json",
+    "docs/topics/extensions/star.md"
+   ],
+   "offline_completable": [
+    "StarVolumeControls nonempty validation",
+    "single-member patch readback final combination"
+   ],
+   "actual_checks": [
+    "test_volume_controls_patch_one_native_member",
+    "part of 62 passed"
+   ],
+   "external_blocker": "IsSTARModuleEnabled=false; physical step convention unconfirmed",
+   "release_conditions": [
+    "enable module",
+    "verify both GRINStep members adopted and final combination readback, save/reload"
+   ],
+   "status_after_pass": "blocked (offline audit complete; native acceptance pending)"
+  },
+  {
+   "canonical_item_id": "EXT-STAR.ImportDeformation",
+   "development_group": "D011",
+   "ledger_state": "blocked",
+   "scope": "Import deformation file with explicit frame and lens-unit agreement",
+   "formal_interface": "ISTAR_DeformationsFEAData.ImportDeformations(String path); SetDataIsLocal/SetDataIsGlobal",
+   "adapter_entry": "src/zemax_mcp/star.py:run_star_operation(import_deformation)",
+   "existing_evidence": [
+    "verification/development/EXT-STAR/probe037.json",
+    "docs/topics/extensions/star.md"
+   ],
+   "offline_completable": [
+    "absolute-path preflight",
+    "length-unit agreement -> UNIT_MISMATCH",
+    "coordinate system write/readback",
+    "staging copy + restore on failure"
+   ],
+   "actual_checks": [
+    "test_star_import_stages_resource_and_checks_coordinate_selection",
+    "test_star_input_preflight_does_not_modify_model",
+    "test_star_import_failure_restores_and_preserves_original_error",
+    "test_star_import_cancel_restores_at_boundary",
+    "part of 62 passed"
+   ],
+   "external_blocker": "IsSTARModuleEnabled=false; no controlled deformation FEA input",
+   "release_conditions": [
+    "enable module + controlled deformation file matching lens units",
+    "verify import readback, independent deformation/normal reference, save/reload, recovery"
+   ],
+   "status_after_pass": "blocked (offline audit complete; native acceptance pending)"
+  },
+  {
+   "canonical_item_id": "EXT-STAR.FitDeformation",
+   "development_group": "D011",
+   "ledger_state": "blocked",
+   "scope": "Patch fit settings, refit, apply/remove deformation with checked enum option",
+   "formal_interface": "ISTAR_DeformationFits.{Settings,Refit,ApplyDeformations,RemoveDeformations,Options}",
+   "adapter_entry": "src/zemax_mcp/star.py:run_star_operation(fit_deformation)",
+   "existing_evidence": [
+    "verification/development/EXT-STAR/probe037.json",
+    "docs/topics/extensions/star.md"
+   ],
+   "offline_completable": [
+    "partial settings final readback and apply ordering",
+    "deformation_option compared by enum value not alias name"
+   ],
+   "actual_checks": [
+    "test_star_fit_partial_settings_final_readback_and_apply_order",
+    "test_star_option_compares_enum_values_instead_of_alias_names",
+    "part of 62 passed"
+   ],
+   "external_blocker": "IsSTARModuleEnabled=false; requires imported deformation data",
+   "release_conditions": [
+    "enable module + imported deformation",
+    "verify fit settings adoption, apply/enable state, numeric fit reference (1e-8 lens-unit + 1e-6 x ref), save/reload, restore"
+   ],
+   "status_after_pass": "blocked (offline audit complete; native acceptance pending)"
+  },
+  {
+   "canonical_item_id": "EXT-STAR.ImportTemperature",
+   "development_group": "D011",
+   "ledger_state": "blocked",
+   "scope": "Import temperature file with explicit frame and lens-unit agreement",
+   "formal_interface": "ISTAR_TemperaturesFEAData.ImportTemperatures(String path)",
+   "adapter_entry": "src/zemax_mcp/star.py:run_star_operation(import_temperature)",
+   "existing_evidence": [
+    "verification/development/EXT-STAR/probe037.json",
+    "docs/topics/extensions/star.md"
+   ],
+   "offline_completable": [
+    "same preflight/unit/coordinate/staging checks reused for temperature"
+   ],
+   "actual_checks": [
+    "test_star_import_stages_resource_and_checks_coordinate_selection",
+    "test_star_input_preflight_does_not_modify_model",
+    "part of 62 passed"
+   ],
+   "external_blocker": "IsSTARModuleEnabled=false; no controlled temperature FEA input",
+   "release_conditions": [
+    "enable module + controlled temperature file",
+    "verify import readback, thermal reference (1e-6 degC + 1e-6 x ref), save/reload"
+   ],
+   "status_after_pass": "blocked (offline audit complete; native acceptance pending)"
+  },
+  {
+   "canonical_item_id": "EXT-STAR.FitTemperature",
+   "development_group": "D011",
+   "ledger_state": "blocked",
+   "scope": "Patch fit settings, refit, apply/remove thermal profile",
+   "formal_interface": "ISTAR_TemperaturesFits.{Settings,Refit,ApplyTemperatures,RemoveTemperatures}",
+   "adapter_entry": "src/zemax_mcp/star.py:run_star_operation(fit_temperature)",
+   "existing_evidence": [
+    "verification/development/EXT-STAR/probe037.json",
+    "docs/topics/extensions/star.md"
+   ],
+   "offline_completable": [
+    "settings readback + apply ordering reused",
+    "deformation_option rejected for non-deformation kinds"
+   ],
+   "actual_checks": [
+    "test_star_fit_partial_settings_final_readback_and_apply_order",
+    "part of 62 passed"
+   ],
+   "external_blocker": "IsSTARModuleEnabled=false; requires imported temperature data",
+   "release_conditions": [
+    "enable module + imported temperature",
+    "verify fit adoption, thermal numeric reference, save/reload"
+   ],
+   "status_after_pass": "blocked (offline audit complete; native acceptance pending)"
+  },
+  {
+   "canonical_item_id": "EXT-STAR.ImportDirectIndex",
+   "development_group": "D011",
+   "ledger_state": "blocked",
+   "scope": "Import index file with explicit frame and lens-unit agreement",
+   "formal_interface": "ISTAR_DirectIndexFEAData.ImportDirectIndex(String path)",
+   "adapter_entry": "src/zemax_mcp/star.py:run_star_operation(import_direct_index)",
+   "existing_evidence": [
+    "verification/development/EXT-STAR/probe037.json",
+    "docs/topics/extensions/star.md"
+   ],
+   "offline_completable": [
+    "same preflight/unit/coordinate/staging checks reused"
+   ],
+   "actual_checks": [
+    "test_star_import_stages_resource_and_checks_coordinate_selection",
+    "part of 62 passed"
+   ],
+   "external_blocker": "IsSTARModuleEnabled=false; no controlled index FEA input",
+   "release_conditions": [
+    "enable module + controlled index file",
+    "verify import readback, index reference (1e-8 + 1e-7 x ref), save/reload"
+   ],
+   "status_after_pass": "blocked (offline audit complete; native acceptance pending)"
+  },
+  {
+   "canonical_item_id": "EXT-STAR.FitDirectIndex",
+   "development_group": "D011",
+   "ledger_state": "blocked",
+   "scope": "Patch fit settings, refit, apply/remove index profile",
+   "formal_interface": "ISTAR_DirectIndexFits.{Settings,Refit,ApplyIndex,RemoveIndex}",
+   "adapter_entry": "src/zemax_mcp/star.py:run_star_operation(fit_direct_index)",
+   "existing_evidence": [
+    "verification/development/EXT-STAR/probe037.json",
+    "docs/topics/extensions/star.md"
+   ],
+   "offline_completable": [
+    "settings readback + apply ordering reused"
+   ],
+   "actual_checks": [
+    "test_star_fit_partial_settings_final_readback_and_apply_order",
+    "part of 62 passed"
+   ],
+   "external_blocker": "IsSTARModuleEnabled=false; requires imported index data",
+   "release_conditions": [
+    "enable module + imported index",
+    "verify fit adoption, index numeric reference, save/reload"
+   ],
+   "status_after_pass": "blocked (offline audit complete; native acceptance pending)"
+  },
+  {
+   "canonical_item_id": "EXT-STAR.FittedSamples",
+   "development_group": "D011",
+   "ledger_state": "blocked",
+   "scope": "Evaluate native deformation, temperature and index fits at explicit points",
+   "formal_interface": "Fits.GetFittedDeformation / GetFittedDeformationRBMremoved / GetFittedIndex / GetFittedTemperature",
+   "adapter_entry": "src/zemax_mcp/star.py:get_star_data(sample_points=...)",
+   "existing_evidence": [
+    "verification/development/EXT-STAR/probe037.json",
+    "docs/topics/extensions/star.md"
+   ],
+   "offline_completable": [
+    "sample coordinate convention (deformation X/Y, temp/index X/Y/Z)",
+    "MISSING_FEA_DATA gate",
+    "<=1000 sample limit"
+   ],
+   "actual_checks": [
+    "test_star_native_fitted_sample_values",
+    "test_star_typed_conditions",
+    "part of 62 passed"
+   ],
+   "external_blocker": "IsSTARModuleEnabled=false; requires imported data for sampling",
+   "release_conditions": [
+    "enable module + imported data",
+    "verify fitted sample values against independent reference"
+   ],
+   "status_after_pass": "blocked (offline audit complete; native acceptance pending)"
+  },
+  {
+   "canonical_item_id": "EXT-STAR.UnloadDeformation",
+   "development_group": "D011",
+   "ledger_state": "blocked",
+   "scope": "Unload native STAR data with preserved source and recovery references",
+   "formal_interface": "ISTAR_DeformationsFEAData.UnloadData() (reflected in probe039)",
+   "adapter_entry": "IMPLEMENTED (main repo): src/zemax_mcp/star.py:_run_star_unload + star_models.py:StarUnload; dispatch via existing run_star_operation",
+   "existing_evidence": [
+    "verification/development/EXT-STAR/probe039.json",
+    "verification/development/EXT-STAR/readiness193.json (unload requires enabled feature + independently owned FEA copies)"
+   ],
+   "offline_completable": [
+    "typed StarUnload request (3 kinds) added to StarOperation union",
+    "run_star_operation branch: read imported/NumberOfDataPoints/Filename, call FEAData.UnloadData(), verify imported flag cleared, record before/after and source retention",
+    "checkpoint/cancel/restore and requires_reconnect reuse",
+    "docs section + examples/requests/star-unload.json"
+   ],
+   "actual_checks": [
+    "test_star_unload_success_clears_flag_and_retains_source",
+    "test_star_unload_requires_imported_data",
+    "test_star_unload_rejects_when_flag_not_cleared",
+    "test_star_unload_cancel_restores_at_boundary",
+    "test_star_unload_native_failure_restores_and_preserves_error",
+    "test_star_unload_parameter_contract",
+    "part of 21 new unload tests / 83 passed"
+   ],
+   "external_blocker": "native acceptance pending (IsSTARModuleEnabled=false + independently owned FEA copies); main-repo patch awaits native acceptance",
+   "release_conditions": [
+    "runtime integrates the main-repo patch",
+    "enable module + independently owned FEA copies",
+    "verify imported flag flips false, source resource retention, recovery and close for deformation/temperature/direct_index"
+   ],
+   "status_after_pass": "implemented in main repo (offline tests green); native acceptance pending"
+  },
+  {
+   "canonical_item_id": "EXT-STAR.UnloadTemperature",
+   "development_group": "D011",
+   "ledger_state": "blocked",
+   "scope": "Unload native STAR data with preserved source and recovery references",
+   "formal_interface": "ISTAR_TemperaturesFEAData.UnloadData() (reflected in probe039 unload_probe)",
+   "adapter_entry": "IMPLEMENTED (main repo): src/zemax_mcp/star.py:_run_star_unload + star_models.py:StarUnload; dispatch via existing run_star_operation",
+   "existing_evidence": [
+    "verification/development/EXT-STAR/probe039.json",
+    "verification/development/EXT-STAR/readiness193.json"
+   ],
+   "offline_completable": [
+    "typed StarUnload request (3 kinds) added to StarOperation union",
+    "run_star_operation branch: read imported/NumberOfDataPoints/Filename, call FEAData.UnloadData(), verify imported flag cleared, record before/after and source retention",
+    "checkpoint/cancel/restore and requires_reconnect reuse",
+    "docs section + examples/requests/star-unload.json"
+   ],
+   "actual_checks": [
+    "test_star_unload_success_clears_flag_and_retains_source",
+    "test_star_unload_requires_imported_data",
+    "test_star_unload_rejects_when_flag_not_cleared",
+    "test_star_unload_cancel_restores_at_boundary",
+    "test_star_unload_native_failure_restores_and_preserves_error",
+    "test_star_unload_parameter_contract",
+    "part of 21 new unload tests / 83 passed"
+   ],
+   "external_blocker": "native acceptance pending (IsSTARModuleEnabled=false + independently owned FEA copies); main-repo patch awaits native acceptance",
+   "release_conditions": [
+    "runtime integrates the main-repo patch",
+    "enable module + independently owned FEA copies",
+    "verify imported flag flips false, source resource retention, recovery and close for deformation/temperature/direct_index"
+   ],
+   "status_after_pass": "implemented in main repo (offline tests green); native acceptance pending"
+  },
+  {
+   "canonical_item_id": "EXT-STAR.UnloadDirectIndex",
+   "development_group": "D011",
+   "ledger_state": "blocked",
+   "scope": "Unload native STAR data with preserved source and recovery references",
+   "formal_interface": "ISTAR_DirectIndexFEAData.UnloadData() (reflected in probe039)",
+   "adapter_entry": "IMPLEMENTED (main repo): src/zemax_mcp/star.py:_run_star_unload + star_models.py:StarUnload; dispatch via existing run_star_operation",
+   "existing_evidence": [
+    "verification/development/EXT-STAR/probe039.json",
+    "verification/development/EXT-STAR/readiness193.json"
+   ],
+   "offline_completable": [
+    "typed StarUnload request (3 kinds) added to StarOperation union",
+    "run_star_operation branch: read imported/NumberOfDataPoints/Filename, call FEAData.UnloadData(), verify imported flag cleared, record before/after and source retention",
+    "checkpoint/cancel/restore and requires_reconnect reuse",
+    "docs section + examples/requests/star-unload.json"
+   ],
+   "actual_checks": [
+    "test_star_unload_success_clears_flag_and_retains_source",
+    "test_star_unload_requires_imported_data",
+    "test_star_unload_rejects_when_flag_not_cleared",
+    "test_star_unload_cancel_restores_at_boundary",
+    "test_star_unload_native_failure_restores_and_preserves_error",
+    "test_star_unload_parameter_contract",
+    "part of 21 new unload tests / 83 passed"
+   ],
+   "external_blocker": "native acceptance pending (IsSTARModuleEnabled=false + independently owned FEA copies); main-repo patch awaits native acceptance",
+   "release_conditions": [
+    "runtime integrates the main-repo patch",
+    "enable module + independently owned FEA copies",
+    "verify imported flag flips false, source resource retention, recovery and close for deformation/temperature/direct_index"
+   ],
+   "status_after_pass": "implemented in main repo (offline tests green); native acceptance pending"
+  }
+ ],
+ "audit_findings": [
+  "A: three Unload* items now implemented in the main repo (StarUnload typed union + star.py:_run_star_unload with checkpoint/cancel/restore) with 25 targeted tests; native acceptance still pending; ledger entry_points for Unload* still point at material files (mapping mismatch recorded, ledger unchanged, runtime merges after review).",
+  "B: native evidence dates 2026-11-05/06; 2026-11-08 is static reconciliation with no new native session.",
+  "Correction: dn/dT may legitimately be zero or negative; the adapter checking only finiteness is correct. The earlier 'missing positivity gate' finding is withdrawn; historical zero values are judged by an independent thermal-optical reference and input identity, with no value>0 constraint."
+ ],
+ "not_done_this_pass": [
+  "no native execution",
+  "shared STAR changes merged into main repo (star_models.py/star.py/backend.py unload lines); runtime merges after review",
+  "no ledger/batch/tracking edits",
+  "no Git commit",
+  "pytest-of-tonge/ retained",
+  "CV-01.FftSurfaceMtf retained-data experiment delegated to zemax-p01-hologram; not repeated here"
+ ],
+ "historical_sources": {
+  "b003_batch_count": "8/10 (readiness193, 2026-11-06; historical source, not this pass)",
+  "note": "B003 count is a historical reference and is not incremented by this offline audit."
+ }
+}

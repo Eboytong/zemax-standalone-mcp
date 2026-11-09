@@ -1,0 +1,401 @@
+{
+  "schema_version": 1,
+  "task": "D006.SOURCE_SPECTRUM_COLOR_ILLUMINATION",
+  "group": "D006",
+  "group_name": "光源、光谱、色度与照明",
+  "agent": "Agent 2 (四类材料图表与色散 / zemax-p01-material-reports)",
+  "effective_date": "2026-11-08",
+  "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-reports\\Zemax_MCP",
+  "branch": "codex/d002-material-reports",
+  "source_baseline": "34e1a18494015c2b383ec700b958015020b660fe",
+  "source_version": "0.1.62",
+  "opticstudio": "24.2.0 build 240529 PremiumEdition",
+  "python": "3.14",
+  "authoritative_plan": "development/tracking/d00x-pass-20261108.json",
+  "plan_document": ".local/coordination/pass-d006-plan.md",
+  "evidence_root_main_project": "C:/Users/tonge/Desktop/Zemax_MCP/development/evidence/NS-03",
+  "runtime_evidence_root_main_project": "C:/Users/tonge/Desktop/Zemax_MCP/.local/evidence/development/NS-03",
+  "executed_native_this_round": false,
+  "changes_product_code": false,
+  "changes_shared_ledgers": false,
+  "offline_replay": {
+    "script": ".local/coordination/d006-offline.py",
+    "output": ".local/coordination/d006-offline.out.json",
+    "command": "C:/Users/tonge/Desktop/Zemax_MCP/.venv/Scripts/python.exe -B .local/coordination/d006-offline.py",
+    "checks": 9,
+    "failed_checks": [],
+    "note": "reads only already-saved native artefacts and the installed sample.ies; no ZOS-API call"
+  },
+  "ordinary_tests": {
+    "command": "C:/Users/tonge/Desktop/Zemax_MCP/.venv/Scripts/python.exe -B -m pytest tests/unit/test_yni_contributions.py tests/unit/test_wizards.py tests/unit/test_basic_analyses.py tests/unit/test_contracts.py -q -p no:cacheprovider",
+    "result": "105 passed in 0.66s"
+  },
+  "product_interface_summary": {
+    "dispatched_kinds": [
+      "source_spectrum_viewer",
+      "directivity_plot"
+    ],
+    "source": [
+      "src/zemax_mcp/analyses.py:8",
+      "src/zemax_mcp/analyses.py:22",
+      "src/zemax_mcp/analysis_models.py:672",
+      "src/zemax_mcp/analysis_models.py:675"
+    ],
+    "items_with_product_kind": 2,
+    "items_without_product_kind": 8
+  },
+  "field_definitions": {
+    "ledger_status": "unmodified state read from development/ledgers/analyses.csv; this worker does not write it",
+    "implementable_now": "true only when the item has a formal native result outlet AND an offline-verified sub-item; it does not mean the item is accepted or that new product code was written this round",
+    "implementable_scope": "the concrete sub-item that is actually achievable with formal settings/results",
+    "new_work_available_now": "true only when a further concrete implementation step exists that needs no new external interface"
+  },
+  "items": [
+    {
+      "canonical_item_id": "NS-03.SourceSpectrumViewer",
+      "report_title": "光源光谱查看器",
+      "ledger_status": "implemented",
+      "product_kind": "source_spectrum_viewer",
+      "product_interface": {
+        "typed_request": "src/zemax_mcp/analysis_models.py:672",
+        "dispatch": "src/zemax_mcp/analyses.py:859",
+        "parser": "src/zemax_mcp/basic_analyses.py:125"
+      },
+      "formal_settings": "AS_Default only (IsValid/IsActiveWindow); no per-source, XYZ or file selector",
+      "formal_result_outlet": "native text report via GetTextFile",
+      "saved_materials": [
+        ".local/evidence/development/NS-03/source-spectrum-20261108/spectrum.txt",
+        ".local/evidence/development/NS-03/source-spectrum-20261108/summary.json"
+      ],
+      "existing_result": "20 rows 0.44-0.64 um, peak relative weight 1, input and fitted XYZ [1,1,1], CRI 70.1766, CCT 5188 K; identical report from an empty NSC system",
+      "offline_completable": [
+        "row count, endpoints, peak, XYZ, CRI and CCT replay from the saved native report",
+        "optional deeper check: independent XYZ/CCT from CIE 1931 2-degree CMFs, needs a sourced CMF table and disclosed CCT algorithm"
+      ],
+      "offline_checks_run": [
+        "source_spectrum"
+      ],
+      "checks_result": "all pass: 20 rows, 0.44/0.64 um, peak 1.0, XYZ [1,1,1], CRI 70.1766, CCT 5188 K",
+      "external_blocker": "installed analysis settings expose no formal input mode / XYZ / file selector, so variable-input spectral and colour acceptance cannot be verified",
+      "release_condition": "obtain a formal input-mode / XYZ / file selector with adoption readback, then build a spectral and chromaticity reference on a controlled variable input",
+      "implementable_now": true,
+      "implementable_scope": "default XYZ-fitting report parsing and numeric replay, already implemented and re-verified offline; variable-input selection is not achievable without a formal selector",
+      "action_this_round": "hold implemented; no completion count added",
+      "evidence": [
+        "development/evidence/NS-03/source-spectrum-acceptance20261108.md",
+        "development/evidence/NS-03/source-spectrum-input-identity-20261108.md"
+      ]
+    },
+    {
+      "canonical_item_id": "NS-03.FluxvsWavelength",
+      "report_title": "光通量随波长",
+      "ledger_status": "blocked",
+      "product_kind": null,
+      "product_interface": {
+        "typed_request": null,
+        "dispatch": null,
+        "parser": null
+      },
+      "formal_settings": "AS_Default only",
+      "formal_result_outlet": "none: valid AR_Default with zero messages/series/grids/rgb grids/scatter points; GetTextFile true but the file holds only the 2-byte BOM",
+      "saved_materials": [
+        ".local/evidence/development/NS-03/flux-wavelength-20261108/flux.txt",
+        ".local/evidence/development/NS-03/flux-wavelength-20261108/summary.json",
+        ".local/evidence/development/NS-03/flux-wavelength-repeat-20261108/summary.json"
+      ],
+      "existing_result": "two-wavelength NSC sample with system wavelengths 0.46 and 0.57 um; zero result collections and an empty text report",
+      "offline_completable": [
+        "confirm the outlet is reachable but empty (report rows 0, zero counts, text_export flag true)"
+      ],
+      "offline_checks_run": [
+        "flux_outlet"
+      ],
+      "checks_result": "pass: 0 report rows, 0 exported characters, all result counts zero, text_export true",
+      "external_blocker": "no topic settings or input selection, and no non-empty result outlet",
+      "release_condition": "official applicability/input contract plus a non-empty supported outlet (curve, grid or text), then build a reference",
+      "implementable_now": false,
+      "action_this_round": "hold blocked",
+      "evidence": [
+        "development/evidence/NS-03/flux-wavelength-acceptance20261108.md"
+      ]
+    },
+    {
+      "canonical_item_id": "NS-03.DirectivityPlot",
+      "report_title": "方向性图",
+      "ledger_status": "implemented",
+      "product_kind": "directivity_plot",
+      "product_interface": {
+        "typed_request": "src/zemax_mcp/analysis_models.py:675",
+        "dispatch": "src/zemax_mcp/analyses.py:866",
+        "parser": "src/zemax_mcp/basic_analyses.py:166"
+      },
+      "formal_settings": "AS_Default only (IsValid/IsActiveWindow); no formal IES file or scan-angle selector",
+      "formal_result_outlet": "native text report via GetTextFile",
+      "saved_materials": [
+        ".local/evidence/development/NS-03/directivity-20261108/directivity.txt",
+        ".local/evidence/development/NS-03/directivity-20261108/summary.json",
+        "C:/Users/tonge/Documents/Zemax/Objects/Sources/IESNA/sample.ies"
+      ],
+      "existing_result": "IES identity sample.ies, peak 18 cd, total flux 112.81 lm, one 37-point curve at scan angle 0 deg normalised to peak 1",
+      "offline_completable": [
+        "rebuild the angular reference from the installed LM-63 file and compare all 37 points",
+        "recompute the total luminous flux by sampled trapezoid integration of 2*pi*I(theta)*sin(theta)"
+      ],
+      "offline_checks_run": [
+        "directivity_angles",
+        "directivity_flux"
+      ],
+      "checks_result": "pass: 37 rows, max angular difference 4.44444444444025e-05 <= 5.1e-05; trapezoid flux 112.81009451201489 lm vs reported 112.81 (9.45e-05)",
+      "external_blocker": "no formal IES-file or scan-angle selection and no adoption readback; the only available source is rotationally symmetric (all 19 horizontal IES slices identical), so horizontal selectivity cannot be distinguished from a one-dimensional vertical-angle read",
+      "release_condition": "obtain a formal IES file / scan angle selector with adoption readback, then accept selection and normalisation with a non-rotationally-symmetric multi-scan-angle source",
+      "implementable_now": true,
+      "implementable_scope": "default report parsing and independent IES reference only",
+      "action_this_round": "hold implemented; offline replay strengthens the reference, no completion count added",
+      "evidence": [
+        "development/evidence/NS-03/directivity-acceptance20261108.md",
+        "development/evidence/NS-03/directivity-ies-audit-20261108.md"
+      ]
+    },
+    {
+      "canonical_item_id": "CV-01.SourceColorChart1931",
+      "report_title": "1931色度图",
+      "ledger_status": "blocked",
+      "product_kind": null,
+      "product_interface": {
+        "typed_request": null,
+        "dispatch": null,
+        "parser": null
+      },
+      "formal_settings": "AS_Default only",
+      "formal_result_outlet": "none: zero messages/series/grids/rgb grids/scatter collections and GetTextFile=false, in both sequential and NSC modes",
+      "saved_materials": [
+        ".local/evidence/development/CV-01/source-color-outlets-20261108-02/summary.json"
+      ],
+      "existing_result": "2024 R2 help classifies the item as a fixed CIE reference chart independent of the optical system, so the source-image-selector condition was withdrawn",
+      "offline_completable": [
+        "only the arithmetic identity for the reported input XYZ [1,1,1]: x=1/3, y=1/3; this is not acceptance evidence",
+        "the substitute basis the ledger allows (documented CIE locus data) still requires an official baseline plus native-graphic correspondence evidence; this round does not close the item with extra independent plotting"
+      ],
+      "offline_checks_run": [],
+      "checks_result": "no offline check; nothing native-independent exists beyond the coordinate identity",
+      "external_blocker": "AR_Default exposes no chart pixels or coordinates and text export is closed",
+      "release_condition": "a supported GUI/image or chart-data outlet; alternatively a substitute that carries both an official baseline and native-graphic correspondence evidence with retained identity and precision",
+      "implementable_now": false,
+      "action_this_round": "hold blocked; substitute basis needs coordinator approval before any implementation",
+      "evidence": [
+        "development/evidence/CV-01/source-color-charts-acceptance20261108.md"
+      ]
+    },
+    {
+      "canonical_item_id": "CV-01.SourceColorChart1976",
+      "report_title": "1976色度图",
+      "ledger_status": "blocked",
+      "product_kind": null,
+      "product_interface": {
+        "typed_request": null,
+        "dispatch": null,
+        "parser": null
+      },
+      "formal_settings": "AS_Default only",
+      "formal_result_outlet": "none: no messages, curves, grids or scatter points and GetTextFile=false",
+      "saved_materials": [
+        ".local/evidence/development/CV-01/source-color-outlets-20261108-02/summary.json"
+      ],
+      "existing_result": "same fixed-chart classification as the 1931 item; no payload in any probed mode",
+      "offline_completable": [
+        "only the arithmetic identity for the reported input XYZ [1,1,1]: u'=4/19=0.210526, v'=9/19=0.473684; this is not acceptance evidence",
+        "the substitute basis the ledger allows (documented CIE locus data) still requires an official baseline plus native-graphic correspondence evidence; this round does not close the item with extra independent plotting"
+      ],
+      "offline_checks_run": [],
+      "checks_result": "no offline check",
+      "external_blocker": "no chart payload and no text export",
+      "release_condition": "a supported GUI/image or chart-data outlet; alternatively a substitute that carries both an official baseline and native-graphic correspondence evidence with retained identity and precision",
+      "implementable_now": false,
+      "action_this_round": "hold blocked; paired decision with the 1931 item",
+      "evidence": [
+        "development/evidence/CV-01/source-color-charts-acceptance20261108.md"
+      ]
+    },
+    {
+      "canonical_item_id": "NS-03.SourcePolarViewer",
+      "report_title": "光源极坐标查看器",
+      "ledger_status": "blocked",
+      "product_kind": null,
+      "product_interface": {
+        "typed_request": null,
+        "dispatch": null,
+        "parser": null
+      },
+      "formal_settings": "AS_Default only",
+      "formal_result_outlet": "one 19x19 grid with all three axis/value labels None and GetTextFile=false",
+      "saved_materials": [
+        ".local/evidence/development/NS-03/source-polar-20261108/summary.json",
+        ".local/evidence/development/NS-03/source-polar-repeat-20261108/summary.json"
+      ],
+      "existing_result": "19x19 grid over 0-18, Dx=10.0, Dy=18.94736842105263, MinX=MinY=0, labels None",
+      "offline_completable": [
+        "compare the retained matrix cell by cell against this sample's IES table (limited to a rotationally symmetric input)",
+        "record the reported axis spacing next to the source file's node spacing without judging the mapping"
+      ],
+      "offline_checks_run": [
+        "source_polar_grid",
+        "source_polar_sample_correspondence"
+      ],
+      "checks_result": "pass, limited scope: for this rotationally symmetric sample the matrix reproduces the file's candela values cell by cell (18..0). Because all 19 horizontal slices of the file are identical, this only shows numeric correspondence for this sample; it cannot establish how an arbitrary IES table is published, nor the unit or normalisation contract. Dy=18.94736842105263 equals 360/19 and differs from the file's 20 degree node spacing; that is recorded as a fact only (possibly a native pixel-range or centre convention) and is not judged as a mapping error.",
+      "external_blocker": "no official axis, unit or normalisation contract and all three labels are None; a single rotationally symmetric sample cannot separate a publication convention from the data itself",
+      "release_condition": "official axis/unit definition, then re-check with a non-rotationally-symmetric controlled source; explain Dy=360/19 against the file's 20 degree node spacing under the official pixel-range/centre convention instead of assuming an error",
+      "implementable_now": false,
+      "action_this_round": "hold blocked; register the sample-only numeric correspondence and the 360/19 vs 20 degree difference as a recorded fact, with no defect claim",
+      "evidence": [
+        "development/evidence/NS-03/source-polar-acceptance20261108.md"
+      ]
+    },
+    {
+      "canonical_item_id": "NS-03.SourceIlluminationMap",
+      "report_title": "光源照明分布",
+      "ledger_status": "blocked",
+      "product_kind": null,
+      "product_interface": {
+        "typed_request": null,
+        "dispatch": null,
+        "parser": null
+      },
+      "formal_settings": "AS_Default only",
+      "formal_result_outlet": "none: zero messages/series/grids/rgb grids/scatter points and GetTextFile=false",
+      "saved_materials": [
+        ".local/evidence/development/NS-03/source-illumination-twocolor-20261108/summary.json",
+        ".local/evidence/development/NS-03/source-illumination-repeat-20261108/summary.json"
+      ],
+      "existing_result": "four 1 W SourceEllipse objects covering system wavelengths 1/2 plus one DetectorColor, with an empty result collection",
+      "offline_completable": [
+        "confirm the object condition of the checked model from the saved object tree and confirm its empty result counts"
+      ],
+      "offline_checks_run": [
+        "illumination_condition"
+      ],
+      "checks_result": "pass: the checked model carries 4x SourceEllipse and 1x DetectorColor and its result collection is empty. This establishes the object condition of this model and its empty outlet only; it does not rule out every other input-condition error, because the topic exposes no input-selection contract.",
+      "external_blocker": "no supported illumination grid or image outlet, and no topic input-selection contract",
+      "release_condition": "a supported illumination grid/image outlet AND a documented input-selection contract, then validate coordinates, units and flux against the detector",
+      "implementable_now": false,
+      "action_this_round": "hold blocked",
+      "evidence": [
+        "development/evidence/NS-03/source-illumination-acceptance20261108.md"
+      ]
+    },
+    {
+      "canonical_item_id": "NS-03.PhotoluminscenceViewer",
+      "report_title": "光致发光查看器",
+      "ledger_status": "blocked",
+      "product_kind": null,
+      "product_interface": {
+        "typed_request": null,
+        "dispatch": null,
+        "parser": null
+      },
+      "formal_settings": "AS_Default only",
+      "formal_result_outlet": "one native message \"invalid input data/settings\", zero result collections, 30-byte text export",
+      "saved_materials": [
+        ".local/evidence/development/NS-03/photoluminescence-20261108/summary.json",
+        ".local/evidence/development/NS-03/photoluminescence-20261108-white-led-phosphor/summary.json",
+        ".local/evidence/development/NS-03/photoluminescence-repeat-20261108/summary.json"
+      ],
+      "existing_result": "both installed fluorescence samples rejected, including White LED Phosphor.zos which carries a PhotoluminescenceModel on object 3",
+      "offline_completable": [],
+      "offline_checks_run": [],
+      "checks_result": "nothing offline: the sample model files are native binaries and the input contract is not documented",
+      "external_blocker": "no documented input/selection contract or valid model requirement for this topic",
+      "release_condition": "a documented input contract (or official valid-model requirements), then a non-empty output and a reference condition",
+      "implementable_now": false,
+      "action_this_round": "hold blocked",
+      "evidence": [
+        "development/evidence/NS-03/photoluminescence-acceptance20261108.md"
+      ]
+    },
+    {
+      "canonical_item_id": "NS-03.RadiantSourceModelViewerSettings",
+      "report_title": "Radiant光源模型查看器",
+      "ledger_status": "blocked",
+      "product_kind": null,
+      "product_interface": {
+        "typed_request": null,
+        "dispatch": null,
+        "parser": null
+      },
+      "formal_settings": "AS_Default only",
+      "formal_result_outlet": "none: native message that only the flagship edition supports the functionality; no series, grids, scatter data or text export",
+      "saved_materials": [
+        ".local/evidence/development/NS-03/radiant-viewer-20261108-02/summary.json",
+        ".local/evidence/development/NS-03/radiant-viewer-repeat-20261108/summary.json"
+      ],
+      "existing_result": "reproduced on two different NSC samples; local licence remains PremiumEdition; no dedicated Radiant source-model file found in the sample tree",
+      "offline_completable": [],
+      "offline_checks_run": [],
+      "checks_result": "nothing offline: both the licence and the resource are outside offline reach",
+      "external_blocker": "licence (flagship/Enterprise) and a matching Radiant source-model input",
+      "release_condition": "flagship/Enterprise licence plus a matching Radiant source-model resource, then verify settings adoption and a non-empty result",
+      "implementable_now": false,
+      "action_this_round": "hold blocked; licence-class blocker, skipped per this pass's policy after retaining evidence and release conditions",
+      "evidence": [
+        "development/evidence/NS-03/radiant-source-viewer-acceptance20261108.md"
+      ]
+    },
+    {
+      "canonical_item_id": "NS-03.RoadwayLighting",
+      "report_title": "道路照明",
+      "ledger_status": "blocked",
+      "product_kind": null,
+      "product_interface": {
+        "typed_request": null,
+        "dispatch": null,
+        "parser": null,
+        "distinct_from": "src/zemax_mcp/wizards.py:8 NSCRoadwayLightingWizard is the merit-function wizard, not this analysis"
+      },
+      "formal_settings": "AS_Default with no writable or readable topic-specific settings",
+      "formal_result_outlet": "native text report with metrics, but no structured arrays and no settings readback",
+      "saved_materials": [
+        ".local/evidence/development/NS-03/roadway-lighting-20261108/photoluminescence.txt",
+        ".local/evidence/development/NS-03/roadway-lighting-repeat-20261108/photoluminescence.txt"
+      ],
+      "existing_result": "both runs used the default CIE 140-2000 road spec (mounting height 10000, one-sided, longitudinal spacing 30000, 3 lanes, lane width 5000, R1, ME1); run one reported Lavg=1.74981e-06, Uo=0, Ul=0, TI=0, SR=3.47391 while run two reported all zeros",
+      "offline_completable": [
+        "field-by-field comparison of the two saved reports to show identical defaults with different systems and different metrics"
+      ],
+      "offline_checks_run": [
+        "roadway_reports"
+      ],
+      "checks_result": "pass: models differ (Two color mixing gives white vs Fluorescent scattering in a bulk medium), Lavg changed from 1.74981e-06 to 0 and SR from 3.47391 to 0, SR target is >= 0.5",
+      "external_blocker": "no roadway-specific model or source and no formal settings readback, so neither metric set is attributable to a controlled road-lighting input",
+      "release_condition": "a roadway-specific model/source plus a formal settings interface with readback, then validate photometric coordinates and metrics against the NSC detector reference",
+      "implementable_now": false,
+      "action_this_round": "hold blocked; possible product defect (silent default road spec) raised for coordinator decision",
+      "evidence": [
+        "development/evidence/NS-03/roadway-lighting-acceptance20261108.md"
+      ]
+    }
+  ],
+  "summary": {
+    "items_total": 10,
+    "items_with_product_kind": 2,
+    "items_implementable_with_formal_settings_results": 2,
+    "items_blocked": 8,
+    "items_offline_verified_this_round": 6,
+    "new_done_this_round": 0,
+    "ledger_status_unchanged": true,
+    "scope_revisions_applied": 3
+  },
+  "decisions_requested_from_coordinator": [
+    "Whether CV-01.SourceColorChart1931/1976 may use documented CIE chromaticity locus data as the substitute basis already allowed by the ledger.",
+    "Whether the SourcePolarViewer y-axis spacing of 360/19 (instead of the IES 20 degree step) should be registered as a product defect.",
+    "Whether RoadwayLighting silently applying a default CIE 140-2000 road spec to a non-roadway system should be registered as a product defect.",
+    "Whether this pass should close D006 as 2 implemented plus 8 blocked, or whether any item needs deeper offline work first."
+  ],
+  "scope_revisions": {
+    "applied": "2026-11-08 after review",
+    "changes": [
+      "NS-03.SourcePolarViewer: cell-by-cell equality restricted to this rotationally symmetric sample; no claim about arbitrary IES publication, units or normalisation; Dy=360/19 vs the 20 degree node spacing recorded as a fact, not a mapping error",
+      "NS-03.SourceIlluminationMap: the empty result only establishes the checked model's object condition; it cannot exclude all input-condition errors without an input-selection contract",
+      "CV-01.SourceColorChart1931/1976: the substitute CIE reference still needs an official baseline and native-graphic correspondence evidence; not closed by extra independent plotting"
+    ],
+    "values_unchanged": true
+  }
+}

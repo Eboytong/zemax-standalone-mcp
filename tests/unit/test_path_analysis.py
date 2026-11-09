@@ -163,3 +163,21 @@ def test_setup_failure_and_cleanup_failure_preserved(backend,monkeypatch):
     backend._close_task_native=close
     with pytest.raises(ZemaxError)as caught:pa.run_path_analysis(backend,request(backend))
     assert str(caught.value)=='original failure' and caught.value.details['cleanup_warnings']==['close failure']
+
+
+@pytest.mark.parametrize('payload',[
+    dict(relative_minimum_flux=.5),dict(relative_minimum_flux=1),
+    dict(first_ray=2),dict(last_ray=10),dict(first_ray=11,last_ray=20),
+])
+def test_paf_ignored_controls_rejected_before_native_execution(backend,payload):
+    with pytest.raises(ValidationError,match='PAF'):
+        PathAnalysis(kind='path_analysis',path=str(backend.directory/'INPUT.PAF'),**payload)
+    assert backend.events==[] and backend.closed==[]
+
+
+def test_paf_default_all_paths_remains_available(backend):
+    source=backend.directory/'input.paf';source.write_bytes(b'local fixture')
+    q=PathAnalysis(kind='path_analysis',path=str(source))
+    task=pa.run_path_analysis(backend,q)
+    assert task['settings']['requested']['relative_minimum_flux']==0
+    assert backend.settings.FirstRay==1 and backend.settings.LastRay==-1

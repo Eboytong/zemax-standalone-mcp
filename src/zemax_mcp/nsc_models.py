@@ -1,6 +1,7 @@
 from typing import Annotated,Literal
 from pydantic import Field,FiniteFloat,model_validator
 from .schema import Request,Index,PositiveIndex
+from .source_spectrum import SourceSpectrum
 
 class NewSystem(Request):
     mode: Literal["Sequential","NonSequential"] = "Sequential"
@@ -41,10 +42,6 @@ class ObjectVolume(Request):
     def parameter_mode(self):
         if self.parameters and self.model!="DLLDefinedScattering":raise ValueError("parameters仅用于DLLDefinedScattering。")
         return self
-
-class SourceSpectrum(Request):
-    mode: str
-    settings: dict[str,ScalarValue] = Field(default_factory=dict,max_length=50)
 
 class ObjectPatch(Request):
     faces: Annotated[list[ObjectFace],Field(max_length=100)] = Field(default_factory=list)

@@ -17,5 +17,27 @@
       "reason": "Same installed analysis ID and material-dependent settings/result contract"
     }
   ],
-  "counting": "Implement once, share evidence/status across aliases, count canonical_item_id once per batch."
+  "counting": "Implement once, share evidence/status across aliases, count canonical_item_id once per batch.",
+  "completion_reviews": {
+    "PO-01.Transmission": {
+      "state": "done",
+      "evidence": "C:/Users/tonge/Desktop/mcp/development/evidence/PO-01/transmission-complete-20261109.md",
+      "reviewed_at": "2026-11-09"
+    },
+    "MA-01.DispersionDiagram": {
+      "state": "done",
+      "evidence": "development/evidence/MA-01/selected-index-20261109.md",
+      "reviewed_at": "2026-11-09"
+    },
+    "MA-01.DispersionvsWavelength": {
+      "state": "done",
+      "evidence": "development/evidence/MA-01/selected-derivative-20261109.md",
+      "reviewed_at": "2026-11-09"
+    },
+    "CV-01.SeidelDiagram": {
+      "state": "done",
+      "evidence": "development/evidence/CV-01/seidel-coefficient-diagram-20261109.md",
+      "reviewed_at": "2026-11-09"
+    }
+  }
 }

@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-08",
+  "purpose": "范围调整前的计划快照与移出行，供历史追溯",
+  "entries": [
+    {
+      "original_path": "development/plan.md",
+      "archive_location": "development/archive/scope-native-only-20261108/plan.md",
+      "reason": "范围调整前历史快照"
+    },
+    {
+      "original_path": "development/current.md",
+      "archive_location": "development/archive/scope-native-only-20261108/current.md",
+      "reason": "范围调整前历史快照"
+    },
+    {
+      "original_path": "development/handoff.md",
+      "archive_location": "development/archive/scope-native-only-20261108/handoff.md",
+      "reason": "范围调整前历史快照"
+    },
+    {
+      "original_path": "development/remaining-ranked.md",
+      "archive_location": "development/archive/scope-native-only-20261108/remaining-ranked.md",
+      "reason": "范围调整前历史快照"
+    },
+    {
+      "original_path": "development/remaining-origin-classification.md",
+      "archive_location": "development/archive/scope-native-only-20261108/remaining-origin-classification.md",
+      "reason": "范围调整前历史快照"
+    },
+    {
+      "original_path": "development/ledgers/packages.csv",
+      "archive_location": "development/archive/scope-native-only-20261108/packages.csv",
+      "reason": "移出计划的原始行，保留执行状态及全部字段",
+      "rows": 2
+    },
+    {
+      "original_path": "development/ledgers/operations.csv",
+      "archive_location": "development/archive/scope-native-only-20261108/operations.csv",
+      "reason": "移出计划的原始行，保留执行状态及全部字段",
+      "rows": 18
+    },
+    {
+      "original_path": "development/ledgers/analyses.csv",
+      "archive_location": "development/archive/scope-native-only-20261108/analyses.csv",
+      "reason": "移出计划的原始行，保留执行状态及全部字段",
+      "rows": 1
+    },
+    {
+      "original_path": "docs/topics/extensions/extensions.md",
+      "archive_location": "development/archive/scope-native-only-20261108/extensions-topic.md",
+      "reason": "扩展宿主滚动计划及历史探查移入归档"
+    }
+  ]
+}

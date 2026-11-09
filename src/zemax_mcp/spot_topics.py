@@ -3,10 +3,14 @@ import math
 from pathlib import Path
 from .errors import ZemaxError
 
+# IAS_Spot selector 1 evaluates the active configuration. Selector 2 returns
+# first-configuration statistics in the controlled two-configuration model.
+CURRENT_CONFIGURATION_SELECTOR = 1
 
-def configure(q, current_configuration, write):
+
+def configure(q, write):
     values=dict(Pattern=q.pattern,ReferTo=q.reference,ShowScale=q.show_scale,ColorRaysBy=q.color_rays_by,
-        RayDensity=q.ray_density,Configuration=current_configuration,DirectionCosines=q.direction_cosines,
+        RayDensity=q.ray_density,Configuration=CURRENT_CONFIGURATION_SELECTOR,DirectionCosines=q.direction_cosines,
         UseSymbols=q.use_symbols,UsePolarization=q.use_polarization,ScatterRays=q.scatter_rays,
         ShowAiryDisk=q.show_airy_disk,IgnoreLateralColor=q.ignore_lateral_color,PlotScale=q.plot_scale,
         DeltaFocus=0.,Exaggerate=q.exaggerate)
@@ -29,13 +33,14 @@ def run_full_field(backend,q):
     try:
         s=unwrap(tool.GetSettings())
         select(s.Field,'Field',q.field);select(s.Wavelength,'Wavelength',q.wavelength);select(s.Surface,'Surface',surface)
-        values=configure(q,int(backend.system.MCE.CurrentConfiguration),lambda n,v:checked(backend.native,s,n,v))
+        values=configure(q,lambda n,v:checked(backend.native,s,n,v))
         for name,value in values.items():check(backend.native,s,name,value)
         for name,number in [('Field',q.field),('Wavelength',q.wavelength),('Surface',surface)]:
             check_setting_value(name,number,int(getattr(getattr(s,name),'Get'+name+'Number')()))
         actual=scalar_settings(s)
         if actual.get('unavailable_fields'):raise ZemaxError('SETTING_UNAVAILABLE','全视场光斑设置回读失败。',details=actual['unavailable_fields'])
-        settings=dict(kind=q.kind,requested=q.model_dump(),native=actual)
+        settings=dict(kind=q.kind,requested=q.model_dump(),native=actual,
+            resolved_configuration=int(backend.system.MCE.CurrentConfiguration))
     except Exception as exc:
         owner=dict(native=tool)
         if not backend._close_task_native(owner)and isinstance(exc,ZemaxError):exc.details['cleanup_warnings']=owner.get('cleanup_warnings',[])

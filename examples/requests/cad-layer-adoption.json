@@ -1,0 +1,13 @@
+{
+  "tool": "run_cad_export",
+  "arguments": {
+    "request": {
+      "path": "C:/ZemaxOutput/configurations.igs",
+      "format": "IGES",
+      "configuration_mode": "all_by_layer",
+      "lens_layer": 10,
+      "number_of_rays": 0
+    }
+  },
+  "result_note": "本机未采用请求层号时返回SETTING_REJECTED，details保留实际层集合与输出文件；STEP几何出口沿用现有功能。"
+}

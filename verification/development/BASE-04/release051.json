@@ -1,9 +1,0 @@
-{
-  "version": "0.1.51",
-  "wheel": "wheels/zemax_standalone_mcp-0.1.51-py3-none-any.whl",
-  "installation": "verification/development/BASE-04/wheel-install051",
-  "ordinary_passed": 1719,
-  "native_wheel_passed": 6,
-  "evidence": "verification\\development\\MA-01\\acceptance053\\summary.json",
-  "schema": "Existing fields retained; catalog strings accept optional .AGF and return actual native identity."
-}

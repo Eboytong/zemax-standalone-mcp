@@ -9,12 +9,11 @@ from tests.support.native import execute
 
 
 @pytest.mark.zemax
-def test_geometric_bitmap_runtime_interface_limit_and_cleanup():
+def test_geometric_bitmap_invalid_resource_preserves_session():
     async def work(e):
         await e.call('open_lens',dict(path=str(Path.home()/'Documents/Zemax/Samples/Sequential/Objectives/Cooke 40 degree field.zos')))
         response=await e.call('run_analysis',dict(request=dict(kind='geometric_bitmap_image',input_file='point.IMA')),okay=False)
-        assert response['error']['code']=='UNSUPPORTED_INTERFACE'
-        assert response['error']['details']['runtime_settings_type'].endswith('AS_Default')
+        assert response['error']['code']=='INVALID_RESOURCE'
         assert not response['context']['requires_reconnect']
         await e.call('get_system_resources',dict(request=dict(kind='geometric_image_files')))
     asyncio.run(execute('bitmap_interface050',work))
@@ -23,7 +22,6 @@ def test_geometric_bitmap_runtime_interface_limit_and_cleanup():
 @pytest.mark.parametrize('kind,scene',[
     ('image_simulation','point'),('image_simulation','bars'),('image_simulation','edge'),
     ('geometric_image','point'),('geometric_image','bars'),('geometric_image','edge'),
-    ('geometric_bitmap_image','point'),('geometric_bitmap_image','bars'),('geometric_bitmap_image','edge'),
     ('extended_source_encircled_energy','point'),
 ])
 def test_imaging_native_resources_and_result(kind,scene):
@@ -42,7 +40,7 @@ def test_imaging_native_resources_and_result(kind,scene):
             header=struct.pack('<2sIHHI',b'BM',54+len(pixels),0,0,54)
             dib=struct.pack('<IiiHHIIiiII',40,size,size,1,24,0,len(pixels),0,0,0,0)
             target.write_bytes(header+dib+pixels)
-        else:shutil.copy2(Path(__file__).parent/'resources/imaging023'/(scene+'.IMA'),target)
+        else:shutil.copy2(Path(__file__).parents[1]/'resources/imaging023'/(scene+'.IMA'),target)
         try:
             names=(await e.call('get_system_resources',dict(request=dict(kind=resource_kind))))['items']
             assert target.name.casefold() in [x.casefold() for x in names]

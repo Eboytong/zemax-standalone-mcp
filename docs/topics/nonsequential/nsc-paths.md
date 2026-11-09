@@ -4,7 +4,7 @@
 
 ## 路径分析
 
-path为现有ZRD或PAF绝对路径，复制到工作模型目录后UpdateFileLists，并核对AvailableRayDatabaseFiles。默认first_ray=1、last_ray=-1（全部剩余光线）、filter为空、relative_minimum_flux=0、sort_by=TotalEndingFlux、generate_path_filters=false。PAF的筛选须在追迹时完成，本入口拒绝额外filter。公开NumberOfUniqueObjectsStruck映射本机枚举NumberOfUniqueObjectsStruct，按枚举值最终回读。
+path为现有ZRD或PAF绝对路径，复制到工作模型目录后UpdateFileLists，并核对AvailableRayDatabaseFiles。默认first_ray=1、last_ray=-1（全部剩余光线）、filter为空、relative_minimum_flux=0、sort_by=TotalEndingFlux、generate_path_filters=false。本机PAF分析仅支持全路径默认读取：first_ray=1、last_ray=-1、relative_minimum_flux=0、filter为空。非默认范围、阈值及追加filter在执行前拒绝；ZRD支持范围、筛选和阈值。公开NumberOfUniqueObjectsStruck映射本机枚举NumberOfUniqueObjectsStruct，按枚举值最终回读。
 
 GeneratePathFilters会生成并保存_n命名筛选器；显式启用时先建立检查点并增加修订号。取消后保留检查点用于恢复。分析复用任务查询、取消及终态关闭。
 
@@ -37,3 +37,5 @@ RayDatabaseViewer专题缺专用静态设置接口，保留运行时GetSettings/
 N-BK7平板ZRD末端功率0.9167180210351944W在阈值0时可读；阈值1时分支被剔除，GetPathUncategorized仍报告无未分类路径，备用编号查询为空，文本也无相应功率行。继续探查正式配置或供应方说明。历史失败和最终成功分别列于acceptance063.json。
 
 受控CRS例子见examples/critical063.CRS，输入模型为.55µm、镜头单位mm、沿+Z无障碍传播；第二条的目标X偏移1mm。专用结果缺失时错误details.native_report保留原生文本、头及消息，供定位实际输入或计算问题。公开请求字段沿用docs/reference/tool-schemas.json，本轮修复未增加请求参数。
+
+2026-11-09同次追迹ZRD/PAF对照：PAF阈值与范围写入回读成功但未改变结果，现已明确拒绝；默认路径功率、分页和保存重载通过真实stdio。未分类功率完整范围仍待原生有效出口。证据见`development/evidence/NS-02/path-format-contract-20261109.md`。

@@ -16,7 +16,7 @@ def test_invalid_grid_requests(extra):
 
 
 def test_native_non_square_grid_and_refused_header():
-    r=json.loads((Path(__file__).parent/'reference_data/universal202-grid.json').read_text(encoding='utf-8'))
+    r=json.loads((Path(__file__).parents[1]/'reference_data/universal202-grid.json').read_text(encoding='utf-8'))
     actual=readback(r['text'],request(),r['grid']);assert actual['Y']['samples']==3
     with pytest.raises(ZemaxError):readback(r['text'].replace('3 - 5','3 - 9'),request(),r['grid'])
     with pytest.raises(ZemaxError):readback(r['text'],request(),r['grid']|dict(values=list(zip(*r['grid']['values']))))

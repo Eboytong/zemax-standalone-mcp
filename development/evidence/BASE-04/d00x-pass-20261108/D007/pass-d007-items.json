@@ -1,0 +1,264 @@
+{
+  "schema": "d00x-pass-items/1",
+  "development_group": "D007",
+  "group_title": "散射模型与杂散光路径",
+  "worker_id": "zemax-p01-gradium",
+  "plan": ".local/coordination/pass-d007-plan.md",
+  "source_of_truth": "C:/Users/tonge/Desktop/Zemax_MCP/development/tracking/d00x-pass-20261108.json",
+  "order": [
+    "ED-01.Scattering.BSDF",
+    "ED-01.Scattering.ISScatterCatalog",
+    "NS-03.ScatterFunctionViewer",
+    "NS-03.ScatterPolarPlotSettings",
+    "NS-02.PathAnalysis",
+    "ED-01.Scattering"
+  ],
+  "environment": {
+    "native_execution_this_round": "not started: application_create has three independent 180 s timeouts (01/02/05) - registered external block",
+    "ledger_writes": "none (read-only; coordinator updates)",
+    "git": "no commit, no release"
+  },
+  "items": [
+    {
+      "canonical_item_id": "ED-01.Scattering.BSDF",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "type": "IAS_ surface scattering branch BSDF",
+        "resource_query": "GetAvailableFileNames()",
+        "apply": "ChangeScatteringTypeSettings + FileName readback"
+      },
+      "existing_source": [
+        "src/zemax_mcp/scattering_pages.py (BSDF member of the Scattering union; RESOURCES['BSDF']='GetAvailableFileNames')",
+        "src/zemax_mcp/backend.py:437 (note: local file selector can return ABGF names and ignore BSDF assignment)"
+      ],
+      "existing_inputs": {
+        "local_enumeration": "returns only the placeholder value 无",
+        "write_attempt": "BrownVinyl.bsdf name and an absolute project path: ChangeScatteringTypeSettings=true but FileName readback stayed at the placeholder"
+      },
+      "existing_evidence": [
+        "development/evidence/ED-01/bsdf-resource-selector-probe20261108.md",
+        "tests/unit/test_property_pages_adoption.py",
+        "tests/native/test_property_pages_live.py",
+        "tests/native/test_finite_scatter_live.py"
+      ],
+      "offline_completable": [
+        "model the placeholder values (无/None/empty) as RESOURCE_PLACEHOLDER instead of a valid selection",
+        "raise SETTING_REJECTED with request-versus-readback comparison when the selection is not adopted",
+        "unit tests for the three enumeration states (empty/placeholder/real name)"
+      ],
+      "actual_checks": "pytest tests/unit/test_scatter_capabilities.py (placeholder tri-state, .bsdf/.abgf discrimination) + tests/unit/test_property_pages_adoption.py",
+      "external_block": "no real BSDF resource is enumerable on this machine (resource/licence environment, not code)",
+      "unlock_condition": "GetAvailableFileNames returns a real BSDF name and the readback equals the requested value; then trace plus save/reload",
+      "acceptance_untouched": [
+        "request constructible",
+        "adopted value readback matches",
+        "failure has a layered code and keeps the raw result",
+        "model unchanged before/after",
+        "task terminal state and close evidence"
+      ],
+      "actual_results": "placeholder handling narrowed to observed values (''/无/none); real resource_names and set_scattering paths tested: placeholder-only fails before write, exact native case adopted, original error preserved"
+    },
+    {
+      "canonical_item_id": "ED-01.Scattering.ISScatterCatalog",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "type": "IAS_ surface scattering branch ISScatterCatalog",
+        "resource_query": "GetAvailableFiles()",
+        "read": "GetFile()",
+        "apply": "ChangeScatteringTypeSettings"
+      },
+      "existing_source": [
+        "src/zemax_mcp/scattering_pages.py (Catalog member; RESOURCES['ISScatterCatalog']='GetAvailableFiles')",
+        "src/zemax_mcp/backend.py:438 (note: requires an installed valid ISX catalog data file)"
+      ],
+      "existing_inputs": {
+        "catalog_entries": "none available on this machine",
+        "consequence": "selection cannot be adopted or verified"
+      },
+      "existing_evidence": [
+        "verification/property-pages017-summary.json",
+        "verification/development/EX-01/contract-followup045.json"
+      ],
+      "offline_completable": [
+        "explicit file/catalog-entry matching validation (.isx extension, case, entry presence)",
+        "layered error codes for missing file and mismatched entry without swallowing exceptions",
+        "unit tests for match, mismatch and missing file"
+      ],
+      "actual_checks": "pytest tests/unit/test_scatter_capabilities.py::test_catalog_diagnostics_report_suffix_without_new_hard_rules",
+      "external_block": "no ISX data file with a matching catalog entry installed (resource missing)",
+      "unlock_condition": "install a controlled ISX file with its catalog entry; after startup recovery verify selection, parameters, trace, save/reload",
+      "acceptance_untouched": [
+        "selection adopted and read back",
+        "parameters match the catalog entry",
+        "trace runs",
+        "save/reload preserves the selection",
+        "close evidence"
+      ],
+      "actual_results": "catalog_diagnostics returns matched_name; set_scattering adopts the exact native catalog name so SetFile/GetFile readback agree; unknown file rejected before write"
+    },
+    {
+      "canonical_item_id": "NS-03.ScatterFunctionViewer",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "analysis": "AnalysisIDM.ScatterFunctionViewer",
+        "settings_object": "runtime IAS_ base only (IsValid/IsActiveWindow/Parent); no typed selector",
+        "result_outlet": "none documented for curves/grids/images"
+      },
+      "existing_source": {
+        "typed_entry": "absent",
+        "related": "src/zemax_mcp/scattering_pages.py (surface scattering parameters only)"
+      },
+      "existing_inputs": {
+        "observation": "ABg sample object 2/surface 0 reads back as ABg with ABG-EXAMPLE",
+        "task_result": "no data; text export fails",
+        "settings_object": "rejects the ScatterFraction property"
+      },
+      "existing_evidence": [
+        "development/evidence/NS-03/scatter-function-acceptance2026*.md",
+        "verification/development/BASE-01/static-runtime-probe031.json",
+        "verification/development/BASE-04/startup045.json"
+      ],
+      "offline_completable": [
+        "read-only reflection record of the settings object property surface, so a future selector cannot be missed silently",
+        "empty-result layering (NO_RESULT_DATA instead of a successful empty table)",
+        "cross-check the requested ABg parameters against the adopted scattering settings"
+      ],
+      "actual_checks": "pytest tests/unit/test_scatter_capabilities.py::test_scatter_fraction_hosts_match_the_dump",
+      "external_block": "no formal curve/grid/image outlet and ScatterFraction is rejected (missing official interface)",
+      "unlock_condition": "a formal curve/grid/image outlet appears, plus a writable ScatterFraction or a documented equivalent key",
+      "acceptance_untouched": [
+        "request constructible",
+        "result outlet returns real data",
+        "adopted parameters read back",
+        "close and disconnect evidence"
+      ],
+      "actual_results": "reflection proves only Lambertian/Gaussian/BSDF carry ScatterFraction, so the constant result cannot be explained by a writable fraction"
+    },
+    {
+      "canonical_item_id": "NS-03.ScatterPolarPlotSettings",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "analysis": "AnalysisIDM.ScatterPolarPlotSettings",
+        "settings_object": "runtime IAS_ base only; no angle mapping or unit properties",
+        "text_export": "GetTextFile=false"
+      },
+      "existing_source": {
+        "typed_entry": "absent"
+      },
+      "existing_inputs": {
+        "grid_shape": "181 x 90",
+        "values": "constant 1/pi for both the ABg sample and the adopted Lambertian (ScatterFraction=1) control",
+        "axis_and_value_labels": "None"
+      },
+      "existing_evidence": [
+        "development/evidence/NS-03/scatter-polar-*.md",
+        "verification/development/BASE-01/static-runtime-probe031.json"
+      ],
+      "offline_completable": [
+        "degenerate-grid detection (all values equal) reported as degenerate_grid instead of a valid result",
+        "INVALID_RESULT_DATA with the raw grid retained when axis labels or units are missing",
+        "unit tests for constant and normal grids"
+      ],
+      "actual_checks": "pytest tests/unit/test_scatter_capabilities.py::test_analysis_scatter_toggles_match_the_dump",
+      "external_block": "no formal angle mapping or unit interface; the result does not vary with the scattering model (missing official interface)",
+      "unlock_condition": "official angle/unit mapping and results that vary with the model",
+      "acceptance_untouched": [
+        "grid shape and values recorded",
+        "units and angle mapping confirmed",
+        "result changes with the scattering model",
+        "close evidence"
+      ],
+      "actual_results": "ABg and Lambertian both return a 181x90 constant 1/pi grid historically, with null axis/value labels; angle/unit and the model-response reference are missing, so the grid cannot be attributed. Absence of ScatterRays only excludes the scatter-switch path; it does NOT mean the result outlet is missing.",
+      "status": "blocked",
+      "remaining": "angle/unit and model-response reference unconfirmed"
+    },
+    {
+      "canonical_item_id": "NS-02.PathAnalysis",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "kind": "path_analysis",
+        "native": "AnalysisIDM.PathAnalysis",
+        "result": "PathAnalysisData with categorized and uncategorized rows"
+      },
+      "existing_source": [
+        "src/zemax_mcp/path_analysis.py",
+        "src/zemax_mcp/path_models.py",
+        "src/zemax_mcp/analyses.py:56 (ANALYSES['path_analysis']='PathAnalysis')"
+      ],
+      "existing_inputs": {
+        "ordinary_tests": "36 passed",
+        "native_threshold_1": "not reproduced: all categorized rows were filtered out while GetPathUncategorized still reported no uncategorized paths",
+        "independent_zrd_entry": "power about 0.8-0.99 W"
+      },
+      "existing_evidence": [
+        "development/evidence/NS-02/path-analysis-uncategorized*.md",
+        "tests/unit/test_path_analysis.py",
+        "docs/native-analysis-matrix.csv"
+      ],
+      "offline_completable": [
+        "self-consistency check: categorized + uncategorized rows must equal the total row count, otherwise INVALID_RESULT_DATA",
+        "express missing power explicitly instead of a silent 0",
+        "unit test for the all-filtered inconsistent case"
+      ],
+      "actual_checks": "pytest tests/unit/test_path_analysis.py (regression only)",
+      "external_block": "no formal rejected-power outlet; vendor category definition unknown",
+      "unlock_condition": "official rejected-power outlet or a documented vendor category definition",
+      "acceptance_untouched": [
+        "row counts self-consistent",
+        "power per path present",
+        "categorized/uncategorized split explainable",
+        "close and checkpoint evidence"
+      ],
+      "actual_results": "no implementation change this round; native threshold-1 result still not reproduced"
+    },
+    {
+      "canonical_item_id": "ED-01.Scattering",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "union": "Scattering = NoScatter | Lambertian | Gaussian | ABg | ABgFile | BSDF | User | Catalog",
+        "resources": "RESOURCES maps each member to its enumeration method",
+        "apply": "ChangeScatteringTypeSettings"
+      },
+      "existing_source": [
+        "src/zemax_mcp/scattering_pages.py"
+      ],
+      "existing_inputs": {
+        "builtin_types": "retained and verified",
+        "remaining": "BSDF file selection, ISScatterCatalog ISX matching, trace and reload"
+      },
+      "existing_evidence": [
+        "verification/property-pages017-summary.json",
+        "verification/development/BASE-04/connection040.json",
+        "tests/unit/test_scatter_report.py"
+      ],
+      "offline_completable": [
+        "type/resource matrix test: every union member constructs, its resource mapping is correct, unknown types are rejected",
+        "assert RESOURCES entries match the actual native property names"
+      ],
+      "actual_checks": "pytest tests/unit/test_scatter_capabilities.py + tests/unit/test_property_pages_adoption.py + tests/unit/test_scatter_report.py",
+      "external_block": "trace and reload depend on real BSDF/ISX resources (same as the first two items)",
+      "unlock_condition": "GetAvailableFileNames returns a real BSDF name that reads back consistently; a controlled ISX file and matching catalog entry are installed",
+      "acceptance_untouched": [
+        "every builtin type preserved",
+        "resource query per type",
+        "adoption readback",
+        "trace and reload"
+      ],
+      "actual_results": "built-in type/interface/resource/capability matrix asserted; BSDF and ISScatterCatalog resource paths tested. User is OUT OF SCOPE per scope.json (excluded_item_ids: custom code/DLL extension); its CreateScatteringTypeSettings / UILDEScatterData SerializationException is retained only as an existing product/historical diagnostic and is NOT a completion prerequisite.",
+      "status": "blocked",
+      "remaining": "BSDF and ISX native selection / trace / reload only",
+      "scope_source": "development/tracking/scope.json excludes ED-01.Scattering.User; development/ledgers/operations.csv scope = native built-in scattering types and resource query"
+    }
+  ],
+  "execution": {
+    "report": ".local/coordination/pass-d007-report.md",
+    "commands": [
+      {
+        "command": "pytest tests/unit/test_star_analyses.py tests/unit/test_analysis_scenarios.py tests/unit/test_scatter_capabilities.py tests/unit/test_plotting_units.py tests/unit/test_imaging.py tests/unit/test_scatter_report.py tests/unit/test_property_pages_adoption.py -q -p no:cacheprovider",
+        "result": "225 passed in 1.91s"
+      }
+    ],
+    "native_execution": "not started (deferred); User serialization failure is the 2026-11-08 existing reproduction",
+    "scope_note": "targeted offline tests only; no full run, no native, no Git. ED-01.Scattering.User excluded from D007 aggregate per scope.json"
+  }
+}

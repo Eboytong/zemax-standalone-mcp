@@ -13,3 +13,7 @@ verification/
 wheels/*
 !wheels/zemax_standalone_mcp-0.1.61-py3-none-any.whl
 mcp.config.json
+.migration-in-progress
+.workspace_finish.py
+.workspace_migrate.py
+_pi_gen.py

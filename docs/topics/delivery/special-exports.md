@@ -24,7 +24,7 @@ STEP/STL/SAT 扩展设置通过实际采用、文件生成、工具关闭及系�
 
 本机2024 R2公开接口908个类型已扫描，记录 `.local/evidence/development/EXT-EXPORT/public-types042.json`。`IOpticalSystemTools`提供CAD、布局和Speos导出，LDE提供点云；未发现ZBB创建、ZEC加密镀膜和旧DXF/IGES线框的命名导出工厂。IAPIUtilities只有格式转换，IFileManager处理项目文件依赖；ISurfaceBlackBoxLens用于选择已有ZBB。
 
-本机手册第51–55页描述界面创建ZBB及ZEC；第49–51页描述旧线框出口。已将三项分别登记blocked。解除条件为取得本机版本可执行的正式创建接口或受支持自动化协议、参数和许可说明，然后补充有类型请求、原生文件与重载/追迹对照。界面功能存在的记录与MCP正式接口能力分别保留。
+本机手册第51–55页描述界面创建ZBB及ZEC；第49–51页描述旧线框出口。2026-11-08复核公开类型后，三项继续登记blocked：ZBB、ZEC和旧DXF/IGES线框均没有可用的命名创建工厂或设置/结果对象。分别见 `development/evidence/EXT-EXPORT/blackbox-interface-followup-20261108.md`、`encrypted-coating-interface-followup-20261108.md` 和 `legacy-linework-interface-followup-20261108.md`。解除条件为取得本机版本可执行的正式创建接口或受支持自动化协议、参数和许可说明，然后补充有类型请求、原生文件与重载/追迹对照。界面功能存在的记录与MCP正式接口能力分别保留。
 
 CAD的现有格式继续使用run_cad_export，Speos使用run_speos_export；项目归档沿用现有项目/归档工具。当前点云为implemented；设置实际采用、坐标/法线数值、保存重载和原生副本关闭待BASE-04启动恢复后运行 `tests/unit/test_point_cloud.py -m zemax`。平面z与法线参考采用绝对容差1e-8、相对容差1e-7；其他面型及压缩负载数值解码仍为后续原生验收。
 
@@ -90,3 +90,5 @@ ACIS版本为独立待验收条件：SAT/SAB分别运行Current及V25至V30共14
 
 
 2026-11-07 CAD585：分离实体和曲面IGES写出路径，各自测试all_by_layer与all_at_once；LensLayer10与两配置回读采用，四份文件均只有层号65535。该单变量实验未解决分层遗漏，原175/178缺口继续保留。四任务关闭，曲面/solve、系统、MFE/MCE逐次与保存重载后保持，正常断连；1个诊断pytest通过生命周期检查，分层验收为false。证据EXT-EXPORT/progress585-solid-surface-layers.json。
+
+2026-11-09：顺序IGES显式lens_layer且number_of_rays=0时，关闭导出器后核对目录实际层号；不符返回SETTING_REJECTED并保留输出路径/原值，间接层定义无法确认时返回SETTING_UNAVAILABLE。逐配置文件分别读取。NSC及含光线场景仍沿现有回读范围。双配置STEP几何通过，IGES仍65535；拒绝后STEP复用、模型保持及关闭通过。详见`development/evidence/EXT-EXPORT/iges-layer-adoption-20261109.md`。

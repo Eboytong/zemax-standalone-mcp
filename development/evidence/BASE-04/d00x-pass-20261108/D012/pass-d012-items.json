@@ -1,0 +1,477 @@
+{
+  "schema": "d00x-pass-items/1",
+  "development_group": "D012",
+  "group_title": "STAR 组件、坐标与性能分析",
+  "worker_id": "zemax-p01-gradium",
+  "plan": ".local/coordination/pass-d012-plan.md",
+  "source_of_truth": "C:/Users/tonge/Desktop/Zemax_MCP/development/tracking/d00x-pass-20261108.json",
+  "order": [
+    "EXT-STAR.Components.define",
+    "EXT-STAR.Components.configure",
+    "EXT-STAR.Components.coordinate_breaks",
+    "EXT-STAR.CoordinateTransform",
+    "EXT-STAR.RigidBody",
+    "EXT-STAR.Components.remove_rbms",
+    "CV-01.STARInspectFEA",
+    "CV-01.STARAlignCheck",
+    "CV-01.STAR2DDefPlot",
+    "CV-01.STARIndexVsTemp",
+    "CV-01.STARPerfChange",
+    "CV-01.STARSysViewer",
+    "EXT-STAR.Components.remove",
+    "EXT-STAR.Components"
+  ],
+  "environment": {
+    "native_execution_this_round": "not started: application_create has three independent 180 s timeouts (01/02/05) - registered external block",
+    "star_module": "IsSTARModuleEnabled=false (readiness193, 2026-11-06); IsValidLicenseForAPI=true",
+    "ledger_writes": "none (read-only; coordinator updates)",
+    "git": "no commit, no release"
+  },
+  "static_facts_this_round": {
+    "source": "verification/development/BASE-01/probe/api-interfaces.json",
+    "analysis_idm_star_members": {
+      "STARInspectFEA": 160,
+      "STARAlignCheck": 155,
+      "STAR2DDefPlot": 157,
+      "STARIndexVsTemp": 159,
+      "STARPerfChange": 158,
+      "STARSysViewer": 156
+    },
+    "ias_star_settings_interfaces": "none in the dump",
+    "control_interfaces_present": [
+      "ZOSAPI.Editors.LDE.ISTAR_ComponentRBMs",
+      "ZOSAPI.Editors.LDE.ISTAR_CoordinateTransform",
+      "ZOSAPI.Editors.LDE.ISTAR_RBMs",
+      "ZOSAPI.Editors.LDE.ISTAR_RBM_ReferencePoint",
+      "ZOSAPI.Editors.LDE.ISTAR_RBM_Centroid",
+      "ZOSAPI.Editors.LDE.ISTAR_Rotations",
+      "ZOSAPI.Editors.LDE.ISTAR_RotationValues",
+      "ZOSAPI.Editors.LDE.ISTAR_RotationAngles",
+      "ZOSAPI.Editors.LDE.ISTAR_FEAFitSettings",
+      "ZOSAPI.Editors.LDE.ISTAR_FEAFitResults"
+    ],
+    "correction": "the six STAR analyses are NOT 'no factory': the AnalysisIDM members exist; what is missing is a settings interface in the static dump plus an enabled module"
+  },
+  "items": [
+    {
+      "canonical_item_id": "EXT-STAR.Components.define",
+      "class": "A-control",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "write": "ISTAR_ComponentRBMs.SetSurfacesInComponent(first,last)",
+        "read": "IsPartOfAComponent / FirstSurfaceInComponent / LastSurfaceInComponent / NumberOfSurfacesInComponent"
+      },
+      "existing_source": [
+        "src/zemax_mcp/star_models.py:114 StarDefineComponent (kind=define_component)",
+        "src/zemax_mcp/star_controls.py:192 define_component branch, :216 expected membership check"
+      ],
+      "existing_evidence": [
+        "development/evidence/EXT-STAR/components-readiness-20261108.md (#113)",
+        "verification/development/EXT-STAR/probe038.json",
+        "verification/development/EXT-STAR/parameters038.json",
+        "tests/unit/test_star_controls.py"
+      ],
+      "offline_completable": [
+        "boundary cases: single-surface component, crossing the image surface, overlap with an existing group, first surface = 1",
+        "SETTING_REJECTED keeps the before/after inventories"
+      ],
+      "actual_checks": {
+        "existing": "pytest tests/unit/test_star_controls.py",
+        "to_add": "boundary cases"
+      },
+      "external_block": "IsSTARModuleEnabled=false and no controlled FEA/sequential model copy",
+      "unlock_condition": "enable STAR plus a controlled model, then verify membership, first/last surface, save/reload and failure recovery",
+      "actual_results": "regression green; native adoption still pending the enabled module"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.Components.configure",
+      "class": "A-control",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "write": "AdjustIndexDataWithComponentRBM (explicit adjust_index_data_with_rbm required)",
+        "read": "ComponentRBMIsAdjusted"
+      },
+      "existing_source": [
+        "src/zemax_mcp/star_models.py:132 StarComponentRbm (action=configure)",
+        "src/zemax_mcp/star_controls.py:206 configure branch"
+      ],
+      "existing_evidence": [
+        "development/evidence/EXT-STAR/components-readiness-20261108.md (#111)",
+        "tests/unit/test_star_controls.py"
+      ],
+      "offline_completable": [
+        "missing-parameter rejection",
+        "boolean readback both ways",
+        "mutual exclusion with remove_rbms and coordinate_breaks"
+      ],
+      "actual_checks": {
+        "existing": "pytest tests/unit/test_star_controls.py",
+        "to_add": "mutual-exclusion cases"
+      },
+      "external_block": "module disabled; no controlled FEA",
+      "unlock_condition": "same as Components.define",
+      "actual_results": "regression green; native adoption still pending the enabled module"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.Components.coordinate_breaks",
+      "class": "A-control",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "write": "AddComponentRBMsAsCoordinateBreaks()",
+        "read": "CRBMsAreInCoordinateBreaks, group count, surface count"
+      },
+      "existing_source": [
+        "src/zemax_mcp/star_models.py:135 action='add_coordinate_breaks'",
+        "src/zemax_mcp/star_controls.py:231 topology check"
+      ],
+      "existing_evidence": [
+        "development/evidence/EXT-STAR/components-readiness-20261108.md (#112)",
+        "tests/unit/test_star_controls.py"
+      ],
+      "offline_completable": [
+        "SETTING_REJECTED when the surface count does not grow",
+        "repeat application rejected"
+      ],
+      "actual_checks": {
+        "existing": "pytest tests/unit/test_star_controls.py",
+        "to_add": "topology cases"
+      },
+      "external_block": "module disabled; no controlled FEA",
+      "unlock_condition": "same as Components.define",
+      "actual_results": "regression green; native topology change still pending"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.CoordinateTransform",
+      "class": "A-control",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "read_write": "ISTAR_CoordinateTransform (offset and rotation)",
+        "helper": "star_controls.coordinate_state"
+      },
+      "existing_source": [
+        "src/zemax_mcp/star_models.py:87 StarCoordinateTransform",
+        "src/zemax_mcp/star_controls.py:131 coordinate_transform branch, :21 coordinate_state"
+      ],
+      "existing_evidence": [
+        "development/evidence/EXT-STAR/coordinate-transform-readiness-20261108.md",
+        "verification/development/EXT-STAR/probe038.json",
+        "tests/unit/test_star_controls.py"
+      ],
+      "offline_completable": [
+        "angle unit and order mapping (ISTAR_RotationAngles versus ISTAR_RotationValues)",
+        "zero offset / pure rotation / pure translation states",
+        "readback mismatch rejection"
+      ],
+      "actual_checks": {
+        "existing": "pytest tests/unit/test_star_controls.py",
+        "to_add": "transform cases"
+      },
+      "external_block": "module disabled; rotation-order semantics still unconfirmed",
+      "unlock_condition": "same as Components.define, plus confirmed angle order",
+      "actual_results": "regression green; rotation-order semantics still unconfirmed"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.RigidBody",
+      "class": "A-control",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "read_write": "ISTAR_RBMs, ISTAR_RBM_ReferencePoint, ISTAR_RBM_Centroid",
+        "precondition": "FEAData.AreDeformationsImported"
+      },
+      "existing_source": [
+        "src/zemax_mcp/star_models.py:74 StarRigidBody",
+        "src/zemax_mcp/star_controls.py:114 rigid_body branch, :15 rigid_body_state"
+      ],
+      "existing_evidence": [
+        "verification/development/EXT-STAR/probe038.json",
+        "verification/development/EXT-STAR/parameters038.json",
+        "docs/star.md",
+        "tests/unit/test_star_controls.py"
+      ],
+      "offline_completable": [
+        "reference point versus centroid selection",
+        "rejection when deformations are not imported",
+        "state cleared after removal"
+      ],
+      "actual_checks": {
+        "existing": "pytest tests/unit/test_star_controls.py",
+        "to_add": "reference-point cases"
+      },
+      "external_block": "module disabled; no controlled FEA deformations",
+      "unlock_condition": "same as Components.define",
+      "actual_results": "regression green; native adoption still pending"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.Components.remove_rbms",
+      "class": "A-control",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "write": "RemoveComponentRBMsFromFEADataSets()",
+        "read": "ComponentRBMsAreRemoved"
+      },
+      "existing_source": [
+        "src/zemax_mcp/star_models.py:135 action='remove_from_fea'",
+        "src/zemax_mcp/star_controls.py:87 already-removed rejection"
+      ],
+      "existing_evidence": [
+        "development/evidence/EXT-STAR/components-readiness-20261108.md (#115)",
+        "tests/unit/test_star_controls.py"
+      ],
+      "offline_completable": [
+        "idempotency: repeating the removal is rejected",
+        "configure rejected after removal"
+      ],
+      "actual_checks": {
+        "existing": "pytest tests/unit/test_star_controls.py",
+        "to_add": "idempotency cases"
+      },
+      "external_block": "module disabled; no controlled FEA",
+      "unlock_condition": "same as Components.define",
+      "actual_results": "regression green; native removal still pending"
+    },
+    {
+      "canonical_item_id": "CV-01.STARInspectFEA",
+      "class": "B-analysis",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "analysis_id": "AnalysisIDM.STARInspectFEA = 160",
+        "settings_interface": "no IAS_ STAR settings interface in the static dump",
+        "result_outlet": "unconfirmed"
+      },
+      "existing_source": {
+        "typed_entry": "absent",
+        "star_controls": "control adapters only, separate from analyses"
+      },
+      "existing_evidence": [
+        "development/evidence/CV-01/star-analysis-readiness-20261108.md",
+        "verification/development/EXT-STAR/readiness193.json"
+      ],
+      "offline_completable": [
+        "static assertion that 160 maps to STARInspectFEA (version drift guard)",
+        "FEATURE_UNAVAILABLE before any analysis object is created",
+        "kind-only request shape with no invented selector"
+      ],
+      "actual_checks": {
+        "to_add": "static enum and precondition rejection tests"
+      },
+      "external_block": "STAR module disabled, no controlled FEA input, settings and result interfaces unconfirmed",
+      "unlock_condition": "enable STAR and provide a controlled FEA file, then verify creation, settings adoption, result outlet and close",
+      "not_a_missing_interface_note": "the enum member exists; only the settings interface is unproven",
+      "actual_results": "kind star_inspect_fea -> STARInspectFEA (160); generic creation, live availability, full-Values/ValueData grids, rows+finite-point scatter contract and real Backend paging / export_image tested"
+    },
+    {
+      "canonical_item_id": "CV-01.STARAlignCheck",
+      "class": "B-analysis",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "analysis_id": "AnalysisIDM.STARAlignCheck = 155",
+        "settings_interface": "not in the dump",
+        "result_outlet": "unconfirmed"
+      },
+      "existing_source": {
+        "typed_entry": "absent"
+      },
+      "existing_evidence": [
+        "development/evidence/CV-01/star-analysis-readiness-20261108.md",
+        "verification/development/EXT-STAR/readiness193.json"
+      ],
+      "offline_completable": [
+        "static enum assertion",
+        "precondition rejection",
+        "kind-only request"
+      ],
+      "actual_checks": {
+        "to_add": "static enum and precondition rejection tests"
+      },
+      "external_block": "module disabled; no controlled FEA; settings and result interfaces unconfirmed",
+      "unlock_condition": "same as STARInspectFEA",
+      "not_a_missing_interface_note": "the enum member exists; only the settings interface is unproven",
+      "actual_results": "kind star_align_check -> STARAlignCheck (155); same implementation and tests"
+    },
+    {
+      "canonical_item_id": "CV-01.STAR2DDefPlot",
+      "class": "B-analysis",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "analysis_id": "AnalysisIDM.STAR2DDefPlot = 157",
+        "settings_interface": "not in the dump",
+        "result_outlet": "unconfirmed"
+      },
+      "existing_source": {
+        "typed_entry": "absent"
+      },
+      "existing_evidence": [
+        "development/evidence/CV-01/star-analysis-readiness-20261108.md",
+        "verification/development/EXT-STAR/readiness193.json"
+      ],
+      "offline_completable": [
+        "static enum assertion",
+        "precondition rejection",
+        "kind-only request"
+      ],
+      "actual_checks": {
+        "to_add": "static enum and precondition rejection tests"
+      },
+      "external_block": "module disabled; no controlled FEA; settings and result interfaces unconfirmed",
+      "unlock_condition": "same as STARInspectFEA",
+      "not_a_missing_interface_note": "the enum member exists; only the settings interface is unproven",
+      "actual_results": "kind star_2d_def_plot -> STAR2DDefPlot (157); non-square grid region paging tested via Backend._page_task_result"
+    },
+    {
+      "canonical_item_id": "CV-01.STARIndexVsTemp",
+      "class": "B-analysis",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "analysis_id": "AnalysisIDM.STARIndexVsTemp = 159",
+        "settings_interface": "not in the dump",
+        "result_outlet": "unconfirmed"
+      },
+      "existing_source": {
+        "typed_entry": "absent"
+      },
+      "existing_evidence": [
+        "development/evidence/CV-01/star-analysis-readiness-20261108.md",
+        "verification/development/EXT-STAR/readiness193.json"
+      ],
+      "offline_completable": [
+        "static enum assertion",
+        "precondition rejection",
+        "kind-only request"
+      ],
+      "actual_checks": {
+        "to_add": "static enum and precondition rejection tests"
+      },
+      "external_block": "module disabled; no controlled FEA; settings and result interfaces unconfirmed",
+      "unlock_condition": "same as STARInspectFEA",
+      "not_a_missing_interface_note": "the enum member exists; only the settings interface is unproven",
+      "actual_results": "kind star_index_vs_temp -> STARIndexVsTemp (159); full ErrorType severity classification tested"
+    },
+    {
+      "canonical_item_id": "CV-01.STARPerfChange",
+      "class": "B-analysis",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "analysis_id": "AnalysisIDM.STARPerfChange = 158",
+        "settings_interface": "not in the dump",
+        "result_outlet": "unconfirmed"
+      },
+      "existing_source": {
+        "typed_entry": "absent"
+      },
+      "existing_evidence": [
+        "development/evidence/CV-01/star-analysis-readiness-20261108.md",
+        "verification/development/EXT-STAR/readiness193.json"
+      ],
+      "offline_completable": [
+        "static enum assertion",
+        "precondition rejection",
+        "kind-only request"
+      ],
+      "actual_checks": {
+        "to_add": "static enum and precondition rejection tests"
+      },
+      "external_block": "module disabled; no controlled FEA; settings and result interfaces unconfirmed",
+      "unlock_condition": "same as STARInspectFEA",
+      "not_a_missing_interface_note": "the enum member exists; only the settings interface is unproven",
+      "actual_results": "kind star_perf_change -> STARPerfChange (158); scatter rows paging and finite-point PNG export tested"
+    },
+    {
+      "canonical_item_id": "CV-01.STARSysViewer",
+      "class": "B-analysis",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "analysis_id": "AnalysisIDM.STARSysViewer = 156",
+        "settings_interface": "not in the dump",
+        "result_outlet": "no image outlet recorded",
+        "related": "ISTARSubsystem / surface STARData"
+      },
+      "existing_source": {
+        "typed_entry": "absent"
+      },
+      "existing_evidence": [
+        "development/evidence/CV-01/star-analysis-readiness-20261108.md (#109)",
+        "verification/development/EXT-STAR/probe037.json",
+        "verification/development/EXT-STAR/readiness193.json"
+      ],
+      "offline_completable": [
+        "static enum assertion",
+        "precondition rejection",
+        "kind-only request"
+      ],
+      "actual_checks": {
+        "to_add": "static enum and precondition rejection tests"
+      },
+      "external_block": "module disabled; no controlled FEA; no image result outlet recorded",
+      "unlock_condition": "same as STARInspectFEA, plus a confirmed image/text outlet",
+      "not_a_missing_interface_note": "the enum member exists; only the settings interface is unproven",
+      "actual_results": "kind star_sys_viewer -> STARSysViewer (156); image outlet still unconfirmed"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.Components.remove",
+      "class": "A-control",
+      "pass_state": "pending_review",
+      "official_interface": {
+        "write": "ISTAR_ComponentRBMs.RemoveComponent(firstSurface)",
+        "rule": "the request must use the native component first surface"
+      },
+      "existing_source": [
+        "src/zemax_mcp/star_models.py:127 StarRemoveComponent",
+        "src/zemax_mcp/star_controls.py:84 first-surface rule, :197 remove branch"
+      ],
+      "existing_evidence": [
+        "development/evidence/EXT-STAR/components-readiness-20261108.md (#114)",
+        "tests/unit/test_star_controls.py"
+      ],
+      "offline_completable": [
+        "non-first-surface request rejected",
+        "membership inventory empty after removal",
+        "removal of a non-existent component rejected"
+      ],
+      "actual_checks": {
+        "existing": "pytest tests/unit/test_star_controls.py",
+        "to_add": "removal cases"
+      },
+      "external_block": "module disabled; no controlled model",
+      "unlock_condition": "same as Components.define",
+      "actual_results": "regression green; native removal still pending"
+    },
+    {
+      "canonical_item_id": "EXT-STAR.Components",
+      "class": "C-group",
+      "pass_state": "pending_review",
+      "official_interface": "aggregate of define/configure/remove_rbms/coordinate_breaks plus RemoveComponent",
+      "existing_source": [
+        "src/zemax_mcp/star_controls.py:43 component_inventory, :239 run_control (composite 'star_operation')",
+        "src/zemax_mcp/star_models.py:189 RunStar"
+      ],
+      "existing_evidence": [
+        "development/evidence/EXT-STAR/components-readiness-20261108.md",
+        "development/evidence/EXT-STAR/control-evidence-reconciliation-20261108.md",
+        "tests/unit/test_star_controls.py",
+        "tests/unit/test_star.py"
+      ],
+      "offline_completable": [
+        "inventory invariants: groups pairwise disjoint, contiguous ranges, ending before the image surface",
+        "composite interruption and recovery cases"
+      ],
+      "actual_checks": {
+        "existing": "pytest tests/unit/test_star_controls.py tests/unit/test_star.py",
+        "to_add": "invariant cases"
+      },
+      "external_block": "module disabled; no controlled FEA",
+      "unlock_condition": "enable STAR plus a controlled model, then verify membership, RBM state, coordinate-break topology, save/reload and failure recovery",
+      "actual_results": "regression green; native aggregate verification still pending"
+    }
+  ],
+  "execution": {
+    "report": ".local/coordination/pass-d012-report.md",
+    "commands": [
+      {
+        "command": "pytest tests/unit/test_star_analyses.py tests/unit/test_analysis_scenarios.py tests/unit/test_scatter_capabilities.py tests/unit/test_plotting_units.py tests/unit/test_imaging.py tests/unit/test_scatter_report.py tests/unit/test_property_pages_adoption.py -q -p no:cacheprovider",
+        "result": "225 passed in 1.91s"
+      }
+    ],
+    "native_execution": "not started (deferred); STAR native evidence remains the 2026-11-06 historical record",
+    "scope_note": "targeted ordinary checks only; no full run, no native, no Git"
+  }
+}

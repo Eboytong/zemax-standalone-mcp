@@ -37,6 +37,12 @@ class Evidence:
 
 def server_parameters(folder):
     environment={"PYTHONUTF8":"1","ZEMAX_OUTPUT_DIR":str(folder),"ZEMAX_STATE_DIR":str(Path(folder)/"state")}
+    # The MCP stdio client forwards only a fixed allowlist of variables to the server
+    # process, so a CLR assembly-load switch set by the caller would be dropped.
+    # Forward it verbatim only when the caller already set it; never default it here.
+    switch=os.environ.get("COMPLUS_LoadFromRemoteSources")
+    if switch is not None:
+        environment["COMPLUS_LoadFromRemoteSources"]=switch
     installed=os.environ.get("ZEMAX_TEST_WHEEL_DIR")
     if not installed:
         return StdioServerParameters(command=sys.executable,args=["-B","-m","zemax_mcp"],cwd=PROJECT_ROOT,env=environment|{"PYTHONPATH":str(PROJECT_ROOT/"src")})

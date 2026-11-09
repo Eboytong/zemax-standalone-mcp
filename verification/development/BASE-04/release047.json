@@ -1,9 +1,0 @@
-{
-  "version": "0.1.47",
-  "wheel": "wheels/zemax_standalone_mcp-0.1.47-py3-none-any.whl",
-  "installation": "verification/development/BASE-04/wheel-install047",
-  "ordinary_passed": 1701,
-  "native_installed_wheel_passed": 4,
-  "evidence": "verification\\development\\ED-04\\acceptance049\\summary.json",
-  "schema": "Existing request fields retained; get_merit_function now supports NonSequential model readback."
-}

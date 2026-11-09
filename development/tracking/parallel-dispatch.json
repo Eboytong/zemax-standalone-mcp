@@ -1,0 +1,501 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-11-08",
+  "plan": "development/parallel-development.md",
+  "review_owner": "当前计划与审查对话",
+  "source_version": "0.1.62",
+  "state": "one_pass_review_complete",
+  "selected_function_count": 96,
+  "common_start": {
+    "observed_git_head": "bc289be",
+    "working_tree": "有有效未提交及新增源码",
+    "frozen_baseline": "34e1a18494015c2b383ec700b958015020b660fe",
+    "next_action": "Restore DSH connectivity and a verified Medium execution channel, reuse existing workers, then run HPC settings, MaterialModel and both pickup acceptances serially.",
+    "baseline_ref": "refs/heads/codex/parallel-01-baseline"
+  },
+  "native_execution": {
+    "owner_slot": "Agent 0",
+    "scheduling": "Uniform startup freeze lifted; serial native jobs require the verified external Python and a Medium user execution channel. Restore DSH before dispatch.",
+    "latest_issue": "Recovered: independent Medium Standalone and real MCP stdio Cooke analysis, settings, pagination, PNG and normal close passed. Execute native jobs through the verified external runtime in a Medium user context; automated Low-context execution is still unsuitable.",
+    "jobs": [
+      {
+        "job_id": "runtime-recovery-01",
+        "state": "initialization_timeout",
+        "evidence": ".local/evidence/development/BASE-04/parallel-01/runtime-recovery-01",
+        "child_alive": false,
+        "normal_close_observed": false,
+        "forced_owned_tree_cleanup": true
+      },
+      {
+        "job_id": "runtime-recovery-02",
+        "state": "initialization_timeout",
+        "evidence": ".local/evidence/development/BASE-04/parallel-01/runtime-recovery-02",
+        "child_alive": false,
+        "normal_close_observed": false,
+        "forced_owned_tree_cleanup": true,
+        "observations": [
+          "processes-first.json",
+          "processes-second.json"
+        ]
+      },
+      {
+        "job_id": "runtime-recovery-05",
+        "state": "initialization_timeout",
+        "evidence": ".local/evidence/development/BASE-04/parallel-01/runtime-recovery-05",
+        "child_alive": false,
+        "normal_close_observed": false,
+        "forced_owned_tree_cleanup": true,
+        "child_env_drop_ok": true,
+        "elapsed_seconds": 180.11605280000367
+      },
+      {
+        "job_id": "parallel-02/runtime-gui-01",
+        "state": "aborted_by_review",
+        "opticstudio_pid": 41804,
+        "native_feature_job": false,
+        "evidence": ".local/evidence/development/BASE-04/parallel-02/runtime-gui-01",
+        "child_alive": false,
+        "normal_close_observed": false
+      },
+      {
+        "job_id": "parallel-02/runtime-gui-02",
+        "state": "close_timeout",
+        "opticstudio_pid": 12736,
+        "native_feature_job": false,
+        "evidence": ".local/evidence/development/BASE-04/parallel-02/runtime-gui-02",
+        "child_alive": false,
+        "normal_close_observed": false
+      },
+      {
+        "job_id": "parallel-02/runtime-standalone-stage-01",
+        "state": "initialization_timeout",
+        "opticstudio_pid": 1236,
+        "native_feature_job": false,
+        "evidence": ".local/evidence/development/BASE-04/parallel-02/runtime-standalone-stage-01",
+        "child_alive": false,
+        "normal_close_observed": false
+      }
+    ],
+    "runner": "coordinator-medium-process"
+  },
+  "tasks": [
+    {
+      "slot": "Agent 0",
+      "assignment_id": "BASE-04.RUNTIME",
+      "canonical_item_ids": [],
+      "task_file": "development/assignments/parallel-01/00-runtime.md",
+      "objective": "环境恢复、共同基线、共享入口集成及串行原生作业",
+      "assigned_to": "zemax-p01-runtime",
+      "branch": null,
+      "workspace": "C:\\Users\\tonge\\Desktop\\Zemax_MCP",
+      "work_state": "pass_review_complete",
+      "review_state": "reviewed_remaining_conditions_recorded",
+      "session_id": "session-a0bef4ab-ed11-492b-8bdc-a7e6f8328ee2",
+      "reviewed_on": "2026-11-08",
+      "plan_report": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\coordination\\runtime-plan.md"
+    },
+    {
+      "slot": "Agent 1",
+      "assignment_id": "D001.POLARIZATION",
+      "canonical_item_ids": [
+        "PO-01.PhaseAberration",
+        "PO-01.PolarizationRayTrace",
+        "PO-01.Transmission",
+        "WP-01.FiberCouplingSettings"
+      ],
+      "task_file": "development/assignments/parallel-01/01-polarization.md",
+      "objective": "Jones/相位、正式选择、Fresnel/复场及耦合参考",
+      "assigned_to": "zemax-p01-polarization",
+      "branch": "codex/d001-polarization",
+      "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-polarization\\Zemax_MCP",
+      "work_state": "pass_review_complete",
+      "review_state": "reviewed_remaining_conditions_recorded",
+      "session_id": "session-d7099139-d9de-40dd-ac92-0bc63a0ab2e3",
+      "reviewed_on": "2026-11-08",
+      "plan_report": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-polarization\\Zemax_MCP\\.local\\coordination\\plan.md",
+      "completion_credit": 0
+    },
+    {
+      "slot": "Agent 2",
+      "assignment_id": "D002.MATERIAL_REPORTS",
+      "canonical_item_ids": [
+        "MA-01.GlassMap",
+        "MA-01.AthermalGlassMap",
+        "MA-01.DispersionDiagram",
+        "MA-01.DispersionvsWavelength"
+      ],
+      "task_file": "development/assignments/parallel-01/02-material-reports.md",
+      "objective": "材料目录、热光/色散定义、设置和报告",
+      "assigned_to": "zemax-p01-material-reports",
+      "branch": "codex/d002-material-reports",
+      "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-reports\\Zemax_MCP",
+      "work_state": "pass_review_complete",
+      "review_state": "reviewed_remaining_conditions_recorded",
+      "session_id": "session-77083914-74d1-4c3b-a4a3-0c2f6394a67b",
+      "reviewed_on": "2026-11-08",
+      "plan_report": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-reports\\Zemax_MCP\\.local\\coordination\\plan.md"
+    },
+    {
+      "slot": "Agent 3",
+      "assignment_id": "D002.MODEL_GLASS",
+      "canonical_item_ids": [
+        "ED-02.MaterialModel.Material"
+      ],
+      "task_file": "development/assignments/parallel-01/03-material-model.md",
+      "objective": "临时材料模型色散定义与Nd/Vd偏差",
+      "assigned_to": "zemax-p01-material-model",
+      "branch": "codex/d002-material-model",
+      "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-model\\Zemax_MCP",
+      "work_state": "pass_review_complete",
+      "review_state": "reviewed_remaining_conditions_recorded",
+      "session_id": "session-d835e885-44ad-4a22-b102-f3023b763288",
+      "reviewed_on": "2026-11-08",
+      "plan_report": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-model\\Zemax_MCP\\.local\\coordination\\plan.md",
+      "implementation_report": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-model\\Zemax_MCP/.local/coordination/implementation-report.md",
+      "completion_credit": 0
+    },
+    {
+      "slot": "Agent 4",
+      "assignment_id": "D002.GRADIUM",
+      "canonical_item_ids": [
+        "MA-01.GradiumProfile"
+      ],
+      "task_file": "development/assignments/parallel-01/04-gradium.md",
+      "objective": "GRD高阶求值、左端capping和正式专题选择",
+      "assigned_to": "zemax-p01-gradium",
+      "branch": "codex/d002-gradium",
+      "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-gradium\\Zemax_MCP",
+      "work_state": "pass_review_complete",
+      "review_state": "reviewed_remaining_conditions_recorded",
+      "session_id": "session-fb3221ce-907f-4072-99d2-1a3fb5d62f96",
+      "reviewed_on": "2026-11-08",
+      "plan_report": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-gradium\\Zemax_MCP\\.local\\coordination\\plan.md"
+    },
+    {
+      "slot": "Agent 5",
+      "assignment_id": "D010.HOLOGRAM_NATIVE",
+      "canonical_item_ids": [
+        "CO-01.DiffEfficiencyAngular",
+        "CO-01.DiffEfficiencyChromatic",
+        "CO-01.DiffEfficiency2D"
+      ],
+      "task_file": "development/assignments/parallel-01/05-hologram.md",
+      "objective": "原生Hologram1的三项范围、数值和生命周期收口",
+      "assigned_to": "zemax-p01-hologram",
+      "branch": "codex/d010-hologram-native",
+      "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-hologram\\Zemax_MCP",
+      "work_state": "pass_review_complete",
+      "review_state": "accepted",
+      "session_id": "session-da391898-d135-4e0c-80ea-321231072b9d",
+      "reviewed_on": "2026-11-08",
+      "plan_report": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-hologram\\Zemax_MCP\\.local\\coordination\\plan.md",
+      "completion_credit": 3,
+      "evidence": "development/evidence/CO-01/hologram1-review-20261108/README.md"
+    },
+    {
+      "slot": "Agent 3 reused",
+      "assignment_id": "D004.POWER_MAPS",
+      "canonical_item_ids": [
+        "CV-02.PowerFieldMapSettings",
+        "CV-02.PowerPupilMapSettings"
+      ],
+      "task_file": "development/assignments/parallel-01/06-power-maps.md",
+      "objective": "Formal zero-EFL and native sampling-ring semantics; bounded control plan",
+      "assigned_to": "zemax-p01-material-model",
+      "session_id": "session-d835e885-44ad-4a22-b102-f3023b763288",
+      "branch": "codex/d002-material-model",
+      "workspace": "C:/Users/tonge/.codex/worktrees/zemax-p01-material-model/Zemax_MCP",
+      "work_state": "pass_review_complete",
+      "review_state": "reviewed_remaining_conditions_recorded",
+      "previous_assignment": "D002.MODEL_GLASS",
+      "preserved_previous_state": "implemented; control probe ready; native acceptance waiting for application startup",
+      "completion_credit": 0
+    },
+    {
+      "slot": "Agent 3 reused",
+      "assignment_id": "D003.PICKUP_SOLVES",
+      "canonical_item_ids": [
+        "ED-02.SurfacePickup.ChipZone",
+        "ED-02.SurfacePickup.MechanicalSemiDiameter"
+      ],
+      "task_file": "development/assignments/parallel-01/07-pickup-solves.md",
+      "assigned_to": "zemax-p01-material-model",
+      "session_id": "session-d835e885-44ad-4a22-b102-f3023b763288",
+      "branch": "codex/d002-material-model",
+      "workspace": "C:/Users/tonge/.codex/worktrees/zemax-p01-material-model/Zemax_MCP",
+      "work_state": "pass_review_complete",
+      "review_state": "reviewed_remaining_conditions_recorded",
+      "completion_credit": 0
+    },
+    {
+      "slot": "Agent 4 reused",
+      "assignment_id": "D008.DEFAULT_REPORTS",
+      "canonical_item_ids": [
+        "NS-04.PrescriptionDataSettings",
+        "NS-04.SurfaceDataSettings"
+      ],
+      "task_file": "development/assignments/parallel-01/08-default-reports.md",
+      "assigned_to": "zemax-p01-gradium",
+      "session_id": "session-fb3221ce-907f-4072-99d2-1a3fb5d62f96",
+      "branch": "codex/d002-gradium",
+      "workspace": "C:/Users/tonge/.codex/worktrees/zemax-p01-gradium/Zemax_MCP",
+      "work_state": "pass_review_complete",
+      "review_state": "reviewed_remaining_conditions_recorded",
+      "completion_credit": 0
+    },
+    {
+      "slot": "Agent 5 reused",
+      "assignment_id": "D008.SAG_TABLE",
+      "canonical_item_ids": [
+        "MF-01.SagTable"
+      ],
+      "task_file": ".local/state/dsh-supervision/parallel-01/hologram-next-sagtable-plan.json",
+      "assigned_to": "zemax-p01-hologram",
+      "session_id": "session-da391898-d135-4e0c-80ea-321231072b9d",
+      "workspace": "C:/Users/tonge/.codex/worktrees/zemax-p01-hologram/Zemax_MCP",
+      "branch": "codex/d010-hologram-native",
+      "work_state": "pass_review_complete",
+      "review_state": "reviewed_remaining_conditions_recorded",
+      "completion_credit": 0
+    }
+  ],
+  "supervision": {
+    "interval_seconds": 60,
+    "log_directory": ".local/state/dsh-supervision/parallel-01",
+    "owner": "当前计划与审查对话",
+    "mode": "stopped_after_pass_completion"
+  },
+  "worker_reuse": {
+    "priority": "reuse_existing",
+    "requested_on": "2026-11-08",
+    "dispatch_tool": "dsh_assign_task",
+    "workspace_policy": "保持已有worker与固定工作区，后续任务附当前基线、修改归属、未完成事项和新验收要求。",
+    "new_worker_condition": "已有worker均在执行且出现独立职责，或正式接口确认原会话无法复用。"
+  },
+  "development_plan": "development/tracking/development-groups.json",
+  "verification_cycle": "development/tracking/verification-cycle.json",
+  "reviewed_function_count": 96,
+  "accepted_completion_count": 3,
+  "summary_evidence": "development/evidence/BASE-04/d00x-pass-20261108/README.md",
+  "pass_assignments": [
+    {
+      "development_group": "D001",
+      "canonical_item_ids": [
+        "PO-01.PhaseAberration",
+        "PO-01.PolarizationRayTrace",
+        "PO-01.Transmission",
+        "WP-01.FiberCouplingSettings"
+      ],
+      "worker_ids": [
+        "zemax-p01-polarization"
+      ],
+      "state": "review_complete"
+    },
+    {
+      "development_group": "D002",
+      "canonical_item_ids": [
+        "MA-01.GlassMap",
+        "MA-01.AthermalGlassMap",
+        "MA-01.DispersionDiagram",
+        "MA-01.DispersionvsWavelength",
+        "ED-02.MaterialModel.Material",
+        "MA-01.GradiumProfile"
+      ],
+      "worker_ids": [
+        "zemax-p01-gradium",
+        "zemax-p01-material-model",
+        "zemax-p01-material-reports"
+      ],
+      "state": "review_complete"
+    },
+    {
+      "development_group": "D003",
+      "canonical_item_ids": [
+        "ED-02.SurfacePickup.ChipZone",
+        "ED-02.SurfacePickup.MechanicalSemiDiameter",
+        "ED-04.RayAimingWizard",
+        "NS-01.Conversion",
+        "ED-02.SolveExtensions018"
+      ],
+      "worker_ids": [
+        "zemax-p01-material-model"
+      ],
+      "state": "review_complete"
+    },
+    {
+      "development_group": "D004",
+      "canonical_item_ids": [
+        "CV-02.PowerFieldMapSettings",
+        "CV-02.PowerPupilMapSettings",
+        "CV-01.SeidelDiagram",
+        "CV-01.FullFieldSpot",
+        "CV-01.MatrixSpot",
+        "CV-01.ConfigurationMatrixSpot",
+        "CV-01.FftSurfaceMtf"
+      ],
+      "worker_ids": [
+        "zemax-p01-material-model"
+      ],
+      "state": "review_complete"
+    },
+    {
+      "development_group": "D005",
+      "canonical_item_ids": [
+        "WP-01.BeamFileViewer",
+        "CV-02.BitmapFileViewer",
+        "IM-01.GeometricBitmapImageAnalysis",
+        "CV-02.LightSourceAnalysis",
+        "CV-02.ExtendedDiffractionImageAnalysis",
+        "CV-02.PartiallyCoherentImageAnalysis"
+      ],
+      "worker_ids": [
+        "zemax-p01-polarization"
+      ],
+      "state": "review_complete"
+    },
+    {
+      "development_group": "D006",
+      "canonical_item_ids": [
+        "NS-03.SourceSpectrumViewer",
+        "NS-03.FluxvsWavelength",
+        "NS-03.DirectivityPlot",
+        "CV-01.SourceColorChart1931",
+        "CV-01.SourceColorChart1976",
+        "NS-03.SourcePolarViewer",
+        "NS-03.SourceIlluminationMap",
+        "NS-03.PhotoluminscenceViewer",
+        "NS-03.RadiantSourceModelViewerSettings",
+        "NS-03.RoadwayLighting"
+      ],
+      "worker_ids": [
+        "zemax-p01-material-reports"
+      ],
+      "state": "review_complete"
+    },
+    {
+      "development_group": "D007",
+      "canonical_item_ids": [
+        "ED-01.Scattering.BSDF",
+        "ED-01.Scattering.ISScatterCatalog",
+        "NS-03.ScatterFunctionViewer",
+        "NS-03.ScatterPolarPlotSettings",
+        "NS-02.PathAnalysis",
+        "ED-01.Scattering"
+      ],
+      "worker_ids": [
+        "zemax-p01-gradium"
+      ],
+      "state": "review_complete"
+    },
+    {
+      "development_group": "D008",
+      "canonical_item_ids": [
+        "NS-04.PrescriptionDataSettings",
+        "NS-04.SurfaceDataSettings",
+        "MF-01.TestPlateList",
+        "MF-01.SagTable",
+        "CV-01.ISOElementDrawing",
+        "MF-01.ZemaxElementDrawing",
+        "NS-04.PrescriptionGraphic",
+        "NS-04.NSCObjectViewer",
+        "NS-04.PartViewer"
+      ],
+      "worker_ids": [
+        "zemax-p01-gradium",
+        "zemax-p01-hologram"
+      ],
+      "state": "review_complete"
+    },
+    {
+      "development_group": "D009",
+      "canonical_item_ids": [
+        "EXT-EXPORT.CadSettings",
+        "EXT-EXPORT.CadMultipleConfigurations",
+        "EXT-EXPORT.LegacyLinework",
+        "EXT-EXPORT.BlackBox",
+        "EXT-EXPORT.EncryptedCoating"
+      ],
+      "worker_ids": [
+        "zemax-p01-runtime"
+      ],
+      "state": "review_complete"
+    },
+    {
+      "development_group": "D010",
+      "canonical_item_ids": [
+        "CO-01.DiffEfficiencyAngular",
+        "CO-01.DiffEfficiencyChromatic",
+        "CO-01.DiffEfficiency2D"
+      ],
+      "worker_ids": [
+        "zemax-p01-hologram"
+      ],
+      "state": "review_complete"
+    },
+    {
+      "development_group": "D011",
+      "canonical_item_ids": [
+        "EXT-STAR.Read",
+        "EXT-STAR.UpdateMode",
+        "EXT-STAR.Materials.refractive_index",
+        "EXT-STAR.Materials.dndt",
+        "EXT-STAR.ThermalControls",
+        "EXT-STAR.VolumeControls",
+        "EXT-STAR.ImportDeformation",
+        "EXT-STAR.FitDeformation",
+        "EXT-STAR.ImportTemperature",
+        "EXT-STAR.FitTemperature",
+        "EXT-STAR.ImportDirectIndex",
+        "EXT-STAR.FitDirectIndex",
+        "EXT-STAR.FittedSamples",
+        "EXT-STAR.UnloadDeformation",
+        "EXT-STAR.UnloadTemperature",
+        "EXT-STAR.UnloadDirectIndex"
+      ],
+      "worker_ids": [
+        "zemax-p01-material-model"
+      ],
+      "state": "review_complete"
+    },
+    {
+      "development_group": "D012",
+      "canonical_item_ids": [
+        "EXT-STAR.Components.define",
+        "EXT-STAR.Components.configure",
+        "EXT-STAR.Components.coordinate_breaks",
+        "EXT-STAR.CoordinateTransform",
+        "EXT-STAR.RigidBody",
+        "EXT-STAR.Components.remove_rbms",
+        "CV-01.STARInspectFEA",
+        "CV-01.STARAlignCheck",
+        "CV-01.STAR2DDefPlot",
+        "CV-01.STARIndexVsTemp",
+        "CV-01.STARPerfChange",
+        "CV-01.STARSysViewer",
+        "EXT-STAR.Components.remove",
+        "EXT-STAR.Components"
+      ],
+      "worker_ids": [
+        "zemax-p01-gradium"
+      ],
+      "state": "review_complete"
+    },
+    {
+      "development_group": "D013",
+      "canonical_item_ids": [
+        "EXT-HPC.Settings",
+        "EXT-HPC.NSCTrace",
+        "EXT-HPC.Tolerancing",
+        "EXT-HPC.GlobalOptimization",
+        "EXT-HPC.HammerOptimization"
+      ],
+      "worker_ids": [
+        "zemax-p01-runtime"
+      ],
+      "state": "review_complete"
+    }
+  ],
+  "latest_round": "development/tracking/parallel-02.json",
+  "latest_round_state": "closed_native_blocked",
+  "native_freeze": "development/tracking/native-freeze.json"
+}

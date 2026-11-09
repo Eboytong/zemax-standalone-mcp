@@ -115,3 +115,136 @@ def test_extended_solve_native_matrix():
   else:
    assert c["state"]=="persistence_passed",c
    assert all(n["passed"]for n in c.get("numeric",[])),c
+
+
+@pytest.mark.zemax
+def test_chip_zone_surface_pickup_rejection_and_checkpoint_restore():
+ async def work(e):
+  await e.model()
+  await e.call("update_surfaces",dict(changes=[
+   dict(surface=1,chip_zone=.5,replace_solves=True),
+   dict(surface=2,chip_zone=.2,replace_solves=True)]))
+  before=(await e.call("get_surfaces",dict(start=1,count=2)))["surfaces"]
+  result=await e.call("update_surfaces",dict(changes=[dict(surface=2,replace_solves=True,solves={
+   "chip_zone":dict(mode="surface_pickup",source_surface=1,scale=1,offset=0)})]),okay=False)
+  assert result["error"]["code"]=="PARTIAL_UPDATE",result
+  cause=result["error"]["details"]["cause"]
+  assert cause["code"]=="SOLVE_UPDATE_FAILED",cause
+  assert cause["details"]["requested"]=="SurfacePickup",cause
+  assert cause["details"]["actual"]=="Automatic",cause
+  failed=result["error"]["details"]["failed_surface_state"]
+  assert failed["cells"]["chip_zone"]["solve"]["type"]=="Automatic",failed
+  checkpoint=Path(result["error"]["details"]["checkpoint"])
+  assert checkpoint.is_file(),checkpoint
+  await e.call("open_lens",dict(path=str(checkpoint)))
+  restored=(await e.call("get_surfaces",dict(start=1,count=2)))["surfaces"]
+  for initial,current in zip(before,restored):
+   assert current["cells"]["chip_zone"]==initial["cells"]["chip_zone"]
+ asyncio.run(execute("chip_zone_pickup_refusal",work))
+
+
+@pytest.mark.zemax
+def test_mechanical_semi_diameter_surface_pickup_rejection_and_checkpoint_restore():
+ async def work(e):
+  await e.model()
+  await e.call("update_surfaces",dict(changes=[
+   dict(surface=1,mechanical_semi_diameter=5.5,replace_solves=True),
+   dict(surface=2,mechanical_semi_diameter=5.2,replace_solves=True)]))
+  before=(await e.call("get_surfaces",dict(start=1,count=2)))["surfaces"]
+  result=await e.call("update_surfaces",dict(changes=[dict(surface=2,replace_solves=True,solves={
+   "mechanical_semi_diameter":dict(mode="surface_pickup",source_surface=1,scale=1,offset=0)})]),okay=False)
+  assert result["error"]["code"]=="PARTIAL_UPDATE",result
+  cause=result["error"]["details"]["cause"]
+  assert cause["code"]=="SOLVE_UPDATE_FAILED",cause
+  assert cause["details"]["requested"]=="SurfacePickup",cause
+  assert cause["details"]["actual"] in {"Fixed","Automatic"},cause
+  failed=result["error"]["details"]["failed_surface_state"]
+  assert failed["cells"]["mechanical_semi_diameter"]["solve"]["type"]==cause["details"]["actual"],failed
+  checkpoint=Path(result["error"]["details"]["checkpoint"])
+  assert checkpoint.is_file(),checkpoint
+  await e.call("open_lens",dict(path=str(checkpoint)))
+  restored=(await e.call("get_surfaces",dict(start=1,count=2)))["surfaces"]
+  for initial,current in zip(before,restored):
+   assert current["cells"]["mechanical_semi_diameter"]==initial["cells"]["mechanical_semi_diameter"]
+ asyncio.run(execute("mechanical_semi_diameter_pickup_refusal",work))
+
+
+@pytest.mark.zemax
+def test_chip_zone_zpl_macro_name_adoption():
+ import uuid
+ async def work(e):
+  await e.model()
+  resources=await e.call("get_system_resources",dict(request=dict(kind="extension_files",extension_role="zpl")))
+  name="MCP92_"+uuid.uuid4().hex[:10]
+  macro=Path(resources["directory"])/(name+".ZPL")
+  assert not macro.exists(),macro
+  macro.write_text("SOLVERETURN .375\n",encoding="ascii")
+  try:
+   available=await e.call("get_system_resources",dict(request=dict(kind="solve_macros",surface=1,cell="chip_zone")))
+   assert name in available["items"],available
+   await e.call("update_surfaces",dict(changes=[dict(surface=1,chip_zone=.2,replace_solves=True)]))
+   before=(await e.call("get_surfaces",dict(start=1,count=1)))["surfaces"][0]["cells"]["chip_zone"]
+   result=await e.call("update_surfaces",dict(changes=[dict(surface=1,replace_solves=True,solves={
+    "chip_zone":dict(mode="zpl_macro",macro=name)})]),okay=False)
+   if result.get("ok"):
+    adopted=result["data"]["surfaces"][0]["cells"]["chip_zone"]
+    assert adopted["solve"]==dict(type="ZPLMacro",macro=name),adopted
+    e.check("ChipZone ZPL macro result",adopted["value"],.375,atol=1e-10,rtol=0)
+    saved=str(e.folder/"chip-zone-zpl.zos")
+    await e.call("save_lens_as",dict(path=saved));await e.call("open_lens",dict(path=saved))
+    reloaded=(await e.call("get_surfaces",dict(start=1,count=1)))["surfaces"][0]["cells"]["chip_zone"]
+    assert reloaded["solve"]==adopted["solve"],reloaded
+    e.check("reloaded ChipZone ZPL macro result",reloaded["value"],.375,atol=1e-10,rtol=0)
+   else:
+    cause=result["error"]["details"].get("cause",result["error"])
+    assert cause["code"] in {"SETTING_REJECTED","SOLVE_UPDATE_FAILED"},result
+    current=(await e.call("get_surfaces",dict(start=1,count=1)))["surfaces"][0]["cells"]["chip_zone"]
+    result["observed_before"]={"solve":before["solve"],"value":before["value"]}
+    result["observed_after"]={"solve":current["solve"],"value":current["value"]}
+    if result["error"]["details"].get("checkpoint"):
+     await e.call("open_lens",dict(path=result["error"]["details"]["checkpoint"]))
+     restored=(await e.call("get_surfaces",dict(start=1,count=1)))["surfaces"][0]["cells"]["chip_zone"]
+     assert restored==before,(restored,before)
+  finally:
+   macro.unlink(missing_ok=True)
+ asyncio.run(execute("chip_zone_zpl_macro_probe",work))
+
+
+@pytest.mark.zemax
+def test_mechanical_semi_diameter_zpl_macro_name_adoption():
+ import uuid
+ async def work(e):
+  await e.model()
+  resources=await e.call("get_system_resources",dict(request=dict(kind="extension_files",extension_role="zpl")))
+  name="MCP93_"+uuid.uuid4().hex[:10]
+  macro=Path(resources["directory"])/(name+".ZPL")
+  assert not macro.exists(),macro
+  macro.write_text("SOLVERETURN .625\n",encoding="ascii")
+  try:
+   available=await e.call("get_system_resources",dict(request=dict(kind="solve_macros",surface=1,cell="mechanical_semi_diameter")))
+   assert name in available["items"],available
+   await e.call("update_surfaces",dict(changes=[dict(surface=1,mechanical_semi_diameter=5.2,replace_solves=True)]))
+   before=(await e.call("get_surfaces",dict(start=1,count=1)))["surfaces"][0]["cells"]["mechanical_semi_diameter"]
+   result=await e.call("update_surfaces",dict(changes=[dict(surface=1,replace_solves=True,solves={
+    "mechanical_semi_diameter":dict(mode="zpl_macro",macro=name)})]),okay=False)
+   if result.get("ok"):
+    adopted=result["data"]["surfaces"][0]["cells"]["mechanical_semi_diameter"]
+    assert adopted["solve"]==dict(type="ZPLMacro",macro=name),adopted
+    e.check("mechanical semi-diameter ZPL macro result",adopted["value"],.625,atol=1e-10,rtol=0)
+    saved=str(e.folder/"mechanical-semi-diameter-zpl.zos")
+    await e.call("save_lens_as",dict(path=saved));await e.call("open_lens",dict(path=saved))
+    reloaded=(await e.call("get_surfaces",dict(start=1,count=1)))["surfaces"][0]["cells"]["mechanical_semi_diameter"]
+    assert reloaded["solve"]==adopted["solve"],reloaded
+    e.check("reloaded mechanical semi-diameter ZPL macro result",reloaded["value"],.625,atol=1e-10,rtol=0)
+   else:
+    cause=result["error"]["details"].get("cause",result["error"])
+    assert cause["code"] in {"SETTING_REJECTED","SOLVE_UPDATE_FAILED"},result
+    current=(await e.call("get_surfaces",dict(start=1,count=1)))["surfaces"][0]["cells"]["mechanical_semi_diameter"]
+    assert cause["details"].get("actual") in {"Fixed","Automatic",""},cause
+    if result["error"]["details"].get("checkpoint"):
+     await e.call("open_lens",dict(path=result["error"]["details"]["checkpoint"]))
+     restored=(await e.call("get_surfaces",dict(start=1,count=1)))["surfaces"][0]["cells"]["mechanical_semi_diameter"]
+     assert restored==before,(restored,before)
+  finally:
+   macro.unlink(missing_ok=True)
+ asyncio.run(execute("mechanical_semi_diameter_zpl_macro_probe",work))

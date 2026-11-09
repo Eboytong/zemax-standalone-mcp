@@ -1,6 +1,6 @@
 # MCP 工具清单
 
-当前源码版本 0.1.59，提供 100 个工具和 98 种通用分析请求。完整参数以 [请求模型](tool-schemas.json) 为准，调用约定见 [usage.md](../guides/usage.md)。
+1.0.0 正式版提供 101 个工具和 132 种 run_analysis 请求。完整参数以[请求模型](tool-schemas.json)为准，调用约定见[usage.md](../guides/usage.md)。各工具的成熟度与条件见[原生分析矩阵](native-analysis-matrix.csv)及对应专题文档。
 
 | 工具 | 用途 |
 | --- | --- |
@@ -86,7 +86,7 @@
 | `run_quick_focus` | 按显式 RMS 准则调整像面前一面的厚度；返回任务编号，其最佳焦点不等于最高 MTF。 |
 | `run_speos_export` | 在独立系统副本中导出Speos LensSystem或Whitebox，返回任务与原生文件。 |
 | `run_spot_analysis` | 启动原生标准点列图，返回任务编号；显式指定参考点，保留采样、权重条件、RMS/GEO 和原生文本。 |
-| `run_star_operation` | 在检查点保护下导入或拟合STAR变形、温度或直接折射率数据。 |
+| `run_star_operation` | 在检查点保护下导入、拟合或卸载STAR变形、温度或直接折射率数据，并执行组件及坐标控制。 |
 | `run_tolerance_analysis` | 运行灵敏度、逆灵敏度或蒙特卡罗，记录补偿和分布，结束恢复原设计。 |
 | `run_zrd_replay` | 用 Detector Viewer 回放 ZRD，结果与当前探测器累积数据分开保存。 |
 | `save_detector_data` | 保存当前探测器的原生数据文件，默认禁止覆盖。 |

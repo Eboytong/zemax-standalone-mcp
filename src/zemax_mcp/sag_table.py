@@ -37,6 +37,31 @@ def sphere_at(curvature,y):
     if root==0:raise ZemaxError('INVALID_RESULT_DATA','BFS球面在请求半径处斜率无限。',curvature=curvature,y=y)
     return curvature*y*y/(1+root),curvature*y/root
 
+
+def removal_orientation(summary, samples):
+    """Orient removal depth from the native fitted blank and its physical offset."""
+    witnesses = []
+    for y, sag in samples:
+        signed = float(sag) - sphere_at(summary['curvature'], y)[0] - summary['vertex_offset']
+        witnesses.append(dict(y=y, signed_depth=signed))
+    if not witnesses or any(not math.isfinite(w['signed_depth']) for w in witnesses):
+        raise ZemaxError('INVALID_RESULT_DATA', '制造方向缺少有限径向见证。', witnesses=witnesses)
+    tolerance = 1e-8 + 1e-6 * abs(summary['maximum_removal_depth'])
+    minimum = min(w['signed_depth'] for w in witnesses)
+    maximum = max(w['signed_depth'] for w in witnesses)
+    if minimum >= -tolerance:
+        direction = 1
+    elif maximum <= tolerance:
+        direction = -1
+    else:
+        raise ZemaxError('INVALID_RESULT_DATA', '原生制造拟合球在径向见证中交叉曲面，无法确定单一材料去除方向。',
+                         witnesses=witnesses, tolerance=tolerance, summary=summary)
+    return dict(direction=direction, witnesses=witnesses, tolerance=tolerance,
+                source='native BFSD fitted sphere/vertex offset and native GetSag radial witnesses',
+                formula='direction*(surface_sag-sphere_sag-native_vertex_offset)',
+                coordinate_system='original local surface coordinates; no coordinate-axis reversal',
+                zero_depth_state='both directions equivalent within tolerance' if max(abs(minimum), abs(maximum)) <= tolerance else None)
+
 def surface_context(row):
     from .modeling import APERTURE
     aperture=row.ApertureData
@@ -101,9 +126,36 @@ def slope_query_system(b,surface,task,context):
         setting=aperture.CreateApertureTypeSettings(b.native.enum(b.native.api.Editors.LDE.SurfaceApertureTypes,'None'))
         changed=aperture.ChangeApertureTypeSettings(setting)
         info['copy_aperture']=str(aperture.CurrentType)
+        if changed and info['copy_aperture']=='FloatingAperture':
+            # A stop can restore its automatic aperture when None is requested.
+            # In the owned slope copy, a checked circle beyond the sampled blank
+            # is equivalent for every query in this task's explicit radial domain.
+            bounds=task['payload'].get('actual_settings',{}).get('effective_radius_range')
+            if bounds and len(bounds)==2 and math.isfinite(bounds[1]) and bounds[1]>0:
+                radius=bounds[1]+max(bounds[1],1.)*1e-6
+                circle=aperture.CreateApertureTypeSettings(b.native.enum(b.native.api.Editors.LDE.SurfaceApertureTypes,'CircularAperture'))
+                values=circle._S_CircularAperture
+                values.MinimumRadius=0.
+                values.MaximumRadius=radius
+                values.ApertureXDecenter=0.
+                values.ApertureYDecenter=0.
+                changed=aperture.ChangeApertureTypeSettings(circle)
+                info.update(copy_aperture=str(aperture.CurrentType),
+                    unclipped_method='enclosing_circle_after_native_None_became_FloatingAperture',
+                    queried_radius_range=bounds,requested_copy_radius=radius)
+                if changed and info['copy_aperture']=='CircularAperture':
+                    adopted=aperture.CurrentTypeSettings._S_CircularAperture
+                    actual=dict(minimum_radius=float(adopted.MinimumRadius),maximum_radius=float(adopted.MaximumRadius),
+                                x_decenter=float(adopted.ApertureXDecenter),y_decenter=float(adopted.ApertureYDecenter))
+                    info['actual_copy_circle']=actual
+                    if actual!=dict(minimum_radius=0.,maximum_radius=radius,x_decenter=0.,y_decenter=0.):
+                        raise ZemaxError('SETTING_REJECTED','SagTable斜率副本包围孔径回读不一致。',requested_radius=radius,actual=actual)
+                else:
+                    raise ZemaxError('SETTING_REJECTED','SagTable斜率副本未采用包围孔径。',actual=info['copy_aperture'],native_return=bool(changed))
         if not changed or info['copy_aperture']!='None':
-            raise ZemaxError('SETTING_REJECTED','SagTable斜率副本未清除孔径。',
-                original_aperture=context['aperture'],actual=info['copy_aperture'],native_return=bool(changed))
+            if info.get('unclipped_method') is None:
+                raise ZemaxError('SETTING_REJECTED','SagTable斜率副本未清除孔径。',
+                    original_aperture=context['aperture'],actual=info['copy_aperture'],native_return=bool(changed))
         yield copy
     except BaseException as exc:
         original=exc
@@ -151,7 +203,7 @@ def run_sag_table(b,q):
                     removal_volume='2*pi*delta_Y*sum(Y_i*removal_depth_i)',
                     validation_scope='positive/negative rotational EvenAspheric and annular range; native518',
                     evidence='verification/development/MF-01/progress519-statistics.json')),
-            coordinate_definition='local surface coordinates x=0,y=positive radial coordinate; +z air to glass',
+            coordinate_definition='original local surface coordinates x=0,y=positive radial coordinate; manufacturing removal direction recorded separately',
             rotational_symmetry_check=symmetry,
             aperture_interpretation='rows and BFSD summary use the full rotational radial interval; aperture clipping/decenters do not define an area integration mask',
             resource_ownership='native query only; when aperture is present an owned unclipped slope copy is closed before completion',
@@ -225,6 +277,12 @@ def run_sag_table(b,q):
             args.append(dict(operand='BFSD',quantity=key,arguments=parameters))
             yield
         if summary['curvature']==0:summary['curvature_state']='planar'
+        direction = 1
+        if not criterion_curve:
+            samples = [(sample['radius'], sample['sag']) for sample in symmetry['samples'] if sample['angle_degrees'] == 0]
+            orientation = removal_orientation(summary, samples)
+            task['payload']['manufacturing_direction'] = orientation
+            direction = orientation['direction']
         with slope_query_system(b,q.surface,task,context)as slope_system:
             task['phase']='sampling_rows'
             for i in range(q.samples):
@@ -236,8 +294,13 @@ def run_sag_table(b,q):
                 active_slope=query(slope,parameters)
                 actual_slope=active_slope if slope_system is b.system else query(slope,parameters,system=slope_system)
                 bfs_sag,bfs_slope=sphere_at(summary['curvature'],y)
+                signed_depth = float(sag)-bfs_sag-summary.get('vertex_offset',0.) if not criterion_curve else None
+                if signed_depth is not None and direction*signed_depth < -orientation['tolerance']:
+                    raise ZemaxError('INVALID_RESULT_DATA','制造拟合球在输出采样处交叉曲面。',surface=q.surface,y=y,
+                        signed_depth=signed_depth,removal_direction=direction,tolerance=orientation['tolerance'])
                 task['rows'].append(dict(index=i,y=y,sag=float(sag),bfs_sag=bfs_sag,deviation=float(sag)-bfs_sag,
-                    removal_depth=None if criterion_curve else float(sag)-bfs_sag-summary['vertex_offset'],slope=actual_slope,bfs_slope=bfs_slope,
+                    signed_vertex_deviation=signed_depth,
+                    removal_depth=None if criterion_curve else direction*signed_depth,slope=actual_slope,bfs_slope=bfs_slope,
                     slope_difference=actual_slope-bfs_slope,native_slope_arguments=parameters,
                     active_model_native_slope=active_slope,
                     slope_source='native_SSLP_active_model'if slope_system is b.system else'native_SSLP_unclipped_copy',state='succeeded'))

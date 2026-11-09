@@ -1,5 +1,8 @@
 # 编辑器扩展（0.1.9 / ED-03）
 
+2026-11-08当前计划：原生编辑器行操作、元数据与整系统保存重载继续保留；独立MCE文件接口探查已移入[历史归档](../../../development/archive/scope-native-only-20261108/README.md)。下文历史条目的后续动作以[当前计划](../../../development/current.md)为准。
+
+
 ## 2026-11-05 独立材料、编辑器与设计工具验收
 
 本轮新增17项完成：MaterialSubstitute、ED-03的14项操作、Scale与非球面转换。六波长双入射角Substitute比较18项通过，保存重载及关闭通过。编辑器覆盖通用TDE插入及MFE/MCE/TDE最终状态重载；Scale两种路径及转换sag、曲面参数重载通过。163项相关普通检查通过。首次测试响应字段读取错误与修正后结果分别保留。
@@ -14,6 +17,8 @@ Model与Offset已拆成独立基线执行，原生舍入谱线阿贝数分别为
 ## 原生接口依据
 
 本机`ZOSAPI_Interfaces.dll`反射确认三个编辑器均公开`InsertNewOperandAt`及`CopyOperands(fromOperandNumber, NumberOfOperands, toOperandNumber)`。TDE另有`LoadToleranceFile`、`SaveToleranceFile`；MFE已有`LoadMeritFunction`、`SaveMeritFunction`入口。MCE未公开独立Load/Save方法，使用现有完整系统保存和加载。
+
+2026-11-08复核：安装接口程序集与运行时`ZemaxUI.ZOSAPI.Editors.ZOSAPI_MCE`均未发现含Load、Save或File的公开方法；系统对象仍公开`LoadFile`与`SaveAs`。配置读写定向普通测试23项通过，原生反射探针断开成功。MCE独立文件入口保持受阻，继续使用整系统保存/加载。证据：`development/evidence/ED-03/mce-independent-file-interface-20261108.md`。
 
 探查文件为`.local/evidence/development/ED-03/probe/editor-interfaces.json`，记录373个编辑器接口、65个枚举。它证明本机声明的接口和字段，实际采用结果以原生运行记录为准。
 

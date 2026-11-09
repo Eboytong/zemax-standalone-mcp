@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "date": "2026-11-09",
+  "release_state": "released_local",
+  "platform": "Windows x64",
+  "python": "3.14.6",
+  "opticstudio": "2024 R2 Premium (24.2.0 build 240529)",
+  "tool_count": 101,
+  "analysis_kind_count": 132,
+  "historical_native_scope": {
+    "total_groups": 96,
+    "fully_accepted": 7,
+    "uncompleted_and_frozen": 89,
+    "remaining_source_records": 94,
+    "remaining_item_ids": 91
+  },
+  "wheel": "releases/1.0.0/zemax_standalone_mcp-1.0.0-py3-none-any.whl",
+  "wheel_size_bytes": 492949,
+  "build_command": "C:/Users/tonge/anaconda3/python.exe -B -m pip wheel . --no-deps --no-build-isolation --wheel-dir releases/1.0.0",
+  "build_backend": "setuptools 83.0.0",
+  "ordinary_tests": {
+    "command": ".venv/Scripts/python.exe -B -m pytest -q -p no:cacheprovider --basetemp .local/tmp/pytest-1.0.0",
+    "passed": 3496,
+    "skipped": 854,
+    "failed": 0,
+    "elapsed_seconds": 48.38
+  },
+  "isolated_install": {
+    "environment": ".local/builds/1.0.0/venv",
+    "constraints": "requirements/core.lock.txt and requirements/all.lock.txt for reports extra",
+    "schema_smoke_evidence": ".local/evidence/development/BASE-04/installed100-isolated-r2/summary.json",
+    "stdio_closed": true,
+    "tool_count": 101,
+    "analysis_kind_count": 132
+  },
+  "native_stdio_smoke": {
+    "evidence": ".local/evidence/development/BASE-04/native-stdio-wheel-1.0.0-r2/result.json",
+    "input": "OpticStudio Cooke 40 degree field sample copied to a private evidence directory",
+    "analysis_kind": "relative_illumination",
+    "task_state": "succeeded",
+    "settings_readback": true,
+    "result_pagination": true,
+    "png_export": true,
+    "normal_task_close": true,
+    "application_close": true,
+    "stdio_disconnected": true,
+    "running_tasks_after_disconnect": 0,
+    "warning": "FRU__delta_init(): Attempt to start when running! was printed; the scenario passed and application_close completed."
+  },
+  "feature_development": "frozen; maintenance only",
+  "next_action": "Maintain the 1.0.0 released interface. Reopen feature work only with a separately approved plan."
+}

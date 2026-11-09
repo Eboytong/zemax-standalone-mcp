@@ -1,5 +1,10 @@
 # ED-02 顺序 solve 扩展（0.1.8）
 
+2026-11-08当前计划：保留已确认原生solve、MaterialModel及两类SurfacePickup；新增ChipZone/机械半口径宏solve、5项LDE单元格探索及独立MCE文件探查已移出。现有调用与历史测试沿用；当前动作见[原生计划](../../../development/current.md)。
+
+parallel-02 已定位 Model Glass 的正式谱线及空气参考定义，并加固 MaterialModel 和两类 SurfacePickup 的验收探针。Nd/Vd 主比较采用精确 d/F/C，四位小数谱线保留为诊断；完整判定包含实际采用、数值、持久状态、恢复和正常关闭。本轮原生启动受阻，功能状态沿用 `implemented/blocked`。定义与下一动作见[材料参考审查](../../../development/evidence/ED-02/parallel-02-material-definition-20261108.md)，补丁检查见[材料探针](../../../development/evidence/ED-02/parallel-02-material-model-20261108.md)和[拾取探针](../../../development/evidence/ED-02/parallel-02-pickup-20261108.md)。
+
+
 ## 2026-11-06 MaterialOffset 完成
 
 MaterialOffset 已按本机手册第333页的定义完成验收：在目录色散上叠加两组模型玻璃的折射率差，模型输入保留目录的 `Nd/Vd/dPgF`。参考的基底色散独立按目录 Sellmeier1 系数计算，模型差通过独立设置的 Model 光学基线和双入射角 Snell 反算取得。十五组零、正、负偏移组合覆盖可见光、最短波长0.3µm及0.29µm分支；四个原生用例共399次数值检查通过，120项相关普通检查通过。逐组最终设置、保存重载后的单元格/配置/评价函数、光线结果及关闭通过，证据 `.local/evidence/development/ED-02/acceptance275.json`，例子 `examples/requests/material-offset275.json`。
@@ -8,7 +13,7 @@ MaterialOffset 已按本机手册第333页的定义完成验收：在目录色�
 
 本机在最短波长恰为0.3µm时仍采用模型差分分支；使用目录有效范围覆盖0.29µm的 LITHOSIL-Q 时，逐波长采用恒定折射率偏移，阿贝数偏移不活动。最初0.29µm用例选用了最短有效波长0.3µm的 N-BK7，参考基线无效；改用有效资源并增加目录范围前置检查，原始结果保留。
 
-MaterialModel 仍为 implemented。直接 `LDE.GetIndex` 已重现物理谱线阿贝数60.02418808120307、舍入谱线59.99988524798575及物理d线折射率1.6000019888117303；这些结果定位到原生模型拟合，原容差仍待满足。原始设置、环境与三组 Model/四组 Offset/两组 `dPgF` 对照见 `material-diagnostic270/271/anchors.json`。下文保留早期版本的历史状态。
+MaterialModel 仍为 implemented。直接 `LDE.GetIndex` 已重现物理谱线阿贝数60.02418808120307、舍入谱线59.99988524798575及物理d线折射率1.6000019888117303；原容差仍待满足，偏差来源待控制实验定位。原始设置、环境与三组 Model/四组 Offset/两组 `dPgF` 对照见 `material-diagnostic270/271/anchors.json`。下文保留早期版本的历史状态。
 
 ## 2026-11-05 独立材料、编辑器与设计工具验收
 
@@ -80,6 +85,22 @@ Model与Offset已拆成独立基线执行，原生舍入谱线阿贝数分别为
 
 原生控制记录见 `.local/evidence/development/ED-02/diagnostics/controls.json`。资源宏由测试创建专用副本，结束后移除；重放相应脚本会重新准备输入。既有 ED-01 阻塞另存原条目。
 
+2026-11-08 ChipZone SurfacePickup stdio 复测中，模式虽在支持列表内，`SetSolveData` 返回成功后实际 solve 仍为 Automatic。机械半口径同条件复测后实际 solve 回退为 Fixed。两者均由MCP返回 `SOLVE_UPDATE_FAILED` / `PARTIAL_UPDATE` 和检查点；重载检查点后源/目标数值及模式恢复，原生资源关闭成功。详见 `development/evidence/ED-02/chip-zone-surface-pickup-repeat20261108.md`、`mechanical-semi-diameter-pickup-repeat20261108.md`。
+
+ChipZone ZPLMacro复测能够发现自有临时ZPL文件并采用ZPLMacro类型，但`Macro`实际回读为空，MCP返回`SETTING_REJECTED`并停止批量更新；宏未执行，检查点恢复和原生关闭通过。证据：`development/evidence/ED-02/chip-zone-zpl-macro-repeat20261108.md`。
+
+机械半口径ZPLMacro复测能够发现自有宏，但原生模式回退Fixed，MCP返回`SOLVE_UPDATE_FAILED`；检查点恢复和原生关闭通过。证据：`development/evidence/ED-02/mechanical-semi-diameter-zpl-macro-repeat20261108.md`。
+
+2026-11-08 CA_fill 专项探查：本机枚举包含`CA_fill=32`，`ISolveData`没有`_S_CA_fill`属性或相应设置接口；Standard曲面的Radius、Thickness、Material、SemiDiameter、Conic、TCE、MechanicalSemiDiameter及ChipZone均不支持该类型，`SemiDiameterCell.CreateSolveType`返回null。此前81种面型扫描也未发现可用单元格。普通测试82项通过，原生会话关闭成功。待正式设置接口与可用LDE单元格出现后再实现。证据：`development/evidence/ED-02/ca-fill-lde-discovery-20261108.md`。
+
+2026-11-08 DIA_fill 专项探查：本机枚举包含`DIA_fill=33`，`ISolveData`没有`_S_DIA_fill`属性或相应设置接口；Standard曲面的Radius、Thickness、Material、SemiDiameter、Conic、TCE、MechanicalSemiDiameter及ChipZone均不支持该类型，`SemiDiameterCell.CreateSolveType`返回null。此前81种面型扫描也未发现可用单元格。普通测试82项通过，原生会话关闭成功。待正式设置接口与可用LDE单元格出现后再实现。证据：`development/evidence/ED-02/dia-fill-lde-discovery-20261108.md`。
+
+2026-11-08 DuplicateSag 专项探查：枚举值34及`_S_DuplicateSag`设置接口存在，接口包含`Surface`字段；但当前Standard八类基本单元格均不支持，SemiDiameter创建设置返回null，既有81种面型扫描也未发现支持单元格。普通测试82项通过，原生只读探查和关闭通过。待LDE公开可用单元格，或出现文档化的独立设置/执行入口及样例后继续。证据：`development/evidence/ED-02/duplicate-sag-lde-discovery-20261108.md`。
+
+2026-11-08 InvertSag 专项探查：枚举值35及`_S_InvertSag`设置接口存在，接口包含`Surface`字段；但当前Standard八类基本单元格均不支持，SemiDiameter创建设置返回null，既有81种面型扫描也未发现支持单元格。普通测试82项通过，原生只读探查和关闭通过。待LDE公开可用单元格，或出现文档化的独立设置/执行入口及样例后继续。证据：`development/evidence/ED-02/invert-sag-lde-discovery-20261108.md`。
+
+2026-11-08 MarginPercent 专项探查：枚举值31存在，但`ISolveData`无对应设置对象；Standard八类基本单元格均不支持，SemiDiameter创建设置返回null，既有81种面型扫描也未发现支持入口。普通测试82项通过，原生只读探查和关闭通过。待正式设置接口与可用单元格出现后继续。证据：`development/evidence/ED-02/margin-percent-lde-discovery-20261108.md`。
+
 ## 验收与证据
 
 本轮数值检查以追迹基本量和解析关系为参考：角度取方向余弦比值；法线/消球差取近轴入射高度和斜率；光焦度取厚透镜公式；同心、曲率中心、补偿器取独立轴向和厚度关系；OPD 取归一化真实光线结果；瞳位置取正负小场差分主光线。一般使用 `atol=1e-8 + rtol=1e-7×|参考值|`；OPD 为 `1e-5 waves + 1e-7×|参考值|`；微分瞳位置为 `1e-6 + 1e-6×|参考值|`。
@@ -107,3 +128,6 @@ Model与Offset已拆成独立基线执行，原生舍入谱线阿贝数分别为
 
 
 2026-11-07 ZPL solve收口348：发现EX-01的GridSag9/10待办已由ED-02 acceptance047完成；本轮复测替换两组宏返回值、中文31字符宏名、保存重载、缺资源与超长请求、模型保持和正常关闭。原生1通过，相关普通162通过。正式Setter对照显示ASCII/中文名称31个UTF-16单元可用，32个即便返回Success仍回退Fixed；加入有类型长度前检并更新schema/能力。超长请求在MCP参数验证阶段拒绝，修订和检查点保持。证据EX-01/acceptance348.json。按历史重复范围收口，不增加B004完成数；仍8/10、剩余137组。机械口径/ChipZone宏限制和任意宏执行沿原条目保留。
+
+
+2026-11-09 MaterialModel环境对照：两种材料、8个环境用例的UpdateStatus和保存重载均保持原值，排除本轮缓存差异。模型玻璃10/30°C结果与20°C相同，压力变化对应20°C空气修正；此规则待正式算法依据。N-BK7按手册输入波长计算空气折射率后，12个温压参考最大差4.44e-16。原Nd/Vd门槛与未完成状态保持。见[环境刷新证据](../../../development/evidence/ED-02/model-environment-refresh-20261109.md)。

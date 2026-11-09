@@ -1,0 +1,243 @@
+{
+  "task": "D006.SOURCE_SPECTRUM_COLOR_ILLUMINATION",
+  "agent": "Agent 2 module worker",
+  "executed_native": false,
+  "materials_root": "C:\\Users\\tonge\\Desktop\\Zemax_MCP\\.local\\evidence\\development\\NS-03",
+  "checks": {
+    "directivity_angles": {
+      "ok": true,
+      "rows": 37,
+      "scan_angles_deg": [
+        0.0
+      ],
+      "ies_file": "sample.ies",
+      "peak_intensity_candela": 18.0,
+      "total_luminous_flux_lumens": 112.81,
+      "ies_peak_candela": 18.0,
+      "ies_distinct_horizontal_slices": 1,
+      "max_abs_difference": 4.444444444440254e-05,
+      "worst_angle_deg": -100.0,
+      "tolerance": 5.1e-05
+    },
+    "directivity_flux": {
+      "ok": true,
+      "trapezoid_flux_lumens": 112.81009451201489,
+      "native_reported_flux_lumens": 112.81,
+      "abs_difference": 9.451201488275274e-05,
+      "tolerance": 0.005,
+      "note": "continuous piecewise-linear integration would give 113.0973355 lm; the report matches the sampled trapezoid"
+    },
+    "source_spectrum": {
+      "ok": true,
+      "rows": 20,
+      "wavelength_range_um": [
+        0.44,
+        0.64
+      ],
+      "peak_relative_weight": 1.0,
+      "input_xyz": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "fitted_xyz": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "cri": 70.1766,
+      "cct_kelvin": 5188.0,
+      "input_definition": "native XYZ tristimulus fitting input",
+      "source_object_binding": "not exposed by installed analysis settings"
+    },
+    "flux_outlet": {
+      "ok": true,
+      "exported_characters": 0,
+      "report_rows": 0,
+      "result_counts": {
+        "NumberOfMessages": 0,
+        "NumberOfDataSeries": 0,
+        "NumberOfDataGrids": 0,
+        "NumberOfDataGridsRgb": 0,
+        "NumberOfDataScatterPoints": 0,
+        "NumberOfDataScatterPointsRgb": 0
+      },
+      "text_export_flag": true,
+      "wavelengths_from_context": "NonSequential",
+      "conclusion": "the outlet is reachable but empty: text export is flagged true while the file only holds the BOM"
+    },
+    "source_polar_grid": {
+      "ok": true,
+      "nx": 19,
+      "ny": 19,
+      "dx": 10.0,
+      "dy": 18.94736842105263,
+      "min_x": 0.0,
+      "min_y": 0.0,
+      "labels": [
+        "None",
+        "None",
+        "None"
+      ],
+      "conclusion": "raw native matrix retained; axis semantics and units are still undefined"
+    },
+    "source_polar_sample_correspondence": {
+      "ok": true,
+      "cells_equal_to_this_sample_ies": true,
+      "shape": [
+        19,
+        19
+      ],
+      "sample_horizontal_slices_all_identical": true,
+      "reported_dx": 10.0,
+      "source_vertical_step_deg": 10.0,
+      "reported_dy": 18.94736842105263,
+      "source_horizontal_step_deg": 20.0,
+      "dy_equals_uniform_360_over_19": true,
+      "scope": "single rotationally symmetric sample",
+      "conclusion": "for this rotationally symmetric sample the saved 19x19 matrix reproduces the file's candela values cell by cell. Because every horizontal slice of the file is identical, this cannot show how an arbitrary IES table is published, nor its units or normalisation. The reported dy of 360/19 differs from the file's 20 degree node spacing; that difference is recorded as a fact only - it may be a native pixel-range or centre convention and is not judged here as a mapping error."
+    },
+    "illumination_condition": {
+      "ok": true,
+      "checked_model_only": true,
+      "source_types": [
+        "SourceEllipse",
+        "SourceEllipse",
+        "SourceEllipse",
+        "SourceEllipse"
+      ],
+      "detector_types": [
+        "DetectorColor"
+      ],
+      "result_counts": {
+        "NumberOfMessages": 0,
+        "NumberOfDataSeries": 0,
+        "NumberOfDataGrids": 0,
+        "NumberOfDataGridsRgb": 0,
+        "NumberOfDataScatterPoints": 0,
+        "NumberOfDataScatterPointsRgb": 0
+      },
+      "conclusion": "the checked model carries four SourceEllipse sources and one DetectorColor, and its result collection is empty. This establishes the object condition of this model and the empty outlet for it only; with no topic input-selection contract it does not rule out every other possible input-condition error."
+    },
+    "roadway_reports": {
+      "ok": true,
+      "first_model": "Two color mixing gives white",
+      "second_model": "Fluorescent scattering in a bulk medium",
+      "same_default_road_spec": true,
+      "first_metrics": {
+        "average_luminance": {
+          "verdict": "失败",
+          "target": "≥2.0",
+          "value": "1.74981e-06"
+        },
+        "overall_uniformity": {
+          "verdict": "失败",
+          "target": "≥0.4",
+          "value": "0"
+        },
+        "longitudinal_uniformity": {
+          "verdict": "失败",
+          "target": "≥0.7",
+          "value": "0"
+        },
+        "threshold_increment": {
+          "verdict": "通过",
+          "target": "≤10%",
+          "value": "0"
+        },
+        "surround_ratio": {
+          "verdict": "通过",
+          "target": "≥0.5",
+          "value": "3.47391"
+        }
+      },
+      "second_metrics": {
+        "average_luminance": {
+          "verdict": "失败",
+          "target": "≥2.0",
+          "value": "0"
+        },
+        "overall_uniformity": {
+          "verdict": "失败",
+          "target": "≥0.4",
+          "value": "0"
+        },
+        "longitudinal_uniformity": {
+          "verdict": "失败",
+          "target": "≥0.7",
+          "value": "0"
+        },
+        "threshold_increment": {
+          "verdict": "通过",
+          "target": "≤10%",
+          "value": "0"
+        },
+        "surround_ratio": {
+          "verdict": "失败",
+          "target": "≥0.5",
+          "value": "0"
+        }
+      },
+      "metrics_that_changed": {
+        "average_luminance": [
+          "1.74981e-06",
+          "0"
+        ],
+        "surround_ratio": [
+          "3.47391",
+          "0"
+        ]
+      },
+      "conclusion": "both runs used the same default CIE 140-2000 road spec but different systems and produced different metrics; with no writable or readable topic settings and no roadway model, neither value is attributable to a controlled road-lighting input"
+    },
+    "product_interface": {
+      "ok": true,
+      "present": [
+        {
+          "item": "NS-03.SourceSpectrumViewer",
+          "kind": "source_spectrum_viewer"
+        },
+        {
+          "item": "NS-03.DirectivityPlot",
+          "kind": "directivity_plot"
+        }
+      ],
+      "absent": [
+        {
+          "item": "NS-03.FluxvsWavelength",
+          "kind": "flux_vs_wavelength"
+        },
+        {
+          "item": "CV-01.SourceColorChart1931",
+          "kind": "source_color_chart_1931"
+        },
+        {
+          "item": "CV-01.SourceColorChart1976",
+          "kind": "source_color_chart_1976"
+        },
+        {
+          "item": "NS-03.SourcePolarViewer",
+          "kind": "source_polar_viewer"
+        },
+        {
+          "item": "NS-03.SourceIlluminationMap",
+          "kind": "source_illumination_map"
+        },
+        {
+          "item": "NS-03.PhotoluminscenceViewer",
+          "kind": "photoluminscence_viewer"
+        },
+        {
+          "item": "NS-03.RadiantSourceModelViewerSettings",
+          "kind": "radiant_source_model_viewer"
+        },
+        {
+          "item": "NS-03.RoadwayLighting",
+          "kind": "roadway_lighting"
+        }
+      ],
+      "conclusion": "only the spectrum viewer and the directivity plot have a typed request and dispatch today"
+    }
+  },
+  "failed_checks": []
+}

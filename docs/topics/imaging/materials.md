@@ -25,7 +25,9 @@ internal_transmission_vs_wavelength要求catalog和1至4个不重复glasses。�
 
 33项普通检查覆盖边界、身份匹配、目录歧义、未使用槽、最终回读、表分页、非有限数据、资源缺失和关闭。tests/native/test_materials_live.py准备两项串行原生用例：SCHOTT/N-BK7属性与曲线读取；使用原生IT表节点及半厚度验证Beer-Lambert幂律。透过率预设容差1e-6绝对差+1e-5×参考值；首节点波长容差1e-10绝对差+1e-10×参考值。
 
-四项材料图表DispersionDiagram、GlassMap、AthermalGlassMap、DispersionvsWavelength在完整静态接口清单中未发现专用设置类型，已逐项记blocked。解除条件为恢复原生启动，确认各运行时GetSettings或正式CFG字段、实际采用回读和输出。温度/压力下的色散与热图数值参考仍需原生条件和独立公式检查。既有BASE-04初始化超时仍为原生执行阻塞，本批没有新建原生实例。
+`athermal_glass_map` 以 kind-only 请求执行当前系统波长条件下的原生无热玻璃图，返回全部可用玻璃的色散光焦与热光焦行、散点、波长范围和原始文本。报告标尺为色散光焦 `xE-3`、热光焦 `xE-6`，结果同时保留原始显示值和换算值；单位按原生图表定义返回。2026-11-08本机原生报告列出364种玻璃，波长范围为0.55/0.55/0.55 µm；默认设置AS_Default有效，任务、分页、绘图、模型保持及关闭通过。该接口读取当前系统波长和加载目录，没有专题材料筛选字段。示例见 `examples/requests/athermal-glass-map.json`，证据见 `development/evidence/MA-01/athermal-glass-map-acceptance20261108.md`。
+
+DispersionDiagram、GlassMap、AthermalGlassMap、DispersionvsWavelength的原生设置对象均为AS_Default。DispersionDiagram与DispersionvsWavelength保留默认报告，并以正式ILDE.GetIndex独立副本路径支持目录/表格玻璃、波长范围和温压；导数路径显式标识五点四阶算法。完整验收见两个色散专题。
 
 例子见examples/requests/materials025_requests.json。默认材料样例来自本机Glasscat/SCHOTT.AGF，实际选择经原生目录工具取得。2024 R2手册索引1353页明确内部透过率厚度单位为毫米，摘录保存在.local/evidence/development/MA-01。
 
@@ -47,3 +49,10 @@ internal_transmission_vs_wavelength要求catalog和1至4个不重复glasses。�
 ## 0.1.52 原生探查更新
 
 GRIN 剖面已完成独立多项式参考与三轴验收，定义见 [GRIN 剖面](../analysis/grin-profile.md)。四项材料专题本轮实际运行时均为 AS_Default，无专属可写设置；正式 SaveTo 成功，仍需可采用的正式 CFG 参数及结果契约。证据 .local/evidence/development/MA-01/runtime054/settings.json，当前阻塞来源已替换旧启动失败。
+
+2026-11-08目录身份审计：通过系统material_catalogs切换，OHARA返回410项且全部与AGF匹配；SCHOTT返回346项，其中339项匹配，7项缺少当前AGF参考。全部匹配项Nd/Vd在原容差内；完整目录验收保持未完成。证据：`development/evidence/MA-01/glass-map-catalog-audit-20261108.md`。
+
+
+2026-11-09消热差补充：四种缺TD材料的六项热光系数正式回读为零；F2HTi占位系数正式回读K1=0。使用实际系数的独立公式在七材料、三次图表条件下21/21通过5e-9；包含系统空气波长换算的21个环境折射率最大差2.11e-13。材料名写入接受原生大写回读，例如F2HTi→F2HTI，其他材料替换仍拒绝。专题边界/模板/参考玻璃选择继续待接口。见[证据](../../../development/evidence/MA-01/athermal-defaults-20261109.md)。
+
+2026-11-09 Gradium控制：四种写入顺序最终采用一致；负profile段传播返回error2，移至profile=0.01 mm后成功。保持in_progress，继续负坐标扩展、高阶求值及专题选择；见[证据](../../../development/evidence/MA-01/gradium-capping-order-20261109.md)。

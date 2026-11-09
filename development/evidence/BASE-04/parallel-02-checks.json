@@ -1,0 +1,58 @@
+{
+  "round": "parallel-02",
+  "date": "2026-11-08",
+  "source_version": "0.1.62",
+  "source_capabilities": {
+    "tools": 101,
+    "analyses": 130
+  },
+  "released_capabilities": {
+    "tools": 101,
+    "analyses": 118
+  },
+  "accepted_this_round": [],
+  "accepted_since_check": 3,
+  "remaining": {
+    "source_records": 100,
+    "item_ids": 95,
+    "common_functions": 93
+  },
+  "native_recovery": "blocked_application_create",
+  "native_feature_jobs": "not_executed",
+  "checks": [
+    {
+      "scope": "启动与生命周期",
+      "junit": ".local/evidence/development/BASE-04/parallel-02/runtime-startup-units.xml",
+      "tests": 38,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "scope": "HPC查询与作业消费者",
+      "junit": ".local/evidence/development/EXT-HPC/parallel-02-hpc-units.xml",
+      "tests": 45,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "scope": "材料与拾取联合",
+      "junit": ".local/evidence/development/ED-02/parallel-02/integrated-units.xml",
+      "tests": 183,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "scope": "开发统计",
+      "junit": ".local/evidence/development/BASE-04/parallel-02/status-units.xml",
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "unique_ordinary_tests": 283,
+  "next_action": "Obtain new startup evidence or a specific fix, restore ordinary OpticStudio, pass the two-process recovery gate, then run the fixed native queue."
+}

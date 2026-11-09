@@ -1,0 +1,865 @@
+{
+  "schema_version": 1,
+  "effective_date": "2026-11-09",
+  "project_status": {
+    "release": "1.0.0",
+    "state": "maintenance",
+    "feature_development": "frozen",
+    "remaining_native_function_count": 89,
+    "note": "D001-D013 membership and historical acceptance states are retained; they do not form an active queue."
+  },
+  "scope": "development/tracking/scope.json",
+  "baseline_remaining_function_count": 96,
+  "baseline_source_record_count": 106,
+  "baseline_unique_item_id_count": 98,
+  "runtime_prerequisite": {
+    "state": "ready_user_context",
+    "issue": "2026-11-09迁移后主仓.venv已串行执行HPC、材料、拾取、D001原生用例。原生启动可用；具体接口/数值缺口按逐项台账继续。",
+    "next_action": "原生连接/关闭可用；D007—D009及STAR/HPC条件已复核，返回D001—D006有新依据的条目；原生串行。",
+    "evidence": "development/evidence/BASE-04/native-scope-conditions-20261109.md",
+    "scheduling_source": "development/tracking/native-freeze.json"
+  },
+  "execution_policy": [
+    "1.0.0发行后，新增功能开发及原生验收排期冻结；仅维护已发行接口范围。",
+    "D001到D013顺序、组内成员、依赖和原生证据作为历史状态与未来重新立项依据。",
+    "逐项完成有类型请求、实际设置回读、执行、有效结果、相关参考、生命周期及plan.md第7节证据。",
+    "related_group_ids标识业务关联；实际前置按prerequisites和depends_on_item_ids逐项核对。",
+    "依赖、许可、输入或正式接口受阻时记录已做探查及解除条件，顺序处理下一可执行项；条件变化后回到最早可执行项。",
+    "同一canonical_item_id及别名计一次；已有聚合范围等子项完成后收口，工作包汇总另列。",
+    "D00x统一管理开发顺序和组内进度；每十个首次完成的共同功能执行集中检查，节奏见verification-cycle.json。",
+    "台账维护实际状态；本文件维护归属、组内顺序和计划依赖；generated及remaining-ranked.md通过status.py生成。"
+  ],
+  "groups": [
+    {
+      "group_id": "D001",
+      "name": "偏振、透射与光纤耦合",
+      "objective": "统一Jones基底、相位、透射功率和接收场归属，先延续当前相位像差工作。",
+      "prerequisites": [
+        "恢复Standalone应用创建及原生连接；复用已有Cooke、Fresnel和POP高斯束参考。"
+      ],
+      "related_group_ids": [],
+      "implementation_plan": "先确认相位专题的输入选择与单位，再补偏振光线和总透射的正式设置；光纤专题复用已验POP重叠积分，核对专用设置与结果身份。",
+      "completion_criteria": "四项分别完成正式输入、实际设置、相位或功率数值参考、结果分页、模型恢复和关闭；专用专题与替代路径的覆盖分别记录。",
+      "items": [
+        {
+          "canonical_item_id": "PO-01.PhaseAberration",
+          "title": "相位像差",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "PO-01.PolarizationRayTrace",
+          "title": "偏振光线专题",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "PO-01.Transmission",
+          "title": "偏振透射专题",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "WP-01.FiberCouplingSettings",
+          "title": "光纤耦合专题",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        }
+      ]
+    },
+    {
+      "group_id": "D002",
+      "name": "材料、色散与GRIN模型",
+      "objective": "共用材料目录、波长、温度和折射率定义，集中核对已有实现的数值与输入身份。",
+      "prerequisites": [
+        "现有材料目录、GRD自有输入及独立色散参考。"
+      ],
+      "related_group_ids": [],
+      "implementation_plan": "先审核四项已实现材料图表的原始证据；再定位MaterialModel的Abbe差异和Gradium高阶、左端capping及专题选择问题。",
+      "completion_criteria": "当前声明范围、材料和环境身份可追溯；Nd/Vd、导数及GRD参考满足各条目已有容差，实际设置和重载证据完整。",
+      "items": [
+        {
+          "canonical_item_id": "MA-01.GlassMap",
+          "title": "玻璃图",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "MA-01.AthermalGlassMap",
+          "title": "消热差玻璃图",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "MA-01.DispersionDiagram",
+          "title": "色散图",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "MA-01.DispersionvsWavelength",
+          "title": "色散随波长",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "ED-02.MaterialModel.Material",
+          "title": "临时材料模型",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "MA-01.GradiumProfile",
+          "title": "Gradium完整剖面",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        }
+      ]
+    },
+    {
+      "group_id": "D003",
+      "name": "顺序建模、拾取与模式转换",
+      "objective": "集中处理原生修改实际采用、solve联动、任务终态及顺序/NSC模型转换。",
+      "prerequisites": [
+        "现有LDE写入、检查点和直接光线参考；solve聚合需D002的MaterialModel完成。"
+      ],
+      "related_group_ids": [
+        "D002"
+      ],
+      "implementation_plan": "两类拾取先验证SetSolveData后的实际模式；Ray Aiming先解决取消/关闭终态；混合组转换先取得可执行原生路径，最后汇总已确认原生solve范围。",
+      "completion_criteria": "联动值、代表性光线、配置和solve保存重载对应；失败保留原始错误与恢复入口，所有任务有终态及关闭回执。",
+      "items": [
+        {
+          "canonical_item_id": "ED-02.SurfacePickup.ChipZone",
+          "title": "ChipZone曲面拾取",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "ED-02.SurfacePickup.MechanicalSemiDiameter",
+          "title": "机械半口径拾取",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "ED-04.RayAimingWizard",
+          "title": "Ray Aiming完整生命周期",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "NS-01.Conversion",
+          "title": "顺序转NSC混合组",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "ED-02.SolveExtensions018",
+          "title": "扩展solve聚合范围",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "ED-02.MaterialModel.Material",
+            "ED-02.SurfacePickup.ChipZone",
+            "ED-02.SurfacePickup.MechanicalSemiDiameter"
+          ]
+        }
+      ]
+    },
+    {
+      "group_id": "D004",
+      "name": "像质、光斑与屈光力分布",
+      "objective": "共用视场、瞳坐标、参考点和采样，处理网格有效性及像质结果出口。",
+      "prerequisites": [
+        "现有标准光斑、近轴量、Seidel系数与FFT/复瞳参考。"
+      ],
+      "related_group_ids": [
+        "D002",
+        "D003"
+      ],
+      "implementation_plan": "先明确两种Power Map的raw zero和零EFL状态；逐项探查图表/光斑正式出口，替代路径先验证定义；最后分离FFT Surface MTF离轴坐标、幅度和插值误差。",
+      "completion_criteria": "返回坐标、单位、有效掩码和原始值；光斑归属与布局对应，MTF沿用0.005绝对差门槛并保存独立参考。",
+      "items": [
+        {
+          "canonical_item_id": "CV-02.PowerFieldMapSettings",
+          "title": "屈光力随视场Map",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "CV-02.PowerPupilMapSettings",
+          "title": "屈光力随瞳Map",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "CV-01.SeidelDiagram",
+          "title": "Seidel图",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "CV-01.FullFieldSpot",
+          "title": "全视场光斑",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "CV-01.MatrixSpot",
+          "title": "矩阵光斑",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "CV-01.ConfigurationMatrixSpot",
+          "title": "配置矩阵光斑",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "CV-01.FftSurfaceMtf",
+          "title": "FFT Surface MTF",
+          "difficulty": "很高",
+          "depends_on_item_ids": []
+        }
+      ]
+    },
+    {
+      "group_id": "D005",
+      "name": "图像分析与输入文件查看",
+      "objective": "统一受控文件选择、输入身份、像素或复场坐标以及归一化。",
+      "prerequisites": [
+        "已有ZBF、BMP、IMA/BIM、DAT/SDF资源与PSF/POP参考。"
+      ],
+      "related_group_ids": [
+        "D001",
+        "D004"
+      ],
+      "implementation_plan": "先确认两类查看器的正式文件选择和输出；再推进几何位图、光源和扩展衍射图像；部分相干最后验证相干/非相干极限与积分。",
+      "completion_criteria": "不对称图案或确定光线可确认文件、方向与尺度；复振幅和强度分开处理，覆盖分页、导出、零输入、异常输入及资源清理。",
+      "items": [
+        {
+          "canonical_item_id": "WP-01.BeamFileViewer",
+          "title": "光束文件查看器",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "CV-02.BitmapFileViewer",
+          "title": "位图查看器",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "IM-01.GeometricBitmapImageAnalysis",
+          "title": "几何位图图像分析",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "CV-02.LightSourceAnalysis",
+          "title": "光源分析",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "CV-02.ExtendedDiffractionImageAnalysis",
+          "title": "扩展衍射图像",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "CV-02.PartiallyCoherentImageAnalysis",
+          "title": "部分相干成像",
+          "difficulty": "很高",
+          "depends_on_item_ids": []
+        }
+      ]
+    },
+    {
+      "group_id": "D006",
+      "name": "光源、光谱、色度与照明",
+      "objective": "按光谱身份、角分布、色度和照明结果衔接，集中处理光度单位及通量归一化。",
+      "prerequisites": [
+        "受控NSC光源、IES与荧光输入；Radiant专题需匹配旗舰版许可及资源。"
+      ],
+      "related_group_ids": [],
+      "implementation_plan": "先确认光谱可变输入和方向图文件/角度选择；再处理CIE与极坐标轴语义、照明图出口，最后补荧光、Radiant与道路专用输入。",
+      "completion_criteria": "输入选择与实际回读一致；角度、波长、颜色和功率/光度定义有参考，空出口和许可限制保留原生原因与解除条件。",
+      "items": [
+        {
+          "canonical_item_id": "NS-03.SourceSpectrumViewer",
+          "title": "光源光谱查看器",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "NS-03.FluxvsWavelength",
+          "title": "光通量随波长",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "NS-03.DirectivityPlot",
+          "title": "方向性图",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "CV-01.SourceColorChart1931",
+          "title": "1931色度图",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "CV-01.SourceColorChart1976",
+          "title": "1976色度图",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "NS-03.SourcePolarViewer",
+          "title": "光源极坐标查看器",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "NS-03.SourceIlluminationMap",
+          "title": "光源照明分布",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "NS-03.PhotoluminscenceViewer",
+          "title": "光致发光查看器",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "NS-03.RadiantSourceModelViewerSettings",
+          "title": "Radiant光源模型查看器",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "NS-03.RoadwayLighting",
+          "title": "道路照明",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        }
+      ]
+    },
+    {
+      "group_id": "D007",
+      "name": "散射模型与杂散光路径",
+      "objective": "共用BSDF/IS资源、散射角和功率定义，衔接散射设置、图表及路径统计。",
+      "prerequisites": [
+        "可被正式选择器采用的BSDF及匹配ISX资源；已有受控ZRD路径参考。"
+      ],
+      "related_group_ids": [
+        "D006"
+      ],
+      "implementation_plan": "先解决BSDF文件名实际采用和IS目录资源匹配；再核对散射函数/极坐标随模型变化的输出，定位未分类路径功率，最后收口散射聚合范围。",
+      "completion_criteria": "资源、设置、角轴和单位明确；追迹与路径功率对应，保存重载和关闭完整；内建及BSDF/IS声明范围逐项有证据。",
+      "items": [
+        {
+          "canonical_item_id": "ED-01.Scattering.BSDF",
+          "title": "BSDF散射",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "ED-01.Scattering.ISScatterCatalog",
+          "title": "IS散射目录",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "NS-03.ScatterFunctionViewer",
+          "title": "散射函数查看器",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "NS-03.ScatterPolarPlotSettings",
+          "title": "散射极坐标图",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "NS-02.PathAnalysis",
+          "title": "路径分析未分类功率",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "ED-01.Scattering",
+          "title": "散射类型聚合范围",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "ED-01.Scattering.BSDF",
+            "ED-01.Scattering.ISScatterCatalog"
+          ]
+        }
+      ]
+    },
+    {
+      "group_id": "D008",
+      "name": "制造、图纸、查看器与模型报告",
+      "objective": "集中处理章节、曲面、目录或对象的正式选择，以及可查看的文本/图纸/几何结果出口。",
+      "prerequisites": [
+        "现有TPD、SagTable制造参考、Cooke和NSC部件模型。"
+      ],
+      "related_group_ids": [
+        "D002",
+        "D003"
+      ],
+      "implementation_plan": "先补报告选择和测试板目录验收，再处理SagTable制造偏移及摘要；图纸和查看器逐项确认正式结果出口与几何身份。",
+      "completion_criteria": "目录或模型身份、尺寸、材料和制造基准对应；输出实际可读/可查看，设置采用、分页及模型保持有证据。",
+      "items": [
+        {
+          "canonical_item_id": "NS-04.PrescriptionDataSettings",
+          "title": "系统说明文本报告",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "NS-04.SurfaceDataSettings",
+          "title": "曲面数据报告",
+          "difficulty": "中",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "MF-01.TestPlateList",
+          "title": "样板目录",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "MF-01.SagTable",
+          "title": "SagTable完整制造范围",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "CV-01.ISOElementDrawing",
+          "title": "ISO元件图",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "MF-01.ZemaxElementDrawing",
+          "title": "Zemax元件图",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "NS-04.PrescriptionGraphic",
+          "title": "系统说明图",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "NS-04.NSCObjectViewer",
+          "title": "NSC对象查看器",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "NS-04.PartViewer",
+          "title": "零件查看器",
+          "difficulty": "高",
+          "depends_on_item_ids": []
+        }
+      ]
+    },
+    {
+      "group_id": "D009",
+      "name": "CAD与受保护格式交付",
+      "objective": "统一导出设置、实际文件格式与版本、配置分层和正式创建协议。",
+      "prerequisites": [
+        "本机正式导出器、相应许可和受控多配置/镀膜模型。"
+      ],
+      "related_group_ids": [
+        "D008"
+      ],
+      "implementation_plan": "先定位CAD输出头版本和IGES层号实际采用，再探查线框、ZBB和ZEC创建协议；逐项记录正式接口及输出条件。",
+      "completion_criteria": "文件头、几何内容、配置层和请求对应；实际交付物可读，模型保持及关闭通过；接口缺失时保留探查清单和解除条件。",
+      "items": [
+        {
+          "canonical_item_id": "EXT-EXPORT.CadSettings",
+          "title": "CAD实际格式与版本",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "EXT-EXPORT.CadMultipleConfigurations",
+          "title": "CAD多配置分层",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "EXT-EXPORT.LegacyLinework",
+          "title": "旧线框导出",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "EXT-EXPORT.BlackBox",
+          "title": "黑盒创建",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "EXT-EXPORT.EncryptedCoating",
+          "title": "加密镀膜创建",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        }
+      ]
+    },
+    {
+      "group_id": "D010",
+      "name": "原生全息衍射效率",
+      "objective": "以原生Hologram1统一角度、波长和二维衍射效率的当前声明范围。",
+      "prerequisites": [
+        "已保存Hologram1模型和独立解析参考；偏振约定沿D001核对。"
+      ],
+      "related_group_ids": [
+        "D001"
+      ],
+      "implementation_plan": "逐项审查收窄后的原生范围和既有误差，先完成角度/波长曲线，再交叉检查二维网格和单位。",
+      "completion_criteria": "实际记录/重建条件、S/P通道、单位和数值参考完整；沿用原条目容差，三项分别验收和计数。",
+      "items": [
+        {
+          "canonical_item_id": "CO-01.DiffEfficiencyAngular",
+          "title": "角度衍射效率完整范围",
+          "difficulty": "很高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "CO-01.DiffEfficiencyChromatic",
+          "title": "波长衍射效率完整范围",
+          "difficulty": "很高",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "CO-01.DiffEfficiency2D",
+          "title": "二维衍射效率完整范围",
+          "difficulty": "很高",
+          "depends_on_item_ids": []
+        }
+      ]
+    },
+    {
+      "group_id": "D011",
+      "name": "STAR数据、材料、拟合与控制",
+      "objective": "建立受控FEA数据的读取、导入、拟合、材料计算、控制及卸载链路。",
+      "prerequisites": [
+        "2024 R2手册p.1708要求Enterprise级许可；当前Premium实例STAR=false，先确认可用许可并读取新实例模块标志。",
+        "启用STAR模块；准备已知单位、坐标、温度/折射率/形变的受控FEA输入。"
+      ],
+      "related_group_ids": [
+        "D002",
+        "D003"
+      ],
+      "implementation_plan": "先读取模块和材料/控制实际值，再按形变、温度、直接折射率逐对导入与拟合；核对采样后分别卸载，所有数值用例从独立基线开始。",
+      "completion_criteria": "拟合系数、样本、坐标和独立参考对应；控制实际采用、保存重载、取消/恢复及卸载后的基线完整。",
+      "items": [
+        {
+          "canonical_item_id": "EXT-STAR.Read",
+          "title": "STAR读取",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "EXT-STAR.UpdateMode",
+          "title": "STAR更新模式",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "EXT-STAR.Materials.refractive_index",
+          "title": "STAR材料折射率",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "EXT-STAR.Materials.dndt",
+          "title": "STAR材料dn/dT",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "EXT-STAR.ThermalControls",
+          "title": "STAR热控设置",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "EXT-STAR.VolumeControls",
+          "title": "STAR体积控制",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "EXT-STAR.ImportDeformation",
+          "title": "STAR导入形变",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "EXT-STAR.FitDeformation",
+          "title": "STAR拟合形变",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.ImportDeformation"
+          ]
+        },
+        {
+          "canonical_item_id": "EXT-STAR.ImportTemperature",
+          "title": "STAR导入温度",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "EXT-STAR.FitTemperature",
+          "title": "STAR拟合温度",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.ImportTemperature"
+          ]
+        },
+        {
+          "canonical_item_id": "EXT-STAR.ImportDirectIndex",
+          "title": "STAR导入直接折射率",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "EXT-STAR.FitDirectIndex",
+          "title": "STAR拟合直接折射率",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.ImportDirectIndex"
+          ]
+        },
+        {
+          "canonical_item_id": "EXT-STAR.FittedSamples",
+          "title": "STAR拟合采样",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.FitDeformation",
+            "EXT-STAR.FitTemperature",
+            "EXT-STAR.FitDirectIndex"
+          ]
+        },
+        {
+          "canonical_item_id": "EXT-STAR.UnloadDeformation",
+          "title": "STAR卸载形变",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.ImportDeformation"
+          ]
+        },
+        {
+          "canonical_item_id": "EXT-STAR.UnloadTemperature",
+          "title": "STAR卸载温度",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.ImportTemperature"
+          ]
+        },
+        {
+          "canonical_item_id": "EXT-STAR.UnloadDirectIndex",
+          "title": "STAR卸载直接折射率",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.ImportDirectIndex"
+          ]
+        }
+      ]
+    },
+    {
+      "group_id": "D012",
+      "name": "STAR组件、坐标与性能分析",
+      "objective": "复用受控拟合数据，完成组件生命周期、刚体坐标及六项STAR专题结果。",
+      "prerequisites": [
+        "2024 R2手册p.1708要求Enterprise级许可；当前Premium实例STAR=false，先确认可用许可并读取新实例模块标志。",
+        "STAR模块及D011中相应的受控导入/拟合数据；各专题正式设置与结果出口。"
+      ],
+      "related_group_ids": [
+        "D011"
+      ],
+      "implementation_plan": "先定义/配置组件与坐标变换，再核对刚体及移除刚体运动；逐项跑FEA、对准、形变、温度、性能和系统图，最后在独立副本验证删除并汇总组件管理。",
+      "completion_criteria": "解析变换与光学性能参考对应，专题输入身份、图表或数值结果有效；组件删除、重载、恢复和关闭覆盖全部声明范围。",
+      "items": [
+        {
+          "canonical_item_id": "EXT-STAR.Components.define",
+          "title": "STAR定义组件",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "EXT-STAR.Components.configure",
+          "title": "STAR配置组件",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.Components.define"
+          ]
+        },
+        {
+          "canonical_item_id": "EXT-STAR.Components.coordinate_breaks",
+          "title": "STAR组件坐标断点",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.Components.define"
+          ]
+        },
+        {
+          "canonical_item_id": "EXT-STAR.CoordinateTransform",
+          "title": "STAR坐标变换",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "EXT-STAR.RigidBody",
+          "title": "STAR刚体变换",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "EXT-STAR.Components.remove_rbms",
+          "title": "STAR移除组件刚体运动",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.Components.define",
+            "EXT-STAR.RigidBody"
+          ]
+        },
+        {
+          "canonical_item_id": "CV-01.STARInspectFEA",
+          "title": "STAR FEA检查",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.ImportDeformation"
+          ]
+        },
+        {
+          "canonical_item_id": "CV-01.STARAlignCheck",
+          "title": "STAR对准检查",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.Components.define",
+            "EXT-STAR.RigidBody"
+          ]
+        },
+        {
+          "canonical_item_id": "CV-01.STAR2DDefPlot",
+          "title": "STAR二维形变图",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.FitDeformation"
+          ]
+        },
+        {
+          "canonical_item_id": "CV-01.STARIndexVsTemp",
+          "title": "STAR折射率随温度",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.ImportTemperature",
+            "EXT-STAR.FitTemperature"
+          ]
+        },
+        {
+          "canonical_item_id": "CV-01.STARPerfChange",
+          "title": "STAR性能变化",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.FitDeformation"
+          ]
+        },
+        {
+          "canonical_item_id": "CV-01.STARSysViewer",
+          "title": "STAR系统查看器",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.Components.define"
+          ]
+        },
+        {
+          "canonical_item_id": "EXT-STAR.Components.remove",
+          "title": "STAR删除组件",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.Components.define"
+          ]
+        },
+        {
+          "canonical_item_id": "EXT-STAR.Components",
+          "title": "STAR组件管理",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-STAR.Components.define",
+            "EXT-STAR.Components.configure",
+            "EXT-STAR.Components.coordinate_breaks",
+            "EXT-STAR.Components.remove_rbms",
+            "EXT-STAR.Components.remove"
+          ]
+        }
+      ]
+    },
+    {
+      "group_id": "D013",
+      "name": "HPC配置与分布式任务",
+      "objective": "先取得可用偏好配置，再完成四类节点作业的完整生命周期与结果回收。",
+      "prerequisites": [
+        "原生GetHPCSettingsFromPrefs返回非空IHPCSettings；有效节点和对应许可。"
+      ],
+      "related_group_ids": [],
+      "implementation_plan": "先只读核对节点、实例和线程配置，再以最小NSC/公差任务验证提交、状态、取消和结果，随后验全局及Hammer优化。",
+      "completion_criteria": "节点实际采用、结果与本地参考、超时/取消/正常关闭齐全；配置缺失保留HPC_SETTINGS_UNAVAILABLE及解除条件。",
+      "items": [
+        {
+          "canonical_item_id": "EXT-HPC.Settings",
+          "title": "HPC配置读取与采用",
+          "difficulty": "低",
+          "depends_on_item_ids": []
+        },
+        {
+          "canonical_item_id": "EXT-HPC.NSCTrace",
+          "title": "HPC非序列追迹",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-HPC.Settings"
+          ]
+        },
+        {
+          "canonical_item_id": "EXT-HPC.Tolerancing",
+          "title": "HPC公差任务",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-HPC.Settings"
+          ]
+        },
+        {
+          "canonical_item_id": "EXT-HPC.GlobalOptimization",
+          "title": "HPC全局优化",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-HPC.Settings"
+          ]
+        },
+        {
+          "canonical_item_id": "EXT-HPC.HammerOptimization",
+          "title": "HPC Hammer优化",
+          "difficulty": "受阻待定",
+          "depends_on_item_ids": [
+            "EXT-HPC.Settings"
+          ]
+        }
+      ]
+    }
+  ],
+  "parallel_plan": "development/parallel-development.md",
+  "parallel_dispatch": "development/tracking/parallel-dispatch.json"
+}

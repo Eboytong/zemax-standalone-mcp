@@ -1,0 +1,17 @@
+{
+  "item_id": "NS-04.PrescriptionDataSettings",
+  "date": "2026-11-07",
+  "status": "blocked",
+  "evidence": [
+    ".local/evidence/development/NS-04/runtime066/summary.json",
+    ".local/evidence/development/NS-04/runtime068-sequential/summary.json",
+    ".local/evidence/development/NS-04/outlets068/summary.json"
+  ],
+  "verified": {
+    "settings": "AS_Default in sequential and NSC modes; no typed section/surface selection or adopted-value readback found in reflected properties or methods.",
+    "default_output": "Sequential default prescription text export succeeded and its analysis closed; NSC/default output was also exercised in runtime discovery.",
+    "lifecycle": "Created analyses closed; stdio sessions disconnected. No resource was owned for null factories.",
+    "selection_contract": "not available from current official interface evidence"
+  },
+  "unlock_condition": "Find official ModifySettings keys or a dedicated settings interface for section/surface selection, plus a reliable readback identifying the adopted selection."
+}

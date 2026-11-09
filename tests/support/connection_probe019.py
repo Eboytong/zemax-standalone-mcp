@@ -89,7 +89,8 @@ def run(folder=None,startup_seconds=180,cleanup_seconds=15):
             if process.poll()is None:
                 try:
                     stopped=subprocess.run(['taskkill','/PID',str(process.pid),'/T','/F'],
-                        capture_output=True,text=True,timeout=max(.001,deadline-time.monotonic()),creationflags=subprocess.CREATE_NO_WINDOW)
+                        capture_output=True,text=True,encoding='oem',errors='replace',
+                        timeout=max(.001,deadline-time.monotonic()),creationflags=subprocess.CREATE_NO_WINDOW)
                     record['owned_tree_stop']=dict(returncode=stopped.returncode,stdout=stopped.stdout,stderr=stopped.stderr)
                 except subprocess.TimeoutExpired:
                     record['owned_tree_stop']=dict(state='cleanup_timeout')

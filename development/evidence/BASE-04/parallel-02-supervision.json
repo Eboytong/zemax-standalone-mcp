@@ -1,0 +1,61 @@
+{
+  "round": "parallel-02",
+  "ended_at": "2026-11-08T10:10:16.971175+00:00",
+  "supervision_interval_seconds": 60,
+  "poll_count": 44,
+  "first_poll_at": "2026-11-08T09:25:10.812Z",
+  "last_poll_at": "2026-11-08T10:08:11.089Z",
+  "monitor_session_id": 37428,
+  "monitor_state": "stopped_by_coordinator_after_all_worker_deliveries",
+  "workers": {
+    "zemax-p01-runtime": {
+      "sessionId": "session-a0bef4ab-ed11-492b-8bdc-a7e6f8328ee2",
+      "workspace": "C:\\Users\\tonge\\Desktop\\Zemax_MCP",
+      "status": "idle",
+      "nextSeq": 4340,
+      "checkedAt": "2026-11-08T10:08:11.011Z"
+    },
+    "zemax-p01-polarization": {
+      "sessionId": "session-d7099139-d9de-40dd-ac92-0bc63a0ab2e3",
+      "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-polarization\\Zemax_MCP",
+      "status": "idle",
+      "nextSeq": 3223,
+      "checkedAt": "2026-11-08T10:08:11.026Z"
+    },
+    "zemax-p01-material-reports": {
+      "sessionId": "session-77083914-74d1-4c3b-a4a3-0c2f6394a67b",
+      "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-reports\\Zemax_MCP",
+      "status": "idle",
+      "nextSeq": 2789,
+      "checkedAt": "2026-11-08T10:08:11.043Z"
+    },
+    "zemax-p01-material-model": {
+      "sessionId": "session-d835e885-44ad-4a22-b102-f3023b763288",
+      "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-model\\Zemax_MCP",
+      "status": "idle",
+      "nextSeq": 3108,
+      "checkedAt": "2026-11-08T10:08:11.058Z"
+    },
+    "zemax-p01-gradium": {
+      "sessionId": "session-fb3221ce-907f-4072-99d2-1a3fb5d62f96",
+      "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-gradium\\Zemax_MCP",
+      "status": "idle",
+      "nextSeq": 2604,
+      "checkedAt": "2026-11-08T10:08:11.075Z"
+    },
+    "zemax-p01-hologram": {
+      "sessionId": "session-da391898-d135-4e0c-80ea-321231072b9d",
+      "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-hologram\\Zemax_MCP",
+      "status": "idle",
+      "nextSeq": 2152,
+      "checkedAt": "2026-11-08T10:08:11.089Z"
+    }
+  },
+  "owned_opticstudio_remaining": 0,
+  "monitor_process_remaining": 0,
+  "process_observation_at": "2026-11-08T10:10:16.971175+00:00",
+  "accepted_this_round": [],
+  "accepted_since_check": 3,
+  "checks": "development/evidence/BASE-04/parallel-02-checks.json",
+  "evidence": "development/evidence/BASE-04/dsh-parallel-02-20261108.md"
+}

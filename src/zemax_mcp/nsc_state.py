@@ -4,6 +4,7 @@ from .data import unwrap
 from .analyses import scalar_settings
 from .imaging import check
 from .detectors import check_setting_value
+from .source_spectrum import requested_values
 
 
 def verify_patch(backend,row,p,fields):
@@ -40,7 +41,7 @@ def verify_patch(backend,row,p,fields):
     if p.spectrum:
         verify(row.SourcesData,'SourceColor',p.spectrum.mode,'spectrum')
         obj=getattr(row.SourcesData.SourceColorSettings,'_S_'+p.spectrum.mode)
-        for name,value in p.spectrum.settings.items():verify(obj,name,value,'spectrum')
+        for name,value in requested_values(p.spectrum).items():verify(obj,name,value,'spectrum')
 
 
 def failure(backend,exc,index,completed,prepared,stage):

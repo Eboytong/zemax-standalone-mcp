@@ -1,0 +1,354 @@
+{
+ "schema_version": 1,
+ "pass": "d003-d004",
+ "effective_date": "2026-11-08",
+ "worker_id": "zemax-p01-material-model",
+ "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-model\\Zemax_MCP",
+ "branch": "codex/d002-material-model",
+ "baseline_commit": "34e1a18494015c2b383ec700b958015020b660fe",
+ "sources": {
+  "tracking": "development/tracking/d00x-pass-20261108.json",
+  "ledgers": [
+   "development/ledgers/operations.csv",
+   "development/ledgers/analyses.csv"
+  ],
+  "plan": ".local/coordination/pass-d003-d004-plan.md"
+ },
+ "environment_blocker": {
+  "stage": "application_create",
+  "attempts": [
+   "runtime-recovery-01",
+   "runtime-recovery-02",
+   "runtime-recovery-05"
+  ],
+  "symptom": "180 s timeout on native startup",
+  "decision": "defer_native_startup_for_this_pass",
+  "evidence": "development/evidence/BASE-04/runtime-phase-environment-20261108.md",
+  "consequence": "every native job below is prepared but not executed"
+ },
+ "workspace_artifacts": {
+  "pytest-of-tonge/": "pytest temporary directory at the workspace root; retained on instruction, not cleaned, not tracked by Git, contains test temp files only"
+ },
+ "items": [
+  {
+   "canonical_item_id": "ED-02.SurfacePickup.ChipZone",
+   "development_group": "D003",
+   "ledger_state": "blocked",
+   "current_formal_interface": "ILDERow.ChipZoneCell (generic ZOSAPI.Editors.IEditorCell) -> CreateSolveType(SurfacePickup)/SetSolveData; ISolveSurfacePickup{Surface,Column,ScaleFactor,Offset}; readback via backend._surface_data cells.chip_zone; SurfaceColumn.ChipZone=7",
+   "existing_inputs_results": "self-built sequential model, source 0.5 / target 0.2; SetSolveData returns Success but cell.Solve stays Automatic; adapter returns SOLVE_UPDATE_FAILED + PARTIAL_UPDATE, revision 6; checkpoint reload restores values and modes",
+   "existing_evidence": [
+    ".local/runs/runs/chip_zone_pickup_refusal_cdca2ea390/calls.json",
+    "development/evidence/ED-02/chip-zone-surface-pickup-repeat20261108.md"
+   ],
+   "offline_completable": [
+    "C2/C3 control probe prepared (scripts/probes/ED-02/pickup_solve_adoption018.py)",
+    "5 ordinary tests driving the real probe through FakeBackend",
+    "member-by-member reflection check of every interface used"
+   ],
+   "actual_checks": [
+    "test_pickup_probe_contracts.py: 5 tests (part of 26 pickup+power passed)",
+    "d003-interface-check.py: 5/5 members, exit 0"
+   ],
+   "external_blocker": "native setter returns Success but the ChipZone solve falls back to Automatic",
+   "release_conditions": [
+    "three-way readback (cell.Solve, GetSolveData().Type, _S_SurfacePickup) is SurfacePickup at any observed moment",
+    "Surface/Column/Scale/Offset read back as requested",
+    "value linkage follows the source surface",
+    "save + reopen keeps the mode",
+    "close receipt records native.closed=true"
+   ],
+   "status_after_pass": "blocked"
+  },
+  {
+   "canonical_item_id": "ED-02.SurfacePickup.MechanicalSemiDiameter",
+   "development_group": "D003",
+   "ledger_state": "blocked",
+   "current_formal_interface": "ILDERow.MechanicalSemiDiameterCell (generic IEditorCell) -> same path; SurfaceColumn.MechanicalSemiDiameter=8",
+   "existing_inputs_results": "source 5.5 / target 5.2; native falls back to Fixed; SOLVE_UPDATE_FAILED + PARTIAL_UPDATE; checkpoint restores. New observation: the failed write rewrote the target value 5.2 -> 5.0",
+   "existing_evidence": [
+    ".local/runs/runs/mechanical_semi_diameter_pickup_refusal_c461b3eaf9/calls.json",
+    "development/evidence/ED-02/mechanical-semi-diameter-pickup-repeat20261108.md"
+   ],
+   "offline_completable": [
+    "same probe covers both cells",
+    "value-rewrite observation recorded in before/after snapshots"
+   ],
+   "actual_checks": [
+    "test_pickup_probe_contracts.py: 5 tests (part of 26 passed)",
+    "failed-write value 5.2 -> 5.0 recorded from raw logs"
+   ],
+   "external_blocker": "native setter does not adopt MechanicalSemiDiameter SurfacePickup; the failed path also mutates the value",
+   "release_conditions": [
+    "same as ChipZone",
+    "no residual value rewrite on either the success or the failure path"
+   ],
+   "status_after_pass": "blocked"
+  },
+  {
+   "canonical_item_id": "ED-02.SolveExtensions018",
+   "development_group": "D003",
+   "ledger_state": "not_in_operations_csv; remaining-ranked.md marks implemented-pending-acceptance",
+   "current_formal_interface": "SOLVES / SOLVE_FIELDS / SOLVE_ALIASES (src/zemax_mcp/modeling.py:14ff) + backend._validate_solve / _set_solve",
+   "existing_inputs_results": "aggregate item; prerequisites are ED-02.MaterialModel.Material and both SurfacePickup items; docs/topics/modeling/solve-extensions.md:76-79 registers four limitations",
+   "offline_completable": [
+    "enumerate adopted solves vs registered limitations into one scope table",
+    "no native needed"
+   ],
+   "actual_checks": [
+    "solve_extensions018_scope.py -> 27 solves; 15 with unit-test reference; 6 not explicit in docs; output .local/coordination/solve-extensions018-scope.json"
+   ],
+   "external_blocker": "depends on MaterialModel and both SurfacePickup items",
+   "release_conditions": [
+    "prerequisites closed",
+    "scope table matches the ledger wording"
+   ],
+   "status_after_pass": "audited_offline",
+   "evidence_index": ".local/coordination/solve-extensions018-scope.json",
+   "scope_summary": "27 solves; 15 with unit-test reference; 12 lacking direct unit reference; 6 not explicit in docs"
+  },
+  {
+   "canonical_item_id": "NS-01.Conversion",
+   "development_group": "D003",
+   "ledger_state": "implemented",
+   "current_formal_interface": "src/zemax_mcp/conversion.py, src/zemax_mcp/conversion_models.py; formal sequential-to-NSC tool",
+   "existing_inputs_results": "pure NSC accepted; mixed group fails with TASK_START_FAILED / 'An unknown error occurred' at dummy boundary and closed stop aperture; failed tool close and checkpoint restore pass",
+   "existing_evidence": [
+    "verification/conversion026-summary.json",
+    "verification/development/NS-01/native062-options-final.xml",
+    "verification/development/NS-01/probe061/summary.json"
+   ],
+   "offline_completable": [
+    "write the accepted-range vs failing-range boundary from existing evidence",
+    "no implementation change"
+   ],
+   "actual_checks": [
+    "test_conversion.py (part of 235 passed)"
+   ],
+   "external_blocker": "mixed-group native conversion failure",
+   "release_conditions": [
+    "mixed group passes settings, rays, save/reload and cancel natively"
+   ],
+   "status_after_pass": "implemented"
+  },
+  {
+   "canonical_item_id": "ED-04.RayAimingWizard",
+   "development_group": "D003",
+   "ledger_state": "blocked",
+   "current_formal_interface": "design tool RayAimingWizard; RunAndWaitWithTimeout / Cancel / WaitWithTimeout / IsRunning / Close",
+   "existing_inputs_results": "controlled model RunAndWaitWithTimeout(10) -> TimedOut; after Cancel=true, WaitWithTimeout(10) still TimedOut with IsRunning=true; Close=false; application disconnect succeeds",
+   "existing_evidence": [
+    "verification/development/ED-04/ray-aiming276/probe.json",
+    "verification/development/ED-04/acceptance049/summary.json"
+   ],
+   "offline_completable": [
+    "review request model against docs",
+    "condense the minimal non-completing/non-cancelling reproduction"
+   ],
+   "actual_checks": [
+    "no dedicated offline unit test (native-dependent); evidence verification/development/ED-04/ray-aiming276/probe.json"
+   ],
+   "external_blocker": "the wizard never reaches a reliable completed/cancelled/closed state",
+   "release_conditions": [
+    "reliable completion, cancel and close path, or a fixed native version",
+    "then verify preview, Apply, save/reload and model preservation"
+   ],
+   "status_after_pass": "blocked"
+  },
+  {
+   "canonical_item_id": "CV-02.PowerFieldMapSettings",
+   "development_group": "D004",
+   "ledger_state": "implemented",
+   "current_formal_interface": "run_analysis power_field_map (src/zemax_mcp/power_maps.py:12-29); native POWF operand; backend._page_task_result paging",
+   "existing_inputs_results": "596 value states, 593 aperture ring, 474 analytic reference (max abs diff 1.934985890557074e-4), reciprocal invariant over 14 points 4.74e-6",
+   "existing_evidence": [
+    "development/evidence/CV-02/power-maps-value-state-repeat20261108.md",
+    ".local/evidence/development/CV-02/power-zero-decision-table.json",
+    ".local/coordination/power-maps-review3-report.md"
+   ],
+   "offline_completable": [
+    "E1 decision table",
+    "E2/E3 probe contract fixes",
+    "17 offline contract tests"
+   ],
+   "actual_checks": [
+    "test_power_maps.py + test_power_probe_contracts.py (part of 235/26 passed)"
+   ],
+   "external_blocker": "application_create timeout; zero-EFL semantics and ring state still undefined",
+   "release_conditions": [
+    "E2 and E3 executed with distinguishable evidence",
+    "until then zero_interpretation stays unresolved_native_zero_semantics and native_ring_validity stays unavailable"
+   ],
+   "status_after_pass": "implemented",
+   "native_job": {
+    "id": "JOB-CV02-01",
+    "state": "prepared_not_executed"
+   }
+  },
+  {
+   "canonical_item_id": "CV-02.PowerPupilMapSettings",
+   "development_group": "D004",
+   "ledger_state": "implemented",
+   "current_formal_interface": "run_analysis power_pupil_map; native POWP operand; shares the result path with the field map",
+   "existing_inputs_results": "shares acceptance with the field map; raw zero, offset, paging and model preservation pass; aperture shrink still exposes no ring state",
+   "existing_evidence": [
+    "development/evidence/CV-02/power-maps-value-state-repeat20261108.md",
+    ".local/coordination/power-maps-review3-report.md"
+   ],
+   "offline_completable": [
+    "shared with the field map"
+   ],
+   "actual_checks": [
+    "test_power_maps.py + test_power_probe_contracts.py (shared acceptance)"
+   ],
+   "external_blocker": "application_create timeout; ring state undefined",
+   "release_conditions": [
+    "same as the field map"
+   ],
+   "status_after_pass": "implemented",
+   "native_job": {
+    "id": "JOB-CV02-02",
+    "state": "prepared_not_executed"
+   }
+  },
+  {
+   "canonical_item_id": "CV-01.SeidelDiagram",
+   "development_group": "D004",
+   "ledger_state": "blocked",
+   "current_formal_interface": "run_analysis seidel_diagram (typed request in analysis_models.py, dispatch in analyses.py); dedicated IAS_SeidelDiagram settings",
+   "existing_inputs_results": "settings readback accurate; native settings / EXPORT_FAILED close acceptance passed; independent SeidelCoefficients spherical S1 reference passes 1e-6 but carries no diagram",
+   "existing_evidence": [
+    "verification/development/CV-01/outlets265/summary.json",
+    "development/evidence/CV-01/seidel-diagram-repeat20261108.md"
+   ],
+   "offline_completable": [
+    "restate the outlet audit as a scoped claim about the checked outlets only"
+   ],
+   "actual_checks": [
+    "test_seidel_diagram.py (part of 235 passed)",
+    "typed request + dispatch present in analysis_models.py/analyses.py"
+   ],
+   "external_blocker": "no diagram or numeric result outlet",
+   "release_conditions": [
+    "a formal result outlet appears, or an equivalent numeric implementation is validated including the diagram mapping"
+   ],
+   "status_after_pass": "blocked"
+  },
+  {
+   "canonical_item_id": "CV-01.FullFieldSpot",
+   "development_group": "D004",
+   "ledger_state": "implemented",
+   "current_formal_interface": "run_analysis full_field_spot; AS_Spot settings",
+   "existing_inputs_results": "settings write/readback/run/close adopted; three field/wavelength/reference configurations all return RESULT_UNAVAILABLE with empty SpotData; failed task closes and surface baseline is preserved",
+   "existing_evidence": [
+    "verification/development/CV-01/progress591-formal-outlets.json",
+    "development/evidence/CV-01/full-field-spot-repeat20261108.md"
+   ],
+   "offline_completable": [
+    "archive the missing-outlet evidence chain",
+    "recheck the AS_Spot readback field list"
+   ],
+   "actual_checks": [
+    "test_full_field_spot.py (part of 235 passed)",
+    "typed request + dispatch present"
+   ],
+   "external_blocker": "result outlet missing",
+   "release_conditions": [
+    "a valid native result outlet, or a validated alternative using reference points, magnification and layout mapping"
+   ],
+   "status_after_pass": "implemented"
+  },
+  {
+   "canonical_item_id": "CV-01.MatrixSpot",
+   "development_group": "D004",
+   "ledger_state": "implemented",
+   "current_formal_interface": "run_analysis matrix_spot",
+   "existing_inputs_results": "analysis computes but SpotData/arrays are empty and GetTextFile=false, returning EXPORT_FAILED; matrix control confirms model state and task close",
+   "existing_evidence": [
+    "verification/development/CV-01/probe088.json",
+    "development/evidence/CV-01/matrix-spot-repeat20261108.md"
+   ],
+   "offline_completable": [
+    "archive the missing-outlet evidence chain"
+   ],
+   "actual_checks": [
+    "test_configuration_matrix_spot.py covers matrix/config (part of 235 passed)",
+    "typed request + dispatch present"
+   ],
+   "external_blocker": "no formal numeric or graphic outlet",
+   "release_conditions": [
+    "formal outlet, or a validated equivalent computation"
+   ],
+   "status_after_pass": "implemented"
+  },
+  {
+   "canonical_item_id": "CV-01.ConfigurationMatrixSpot",
+   "development_group": "D004",
+   "ledger_state": "implemented",
+   "current_formal_interface": "run_analysis configuration_matrix_spot; reflected ConfigurationMatrixSpot, IAS_Spot and 11 writable settings",
+   "existing_inputs_results": "two-configuration native check passed; like MatrixSpot there is no SpotData or text, returning EXPORT_FAILED; model preservation and close pass",
+   "existing_evidence": [
+    "verification/development/CV-01/configuration-matrix-spot022.json",
+    "development/evidence/CV-01/configuration-matrix-spot-repeat20261108.md"
+   ],
+   "offline_completable": [
+    "archive the missing-outlet evidence chain"
+   ],
+   "actual_checks": [
+    "test_configuration_matrix_spot.py (part of 235 passed)",
+    "typed request + dispatch present"
+   ],
+   "external_blocker": "no valid native outlet",
+   "release_conditions": [
+    "same as MatrixSpot"
+   ],
+   "status_after_pass": "implemented"
+  },
+  {
+   "canonical_item_id": "CV-01.FftSurfaceMtf",
+   "development_group": "D004",
+   "ledger_state": "implemented",
+   "current_formal_interface": "run_analysis fft_surface_mtf; six writable settings reflected",
+   "existing_inputs_results": "six analyses closed, system state preserved, disconnect passed; complex-pupil autocorrelation max error field1 6.66e-16 and field3 0.0049502 below the 0.005 threshold; off-axis independent-ray mapping still exceeds the limit",
+   "existing_evidence": [
+    "verification/development/CV-01/progress610-coherent-pupil.json",
+    "development/evidence/CV-01/fft-surface-mtf-coherent-pupil-repeat20261108.md"
+   ],
+   "offline_completable": [
+    "turn the on-axis/off-axis boundary into an explicit threshold table",
+    "recheck existing assertions"
+   ],
+   "actual_checks": [
+    "test_fft_surface_mtf.py (part of 235 passed)",
+    "retained-data single-factor experiment delegated to zemax-p01-hologram; index their report"
+   ],
+   "external_blocker": "off-axis mapping exceeds the current threshold",
+   "release_conditions": [
+    "off-axis mapping enters the threshold, or the threshold and its scope are formally recorded as a limitation"
+   ],
+   "status_after_pass": "implemented",
+   "evidence_index": "test_fft_surface_mtf.py; delegated experiment report from zemax-p01-hologram"
+  }
+ ],
+ "not_done_this_pass": [
+  "no native execution (E2/E3 and C2/C3 are prepared only)",
+  "no src/ product change, no schema change",
+  "no ledger, batch or tracking edits",
+  "no Git commit",
+  "pytest-of-tonge/ retained, not cleaned"
+ ],
+ "report": ".local/coordination/pass-d003-d004-report.md",
+ "actual_checks_run": [
+  {
+   "command": "pytest power_maps+power_probe+pickup_probe+modeling+extended_solves+solve_support+seidel_diagram+full_field_spot+configuration_matrix_spot+fft_surface_mtf+conversion",
+   "result": "235 passed in 1.69s"
+  },
+  {
+   "command": "pytest test_pickup_probe_contracts.py + test_power_probe_contracts.py",
+   "result": "26 passed"
+  },
+  {
+   "command": "solve_extensions018_scope.py",
+   "result": "27 solves / 15 tested / 6 undocumented"
+  }
+ ]
+}

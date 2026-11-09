@@ -1,0 +1,103 @@
+{
+  "task": {
+    "group": "D008",
+    "items": ["NS-04.PrescriptionDataSettings", "NS-04.SurfaceDataSettings"],
+    "branch": "codex/d002-gradium",
+    "baseline": "34e1a18494015c2b383ec700b958015020b660fe",
+    "source_version": "0.1.62",
+    "python": "C:/Users/tonge/Desktop/Zemax_MCP/.venv/Scripts/python.exe",
+    "cwd": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-gradium\\Zemax_MCP",
+    "native_execution": "not started: application_create has three independent 180 s timeouts (01/02/05) - external block",
+    "scope_now": "typed default-report entry and real-text parsing",
+    "scope_blocked": "full section/surface selection and adopted-selection readback",
+    "ordinary_checks": {
+      "command": "python -B -X utf8 -m pytest tests/unit/test_gradium_profile.py tests/unit/test_grin_profile.py tests/unit/test_native_text_reports.py tests/unit/test_system_check.py -q -p no:cacheprovider",
+      "result": "101 passed in 0.71s",
+      "breakdown": {"gradium": 30, "grin": 19, "native_text_reports": 42, "system_check": 10}
+    }
+  },
+  "jobs": [
+    {
+      "job_id": "D008-R1",
+      "item": "NS-04.PrescriptionDataSettings",
+      "experiment": "default prescription report through the typed kind-only entry",
+      "command": "C:/Users/tonge/Desktop/Zemax_MCP/.venv/Scripts/python.exe -B -m pytest tests/native/test_native_text_reports_live.py -q -p no:cacheprovider --run-zemax -k prescription",
+      "cwd": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-gradium\\Zemax_MCP",
+      "model": "Cooke sequential sample; no model mutation",
+      "inputs": ["request {kind: prescription_data}", "reference: tests/support/native_samples/prescription_data_20261108_native.txt"],
+      "expected_duration_seconds": [60, 90],
+      "outputs": [".local/runs/runs/prescription_data_<hex>/ (harness)", "parsed sections + retained lines + native_text path"],
+      "diagnostic_assertions": [
+        "task succeeded and close_attempted",
+        "no cleanup warnings",
+        "settings readback reports selection_support=default_only",
+        "document header carries file/title/date",
+        "native text retained with one-based line numbers"
+      ],
+      "numeric_or_structural_gate": {
+        "identity": "report title in documented set (系统/详细数据 / System/Detail Data / Prescription Data)",
+        "sections": "at least one documented section; missing documented sections reported but not treated as failure",
+        "note": "the fourteen documented sections are not a per-report hard gate"
+      },
+      "success_closure": "collector returns acceptance_scope=default_report_only with selection_scope.status=blocked",
+      "failure_closure": "disconnect(okay=False) then raise; native text and messages retained in error details"
+    },
+    {
+      "job_id": "D008-R2",
+      "item": "NS-04.SurfaceDataSettings",
+      "experiment": "default surface-data report through the typed kind-only entry",
+      "command": "C:/Users/tonge/Desktop/Zemax_MCP/.venv/Scripts/python.exe -B -m pytest tests/native/test_native_text_reports_live.py -q -p no:cacheprovider --run-zemax -k surface",
+      "cwd": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-gradium\\Zemax_MCP",
+      "model": "Cooke sequential sample; no model mutation",
+      "inputs": ["request {kind: surface_data}", "reference: tests/support/native_samples/surface_data_20261108_native.txt"],
+      "expected_duration_seconds": [60, 90],
+      "outputs": [".local/runs/runs/surface_data_<hex>/ (harness)", "surface identity, unit, index rows, power blocks, retained lines"],
+      "diagnostic_assertions": [
+        "task succeeded and close_attempted",
+        "no cleanup warnings",
+        "selection_support=default_only",
+        "unit string retained verbatim",
+        "title surface number equals every power-block surface number"
+      ],
+      "numeric_or_structural_gate": {
+        "identity": "title 表面 N 数据概要 present; N consistent with power blocks",
+        "fields": "thickness, diameter, edge thickness X/Y, glass, index rows, surface power per block",
+        "units": "no implicit conversion; original display precision retained"
+      },
+      "success_closure": "collector returns acceptance_scope=default_report_only with selection_scope.status=blocked",
+      "failure_closure": "identity conflict raises INVALID_RESULT_DATA with details.partial preserved"
+    },
+    {
+      "job_id": "D008-R3",
+      "item": "NS-04.SurfaceDataSettings (optional comparison)",
+      "experiment": "does the default surface-data report follow the edited surface or stay on the default surface",
+      "command": "same file, -k surface_multisurface",
+      "optional": true,
+      "model": "three-surface sequential model (object, one glass surface, image) built in the test; no save",
+      "inputs": ["request {kind: surface_data} only; no selection field is offered"],
+      "expected_duration_seconds": [60, 90],
+      "purpose": "record which surface the default report describes when the model has several surfaces",
+      "diagnostic_assertions": ["title surface number recorded", "identity consistency recorded", "model unchanged"],
+      "success_closure": "reported surface number recorded as an observation; NOT treated as selection support",
+      "failure_closure": "disconnect(okay=False); observation retained for triage"
+    }
+  ],
+  "blocked": [
+    {
+      "item": "full section/surface selection",
+      "state": "blocked",
+      "evidence": [
+        "runtime settings type ZemaxUI.ZOSAPI.Analysis.AS_Default with only Analysis/TheDataID/IsValid/IsActiveWindow/Parent",
+        "no IAS_PrescriptionData/IAS_SurfaceData in the static interface dump; IAS_ base has no properties",
+        "no documented ModifySettings keys; CFG export is binary (18448 B, null bytes, no ASCII tokens)"
+      ],
+      "unlock_condition": "official section/surface selector or documented settings key plus reliable adopted-value readback"
+    },
+    {
+      "item": "native launch",
+      "state": "external block",
+      "evidence": "application_create timeouts of 180 s (01/02/05), independently recorded",
+      "action": "not retried this round"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 """Explicit settings models for the installed sequential analysis families."""
+from .scene_images import ExtendedDiffractionImage, PartiallyCoherentImage
 from typing import Annotated, Literal
 from pydantic import Field,model_validator
 from .schema import Request, Index, PositiveIndex, Positive, FiniteFloat
@@ -7,8 +8,11 @@ from .universal import UniversalPlot1D
 from .coating_models import CoatingAngle, CoatingWavelength, CoatingListing
 from .material_models import InternalTransmission
 from .polarization_models import PolarizationPupilMap
+from .polarization_topics import PhaseAberration,PolarizationRayTrace,PolarizationTransmission,FiberCouplingSettings
 from .comparator import FileComparator
 from .system_check import SystemCheck, SystemDataReport
+from .native_text_reports import PrescriptionDataReport, SurfaceDataReport
+from .star_analyses import StarAlignCheck,StarSysViewer,Star2DDefPlot,StarPerfChange,StarIndexVsTemp,StarInspectFEA
 from .pupil_topics import PupilAberration
 from .path_models import PathAnalysis,CriticalRayTrace,NscSingleRayTrace,NscGeometricMtf
 from .sag_table import SagTable
@@ -20,6 +24,7 @@ from .biocular_fov import BiocularFov
 from .biocular import BiocularConvergence
 from .ray_diagrams import YYbarDiagram,IncidentAngleVsImageHeight
 from .gaussian_models import ParaxialGaussianBeam,SkewGaussianBeam
+from .transmission_fan import PolarizationTransmissionFan
 Sampling=Literal["S_32x32","S_64x64","S_128x128","S_256x256","S_512x512","S_1024x1024"]
 SurfaceSampling=Literal["S_33x33","S_65x65","S_129x129","S_257x257","S_513x513","S_1025x1025"]
 ContrastLossSampling=Literal["S_3x3","S_5x5","S_7x7","S_9x9","S_11x11","S_13x13","S_15x15","S_17x17","S_19x19","S_21x21","S_23x23","S_25x25","S_27x27","S_29x29","S_31x31","S_33x33","S_35x35","S_37x37","S_39x39","S_41x41","S_43x43","S_45x45","S_47x47","S_49x49","S_51x51","S_53x53","S_55x55","S_57x57","S_59x59","S_61x61","S_63x63","S_65x65","S_67x67","S_69x69","S_71x71","S_73x73","S_75x75","S_77x77","S_79x79","S_81x81","S_83x83"]
@@ -110,8 +115,23 @@ class GeometricImage(Selection):
             raise ValueError("行列编号超出像素数量。")
         return self
 
-class GeometricBitmapImage(GeometricImage):
+class GeometricBitmapImage(Request):
     kind: Literal["geometric_bitmap_image"]
+    input_file: Annotated[str, Field(min_length=1,max_length=260)]
+    surface: PositiveIndex | None = None
+    field_size: Positive = 1.0
+    rotation: FiniteFloat = 0
+    rays_per_pixel: Annotated[int, Field(strict=True, ge=1, le=1000000)] = 10
+    x_pixels: Annotated[int, Field(strict=True, ge=1, le=4096)] = 256
+    y_pixels: Annotated[int, Field(strict=True, ge=1, le=4096)] = 256
+    x_pixel_size: Positive = .01
+    y_pixel_size: Positive = .01
+
+    @model_validator(mode="after")
+    def bitmap_size(self):
+        if self.x_pixels*self.y_pixels>4_000_000:
+            raise ValueError("位图输出超过4000000像素读取上限。")
+        return self
 
 class FftLineEdge(Selection):
     kind: Literal["fft_line_edge_spread"]
@@ -421,6 +441,68 @@ class GrinProfile(Request):
                 raise ValueError(f"GRIN {name} bounds must be supplied together and increasing.")
         return self
 
+class MaterialCurve(Request):
+    catalog: Annotated[str,Field(min_length=1,max_length=260)] | None = None
+    glasses: Annotated[list[Annotated[str,Field(min_length=1,max_length=260)]],Field(min_length=1,max_length=4)] | None = None
+    minimum_wavelength_um: Annotated[FiniteFloat,Field(ge=0)] | None = None
+    maximum_wavelength_um: Annotated[FiniteFloat,Field(ge=0)] | None = None
+    samples: Annotated[int,Field(strict=True,ge=2,le=2001)] | None = None
+    use_temperature_pressure: bool | None = None
+    temperature_c: Annotated[FiniteFloat,Field(gt=-273.15)] | None = None
+    pressure_atm: Annotated[FiniteFloat,Field(ge=0)] | None = None
+
+    @model_validator(mode='after')
+    def selected_material_contract(self):
+        from .material_index import CURVE_DEFAULTS
+        selectors={key for key in self.model_fields_set-{'kind','method'} if getattr(self,key) is not None}
+        effective=CURVE_DEFAULTS | {key:getattr(self,key) for key in CURVE_DEFAULTS if getattr(self,key) is not None}
+        if (selectors or self.method not in {'native','auto'}) and (self.catalog is None or self.glasses is None):
+            raise ValueError('显式色散选择须同时提供catalog和glasses。')
+        bounds=(effective['minimum_wavelength_um'],effective['maximum_wavelength_um'])
+        if bounds!=(0,0) and (0 in bounds or bounds[1]<=bounds[0]):
+            raise ValueError('波长上限必须大于下限。')
+        if self.glasses and len({x.casefold() for x in self.glasses})!=len(self.glasses):
+            raise ValueError('材料名称不能重复。')
+        if not effective['use_temperature_pressure'] and (effective['temperature_c']!=20 or effective['pressure_atm']!=1):
+            raise ValueError('自定义温压须启用use_temperature_pressure。')
+        return self
+
+
+class DispersionDiagram(MaterialCurve):
+    """Native default report or selected materials evaluated by formal ILDE.GetIndex."""
+    kind: Literal['dispersion_diagram']
+    method: Literal['auto','native','index'] = 'auto'
+    minimum_index: Annotated[FiniteFloat,Field(ge=0)] | None = None
+    maximum_index: Annotated[FiniteFloat,Field(ge=0)] | None = None
+
+    @model_validator(mode='after')
+    def index_display_range(self):
+        if self.minimum_index and self.maximum_index and self.minimum_index>=self.maximum_index:
+            raise ValueError('折射率显示范围须为递增上下限，或为0自动缩放。')
+        return self
+
+
+class DispersionVsWavelength(MaterialCurve):
+    """Native default report or explicit numerical dn/dlambda of formal native indices."""
+    kind: Literal['dispersion_vs_wavelength']
+    method: Literal['auto','native','finite_difference'] = 'auto'
+    minimum_dispersion: FiniteFloat | None = None
+    maximum_dispersion: FiniteFloat | None = None
+
+    @model_validator(mode='after')
+    def dispersion_display_range(self):
+        if self.minimum_dispersion and self.maximum_dispersion and self.minimum_dispersion>=self.maximum_dispersion:
+            raise ValueError('色散显示范围须为递增上下限，或为0自动缩放。')
+        return self
+
+class GlassMap(Request):
+    """Read the native glass catalog map for currently loaded catalogs."""
+    kind: Literal["glass_map"]
+
+class AthermalGlassMap(Request):
+    """Read the native chromatic and thermal glass-power map for current system wavelengths."""
+    kind: Literal["athermal_glass_map"]
+
 class NscSurfaceSag(Request):
     kind: Literal["nsc_surface_sag"]
     object_number: PositiveIndex
@@ -648,12 +730,32 @@ class SeidelCoefficients(Request):
     kind: Literal["seidel_coefficients"]
     wavelength: PositiveIndex = 1
 
+class YNIContributions(Request):
+    kind: Literal["yni_contributions"]
+    wavelength: PositiveIndex | None = None
+
+class SourceSpectrumViewer(Request):
+    kind: Literal["source_spectrum_viewer"]
+
+class DirectivityPlot(Request):
+    kind: Literal["directivity_plot"]
+
 class SeidelDiagram(Request):
     kind: Literal["seidel_diagram"]
+    method: Literal['auto','native','coefficients'] = 'auto'
+    wavelength: PositiveIndex = 1
+    first_surface: PositiveIndex = 1
+    last_surface: PositiveIndex | None = None
     ignore_chromatic: bool = False
     ignore_distortion: bool = False
     suppress_frame: bool = False
     plot_scale: Annotated[FiniteFloat,Field(ge=0)] = 0
+
+    @model_validator(mode='after')
+    def surface_range(self):
+        if self.last_surface is not None and self.last_surface<self.first_surface:
+            raise ValueError('结束面必须不早于起始面。')
+        return self
 
 class GridDistortion(Request):
     kind: Literal["grid_distortion"]
@@ -795,7 +897,7 @@ class ToleranceHistogram(Request):
             raise ValueError("直方图最大值必须大于最小值。")
         return self
 
-AnalysisRequest = Annotated[RayDatabaseViewer|ImaBimViewer|PowerFieldMap|PowerPupilMap|TestPlateList|BiocularFov|BiocularConvergence|YYbarDiagram|IncidentAngleVsImageHeight|SagTable|ParaxialGaussianBeam|SkewGaussianBeam|UniversalPlot2D|UniversalPlot1D|SystemDataReport|SystemCheck|FullFieldSpot|PupilAberration|FileComparator|PolarizationPupilMap|NscGeometricMtf|CriticalRayTrace|NscSingleRayTrace|PathAnalysis|InternalTransmission|CoatingAngle|CoatingWavelength|CoatingListing|FftLineEdge|GeometricLineEdge|ExtendedSourceEnergy|ImageSimulation|GeometricImage|GeometricBitmapImage|RmsField|RmsFieldMap|RmsFocus|RmsWavelength|ContrastLoss|ThroughFocusSpot|QuickYield|ToleranceYield|ToleranceHistogram|SingleRayTrace|CardinalPoints|SeidelCoefficients|SeidelDiagram|GridDistortion|GeometricFieldMtf|HuygensFieldMtf|MtfMap|GeometricMtfMap|RelativeIllumination|FieldMtf|FftSurfaceMtf|HuygensSurfaceMtf|ConfigurationMatrixSpot|Vignetting|Footprint|DiffEfficiency2D|DiffEfficiencyAngular|DiffEfficiencyChromatic|GrinProfile|NscSurfaceSag|MtfAnalysis|ThroughFocus|PsfAnalysis|EnergyAnalysis|WavefrontAnalysis|ZernikeAnalysis|ZernikeField|Interferogram|FanAnalysis|FieldAnalysis|ColorAnalysis|SurfaceAnalysis|SurfaceSlope|SurfaceSlopeCross|SurfacePhaseSlope|SurfacePhaseSlopeCross|Foucault|FullFieldAberration, Field(discriminator="kind")]
+AnalysisRequest = Annotated[ExtendedDiffractionImage|PartiallyCoherentImage|RayDatabaseViewer|ImaBimViewer|PowerFieldMap|PowerPupilMap|TestPlateList|BiocularFov|BiocularConvergence|YYbarDiagram|IncidentAngleVsImageHeight|SagTable|ParaxialGaussianBeam|SkewGaussianBeam|UniversalPlot2D|UniversalPlot1D|SystemDataReport|SystemCheck|PrescriptionDataReport|SurfaceDataReport|StarAlignCheck|StarSysViewer|Star2DDefPlot|StarPerfChange|StarIndexVsTemp|StarInspectFEA|FullFieldSpot|PupilAberration|FileComparator|PolarizationPupilMap|PhaseAberration|PolarizationRayTrace|PolarizationTransmission|FiberCouplingSettings|NscGeometricMtf|CriticalRayTrace|NscSingleRayTrace|PathAnalysis|InternalTransmission|CoatingAngle|CoatingWavelength|CoatingListing|FftLineEdge|GeometricLineEdge|ExtendedSourceEnergy|ImageSimulation|GeometricImage|GeometricBitmapImage|RmsField|RmsFieldMap|RmsFocus|RmsWavelength|ContrastLoss|ThroughFocusSpot|QuickYield|ToleranceYield|ToleranceHistogram|SingleRayTrace|CardinalPoints|SeidelCoefficients|YNIContributions|SourceSpectrumViewer|DirectivityPlot|PolarizationTransmissionFan|SeidelDiagram|GridDistortion|GeometricFieldMtf|HuygensFieldMtf|MtfMap|GeometricMtfMap|RelativeIllumination|FieldMtf|FftSurfaceMtf|HuygensSurfaceMtf|ConfigurationMatrixSpot|Vignetting|Footprint|DiffEfficiency2D|DiffEfficiencyAngular|DiffEfficiencyChromatic|GrinProfile|DispersionDiagram|DispersionVsWavelength|GlassMap|AthermalGlassMap|NscSurfaceSag|MtfAnalysis|ThroughFocus|PsfAnalysis|EnergyAnalysis|WavefrontAnalysis|ZernikeAnalysis|ZernikeField|Interferogram|FanAnalysis|FieldAnalysis|ColorAnalysis|SurfaceAnalysis|SurfaceSlope|SurfaceSlopeCross|SurfacePhaseSlope|SurfacePhaseSlopeCross|Foucault|FullFieldAberration, Field(discriminator="kind")]
 
 class RunAnalysis(Request):
     request: AnalysisRequest

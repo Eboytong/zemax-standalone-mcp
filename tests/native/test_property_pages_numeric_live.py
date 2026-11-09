@@ -40,12 +40,17 @@ def test_property_apertures_numeric():
                 assert row['error_code']==0,row
                 e.check('aperture '+patch['type'],int(row['vignette_code']==0),int(want),atol=0,rtol=0)
         await roundtrip(e,'aperture-reload','aperture')
-        await e.call('update_surfaces',{'changes':[{'surface':1,'aperture':{'type':'FloatingAperture'}}]})
-        result=await e.call('update_surfaces',{'changes':[{'surface':1,'aperture':{'type':'None'}}]},okay=False)
-        if 'error' in result:
-            assert result['error']['code']=='PARTIAL_UPDATE'
-            assert result['error']['details']['cause']['code']=='SETTING_REJECTED'
-        else:assert result['surfaces'][0]['properties']['aperture']['type']=='None'
+        for _ in range(3):
+            floating=await e.call('update_surfaces',{'changes':[{'surface':1,'aperture':{'type':'FloatingAperture'}}]})
+            before=floating['surfaces'][0]
+            cleared=await e.call('update_surfaces',{'changes':[{'surface':1,'aperture':{'type':'None'}}]},okay=False)
+            assert cleared['surfaces'][0]['properties']['aperture']['type']=='None',cleared
+            after=cleared['surfaces'][0]
+            assert before['surface_type']==after['surface_type']
+            assert before['cells']==after['cells']
+            before_properties={k:v for k,v in before['properties'].items()if k!='aperture'}
+            after_properties={k:v for k,v in after['properties'].items()if k!='aperture'}
+            assert before_properties==after_properties
     asyncio.run(execute('property_aperture_numeric',work))
 
 @pytest.mark.zemax

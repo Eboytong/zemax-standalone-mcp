@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "task": "D003/D004_SUPPORT_AUDIT",
+  "role": "support worker read-only audit (Agent 2 / zemax-p01-material-reports)",
+  "main_owner": "zemax-p01-material-model",
+  "coordinator_unifies_index": true,
+  "workspace": "C:\\Users\\tonge\\.codex\\worktrees\\zemax-p01-material-reports\\Zemax_MCP",
+  "main_repo_readonly": "C:\\Users\\tonge\\Desktop\\Zemax_MCP",
+  "opticstudio": "24.2.0 build 240529 PremiumEdition",
+  "source_baseline": "0.1.62",
+  "python": "3.14",
+  "executed_native_this_round": false,
+  "new_offline_audit_uses_historical_native": true,
+  "changes_product_code": false,
+  "changes_shared_ledgers_or_pass_state": false,
+  "category_vocabulary": {
+    "computation_pass": "原生计算完成且给出可对照的数值结果（仍需与门槛比对）",
+    "computation_completed_outlet_empty": "原生计算完成/结果对象有效，但正式出口为空或无文本/数值载荷（EXPORT_FAILED / RESULT_UNAVAILABLE）",
+    "native_start_failed": "原生任务未启动或执行失败（TASK_START_FAILED / TASK_FAILED），无可对照结果",
+    "settings_not_adopted": "请求设置未被原生采用（SOLVE_UPDATE_FAILED，实际 solve 与请求不符）",
+    "lifecycle_no_terminal": "任务无可靠终态或无法关闭（超时未终态 / Close 失败）"
+  },
+  "items": [
+    {
+      "canonical_item_id": "ED-02.SolveExtensions018",
+      "group": "D003",
+      "title": "扩展solve聚合范围",
+      "owner": "zemax-p01-material-model",
+      "support": "zemax-p01-material-reports",
+      "pass_state_in_plan": "pending_review",
+      "package_level": true,
+      "package_dependency": [
+        "ED-02.MaterialModel.Material",
+        "ED-02.SurfacePickup.ChipZone",
+        "ED-02.SurfacePickup.MechanicalSemiDiameter"
+      ],
+      "formal_interface": {
+        "typed_models": [
+          "models.py:289-296 MaterialModelSolve(index_nd, abbe_vd, dpgf, vary_index, vary_abbe, vary_dpgf)",
+          "models.py:305-307 MaterialSubstituteSolve(catalog)",
+          "models.py:299-303 MaterialOffsetSolve(nd_offset, vd_offset)",
+          "models.py:229-255 SolveSpec(mode=surface_pickup, source_surface, scale, offset, source_column)",
+          "models.py:321-323 SurfaceSolve union"
+        ],
+        "dispatch_native": "modeling.py:14,16-28 SOLVES + SOLVE_FIELDS (SurfacePickup, MaterialModel, MaterialSubstitute, MaterialOffset, PickupChiefRay)",
+        "reflection": "ED-02/progress598-formal-fit-audit.json: ISolveMaterialModel exposes Nd/Abbe/dPgF + variation flags, no coefficient methods; catalog coefficient methods target selected catalog materials, no temporary ModelGlass selector"
+      },
+      "actual_inputs": {
+        "material_model": "air-to-N-BK7 plane surface, direct rays at six wavelengths (incl. d/F/C lines); typed solve IndexNd=1.6, AbbeVd=60, dPgF=0.001 (index and dPgF varying)",
+        "chip_zone": "source surface ChipZone=0.5, target=0.2; request target pickup from source, scale=1, offset=0, replace_solves=true",
+        "mechanical_semi_diameter": "source=5.5, target=5.2; request target pickup from source, scale=1, offset=0, replace_solves=true"
+      },
+      "settings_adoption": {
+        "material_model": "final native solve read back and model round-trip completed",
+        "chip_zone": "SetSolveData returned Success but cell.Solve read back Automatic (requested SurfacePickup, actual Automatic) -> SOLVE_UPDATE_FAILED; batch PARTIAL_UPDATE failed_surface=2 completed_surfaces=[] revision=6",
+        "mechanical_semi_diameter": "actual solve read back Fixed (requested SurfacePickup, actual Fixed) -> SOLVE_UPDATE_FAILED; batch PARTIAL_UPDATE failed_surface=2 completed_surfaces=[] revision=6"
+      },
+      "result_counts": {
+        "material_model": "numeric result present: Snell-derived Nd met 1e-6 tolerance; derived Abbe 59.99988524798844 vs 60",
+        "pickups": "no linked-value result because solve was not adopted"
+      },
+      "raw_error": {
+        "chip_zone": "SOLVE_UPDATE_FAILED (requested=SurfacePickup, actual=Automatic, cell=chip_zone); PARTIAL_UPDATE failed_surface=2",
+        "mechanical_semi_diameter": "SOLVE_UPDATE_FAILED (requested=SurfacePickup, actual=Fixed, cell=mechanical_semi_diameter); PARTIAL_UPDATE failed_surface=2",
+        "material_model": "no native error; Abbe numerical gate failed (tolerance 1e-5 absolute + 1e-7 relative)"
+      },
+      "close_and_recovery": "checkpoint file exists; reopen restored source/target values and solve modes to pre-request snapshot; close receipt native.closed=true",
+      "category": ["settings_not_adopted", "computation_pass"],
+      "category_note": "MaterialModel did produce a numeric result but fails the retained Abbe gate (not a pass); both SurfacePickup cells were not adopted (settings_not_adopted), so the item is not closeable",
+      "equivalent_trace": null,
+      "blocker": "Native does not adopt ChipZone/MechanicalSemiDiameter SurfacePickup on this build; and no official temporary-material dispersion/coefficient contract exists to meet the Abbe gate",
+      "release_condition": "Native readback of actual=SurfacePickup for both cells with linked values, save/reload; plus an official temporary-material dispersion definition or supported coefficient read/write, then predict and accept under the unchanged numerical gate",
+      "completion_count": 0,
+      "evidence_dated": [
+        "development/evidence/ED-02/material-model-repeat20261108.md (2026-11-08)",
+        "development/evidence/ED-02/chip-zone-surface-pickup-repeat20261108.md (2026-11-08)",
+        "development/evidence/ED-02/mechanical-semi-diameter-pickup-repeat20261108.md (2026-11-08)",
+        "development/evidence/ED-02/progress598-formal-fit-audit.json"
+      ]
+    },
+    {
+      "canonical_item_id": "NS-01.Conversion",
+      "group": "D003",
+      "title": "顺序转NSC混合组",
+      "owner": "zemax-p01-material-model",
+      "support": "zemax-p01-material-reports",
+      "pass_state_in_plan": "pending_review",
+      "formal_interface": {
+        "typed_model": "conversion_models.py:6-22 NscConversion(first_surface=1, last_surface=None, mode=group|pure, ignore_errors=False, create_sources_and_detectors=False, convert_to_global_coordinates=False, convert_stop_to_nsc_aperture=True, stop_mechanical_half_width=None, overfill_factor=None)",
+        "dispatch_native": "conversion.py:34-71 run_nsc_conversion via system.Tools.OpenConvertToNSCGroup(); configure() readback-checked (conversion.py:22-30); collect() raises TASK_FAILED when not tool.Succeeded (conversion.py:56)"
+      },
+      "actual_inputs": "controlled air 2 mm / N-BK7 plane plate 2 mm / air 2 mm model; group mode, surfaces 1-4, ConvertStopToNSCAperture=false, ConvertToGlobalCoordinates=true, CreateSourcesAndDetectors=false, IgnoreErrors=false",
+      "settings_adoption": "native task readback IsValid=true, Succeeded=false, CanCancel=false",
+      "result_counts": "no usable conversion result in group mode",
+      "raw_error": "TASK_START_FAILED, message 'An unknown error occurred', partial_changes_possible=true; task state failed",
+      "close_and_recovery": "close_attempted=true, requires_reconnect=false; emitted checkpoint opened and restored surfaces + direct sequential rays vs baseline; 187 post-failure checks passed with 0 failed comparisons; checkpoint re-trace task succeeded; stdio disconnect ok; native close receipt attempted=true closed=true error=null; no orphan OpticStudio/Python process",
+      "category": ["native_start_failed"],
+      "category_note": "mixed-group conversion produced no result; this is a native start failure, not a numerical mismatch",
+      "equivalent_trace": null,
+      "separate_reference": "pure-conversion reference remains the prior controlled 379-check pass, max ray error 2.815423927327032e-08, from development/evidence/NS-01/progress282.json (dated earlier; pure path only, not the mixed group path)",
+      "blocker": "No reliable native group conversion path on this build (TASK_START_FAILED, unknown error)",
+      "release_condition": "Reliable native group conversion path or corrected OpticStudio build; then rerun the controlled optical equivalence, settings/persistence and cleanup checks",
+      "completion_count": 0,
+      "evidence_dated": [
+        "development/evidence/NS-01/conversion-group-repeat20261108.md (2026-11-08)",
+        "development/evidence/NS-01/progress282.json (pure-conversion reference, earlier controlled pass)"
+      ]
+    },
+    {
+      "canonical_item_id": "ED-04.RayAimingWizard",
+      "group": "D003",
+      "title": "Ray Aiming完整生命周期",
+      "owner": "zemax-p01-material-model",
+      "support": "zemax-p01-material-reports",
+      "pass_state_in_plan": "pending_review",
+      "formal_interface": {
+        "typed_model": "design_models.py:51-53 RayAimingWizard(apply: bool=False)",
+        "options_route": "design_tools.py:47-60 get_design_tool_options -> Tools.OpenRayAimingWizard(); read_settings + enums; closes tool",
+        "execution_route": "design_tools.py:90-164 run_design_tool: native.GetRecommendedSettings(); on apply native.ApplyRecommendedSettings(); readback of SystemData.RayAiming; close via _close_task_native",
+        "reflection": "FIELDS['ray_aiming_wizard']=() (design_tools.py:13): installed wizard exposes no readable option fields, options settings={} "
+      },
+      "actual_inputs": "Cooke model; options query kind=ray_aiming_wizard; historical controlled execution baseline in ED-04/ray-aiming276/probe.json",
+      "settings_adoption": "options route returns settings={}; SystemData.RayAiming before/after equal (no mutation on read-only query)",
+      "result_counts": "no computation output (options/execution lifecycle only)",
+      "raw_error": "historical execution: RunAndWaitWithTimeout(10)=TimedOut after 15.061 s; IsRunning=true; Cancel()=true; WaitWithTimeout(10)=TimedOut; IsRunning still true; Close()=false; session required reconnect because tool handle remained unclosed",
+      "close_and_recovery": "read-only options route: close attempted=true closed=true error=null, stdio disconnected normally; execution path: wizard handle unclosed -> reconnect required",
+      "category": ["lifecycle_no_terminal"],
+      "category_note": "read-only factory/query/close is available and non-mutating; recommendation execution, cancel and Apply have no reliable completed/terminal run",
+      "equivalent_trace": null,
+      "blocker": "Native build/API path where the Ray Aiming task reaches a terminal state and Close() succeeds",
+      "release_condition": "Then compare preview and Apply values, save/reload all Ray Aiming fields, and confirm full model state",
+      "completion_count": 0,
+      "evidence_dated": [
+        "development/evidence/ED-04/ray-aiming-lifecycle-repeat20261108.md (2026-11-08)",
+        "development/evidence/ED-04/ray-aiming276/probe.json (historical execution, OpticStudio 24.2.0)"
+      ]
+    },
+    {
+      "canonical_item_id": "CV-01.SeidelDiagram",
+      "group": "D004",
+      "title": "Seidel图",
+      "owner": "zemax-p01-material-model",
+      "support": "zemax-p01-material-reports",
+      "pass_state_in_plan": "pending_review",
+      "formal_interface": {
+        "typed_model": "analysis_models.py:680-685 SeidelDiagram(ignore_chromatic=False, ignore_distortion=False, suppress_frame=False, plot_scale=0)",
+        "dispatch": "general analysis path; analyses.py:457-460 configure_seidel_diagram; analyse.py:806 dispatch; :1009-1011 result_definition='native Seidel diagram; native labels, scales and text retained'",
+        "outlet": "native text via GetTextFile; _collect_general_analysis raises EXPORT_FAILED when GetTextFile false (analyses.py:840-844)"
+      },
+      "actual_inputs": "Cooke 40 degree field sample; requested defaults",
+      "settings_adoption": "readback IgnoreChromatic=false, IgnoreDistortion=false, SuppressFrame=false, PlotScale=0, valid active settings",
+      "result_counts": "native text export failed; no artifacts returned",
+      "raw_error": "EXPORT_FAILED",
+      "close_and_recovery": "close_attempted=true",
+      "category": ["computation_completed_outlet_empty"],
+      "category_note": "EXPORT_FAILED implies the native result object was valid but the text/diagram outlet returned no payload; this is an outlet limitation, not a values comparison. The separate SeidelCoefficients analysis returns numerical rows and passes its independent spherical S1 reference at absolute tolerance 1e-6, but that is a different analysis and does not provide the diagram plot",
+      "equivalent_trace": {
+        "would_need": "per-surface Seidel coefficients plus native plotting scale/frame and facet/label definitions",
+        "verifiable_definition": false,
+        "blocker": "No documented SeidelDiagram graphical/numerical outlet or diagram facet/scale contract; SeidelCoefficients does not define the diagram layout"
+      },
+      "blocker": "Native API provides no usable graphical/numerical SeidelDiagram result outlet",
+      "release_condition": "A native SeidelDiagram graphical/numerical outlet (or a documented facet/scale contract) then compare values",
+      "completion_count": 0,
+      "evidence_dated": [
+        "development/evidence/CV-01/seidel-diagram-repeat20261108.md (2026-11-08)"
+      ]
+    },
+    {
+      "canonical_item_id": "CV-01.FullFieldSpot",
+      "group": "D004",
+      "title": "全视场光斑",
+      "owner": "zemax-p01-material-model",
+      "support": "zemax-p01-material-reports",
+      "pass_state_in_plan": "pending_review",
+      "formal_interface": {
+        "typed_model": "analysis_models.py:598-605 FullFieldSpot(kind=full_field_spot, field=0, wavelength=0, surface=None, color_rays_by=Fields, plot_scale=0, exaggerate=1; inherits ConfigurationMatrixSpot pose fields)",
+        "dispatch": "analyses.py:536-538 -> spot_topics.run_full_field; collector spot_topics.py:43-77 reads native SpotData; raises RESULT_UNAVAILABLE when no rows and empty SpotData (spot_topics.py:65-68)"
+      },
+      "actual_inputs": "Cooke 40 degree field sample; variants (field=1,wavelength=1,Centroid,exaggerate=1), (field=0,wavelength=0,Centroid,exaggerate=1), (field=1,wavelength=1,ChiefRay,exaggerate=3); availability probe also 3 requests (progress591)",
+      "settings_adoption": "native settings IsValid=true, IsActiveWindow=true; Field/Wavelength/Surface select and PlotScale/Exaggerate/DeltaFocus read back as requested",
+      "result_counts": "all formal counts zero (NumberOfDataGrids/DataSeries/DataScatterPoints(+Rgb)/RayData/Messages=0); SpotData null; native_text_exported=false",
+      "raw_error": "RESULT_UNAVAILABLE with native_result_counts",
+      "close_and_recovery": "all three closed; surfaces/settings/merit preserved; disconnect ok",
+      "category": ["computation_completed_outlet_empty"],
+      "category_note": "Direct native analyses completed but every formal outlet was empty; the product correctly returns RESULT_UNAVAILABLE. Not a numerical comparison (numerical_acceptance=false)",
+      "equivalent_trace": {
+        "would_need": "populated formal graphic/dedicated result outlet, OR a full shared-reference/exaggeration contract; reference point (Centroid/ChiefRay), surface-local intercept coordinates, per-field facet layout, and exaggeration must all be declared",
+        "verifiable_definition": false,
+        "blocker": "progress591 next_action records: need a populated formal graphic/dedicated outlet or a full shared-reference/exaggeration contract; absent that, no verifiable equivalent trace",
+        "source": "development/evidence/CV-01/progress591-formal-outlets.json (2026-11-07)"
+      },
+      "blocker": "No usable native full-field spot outlet and no shared-reference/exaggeration contract for an equivalent trace",
+      "release_condition": "Valid native outlet or validated equivalent reference/scale/layout mapping",
+      "completion_count": 0,
+      "evidence_dated": [
+        "development/evidence/CV-01/full-field-spot-repeat20261108.md (2026-11-08)",
+        "development/evidence/CV-01/progress591-formal-outlets.json (2026-11-07)"
+      ]
+    },
+    {
+      "canonical_item_id": "CV-01.MatrixSpot",
+      "group": "D004",
+      "title": "矩阵光斑",
+      "owner": "zemax-p01-material-model",
+      "support": "zemax-p01-material-reports",
+      "pass_state_in_plan": "pending_review",
+      "formal_interface": {
+        "typed_model": "analysis_models.py:584-596 ConfigurationMatrixSpot(kind='matrix_spot', pattern=Hexapolar, reference=Centroid, show_scale=ScaleBar, color_rays_by=Config, ray_density=6, direction_cosines=False, use_symbols=False, use_polarization=False, scatter_rays=False, show_airy_disk=False, ignore_lateral_color=False)",
+        "dispatch": "general analysis; analyses.py:633-639 setv loop with native readback; outlet via _collect_general_analysis GetTextFile (EXPORT_FAILED if false)"
+      },
+      "actual_inputs": "Cooke 40 degree field sample with duplicated configuration; request kind=matrix_spot, color_rays_by=Waves; DeltaFocus=0 adopted",
+      "settings_adoption": "typed request accepted; DeltaFocus=0 adopted; settings read back",
+      "result_counts": "native calculation valid; SpotData null; all inspected series/grid/scatter counts 0; text export false",
+      "raw_error": "EXPORT_FAILED (explicit result limitation)",
+      "close_and_recovery": "task closed/disconnected; system settings and surface state unchanged",
+      "category": ["computation_completed_outlet_empty"],
+      "category_note": "Native calculation completed but the outlet (text/SpotData) is empty; the product reports the explicit EXPORT_FAILED limitation. counts_as_completed=false (probe088)",
+      "equivalent_trace": {
+        "would_need": "documented native matrix spot result/graphic export outlet, OR an equivalent calculation declaring pattern, ray density, reference (Centroid/ChiefRay), color_rays_by and per-field/per-configuration facet map with reference coordinates",
+        "verifiable_definition": false,
+        "blocker": "No documented matrix spot result/graphic outlet or per-field/configuration facet/reference contract",
+        "source": "development/evidence/CV-01/probe088.json (2026-11-06)"
+      },
+      "blocker": "No usable native matrix spot result/graphic outlet",
+      "release_condition": "A documented native matrix spot result/graphic export outlet (or corrected API version), then settings and per-field/configuration numerical reference",
+      "completion_count": 0,
+      "evidence_dated": [
+        "development/evidence/CV-01/matrix-spot-repeat20261108.md (2026-11-08)",
+        "development/evidence/CV-01/probe088.json (2026-11-06)"
+      ]
+    },
+    {
+      "canonical_item_id": "CV-01.ConfigurationMatrixSpot",
+      "group": "D004",
+      "title": "配置矩阵光斑",
+      "owner": "zemax-p01-material-model",
+      "support": "zemax-p01-material-reports",
+      "pass_state_in_plan": "pending_review",
+      "formal_interface": {
+        "typed_model": "analysis_models.py:584-596 ConfigurationMatrixSpot(kind='configuration_matrix_spot', same fields; color_rays_by=Config default)",
+        "dispatch": "same general analysis path as MatrixSpot (analyses.py:633-639); outlet via GetTextFile"
+      },
+      "actual_inputs": "Cooke 40 degree field sample with two configurations; request kind=configuration_matrix_spot, color_rays_by=Config (and matrix_spot color_rays_by=Waves as control)",
+      "settings_adoption": "typed request accepted; settings read back",
+      "result_counts": "both native calculations completed with expected output limitation; text false, SpotData null, all inspected counts 0",
+      "raw_error": "EXPORT_FAILED (explicit output limitation)",
+      "close_and_recovery": "task close confirmed after each; two-configuration model retained system settings and surface state; session disconnected normally",
+      "category": ["computation_completed_outlet_empty"],
+      "category_note": "Native calculations completed but the outlet returns no usable SpotData/text; matches probe088 observation. Not a values comparison",
+      "equivalent_trace": {
+        "would_need": "documented native configuration-matrix result/graphic outlet, OR an equivalent calculation declaring the configuration->facet map, reference coordinates, ray pattern and per-configuration layout",
+        "verifiable_definition": false,
+        "blocker": "No documented configuration-matrix spot outlet or configuration-facet/reference contract",
+        "source": "development/evidence/CV-01/probe088.json (2026-11-06)"
+      },
+      "blocker": "No usable native configuration-matrix spot result/graphic outlet; no equivalent complete matrix calculation established",
+      "release_condition": "A documented native matrix spot result/graphic export outlet for multiple configurations, then per-configuration numerical reference",
+      "completion_count": 0,
+      "evidence_dated": [
+        "development/evidence/CV-01/configuration-matrix-spot-repeat20261108.md (2026-11-08)",
+        "development/evidence/CV-01/matrix-spot-repeat20261108.md (2026-11-08)",
+        "development/evidence/CV-01/probe088.json (2026-11-06)"
+      ]
+    }
+  ],
+  "summary": {
+    "items_total": 7,
+    "d003": 3,
+    "d004": 4,
+    "computation_pass_with_accepted_result": 0,
+    "computation_pass_but_gate_failed": 1,
+    "computation_completed_outlet_empty": 4,
+    "native_start_failed": 1,
+    "settings_not_adopted": 1,
+    "lifecycle_no_terminal": 1,
+    "new_completion_this_round": 0,
+    "pass_state_unchanged": true,
+    "note": "categories are not mutually exclusive per item; SolveExtensions018 spans settings_not_adopted + computation_pass-with-gate-failure"
+  }
+}
