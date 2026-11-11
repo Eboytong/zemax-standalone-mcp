@@ -26,4 +26,10 @@
 
 版本、逐面损耗和状态工具定向普通28通过，见release130-version.xml。使用指南本地链接与三个新增请求模板检查通过；原始输出路径均位于.local/runs/runs/。本轮原生会话已正常断开。
 
-GitHub发布下一步执行：提交main、创建v1.3.0并上传上述wheel。
+## GitHub发布
+
+正式Release：[v1.3.0](https://github.com/Eboytong/zemax-standalone-mcp/releases/tag/v1.3.0)。publishedAt=2026-11-11T10:26:48Z（北京时间18:26:48），draft=false、prerelease=false，设为Latest，沿用仓库当前公开可见性。
+
+源码及tag提交：3cb8ae6d50568aec762fa4c0f6cefb45ee308878。附件zemax_standalone_mcp-1.3.0-py3-none-any.whl，600229字节，GitHub状态uploaded。源码main及v1.3.0均已推送。发布后的证据与交接更新另作维护提交，Python代码和wheel沿用此tag。
+
+D017—D022全部完成，6/6，集中尾检及安装包验收完成。本计划状态为完成；后续维护按具体问题执行定向检查。

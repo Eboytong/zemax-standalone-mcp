@@ -2,11 +2,11 @@
   "schema_version": 1,
   "plan_id": "engineering-search-20261111",
   "effective_date": "2026-11-11",
-  "state": "verified",
+  "state": "completed",
   "baseline_release": "1.1.0",
-  "current_release": "1.1.0",
+  "current_release": "1.3.0",
   "target_release": "1.3.0",
-  "next_milestone_release": "1.3.0",
+  "next_milestone_release": null,
   "ledger": "development/ledgers/roadmap.csv",
   "item_count": 6,
   "main_queue_count": 6,
@@ -58,5 +58,7 @@
     "optical_solver": "Installed OpticStudio ZOS-API",
     "main": "Capability discovery, candidate management, joint glass trials, native merit objectives, native desensitization and sequential loss aggregation.",
     "dependencies": "Runtime license, TOLR settings identity and resources are checked in the related item."
-  }
+  },
+  "release_evidence": "development/evidence/release130.md",
+  "source_commit": "3cb8ae6d50568aec762fa4c0f6cefb45ee308878"
 }
