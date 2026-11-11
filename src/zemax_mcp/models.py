@@ -12,7 +12,8 @@ class Empty(Request):
 
 
 class Capabilities(Request):
-    topic: Literal["all", "settings", "tool", "merit_cells", "optimization_diagnostics"] = "all"
+    topic: Literal["all", "settings", "tool", "merit_cells", "optimization_diagnostics", "index", "detail", "dependencies"] = "all"
+    capability_id: str | None = None
     tool_name: str | None = None
     start: PositiveIndex = 1
     count: Annotated[int, Field(strict=True, ge=1, le=100)] = 20
@@ -918,3 +919,76 @@ COMMAND_MODELS['run_speos_export'] = RunSpeosExport
 
 from .point_cloud import PointCloudExport
 COMMAND_MODELS['export_point_cloud'] = PointCloudExport
+
+from .capability_index import CapabilitySearch
+COMMAND_MODELS['search_capabilities'] = CapabilitySearch
+
+CandidateId = Annotated[str, Field(pattern=r'^[A-Za-z0-9_-]{1,80}$')]
+Label = Annotated[str, Field(min_length=1, max_length=200)]
+
+
+class CandidateExternalMetric(Request):
+    key: Annotated[str, Field(min_length=1, max_length=100)]
+    value: FiniteFloat
+    unit: Annotated[str, Field(min_length=1, max_length=100)]
+    source: Annotated[str, Field(min_length=1, max_length=500)]
+
+
+class CandidateCreate(Request):
+    action: Literal['create']
+    label: Label
+    evaluation: Evaluation
+    external_metrics: list[CandidateExternalMetric] = Field(default_factory=list, max_length=100)
+
+
+class CandidateList(Request):
+    action: Literal['list']
+    design_id: CandidateId | None = None
+
+
+class CandidateBranch(Request):
+    action: Literal['branch']
+    design_id: CandidateId
+    parent_candidate_id: CandidateId
+    label: Label
+
+
+class CandidateSelect(Request):
+    action: Literal['select', 'restore']
+    design_id: CandidateId
+    candidate_id: CandidateId
+
+
+class CandidateCheckpoint(Request):
+    action: Literal['checkpoint']
+    design_id: CandidateId
+    candidate_id: CandidateId
+    label: Label
+    modification_summary: Annotated[str, Field(min_length=1, max_length=4000)]
+    external_metrics: list[CandidateExternalMetric] = Field(default_factory=list, max_length=100)
+
+
+class CandidateCompare(Request):
+    action: Literal['compare']
+    design_id: CandidateId
+    left_candidate_id: CandidateId
+    right_candidate_id: CandidateId
+
+
+CandidateAction = Annotated[CandidateCreate | CandidateList | CandidateBranch | CandidateSelect |
+                            CandidateCheckpoint | CandidateCompare, Field(discriminator='action')]
+
+
+class ManageCandidates(Request):
+    request: CandidateAction
+
+
+class CandidateEvaluation(Request):
+    design_id: CandidateId
+    candidate_ids: Annotated[list[CandidateId], Field(min_length=1, max_length=100)]
+
+COMMAND_MODELS.update(manage_candidates=ManageCandidates, run_candidate_evaluation=CandidateEvaluation)
+COMMAND_MODELS['get_glass_slots'] = Empty
+
+from .merit_program import MeritProgram
+COMMAND_MODELS['run_merit_program'] = MeritProgram

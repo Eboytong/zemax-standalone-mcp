@@ -57,9 +57,10 @@ from .pupil import PupilMappingMixin
 from .geometry_backend import GeometryMixin
 from .star import StarMixin
 from .hpc import HpcMixin
+from .candidates import CandidatesMixin
 
 
-class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixin, HistoryMixin, CatalogsMixin, WizardsMixin, DesignToolsMixin, EditorsMixin, GeometryMixin, ModelingMixin, EvaluationMixin, FilesMixin, AnalysesMixin, ConfigurationsMixin, TolerancingMixin, NonSequentialMixin, PhysicalOpticsMixin, ExportsMixin, RaysMixin, PupilMappingMixin):
+class Backend(CandidatesMixin, HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixin, HistoryMixin, CatalogsMixin, WizardsMixin, DesignToolsMixin, EditorsMixin, GeometryMixin, ModelingMixin, EvaluationMixin, FilesMixin, AnalysesMixin, ConfigurationsMixin, TolerancingMixin, NonSequentialMixin, PhysicalOpticsMixin, ExportsMixin, RaysMixin, PupilMappingMixin):
     """All methods, including task polling and cancellation, run on one worker thread."""
 
     def __init__(self, config: Config, native=None):
@@ -94,7 +95,7 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
                 "source_file": self.source_path, "working_file": str(self.work_path) if self.work_path else None,
                 "opticstudio_version": self.version, "opticstudio_build": self.build_id, "license": self.license,
                 "checkpoint": self.last_checkpoint, "requires_reconnect": self.requires_reconnect, **self.system_context,
-                "geometry": self.geometry_summary()}
+                "geometry": self.geometry_summary(), **self._candidate_context()}
 
     def dispatch(self, command, arguments, request_id=None):
         self.request_id = request_id
@@ -103,13 +104,14 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
             if command not in COMMAND_MODELS:
                 raise ZemaxError("UNKNOWN_COMMAND", f"未知命令：{command}")
             request = COMMAND_MODELS[command].model_validate(arguments)
-            self.tick()
+            if command != 'cancel_task':
+                self.tick()
             if self.requires_reconnect and command not in {
-                "get_status", "get_capabilities", "get_task_status", "get_task_result", "disconnect", "list_task_history", "get_historical_result", "get_request_status"
+                "get_status", "get_capabilities", "search_capabilities", "get_task_status", "get_task_result", "disconnect", "list_task_history", "get_historical_result", "get_request_status"
             }:
                 raise ZemaxError("RECONNECT_REQUIRED", "原生工具资源释放未确认，请断开后重新连接。")
             if self.active and command not in {
-                "get_status", "get_capabilities", "get_task_status", "get_task_result", "cancel_task", "list_task_history", "get_historical_result", "get_request_status"
+                "get_status", "get_capabilities", "search_capabilities", "get_task_status", "get_task_result", "cancel_task", "list_task_history", "get_historical_result", "get_request_status"
             }:
                 raise ZemaxError("SYSTEM_BUSY", "当前系统正在计算，请等待完成或请求取消。", task_id=self.active["task_id"])
             data = getattr(self, command)(request)
@@ -359,8 +361,20 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
                 "recent_tasks": [self._task_view(t) for t in views[-10:][::-1]],
                 **self.context()}
 
+    def search_capabilities(self, req):
+        from .capability_index import search
+        return {**search(req.query, req.limit, req.category),
+                "runtime": {"connected": getattr(self.native, "application", None) is not None,
+                            "license": self.license, "requires_reconnect": self.requires_reconnect}}
+
     def get_capabilities(self, req):
         topic = getattr(req, "topic", "all")
+        if topic in {"index", "detail", "dependencies"}:
+            from .capability_index import describe
+            return {**describe(req), "runtime": {
+                "connected": getattr(self.native, "application", None) is not None,
+                "license": self.license, "opticstudio_version": self.version,
+                "model": dict(self.system_context), "requires_reconnect": self.requires_reconnect}}
         if topic == "tool":
             tool = getattr(req,"tool_name",None)
             if tool not in COMMAND_MODELS:

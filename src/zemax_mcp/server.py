@@ -33,6 +33,8 @@ from .export_models import CadExport,LayoutExport
 from .nsc_models import DetectorSave,DetectorLoad
 from .export_models import AnalysisImage
 from .macro_models import StandaloneMacro
+from .candidate_models import CandidateAction, CandidateEvaluation
+from .merit_program import MeritProgram
 
 
 def create_server():
@@ -51,7 +53,7 @@ def create_server():
     )
 
     def tool(fn):
-        read_only = fn.__name__.startswith(("get_", "list_")) or fn.__name__ == "compare_results"
+        read_only = fn.__name__.startswith(("get_", "list_", "search_")) or fn.__name__ == "compare_results"
         return server.tool(
             structured_output=True,
             annotations=ToolAnnotations(readOnlyHint=read_only, destructiveHint=not read_only,
@@ -72,15 +74,37 @@ def create_server():
         return await call("get_status")
 
     @tool
-    async def get_capabilities(topic: Literal["all", "settings", "tool", "merit_cells", "optimization_diagnostics"] = "all",
-                               tool_name: str | None = None, start: int = 1, count: int = 20) -> ToolResponse:
+    async def get_capabilities(topic: Literal["all", "settings", "tool", "merit_cells", "optimization_diagnostics", "index", "detail", "dependencies"] = "all",
+                               tool_name: str | None = None, start: int = 1, count: int = 20,
+                               capability_id: str | None = None) -> ToolResponse:
         """列出已实现工具、模式、面型及当前版本可用的设置枚举。"""
-        return await call("get_capabilities", dict(topic=topic,tool_name=tool_name,start=start,count=count))
+        return await call("get_capabilities", dict(topic=topic,tool_name=tool_name,start=start,count=count,capability_id=capability_id))
+
+    @tool
+    async def search_capabilities(query: str, limit: int = 5,
+                                  category: Literal["all", "tool", "analysis"] = "all") -> ToolResponse:
+        """离线检索中文工程需求，返回工具/分析kind、匹配词及详情入口；无需连接OpticStudio。"""
+        return await call("search_capabilities", dict(query=query, limit=limit, category=category))
 
     @tool
     async def new_system(mode: Literal["Sequential","NonSequential"] = "Sequential") -> ToolResponse:
         """保存当前检查点并新建顺序系统，建立项目输出目录中的工作副本。"""
         return await call("new_system",dict(mode=mode))
+
+    @tool
+    async def manage_candidates(request: CandidateAction) -> ToolResponse:
+        """创建设计基线、分支、具名检查点、选择/恢复及比较；list可在重启后读取持久索引。"""
+        return await call("manage_candidates", {"request": request.model_dump()})
+
+    @tool
+    async def run_candidate_evaluation(request: CandidateEvaluation) -> ToolResponse:
+        """独立重载候选，按冻结评价合同串行求值并恢复原模型；返回任务编号。"""
+        return await call("run_candidate_evaluation", request.model_dump())
+
+    @tool
+    async def get_glass_slots() -> ToolResponse:
+        """从当前顺序模型读取可替换材料段、目录身份及受solve/面型限制的跳过原因。"""
+        return await call("get_glass_slots")
 
     @tool
     async def open_lens(path: str) -> ToolResponse:
@@ -316,7 +340,7 @@ def create_server():
     @tool
     async def run_analysis(request: AnalysisRequest) -> ToolResponse:
         """执行本机适配的顺序成像/像差/曲面分析，返回任务；实际设置和曲线、网格或原生文本随结果保存。"""
-        return await call("run_analysis", {"request":request.model_dump(exclude_unset=request.kind in {'coating_optimization','polarization_transmission_fan','polarization_transmission','fiber_coupling_settings','polarization_ray_trace','dispersion_diagram','dispersion_vs_wavelength','seidel_diagram'})})
+        return await call("run_analysis", {"request":request.model_dump(exclude_unset=request.kind in {'design_desensitize','coating_optimization','polarization_transmission_fan','polarization_transmission','fiber_coupling_settings','polarization_ray_trace','dispersion_diagram','dispersion_vs_wavelength','seidel_diagram'})})
 
     @tool
     async def get_configurations(request: ConfigurationRange) -> ToolResponse:
@@ -592,6 +616,11 @@ def create_server():
     async def export_point_cloud(request: PointCloudExport) -> ToolResponse:
         """在自有系统副本上导出曲面PCD，保留原生消息、文件头及关闭记录。"""
         return await call('export_point_cloud',request.model_dump())
+
+    @tool
+    async def run_merit_program(request: MeritProgram) -> ToolResponse:
+        """在独立副本预览、求值或应用原生向导、完整瞳OPD目标与几何约束。"""
+        return await call('run_merit_program',request.model_dump(exclude_unset=True))
 
     return server
 

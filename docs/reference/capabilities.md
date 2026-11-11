@@ -1,6 +1,6 @@
 # 能力索引
 
-Zemax Standalone MCP 1.1.0 提供 102 个工具和 144 种 `run_analysis` 请求类型。
+Zemax Standalone MCP 1.3.0 提供 107 个工具和 146 种 `run_analysis` 请求类型。
 
 | 领域 | 主要能力 | 文档 |
 | --- | --- | --- |
@@ -18,6 +18,12 @@ Zemax Standalone MCP 1.1.0 提供 102 个工具和 144 种 `run_analysis` 请求
 
 | 入口 | 结果 |
 | --- | --- |
+| `search_capabilities` | 中文需求检索、静态条件及schema详情 |
+| `manage_candidates` / `run_candidate_evaluation` | 候选分支、恢复和冻结评价比较 |
+| `get_glass_slots` / `run_analysis: glass_trials` | 目录身份、多个材料槽位联合搜索及同预算比较 |
+| `run_merit_program` | 原生向导、完整瞳OPD目标、尺度与几何约束 |
+| `run_analysis: design_desensitize` | 固定公差、原生制造良率优化和独立Monte Carlo |
+| `run_analysis: sequential_energy_budget` | 逐面偏振损耗、截断定位和带权W换算 |
 | `get_coating_rta` | 指定曲面的双向S/P镀膜反射、透射与吸收 |
 | `run_analysis: manufacturing_geometry` | sag、坡度、曲率和制造阈值 |
 | `run_analysis: fiber_alignment` | 原生POP耦合、位姿扫描、对准与损耗宽度 |

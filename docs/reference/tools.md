@@ -1,9 +1,14 @@
 # MCP 工具清单
 
-1.1.0 提供102个工具、144种分析请求。支持Detector Viewer、制造几何评价、光纤对准、固定膜系优化、NSC效率/均匀性、玻璃贡献/替换、扫描瞳共轭、鬼像路径、共焦响应、热补偿、公差成本预算及双FSM离线控制。完整参数见[请求模型](tool-schemas.json)，调用约定见[使用指南](../guides/usage.md)，设置与数值条件见[原生分析矩阵](native-analysis-matrix.csv)及对应专题。
+1.3.0 提供107个工具、146种分析请求。支持Detector Viewer、制造几何评价、光纤对准、固定膜系优化、NSC效率/均匀性、玻璃贡献/替换、扫描瞳共轭、鬼像路径、共焦响应、热补偿、公差成本预算及双FSM离线控制。完整参数见[请求模型](tool-schemas.json)，调用约定见[使用指南](../guides/usage.md)，设置与数值条件见[原生分析矩阵](native-analysis-matrix.csv)及对应专题。
 
 | 工具 | 用途 |
 | --- | --- |
+| `search_capabilities` | 按中文工程需求搜索工具与分析，离线读取条件、单位和schema入口。 |
+| `manage_candidates` | 保存受保护基线、分支、检查点、选择、恢复和冻结条件比较。 |
+| `run_candidate_evaluation` | 按同一评价合同串行重载候选，返回指标并恢复活动模型。 |
+| `get_glass_slots` | 读取顺序系统可替换材料段、目录身份及跳过原因。 |
+| `run_merit_program` | 预览或应用原生向导、OPD目标及几何约束，回读逐项贡献。 |
 | `cancel_task` | 请求原生工具取消，继续查询状态确认；已完成任务保持其完成状态。 |
 | `clear_detectors` | 清空指定探测器，detector=0 清空全部。 |
 | `compare_results` | 比较成功的评估结果；分析条件不一致时返回差异，不计算改善结论。 |

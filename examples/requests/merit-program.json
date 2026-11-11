@@ -1,0 +1,20 @@
+{
+  "tool": "run_merit_program",
+  "arguments": {
+    "request": {
+      "apply": false,
+      "targets": [
+        {
+          "kind": "opd",
+          "configuration": 1,
+          "wavelength": 1,
+          "hx": 0,
+          "hy": 0.5,
+          "rings": 4,
+          "arms": 16,
+          "scale_waves": 0.1
+        }
+      ]
+    }
+  }
+}

@@ -38,3 +38,5 @@ IMA/BIM 查看示例：[`ima-bim-viewer.json`](requests/ima-bim-viewer.json)。
 NSC光源模式请求见[nsc-source-spectra.json](requests/nsc-source-spectra.json)：十种原生模式使用专属参数；NCE源设置与独立光谱查看器的输入分别记录。
 
 工程计算请求：[均温补偿](requests/thermal-compensation.json)、[多目标候选](requests/pareto-search.json)、[公差成本预算](requests/tolerance-budget.json)、[双FSM控制](requests/fsm-control.json)。输入须对应当前模型和专题说明中的坐标、单位及原生资源。
+
+工程搜索及损耗请求：[能力搜索](requests/capability-search.json)、[评价函数](requests/merit-program.json)、[逐面能量](requests/sequential-energy-budget.json)。候选、联合玻璃和去敏感化的完整调用见[使用指南](../docs/README.md)。

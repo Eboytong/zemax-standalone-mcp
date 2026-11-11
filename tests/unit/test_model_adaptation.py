@@ -88,7 +88,8 @@ def test_model_capabilities_without_native_application(tmp_path):
     from zemax_mcp.backend import Backend
     from zemax_mcp.config import Config
     b=Backend(Config(tmp_path,tmp_path));caps=b.get_capabilities(None)
-    assert not caps['connected'] and len(caps['implemented_tools'])==102
+    from zemax_mcp.models import COMMAND_MODELS
+    assert not caps['connected'] and set(caps['implemented_tools']) == set(COMMAND_MODELS)
     assert {'get_star_data','run_star_operation','get_hpc_settings','run_speos_export'} <= set(caps['implemented_tools'])
     assert caps['parameter_ranges']['LDE']['last']==254 and caps['parameter_ranges']['NCE']['last']==250
     assert 'selected primary wavelength'in caps['wavefront_pupil_mapping']['scope']

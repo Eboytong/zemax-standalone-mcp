@@ -72,6 +72,10 @@ def selections(target, names):
     return result
 
 class WizardsMixin:
+    def run_merit_program(self, req):
+        from .merit_program import run_program
+        return run_program(self, req)
+
     def _wizard(self, kind):
         mode = str(self.system.Mode)
         if (kind == 'sequential' and mode != 'Sequential') or (kind != 'sequential' and mode != 'NonSequential'):
@@ -133,7 +137,7 @@ class WizardsMixin:
             # Flags and selectors precede their dependent parameters.
             order=sorted(values,key=lambda n:0 if isinstance(values[n],bool) else 1 if n in ('Criterion','Type','Reference','UseDetector','UseSource','Configuration','BitmapFile') else 2)
             for name in order:
-                native_setting(self.native,target,name,values[name]);check_value(self.native,target,name,values[name])
+                native_setting(self.native,target,name,values[name])
             for name,value in values.items():check_value(self.native,target,name,value)
             actual=scalar_settings(target)
             if actual.get('unavailable_fields'):

@@ -1,5 +1,6 @@
 """Catalog-bound glass trials with common native optimization and matrix references."""
 import math
+import time
 from pathlib import Path
 from typing import Annotated,Literal
 
@@ -40,6 +41,17 @@ class GlassObjective(Request):
     weight: Annotated[FiniteFloat,Field(gt=0,le=1e6)] = 1
 
 
+class GlassChoice(Request):
+    catalog: Annotated[str, Field(min_length=1, max_length=100)]
+    material: Annotated[str, Field(min_length=1, max_length=100)]
+
+
+class GlassSlot(Request):
+    group: Annotated[int, Field(strict=True, ge=0)]
+    materials: list[GlassChoice] = Field(default_factory=list, max_length=30)
+    pool_size: Annotated[int, Field(strict=True, ge=1, le=30)] = 3
+
+
 class GlassTrials(Request):
     kind: Literal['glass_trials']
     groups: Annotated[list[GlassGroup],Field(min_length=1,max_length=30)]
@@ -61,6 +73,12 @@ class GlassTrials(Request):
     cycles: Literal['Fixed_1_Cycle','Fixed_5_Cycles','Fixed_10_Cycles','Fixed_50_Cycles'] = 'Fixed_10_Cycles'
     budget_per_candidate_seconds: Annotated[FiniteFloat,Field(gt=0,le=3600)] = 120
     save_candidates: bool = True
+    joint_slots: list[GlassSlot] = Field(default_factory=list, max_length=8)
+    search_strategy: Literal['cartesian', 'one_at_time', 'beam'] = 'cartesian'
+    beam_width: Annotated[int, Field(strict=True, ge=1, le=30)] = 3
+    max_evaluations: Annotated[int, Field(strict=True, ge=1, le=1000)] = 100
+    total_budget_seconds: Annotated[FiniteFloat, Field(gt=0, le=86400)] = 3600
+    design_id: Annotated[str, Field(pattern=r'^[A-Za-z0-9_-]{1,80}$')] | None = None
 
     @model_validator(mode='after')
     def contract(self):
@@ -71,6 +89,12 @@ class GlassTrials(Request):
         if len({self.blue_wavelength,self.reference_wavelength,self.red_wavelength})!=3:raise ValueError('三个参考波长须互异。')
         spans=[set(range(g.first_surface,g.last_surface)) for g in self.groups]
         if any(a&c for i,a in enumerate(spans) for c in spans[i+1:]):raise ValueError('玻璃内部段归属不得重叠。')
+        if len({slot.group for slot in self.joint_slots}) != len(self.joint_slots):raise ValueError('联合材料槽位不得重复。')
+        if any(slot.group >= len(self.groups) for slot in self.joint_slots):raise ValueError('联合材料槽位越界。')
+        for slot in self.joint_slots:
+            names=[(m.catalog.casefold().removesuffix('.agf'),m.material.casefold()) for m in slot.materials]
+            if len(names)!=len(set(names)):raise ValueError('槽位材料身份重复。')
+        if self.design_id and not self.save_candidates:raise ValueError('关联候选设计须保存候选模型。')
         return self
 
 
@@ -158,7 +182,7 @@ def contributions(b,system,q):
     return result
 
 
-def discover(b,q,baseline_name):
+def discover_steps(b,q,baseline_name):
     from .materials import owned_catalog,choose_catalog
     loaded=list(dict.fromkeys(str(v) for v in b.system.SystemData.MaterialCatalogs.GetCatalogsInUse() if str(v).strip()))
     providers=[c for c in loaded if baseline_name in [str(v) for v in b.system.SystemData.MaterialCatalogs.GetMaterialsInCatalog(c)]]
@@ -184,6 +208,7 @@ def discover(b,q,baseline_name):
             if len(materials)>5000:raise ZemaxError('RESOURCE_LIMIT','目录材料数超过单目录5000上限。',catalog=catalog)
             for material in materials:
                 candidate=read(tool,catalog,material);scanned+=1
+                if scanned % 16 == 0:yield
                 reasons,distance=catalog_filter(candidate,baseline,q,wave)
                 if candidate['material'].casefold()==baseline_name.casefold():reasons.append('original_material_control')
                 candidate.update(distance=distance)
@@ -198,8 +223,16 @@ def run_glass_trials(b,q):
     from .coating_optimization import operand
     from .evaluation import Cancelled
     b._require_sequential(focused=True);b._require_work()
+    linked_design = q.design_id
+    if q.joint_slots and q.save_candidates and linked_design is None:
+        from .models import ManageCandidates
+        created=b.manage_candidates(ManageCandidates(request=dict(action='create',label='Joint glass search baseline',
+            evaluation=dict(spot=dict(reference='Centroid',field=q.field,wavelength=q.reference_wavelength,ray_density=q.rings)))))
+        linked_design=created['design_id']
+    if linked_design:b._candidate_index(linked_design)
     def flow(task):
-        system=None;cleanup_errors=[];copies_created=0;copies_closed=0;operation_error=None
+        system=None;discovery_steps=None;cleanup_errors=[];copies_created=0;copies_closed=0;operation_error=None
+        started=time.monotonic()
         task['payload']=dict(analysis_kind=q.kind,series=[],grids=[],computation_method='native glass discovery, bounded common native optimization, canonical matrix contribution',
             resources=[],units=dict(rms_spot='lens units',rms_wavefront='waves',effective_focal_length='lens units',mtf='dimensionless'))
         task['restoration']=dict(required=False,restored=True,reason='each trial uses a fresh owned copy; source read-only')
@@ -219,11 +252,36 @@ def run_glass_trials(b,q):
             copies_created+=1
             data=contributions(b,system,q);task['payload']['contributions']=data;close()
             if cleanup_errors:raise ZemaxError('CLEANUP_FAILED','贡献计算副本关闭失败。',cleanup_errors=cleanup_errors)
-            original=data['groups'][q.target_group]['material'];discovery=discover(b,q,original)
+            pools=[]
+            if q.joint_slots:
+                from .joint_glass import discover_joint_steps
+                discovery_steps=discover_joint_steps(b,q,data['groups'])
+                while True:
+                    b._cancel_boundary(task)
+                    try:next(discovery_steps)
+                    except StopIteration as done:
+                        candidates,pools,discovery=done.value;break
+                    yield
+            else:
+                original=data['groups'][q.target_group]['material']
+                discovery_steps=discover_steps(b,q,original)
+                while True:
+                    b._cancel_boundary(task)
+                    try:next(discovery_steps)
+                    except StopIteration as done:
+                        discovery=done.value;break
+                    yield
+                candidates=[discovery['baseline']]+discovery['selected']
             task['payload']['discovery']=discovery
-            candidates=[discovery['baseline']]+discovery['selected']
-            if not discovery['selected']:task['payload']['selection_state']='no_replacement_candidates; baseline control retained'
+            if not q.joint_slots and not discovery['selected']:task['payload']['selection_state']='no_replacement_candidates; baseline control retained'
+            task['payload']['design_id']=linked_design
+            termination='completed';beam_stage=0;stage_end=len(candidates)
             for index,candidate in enumerate(candidates):
+                if index>=q.max_evaluations:
+                    termination='evaluation_budget';break
+                remaining=q.total_budget_seconds-(time.monotonic()-started)
+                if remaining<=0:
+                    termination='time_budget';break
                 b._cancel_boundary(task);row=dict(index=index,identity=candidate,control=index==0)
                 try:
                     system=b.system.CopySystem()
@@ -231,12 +289,18 @@ def run_glass_trials(b,q):
                     copies_created+=1
                     catalogs=system.SystemData.MaterialCatalogs
                     loaded=[str(v) for v in catalogs.GetCatalogsInUse() if str(v).strip()]
-                    canonical=candidate['catalog'].casefold().removesuffix('.agf')
-                    if not any(c.casefold().removesuffix('.agf')==canonical for c in loaded):catalogs.AddCatalog(candidate['catalog'].removesuffix('.AGF'))
+                    assignments=candidate.get('assignments',[dict(group=q.target_group,identity=candidate)])
+                    for assignment in assignments:
+                        identity=assignment['identity'];canonical=identity['catalog'].casefold().removesuffix('.agf')
+                        if not any(c.casefold().removesuffix('.agf')==canonical for c in loaded):
+                            catalogs.AddCatalog(identity['catalog'].removesuffix('.AGF').removesuffix('.agf'))
+                            loaded=[str(v) for v in catalogs.GetCatalogsInUse() if str(v).strip()]
                     loaded=list(dict.fromkeys(str(v) for v in catalogs.GetCatalogsInUse() if str(v).strip()))
-                    group=q.groups[q.target_group]
-                    for i in range(group.first_surface,group.last_surface):
-                        s=system.LDE.GetSurfaceAt(i);s.Material=candidate['material'];check_setting_value('Material',candidate['material'],str(s.Material))
+                    for assignment in assignments:
+                        group=q.groups[assignment['group']];identity=assignment['identity']
+                        for i in range(group.first_surface,group.last_surface):
+                            s=system.LDE.GetSurfaceAt(i);s.Material=identity['material'];check_setting_value('Material',identity['material'],str(s.Material))
+                    row['assignments']=assignments
                     names={str(system.LDE.GetSurfaceAt(i).Material) for i in range(1,int(system.LDE.NumberOfSurfaces)-1)}-{''}
                     for material in names:
                         providers=[c for c in loaded if material in [str(v) for v in catalogs.GetMaterialsInCatalog(c)]]
@@ -261,9 +325,11 @@ def run_glass_trials(b,q):
                         for code,target in zip(codes_bounds,targets):
                             operand(b,mfe,code,{2:variable.surface},target,10000)
                     system.UpdateStatus()
-                    for i in range(group.first_surface,group.last_surface):check_setting_value('Material',candidate['material'],str(system.LDE.GetSurfaceAt(i).Material))
+                    for assignment in assignments:
+                        group=q.groups[assignment['group']]
+                        for i in range(group.first_surface,group.last_surface):check_setting_value('Material',assignment['identity']['material'],str(system.LDE.GetSurfaceAt(i).Material))
                     row['actual_settings']=dict(configuration=int(system.MCE.CurrentConfiguration),algorithm=q.algorithm,cycles=q.cycles,number_of_cores=1,
-                        optimization_budget_seconds=q.budget_per_candidate_seconds,field=q.field,rings=q.rings,reference_wavelength=q.reference_wavelength,
+                        optimization_budget_seconds=None,requested_optimization_budget_seconds=q.budget_per_candidate_seconds,field=q.field,rings=q.rings,reference_wavelength=q.reference_wavelength,
                         mtf=dict(sampling=1,grid=0,data_type=0,frequency=q.mtf_frequency),
                         merit_operands=[dict(index=i,type=str(mfe.GetOperandAt(i).Type),target=float(mfe.GetOperandAt(i).Target),weight=float(mfe.GetOperandAt(i).Weight)) for i in range(1,int(mfe.NumberOfOperands)+1)])
                     row['before']=performance(b,system,q);row['merit_before']=float(mfe.CalculateMeritFunction())
@@ -275,7 +341,9 @@ def run_glass_trials(b,q):
                             def collect(child):
                                 if not tool.Succeeded:raise ZemaxError('NATIVE_OPTIMIZATION_FAILED',str(tool.ErrorMessage))
                                 return dict(succeeded=True,merit=float(tool.CurrentMeritFunction))
-                            return b._start_task('glass_native_optimization',tool,dict(algorithm=str(tool.Algorithm),cycles=str(tool.Cycles),number_of_cores=1,variables=int(tool.Variables)),collector=collect,budget_seconds=q.budget_per_candidate_seconds)
+                            actual_budget=min(q.budget_per_candidate_seconds,max(.001,q.total_budget_seconds-(time.monotonic()-started)))
+                            row['actual_settings']['optimization_budget_seconds']=actual_budget
+                            return b._start_task('glass_native_optimization',tool,dict(algorithm=str(tool.Algorithm),cycles=str(tool.Cycles),number_of_cores=1,variables=int(tool.Variables)),collector=collect,budget_seconds=actual_budget)
                         except Exception:tool.Close();raise
                     optimized=yield from b._child_job(task,start,None)
                     row['native_optimization']=optimized;row['after']=performance(b,system,q);row['merit_after']=float(mfe.CalculateMeritFunction())
@@ -286,7 +354,15 @@ def run_glass_trials(b,q):
                         row['variables'].append(v.model_dump()|dict(actual=actual))
                     row['contributions_after']=contributions(b,system,q)
                     if q.save_candidates:
-                        path=Path(b.directory)/(task['task_id']+f'_glass_{index}.zos');system.SaveAs(str(path));row['saved_model']=str(path)
+                        import uuid
+                        candidate_id=uuid.uuid4().hex
+                        folder=(b._candidate_root()/linked_design/candidate_id) if linked_design else Path(b.directory)/(task['task_id']+f'_glass_{index}')
+                        folder.mkdir(parents=True)
+                        b._copy_project_resources(Path(str(b.system.SystemFile)).parent,folder)
+                        path=folder/'model.zos';system.SaveAs(str(path));row['saved_model']=str(path)
+                        if linked_design:
+                            row['candidate']=b._register_saved_candidate(linked_design,candidate_id,path,
+                                dict(assignments=assignments,variables=row['variables'],settings=row['actual_settings'],performance=row['after']),task)
                     row['state']='succeeded'
                 except Cancelled:raise
                 except Exception as exc:
@@ -296,10 +372,38 @@ def run_glass_trials(b,q):
                     close();row['copy_closed']=not cleanup_errors
                 if cleanup_errors:raise ZemaxError('CLEANUP_FAILED','玻璃试验副本关闭失败。',cleanup_errors=cleanup_errors,operation_error=row.get('error'))
                 task['rows'].append(row);yield
+                while q.joint_slots and q.search_strategy=='beam' and index+1==stage_end and beam_stage+1<len(pools):
+                    from .joint_glass import combination,assignment_key
+                    beam_stage+=1
+                    frontier=sorted([r for r in task['rows'] if r.get('state')=='succeeded'],key=lambda r:r['merit_after'])[:q.beam_width]
+                    seen={assignment_key(c['assignments']) for c in candidates}
+                    group,pool=pools[beam_stage]
+                    for previous in frontier:
+                        for identity in pool:
+                            values=[dict(a,identity=identity) if a['group']==group else a.copy() for a in previous['assignments']]
+                            key=assignment_key(values)
+                            if key not in seen and len(candidates)<q.max_evaluations:
+                                candidates.append(combination(values));seen.add(key)
+                    stage_end=len(candidates)
             valid=[r for r in task['rows'] if r['state']=='succeeded' and math.isfinite(r['merit_after'])]
             if not valid:raise ZemaxError('NO_VALID_CANDIDATE','原材料及替换候选均未形成有效结果。')
             best=min(valid,key=lambda v:v['merit_after'])
-            task['summary']=dict(candidate_count=len(candidates),succeeded=len(valid),failed=len(candidates)-len(valid),
+            if q.save_candidates:
+                system=b.system.CopySystem()
+                if system is None:raise ZemaxError('COPY_FAILED','终选独立重载副本创建失败。')
+                copies_created+=1
+                try:
+                    if not system.LoadFile(best['saved_model'],False):raise ZemaxError('LOAD_FAILED','终选独立模型加载失败。')
+                    actual=performance(b,system,q)
+                    errors={key:abs(actual[key]-value) for key,value in best['after'].items()}
+                    passed=all(error<=1e-8+1e-7*abs(best['after'][key]) for key,error in errors.items())
+                    task['payload']['finalist_recheck']=dict(candidate_index=best['index'],actual=actual,expected=best['after'],
+                        absolute_errors=errors,absolute_tolerance=1e-8,relative_tolerance=1e-7,passed=passed)
+                    if not passed:raise ZemaxError('CANDIDATE_RECHECK_FAILED','终选模型独立重载指标超差。',reference=task['payload']['finalist_recheck'])
+                finally:close()
+            if q.joint_slots and q.search_strategy=='cartesian' and discovery['combination_count']>len(task['rows']) and termination=='completed':termination='evaluation_budget'
+            task['summary']=dict(candidate_count=len(task['rows']),planned_candidates=len(candidates),termination_reason=termination,
+                elapsed_seconds=time.monotonic()-started,succeeded=len(valid),failed=len(task['rows'])-len(valid),
                 best_index=best['index'],best_identity=best['identity'],best_model=best.get('saved_model'),best_merit=best['merit_after'])
             control=next((r for r in valid if r['control']),None)
             for row in valid:
@@ -307,6 +411,7 @@ def run_glass_trials(b,q):
             task['payload']['series']=[dict(series=0,description='Glass trials native merit',x_label='candidate',x_unit='index',y_unit='native merit',labels=['before','after'],x=[r['index'] for r in valid],y=[[r['merit_before'],r['merit_after']] for r in valid])]
         except BaseException as exc:operation_error=exc;raise
         finally:
+            if discovery_steps is not None:discovery_steps.close()
             close();task['payload']['resources']=dict(copies_created=copies_created,copies_closed=copies_closed,all_copies_closed=copies_created==copies_closed,cleanup_errors=cleanup_errors)
             if cleanup_errors:raise ZemaxError('CLEANUP_FAILED','玻璃试验副本关闭失败。',cleanup_errors=cleanup_errors,operation_error=b._evaluation_error(operation_error) if operation_error else None)
     return b._composite(q.kind,q.model_dump(),flow)

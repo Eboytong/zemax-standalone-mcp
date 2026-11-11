@@ -1,6 +1,6 @@
 # Zemax Standalone MCP
 
-Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2024 R2 的 stdio MCP 服务。当前发布版本为 **1.1.0**，提供 **102 个工具**与 **144 种 `run_analysis` 请求类型**；接口、适用条件和结果格式见使用文档与工具参考。
+Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2024 R2 的 stdio MCP 服务。当前发布版本为 **1.3.0**，提供 **107 个工具**与 **146 种 `run_analysis` 请求类型**；接口、适用条件和结果格式见使用文档与工具参考。
 
 ## 可以用它做什么
 
@@ -16,8 +16,11 @@ Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2024
 | 优化与设计辅助 | 运行局部、全局、Hammer 与多起点优化；生成或编辑优化向导和评价函数；执行快速调焦、参数扫描、目录镜头检索与评价。 |
 | 公差与制造分析 | 编辑 TDE 公差与补偿器；运行灵敏度、逆灵敏度和 Monte Carlo 公差分析；汇总通过率和分位数结果。 |
 | 数据、图像与交付 | 导出布局、分析图像、CAD、Speos、点云、报告、探测器数据、评价函数和公差文件；以 Markdown、JSON 或 CSV 导出已完成的分析结果。 |
+| 工程搜索与设计改进 | 按中文需求搜索能力；保存、分支、恢复和同条件比较候选；多镜片联合换玻璃；构建OPD目标和几何约束；固定公差优化设计并独立验证良率；逐面统计偏振光线损耗。 |
 | 工程计算 | 制造几何阈值、POP光纤对准、固定膜系优化、NSC效率与均匀性、材料替换试算、扫描瞳共轭、鬼像路径、共焦针孔响应、均温焦点补偿、多目标候选、公差成本预算及双FSM离线控制。 |
 | 任务控制 | 查询任务状态、读取历史结果、取消可取消任务，并对曲线、行数据和二维网格进行分页读取。 |
+
+能力搜索、候选比较、材料搜索和鲁棒设计的调用流程见[工程指南](docs/README.md)。
 
 完整工具名、参数、单位和适用条件见 [工具参考](docs/reference/tools.md)、[请求 schema](docs/reference/tool-schemas.json) 与 [能力说明](docs/reference/capabilities.md)。
 
@@ -27,7 +30,7 @@ Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2024
 
 ## 安装和连接
 
-[下载1.1.0安装包](https://github.com/Eboytong/zemax-standalone-mcp/releases/tag/v1.1.0)
+[下载1.3.0安装包](https://github.com/Eboytong/zemax-standalone-mcp/releases/tag/v1.3.0)
 
 准备 Windows x64、Python 3.14 x64、OpticStudio 2024 R2 和适用的 ZOS-API 许可。在仓库根目录的 PowerShell 中运行：
 
@@ -35,7 +38,7 @@ Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2024
 powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -PythonExe python
 ```
 
-`python` 应指向 Python 3.14 x64；也可将它替换为该版本 `python.exe` 的绝对路径。需要报告和几何相关可选依赖时，在命令末尾添加 `-WithReports -WithGeometry`。脚本安装 `releases/1.1.0/` 中的 wheel，并生成 `.local/config/mcp.config.json`。
+`python` 应指向 Python 3.14 x64；也可将它替换为该版本 `python.exe` 的绝对路径。需要报告和几何相关可选依赖时，在命令末尾添加 `-WithReports -WithGeometry`。脚本安装 `releases/1.3.0/` 中的 wheel，并生成 `.local/config/mcp.config.json`。
 
 将生成配置中的 `zemax` 项添加到 MCP 客户端配置；安装目录不同时修改 `ZEMAX_INSTALL_DIR`。客户端启动后依次调用 `connect`、`open_lens`（使用镜头文件的绝对路径）、`get_system_summary`。执行分析后，通过 `get_task_status` 查询至终态，再用 `get_task_result` 读取结果；结束时调用 `disconnect`。完整调用与分页规则见[使用指南](docs/guides/usage.md)。
 
@@ -53,4 +56,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -PythonExe pyt
 | releases | 已发行wheel |
 | .local | 本机运行、状态、复现数据和历史归档 |
 
-`.local/runs`为默认运行目录；`.local/state`为状态目录。显式环境变量优先采用。当前默认wheel位于`releases/1.1.0/`。
+`.local/runs`为默认运行目录；`.local/state`为状态目录。显式环境变量优先采用。当前默认wheel位于`releases/1.3.0/`。

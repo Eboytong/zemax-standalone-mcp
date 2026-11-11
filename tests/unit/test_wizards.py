@@ -82,6 +82,23 @@ def test_setting_rejection_stops_apply(b):
     task=finish(b,dict(kind='sequential',rings=5,apply=True))
     assert task['state']=='failed'and task['error']['code']=='SETTING_REJECTED'and b.wizard.applied==0
 
+
+def test_configuration_selector_checks_final_combination(b, monkeypatch):
+    from zemax_mcp import wizards
+    def setting(native, target, name, value):
+        if name == 'UseAllConfigurations' and value is False:
+            target.state[name] = True
+        elif name == 'ConfigurationNumber':
+            target.state[name] = value
+            target.state['UseAllConfigurations'] = False
+        else:
+            setattr(target, name, Enum(value) if isinstance(target.state[name], Enum) else value)
+    monkeypatch.setattr(wizards, 'native_setting', setting)
+    task = finish(b, dict(kind='sequential', use_all_configurations=False, configuration_number=2))
+    assert task['state'] == 'succeeded'
+    assert task['result']['settings']['ConfigurationNumber'] == 2
+    assert task['result']['settings']['UseAllConfigurations'] is False
+
 def test_apply_failure_retains_original_and_counts(b):
     b.wizard.fail=True
     task=finish(b,dict(kind='sequential',apply=True))

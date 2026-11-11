@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="11" time="510.970" timestamp="2026-11-11T17:54:41.120692+08:00" hostname="tongeb"><testcase classname="tests.native.test_candidates_live" name="test_candidates_branch_evaluate_compare_restore_stdio" time="37.636"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.native.test_joint_glass_live" name="test_joint_glass_nine_combinations_and_independent_controls" time="77.872"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'ok': False, 'data': None, 'error': {'code': 'REQUEST_TIMEOUT', 'message': '请求等待超时；原生操作可能仍在执行，请勿直接重试修改。', 'details': {'request_id': '35ab56369c76498db124d2e9ef393650', 'execution_state': 'unknown'}}, 'warnings': [], 'context': {}, 'artifacts': []}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\mcp\tests\native\test_joint_glass_live.py", line 58, in test_joint_glass_nine_combinations_and_independent_controls
+  |     asyncio.run(execute('d019_joint_glass',work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\mcp\tests\support\native.py", line 64, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\mcp\tests\support\native.py", line 66, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\mcp\tests\native\test_joint_glass_live.py", line 27, in work
+      |     result=await e.finish(await e.call('run_analysis',dict(request=joint)),timeout_seconds=240)
+      |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\mcp\tests\support\native.py", line 20, in finish
+      |     await asyncio.sleep(.02);t=await self.call("get_task_status",dict(task_id=t["task_id"]))
+      |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\mcp\tests\support\native.py", line 14, in call
+      |     if okay:assert r and r["ok"],r
+      |                    ^^^^^^^^^^^^^
+      | AssertionError: {'ok': False, 'data': None, 'error': {'code': 'REQUEST_TIMEOUT', 'message': '请求等待超时；原生操作可能仍在执行，请勿直接重试修改。', 'details': {'request_id': '35ab56369c76498db124d2e9ef393650', 'execution_state': 'unknown'}}, 'warnings': [], 'context': {}, 'artifacts': []}
+      +------------------------------------</failure></testcase><testcase classname="tests.native.test_joint_glass_live" name="test_joint_glass_cancellation_closes_active_optimization_copy" time="77.255"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'ok': False, 'data': None, 'error': {'code': 'REQUEST_TIMEOUT', 'message': '请求等待超时；原生操作可能仍在执行，请勿直接重试修改。', 'details': {'request_id': '85bd6e8114dc4c4baa966a2ec438dad8', 'execution_state': 'unknown'}}, 'warnings': [], 'context': {}, 'artifacts': []}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\mcp\tests\native\test_joint_glass_live.py", line 96, in test_joint_glass_cancellation_closes_active_optimization_copy
+  |     asyncio.run(execute('d019_joint_glass_cancel',work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\mcp\tests\support\native.py", line 64, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\mcp\tests\support\native.py", line 66, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\mcp\tests\native\test_joint_glass_live.py", line 83, in work
+      |     task=await e.call('get_task_status',dict(task_id=task['task_id']))
+      |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\mcp\tests\support\native.py", line 14, in call
+      |     if okay:assert r and r["ok"],r
+      |                    ^^^^^^^^^^^^^
+      | AssertionError: {'ok': False, 'data': None, 'error': {'code': 'REQUEST_TIMEOUT', 'message': '请求等待超时；原生操作可能仍在执行，请勿直接重试修改。', 'details': {'request_id': '85bd6e8114dc4c4baa966a2ec438dad8', 'execution_state': 'unknown'}}, 'warnings': [], 'context': {}, 'artifacts': []}
+      +------------------------------------</failure></testcase><testcase classname="tests.native.test_merit_program_live" name="test_native_merit_preview_apply_reference_and_restore" time="104.473"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError({'ok': False, 'data': None, 'error': {'code': 'REQUEST_TIMEOUT', 'message': '请求等待超时；原生操作可能仍在执行，请勿直接重试修改。', 'details': {'request_id': 'f19afd70118246c6b9ebe7f1e7ef529d', 'execution_state': 'unknown'}}, 'warnings': [], 'context': {}, 'artifacts': []}) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\mcp\tests\native\test_merit_program_live.py", line 66, in test_native_merit_preview_apply_reference_and_restore
+  |     asyncio.run(execute('d020_merit_program',work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\mcp\tests\support\native.py", line 64, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\mcp\tests\support\native.py", line 66, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\mcp\tests\native\test_merit_program_live.py", line 45, in work
+      |     dense=await e.finish(await e.call('run_merit_program',dict(request=dict(targets=[dict(t,rings=12,arms=64) for t in targets]))),timeout_seconds=120)
+      |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\mcp\tests\support\native.py", line 20, in finish
+      |     await asyncio.sleep(.02);t=await self.call("get_task_status",dict(task_id=t["task_id"]))
+      |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      |   File "C:\Users\tonge\Desktop\mcp\tests\support\native.py", line 14, in call
+      |     if okay:assert r and r["ok"],r
+      |                    ^^^^^^^^^^^^^
+      | AssertionError: {'ok': False, 'data': None, 'error': {'code': 'REQUEST_TIMEOUT', 'message': '请求等待超时；原生操作可能仍在执行，请勿直接重试修改。', 'details': {'request_id': 'f19afd70118246c6b9ebe7f1e7ef529d', 'execution_state': 'unknown'}}, 'warnings': [], 'context': {}, 'artifacts': []}
+      +------------------------------------</failure></testcase><testcase classname="tests.native.test_merit_program_phase_configuration_live" name="test_merit_program_phase_surface_multiconfiguration_and_wizard" time="65.331"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.native.test_desensitization_live" name="test_native_fixed_tolerance_design_optimization_and_mc" time="30.396"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.native.test_desensitization_live" name="test_desensitization_failure_budget_and_cancel_restore_model" time="21.009"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.native.test_sequential_surface_loss_live" name="test_native_target_surface_intensity_semantics" time="19.043"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.native.test_sequential_surface_loss_live" name="test_sequential_energy_cancel_closes_active_children" time="40.342"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.native.test_sequential_surface_loss_live" name="test_energy_decentered_aperture_and_multiple_fields" time="15.464"><properties><property name="validation_layer" value="native" /></properties></testcase><testcase classname="tests.native.test_sequential_energy_references_live" name="test_energy_catalog_absorption_film_mirror_and_outputs" time="20.939"><properties><property name="validation_layer" value="native" /></properties></testcase></testsuite></testsuites>

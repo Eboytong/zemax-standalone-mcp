@@ -1,10 +1,13 @@
 # Zemax Standalone MCP 使用文档
 
-Zemax Standalone MCP 1.1.0 在 Windows x64、Python 3.14 与 Ansys Zemax OpticStudio 2024 R2 上提供 102 个 MCP 工具和 144 种 `run_analysis` 请求类型。
+Zemax Standalone MCP 1.3.0 在 Windows x64、Python 3.14 与 Ansys Zemax OpticStudio 2024 R2 上提供 107 个 MCP 工具和 146 种 `run_analysis` 请求类型。
 
 ## 文档导航
 
 - [调用、任务与错误处理](guides/usage.md)
+- [能力搜索](guides/capability-search.md) · [候选管理与比较](guides/candidates.md)
+- [联合玻璃搜索](guides/joint-glass-search.md) · [评价函数构建](guides/merit-program.md)
+- [设计去敏感化](guides/design-desensitization.md) · [逐面能量损耗](guides/sequential-energy-budget.md)
 - [工具清单](reference/tools.md)
 - [请求 schema](reference/tool-schemas.json)
 - [能力索引](reference/capabilities.md)

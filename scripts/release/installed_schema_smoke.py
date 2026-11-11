@@ -8,7 +8,7 @@ from pathlib import Path
 from mcp import Client
 from mcp.client.stdio import StdioServerParameters
 
-async def run(target,folder,version,tool_count='101',analysis_count='132'):
+async def run(target,folder,version,tool_count='107',analysis_count='146'):
     target=Path(target).resolve();folder=Path(folder).resolve();folder.mkdir(parents=True,exist_ok=False)
     sys.path.insert(0,str(target))
     import zemax_mcp
@@ -19,9 +19,13 @@ async def run(target,folder,version,tool_count='101',analysis_count='132'):
     record=dict(version=version,installed_root=str(target),native_connection_attempted=False)
     async with Client(p,read_timeout_seconds=60)as client:
         ts=await client.list_tools();record['tool_count']=len(ts.tools);assert record['tool_count']==int(tool_count)
+        assert {'search_capabilities','manage_candidates','run_candidate_evaluation','get_glass_slots','run_merit_program'} <= {tool.name for tool in ts.tools}
+        search=(await client.call_tool('search_capabilities',dict(query='逐面能量损耗',limit=5))).structured_content
+        assert search['ok'];record['offline_search']=search
         result=(await client.call_tool('get_capabilities',dict(topic='tool',tool_name='run_analysis'))).structured_content
         assert result['ok'];schema=result['data']['request_schema'];mapping=schema['properties']['request']['discriminator']['mapping']
         record['analysis_kind_count']=len(mapping);assert record['analysis_kind_count']==int(analysis_count)
+        assert {'design_desensitize','sequential_energy_budget'}<=mapping.keys()
         assert {'system_check','system_data','surface_phase_slope','surface_phase_slope_cross','rms_field_map','rms_vs_wavelength','tolerance_yield','tolerance_histogram','geometric_image','zernike_coefficients_vs_field'}<=mapping.keys()
         assert {'universal_plot_1d','universal_plot_2d','paraxial_gaussian_beam','skew_gaussian_beam'}<=mapping.keys()
         record['actual_schema']=result

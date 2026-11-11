@@ -468278,6 +468278,42 @@
       "bytes": 91,
       "reason": "本次一次性维护程序与保留清单",
       "archive_location": ".local/archives/2026-11-07/legacy-programs-resources.zip"
+    },
+    {
+      "original_path": "development/plan.md",
+      "current_path": "development/archive/native-engineering-20261110/plan.md",
+      "reason": "1.1.0已完成计划及终态；2026-11-11新计划启用前保留",
+      "recorded_at": "2026-11-11"
+    },
+    {
+      "original_path": "development/current.md",
+      "current_path": "development/archive/native-engineering-20261110/current.md",
+      "reason": "1.1.0已完成计划及终态；2026-11-11新计划启用前保留",
+      "recorded_at": "2026-11-11"
+    },
+    {
+      "original_path": "development/handoff.md",
+      "current_path": "development/archive/native-engineering-20261110/handoff.md",
+      "reason": "1.1.0已完成计划及终态；2026-11-11新计划启用前保留",
+      "recorded_at": "2026-11-11"
+    },
+    {
+      "original_path": "development/parallel-development.md",
+      "current_path": "development/archive/native-engineering-20261110/parallel-development.md",
+      "reason": "1.1.0已完成计划及终态；2026-11-11新计划启用前保留",
+      "recorded_at": "2026-11-11"
+    },
+    {
+      "original_path": "development/ledgers/roadmap.csv",
+      "current_path": "development/archive/native-engineering-20261110/ledgers/roadmap.csv",
+      "reason": "1.1.0已完成计划及终态；2026-11-11新计划启用前保留",
+      "recorded_at": "2026-11-11"
+    },
+    {
+      "original_path": "development/tracking/roadmap.json",
+      "current_path": "development/archive/native-engineering-20261110/tracking/roadmap.json",
+      "reason": "1.1.0已完成计划及终态；2026-11-11新计划启用前保留",
+      "recorded_at": "2026-11-11"
     }
   ],
   "deleted": [

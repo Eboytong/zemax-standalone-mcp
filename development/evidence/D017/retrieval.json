@@ -1,0 +1,409 @@
+{
+  "tools": 103,
+  "analyses": 144,
+  "detailed": 24,
+  "hits": 30,
+  "queries": [
+    {
+      "query": "修改镜片曲率和厚度",
+      "expected": [
+        "tool:update_surfaces"
+      ],
+      "actual": [
+        "tool:update_surfaces",
+        "tool:get_surface_geometry",
+        "tool:run_quick_focus",
+        "tool:update_coating_layers",
+        "tool:update_merit_function"
+      ],
+      "hit": true
+    },
+    {
+      "query": "给非球面设置偏心倾斜",
+      "expected": [
+        "tool:update_surfaces"
+      ],
+      "actual": [
+        "tool:update_surfaces",
+        "tool:run_design_tool",
+        "tool:get_capabilities",
+        "tool:get_design_tool_options",
+        "tool:get_hpc_settings"
+      ],
+      "hit": true
+    },
+    {
+      "query": "设置优化变量和拾取",
+      "expected": [
+        "tool:set_variables"
+      ],
+      "actual": [
+        "tool:set_variables",
+        "tool:run_local_optimization",
+        "tool:run_global_optimization",
+        "tool:get_variables",
+        "tool:get_capabilities"
+      ],
+      "hit": true
+    },
+    {
+      "query": "计算曲面矢高和法线",
+      "expected": [
+        "tool:get_surface_geometry"
+      ],
+      "actual": [
+        "tool:get_surface_geometry",
+        "tool:update_surfaces",
+        "tool:compare_results",
+        "tool:copy_surfaces",
+        "tool:delete_surfaces"
+      ],
+      "hit": true
+    },
+    {
+      "query": "检查镜片碰撞及最小间隔",
+      "expected": [
+        "tool:get_surface_geometry"
+      ],
+      "actual": [
+        "tool:get_surface_geometry",
+        "tool:run_local_optimization",
+        "tool:connect",
+        "tool:delete_nsc_objects",
+        "tool:delete_surfaces"
+      ],
+      "hit": true
+    },
+    {
+      "query": "批量追迹真实光线交点",
+      "expected": [
+        "tool:run_batch_ray_trace"
+      ],
+      "actual": [
+        "tool:run_batch_ray_trace",
+        "tool:read_zrd",
+        "analysis:polarization_ray_trace",
+        "tool:load_detector_data",
+        "tool:run_nsc_ray_trace"
+      ],
+      "hit": true
+    },
+    {
+      "query": "偏振光线电场与Jones",
+      "expected": [
+        "analysis:polarization_ray_trace"
+      ],
+      "actual": [
+        "analysis:polarization_ray_trace",
+        "tool:read_zrd",
+        "tool:run_batch_ray_trace",
+        "tool:get_coating_rta"
+      ],
+      "hit": true
+    },
+    {
+      "query": "MTF调制传递函数",
+      "expected": [
+        "tool:run_fft_mtf"
+      ],
+      "actual": [
+        "tool:run_fft_mtf",
+        "tool:run_optimization_wizard",
+        "analysis:fft_mtf_map",
+        "analysis:fft_mtf_vs_field",
+        "analysis:fft_surface_mtf"
+      ],
+      "hit": true
+    },
+    {
+      "query": "分辨率和空间频率",
+      "expected": [
+        "tool:run_fft_mtf"
+      ],
+      "actual": [
+        "tool:run_fft_mtf"
+      ],
+      "hit": true
+    },
+    {
+      "query": "计算波前光程差OPD",
+      "expected": [
+        "analysis:wavefront"
+      ],
+      "actual": [
+        "analysis:wavefront",
+        "analysis:opd_fan",
+        "analysis:zernike_standard",
+        "tool:compare_results",
+        "tool:evaluate_merit_function"
+      ],
+      "hit": true
+    },
+    {
+      "query": "泽尼克像差系数拟合",
+      "expected": [
+        "analysis:zernike_standard"
+      ],
+      "actual": [
+        "analysis:zernike_standard",
+        "tool:get_material_properties",
+        "tool:get_star_data",
+        "tool:run_analysis",
+        "tool:run_star_operation"
+      ],
+      "hit": true
+    },
+    {
+      "query": "离焦均方根光斑",
+      "expected": [
+        "analysis:rms_vs_focus"
+      ],
+      "actual": [
+        "analysis:rms_vs_focus"
+      ],
+      "hit": true
+    },
+    {
+      "query": "物理光学高斯光束传播",
+      "expected": [
+        "tool:run_pop"
+      ],
+      "actual": [
+        "tool:run_pop",
+        "tool:run_optimization_wizard",
+        "tool:copy_surfaces",
+        "tool:get_system_summary"
+      ],
+      "hit": true
+    },
+    {
+      "query": "POP复振幅衍射",
+      "expected": [
+        "tool:run_pop"
+      ],
+      "actual": [
+        "tool:run_pop",
+        "tool:run_pop_convergence"
+      ],
+      "hit": true
+    },
+    {
+      "query": "镀膜反射率透射率吸收率",
+      "expected": [
+        "tool:get_coating_rta"
+      ],
+      "actual": [
+        "tool:get_coating_rta",
+        "tool:get_material_properties",
+        "tool:get_coating_layers",
+        "tool:get_system_resources",
+        "tool:run_star_operation"
+      ],
+      "hit": true
+    },
+    {
+      "query": "双向S P镀膜",
+      "expected": [
+        "tool:get_coating_rta"
+      ],
+      "actual": [
+        "tool:get_coating_rta",
+        "tool:get_coating_layers",
+        "tool:get_system_resources",
+        "tool:update_coating_layers"
+      ],
+      "hit": true
+    },
+    {
+      "query": "玻璃折射率和阿贝数",
+      "expected": [
+        "tool:get_material_properties"
+      ],
+      "actual": [
+        "tool:get_material_properties",
+        "analysis:glass_trials",
+        "tool:get_coating_rta",
+        "tool:run_star_operation"
+      ],
+      "hit": true
+    },
+    {
+      "query": "材料色散热光属性",
+      "expected": [
+        "tool:get_material_properties"
+      ],
+      "actual": [
+        "tool:get_material_properties",
+        "analysis:glass_trials",
+        "tool:update_surfaces",
+        "tool:get_system_resources",
+        "tool:run_catalog_evaluation"
+      ],
+      "hit": true
+    },
+    {
+      "query": "阻尼最小二乘局部优化",
+      "expected": [
+        "tool:run_local_optimization"
+      ],
+      "actual": [
+        "tool:run_local_optimization",
+        "tool:get_surface_geometry",
+        "tool:run_global_optimization",
+        "tool:set_variables",
+        "tool:run_multistart_optimization"
+      ],
+      "hit": true
+    },
+    {
+      "query": "全局搜索多个极小值",
+      "expected": [
+        "tool:run_global_optimization"
+      ],
+      "actual": [
+        "tool:run_global_optimization",
+        "tool:get_lens_catalogs",
+        "tool:get_surface_geometry",
+        "tool:run_lens_catalog_search",
+        "tool:update_project_settings"
+      ],
+      "hit": true
+    },
+    {
+      "query": "高斯求积评价函数向导",
+      "expected": [
+        "tool:run_optimization_wizard"
+      ],
+      "actual": [
+        "tool:run_optimization_wizard",
+        "tool:run_fft_mtf",
+        "tool:run_pop",
+        "tool:update_merit_function",
+        "tool:evaluate_merit_function"
+      ],
+      "hit": true
+    },
+    {
+      "query": "公差灵敏度蒙特卡洛良率",
+      "expected": [
+        "tool:run_tolerance_analysis"
+      ],
+      "actual": [
+        "tool:run_tolerance_analysis",
+        "tool:generate_tolerances",
+        "tool:get_tolerances",
+        "tool:load_tolerance_file",
+        "tool:save_tolerance_file"
+      ],
+      "hit": true
+    },
+    {
+      "query": "非序列光源分光散射追迹",
+      "expected": [
+        "tool:run_nsc_ray_trace"
+      ],
+      "actual": [
+        "tool:run_nsc_ray_trace",
+        "tool:run_batch_ray_trace",
+        "tool:read_zrd",
+        "tool:copy_nsc_objects",
+        "tool:delete_nsc_objects"
+      ],
+      "hit": true
+    },
+    {
+      "query": "读取探测器辐照度网格",
+      "expected": [
+        "tool:get_detector_data"
+      ],
+      "actual": [
+        "tool:get_detector_data",
+        "tool:get_task_result",
+        "tool:run_nsc_ray_trace",
+        "tool:clear_detectors",
+        "tool:get_historical_result"
+      ],
+      "hit": true
+    },
+    {
+      "query": "ZRD光线路径数据库段",
+      "expected": [
+        "tool:read_zrd"
+      ],
+      "actual": [
+        "tool:read_zrd",
+        "tool:run_zrd_replay",
+        "analysis:polarization_ray_trace",
+        "tool:run_batch_ray_trace",
+        "tool:get_beam_file"
+      ],
+      "hit": true
+    },
+    {
+      "query": "结果分页rows series grids",
+      "expected": [
+        "tool:get_task_result"
+      ],
+      "actual": [
+        "tool:get_task_result",
+        "tool:insert_editor_rows",
+        "tool:copy_editor_rows",
+        "tool:get_historical_result",
+        "tool:compare_results"
+      ],
+      "hit": true
+    },
+    {
+      "query": "导出PNG PDF图片",
+      "expected": [
+        "tool:export_analysis_image"
+      ],
+      "actual": [
+        "tool:export_analysis_image",
+        "tool:run_layout_export",
+        "tool:export_point_cloud",
+        "tool:run_cad_export",
+        "tool:run_speos_export"
+      ],
+      "hit": true
+    },
+    {
+      "query": "二维三维光路布局",
+      "expected": [
+        "tool:run_layout_export"
+      ],
+      "actual": [
+        "tool:run_layout_export"
+      ],
+      "hit": true
+    },
+    {
+      "query": "保存镜头模型副本",
+      "expected": [
+        "tool:save_lens_as"
+      ],
+      "actual": [
+        "tool:save_lens_as",
+        "tool:copy_system",
+        "tool:new_system",
+        "tool:delete_surfaces",
+        "tool:disconnect"
+      ],
+      "hit": true
+    },
+    {
+      "query": "玻璃试验材料替换排名",
+      "expected": [
+        "analysis:glass_trials"
+      ],
+      "actual": [
+        "analysis:glass_trials",
+        "tool:get_material_properties",
+        "tool:update_surfaces",
+        "tool:get_system_resources",
+        "tool:load_detector_data"
+      ],
+      "hit": true
+    }
+  ]
+}

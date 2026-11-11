@@ -1,12 +1,12 @@
 # GitHub源码参考与适配说明
 
-核对日期：2026-11-10。实施时先读取本表对应文件，记录具体借鉴和本机验证；源版本固定到commit。[机器可读清单](tracking/github-references.json)维护仓库、commit、许可及任务映射。
+核对日期：2026-11-11。实施时先读取本表对应文件，记录具体借鉴和本机验证；源版本固定到commit。[机器可读清单](tracking/github-references.json)维护仓库、commit、许可及任务映射。
 
 | 编号 | 仓库 | 固定commit | 许可 | 对应任务 |
 | --- | --- | --- | --- | --- |
 | G2 | [YonggangG/Zemax_MCP_Server](https://github.com/YonggangG/Zemax_MCP_Server) | `193598e4ca6224dfa8615565d5e3b6f3cfa6d149` | MIT | D003、D007、D010 |
-| G3 | [joeyijun/OpticStudioMCPServer](https://github.com/joeyijun/OpticStudioMCPServer) | `a7375ba48235b2db71ae40766dbc1969c0671401` | MIT | D002、D006 |
-| G4 | [chuang44-tiff/optivibe-mcp](https://github.com/chuang44-tiff/optivibe-mcp) | `50c225c30fab5cd4e81e134e1988c7d6cd7b5ed3` | Apache-2.0 | D001、D004、D008 |
+| G3 | [joeyijun/OpticStudioMCPServer](https://github.com/joeyijun/OpticStudioMCPServer) | `a7375ba48235b2db71ae40766dbc1969c0671401` | MIT | 已交付D002、D006；本期D020 |
+| G4 | [chuang44-tiff/optivibe-mcp](https://github.com/chuang44-tiff/optivibe-mcp) | `50c225c30fab5cd4e81e134e1988c7d6cd7b5ed3` | Apache-2.0 | 已交付D001、D004、D008；本期D019 |
 | G5 | [zhaopeizhao41-ops/optiforge](https://github.com/zhaopeizhao41-ops/optiforge) | `6a197e467c7fceeb51ab651b3dbea21d9781d94e` | MIT | D005、D009、D010、D011 |
 
 ## G2：Detector Viewer与NSC
@@ -41,6 +41,13 @@ D003补本项目有类型请求、枚举值回读、当前数据/ZRD来源及结
 | zemax_scan_pupil_check | 光线高度比及曲面间厚度和，读取主光线角 | 参考参数组织；D009用明确的实际镜面转轴、非退化光线和成像关系求瞳共轭，并核对坐标变换 |
 
 [tolerance_tools.py](https://github.com/zhaopeizhao41-ops/optiforge/blob/6a197e467c7fceeb51ab651b3dbea21d9781d94e/tools/tolerance_tools.py)是公差和反射估算的额外参考入口，实施对应分项时再核对具体函数。反射率估算与实际ZRD功率分别标记。
+
+
+## 本期D019/D020新增参考
+
+D019复用已交付D008及G4的glass_trial/glass_explain，增加多槽位联合候选、预算和比较。材料身份与原生优化合同继续按本项目实现。
+
+D020已实际读取G3固定commit的[ForbesMeritFunctionTool.cs](https://github.com/joeyijun/OpticStudioMCPServer/blob/a7375ba48235b2db71ae40766dbc1969c0671401/src/ZemaxMCP.Server/Tools/Optimization/ForbesMeritFunctionTool.cs)和[ForbesPupilSampling.cs](https://github.com/joeyijun/OpticStudioMCPServer/blob/a7375ba48235b2db71ae40766dbc1969c0671401/src/ZemaxMCP.Server/Tools/Optimization/ForbesPupilSampling.cs)。构建事务及参数检查可作参考；普通采样0—π、轴上单子午线及象限缩减分别需要相应对称条件。采用原生向导并用完整瞳数值参考核对自定义目标，详见[选题记录](evidence/PLAN-20261111/README.md)。
 
 ## 官方定义与现有实现
 

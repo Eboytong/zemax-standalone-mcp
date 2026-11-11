@@ -1,66 +1,62 @@
 {
   "schema_version": 1,
-  "plan_id": "native-engineering-20261110",
-  "effective_date": "2026-11-10",
-  "state": "completed",
-  "baseline_release": "1.0.0",
-  "target_release": "1.1.0",
+  "plan_id": "engineering-search-20261111",
+  "effective_date": "2026-11-11",
+  "state": "verified",
+  "baseline_release": "1.1.0",
+  "current_release": "1.1.0",
+  "target_release": "1.3.0",
+  "next_milestone_release": "1.3.0",
   "ledger": "development/ledgers/roadmap.csv",
-  "item_count": 15,
-  "main_queue_count": 15,
+  "item_count": 6,
+  "main_queue_count": 6,
   "conditional_count": 0,
   "future_count": 0,
   "execution_order": [
-    "D001",
-    "D002",
-    "D003",
-    "D004",
-    "D005",
-    "D006",
-    "D007",
-    "D008",
-    "D009",
-    "D010",
-    "D011",
-    "D012",
-    "D014",
-    "D015",
-    "D016"
+    "D017",
+    "D018",
+    "D019",
+    "D020",
+    "D021",
+    "D022"
   ],
   "default_schedule": "active",
-  "counting": "Count each roadmap item once after its declared scope is done; existing implementation/probes and legacy completions are baseline evidence.",
+  "counting": "Current D017-D022 scope: count each item once; 15 topics delivered in 1.1.0 remain the archived baseline.",
   "next_item": null,
-  "native_scheduling": "serial; all completed native sessions disconnected",
+  "native_scheduling": "one owner, serial native tasks; candidate files may coexist",
   "references": "development/tracking/github-references.json",
   "historical_evidence": "development/evidence",
+  "previous_plan": "development/archive/native-engineering-20261110/tracking/roadmap.json",
+  "milestones": [
+    {
+      "release": "1.3.0",
+      "item_ids": [
+        "D017",
+        "D018",
+        "D019",
+        "D020",
+        "D021",
+        "D022"
+      ]
+    }
+  ],
   "verification": {
     "interval": 10,
     "last_verified_item_ids": [
-      "D001",
-      "D002",
-      "D003",
-      "D004",
-      "D005",
-      "D006",
-      "D007",
-      "D008",
-      "D009",
-      "D010",
-      "D011",
-      "D012",
-      "D014",
-      "D015",
-      "D016"
+      "D017",
+      "D018",
+      "D019",
+      "D020",
+      "D021",
+      "D022"
     ],
     "tail_check_at_stage_close": true,
-    "evidence": "development/evidence/tail-checks.md",
-    "previous_evidence": "development/evidence/D010/concentrated-checks.md"
+    "previous_evidence": "development/evidence/release110.md",
+    "evidence": "development/evidence/release130.md"
   },
   "scope": {
-    "optical_solver": "OpticStudio ZOS-API",
-    "main": "Native adaptations and workflows using native trace/analysis/optimization with mathematical postprocessing.",
-    "future": "Pareto search, user-supplied cost allocation and offline FSM controller delivered in 1.1.0.",
-    "dependencies": "Per-topic model, resource and license conditions are recorded in usage guides."
-  },
-  "current_release": "1.1.0"
+    "optical_solver": "Installed OpticStudio ZOS-API",
+    "main": "Capability discovery, candidate management, joint glass trials, native merit objectives, native desensitization and sequential loss aggregation.",
+    "dependencies": "Runtime license, TOLR settings identity and resources are checked in the related item."
+  }
 }

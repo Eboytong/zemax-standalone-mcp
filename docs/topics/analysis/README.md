@@ -52,3 +52,8 @@
 - [双FSM离线闭环仿真](fsm-control.md)
 
 - [加工成本与公差预算](tolerance-budget.md)
+
+- [多槽位联合玻璃搜索](../../guides/joint-glass-search.md)
+- [评价函数目标与约束](../../guides/merit-program.md)
+- [固定公差的设计去敏感化](../../guides/design-desensitization.md)
+- [顺序逐面能量损耗](../../guides/sequential-energy-budget.md)

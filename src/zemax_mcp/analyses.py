@@ -511,6 +511,12 @@ def native_setting(native, settings, name, value):
 class AnalysesMixin:
     def run_analysis(self, req):
         q=req.request
+        if q.kind == 'sequential_energy_budget':
+            from .sequential_energy import run_energy_budget
+            return run_energy_budget(self,q)
+        if q.kind == 'design_desensitize':
+            from .desensitization import run_desensitize
+            return run_desensitize(self,q)
         if q.kind == 'tolerance_budget':
             from .tolerance_budget import run_tolerance_budget
             return run_tolerance_budget(self, q)

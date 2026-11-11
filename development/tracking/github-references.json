@@ -1,5 +1,5 @@
 {
-  "reviewed_at": "2026-11-10",
+  "reviewed_at": "2026-11-11",
   "purpose": "implementation_reference",
   "repositories": [
     {
@@ -29,13 +29,16 @@
       "license_file": "LICENSE",
       "notice_file": null,
       "paths": [
-        "src/ZemaxMCP.Server/Tools/Analysis/GetCoatingRtaTool.cs"
+        "src/ZemaxMCP.Server/Tools/Analysis/GetCoatingRtaTool.cs",
+        "src/ZemaxMCP.Server/Tools/Optimization/ForbesMeritFunctionTool.cs",
+        "src/ZemaxMCP.Server/Tools/Optimization/ForbesPupilSampling.cs"
       ],
       "related_items": [
         "D002",
-        "D006"
+        "D006",
+        "D020"
       ],
-      "reference_scope": "指定曲面、角度、系统波长和inward/outward直接R/T/A查询。",
+      "reference_scope": "指定曲面、角度、系统波长和inward/outward直接R/T/A查询。 D020参考MFE构建/恢复；半瞳与单子午线采样须按对称条件重做参考。",
       "code_reuse": "reference_only; record copied/adapted files and attribution during implementation"
     },
     {
@@ -54,9 +57,10 @@
       "related_items": [
         "D001",
         "D004",
-        "D008"
+        "D008",
+        "D019"
       ],
-      "reference_scope": "GRIN系数语义、玻璃贡献/替换对照和几何间隙评价。",
+      "reference_scope": "GRIN系数语义、玻璃贡献/替换对照和几何间隙评价。 D019参考材料身份、同预算候选对照；联合搜索复用本项目已实现glass_trials。",
       "code_reuse": "reference_only; record copied/adapted files and attribution during implementation"
     },
     {

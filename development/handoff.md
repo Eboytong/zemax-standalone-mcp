@@ -1,21 +1,20 @@
 # 开发交接
 
-2026-11-11，主仓C:/Users/tonge/Desktop/mcp。本地发行1.1.0：102工具/144分析请求，wheel位于releases/1.1.0。本轮统一提交代码、文档和1.1.0安装包；具体发布信息见发行记录。
+2026-11-11。主仓C:/Users/tonge/Desktop/mcp，源码1.3.0，107工具、146种分析。工程搜索与设计改进D017—D022全部完成，6/6；统一发行检查已通过。
 
-## 当前成果
+## 交付及修复
 
-D001—D012及D014—D016共15/15完成。D011双路径共焦独立响应最大差0.004045，FWHM相对差0.473%；D012全温补偿最差RMS由4.068810降至0.110857µm；D014三个解析最优折中值42/50/58mm最大差2.74e-10mm。
+- 能力检索、持久候选、联合玻璃、评价函数、去敏感化及逐面损耗已交付，逐项记录见[当前阶段](current.md)和[台账](ledgers/roadmap.csv)。
+- 显式材料池仅读请求材料，自动目录扫描分步进行并在取消时关闭；OPD写入、回读和结果读取每16项交还控制，解决发行回归的状态查询超时。
+- 原生向导依完整设置组合回读，支持单配置/单视场；逐面损耗按原生渐晕码定位真实截断面。
+- 全量普通3765通过；原生首轮8通过、3项超时，修复复测3通过；跨三面归属另1通过。原始失败及后续证据一并保留。
 
-D015有类型成本函数与工艺边界、原生灵敏度、候选Monte Carlo和独立最佳样本。推荐0.05mm半宽、20CNY/件，独立64/64合格、95% Wilson下限0.94337594，8数值对照最大差4.68e-17。调用方可提供实际报价参数。原生记录tolerance_budget_16c17cb04f。
+## 发行与会话
 
-D016原生4×4双镜响应、离散控制与逐样本追迹。128数值对照最大差1.503e-10，条件数25，15ms达到1µm门槛，最后最大残差约50nm。包含延迟、执行器时间常数、噪声、限幅、秩不足及取消。原生记录fsm_control_748203142c。
+wheel：releases/1.3.0/zemax_standalone_mcp-1.3.0-py3-none-any.whl。独立安装目录.local/builds/release130-installed。独立安装stdio的107/146 schema和离线搜索通过，安装包4项原生通过，最终重建wheel另1项原生通过，全部会话正常断开。完整命令及最终发布状态见[1.3.0记录](evidence/release130.md)。
 
-## 检查与运行状态
+下一动作：提交main、创建v1.3.0并上传wheel。保留未跟踪releases/0.1.62/。既有1.1.0与更早证据沿用其实际适用条件。
 
-全量普通3714通过，尾批4原生/72.31s，版本定向42普通通过，独立安装schema102/144及安装包2原生/45.46s通过。前十项和各专题已通过证据继续保留。参见[evidence/tail-checks.md](evidence/tail-checks.md)、[发行记录](evidence/release110.md)。所有本轮原生会话均正常断开，无排队作业。
-
-Windows x64、Python3.14、OpticStudio24.2.0/build240529 Premium；原生串行。项目源码直接导入需PYTHONPATH=root;src；安装包测试由ZEMAX_TEST_WHEEL_DIR指定隔离目录。
-
-## 当前交接
-
-现行15项全部完成，待开发队列为空。D013已按用户要求移出当前计划，其接口探查归为[历史资料](evidence/D013/README.md)。本轮维护已更新文档、生成状态并发布GitHub正式Release v1.1.0；代码提交a2a435c，附件上传成功。之后按具体使用反馈安排维护。
+```powershell
+.\.venv\Scripts\python.exe -B scripts/development/status.py --output development/generated/status.json --markdown development/generated/remaining.md --queue development/generated/queue.json --ranked development/remaining-ranked.md
+```

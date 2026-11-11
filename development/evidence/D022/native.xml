@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="18.245" timestamp="2026-11-11T16:01:30.856201+08:00" hostname="tongeb"><testcase classname="tests.native.test_sequential_surface_loss_live" name="test_native_target_surface_intensity_semantics" time="17.091"><properties><property name="validation_layer" value="native" /></properties><failure message="AssertionError(&quot;{'cumulative_throughput': 0.9576119544052238, 'error': 0, 'intensity_scope': 'native polarized cumulative ray intensity after the target surface; successful rays only', 'missing': 0, ...}\nassert (3 == 1)&quot;) [single exception in ExceptionGroup]">+ Exception Group Traceback (most recent call last):
+  |   File "C:\Users\tonge\Desktop\mcp\tests\native\test_sequential_surface_loss_live.py", line 37, in test_native_target_surface_intensity_semantics
+  |     asyncio.run(execute('d022_target_surface_probe',work))
+  |     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 205, in run
+  |     return runner.run(main)
+  |            ~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\runners.py", line 128, in run
+  |     return self._loop.run_until_complete(task)
+  |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\asyncio\base_events.py", line 719, in run_until_complete
+  |     return future.result()
+  |            ~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\mcp\tests\support\native.py", line 64, in execute
+  |     async with Client(params,read_timeout_seconds=180)as client:
+  |                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\mcp\client\client.py", line 480, in __aexit__
+  |     await self._exit_stack.__aexit__(exc_type, exc_val, exc_tb)
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 768, in __aexit__
+  |     raise exc
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+  |     cb_suppress = await cb(*exc_details)
+  |                   ^^^^^^^^^^^^^^^^^^^^^^
+  |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 235, in __aexit__
+  |     await self.gen.athrow(value)
+  |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\mcp\client\stdio.py", line 201, in stdio_client
+  |     async with anyio.create_task_group() as tg:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Exception Group Traceback (most recent call last):
+    |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\mcp\client\stdio.py", line 205, in stdio_client
+    |     yield read_stream, write_stream
+    |   File "C:\Users\tonge\anaconda3\Lib\contextlib.py", line 751, in __aexit__
+    |     cb_suppress = await cb(*exc_details)
+    |                   ^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\mcp\client\session.py", line 514, in __aexit__
+    |     result = await self._task_group.__aexit__(exc_type, exc_val, exc_tb)
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\tonge\Desktop\mcp\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 847, in __aexit__
+    |     raise BaseExceptionGroup(
+    |         "unhandled errors in a TaskGroup", self._exceptions
+    |     ) from None
+    | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+    +-+---------------- 1 ----------------
+      | Traceback (most recent call last):
+      |   File "C:\Users\tonge\Desktop\mcp\tests\support\native.py", line 66, in execute
+      |     await work(e)
+      |   File "C:\Users\tonge\Desktop\mcp\tests\native\test_sequential_surface_loss_live.py", line 35, in work
+      |     assert clipped['surfaces'][0]['succeeded']==1 and clipped['surfaces'][0]['vignetted']==2,clipped['surfaces'][0]
+      | AssertionError: {'cumulative_throughput': 0.9576119544052238, 'error': 0, 'intensity_scope': 'native polarized cumulative ray intensity after the target surface; successful rays only', 'missing': 0, ...}
+      | assert (3 == 1)
+      +------------------------------------</failure></testcase></testsuite></testsuites>
