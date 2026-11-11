@@ -6,19 +6,20 @@
   "target_release": "1.4.0",
   "ledger": "development/ledgers/roadmap.csv",
   "planned_count": 5,
-  "completed_count": 4,
-  "remaining_count": 1,
+  "completed_count": 5,
+  "remaining_count": 0,
   "completed_item_ids": [
     "D023",
     "D024",
     "D025",
-    "D026"
+    "D026",
+    "D027"
   ],
-  "next_item": "D027",
+  "next_item": null,
   "schedule_counts": {
     "active": {
       "total": 5,
-      "completed": 4
+      "completed": 5
     },
     "conditional": {
       "total": 0,
@@ -30,19 +31,13 @@
     }
   },
   "state_counts": {
-    "done": 4,
-    "implemented": 1
+    "done": 5
   },
   "verification": {
     "interval": 10,
-    "completed_since_check_item_ids": [
-      "D023",
-      "D024",
-      "D025",
-      "D026"
-    ],
-    "completed_since_check_count": 4,
-    "remaining_until_check": 6,
+    "completed_since_check_item_ids": [],
+    "completed_since_check_count": 0,
+    "remaining_until_check": 10,
     "due": false,
     "tail_check_at_stage_close": true
   },
@@ -57,7 +52,7 @@
       "execution_state": "done",
       "entry_points": "tools/list;Codex;search_capabilities",
       "baseline": "1.3.0真实stdio字节与源码审查已取得",
-      "next_action": "已完成；按依赖继续下一项",
+      "next_action": "1.4.0已发行；按新增需求维护",
       "evidence": "development/evidence/D023/README.md",
       "references": "development/tool-disclosure-research.md",
       "blocked_reason": "",
@@ -75,7 +70,7 @@
       "execution_state": "done",
       "entry_points": "get_capabilities;search_capabilities",
       "baseline": "单wavefront详情151046字节；可达裁剪实验1247字节",
-      "next_action": "已完成；按依赖继续下一项",
+      "next_action": "1.4.0已发行；按新增需求维护",
       "evidence": "development/evidence/D024/README.md",
       "references": "development/tool-disclosure-research.md",
       "blocked_reason": "",
@@ -95,7 +90,7 @@
       "execution_state": "done",
       "entry_points": "server startup;query_capability;execute_capability",
       "baseline": "现有107工具和Bridge/Backend派发；9引导工具10275字节",
-      "next_action": "完成；由D027集中检查和发行",
+      "next_action": "1.4.0已发行；按新增需求维护",
       "evidence": "development/evidence/D025/README.md",
       "references": "development/tool-disclosure-research.md",
       "blocked_reason": "",
@@ -115,7 +110,7 @@
       "execution_state": "done",
       "entry_points": "run_analysis:glass_trials;get_glass_slots;MFE;optimization",
       "baseline": "联合玻璃强制贡献；去敏感化是原生制造良率DLS路线",
-      "next_action": "完成；由D027集中检查和发行",
+      "next_action": "1.4.0已发行；按新增需求维护",
       "evidence": "development/evidence/D026/README.md",
       "references": "development/tool-disclosure-research.md",
       "blocked_reason": "",
@@ -132,10 +127,10 @@
       "schedule": "active",
       "depends_on": "D025;D026",
       "difficulty": "中",
-      "execution_state": "implemented",
+      "execution_state": "done",
       "entry_points": "host discovery;compact;conditional subagent;release",
       "baseline": "产品1.3.0；本期全部完成后统一发行",
-      "next_action": "全部实现和发行检查通过；提交推送并发布GitHub1.4.0",
+      "next_action": "1.4.0已发行；按新增需求维护",
       "evidence": "development/evidence/release140.md",
       "references": "development/tool-disclosure-research.md",
       "blocked_reason": "",
@@ -144,7 +139,7 @@
         "D026"
       ],
       "pending_dependencies": [],
-      "ready": true
+      "ready": false
     }
   ]
 }

@@ -6,19 +6,20 @@
   "target_release": "1.4.0",
   "ledger": "development/ledgers/roadmap.csv",
   "planned_count": 5,
-  "completed_count": 4,
-  "remaining_count": 1,
+  "completed_count": 5,
+  "remaining_count": 0,
   "completed_item_ids": [
     "D023",
     "D024",
     "D025",
-    "D026"
+    "D026",
+    "D027"
   ],
-  "next_item": "D027",
+  "next_item": null,
   "schedule_counts": {
     "active": {
       "total": 5,
-      "completed": 4
+      "completed": 5
     },
     "conditional": {
       "total": 0,
@@ -30,43 +31,15 @@
     }
   },
   "state_counts": {
-    "done": 4,
-    "implemented": 1
+    "done": 5
   },
   "verification": {
     "interval": 10,
-    "completed_since_check_item_ids": [
-      "D023",
-      "D024",
-      "D025",
-      "D026"
-    ],
-    "completed_since_check_count": 4,
-    "remaining_until_check": 6,
+    "completed_since_check_item_ids": [],
+    "completed_since_check_count": 0,
+    "remaining_until_check": 10,
     "due": false,
     "tail_check_at_stage_close": true
   },
-  "items": [
-    {
-      "item_id": "D027",
-      "phase": "1.4.0",
-      "title": "模式对照、默认选型与统一发行",
-      "schedule": "active",
-      "depends_on": "D025;D026",
-      "difficulty": "中",
-      "execution_state": "implemented",
-      "entry_points": "host discovery;compact;conditional subagent;release",
-      "baseline": "产品1.3.0；本期全部完成后统一发行",
-      "next_action": "全部实现和发行检查通过；提交推送并发布GitHub1.4.0",
-      "evidence": "development/evidence/release140.md",
-      "references": "development/tool-disclosure-research.md",
-      "blocked_reason": "",
-      "depends_on_item_ids": [
-        "D025",
-        "D026"
-      ],
-      "pending_dependencies": [],
-      "ready": true
-    }
-  ]
+  "items": []
 }

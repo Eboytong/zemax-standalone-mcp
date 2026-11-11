@@ -2,7 +2,7 @@
 
 生效日期：2026-11-11。计划编号：`agent-disclosure-20261111`。产品基线：**1.3.0，107个工具、146种分析请求**。主仓：`C:/Users/tonge/Desktop/mcp`。本期D023—D027五项，全部完成后统一发行1.4.0。
 
-执行快照：D023—D026完成；D027实现、模式对照及发行检查通过，正在提交和发布1.4.0。实际状态以[台账](ledgers/roadmap.csv)和[发行证据](evidence/release140.md)为准；下列任务书保留既定范围及验收条件。
+执行快照：D023—D027完成5/5，模式对照、集中检查及GitHub1.4.0发行已完成。实际状态以[台账](ledgers/roadmap.csv)和[发行证据](evidence/release140.md)为准；下列任务书保留既定范围及验收条件。
 
 ## 1. 目标与依据
 
@@ -122,7 +122,7 @@ D027只做一次阶段集中普通回归、受影响原生回归与安装包检�
 
 ## 6. 发行与状态来源
 
-基线发行1.3.0；本轮源码及独立安装产物1.4.0，发行检查已通过。五项统一交付，GitHub发布收据见[发行记录](evidence/release140.md)。
+基线发行1.3.0；本轮1.4.0源码、标签及安装包已统一发布。五项交付、集中检查和独立安装已完成，GitHub发布收据见[发行记录](evidence/release140.md)。
 
 `ledgers/roadmap.csv`维护状态/动作/证据，`tracking/roadmap.json`维护依赖/阶段/门槛，`generated/`和`remaining-ranked.md`由状态脚本生成。`current.md`、`handoff.md`记录当前事实、下一命令和会话状态。
 
@@ -144,4 +144,4 @@ pending：范围已定义；in_progress：正在实施；implemented：已接通
 
 ## 8. 接手
 
-[调研](tool-disclosure-research.md) → [当前阶段](current.md) → [台账](ledgers/roadmap.csv) → 单项任务书 → [交接](handoff.md)。实现和检查已通过，当前动作是统一发布1.4.0；条件宿主实验单列记录。
+[调研](tool-disclosure-research.md) → [当前阶段](current.md) → [台账](ledgers/roadmap.csv) → 单项任务书 → [交接](handoff.md)。五项完成且1.4.0已发行；本期队列已清空，条件宿主实验单列记录。

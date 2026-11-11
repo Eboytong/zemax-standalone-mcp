@@ -22,3 +22,5 @@ compact目录减少99.1022%。wavefront单能力详情1,145字节。两模式12�
 `.venv/Scripts/python.exe -B -X utf8 development/evidence/D027/compare.py`运行未成功场景；每对之间串行关闭，可指定场景ID。`summarize.py`整理原生对照、容差和检索结果。初轮优化用例缺MFE、候选创建缺评价合同、面型切换缺replace_solves已补齐，原始记录在本机证据中。
 
 全量普通3775通过，70.37秒，见[XML](../release140-ordinary.xml)。最终注册/派发与玻璃定向47通过，23.39秒，见[XML](../D025-final-targeted.xml)。受影响原生回归、wheel独立安装和GitHub发行结果见[发行记录](../release140.md)。
+
+1.4.0已于2026-11-11正式发布，标签v1.4.0对应源码a95c5b3；605030字节wheel上传完成。D027及本期五项全部完成，发布收据见[JSON](../release140-github.json)。
