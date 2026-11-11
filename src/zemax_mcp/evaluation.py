@@ -218,6 +218,9 @@ class EvaluationMixin:
         return self._composite("configuration_evaluation",req.model_dump(),flow)
 
     def run_multistart_optimization(self,req):
+        if req.pareto is not None:
+            from .pareto import run_pareto
+            return run_pareto(self,req)
         self._require_sequential()
         for changes in req.starts:UpdateSurfaces(changes=changes)
         def flow(task):

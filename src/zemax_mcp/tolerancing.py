@@ -162,7 +162,7 @@ class TolerancingMixin:
                     if not Path(filename).is_absolute():filename=str(self.directory/filename)
                     if not self._close_task_native(child):raise ZemaxError("CLEANUP_FAILED","公差工具释放失败。")
                     return dict(tolerance_data=filename,report=report,actual=actual)
-                return self._start_task("tolerance_native",tool,actual,collector=collect)
+                return self._start_task("tolerance_native",tool,actual,collector=collect,budget_seconds=req.budget_seconds)
             updated=None
             try:
                 result=yield from self._child_job(task,launch,None)

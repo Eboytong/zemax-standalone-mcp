@@ -1,0 +1,8 @@
+{
+  "tool": "update_surfaces",
+  "arguments": {
+    "changes": [{"surface": 1, "surface_type": "Gradient2", "thickness": 2,
+      "parameters": {"1": 0.005, "2": 2.25, "3": -0.02, "4": 0.001, "5": 0, "6": 0, "7": 0, "8": 0},
+      "replace_solves": true, "solves": {"parameter_3": {"mode": "variable"}}}]
+  }
+}

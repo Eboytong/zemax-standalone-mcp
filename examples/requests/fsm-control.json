@@ -1,0 +1,78 @@
+{
+  "request": {
+    "kind": "fsm_control",
+    "start_surface": 1,
+    "mirrors": [
+      {
+        "tilt_surface": 2,
+        "mirror_surface": 3,
+        "return_surface": 4
+      },
+      {
+        "tilt_surface": 5,
+        "mirror_surface": 6,
+        "return_surface": 7
+      }
+    ],
+    "observation_surfaces": [
+      8,
+      9
+    ],
+    "disturbances": [
+      [
+        0.01,
+        -0.005,
+        0.0001,
+        -5e-05
+      ],
+      [
+        0.01,
+        -0.005,
+        0.0001,
+        -5e-05
+      ],
+      [
+        0.01,
+        -0.005,
+        0.0001,
+        -5e-05
+      ],
+      [
+        0.01,
+        -0.005,
+        0.0001,
+        -5e-05
+      ],
+      [
+        0.01,
+        -0.005,
+        0.0001,
+        -5e-05
+      ]
+    ],
+    "sample_period_seconds": 0.001,
+    "actuator_time_constant_seconds": 0.0,
+    "delay_samples": 0,
+    "gain": 0.5,
+    "limits_deg": [
+      0.1,
+      0.1,
+      0.1,
+      0.1
+    ],
+    "measurement_noise_std": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "seed": 0,
+    "probe_angle_deg": 0.0001,
+    "probe_height": 0.0001,
+    "probe_slope": 1e-06,
+    "wavelength": 1,
+    "condition_limit": 100000000.0,
+    "residual_tolerance": 1e-06,
+    "validation_tolerance": 1e-06
+  }
+}

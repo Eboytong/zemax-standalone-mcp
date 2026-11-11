@@ -1,0 +1,15 @@
+{
+  "request": {
+    "kind": "coating_optimization",
+    "surface": 1,
+    "variables": [{"layer": 1, "minimum": 0.2, "maximum": 1.8}],
+    "objectives": [
+      {"wavelength_um": 0.55, "angle_deg": 0, "direction": "inward", "metric": "reflection", "polarization": "s", "target": 0},
+      {"wavelength_um": 0.65, "angle_deg": 30, "direction": "outward", "metric": "transmission", "polarization": "p", "target": 1}
+    ],
+    "algorithm": "DampedLeastSquares",
+    "cycles": "Fixed_10_Cycles",
+    "budget_seconds": 120,
+    "save_best": true
+  }
+}

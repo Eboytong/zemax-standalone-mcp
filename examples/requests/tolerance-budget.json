@@ -1,0 +1,38 @@
+{
+  "tool": "run_analysis",
+  "arguments": {
+    "request": {
+      "kind": "tolerance_budget",
+      "processes": [
+        {
+          "operand": 1,
+          "name": "image spacing",
+          "unit": "mm",
+          "minimum_half_width": 0.01,
+          "maximum_half_width": 0.2,
+          "reference_half_width": 0.01,
+          "variable_cost": 100
+        }
+      ],
+      "allocations": [
+        [
+          0.01
+        ],
+        [
+          0.05
+        ],
+        [
+          0.2
+        ]
+      ],
+      "currency": "CNY",
+      "costing_unit": "piece",
+      "criterion_unit": "lens units",
+      "threshold": 0.001,
+      "target_yield": 0.8,
+      "screening_samples": 32,
+      "validation_samples": 64,
+      "sampling": 1
+    }
+  }
+}

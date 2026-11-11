@@ -67,7 +67,7 @@ def replay_backend(tmp_path,ignored=None,close=True):
         b.started.append(actual)
         return kwargs["collector"](dict(native=tool,settings=actual))
     b._start_task=start
-    b._collect_general_analysis=lambda _:dict(native_preamble=["总功率: 1.0000E+00 瓦特"],grids=[])
+    b._collect_general_analysis=lambda _, **kwargs:dict(native_preamble=["总功率: 1.0000E+00 瓦特"],grids=[])
     path=tmp_path/"input.zrd";path.write_bytes(b"ordinary native stub only")
     return b,path,closed
 

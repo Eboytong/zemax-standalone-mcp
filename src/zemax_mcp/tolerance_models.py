@@ -86,6 +86,7 @@ class ToleranceWizard(Request):
 from .hpc_models import HpcSelection
 
 class ToleranceAnalysis(Request):
+    budget_seconds: Annotated[FiniteFloat,Field(gt=0,le=3600)] | None = None
     hpc: HpcSelection | None = None
     mode: Literal["sensitivity","inverse_limit","inverse_increment","monte_carlo"]
     criterion: str = "RMSSpotRadius"

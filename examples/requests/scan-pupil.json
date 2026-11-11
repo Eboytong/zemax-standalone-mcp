@@ -1,0 +1,27 @@
+{
+  "request": {
+    "kind": "scan_pupil",
+    "start_surface": 1,
+    "tilt_surface": 2,
+    "mirror_surface": 3,
+    "return_surface": 4,
+    "pupil_surface": 7,
+    "image_surface": 8,
+    "axis": "Y",
+    "angles_deg": [
+      -1,
+      0,
+      1
+    ],
+    "beam_radius": 1,
+    "ray_density": 9,
+    "spacing": {
+      "surface": 4,
+      "values": [
+        -45,
+        -50,
+        -55
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "request": {
+    "kind": "thermal_compensation",
+    "configurations": [1, 2, 3],
+    "reference_configuration": 1,
+    "compensation_surface": 2,
+    "minimum_gap": 40,
+    "maximum_gap": 60,
+    "replace_compensation_solves": true,
+    "cycles": "Fixed_10_Cycles"
+  }
+}

@@ -5,6 +5,7 @@ from .detectors import check_setting_value
 from .imaging import new_analysis, checked, check, select, collect_imaging
 from .analyses import scalar_settings
 from contextlib import contextmanager
+import math
 
 METRICS=['reflection','transmission','absorption','diattenuation','phase','retardance']
 IDS={metric+'_vs_'+axis:metric.capitalize()+'vs'+axis.capitalize() for metric in METRICS for axis in ['angle','wavelength']}
@@ -288,6 +289,66 @@ def verify_layer(backend,value,patch):
 
 
 class CoatingsMixin:
+    def get_coating_rta(self, q):
+        self._require_sequential()
+        row = self._row(q.surface)
+        waves = self.system.SystemData.Wavelengths
+        prepared = []
+        for condition in q.conditions:
+            number = condition.wavelength
+            if condition.wavelength_um is not None:
+                wavelength = condition.wavelength_um
+            else:
+                if number is None:
+                    number = next((i for i in range(1, int(waves.NumberOfWavelengths)+1)
+                                   if waves.GetWavelength(i).IsPrimary), None)
+                    if number is None:
+                        raise ZemaxError('INVALID_SYSTEM', '系统波长表没有主波长。')
+                if number > int(waves.NumberOfWavelengths):
+                    raise ZemaxError('INDEX_OUT_OF_RANGE', '波长编号超出系统波长表。', wavelength=number)
+                wavelength = float(waves.GetWavelength(number).Wavelength)
+            direction = self.native.enum(self.native.api.Editors.DirectionOfRayTravel, condition.direction)
+            prepared.append((condition, number, wavelength, direction))
+        factory = getattr(row, 'GetCoatingPerformanceData', None)
+        if factory is None:
+            raise ZemaxError('UNSUPPORTED_INTERFACE', '本机曲面接口缺少GetCoatingPerformanceData。',
+                             surface=q.surface, version=self.version)
+        data = unwrap(factory())
+        if data is None:
+            raise ZemaxError('EMPTY_NATIVE_RESULT', '曲面镀膜性能接口返回空对象。', surface=q.surface)
+        if int(data.SurfaceNumber) != q.surface:
+            raise ZemaxError('RESULT_IDENTITY_MISMATCH', '镀膜性能对象的曲面归属不符。',
+                             requested=q.surface, actual=int(data.SurfaceNumber))
+        samples = []
+        for index, (condition, number, wavelength, direction) in enumerate(prepared):
+            try:
+                data.GetCoatingPerformance(condition.angle_deg, wavelength, direction)
+                values = {}
+                for key, native_name in [('reflection', 'Reflection'), ('transmission', 'Transmission'), ('absorption', 'Absorption')]:
+                    channels = unwrap(getattr(data, native_name))
+                    s, p = float(channels.S), float(channels.P)
+                    values[key] = dict(s=s, p=p, unpolarized=(s+p)/2)
+                residual = {key: 1-sum(v[key] for v in values.values()) for key in ('s', 'p', 'unpolarized')}
+                valid = all(math.isfinite(value) for v in values.values() for value in v.values())
+                samples.append(dict(index=index, wavelength=number, wavelength_um=wavelength,
+                                    angle_deg=condition.angle_deg, direction=condition.direction,
+                                    **values, energy_residual=residual,
+                                    status='valid' if valid else 'nonfinite_native_result'))
+            except Exception as exc:
+                raise ZemaxError('COATING_CALCULATION_FAILED', str(exc), surface=q.surface,
+                                 failed_condition=index, completed_samples=samples,
+                                 native_exception=type(exc).__name__) from exc
+        return dict(surface=q.surface, coating=str(row.Coating),
+                    media=dict(before_surface=q.surface-1, before_material=str(self._row(q.surface-1).Material),
+                               after_surface=q.surface, after_material=str(row.Material)),
+                    configuration=int(self.system.MCE.CurrentConfiguration), samples=samples,
+                    total=len(samples), invalid_count=sum(s['status'] != 'valid' for s in samples),
+                    units=dict(angle='degrees', wavelength='micrometers', coefficients='dimensionless intensity'),
+                    direction_definition='inward: preceding medium to surface medium; outward: reverse',
+                    relative_layer_reference='Installed 24.2 direct API uses the query wavelength to convert wave-relative layer thickness; CODA uses the system primary wavelength',
+                    source='ILDERow.GetCoatingPerformanceData/GetCoatingPerformance',
+                    ownership='row-owned data; no independent analysis or SystemTool created')
+
     def get_coating_layers(self,q):
         self._require_sequential();data=self._row(q.surface).CoatingData;total=int(data.NumberOfLayers)
         if q.start>total+1:raise ZemaxError('INDEX_OUT_OF_RANGE','镀膜层起点越界。',total=total)

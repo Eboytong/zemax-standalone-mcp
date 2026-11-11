@@ -43,3 +43,12 @@
 - [系统数据报告](system-data-report.md)
 - [Zernike 随视场与干涉图](wavefront-topics.md)
 - [YNI Contributions](yni-contributions.md)
+
+- [扫描镜与瞳共轭](scan-pupil.md)：镜面扫描、光束走离、通过率及间距比较。
+
+- [点状荧光共焦响应与有限针孔](confocal-response.md)
+- [均温响应与焦点补偿](thermal-compensation.md)
+- [多目标候选搜索](pareto-search.md)
+- [双FSM离线闭环仿真](fsm-control.md)
+
+- [加工成本与公差预算](tolerance-budget.md)

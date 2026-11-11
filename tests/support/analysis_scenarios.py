@@ -3,6 +3,7 @@
 # These tests exercise their own model/resource and failure contracts. Listing
 # them here routes coverage; their presence is not evidence of a native pass.
 SPECIALIZED = {
+    'detector_viewer':('test_detector_viewer_live.py','NSC current accumulation or selected ZRD'),
     'extended_diffraction_image':('test_scene_images_live.py','scene input and explicit source/display widths'),
     'partially_coherent_image':('test_scene_images_live.py','scene CFG, field/wavelength selection and native grid'),
     'biocular_field_of_view':('test_biocular_fov_live.py','native STOP-launched multi-configuration pass boundary'),

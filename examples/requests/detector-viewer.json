@@ -1,0 +1,11 @@
+{
+  "request": {
+    "kind": "detector_viewer",
+    "source": "current_detector",
+    "detector": 2,
+    "show_as": "FalseColor",
+    "data_type": "IncoherentIrradiance",
+    "scale": "Linear",
+    "smoothing": 0
+  }
+}

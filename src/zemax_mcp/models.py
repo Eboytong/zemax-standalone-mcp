@@ -820,10 +820,13 @@ class ConfigurationEvaluation(Request):
         if len(set(self.configurations))!=len(self.configurations): raise ValueError("结构编号不能重复。")
         return self
 
+from .pareto import ParetoSettings
+
 class Multistart(Request):
     starts: Annotated[list[Annotated[list[SurfacePatch],Field(min_length=1,max_length=100)]],Field(min_length=1,max_length=100)]
     optimization: LocalOptimization = Field(default_factory=LocalOptimization)
     evaluation: Evaluation
+    pareto: ParetoSettings | None = None
 
 
 COMMAND_MODELS = {
@@ -891,8 +894,9 @@ COMMAND_MODELS.update(get_lens_catalogs=Empty, run_lens_catalog_search=CatalogSe
 from .history_models import TaskHistory, HistoricalResult, RequestStatus
 COMMAND_MODELS.update(list_task_history=TaskHistory, get_historical_result=HistoricalResult, get_request_status=RequestStatus)
 
-from .coating_models import CoatingLayerRange,CoatingLayerUpdate
+from .coating_models import CoatingLayerRange,CoatingLayerUpdate,CoatingRta
 COMMAND_MODELS.update(get_coating_layers=CoatingLayerRange,update_coating_layers=CoatingLayerUpdate)
+COMMAND_MODELS['get_coating_rta'] = CoatingRta
 
 from .material_models import MaterialProperties
 COMMAND_MODELS["get_material_properties"]=MaterialProperties

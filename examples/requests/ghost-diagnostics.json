@@ -1,0 +1,33 @@
+{
+  "request": {
+    "kind": "ghost_diagnostics",
+    "detector": 3,
+    "expected_paths": [
+      [
+        {
+          "object": 2,
+          "face": 1
+        },
+        {
+          "object": 2,
+          "face": 2
+        },
+        {
+          "object": 3
+        }
+      ]
+    ],
+    "rays_per_source": 1000,
+    "candidates": [
+      {
+        "name": "另一材料",
+        "changes": [
+          {
+            "object": 2,
+            "material": "N-F2"
+          }
+        ]
+      }
+    ]
+  }
+}

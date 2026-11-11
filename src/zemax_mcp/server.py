@@ -18,7 +18,7 @@ from .wizard_models import WizardRequest, WizardOptions
 from .catalog_models import CatalogSearch, CatalogLens
 from .models import CatalogEvaluation
 from .history_models import TaskHistory, HistoricalResult, RequestStatus
-from .coating_models import CoatingLayerRange,CoatingLayerUpdate
+from .coating_models import CoatingLayerRange,CoatingLayerUpdate,CoatingRta
 from .material_models import MaterialProperties
 from .conversion_models import NscConversion
 from .nsc_models import ObjectGeometry
@@ -316,7 +316,7 @@ def create_server():
     @tool
     async def run_analysis(request: AnalysisRequest) -> ToolResponse:
         """执行本机适配的顺序成像/像差/曲面分析，返回任务；实际设置和曲线、网格或原生文本随结果保存。"""
-        return await call("run_analysis", {"request":request.model_dump(exclude_unset=request.kind in {'polarization_transmission_fan','polarization_transmission','fiber_coupling_settings','polarization_ray_trace','dispersion_diagram','dispersion_vs_wavelength','seidel_diagram'})})
+        return await call("run_analysis", {"request":request.model_dump(exclude_unset=request.kind in {'coating_optimization','polarization_transmission_fan','polarization_transmission','fiber_coupling_settings','polarization_ray_trace','dispersion_diagram','dispersion_vs_wavelength','seidel_diagram'})})
 
     @tool
     async def get_configurations(request: ConfigurationRange) -> ToolResponse:
@@ -537,6 +537,11 @@ def create_server():
     async def get_material_properties(request: MaterialProperties) -> ToolResponse:
         """读取原生材料目录系数、热属性及内部透过率表，结束关闭目录工具。"""
         return await call("get_material_properties",request.model_dump())
+
+    @tool
+    async def get_coating_rta(request: CoatingRta) -> ToolResponse:
+        """直接读取指定顺序曲面的双向镀膜S/P及等权非偏振R/T/A。"""
+        return await call("get_coating_rta", request.model_dump(exclude_unset=True))
 
     @tool
     async def get_coating_layers(request: CoatingLayerRange) -> ToolResponse:

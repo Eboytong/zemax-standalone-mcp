@@ -8,7 +8,7 @@ from pathlib import Path
 from mcp import Client
 from mcp.client.stdio import StdioServerParameters
 
-async def run(target,folder,version):
+async def run(target,folder,version,tool_count='101',analysis_count='132'):
     target=Path(target).resolve();folder=Path(folder).resolve();folder.mkdir(parents=True,exist_ok=False)
     sys.path.insert(0,str(target))
     import zemax_mcp
@@ -18,10 +18,10 @@ async def run(target,folder,version):
     p=StdioServerParameters(command=sys.executable,args=['-I','-B','-c',boot],cwd=str(target),env={'PYTHONUTF8':'1','ZEMAX_OUTPUT_DIR':str(folder/'native')})
     record=dict(version=version,installed_root=str(target),native_connection_attempted=False)
     async with Client(p,read_timeout_seconds=60)as client:
-        ts=await client.list_tools();record['tool_count']=len(ts.tools);assert record['tool_count']==101
+        ts=await client.list_tools();record['tool_count']=len(ts.tools);assert record['tool_count']==int(tool_count)
         result=(await client.call_tool('get_capabilities',dict(topic='tool',tool_name='run_analysis'))).structured_content
         assert result['ok'];schema=result['data']['request_schema'];mapping=schema['properties']['request']['discriminator']['mapping']
-        record['analysis_kind_count']=len(mapping);assert record['analysis_kind_count']==132
+        record['analysis_kind_count']=len(mapping);assert record['analysis_kind_count']==int(analysis_count)
         assert {'system_check','system_data','surface_phase_slope','surface_phase_slope_cross','rms_field_map','rms_vs_wavelength','tolerance_yield','tolerance_histogram','geometric_image','zernike_coefficients_vs_field'}<=mapping.keys()
         assert {'universal_plot_1d','universal_plot_2d','paraxial_gaussian_beam','skew_gaussian_beam'}<=mapping.keys()
         record['actual_schema']=result

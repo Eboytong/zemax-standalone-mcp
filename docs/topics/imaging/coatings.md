@@ -1,5 +1,21 @@
 # 镀膜层及性能
 
+## 指定曲面的双向R/T/A
+
+`get_coating_rta`直接读取当前顺序系统指定曲面的镀膜性能。工具同步返回，单次最多120个条件；每个条件指定入射角和`inward/outward`方向。`wavelength`为从1开始的系统波长编号，`wavelength_um`为显式微米波长，两者互斥；均省略时采用当前主波长。
+
+```json
+{"request":{"surface":1,"conditions":[{"wavelength":1,"angle_deg":30,"direction":"inward"},{"wavelength_um":0.55,"angle_deg":30,"direction":"outward"}]}}
+```
+
+`samples`按请求顺序返回`reflection/transmission/absorption`，每项含`s/p/unpolarized`强度系数，`unpolarized`为S/P各50%的算术平均。`energy_residual`保留`1-R-T-A`，原生值按实际返回；`status`标记有限数或非有限数。结果还包括膜名、相邻介质的曲面/材料归属、当前配置、实际波长和单位。角度范围0至89.9度，曲面从1开始。
+
+`inward`从前一介质进入当前曲面之后的介质，`outward`采用反向。此入口可读取普通顺序曲面的outward性能，适用于本机2024 R2的正式`ILDERow.GetCoatingPerformanceData`接口。对象归曲面持有，查询保持模型修订和设置。发生批量条件计算错误时，返回失败条件下标、已完成样本与原生异常。
+
+本机受控单层膜中，`MATE`数据的消光项−0.02产生吸收；+0.02产生大于1的透射率。准备吸收膜输入时检查实际R/T/A及闭合残差。单曲面结果可用于膜性能评价；全光路功率由偏振追迹及系统透射分析给出。
+
+本机24.2的直接查询接口将相对波长膜厚按本次查询波长换算；原生CODA和固定膜系优化按系统主波长换算。结果的`relative_layer_reference`记录此约定。比较同一物理膜系的多波长性能时，使用绝对微米膜厚或[固定膜系优化](coating-optimization.md)返回的CODA性能。主波长550nm、查询650nm、0.25波长膜厚乘0.6的受控例中，两出口反射率分别为0.0231714221与0.0273020804。
+
 ## 主波长、镜面和生命周期
 
 波长扫描副本保持源系统主波长，避免相对膜厚随扫描下限变化。临时波长表包含请求端点及原主波长，调用 MakePrimary 后回读；扫描区间内、区间外的原主波长均已通过数值验收。实际设置返回 primary_wavelength_um 和完整 temporary_wavelengths。

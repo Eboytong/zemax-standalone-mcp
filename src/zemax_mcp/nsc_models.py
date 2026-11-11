@@ -2,6 +2,7 @@ from typing import Annotated,Literal
 from pydantic import Field,FiniteFloat,model_validator
 from .schema import Request,Index,PositiveIndex
 from .source_spectrum import SourceSpectrum
+from .detector_viewer import ShowAs, DataType, Scale
 
 class NewSystem(Request):
     mode: Literal["Sequential","NonSequential"] = "Sequential"
@@ -148,7 +149,11 @@ class ZrdReplay(Request):
     path: str
     detector: PositiveIndex
     filter: str = ""
-    data_type: Literal["IncoherentIrradiance","IncoherentFluence","CoherentIrradiance","CoherentPhase","IncidentFlux","AbsorbedFlux","RadiantIntensity"] = "IncoherentIrradiance"
+    data_type: DataType = 'IncoherentIrradiance'
+    show_as: ShowAs = 'FalseColor'
+    scale: Scale | None = None
+    smoothing: Annotated[int, Field(strict=True, ge=0, le=10)] | None = None
+    row_col: Annotated[int, Field(strict=True, ge=0)] | None = None
 
 
 class ObjectGeometry(ObjectRequest):

@@ -28,7 +28,7 @@ SOLVE_FIELDS.update(ZPLMacro=dict(macro="Macro"), MarginalRayAngle=dict(angle="A
     MaterialSubstitute=dict(catalog="Catalog"), MaterialOffset=dict(nd_offset="NdOffset",vd_offset="VdOffset"), Automatic={}, Maximum={})
 SOLVE_ALIASES = dict(ConcentricSurface="CocentricSurface", ConcentricRadius="CocentricRadius")
 
-SURFACE_TYPES = ["Standard","EvenAspheric","CoordinateBreak","OddAsphere","Toroidal","Biconic","Paraxial"]
+SURFACE_TYPES = ["Standard","EvenAspheric","CoordinateBreak","OddAsphere","Toroidal","Biconic","Paraxial","Gradient2","Gradient3"]
 
 
 def values(obj, mapping):

@@ -1,6 +1,6 @@
 # MCP 工具清单
 
-1.0.0 正式版提供 101 个工具和 132 种 run_analysis 请求。完整参数以[请求模型](tool-schemas.json)为准，调用约定见[usage.md](../guides/usage.md)。各工具的成熟度与条件见[原生分析矩阵](native-analysis-matrix.csv)及对应专题文档。
+1.1.0 提供102个工具、144种分析请求。支持Detector Viewer、制造几何评价、光纤对准、固定膜系优化、NSC效率/均匀性、玻璃贡献/替换、扫描瞳共轭、鬼像路径、共焦响应、热补偿、公差成本预算及双FSM离线控制。完整参数见[请求模型](tool-schemas.json)，调用约定见[使用指南](../guides/usage.md)，设置与数值条件见[原生分析矩阵](native-analysis-matrix.csv)及对应专题。
 
 | 工具 | 用途 |
 | --- | --- |
@@ -21,6 +21,7 @@
 | `export_evaluation_report` | 以已取得的结果输出 Markdown、JSON 和 CSV；不会重新执行 Zemax。 |
 | `export_point_cloud` | 在自有系统副本上导出曲面PCD，保留原生消息、文件头及关闭记录。 |
 | `generate_tolerances` | 按显式幅度运行顺序公差向导，未选择的误差类型关闭。 |
+| `get_coating_rta` | 指定顺序曲面、角度、波长和传播方向，直接读取原生S/P镀膜R/T/A。 |
 | `get_beam_file` | 读取 version-1 二进制 ZBF 元数据和文件顺序复场样本。 |
 | `get_capabilities` | 列出已实现工具、模式、面型及当前版本可用的设置枚举。 |
 | `get_coating_layers` | 读取当前顺序曲面的镀膜层乘数、偏移、状态及拾取源。 |

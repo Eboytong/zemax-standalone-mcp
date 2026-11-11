@@ -1,0 +1,30 @@
+{
+  "request": {
+    "kind": "confocal_response",
+    "illumination": {
+      "model": "C:/optics/illumination.zos"
+    },
+    "detection": {
+      "model": "C:/optics/detection.zos"
+    },
+    "offsets_mm": [
+      -2,
+      -1.5,
+      -1,
+      -0.5,
+      0,
+      0.5,
+      1,
+      1.5,
+      2
+    ],
+    "pinhole_diameters_um": [
+      4,
+      60
+    ],
+    "pupil_sampling": "S_512x512",
+    "image_sampling": "S_128x128",
+    "image_delta_um": 4,
+    "window_check": true
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "reviewed_at": "2026-11-10",
+  "purpose": "implementation_reference",
+  "repositories": [
+    {
+      "id": "G2",
+      "repository": "YonggangG/Zemax_MCP_Server",
+      "commit": "193598e4ca6224dfa8615565d5e3b6f3cfa6d149",
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "notice_file": null,
+      "paths": [
+        "src/zemax_mcp/zos/subsystems/nsc.py",
+        "live-test-report.md"
+      ],
+      "related_items": [
+        "D003",
+        "D007",
+        "D010"
+      ],
+      "reference_scope": "Detector Viewer的Scale/Smoothing和原生生命周期，追迹/探测器调用组织。",
+      "code_reuse": "reference_only; record copied/adapted files and attribution during implementation"
+    },
+    {
+      "id": "G3",
+      "repository": "joeyijun/OpticStudioMCPServer",
+      "commit": "a7375ba48235b2db71ae40766dbc1969c0671401",
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "notice_file": null,
+      "paths": [
+        "src/ZemaxMCP.Server/Tools/Analysis/GetCoatingRtaTool.cs"
+      ],
+      "related_items": [
+        "D002",
+        "D006"
+      ],
+      "reference_scope": "指定曲面、角度、系统波长和inward/outward直接R/T/A查询。",
+      "code_reuse": "reference_only; record copied/adapted files and attribution during implementation"
+    },
+    {
+      "id": "G4",
+      "repository": "chuang44-tiff/optivibe-mcp",
+      "commit": "50c225c30fab5cd4e81e134e1988c7d6cd7b5ed3",
+      "license": "Apache-2.0",
+      "license_file": "LICENSE",
+      "notice_file": "NOTICE",
+      "paths": [
+        "packages/optivibe-harness/src/optivibe_harness/tools/grin_surface.py",
+        "packages/optivibe-harness/src/optivibe_harness/tools/glass_explain.py",
+        "packages/optivibe-harness/src/optivibe_harness/tools/glass_trial.py",
+        "packages/optivibe-harness/src/optivibe_harness/tools/clearance.py"
+      ],
+      "related_items": [
+        "D001",
+        "D004",
+        "D008"
+      ],
+      "reference_scope": "GRIN系数语义、玻璃贡献/替换对照和几何间隙评价。",
+      "code_reuse": "reference_only; record copied/adapted files and attribution during implementation"
+    },
+    {
+      "id": "G5",
+      "repository": "zhaopeizhao41-ops/optiforge",
+      "commit": "6a197e467c7fceeb51ab651b3dbea21d9781d94e",
+      "license": "MIT",
+      "license_file": "LICENSE",
+      "notice_file": null,
+      "paths": [
+        "tools/confocal_tools.py",
+        "tools/tolerance_tools.py"
+      ],
+      "related_items": [
+        "D005",
+        "D009",
+        "D010",
+        "D011"
+      ],
+      "reference_scope": "共焦/扫描/耦合的调用组织；物理模型按本项目任务书实现。",
+      "code_reuse": "reference_only; record copied/adapted files and attribution during implementation"
+    }
+  ]
+}

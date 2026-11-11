@@ -10,6 +10,7 @@
 
 - [几何位图图像](bitmap-image.md)
 - [镀膜层及性能](coatings.md)
+- [固定膜系多条件优化](coating-optimization.md)
 - [衍射效率分析](diffraction-efficiency.md)
 - [几何位图图像分析](geometric-bitmap.md)
 - [IMA/BIM 文件查看](ima-bim-viewer.md)

@@ -1,6 +1,6 @@
 # 能力索引
 
-Zemax Standalone MCP 1.0.0 提供 101 个工具和 132 种 `run_analysis` 请求类型。
+Zemax Standalone MCP 1.1.0 提供 102 个工具和 144 种 `run_analysis` 请求类型。
 
 | 领域 | 主要能力 | 文档 |
 | --- | --- | --- |
@@ -13,3 +13,23 @@ Zemax Standalone MCP 1.0.0 提供 101 个工具和 132 种 `run_analysis` 请求
 | 扩展接口 | STAR、HPC 和相关原生扩展数据 | [扩展](../topics/extensions/) |
 
 完整的工具名称、字段、枚举、单位和结果结构以 [工具清单](tools.md) 与 [请求 schema](tool-schemas.json) 为准。各专题页面说明运行所需的本机资源、可选输入文件及结果字段。
+
+## 工程计算入口
+
+| 入口 | 结果 |
+| --- | --- |
+| `get_coating_rta` | 指定曲面的双向S/P镀膜反射、透射与吸收 |
+| `run_analysis: manufacturing_geometry` | sag、坡度、曲率和制造阈值 |
+| `run_analysis: fiber_alignment` | 原生POP耦合、位姿扫描、对准与损耗宽度 |
+| `run_analysis: coating_optimization` | 固定膜系、多条件厚度优化 |
+| `run_analysis: nsc_efficiency` | ROI功率、均匀性、扫描与原生优化 |
+| `run_analysis: glass_trials` | 材料贡献、目录候选和同预算优化比较 |
+| `run_analysis: scan_pupil` | 扫描镜、瞳共轭、光束走离与通过率 |
+| `run_analysis: ghost_diagnostics` | 原生ZRD鬼像路径及候选变更 |
+| `run_analysis: confocal_response` | 双路径PSF、有限针孔和轴向响应 |
+| `run_analysis: thermal_compensation` | 均温多配置及独立焦点补偿 |
+| `run_multistart_optimization.pareto` | 有限权重网格的可行候选和非支配集合 |
+| `run_analysis: tolerance_budget` | 原生成本公差候选、良率区间和独立验证 |
+| `run_analysis: fsm_control` | 双FSM响应矩阵、离散控制与逐步原生追迹 |
+
+参数范围、模型结构和结果定义见[分析专题](../topics/analysis/README.md)及请求schema。

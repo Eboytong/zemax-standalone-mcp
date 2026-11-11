@@ -4,6 +4,28 @@ from pydantic import Field, model_validator
 from .schema import Request, PositiveIndex, Index, FiniteFloat, Positive
 
 CoatingMetric=Literal['reflection','transmission','absorption','diattenuation','phase','retardance']
+
+
+class CoatingRtaCondition(Request):
+    wavelength: PositiveIndex | None = Field(default=None, description='One-based system wavelength; omit both wavelength fields to use primary.')
+    wavelength_um: Positive | None = Field(default=None, description='Explicit vacuum wavelength in micrometers, mutually exclusive with wavelength.')
+    angle_deg: Annotated[FiniteFloat, Field(ge=0, le=89.9)] = 0
+    direction: Literal['inward', 'outward'] = 'inward'
+
+    @model_validator(mode='after')
+    def identity(self):
+        if self.wavelength is not None and self.wavelength_um is not None:
+            raise ValueError('wavelength与wavelength_um互斥。')
+        if any(getattr(self, key) is None for key in self.model_fields_set):
+            raise ValueError('省略未指定的字段，不使用null。')
+        return self
+
+
+class CoatingRta(Request):
+    surface: PositiveIndex
+    conditions: Annotated[list[CoatingRtaCondition], Field(min_length=1, max_length=120)] = Field(
+        default_factory=lambda: [CoatingRtaCondition()])
+
 class CoatingTarget(Request):
     nsc_object: PositiveIndex | None = Field(default=None,description='NSC object number, one-based; requires nsc_face. Pure NSC uses surface=0; mixed mode uses its component surface.')
     nsc_face: Index | None = Field(default=None,description='Native zero-based optical face-group number, discovered from get_nsc_objects; requires nsc_object.')

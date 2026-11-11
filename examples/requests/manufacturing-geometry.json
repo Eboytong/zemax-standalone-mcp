@@ -1,0 +1,19 @@
+{
+  "request": {
+    "kind": "manufacturing_geometry",
+    "surface": 1,
+    "back_surface": 2,
+    "aperture_radius": 5,
+    "sampling": "grid",
+    "samples": 21,
+    "meridians": 16,
+    "reference": {
+      "kind": "vertex_sphere"
+    },
+    "limits": {
+      "max_slope_rad": 0.3,
+      "max_abs_departure": 0.02,
+      "min_edge_thickness": 1
+    }
+  }
+}

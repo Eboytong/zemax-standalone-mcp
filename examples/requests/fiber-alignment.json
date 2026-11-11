@@ -1,0 +1,52 @@
+{
+  "request": {
+    "kind": "fiber_alignment",
+    "settings": {
+      "beam_parameters": {
+        "0": 0.1,
+        "1": 0.1
+      },
+      "fiber_type": "AstigmaticGaussian",
+      "fiber_parameters": {
+        "0": 0.1,
+        "1": 0.1
+      },
+      "x_width": 1,
+      "y_width": 1
+    },
+    "axes": [
+      {
+        "axis": "x",
+        "values": [
+          -0.1,
+          0,
+          0.1
+        ]
+      }
+    ],
+    "optimization": {
+      "bounds": [
+        {
+          "axis": "x",
+          "minimum": -0.1,
+          "maximum": 0.1
+        }
+      ]
+    },
+    "tolerance_axes": [
+      {
+        "axis": "x",
+        "values": [
+          -0.15,
+          -0.1,
+          -0.05,
+          0,
+          0.05,
+          0.1,
+          0.15
+        ]
+      }
+    ],
+    "max_evaluations": 250
+  }
+}

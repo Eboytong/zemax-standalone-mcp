@@ -759,16 +759,20 @@ class NonSequentialMixin:
             check_setting_readback(s,"Filter",req.filter)
             if int(s.Detector.GetDetectorNumber())!=req.detector:
                 raise ZemaxError("SETTING_REJECTED","原生回放未采用探测器编号。",requested=req.detector,actual=int(s.Detector.GetDetectorNumber()))
-            self.native.set_enum(s,"DataType",req.data_type);self.native.set_enum(s,"ShowAs","FalseColor")
-            from .zrd_replay import check_replay_enum
-            check_replay_enum(self.native,s,"DataType",req.data_type)
-            check_replay_enum(self.native,s,"ShowAs","FalseColor")
+            from .detector_viewer import configure_display
+            configure_display(self.native,s,req)
             actual=scalar_settings(s);actual.update(source_zrd=str(path),working_zrd=str(working),result_source="Detector Viewer ZRD replay; separate from current detector accumulation")
             actual["requested_data_type"]=req.data_type
         except Exception:self._release_owned(tool);raise
         def collect(task):
             from .zrd_replay import replay_text_summary
-            result=self._collect_general_analysis(task)
+            from .detector_viewer import collect_detector_result
+            result=collect_detector_result(self,task)
+            from .detector_viewer import DetectorViewer, describe_result
+            if req.scale is not None:
+                result=describe_result(result,DetectorViewer(kind='detector_viewer',source='zrd',
+                    path=req.path,detector=req.detector,filter=req.filter,data_type=req.data_type,
+                    show_as=req.show_as,scale=req.scale,smoothing=req.smoothing or 0,row_col=req.row_col or 0))
             result["native_replay_summary"]=replay_text_summary(result["native_preamble"])
             result["native_replay_summary"].update(source_zrd=str(path),filter=str(s.Filter),detector=req.detector)
             if re.search(r"\bX_WAVERANGE\s*\(",req.filter,re.IGNORECASE):

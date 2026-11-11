@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "zemax-standalone-mcp"
-version = "1.0.0"
+version = "1.1.0"
 description = "Local Windows MCP server for OpticStudio Standalone"
 requires-python = ">=3.14,<3.15"
 dependencies = ["mcp==2.3.0", "pythonnet==3.2.1", "pywin32==312"]

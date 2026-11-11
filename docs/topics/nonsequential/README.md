@@ -14,3 +14,9 @@
 - [非序列路径与单光线专题](nsc-paths.md)
 - [ZRD 光线数据库查看](ray-database-viewer.md)
 - [Source Spectrum Viewer](source-spectrum-viewer.md)
+
+- [Detector Viewer当前累积数据与ZRD显示](detector-viewer.md)
+
+- [NSC效率、ROI均匀性与原生优化](nsc-efficiency.md)
+
+- [鬼像与杂散光路径诊断](ghost-diagnostics.md)

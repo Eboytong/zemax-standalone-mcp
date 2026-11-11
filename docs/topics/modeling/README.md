@@ -7,9 +7,14 @@
 ## 专题说明
 
 - [本机模型与参数使用范围](model-adaptation.md)
+- [Gradient2与Gradient3参数及追迹](grin.md)
 - [系统设置与顺序建模](modeling.md)
 - [NSC 曲面 Sag](nsc-surface-sag.md)
 - [属性页扩展](property-pages.md)
 - [曲面属性与散射设置](property-pages017.md)
 - [顺序 solve 扩展](solve-extensions.md)
 - [曲面与相位斜率](surface-slopes.md)
+
+- [非球面与制造几何评价](manufacturing-geometry.md)
+
+- [玻璃贡献与自动替换试算](glass-trials.md)：目录筛选、同预算优化、材料贡献和候选比较。

@@ -1,0 +1,18 @@
+{
+  "request": {
+    "kind": "nsc_efficiency",
+    "sources": [1],
+    "detectors": [{"detector": 2, "width": 8, "height": 6, "target_power": 0.8, "uniformity_weight": 1}],
+    "mode": "optimize",
+    "ranking": "target_error",
+    "variables": [{"object": 1, "cell": "Power", "minimum": 0.1, "maximum": 2}],
+    "rays_per_source": 10000,
+    "verification_rays_per_source": 40000,
+    "random_seed": 42,
+    "verification_seeds": [42, 43, 44],
+    "algorithm": "DampedLeastSquares",
+    "cycles": "Fixed_10_Cycles",
+    "budget_seconds": 120,
+    "save_best": true
+  }
+}

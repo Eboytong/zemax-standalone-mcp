@@ -1,0 +1,7 @@
+{
+  "tool": "get_coating_rta",
+  "arguments": {"request": {"surface": 1, "conditions": [
+    {"wavelength": 1, "angle_deg": 0, "direction": "inward"},
+    {"wavelength_um": 0.55, "angle_deg": 30, "direction": "outward"}
+  ]}}
+}

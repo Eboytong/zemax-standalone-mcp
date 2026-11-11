@@ -16,6 +16,7 @@ from .config import Config
 from .data import clean, dotnet_array, unwrap, utc_now
 from .errors import ZemaxError
 from .models import COMMAND_MODELS
+from .grin import grin_definition, validate_grin_patch
 from .macro_models import StandaloneMacro
 from .native import NativeSession
 from .solve_support import solve_validation_summary, extended_solve_summary
@@ -409,6 +410,8 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
                   "design_tools": {"tools": ["scale_factor","scale_units","quick_adjust","find_best_asphere","convert_asphere","ray_aiming_wizard"],"wizards":["sequential","nsc","bitmap","roadway"],"native_adoption":"pending_connection","validation":"docs/design-tools.md"},
                   "modes": {"Sequential": "implemented", "NonSequential": "implemented"},
                   "implemented_surface_types": SURFACE_TYPES,
+                  "grin_surfaces": {name: grin_definition(name)
+                                    for name in ("Gradient2", "Gradient3")},
                   "implemented_solves": SOLVES,
                   "extended_solve_validation": extended_solve_summary(),
                   "analysis_scope": "typed sequential curve/grid/text analyses, POP and NSC tracing",
@@ -446,6 +449,18 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
         result["zrd_wavelength_filter_validation"]=wavelength_filter_validation()
         from .detectors import detector_capabilities
         result["detector_adapters"]=detector_capabilities()
+        result['manufacturing_geometry'] = dict(kind='manufacturing_geometry',tool='run_analysis',
+            surface_types=['Standard','EvenAspheric','ExtendedPolynomial'],sampling=['radial','grid'],
+            reference=['vertex_sphere','specified_sphere'],length_unit='current lens unit',
+            curvature_unit='inverse lens unit',slope_unit='radians',
+            thickness='front-local +Z line intersected with back surface in native global coordinates',
+            source='LDE.GetSag/GetGlobalMatrix; sampled differential geometry')
+        result['detector_viewer'] = dict(kind='detector_viewer', tool='run_analysis',
+            sources=['current_detector','zrd'], settings=['detector','show_as','data_type','scale','smoothing','row_col'],
+            filter_source='zrd only', raw_data_tool='get_detector_data',
+            coordinate_definition='Rectangle spatial grids include detector-local pixel centers; native axes retained',
+            enum_identity='native enum value; aliases vary with detector type')
+
         result["feature_registry"]="docs/capabilities.md"
         result['nsc_object_geometry']=dict(tool='get_nsc_object_geometry',source='INCERow.GetFacetedObjectData / IFaceData',condition='ObjectIsADetector must be explicitly enabled',pages='zero-based faces; per page <=1000 faces and <=100000 vertices',frames=['local','global'],normals='global rotation of local vectors; raw native global normals retained separately',restore='CurrentFace and ConvertToGlobal restored; failure requires reconnect',validation='native box/STL coordinates, normals, radiometry and reload passed',evidence='docs/nsc-object-data.md')
         result['nsc_detector_regions']=dict(tool='get_detector_data',read_mode='region',supported=['DetectorRectangle','DetectorVolume'],max_samples=100000,source='NCE.GetDetectorData scalar, one-based x-fast pixel formula',full_matrix_allocation=False,validation='native rectangle/volume quantities, independent point ray and >1 million voxel bounded read passed',evidence='docs/nsc-object-data.md')
@@ -570,6 +585,8 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
             axes='sagittal normalized pupil X; tangential normalized pupil Y',
             settings='system selection readback plus recorded CreateNormPol/AddRay arguments; native topic selectors unavailable')
         result['coating_analyses']=dict(metrics=['reflection','transmission','absorption','diattenuation','phase','retardance'],
+            direct_query=dict(tool='get_coating_rta', directions=['inward','outward'], max_conditions=120,
+                              source='ILDERow.GetCoatingPerformanceData', scope='sequential current configuration'),
             scans=['angle','wavelength'],listing='coating_listing (sequential)',scope='sequential current configuration, mixed NSC component, pure NSC',
             nsc_selection='paired one-based nsc_object and zero-based native optical face-group nsc_face; discover via get_nsc_objects; pure NSC surface=0, mixed component uses actual LDE surface; owned analysis copy',
             wavelength_selection='public one-based, native coating-angle selector zero-based; wavelength-copy primary preserved for relative film thickness',
@@ -635,6 +652,64 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
             "beam_and_receiver":"native calls and identical-mode coupling verified for the three listed files",
             "independent_field_reference":{"beamsamp1.DLL":"installed Gaussian source second moments","Laguerre beam.dll":"installed n=0,l=1 source second moments","Ince-Gaussian-64.dll":"p=m=2, even/odd, f0=0.05/0.1mm, w0=0.1mm: independent whole-waist irradiance and signed relative complex field; other orders/propagated phase pending"}}
         result["pop_coupling_definition"]="polarized receiver efficiency is a power-weighted mean of separately normalized component overlaps; not a single normalized vector inner product"
+        result['fiber_alignment'] = dict(kind='fiber_alignment',tool='run_analysis',
+            receiver_type='AstigmaticGaussian',axes=['x','y','z','tilt_x','tilt_y'],
+            scan_dimensions=[1,2],optimizer='bounded coordinate pattern search with native POP objective',
+            tolerance_loss_db=[1,3],pose_scope='receiver field in fixed native POP end-plane frame',
+            units=dict(translation='lens units',tilt='degrees'),
+            model_state='read-only; owned POP settings released per candidate',
+            best_candidate='ZOS model plus companion run_pop request',evidence='development/evidence/D005/README.md')
+        result['tolerance_budget'] = dict(kind='tolerance_budget',tool='run_analysis',
+            computation='native sensitivity and finite allocation Monte Carlo; independent best-candidate validation',
+            costing='user-supplied bounded inverse-power process cost; explicit currency and per-unit basis',
+            feasibility='two-sided Wilson lower bound >= requested target yield',
+            restoration='source TDE restored on success, failure and cancellation')
+        result['fsm_control'] = dict(kind='fsm_control',tool='run_analysis',
+            model='two CoordinateBreak/plane MIRROR/inverse CoordinateBreak triplets; two fixed observation planes',
+            computation='native differential 4x4 actuator/input maps, discrete feedback and per-sample native validation',
+            dynamics='explicit period, delay, first-order actuator, saturation and seeded measurement noise',
+            evidence='development/evidence/D016/README.md')
+        result['pareto_search'] = dict(tool='run_multistart_optimization',setting='pareto',
+            objectives='minimize normalized absolute target errors of explicit MFE rows',
+            search='deterministic starts × positive weight grid, native scalar optimization',
+            outputs='saved candidate models, feasible frontier and dominance relations',
+            restoration='baseline restored on success, failure and cancellation')
+        result['thermal_compensation'] = dict(kind='thermal_compensation',tool='run_analysis',
+            inputs='existing MCE TEMP configurations and one THIC air-gap compensator with explicit bounds',
+            computation='native multi-configuration RSCE local optimization; independent actuator position per temperature',
+            source_state='read-only; owned working copy',
+            evidence='development/evidence/D012/README.md')
+        result['confocal_response'] = dict(kind='confocal_response',tool='run_analysis',
+            scope='on-axis isotropic point fluorescence, two centered transmissive millimeter models',
+            computation='native Huygens PSFs, finite circular pinhole integral and native object launch cone',
+            normalization='unit sampled-window power; relative response at zero sample shift',
+            evidence='development/evidence/D011/README.md')
+        result['ghost_diagnostics'] = dict(kind='ghost_diagnostics',tool='run_analysis',
+            scope='pure NSC DetectorRectangle, Watts without prefix',
+            computation='native polarized splitting trace, ZRD parent ancestry and copied candidate changes',
+            outputs='expected, ghost, scatter-related, excluded and unread detector power; reflection face pairs',
+            evidence='development/evidence/D010/README.md')
+        result['scan_pupil'] = dict(kind='scan_pupil',tool='run_analysis',
+            scanner='adjacent CoordinateBreak / plane MIRROR / CoordinateBreak; single rotation axis and pivot',
+            outputs='local differential conjugate, sampled throughput, beam walk, chief angle, distortion and global physical rays',
+            source_state='read-only; owned copy and native batch trace',evidence='development/evidence/D009/README.md')
+        result['glass_trials'] = dict(kind='glass_trials',tool='run_analysis',
+            scope='centered Standard surfaces, infinity object, air, Y angle fields with radial normalization',
+            candidate_source='native material catalogs; Nd/Vd, wavelength and cost filters',
+            optimization='same native objective, variables, algorithm, cycles and per-candidate optimization budget',
+            contribution='canonical paraxial index sensitivities and material Petzval terms; optimized control differences',
+            evidence='development/evidence/D008/README.md')
+        result['nsc_efficiency'] = dict(kind='nsc_efficiency',tool='run_analysis',mode='pure NSC',
+            methods=['evaluate','scan','optimize'],detectors='spatial DetectorRectangle ROI including zero pixels',
+            variables=['XPosition','YPosition','ZPosition','TiltX','TiltY','TiltZ','Power'],
+            optimizer='native NSTR/NSDD/OSUM with NCE variables and bounds; owned copy',
+            units='Watts without prefix; coordinates in lens units',evidence='development/evidence/D007/README.md')
+        result['coating_optimization'] = dict(kind='coating_optimization',tool='run_analysis',
+            variables='fixed-stack thickness multipliers within (0,10]; original source model unchanged',
+            objectives='explicit/system wavelengths, incidence angle, inward/outward, S/P reflection/transmission/absorption',
+            optimizer='native multi-configuration CODA with GLSS/YFIE and CMGT/CMLT bounds',
+            mapping='CODA physical coefficients; direct row-owned query and relative-thickness reference differences retained',
+            evidence='development/evidence/D006/README.md')
         result["tolerance_trial_status"]={"verified_format":"OpticStudio 2024 R2 Chinese Monte Carlo trial table",
             "mapping":"complete one-based trial IDs, zero-based row indices, displayed criterion precision and traceable count must agree",
             "failed_trials":"explicit untraceable trials excluded from moments and counted as failed in requested-sample yield; raw finite sentinel retained",
@@ -643,6 +718,50 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
             from .analyses import ANALYSES
             available=set(self.native.enum_names(self.native.api.Analysis.AnalysisIDM))
             result["analyses"]={name:{"implemented":True,"api_available":native_id in available,"license_checked_per_run":True,"verification":"调用和数值验证范围见 docs/capabilities.md"}for name,native_id in ANALYSES.items()}
+            result['analyses']['manufacturing_geometry'] = dict(implemented=True,
+                api_available=hasattr(self.system.LDE,'GetSag') and hasattr(self.system.LDE,'GetGlobalMatrix'),
+                computation_method='native sag sampling and differential geometry',
+                verification='development/evidence/D004/README.md')
+            result['analyses']['fiber_alignment'] = dict(implemented=True,
+                api_available='PhysicalOpticsPropagation' in available,
+                computation_method='native POP coupling integral and receiver-pose orchestration',
+                verification='development/evidence/D005/README.md')
+            result['analyses']['tolerance_budget'] = dict(implemented=True,
+                api_available=hasattr(self.system.Tools,'OpenTolerancing'),
+                computation_method='native sensitivity and Monte Carlo with finite cost allocation search',
+                verification='development/evidence/D015/README.md')
+            result['analyses']['fsm_control'] = dict(implemented=True,
+                api_available=hasattr(self.system.Tools,'OpenBatchRayTrace'),
+                computation_method='owned native two-mirror ray calibration and discrete offline control',
+                verification='development/evidence/D016/README.md')
+            result['analyses']['thermal_compensation'] = dict(implemented=True,
+                api_available=hasattr(self.system.Tools,'OpenLocalOptimization'),
+                computation_method='owned native MCE thermal configurations and bounded focus optimization',
+                verification='development/evidence/D012/README.md')
+            result['analyses']['confocal_response'] = dict(implemented=True,
+                api_available='HuygensPsf' in available and hasattr(self.system.Tools,'OpenBatchRayTrace'),
+                computation_method='two owned Huygens paths and finite pinhole integration',
+                verification='development/evidence/D011/README.md')
+            result['analyses']['ghost_diagnostics'] = dict(implemented=True,
+                api_available=hasattr(self.system.Tools,'OpenNSCRayTrace') and hasattr(self.system.Tools,'OpenRayDatabaseReader'),
+                computation_method='native split trace and ZRD detector-arrival ancestry',
+                verification='development/evidence/D010/README.md')
+            result['analyses']['scan_pupil'] = dict(implemented=True,
+                api_available=hasattr(self.system.Tools,'OpenBatchRayTrace'),
+                computation_method='owned scanner sweep, native direct real rays, differential conjugate',
+                verification='development/evidence/D009/README.md')
+            result['analyses']['glass_trials'] = dict(implemented=True,
+                api_available=hasattr(self.system.Tools,'OpenMaterialsCatalog') and hasattr(self.system.Tools,'OpenLocalOptimization'),
+                computation_method='native catalog discovery and copied-system local optimization with matrix references',
+                verification='development/evidence/D008/README.md')
+            result['analyses']['nsc_efficiency'] = dict(implemented=True,
+                api_available=hasattr(self.system.Tools,'OpenNSCRayTrace') and hasattr(self.system.Tools,'OpenLocalOptimization'),
+                computation_method='owned pure NSC ray trace and native local optimization',
+                verification='development/evidence/D007/README.md')
+            result['analyses']['coating_optimization'] = dict(implemented=True,
+                api_available=hasattr(self.system.Tools,'OpenLocalOptimization'),
+                computation_method='owned multi-configuration CODA native local optimization',
+                verification='development/evidence/D006/README.md')
             for name in ('vignetting','footprint'):
                 result['analyses'][name].update(methods=['auto','ray_trace'],native_settings_readback=False,source='native_batch_ray_trace')
             for name,method in [('yybar_diagram','native_PARY_and_paraxial_batch_validity'),('incident_angle_vs_image_height','native_real_batch_trace_with_image_material_control')]:
@@ -923,6 +1042,9 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
         result = {"surface": index, "surface_type": str(row.Type), "comment": str(row.Comment),
                   "is_object": bool(row.IsObject), "is_image": bool(row.IsImage), "is_stop": bool(row.IsStop),
                   "cells": {}, "properties": self._surface_properties(row)}
+        definition = grin_definition(str(row.Type))
+        if definition is not None:
+            result["grin"] = definition
         for name, cell in self._cells(row,parameter_start,parameter_count):
             solve = {"type": str(cell.Solve)}
             if str(cell.Solve) == "SurfacePickup":
@@ -1057,6 +1179,7 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
         for change in req.changes:
             row = self._row(change.surface)
             target_type = change.surface_type or str(row.Type)
+            validate_grin_patch(target_type, change)
             if target_type in {"ExtendedAsphere", "ExtendedOddAsphere", "ExtendedPolynomial"} and 13 in change.parameters:
                 # Term-count writes can disable cells later in the same request.
                 # Reject that known conflict before a checkpoint or native write.
@@ -1117,6 +1240,7 @@ class Backend(HpcMixin, StarMixin, ConversionMixin, MaterialsMixin, CoatingsMixi
                     if change.surface_file is not None:settings.Filename=change.surface_file
                     if not row.ChangeType(settings):
                         raise ZemaxError("SURFACE_TYPE_FAILED", "面型切换失败。")
+                    row = self._row(change.surface)
                     self._validate_surface_extension(row,change)
                 if change.import_file is not None and not row.ImportData.ImportDataFile(change.import_file):
                     raise ZemaxError("IMPORT_FAILED","原生曲面数据导入失败。")

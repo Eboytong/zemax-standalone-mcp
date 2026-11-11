@@ -7,6 +7,7 @@ from .surface_slopes import SLOPE_ANALYSES, configure_surface_slope, describe_su
 from .polarization_topics import TOPIC_KINDS, parse_topic_text
 
 ANALYSES = {
+    'detector_viewer':'DetectorViewer',
     "ray_database_viewer":"RayDatabaseViewer",
     "ima_bim_viewer":"IMABIMFileViewer",
     "test_plate_list":"TestPlateList",
@@ -510,6 +511,42 @@ def native_setting(native, settings, name, value):
 class AnalysesMixin:
     def run_analysis(self, req):
         q=req.request
+        if q.kind == 'tolerance_budget':
+            from .tolerance_budget import run_tolerance_budget
+            return run_tolerance_budget(self, q)
+        if q.kind == 'fsm_control':
+            from .fsm_control import run_fsm_control
+            return run_fsm_control(self, q)
+        if q.kind == 'thermal_compensation':
+            from .thermal_compensation import run_thermal_compensation
+            return run_thermal_compensation(self, q)
+        if q.kind == 'confocal_response':
+            from .confocal import run_confocal_response
+            return run_confocal_response(self, q)
+        if q.kind == 'ghost_diagnostics':
+            from .ghost_diagnostics import run_ghost_diagnostics
+            return run_ghost_diagnostics(self, q)
+        if q.kind == 'scan_pupil':
+            from .scan_pupil import run_scan_pupil
+            return run_scan_pupil(self, q)
+        if q.kind == 'glass_trials':
+            from .glass_trials import run_glass_trials
+            return run_glass_trials(self, q)
+        if q.kind == 'nsc_efficiency':
+            from .nsc_efficiency import run_nsc_efficiency
+            return run_nsc_efficiency(self, q)
+        if q.kind == 'coating_optimization':
+            from .coating_optimization import run_coating_optimization
+            return run_coating_optimization(self, q)
+        if q.kind == 'fiber_alignment':
+            from .fiber_alignment import run_fiber_alignment
+            return run_fiber_alignment(self, q)
+        if q.kind == 'manufacturing_geometry':
+            from .manufacturing_geometry import run_manufacturing_geometry
+            return run_manufacturing_geometry(self, q)
+        if q.kind == 'detector_viewer':
+            from .detector_viewer import run_detector_viewer
+            return run_detector_viewer(self, q)
         if q.kind == 'phase_aberration':
             from .phase_copy import uses_copy, run_phase_copy
             if uses_copy(q):
@@ -866,7 +903,7 @@ class AnalysesMixin:
             raise
         return self._start_task("analysis",tool,actual,analysis=True,collector=self._collect_general_analysis)
 
-    def _collect_general_analysis(self,task):
+    def _collect_general_analysis(self,task, *, optional_native_text=False):
         r=unwrap(task["native"].GetResults())
         if r is None:
             raise ZemaxError("ANALYSIS_FAILED","没有有效原生分析结果。")
@@ -881,7 +918,10 @@ class AnalysesMixin:
                 return dict(analysis_kind='through_focus_spot',native_text_exported=False,native_export_error='GetTextFile returned false',
                     native_header=header,native_messages=[dict(code=str(r.GetMessageAt(i).ErrorCode),text=str(r.GetMessageAt(i).Text)) for i in range(r.NumberOfMessages)],artifacts=[],structured_data_available=False)
             raise ZemaxError("EXPORT_FAILED","原生分析文本导出失败。")
-        text=path.read_text(encoding="utf-16")
+        missing_text = not path.is_file()
+        if missing_text and not optional_native_text:
+            raise FileNotFoundError(path)
+        text = "" if missing_text else path.read_text(encoding="utf-16")
         preamble=[]
         for line in text.splitlines():
             if re.match(r"^\s*[-+]?\d+(?:\.\d*)?(?:[Ee][-+]?\d+)?\s+[-+]?\d",line)or re.match(r"^\s*Z\s+\d",line):break
@@ -890,6 +930,10 @@ class AnalysesMixin:
               "native_messages":[{"code":str(r.GetMessageAt(i).ErrorCode),"text":str(r.GetMessageAt(i).Text)} for i in range(r.NumberOfMessages)],
               "artifacts":[{"kind":"native_text","path":str(path)}],"series":[],"grids":[],
               "units_source":"原生轴标签、ValueLabel 和 native_header；不得对不同分析统一套用镜头单位。"}
+        if missing_text:
+            data["artifacts"] = []
+            data["native_text_exported"] = False
+            data["native_export_error"] = "GetTextFile returned true without creating a file"
         data["native_preamble"]=preamble
         data["computation_method"]="native_analysis"
         for i in range(r.NumberOfDataSeries):

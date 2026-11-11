@@ -10,3 +10,5 @@
 - [原生高斯光束查询](gaussian-beams.md)
 - [屈光力与有效焦距分布](power-maps.md)
 - [Universal Plot](universal-plots.md)
+
+- [POP光纤对准、寻优与容差](fiber-alignment.md)
