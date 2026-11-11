@@ -33,6 +33,22 @@ def test_registered_request_and_cemented_boundary():
     assert isinstance(q,GlassTrials) and q.target_group==0
 
 
+def test_optional_contribution_is_default_compatible_and_separates_spectral_rules():
+    assert GlassTrials.model_validate(query()).include_contributions is True
+    q=GlassTrials.model_validate(query(include_contributions=False,blue_wavelength=1,reference_wavelength=1,red_wavelength=1))
+    assert q.include_contributions is False
+
+
+def test_material_groups_allow_aspheric_and_partial_system_but_protect_solves():
+    from zemax_mcp.glass_trials import material_groups
+    rows={1:S(Type='EvenAspheric',Material='N-BK7',MaterialCell=S(Solve='Fixed'))}
+    system=S(LDE=S(NumberOfSurfaces=5,GetSurfaceAt=lambda i:rows[i]))
+    q=GlassTrials.model_validate(query(include_contributions=False))
+    assert material_groups(system,q)[0]['material']=='N-BK7'
+    rows[1].MaterialCell.Solve='MaterialModel'
+    with pytest.raises(ZemaxError,match='solve'):material_groups(system,q)
+
+
 def test_catalog_filters_missing_cost_and_wave_limits():
     q=GlassTrials.model_validate(query(max_relative_cost=2))
     base=dict(nd=1.5,vd=60)

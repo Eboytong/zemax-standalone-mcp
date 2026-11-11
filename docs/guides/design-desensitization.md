@@ -2,6 +2,8 @@
 
 `run_analysis`的`design_desensitize`读取当前TDE，保持公差幅度，以原生制造良率向导构建目标，通过DLS改变设计变量，再对原始和优化设计运行相同条件的灵敏度及Monte Carlo。运行前保存工作模型、设置制造公差，并用`get_optimization_wizard_options`检查制造良率功能的实际可用性。
 
+此快捷流程采用制造良率向导、DLS、半径/厚度变量及统一分布。需要自选OPD目标、变量组合、Global/Hammer策略时，按`run_merit_program`或`update_merit_function`→`set_variables`→原生优化→`run_tolerance_analysis`→候选保存组合调用，目标和停止策略由Agent选择。
+
 ```json
 {"request":{"kind":"design_desensitize","variables":[{"surface":1,"cell":"radius","minimum":45,"maximum":100},{"surface":2,"cell":"radius","minimum":-100,"maximum":-45},{"surface":2,"cell":"thickness","minimum":40,"maximum":90}],"merit":{"wizard":{"kind":"sequential","criterion":"Wavefront","type":"RMS","reference":"Centroid","use_gaussian_quadrature":true,"rings":3,"optimize_for_manufacturing_yield":true,"manufacturing_yield_weight":1},"constraints":[{"operand":"EFFL","target":75,"weight":10}]},"threshold":0.002,"maximum_nominal":0.01,"sampling":1,"screening_samples":64,"validation_samples":256,"seed":42,"validation_seed":314159,"budget_seconds":600}}
 ```

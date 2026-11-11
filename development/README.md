@@ -1,37 +1,39 @@
 # 开发入口
 
-当前计划为[工程搜索与设计改进](plan.md)，生效日期2026-11-11。本期D017—D022六项，当前6/6；六项已完成并正式发行1.3.0。当前源码107工具、146种分析请求。主仓C:/Users/tonge/Desktop/mcp。
+源码**1.4.0，107个直接工具、146种分析请求**，compact11入口；当前GitHub正式版1.3.0。本期[自主调用与渐进式披露](plan.md)编号D023—D027，完成4/5，正在执行最终发行检查。主仓`C:/Users/tonge/Desktop/mcp`。
 
 ## 阅读顺序
 
-1. [当前阶段](current.md)：六项交付与发行状态。
-2. [计划](plan.md)：选题理由、任务书、检查及第7节证据要求。
-3. [台账](ledgers/roadmap.csv)：状态、实际依赖、下一动作和证据。
-4. [选题核对](evidence/PLAN-20261111/README.md)：源码、正式接口和外部参考依据。
-5. [交接](handoff.md)：最近交付、运行状态及下一命令。
-6. [源码参考](github-references.md)：固定commit、具体文件及借鉴边界。
+1. [调研与判断](tool-disclosure-research.md)：工程工具取舍、实际schema大小、宿主能力及子Agent比较。
+2. [当前阶段](current.md)：本轮交付、实施范围及下一项。
+3. [开发计划](plan.md)：任务书、依赖、验收和第7节证据。
+4. [台账](ledgers/roadmap.csv)及[生成工作表](remaining-ranked.md)：单项实际状态。
+5. [交接](handoff.md)：下一命令、源码与运行状态。
+6. [测量证据](evidence/PLAN-20261111-DISCLOSURE/README.md)：真实stdio、字节指标及复跑程序。
 
-已交付D001—D012、D014—D016共15项，见[1.1.0发行记录](evidence/release110.md)。其[旧计划与终态](archive/native-engineering-20261110/README.md)用于检索既有成果。本期完成数只计算D017—D022。
+D017—D022已完成6/6，已发行1.3.0；[计划终态](archive/engineering-search-20261111/README.md)与[发行证据](evidence/release130.md)保留。此前1.1.0已交付范围见[归档](archive/native-engineering-20261110/README.md)。历史完成数与本期工作包分列。
 
 ## 常用命令
 
-从仓库根目录执行：
+从主仓根目录执行：
 
 ```powershell
+.\.venv\Scripts\python.exe -B -X utf8 development/evidence/PLAN-20261111-DISCLOSURE/measure.py
 .\.venv\Scripts\python.exe -B scripts/development/status.py --output development/generated/status.json --markdown development/generated/remaining.md --queue development/generated/queue.json --ranked development/remaining-ranked.md
-.\.venv\Scripts\python.exe -B -m pytest tests/unit/test_development_roadmap.py -q -p no:cacheprovider --basetemp .local/tmp/pytest-roadmap
+.\.venv\Scripts\python.exe -B -m pytest tests/unit/test_development_roadmap.py -q -p no:cacheprovider --basetemp .local/tmp/pytest-roadmap-disclosure
 ```
 
-逐项运行相关定向检查。首次完成10项或阶段发行时集中检查；原生执行串行。开发安排在本目录维护，当前产品调用说明见[用户文档](../docs/README.md)。
+逐项做定向检查，D027统一集中检查与发行；原生执行串行。用户使用说明见[产品文档](../docs/README.md)，本期研究与计划在development维护。
 
 ## 文件职责
 
-| 位置 | 用途 |
+| 文件 | 职责 |
 | --- | --- |
-| plan.md/current.md/handoff.md | 任务书、顺序及当前交接 |
-| ledgers/roadmap.csv | 本期实际状态与下一动作 |
-| tracking/roadmap.json | 范围、依赖顺序、阶段和检查门槛 |
+| plan.md/current.md/handoff.md | 任务书、状态及接手 |
+| tool-disclosure-research.md | 本次技术研究与方法选择 |
+| ledgers/roadmap.csv | 本期状态、动作及证据 |
+| tracking/roadmap.json | 顺序、依赖及发行门槛 |
 | generated/、remaining-ranked.md | 台账生成视图 |
-| evidence/ | 实际验收及选题依据 |
-| .local/evidence/ | 原始输出和工作副本 |
-| archive/ | 已完成计划及历史资料 |
+| evidence/ | 摘要、可重跑命令和参考 |
+| .local/evidence/ | 原始工具列表、运行输出和模型 |
+| archive/ | 已发行计划和历史索引 |

@@ -79,6 +79,7 @@ class GlassTrials(Request):
     max_evaluations: Annotated[int, Field(strict=True, ge=1, le=1000)] = 100
     total_budget_seconds: Annotated[FiniteFloat, Field(gt=0, le=86400)] = 3600
     design_id: Annotated[str, Field(pattern=r'^[A-Za-z0-9_-]{1,80}$')] | None = None
+    include_contributions: bool = True
 
     @model_validator(mode='after')
     def contract(self):
@@ -86,7 +87,7 @@ class GlassTrials(Request):
         if len(set(c.casefold().removesuffix('.agf') for c in self.catalogs))!=len(self.catalogs):raise ValueError('目录重复。')
         if len({(v.surface,v.cell) for v in self.variables})!=len(self.variables):raise ValueError('变量重复。')
         if len({v.metric for v in self.objectives})!=len(self.objectives):raise ValueError('目标指标重复。')
-        if len({self.blue_wavelength,self.reference_wavelength,self.red_wavelength})!=3:raise ValueError('三个参考波长须互异。')
+        if self.include_contributions and len({self.blue_wavelength,self.reference_wavelength,self.red_wavelength})!=3:raise ValueError('三个参考波长须互异。')
         spans=[set(range(g.first_surface,g.last_surface)) for g in self.groups]
         if any(a&c for i,a in enumerate(spans) for c in spans[i+1:]):raise ValueError('玻璃内部段归属不得重叠。')
         if len({slot.group for slot in self.joint_slots}) != len(self.joint_slots):raise ValueError('联合材料槽位不得重复。')
@@ -118,6 +119,8 @@ def native_value(b,system,code,parameters):
 
 
 def common_parameters(system,q):
+    if q.reference_wavelength > int(system.SystemData.Wavelengths.NumberOfWavelengths):
+        raise ZemaxError('INDEX_OUT_OF_RANGE','评价波长编号越界。',wavelength=q.reference_wavelength)
     fields=system.SystemData.Fields
     if str(fields.Normalization)!='Radial':raise ZemaxError('UNSUPPORTED_FIELD_NORMALIZATION','玻璃试算使用Radial视场归一化。')
     if q.field>int(fields.NumberOfFields):raise ZemaxError('INDEX_OUT_OF_RANGE','评价视场编号越界。')
@@ -182,6 +185,24 @@ def contributions(b,system,q):
     return result
 
 
+def material_groups(system, q):
+    """Material assignment prerequisites, independent of matrix contributions."""
+    image = int(system.LDE.NumberOfSurfaces) - 1
+    groups = []
+    for group in q.groups:
+        if group.last_surface >= image:
+            raise ZemaxError('INDEX_OUT_OF_RANGE','镜片出面须位于像面之前。',group=group.model_dump())
+        rows = [system.LDE.GetSurfaceAt(i) for i in range(group.first_surface, group.last_surface)]
+        names = [str(row.Material) for row in rows]
+        if not names or not names[0] or names[0] == 'MIRROR' or len(set(names)) != 1:
+            raise ZemaxError('INVALID_GLASS_GROUP','替换段须使用同一目录材料。',materials=names,group=group.model_dump())
+        for i, row in zip(range(group.first_surface, group.last_surface), rows):
+            if str(row.MaterialCell.Solve) != 'Fixed':
+                raise ZemaxError('SOLVE_PROTECTED','材料solve须先固定。',surface=i,solve=str(row.MaterialCell.Solve))
+        groups.append(group.model_dump() | dict(material=names[0]))
+    return groups
+
+
 def discover_steps(b,q,baseline_name):
     from .materials import owned_catalog,choose_catalog
     loaded=list(dict.fromkeys(str(v) for v in b.system.SystemData.MaterialCatalogs.GetCatalogsInUse() if str(v).strip()))
@@ -233,7 +254,8 @@ def run_glass_trials(b,q):
     def flow(task):
         system=None;discovery_steps=None;cleanup_errors=[];copies_created=0;copies_closed=0;operation_error=None
         started=time.monotonic()
-        task['payload']=dict(analysis_kind=q.kind,series=[],grids=[],computation_method='native glass discovery, bounded common native optimization, canonical matrix contribution',
+        task['payload']=dict(analysis_kind=q.kind,series=[],grids=[],computation_method='native glass discovery and bounded native optimization' + (', canonical matrix contribution' if q.include_contributions else ''),
+            contribution_status='requested' if q.include_contributions else 'disabled by request',
             resources=[],units=dict(rms_spot='lens units',rms_wavefront='waves',effective_focal_length='lens units',mtf='dimensionless'))
         task['restoration']=dict(required=False,restored=True,reason='each trial uses a fresh owned copy; source read-only')
         def close():
@@ -247,11 +269,16 @@ def run_glass_trials(b,q):
                 cleanup_errors.append(str(exc))
             finally:system=None
         try:
-            b._cancel_boundary(task);system=b.system.CopySystem()
-            if system is None:raise ZemaxError('COPY_FAILED','无法创建贡献计算副本。')
-            copies_created+=1
-            data=contributions(b,system,q);task['payload']['contributions']=data;close()
-            if cleanup_errors:raise ZemaxError('CLEANUP_FAILED','贡献计算副本关闭失败。',cleanup_errors=cleanup_errors)
+            b._cancel_boundary(task)
+            if q.include_contributions:
+                system=b.system.CopySystem()
+                if system is None:raise ZemaxError('COPY_FAILED','无法创建贡献计算副本。')
+                copies_created+=1
+                data=contributions(b,system,q);task['payload']['contributions']=data;close()
+                if cleanup_errors:raise ZemaxError('CLEANUP_FAILED','贡献计算副本关闭失败。',cleanup_errors=cleanup_errors)
+            else:
+                data=dict(groups=material_groups(b.system,q))
+                task['payload']['contributions']=None
             pools=[]
             if q.joint_slots:
                 from .joint_glass import discover_joint_steps
@@ -352,7 +379,7 @@ def run_glass_trials(b,q):
                         s=system.LDE.GetSurfaceAt(v.surface);actual=float(s.Radius if v.cell=='radius' else s.Thickness)
                         if not math.isfinite(actual) or not v.minimum<=actual<=v.maximum:raise ZemaxError('GLASS_BOUNDS_VIOLATED','优化候选超出请求变量边界。',variable=v.model_dump(),actual=actual)
                         row['variables'].append(v.model_dump()|dict(actual=actual))
-                    row['contributions_after']=contributions(b,system,q)
+                    row['contributions_after']=contributions(b,system,q) if q.include_contributions else None
                     if q.save_candidates:
                         import uuid
                         candidate_id=uuid.uuid4().hex

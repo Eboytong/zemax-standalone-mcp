@@ -1,0 +1,712 @@
+{
+  "modes": {
+    "full": {
+      "passed": 12,
+      "total": 12,
+      "median_seconds": 16.504908050002996,
+      "p95_seconds": 53.53406360000372,
+      "catalog_bytes": 1432668,
+      "model_tokens": null
+    },
+    "compact": {
+      "passed": 12,
+      "total": 12,
+      "median_seconds": 20.95922905000043,
+      "p95_seconds": 52.963907900004415,
+      "catalog_bytes": 12862,
+      "model_tokens": null
+    }
+  },
+  "protocol_native_equivalence": [
+    {
+      "case": "sequential_model",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "case": "sequential_rays",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "case": "sequential_mtf",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "case": "sequential_wavefront",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "case": "nsc_trace",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "case": "nsc_viewer",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "case": "pop_gaussian",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "case": "optimization",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "case": "tolerancing",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "case": "energy_loss",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "case": "candidate",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "case": "glass",
+      "passed": true,
+      "errors": []
+    }
+  ],
+  "retrieval_passed": 59,
+  "retrieval_total": 60,
+  "retrieval": [
+    {
+      "id": "Q01",
+      "passed": true,
+      "found": [
+        "tool:update_surfaces",
+        "tool:get_glass_slots",
+        "tool:get_surface_geometry",
+        "tool:run_quick_focus",
+        "tool:update_coating_layers"
+      ]
+    },
+    {
+      "id": "Q02",
+      "passed": true,
+      "found": [
+        "tool:update_surfaces",
+        "tool:run_design_tool",
+        "tool:get_capabilities",
+        "tool:get_design_tool_options",
+        "tool:get_hpc_settings"
+      ]
+    },
+    {
+      "id": "Q03",
+      "passed": true,
+      "found": [
+        "tool:set_variables",
+        "tool:run_local_optimization",
+        "tool:run_global_optimization",
+        "tool:get_variables",
+        "tool:get_capabilities"
+      ]
+    },
+    {
+      "id": "Q04",
+      "passed": true,
+      "found": [
+        "tool:get_surface_geometry",
+        "tool:update_surfaces",
+        "tool:compare_results",
+        "tool:copy_surfaces",
+        "tool:delete_surfaces"
+      ]
+    },
+    {
+      "id": "Q05",
+      "passed": true,
+      "found": [
+        "tool:get_surface_geometry",
+        "tool:manage_candidates",
+        "tool:get_glass_slots",
+        "tool:run_local_optimization",
+        "action:manage_candidates:branch"
+      ]
+    },
+    {
+      "id": "Q06",
+      "passed": true,
+      "found": [
+        "tool:run_batch_ray_trace",
+        "tool:read_zrd",
+        "analysis:polarization_ray_trace",
+        "tool:load_detector_data",
+        "tool:run_nsc_ray_trace"
+      ]
+    },
+    {
+      "id": "Q07",
+      "passed": true,
+      "found": [
+        "analysis:polarization_ray_trace",
+        "tool:read_zrd",
+        "tool:run_batch_ray_trace",
+        "tool:get_coating_rta"
+      ]
+    },
+    {
+      "id": "Q08",
+      "passed": true,
+      "found": [
+        "tool:run_fft_mtf",
+        "tool:run_optimization_wizard",
+        "tool:update_merit_function",
+        "analysis:fft_mtf_map",
+        "analysis:fft_mtf_vs_field"
+      ]
+    },
+    {
+      "id": "Q09",
+      "passed": true,
+      "found": [
+        "tool:run_fft_mtf"
+      ]
+    },
+    {
+      "id": "Q10",
+      "passed": true,
+      "found": [
+        "analysis:wavefront",
+        "tool:run_merit_program",
+        "analysis:opd_fan",
+        "analysis:zernike_standard",
+        "tool:compare_results"
+      ]
+    },
+    {
+      "id": "Q11",
+      "passed": true,
+      "found": [
+        "analysis:zernike_standard",
+        "tool:get_material_properties",
+        "tool:get_star_data",
+        "tool:run_analysis",
+        "tool:run_star_operation"
+      ]
+    },
+    {
+      "id": "Q12",
+      "passed": true,
+      "found": [
+        "analysis:rms_vs_focus"
+      ]
+    },
+    {
+      "id": "Q13",
+      "passed": true,
+      "found": [
+        "tool:run_pop",
+        "tool:run_merit_program",
+        "tool:run_optimization_wizard",
+        "tool:copy_surfaces",
+        "tool:get_system_summary"
+      ]
+    },
+    {
+      "id": "Q14",
+      "passed": true,
+      "found": [
+        "tool:run_pop",
+        "tool:run_pop_convergence"
+      ]
+    },
+    {
+      "id": "Q15",
+      "passed": true,
+      "found": [
+        "tool:get_coating_rta",
+        "tool:get_material_properties",
+        "tool:get_coating_layers",
+        "tool:get_system_resources",
+        "tool:run_star_operation"
+      ]
+    },
+    {
+      "id": "Q16",
+      "passed": true,
+      "found": [
+        "tool:get_coating_rta",
+        "tool:get_coating_layers",
+        "tool:get_system_resources",
+        "tool:update_coating_layers"
+      ]
+    },
+    {
+      "id": "Q17",
+      "passed": true,
+      "found": [
+        "tool:get_material_properties",
+        "analysis:glass_trials",
+        "tool:get_coating_rta",
+        "tool:get_glass_slots",
+        "tool:run_star_operation"
+      ]
+    },
+    {
+      "id": "Q18",
+      "passed": true,
+      "found": [
+        "tool:get_material_properties",
+        "tool:get_glass_slots",
+        "analysis:glass_trials",
+        "tool:update_surfaces",
+        "tool:get_system_resources"
+      ]
+    },
+    {
+      "id": "Q19",
+      "passed": true,
+      "found": [
+        "tool:run_local_optimization",
+        "tool:get_surface_geometry",
+        "tool:run_global_optimization",
+        "tool:set_variables",
+        "tool:run_multistart_optimization"
+      ]
+    },
+    {
+      "id": "Q20",
+      "passed": true,
+      "found": [
+        "tool:run_global_optimization",
+        "tool:get_lens_catalogs",
+        "tool:get_surface_geometry",
+        "tool:run_lens_catalog_search",
+        "tool:update_project_settings"
+      ]
+    },
+    {
+      "id": "Q21",
+      "passed": true,
+      "found": [
+        "tool:run_optimization_wizard",
+        "tool:run_merit_program",
+        "tool:update_merit_function",
+        "tool:run_candidate_evaluation",
+        "tool:run_fft_mtf"
+      ]
+    },
+    {
+      "id": "Q22",
+      "passed": true,
+      "found": [
+        "tool:run_tolerance_analysis",
+        "analysis:design_desensitize",
+        "tool:generate_tolerances",
+        "tool:get_tolerances",
+        "tool:load_tolerance_file"
+      ]
+    },
+    {
+      "id": "Q23",
+      "passed": true,
+      "found": [
+        "tool:run_nsc_ray_trace",
+        "tool:run_batch_ray_trace",
+        "tool:read_zrd",
+        "tool:copy_nsc_objects",
+        "tool:delete_nsc_objects"
+      ]
+    },
+    {
+      "id": "Q24",
+      "passed": true,
+      "found": [
+        "tool:get_detector_data",
+        "tool:get_task_result",
+        "tool:run_nsc_ray_trace",
+        "tool:clear_detectors",
+        "tool:get_historical_result"
+      ]
+    },
+    {
+      "id": "Q25",
+      "passed": true,
+      "found": [
+        "tool:read_zrd",
+        "tool:run_zrd_replay",
+        "analysis:polarization_ray_trace",
+        "tool:run_batch_ray_trace",
+        "tool:get_beam_file"
+      ]
+    },
+    {
+      "id": "Q26",
+      "passed": true,
+      "found": [
+        "tool:get_task_result",
+        "tool:insert_editor_rows",
+        "tool:copy_editor_rows",
+        "tool:get_historical_result",
+        "tool:compare_results"
+      ]
+    },
+    {
+      "id": "Q27",
+      "passed": true,
+      "found": [
+        "tool:export_analysis_image",
+        "tool:run_layout_export",
+        "tool:export_point_cloud",
+        "tool:run_cad_export",
+        "tool:run_speos_export"
+      ]
+    },
+    {
+      "id": "Q28",
+      "passed": true,
+      "found": [
+        "tool:run_layout_export"
+      ]
+    },
+    {
+      "id": "Q29",
+      "passed": true,
+      "found": [
+        "tool:save_lens_as",
+        "tool:copy_system",
+        "tool:new_system",
+        "tool:delete_surfaces",
+        "tool:disconnect"
+      ]
+    },
+    {
+      "id": "Q30",
+      "passed": true,
+      "found": [
+        "analysis:glass_trials",
+        "tool:get_glass_slots",
+        "tool:get_material_properties",
+        "tool:update_surfaces",
+        "tool:get_system_resources"
+      ]
+    },
+    {
+      "id": "Q31",
+      "passed": true,
+      "found": [
+        "tool:run_layout_export",
+        "analysis:system_check",
+        "analysis:system_data",
+        "tool:copy_system",
+        "tool:get_system_resources"
+      ]
+    },
+    {
+      "id": "Q32",
+      "passed": true,
+      "found": [
+        "analysis:detector_viewer",
+        "analysis:star_sys_viewer",
+        "analysis:ima_bim_viewer",
+        "analysis:ray_database_viewer",
+        "analysis:source_spectrum_viewer"
+      ]
+    },
+    {
+      "id": "Q33",
+      "passed": true,
+      "found": [
+        "tool:update_surfaces",
+        "analysis:surface_data",
+        "analysis:fft_surface_mtf",
+        "analysis:grin_profile",
+        "analysis:huygens_surface_mtf"
+      ]
+    },
+    {
+      "id": "Q34",
+      "passed": true,
+      "found": [
+        "tool:get_beam_file",
+        "analysis:file_comparator",
+        "analysis:paraxial_gaussian_beam",
+        "analysis:skew_gaussian_beam",
+        "tool:load_tolerance_file"
+      ]
+    },
+    {
+      "id": "Q35",
+      "passed": true,
+      "found": [
+        "tool:get_hpc_settings",
+        "analysis:fiber_coupling_settings",
+        "tool:get_project_settings",
+        "tool:get_system_settings",
+        "tool:update_project_settings"
+      ]
+    },
+    {
+      "id": "Q36",
+      "passed": true,
+      "found": [
+        "analysis:prescription_data",
+        "analysis:surface_data",
+        "analysis:system_data",
+        "tool:export_evaluation_report",
+        "tool:get_detector_data"
+      ]
+    },
+    {
+      "id": "Q37",
+      "passed": true,
+      "found": [
+        "analysis:relative_illumination"
+      ]
+    },
+    {
+      "id": "Q38",
+      "passed": true,
+      "found": [
+        "analysis:huygens_mtf_vs_field",
+        "analysis:fft_mtf_vs_field",
+        "analysis:geometric_mtf_vs_field",
+        "analysis:huygens_mtf",
+        "analysis:huygens_surface_mtf"
+      ]
+    },
+    {
+      "id": "Q39",
+      "passed": true,
+      "found": [
+        "analysis:fft_mtf_map",
+        "tool:run_fft_mtf",
+        "analysis:fft_mtf_vs_field",
+        "analysis:fft_surface_mtf",
+        "analysis:fft_through_focus_mtf"
+      ]
+    },
+    {
+      "id": "Q40",
+      "passed": true,
+      "found": [
+        "analysis:footprint",
+        "analysis:surface_data",
+        "analysis:fft_surface_mtf",
+        "analysis:huygens_surface_mtf",
+        "analysis:nsc_surface_sag"
+      ]
+    },
+    {
+      "id": "Q41",
+      "passed": true,
+      "found": [
+        "analysis:sag_table",
+        "analysis:nsc_surface_sag",
+        "analysis:surface_sag",
+        "analysis:surface_sag_cross",
+        "analysis:phase_aberration"
+      ]
+    },
+    {
+      "id": "Q42",
+      "passed": true,
+      "found": [
+        "analysis:athermal_glass_map",
+        "analysis:glass_map",
+        "analysis:fft_mtf_map",
+        "analysis:geometric_mtf_map",
+        "analysis:glass_trials"
+      ]
+    },
+    {
+      "id": "Q43",
+      "passed": false,
+      "found": [
+        "tool:manage_candidates",
+        "tool:save_lens_as",
+        "tool:get_task_result",
+        "tool:run_candidate_evaluation",
+        "analysis:design_desensitize"
+      ]
+    },
+    {
+      "id": "Q44",
+      "passed": true,
+      "found": [
+        "tool:get_glass_slots",
+        "analysis:glass_trials",
+        "tool:get_material_properties",
+        "tool:get_surface_geometry",
+        "tool:get_lens_catalogs"
+      ]
+    },
+    {
+      "id": "Q45",
+      "passed": true,
+      "found": [
+        "tool:run_local_optimization",
+        "tool:get_task_result",
+        "tool:run_fft_mtf",
+        "tool:run_global_optimization",
+        "analysis:fft_mtf_map"
+      ]
+    },
+    {
+      "id": "Q46",
+      "passed": true,
+      "found": [
+        "tool:get_detector_data",
+        "tool:run_nsc_ray_trace",
+        "tool:get_task_result",
+        "tool:run_batch_ray_trace",
+        "analysis:sequential_energy_budget"
+      ]
+    },
+    {
+      "id": "Q47",
+      "passed": true,
+      "found": [
+        "tool:run_pop",
+        "tool:save_lens_as",
+        "tool:run_merit_program",
+        "tool:run_optimization_wizard",
+        "tool:copy_system"
+      ]
+    },
+    {
+      "id": "Q48",
+      "passed": true,
+      "found": [
+        "tool:save_lens_as",
+        "tool:export_analysis_image",
+        "tool:run_layout_export",
+        "tool:copy_system",
+        "tool:delete_surfaces"
+      ]
+    },
+    {
+      "id": "Q49",
+      "passed": true,
+      "found": [
+        "tool:set_variables",
+        "tool:get_glass_slots",
+        "tool:update_surfaces",
+        "analysis:glass_trials",
+        "tool:get_surfaces"
+      ]
+    },
+    {
+      "id": "Q50",
+      "passed": true,
+      "found": [
+        "tool:run_merit_program",
+        "analysis:opd_fan",
+        "analysis:wavefront",
+        "tool:get_detector_data",
+        "tool:get_task_result"
+      ]
+    },
+    {
+      "id": "Q51",
+      "passed": true,
+      "found": [
+        "tool:get_task_result",
+        "tool:get_detector_data",
+        "tool:get_historical_result",
+        "tool:run_optimization_wizard",
+        "tool:get_configurations"
+      ]
+    },
+    {
+      "id": "Q52",
+      "passed": true,
+      "found": [
+        "tool:cancel_task",
+        "tool:get_request_status",
+        "tool:run_analysis",
+        "tool:disconnect",
+        "tool:get_status"
+      ]
+    },
+    {
+      "id": "Q53",
+      "passed": true,
+      "found": [
+        "tool:get_request_status",
+        "tool:cancel_task",
+        "tool:run_local_optimization",
+        "tool:copy_editor_rows",
+        "tool:get_merit_function"
+      ]
+    },
+    {
+      "id": "Q54",
+      "passed": true,
+      "found": [
+        "tool:manage_candidates",
+        "tool:run_candidate_evaluation",
+        "action:manage_candidates:branch",
+        "action:manage_candidates:checkpoint",
+        "action:manage_candidates:compare"
+      ]
+    },
+    {
+      "id": "Q55",
+      "passed": true,
+      "found": [
+        "analysis:sequential_energy_budget"
+      ]
+    },
+    {
+      "id": "Q56",
+      "passed": true,
+      "found": [
+        "analysis:design_desensitize",
+        "tool:run_local_optimization",
+        "tool:run_tolerance_analysis"
+      ]
+    },
+    {
+      "id": "Q57",
+      "passed": true,
+      "found": [
+        "tool:update_merit_function",
+        "tool:run_optimization_wizard",
+        "tool:run_merit_program",
+        "tool:run_candidate_evaluation",
+        "tool:run_fft_mtf"
+      ]
+    },
+    {
+      "id": "Q58",
+      "passed": true,
+      "found": [
+        "analysis:glass_trials",
+        "tool:get_glass_slots",
+        "tool:get_material_properties",
+        "tool:run_pop_convergence",
+        "tool:generate_tolerances"
+      ]
+    },
+    {
+      "id": "Q59",
+      "passed": true,
+      "found": []
+    },
+    {
+      "id": "Q60",
+      "passed": true,
+      "found": []
+    }
+  ],
+  "agent_inference": "not observed; deterministic integration only",
+  "host_native_discovery": "available in current Codex host; no controllable independent prompt/usage capture",
+  "subagent_experiment": "not run: parent+child model usage not observable; no demonstrated routing advantage",
+  "default_mode": "full",
+  "decision": "Keep compatible full default; compact opt-in for clients loading whole catalogs. Token threshold not observed."
+}

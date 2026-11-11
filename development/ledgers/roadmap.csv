@@ -1,7 +1,6 @@
 item_id,phase,title,schedule,depends_on,difficulty,execution_state,entry_points,baseline,next_action,evidence,references,blocked_reason
-D017,1.3.0,轻量能力索引与检索,active,,低—中,done,get_capabilities;search_capabilities,已有schema详情、领域能力元数据和现有使用文档,已随v1.3.0发行；后续按具体问题定向维护,development/evidence/D017/README.md,本项目schema和get_capabilities,
-D018,1.3.0,候选模型、显式恢复与同条件比较,active,,中,done,manage_candidates;run_candidate_evaluation;compare_results,工作副本、检查点、恢复、原生优化和任务历史已实现；比较目前要求完整系统条件一致,已随v1.3.0发行；后续按具体问题定向维护,development/evidence/D018/README.md,本项目files/evaluation/history,
-D019,1.3.0,多镜片联合玻璃搜索,active,D018,中—高,done,get_glass_slots;run_analysis:glass_trials,单组目录筛选、替换、原生优化及MTF/RMS/波前/EFL已验收,已随v1.3.0发行；后续按具体问题定向维护,development/evidence/D019/README.md,G4,
-D020,1.3.0,原生评价函数构建增强,active,,中,done,run_merit_program;run_optimization_wizard;update_merit_function,高斯求积、矩形瞳、多场/配置及MFE编辑已存在；本机OPDC/OPDM/OPDX枚举确认,已随v1.3.0发行；后续按具体问题定向维护,development/evidence/D020/README.md,G3;Ansys Optimization Operands,
-D021,1.3.0,原生设计去敏感化,active,D018;D020,高,done,run_analysis:design_desensitize,公差、原生优化、独立Monte Carlo及预算已有；本机TOLR/HYLD/制造良率属性确认,已随v1.3.0发行；后续按具体问题定向维护,development/evidence/D021/README.md,本项目tolerancing/wizards;Ansys TOLR,
-D022,1.3.0,顺序光路逐面损耗统计,active,,中,done,run_analysis:sequential_energy_budget,偏振光线强度/电场、镀膜双向RTA、渐晕/Footprint已有,已随v1.3.0发行；后续按具体问题定向维护,development/evidence/D022/README.md,本项目rays/coatings;D002/D010既有证据,
+D023,1.4.0,宿主与工具上下文基线,active,,中,done,tools/list;Codex;search_capabilities,1.3.0真实stdio字节与源码审查已取得,已完成；按依赖继续下一项,development/evidence/D023/README.md,development/tool-disclosure-research.md,
+D024,1.4.0,精确schema与轻量能力目录,active,D023,低—中,done,get_capabilities;search_capabilities,单wavefront详情151046字节；可达裁剪实验1247字节,已完成；按依赖继续下一项,development/evidence/D024/README.md,development/tool-disclosure-research.md,
+D025,1.4.0,稳定compact发现及执行,active,D024,中—高,done,server startup;query_capability;execute_capability,现有107工具和Bridge/Backend派发；9引导工具10275字节,完成；由D027集中检查和发行,development/evidence/D025/README.md,development/tool-disclosure-research.md,
+D026,1.4.0,工程流程解耦与自主组合,active,D023,中,done,run_analysis:glass_trials;get_glass_slots;MFE;optimization,联合玻璃强制贡献；去敏感化是原生制造良率DLS路线,完成；由D027集中检查和发行,development/evidence/D026/README.md,development/tool-disclosure-research.md,
+D027,1.4.0,模式对照、默认选型与统一发行,active,D025;D026,中,implemented,host discovery;compact;conditional subagent;release,产品1.3.0；本期全部完成后统一发行,全部实现和发行检查通过；提交推送并发布GitHub1.4.0,development/evidence/release140.md,development/tool-disclosure-research.md,

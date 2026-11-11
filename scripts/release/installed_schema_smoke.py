@@ -8,18 +8,19 @@ from pathlib import Path
 from mcp import Client
 from mcp.client.stdio import StdioServerParameters
 
-async def run(target,folder,version,tool_count='107',analysis_count='146'):
+async def run(target,folder,version,tool_count='107',analysis_count='146',mode='full'):
     target=Path(target).resolve();folder=Path(folder).resolve();folder.mkdir(parents=True,exist_ok=False)
     sys.path.insert(0,str(target))
     import zemax_mcp
     assert Path(zemax_mcp.__file__).resolve().is_relative_to(target)
     assert zemax_mcp.__version__==version
     boot='import sys;sys.path.insert(0,'+repr(str(target))+');from zemax_mcp.server import main;main()'
-    p=StdioServerParameters(command=sys.executable,args=['-I','-B','-c',boot],cwd=str(target),env={'PYTHONUTF8':'1','ZEMAX_OUTPUT_DIR':str(folder/'native')})
-    record=dict(version=version,installed_root=str(target),native_connection_attempted=False)
+    p=StdioServerParameters(command=sys.executable,args=['-I','-B','-c',boot],cwd=str(target),env={'PYTHONUTF8':'1','ZEMAX_OUTPUT_DIR':str(folder/'native'),'ZEMAX_TOOL_MODE':mode})
+    record=dict(version=version,mode=mode,installed_root=str(target),native_connection_attempted=False)
     async with Client(p,read_timeout_seconds=60)as client:
         ts=await client.list_tools();record['tool_count']=len(ts.tools);assert record['tool_count']==int(tool_count)
-        assert {'search_capabilities','manage_candidates','run_candidate_evaluation','get_glass_slots','run_merit_program'} <= {tool.name for tool in ts.tools}
+        expected={'search_capabilities','manage_candidates','run_candidate_evaluation','get_glass_slots','run_merit_program'} if mode=='full' else {'search_capabilities','query_capability','execute_capability'}
+        assert expected <= {tool.name for tool in ts.tools}
         search=(await client.call_tool('search_capabilities',dict(query='逐面能量损耗',limit=5))).structured_content
         assert search['ok'];record['offline_search']=search
         result=(await client.call_tool('get_capabilities',dict(topic='tool',tool_name='run_analysis'))).structured_content
@@ -30,6 +31,11 @@ async def run(target,folder,version,tool_count='107',analysis_count='146'):
         assert {'universal_plot_1d','universal_plot_2d','paraxial_gaussian_beam','skew_gaussian_beam'}<=mapping.keys()
         record['actual_schema']=result
         status=(await client.call_tool('get_status')).structured_content;assert status['ok'];record['status']=status
+        if mode=='compact':
+            queried=(await client.call_tool('query_capability',dict(capability_id='tool:get_status',arguments={}))).structured_content
+            assert queried['ok'] and not queried['data']['connected']
+            rejected=(await client.call_tool('query_capability',dict(capability_id='tool:new_system',arguments={}))).structured_content
+            assert rejected['error']['code']=='READ_ONLY_REQUIRED'
     record['stdio_closed']=True
     (folder/'summary.json').write_text(json.dumps(record,ensure_ascii=False,indent=2),encoding='utf-8')
     print(json.dumps({k:record[k]for k in ['version','tool_count','analysis_kind_count','stdio_closed']}))

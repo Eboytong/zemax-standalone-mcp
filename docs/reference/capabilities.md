@@ -1,6 +1,8 @@
 # 能力索引
 
-Zemax Standalone MCP 1.3.0 提供 107 个工具和 146 种 `run_analysis` 请求类型。
+Zemax Standalone MCP 1.4.0 提供 107 个工具和 146 种 `run_analysis` 请求类型。
+
+full直接提供107工具；compact提供11个固定发现/调用/任务控制入口，通过tool、analysis和action能力ID访问同一套操作。单项详情只返回相关schema；工程流程可与原生工具自主组合。见[披露模式](../guides/capability-search.md)。
 
 | 领域 | 主要能力 | 文档 |
 | --- | --- | --- |

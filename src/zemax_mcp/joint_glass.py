@@ -120,8 +120,10 @@ def available_slots(b):
         if len(providers) != 1:reasons.append('catalog_identity_not_unique')
         if any(str(system.LDE.GetSurfaceAt(j).MaterialCell.Solve) != 'Fixed' for j in range(i, last)):
             reasons.append('material_solve_protected')
+        contribution_conditions = []
         if any(str(system.LDE.GetSurfaceAt(j).Type) != 'Standard' for j in range(i, last + 1)):
-            reasons.append('contribution_requires_standard_surfaces')
-        record = dict(first_surface=i, last_surface=last, material=material, catalogs=providers, skip_reasons=reasons)
+            contribution_conditions.append('contribution_requires_standard_surfaces')
+        record = dict(first_surface=i, last_surface=last, material=material, catalogs=providers, skip_reasons=reasons,
+            contribution_conditions=contribution_conditions)
         (skipped if reasons else slots).append(record);i = last
     return dict(slots=slots, skipped=skipped, units='current lens units', source='native LDE and catalogs')

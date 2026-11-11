@@ -5,8 +5,8 @@
 | 编号 | 仓库 | 固定commit | 许可 | 对应任务 |
 | --- | --- | --- | --- | --- |
 | G2 | [YonggangG/Zemax_MCP_Server](https://github.com/YonggangG/Zemax_MCP_Server) | `193598e4ca6224dfa8615565d5e3b6f3cfa6d149` | MIT | D003、D007、D010 |
-| G3 | [joeyijun/OpticStudioMCPServer](https://github.com/joeyijun/OpticStudioMCPServer) | `a7375ba48235b2db71ae40766dbc1969c0671401` | MIT | 已交付D002、D006；本期D020 |
-| G4 | [chuang44-tiff/optivibe-mcp](https://github.com/chuang44-tiff/optivibe-mcp) | `50c225c30fab5cd4e81e134e1988c7d6cd7b5ed3` | Apache-2.0 | 已交付D001、D004、D008；本期D019 |
+| G3 | [joeyijun/OpticStudioMCPServer](https://github.com/joeyijun/OpticStudioMCPServer) | `a7375ba48235b2db71ae40766dbc1969c0671401` | MIT | 已交付D002、D006；1.3.0的D020 |
+| G4 | [chuang44-tiff/optivibe-mcp](https://github.com/chuang44-tiff/optivibe-mcp) | `50c225c30fab5cd4e81e134e1988c7d6cd7b5ed3` | Apache-2.0 | 已交付D001、D004、D008；1.3.0的D019 |
 | G5 | [zhaopeizhao41-ops/optiforge](https://github.com/zhaopeizhao41-ops/optiforge) | `6a197e467c7fceeb51ab651b3dbea21d9781d94e` | MIT | D005、D009、D010、D011 |
 
 ## G2：Detector Viewer与NSC
@@ -43,7 +43,7 @@ D003补本项目有类型请求、枚举值回读、当前数据/ZRD来源及结
 [tolerance_tools.py](https://github.com/zhaopeizhao41-ops/optiforge/blob/6a197e467c7fceeb51ab651b3dbea21d9781d94e/tools/tolerance_tools.py)是公差和反射估算的额外参考入口，实施对应分项时再核对具体函数。反射率估算与实际ZRD功率分别标记。
 
 
-## 本期D019/D020新增参考
+## 1.3.0的D019/D020新增参考
 
 D019复用已交付D008及G4的glass_trial/glass_explain，增加多槽位联合候选、预算和比较。材料身份与原生优化合同继续按本项目实现。
 

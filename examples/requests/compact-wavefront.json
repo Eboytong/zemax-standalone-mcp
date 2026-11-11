@@ -1,0 +1,6 @@
+{
+  "discovery": {"query": "波前光程差 OPD", "limit": 5},
+  "detail": {"topic": "detail", "capability_id": "analysis:wavefront"},
+  "execute": {"capability_id": "analysis:wavefront", "arguments": {"request": {"kind": "wavefront", "field": 1, "wavelength": 1, "sampling": "S_64x64"}}},
+  "query": {"capability_id": "tool:get_system_settings", "arguments": {}}
+}

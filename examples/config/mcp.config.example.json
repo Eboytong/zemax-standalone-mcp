@@ -12,7 +12,8 @@
         "ZEMAX_OUTPUT_DIR": "<解压目录>\\.local\\runs",
         "ZEMAX_STATE_DIR": "<解压目录>\\.local\\state",
         "PYTHONUTF8": "1",
-        "PYTHONDONTWRITEBYTECODE": "1"
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "ZEMAX_TOOL_MODE": "full"
       }
     }
   }

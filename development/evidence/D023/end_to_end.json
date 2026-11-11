@@ -1,0 +1,146 @@
+[
+  {
+    "id": "sequential_model",
+    "scope": "顺序建模、回读、保存重载",
+    "baseline": "independent owned model",
+    "assertions": [
+      "actual settings",
+      "valid output",
+      "native numerical tolerances",
+      "terminal task",
+      "disconnect"
+    ]
+  },
+  {
+    "id": "sequential_rays",
+    "scope": "真实光线及rows分页",
+    "baseline": "independent owned model",
+    "assertions": [
+      "actual settings",
+      "valid output",
+      "native numerical tolerances",
+      "terminal task",
+      "disconnect"
+    ]
+  },
+  {
+    "id": "sequential_mtf",
+    "scope": "MTF曲线及图像导出",
+    "baseline": "independent owned model",
+    "assertions": [
+      "actual settings",
+      "valid output",
+      "native numerical tolerances",
+      "terminal task",
+      "disconnect"
+    ]
+  },
+  {
+    "id": "sequential_wavefront",
+    "scope": "波前网格区域分页",
+    "baseline": "independent owned model",
+    "assertions": [
+      "actual settings",
+      "valid output",
+      "native numerical tolerances",
+      "terminal task",
+      "disconnect"
+    ]
+  },
+  {
+    "id": "nsc_trace",
+    "scope": "NSC建模、追迹和探测器",
+    "baseline": "independent owned model",
+    "assertions": [
+      "actual settings",
+      "valid output",
+      "native numerical tolerances",
+      "terminal task",
+      "disconnect"
+    ]
+  },
+  {
+    "id": "nsc_viewer",
+    "scope": "当前Detector Viewer结果",
+    "baseline": "independent owned model",
+    "assertions": [
+      "actual settings",
+      "valid output",
+      "native numerical tolerances",
+      "terminal task",
+      "disconnect"
+    ]
+  },
+  {
+    "id": "pop_gaussian",
+    "scope": "高斯束传播、网格、ZBF",
+    "baseline": "independent owned model",
+    "assertions": [
+      "actual settings",
+      "valid output",
+      "native numerical tolerances",
+      "terminal task",
+      "disconnect"
+    ]
+  },
+  {
+    "id": "optimization",
+    "scope": "MFE、变量、局部优化",
+    "baseline": "independent owned model",
+    "assertions": [
+      "actual settings",
+      "valid output",
+      "native numerical tolerances",
+      "terminal task",
+      "disconnect"
+    ]
+  },
+  {
+    "id": "tolerancing",
+    "scope": "TDE及原生灵敏度",
+    "baseline": "independent owned model",
+    "assertions": [
+      "actual settings",
+      "valid output",
+      "native numerical tolerances",
+      "terminal task",
+      "disconnect"
+    ]
+  },
+  {
+    "id": "energy_loss",
+    "scope": "逐面损耗及单位",
+    "baseline": "independent owned model",
+    "assertions": [
+      "actual settings",
+      "valid output",
+      "native numerical tolerances",
+      "terminal task",
+      "disconnect"
+    ]
+  },
+  {
+    "id": "candidate",
+    "scope": "候选保存与选择恢复",
+    "baseline": "independent owned model",
+    "assertions": [
+      "actual settings",
+      "valid output",
+      "native numerical tolerances",
+      "terminal task",
+      "disconnect"
+    ]
+  },
+  {
+    "id": "glass",
+    "scope": "有限共轭/非球面贡献关闭试验",
+    "baseline": "independent owned model",
+    "assertions": [
+      "actual settings",
+      "valid output",
+      "native numerical tolerances",
+      "terminal task",
+      "disconnect"
+    ]
+  }
+]

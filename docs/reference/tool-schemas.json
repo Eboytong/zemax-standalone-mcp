@@ -1,5 +1,6 @@
 {
-  "service_version": "1.3.0",
+  "service_version": "1.4.0",
+  "mode": "full",
   "tools": {
     "cancel_task": {
       "type": "object",
@@ -851,6 +852,38 @@
           ],
           "default": null,
           "title": "Capability Id"
+        },
+        "action": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Action"
+        },
+        "analysis_kinds": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Analysis Kinds"
+        },
+        "include_metadata": {
+          "default": false,
+          "title": "Include Metadata",
+          "type": "boolean"
         }
       },
       "title": "get_capabilitiesArguments"
@@ -9204,6 +9237,11 @@
               ],
               "default": null,
               "title": "Design Id"
+            },
+            "include_contributions": {
+              "default": true,
+              "title": "Include Contributions",
+              "type": "boolean"
             }
           },
           "required": [
@@ -21748,6 +21786,11 @@
               ],
               "default": null,
               "title": "Design Id"
+            },
+            "include_contributions": {
+              "default": true,
+              "title": "Include Contributions",
+              "type": "boolean"
             }
           },
           "required": [
@@ -35269,6 +35312,11 @@
               ],
               "default": null,
               "title": "Design Id"
+            },
+            "include_contributions": {
+              "default": true,
+              "title": "Include Contributions",
+              "type": "boolean"
             }
           },
           "required": [
@@ -49453,6 +49501,11 @@
               ],
               "default": null,
               "title": "Design Id"
+            },
+            "include_contributions": {
+              "default": true,
+              "title": "Include Contributions",
+              "type": "boolean"
             }
           },
           "required": [
@@ -63430,6 +63483,11 @@
               ],
               "default": null,
               "title": "Design Id"
+            },
+            "include_contributions": {
+              "default": true,
+              "title": "Include Contributions",
+              "type": "boolean"
             }
           },
           "required": [
@@ -78602,6 +78660,11 @@
               ],
               "default": null,
               "title": "Design Id"
+            },
+            "include_contributions": {
+              "default": true,
+              "title": "Include Contributions",
+              "type": "boolean"
             }
           },
           "required": [
@@ -94802,6 +94865,11 @@
               ],
               "default": null,
               "title": "Design Id"
+            },
+            "include_contributions": {
+              "default": true,
+              "title": "Include Contributions",
+              "type": "boolean"
             }
           },
           "required": [

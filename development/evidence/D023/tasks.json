@@ -1,0 +1,538 @@
+[
+  {
+    "query": "修改镜片曲率和厚度",
+    "expected": [
+      "tool:update_surfaces"
+    ],
+    "id": "Q01",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "给非球面设置偏心倾斜",
+    "expected": [
+      "tool:update_surfaces"
+    ],
+    "id": "Q02",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "设置优化变量和拾取",
+    "expected": [
+      "tool:set_variables"
+    ],
+    "id": "Q03",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "计算曲面矢高和法线",
+    "expected": [
+      "tool:get_surface_geometry"
+    ],
+    "id": "Q04",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "检查镜片碰撞及最小间隔",
+    "expected": [
+      "tool:get_surface_geometry"
+    ],
+    "id": "Q05",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "批量追迹真实光线交点",
+    "expected": [
+      "tool:run_batch_ray_trace"
+    ],
+    "id": "Q06",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "偏振光线电场与Jones",
+    "expected": [
+      "analysis:polarization_ray_trace"
+    ],
+    "id": "Q07",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "MTF调制传递函数",
+    "expected": [
+      "tool:run_fft_mtf"
+    ],
+    "id": "Q08",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "分辨率和空间频率",
+    "expected": [
+      "tool:run_fft_mtf"
+    ],
+    "id": "Q09",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "计算波前光程差OPD",
+    "expected": [
+      "analysis:wavefront"
+    ],
+    "id": "Q10",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "泽尼克像差系数拟合",
+    "expected": [
+      "analysis:zernike_standard"
+    ],
+    "id": "Q11",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "离焦均方根光斑",
+    "expected": [
+      "analysis:rms_vs_focus"
+    ],
+    "id": "Q12",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "物理光学高斯光束传播",
+    "expected": [
+      "tool:run_pop"
+    ],
+    "id": "Q13",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "POP复振幅衍射",
+    "expected": [
+      "tool:run_pop"
+    ],
+    "id": "Q14",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "镀膜反射率透射率吸收率",
+    "expected": [
+      "tool:get_coating_rta"
+    ],
+    "id": "Q15",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "双向S P镀膜",
+    "expected": [
+      "tool:get_coating_rta"
+    ],
+    "id": "Q16",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "玻璃折射率和阿贝数",
+    "expected": [
+      "tool:get_material_properties"
+    ],
+    "id": "Q17",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "材料色散热光属性",
+    "expected": [
+      "tool:get_material_properties"
+    ],
+    "id": "Q18",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "阻尼最小二乘局部优化",
+    "expected": [
+      "tool:run_local_optimization"
+    ],
+    "id": "Q19",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "全局搜索多个极小值",
+    "expected": [
+      "tool:run_global_optimization"
+    ],
+    "id": "Q20",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "高斯求积评价函数向导",
+    "expected": [
+      "tool:run_optimization_wizard"
+    ],
+    "id": "Q21",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "公差灵敏度蒙特卡洛良率",
+    "expected": [
+      "tool:run_tolerance_analysis"
+    ],
+    "id": "Q22",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "非序列光源分光散射追迹",
+    "expected": [
+      "tool:run_nsc_ray_trace"
+    ],
+    "id": "Q23",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "读取探测器辐照度网格",
+    "expected": [
+      "tool:get_detector_data"
+    ],
+    "id": "Q24",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "ZRD光线路径数据库段",
+    "expected": [
+      "tool:read_zrd"
+    ],
+    "id": "Q25",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "结果分页rows series grids",
+    "expected": [
+      "tool:get_task_result"
+    ],
+    "id": "Q26",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "导出PNG PDF图片",
+    "expected": [
+      "tool:export_analysis_image"
+    ],
+    "id": "Q27",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "二维三维光路布局",
+    "expected": [
+      "tool:run_layout_export"
+    ],
+    "id": "Q28",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "保存镜头模型副本",
+    "expected": [
+      "tool:save_lens_as"
+    ],
+    "id": "Q29",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "玻璃试验材料替换排名",
+    "expected": [
+      "analysis:glass_trials"
+    ],
+    "id": "Q30",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "system drawing unfold rays",
+    "expected": [
+      "tool:run_layout_export"
+    ],
+    "id": "Q31",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "detector viewer smoothing scale",
+    "expected": [
+      "analysis:detector_viewer"
+    ],
+    "id": "Q32",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "Gradient2 GRIN surface",
+    "expected": [
+      "tool:update_surfaces"
+    ],
+    "id": "Q33",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "ZBF beam file",
+    "expected": [
+      "tool:get_beam_file"
+    ],
+    "id": "Q34",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "HPC settings nodes",
+    "expected": [
+      "tool:get_hpc_settings"
+    ],
+    "id": "Q35",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "prescription data report",
+    "expected": [
+      "analysis:prescription_data"
+    ],
+    "id": "Q36",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "relative illumination",
+    "expected": [
+      "analysis:relative_illumination"
+    ],
+    "id": "Q37",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "huygens mtf vs field",
+    "expected": [
+      "analysis:huygens_mtf_vs_field"
+    ],
+    "id": "Q38",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "fft mtf map",
+    "expected": [
+      "analysis:fft_mtf_map"
+    ],
+    "id": "Q39",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "footprint surface",
+    "expected": [
+      "analysis:footprint"
+    ],
+    "id": "Q40",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "sag table",
+    "expected": [
+      "analysis:sag_table"
+    ],
+    "id": "Q41",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "glass map Nd Vd",
+    "expected": [
+      "analysis:glass_map"
+    ],
+    "id": "Q42",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "读取波前再保存候选设计",
+    "expected": [
+      "analysis:wavefront"
+    ],
+    "id": "Q43",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "查玻璃目录然后替换镜片",
+    "expected": [
+      "tool:get_material_properties"
+    ],
+    "id": "Q44",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "局部优化后读取MTF",
+    "expected": [
+      "tool:run_local_optimization"
+    ],
+    "id": "Q45",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "追迹后读取探测器功率",
+    "expected": [
+      "tool:get_detector_data"
+    ],
+    "id": "Q46",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "传播高斯束并保存复场",
+    "expected": [
+      "tool:run_pop"
+    ],
+    "id": "Q47",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "保存模型与导出光路图",
+    "expected": [
+      "tool:save_lens_as"
+    ],
+    "id": "Q48",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "半径拾取参数允许替换solve",
+    "expected": [
+      "tool:update_surfaces"
+    ],
+    "id": "Q49",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "单波长 OPD 网格采样",
+    "expected": [
+      "analysis:wavefront"
+    ],
+    "id": "Q50",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "矩形网格按区域分页",
+    "expected": [
+      "tool:get_task_result"
+    ],
+    "id": "Q51",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "取消正在执行的原生任务",
+    "expected": [
+      "tool:cancel_task"
+    ],
+    "id": "Q52",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "查询超时请求编号",
+    "expected": [
+      "tool:get_request_status"
+    ],
+    "id": "Q53",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "恢复候选设计检查点",
+    "expected": [
+      "tool:manage_candidates"
+    ],
+    "id": "Q54",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "逐面能量损耗 W",
+    "expected": [
+      "analysis:sequential_energy_budget"
+    ],
+    "id": "Q55",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "制造良率 DLS 去敏感化",
+    "expected": [
+      "analysis:design_desensitize"
+    ],
+    "id": "Q56",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "直接编辑评价函数 MFE",
+    "expected": [
+      "tool:update_merit_function"
+    ],
+    "id": "Q57",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "联合玻璃显式组合",
+    "expected": [
+      "analysis:glass_trials"
+    ],
+    "id": "Q58",
+    "side_effect": "discovery only",
+    "success": "Top-5 contains an accepted capability"
+  },
+  {
+    "query": "zzzzqqqqxxxx",
+    "expected": [],
+    "id": "Q59",
+    "side_effect": "discovery only",
+    "success": "no candidates"
+  },
+  {
+    "query": "火星天气预报 xyzq",
+    "expected": [],
+    "id": "Q60",
+    "side_effect": "discovery only",
+    "success": "no candidates"
+  }
+]

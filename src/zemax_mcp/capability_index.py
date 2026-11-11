@@ -49,6 +49,9 @@ METADATA = {
     "save_lens_as": ("保存 镜头 副本 模型 文件", "无", "已打开模型；绝对输出路径", "写模型文件", "保存路径"),
     "glass_trials": ("玻璃试验 材料替换 选型 候选 排名", "请求评价指标单位", "顺序模型及材料目录", "工作副本计算并恢复", "候选排名及最佳模型"),
     "system_drawing": ("系统图 光路图 折叠 展开 Unfold", "模型单位", "顺序模型及原生SystemDrawing", "创建分析任务", "原生图像文件"),
+    "cancel_task": ("取消 正在执行 原生任务 停止", "无", "有效task_id", "请求取消", "实际任务终态"),
+    "get_request_status": ("查询 超时 请求编号 request_id", "无", "有效请求编号", "读取", "执行回执和任务状态"),
+    "update_merit_function": ("直接 编辑 评价函数 MFE 操作数 目标 权重", "原生操作数单位", "已打开模型", "修改MFE", "操作数回读"),
 }
 
 
@@ -62,16 +65,35 @@ def _descriptions():
 @lru_cache(maxsize=1)
 def build_index():
     from .models import COMMAND_MODELS
+    from .disclosure import contracts, READ_ONLY
+    from .schema_disclosure import reachable, select_branch
     descriptions = _descriptions()
+    handlers = contracts()
     result = []
     for name, model in COMMAND_MODELS.items():
-        result.append(_entry(name, "tool", name, None, model.model_json_schema(), descriptions.get(name, "")))
-    schema = COMMAND_MODELS["run_analysis"].model_json_schema()
+        schema = handlers[name].schema
+        result.append(_entry(name, "tool", name, None, reachable(schema), descriptions.get(name, "")))
+        request = schema.get('properties', {}).get('request', {})
+        discriminator = request.get('discriminator', {})
+        if discriminator.get('propertyName') == 'action':
+            for action in discriminator['mapping']:
+                item = _entry(name + ':' + action, 'action', name, None,
+                    select_branch(schema, 'action', action), descriptions.get(name, ''))
+                item['selector'] = ['action', action]
+                result.append(item)
+    schema = handlers["run_analysis"].schema
     request = schema["properties"]["request"]
     for kind, ref in request["discriminator"]["mapping"].items():
         definition = schema["$defs"][ref.rsplit("/", 1)[-1]]
-        result.append(_entry(kind, "analysis", "run_analysis", kind,
-                             {**definition, "$defs": schema["$defs"]}, definition.get("description", "")))
+        item = _entry(kind, "analysis", "run_analysis", kind,
+                      select_branch(schema, 'kind', kind), definition.get("description", ""))
+        item['selector'] = ['kind', kind]
+        result.append(item)
+    for item in result:
+        item['read_only'] = item['tool_name'] in READ_ONLY
+        item['layer'] = ('optional_workflow' if item['name'] in {'glass_trials','design_desensitize','run_merit_program'}
+            else 'service' if item['tool_name'] in {'manage_candidates','run_candidate_evaluation','get_task_result','get_task_status','search_capabilities','get_capabilities'}
+            else 'native_action')
     return result
 
 
@@ -105,6 +127,8 @@ def search(query, limit=5, category="all"):
         if category != "all" and entry["category"] != category:
             continue
         names = _terms(entry["name"].replace("_", " ") + " " + " ".join(entry["aliases"]))
+        if entry['name'] == 'update_surfaces': names |= _terms('Gradient2 Gradient3 GRIN surface')
+        if entry['name'] == 'run_layout_export': names |= _terms('system drawing unfold rays')
         description = _terms(entry["description"])
         hits = terms & (names | description)
         score = 4 * len(terms & names) + len(terms & description)
@@ -114,7 +138,7 @@ def search(query, limit=5, category="all"):
             ranked.append((score, entry, sorted(hits)))
     ranked.sort(key=lambda item: (-item[0], item[1]["capability_id"]))
     return dict(query=query, total_matches=len(ranked), items=[
-        {**{key: value for key, value in entry.items() if key != "request_schema"},
+        {**brief(entry),
          "score": score, "matched_terms": hits} for score, entry, hits in ranked[:limit]])
 
 
@@ -127,7 +151,20 @@ def describe(req):
             raise ZemaxError("UNKNOWN_CAPABILITY", "能力编号不存在。", capability_id=req.capability_id)
         if req.topic == "dependencies":
             return {key: entry[key] for key in ("capability_id", "prerequisites", "availability", "effect")}
-        return entry
+        from .schema_disclosure import select_branch, restrict_analyses
+        result = dict(entry)
+        if req.action:
+            result['request_schema'] = select_branch(result['request_schema'], 'action', req.action)
+        if req.analysis_kinds:
+            result['request_schema'] = restrict_analyses(result['request_schema'], req.analysis_kinds)
+        if not req.include_metadata:
+            result = {key: result[key] for key in ('capability_id','tool_name','analysis_kind','description',
+                'units','prerequisites','effect','result','read_only','layer','request_schema')}
+        return result
     selected = entries[req.start - 1:req.start - 1 + req.count]
     return dict(total=len(entries), start=req.start, count=len(selected),
-                items=[{key: value for key, value in item.items() if key != "request_schema"} for item in selected])
+                items=[brief(item) for item in selected])
+
+
+def brief(item):
+    return {key: item[key] for key in ('capability_id', 'name', 'category', 'description', 'effect', 'read_only', 'layer', 'detail_request')}

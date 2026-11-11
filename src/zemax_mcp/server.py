@@ -37,8 +37,12 @@ from .candidate_models import CandidateAction, CandidateEvaluation
 from .merit_program import MeritProgram
 
 
-def create_server():
-    bridge = Bridge()
+def create_server(mode=None, bridge=None):
+    from .disclosure import BOOTSTRAP, READ_ONLY, Handler, invoke, mode_value
+    from mcp.server.mcpserver.tools.base import Tool
+    mode = mode_value(mode)
+    bridge = bridge or Bridge()
+    handlers = {}
 
     @asynccontextmanager
     async def lifespan(server):
@@ -49,16 +53,20 @@ def create_server():
 
     server = MCPServer(
         "Zemax Standalone", version=__version__, lifespan=lifespan,
-        instructions="本机 OpticStudio 2024 R2 Standalone。先 connect，再打开或新建镜头。修改前检查单位与 solve/pickup。run_* 返回任务编号，通过状态与结果工具取回结果。",
+        instructions="本机 OpticStudio 2024 R2 Standalone。先 connect，再打开或新建镜头。修改前检查单位与 solve/pickup。run_* 返回任务编号，通过状态与结果工具取回结果。" +
+            (" compact模式：search_capabilities检索，get_capabilities(topic='detail',capability_id=...)读取精确MCP参数。读取用query_capability；建模、分析和保存用execute_capability。已知能力ID可直接调用。" if mode == 'compact' else ''),
     )
 
     def tool(fn):
-        read_only = fn.__name__.startswith(("get_", "list_", "search_")) or fn.__name__ == "compare_results"
-        return server.tool(
-            structured_output=True,
-            annotations=ToolAnnotations(readOnlyHint=read_only, destructiveHint=not read_only,
-                                        idempotentHint=read_only, openWorldHint=False),
-        )(fn)
+        read_only = fn.__name__ in READ_ONLY
+        annotations = ToolAnnotations(readOnlyHint=read_only, destructiveHint=not read_only,
+                                      idempotentHint=read_only, openWorldHint=False)
+        if mode == 'full' or fn.__name__ in BOOTSTRAP:
+            native_tool = server._tool_manager.add_tool(fn, structured_output=True, annotations=annotations)
+        else:
+            native_tool = Tool.from_function(fn, structured_output=True, annotations=annotations)
+        handlers[fn.__name__] = Handler(native_tool)
+        return fn
 
     async def call(command, arguments=None):
         return ToolResponse.model_validate(await bridge.request(command, arguments))
@@ -76,9 +84,11 @@ def create_server():
     @tool
     async def get_capabilities(topic: Literal["all", "settings", "tool", "merit_cells", "optimization_diagnostics", "index", "detail", "dependencies"] = "all",
                                tool_name: str | None = None, start: int = 1, count: int = 20,
-                               capability_id: str | None = None) -> ToolResponse:
+                               capability_id: str | None = None, action: str | None = None,
+                               analysis_kinds: list[str] | None = None, include_metadata: bool = False) -> ToolResponse:
         """列出已实现工具、模式、面型及当前版本可用的设置枚举。"""
-        return await call("get_capabilities", dict(topic=topic,tool_name=tool_name,start=start,count=count,capability_id=capability_id))
+        return await call("get_capabilities", dict(topic=topic,tool_name=tool_name,start=start,count=count,capability_id=capability_id,
+            action=action,analysis_kinds=analysis_kinds,include_metadata=include_metadata))
 
     @tool
     async def search_capabilities(query: str, limit: int = 5,
@@ -622,6 +632,18 @@ def create_server():
         """在独立副本预览、求值或应用原生向导、完整瞳OPD目标与几何约束。"""
         return await call('run_merit_program',request.model_dump(exclude_unset=True))
 
+    if mode == 'compact':
+        @server.tool(structured_output=True, annotations=ToolAnnotations(readOnlyHint=True, destructiveHint=False, idempotentHint=True, openWorldHint=False))
+        async def query_capability(capability_id: str, arguments: dict) -> ToolResponse:
+            """调用只读能力；先用 search_capabilities 和 get_capabilities(detail) 获取准确参数。"""
+            return await invoke(handlers, capability_id, arguments, query=True)
+
+        @server.tool(structured_output=True, annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=True, idempotentHint=False, openWorldHint=False))
+        async def execute_capability(capability_id: str, arguments: dict) -> ToolResponse:
+            """调用建模、分析、文件或工程能力；arguments 使用详情的 MCP 参数形状，任务沿用状态/结果/取消入口。"""
+            return await invoke(handlers, capability_id, arguments)
+    server.zemax_handlers = handlers
+    server.zemax_mode = mode
     return server
 
 

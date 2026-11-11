@@ -1,0 +1,14 @@
+{
+  "request": {
+    "kind": "glass_trials",
+    "include_contributions": false,
+    "groups": [{"first_surface": 1, "last_surface": 2}],
+    "catalogs": ["SCHOTT"],
+    "reference_wavelength": 1,
+    "field": 1,
+    "variables": [{"surface": 2, "cell": "thickness", "minimum": 20, "maximum": 100}],
+    "objectives": [{"metric": "rms_spot"}],
+    "cycles": "Fixed_1_Cycle",
+    "max_candidates": 2
+  }
+}

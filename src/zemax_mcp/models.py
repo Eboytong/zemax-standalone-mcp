@@ -17,6 +17,9 @@ class Capabilities(Request):
     tool_name: str | None = None
     start: PositiveIndex = 1
     count: Annotated[int, Field(strict=True, ge=1, le=100)] = 20
+    action: str | None = None
+    analysis_kinds: list[str] | None = None
+    include_metadata: bool = False
 
 
 class ToolResponse(BaseModel):

@@ -40,3 +40,5 @@ NSC光源模式请求见[nsc-source-spectra.json](requests/nsc-source-spectra.js
 工程计算请求：[均温补偿](requests/thermal-compensation.json)、[多目标候选](requests/pareto-search.json)、[公差成本预算](requests/tolerance-budget.json)、[双FSM控制](requests/fsm-control.json)。输入须对应当前模型和专题说明中的坐标、单位及原生资源。
 
 工程搜索及损耗请求：[能力搜索](requests/capability-search.json)、[评价函数](requests/merit-program.json)、[逐面能量](requests/sequential-energy-budget.json)。候选、联合玻璃和去敏感化的完整调用见[使用指南](../docs/README.md)。
+
+精简工具披露：[compact波前](requests/compact-wavefront.json)提供搜索、单能力详情、执行及只读调用形状；[材料试验关闭贡献](requests/glass-trials-optional-contribution.json)适用于单波长、有限共轭或非球面模型。调用顺序与配置见[能力发现指南](../docs/guides/capability-search.md)。

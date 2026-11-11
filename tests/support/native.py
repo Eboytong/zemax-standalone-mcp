@@ -9,6 +9,11 @@ from .paths import fixture_dir,run_dir
 class Evidence:
     def __init__(self,client,folder):self.client=client;self.folder=folder;self.calls=[];self.checks=[]
     async def call(self,name,args=None,okay=True):
+        if os.environ.get('ZEMAX_TEST_TOOL_MODE') == 'compact':
+            from zemax_mcp.disclosure import BOOTSTRAP, READ_ONLY
+            if name not in BOOTSTRAP:
+                args=dict(capability_id='tool:'+name,arguments=args or {})
+                name='query_capability' if name in READ_ONLY else 'execute_capability'
         r=(await self.client.call_tool(name,args or {})).structured_content
         self.calls.append(dict(tool=name,arguments=args,response=r))
         if okay:assert r and r["ok"],r
@@ -37,6 +42,7 @@ class Evidence:
 
 def server_parameters(folder):
     environment={"PYTHONUTF8":"1","ZEMAX_OUTPUT_DIR":str(folder),"ZEMAX_STATE_DIR":str(Path(folder)/"state")}
+    environment['ZEMAX_TOOL_MODE']=os.environ.get('ZEMAX_TEST_TOOL_MODE','full')
     # The MCP stdio client forwards only a fixed allowlist of variables to the server
     # process, so a CLR assembly-load switch set by the caller would be dropped.
     # Forward it verbatim only when the caller already set it; never default it here.

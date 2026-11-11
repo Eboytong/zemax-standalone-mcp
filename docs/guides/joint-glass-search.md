@@ -2,6 +2,8 @@
 
 `get_glass_slots`读取当前顺序系统的材料段、目录身份及跳过原因。`run_analysis`的`glass_trials`请求支持`joint_slots`，每个槽位通过`group`引用`groups`列表。
 
+`include_contributions=true`沿用玻璃贡献的同轴Standard、三波长和无穷远条件。有限共轭、非球面或单波长试验设为false，并指定当前有效的reference_wavelength和field；贡献条件单独记录在槽位contribution_conditions。Agent也可逐项选择材料、设置MFE/变量、运行原生优化并保存候选，工程搜索入口提供可重复的批量快捷路径。
+
 ```json
 {"request":{"kind":"glass_trials","groups":[{"first_surface":1,"last_surface":2},{"first_surface":2,"last_surface":3}],"catalogs":["SCHOTT"],"joint_slots":[{"group":0,"materials":[{"catalog":"SCHOTT","material":"N-BK7"},{"catalog":"SCHOTT","material":"N-BAK4"}]},{"group":1,"materials":[{"catalog":"SCHOTT","material":"N-F2"},{"catalog":"SCHOTT","material":"N-SF5"}]}],"variables":[{"surface":3,"cell":"thickness","minimum":65,"maximum":110}],"objectives":[{"metric":"rms_spot"}],"search_strategy":"cartesian","max_evaluations":20,"total_budget_seconds":600}}
 ```

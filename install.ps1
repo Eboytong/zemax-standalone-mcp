@@ -1,13 +1,14 @@
 param(
     [string]$PythonExe = 'python',
     [switch]$WithReports,
-    [switch]$WithGeometry
+    [switch]$WithGeometry,
+    [ValidateSet('full','compact')][string]$ToolMode = 'full'
 )
 $ErrorActionPreference = 'Stop'
 $PackageRoot = $PSScriptRoot
 & $PythonExe -c "import sys,struct; assert sys.version_info[:2] == (3,14), 'Python 3.14 required'; assert struct.calcsize('P') == 8, 'x64 Python required'"
 if ($LASTEXITCODE -ne 0) { throw 'Python 3.14 x64 is required.' }
-$Wheel = Get-Item -LiteralPath (Join-Path $PackageRoot 'releases\1.3.0\zemax_standalone_mcp-1.3.0-py3-none-any.whl')
+$Wheel = Get-Item -LiteralPath (Join-Path $PackageRoot 'releases\1.4.0\zemax_standalone_mcp-1.4.0-py3-none-any.whl')
 $EnvRoot = Join-Path $PackageRoot '.venv'
 if (-not (Test-Path -LiteralPath (Join-Path $EnvRoot 'Scripts\python.exe'))) {
     & $PythonExe -m venv $EnvRoot
@@ -38,6 +39,7 @@ $ServerConfig = @{
         ZEMAX_STATE_DIR = $StateRoot
         PYTHONUTF8 = '1'
         PYTHONDONTWRITEBYTECODE = '1'
+        ZEMAX_TOOL_MODE = $ToolMode
     }
 }
 @{ mcpServers = @{ zemax = $ServerConfig } } | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath $ConfigPath -Encoding UTF8

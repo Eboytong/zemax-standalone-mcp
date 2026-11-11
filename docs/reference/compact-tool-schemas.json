@@ -1,0 +1,314 @@
+{
+  "service_version": "1.4.0",
+  "mode": "compact",
+  "tools": {
+    "cancel_task": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "title": "Task Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "task_id"
+      ],
+      "title": "cancel_taskArguments"
+    },
+    "connect": {
+      "type": "object",
+      "properties": {
+        "install_dir": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Install Dir"
+        }
+      },
+      "title": "connectArguments"
+    },
+    "disconnect": {
+      "type": "object",
+      "properties": {},
+      "title": "disconnectArguments"
+    },
+    "execute_capability": {
+      "type": "object",
+      "properties": {
+        "capability_id": {
+          "title": "Capability Id",
+          "type": "string"
+        },
+        "arguments": {
+          "additionalProperties": true,
+          "title": "Arguments",
+          "type": "object"
+        }
+      },
+      "required": [
+        "capability_id",
+        "arguments"
+      ],
+      "title": "execute_capabilityArguments"
+    },
+    "get_capabilities": {
+      "type": "object",
+      "properties": {
+        "topic": {
+          "default": "all",
+          "enum": [
+            "all",
+            "settings",
+            "tool",
+            "merit_cells",
+            "optimization_diagnostics",
+            "index",
+            "detail",
+            "dependencies"
+          ],
+          "title": "Topic",
+          "type": "string"
+        },
+        "tool_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Tool Name"
+        },
+        "start": {
+          "default": 1,
+          "title": "Start",
+          "type": "integer"
+        },
+        "count": {
+          "default": 20,
+          "title": "Count",
+          "type": "integer"
+        },
+        "capability_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Capability Id"
+        },
+        "action": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Action"
+        },
+        "analysis_kinds": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Analysis Kinds"
+        },
+        "include_metadata": {
+          "default": false,
+          "title": "Include Metadata",
+          "type": "boolean"
+        }
+      },
+      "title": "get_capabilitiesArguments"
+    },
+    "get_request_status": {
+      "type": "object",
+      "$defs": {
+        "RequestStatus": {
+          "additionalProperties": false,
+          "properties": {
+            "request_id": {
+              "pattern": "^[A-Za-z0-9_-]{1,128}$",
+              "title": "Request Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "request_id"
+          ],
+          "title": "RequestStatus",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "request": {
+          "$ref": "#/$defs/RequestStatus"
+        }
+      },
+      "required": [
+        "request"
+      ],
+      "title": "get_request_statusArguments"
+    },
+    "get_status": {
+      "type": "object",
+      "properties": {},
+      "title": "get_statusArguments"
+    },
+    "get_task_result": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "title": "Task Id",
+          "type": "string"
+        },
+        "start": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        },
+        "count": {
+          "default": 200,
+          "title": "Count",
+          "type": "integer"
+        },
+        "series": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Series"
+        },
+        "grid": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Grid"
+        },
+        "x_start": {
+          "default": 0,
+          "minimum": 0,
+          "title": "X Start",
+          "type": "integer"
+        },
+        "y_start": {
+          "default": 0,
+          "minimum": 0,
+          "title": "Y Start",
+          "type": "integer"
+        },
+        "width": {
+          "default": 32,
+          "title": "Width",
+          "type": "integer"
+        },
+        "height": {
+          "default": 32,
+          "title": "Height",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "task_id"
+      ],
+      "title": "get_task_resultArguments"
+    },
+    "get_task_status": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "title": "Task Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "task_id"
+      ],
+      "title": "get_task_statusArguments"
+    },
+    "query_capability": {
+      "type": "object",
+      "properties": {
+        "capability_id": {
+          "title": "Capability Id",
+          "type": "string"
+        },
+        "arguments": {
+          "additionalProperties": true,
+          "title": "Arguments",
+          "type": "object"
+        }
+      },
+      "required": [
+        "capability_id",
+        "arguments"
+      ],
+      "title": "query_capabilityArguments"
+    },
+    "search_capabilities": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "title": "Query",
+          "type": "string"
+        },
+        "limit": {
+          "default": 5,
+          "title": "Limit",
+          "type": "integer"
+        },
+        "category": {
+          "default": "all",
+          "enum": [
+            "all",
+            "tool",
+            "analysis"
+          ],
+          "title": "Category",
+          "type": "string"
+        }
+      },
+      "required": [
+        "query"
+      ],
+      "title": "search_capabilitiesArguments"
+    }
+  }
+}

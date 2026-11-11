@@ -1,6 +1,15 @@
 # MCP 工具清单
 
-1.3.0 提供107个工具、146种分析请求。支持Detector Viewer、制造几何评价、光纤对准、固定膜系优化、NSC效率/均匀性、玻璃贡献/替换、扫描瞳共轭、鬼像路径、共焦响应、热补偿、公差成本预算及双FSM离线控制。完整参数见[请求模型](tool-schemas.json)，调用约定见[使用指南](../guides/usage.md)，设置与数值条件见[原生分析矩阵](native-analysis-matrix.csv)及对应专题。
+默认full模式直接注册107工具。compact模式注册11入口，包含9个连接/发现/任务控制工具和以下两个调用入口；各原生操作通过相同能力ID和参数合同执行。
+
+| compact入口 | 用途 |
+| --- | --- |
+| `query_capability` | 按能力ID调用已审查的读取操作，arguments使用详情的MCP参数形状。 |
+| `execute_capability` | 按能力ID调用建模、分析、保存和工程流程，保留原响应及任务编号。 |
+
+详细用法见[能力发现](../guides/capability-search.md)，compact的11入口合同见[compact schema](compact-tool-schemas.json)。
+
+1.4.0 提供107个工具、146种分析请求。支持Detector Viewer、制造几何评价、光纤对准、固定膜系优化、NSC效率/均匀性、玻璃贡献/替换、扫描瞳共轭、鬼像路径、共焦响应、热补偿、公差成本预算及双FSM离线控制。完整参数见[请求模型](tool-schemas.json)，调用约定见[使用指南](../guides/usage.md)，设置与数值条件见[原生分析矩阵](native-analysis-matrix.csv)及对应专题。
 
 | 工具 | 用途 |
 | --- | --- |

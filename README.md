@@ -1,6 +1,8 @@
 # Zemax Standalone MCP
 
-Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2024 R2 的 stdio MCP 服务。当前发布版本为 **1.3.0**，提供 **107 个工具**与 **146 种 `run_analysis` 请求类型**；接口、适用条件和结果格式见使用文档与工具参考。
+Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2024 R2 的 stdio MCP 服务。当前发布版本为 **1.4.0**，提供 **107 个工具**与 **146 种 `run_analysis` 请求类型**；接口、适用条件和结果格式见使用文档与工具参考。
+
+提供两种工具披露模式：默认`full`直接提供107个工具；`compact`先提供11个搜索、执行和任务控制入口，按需读取单项schema，全部能力保持可调用。Agent可自行组合原生建模、评价、优化和公差工具，也可选择候选管理、材料搜索等工程快捷流程。
 
 ## 可以用它做什么
 
@@ -30,7 +32,7 @@ Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2024
 
 ## 安装和连接
 
-[下载1.3.0安装包](https://github.com/Eboytong/zemax-standalone-mcp/releases/tag/v1.3.0)
+[下载1.4.0安装包](https://github.com/Eboytong/zemax-standalone-mcp/releases/tag/v1.4.0)
 
 准备 Windows x64、Python 3.14 x64、OpticStudio 2024 R2 和适用的 ZOS-API 许可。在仓库根目录的 PowerShell 中运行：
 
@@ -38,7 +40,9 @@ Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2024
 powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -PythonExe python
 ```
 
-`python` 应指向 Python 3.14 x64；也可将它替换为该版本 `python.exe` 的绝对路径。需要报告和几何相关可选依赖时，在命令末尾添加 `-WithReports -WithGeometry`。脚本安装 `releases/1.3.0/` 中的 wheel，并生成 `.local/config/mcp.config.json`。
+`python` 应指向 Python 3.14 x64；也可将它替换为该版本 `python.exe` 的绝对路径。需要报告和几何相关可选依赖时，在命令末尾添加 `-WithReports -WithGeometry`。脚本安装 `releases/1.4.0/` 中的 wheel，并生成 `.local/config/mcp.config.json`。
+
+需要精简初始工具目录时，在安装命令末尾添加`-ToolMode compact`。已有配置可在env中设置`ZEMAX_TOOL_MODE=compact`并重启MCP连接。调用方式与示例见[能力搜索及渐进式披露](docs/guides/capability-search.md)。
 
 将生成配置中的 `zemax` 项添加到 MCP 客户端配置；安装目录不同时修改 `ZEMAX_INSTALL_DIR`。客户端启动后依次调用 `connect`、`open_lens`（使用镜头文件的绝对路径）、`get_system_summary`。执行分析后，通过 `get_task_status` 查询至终态，再用 `get_task_result` 读取结果；结束时调用 `disconnect`。完整调用与分页规则见[使用指南](docs/guides/usage.md)。
 
@@ -56,4 +60,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -PythonExe pyt
 | releases | 已发行wheel |
 | .local | 本机运行、状态、复现数据和历史归档 |
 
-`.local/runs`为默认运行目录；`.local/state`为状态目录。显式环境变量优先采用。当前默认wheel位于`releases/1.3.0/`。
+`.local/runs`为默认运行目录；`.local/state`为状态目录。显式环境变量优先采用。当前默认wheel位于`releases/1.4.0/`。

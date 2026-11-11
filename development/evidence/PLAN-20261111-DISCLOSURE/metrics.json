@@ -1,0 +1,1350 @@
+{
+  "date": "2026-11-11",
+  "version": "1.3.0",
+  "python": "3.14.6 | packaged by Anaconda, Inc. | (main, Jul  9 2026, 14:29:05) [MSC v.1942 64 bit (AMD64)]",
+  "python_executable": "C:\\Users\\tonge\\Desktop\\mcp\\.venv\\Scripts\\python.exe",
+  "mcp_sdk_version": "2.3.0",
+  "import_path": "C:\\Users\\tonge\\Desktop\\mcp\\src\\zemax_mcp\\__init__.py",
+  "source_commit": "83b5ea783efa7dec5f57c225bda01e422ab881b0",
+  "method": "Actual stdio tools/list; compact JSON, ensure_ascii=False; bytes are not model token usage",
+  "tools": 107,
+  "analysis_kinds": 146,
+  "all_descriptors": {
+    "utf8_bytes": 1431740,
+    "characters": 1425003
+  },
+  "all_inputs": {
+    "utf8_bytes": 1340906,
+    "characters": 1339838
+  },
+  "largest_inputs": [
+    {
+      "name": "run_multistart_optimization",
+      "descriptor": {
+        "utf8_bytes": 186067,
+        "characters": 185823
+      },
+      "input": {
+        "utf8_bytes": 185181,
+        "characters": 184999
+      },
+      "output": {
+        "utf8_bytes": 602,
+        "characters": 602
+      }
+    },
+    {
+      "name": "run_catalog_evaluation",
+      "descriptor": {
+        "utf8_bytes": 177368,
+        "characters": 177224
+      },
+      "input": {
+        "utf8_bytes": 176489,
+        "characters": 176405
+      },
+      "output": {
+        "utf8_bytes": 602,
+        "characters": 602
+      }
+    },
+    {
+      "name": "manage_candidates",
+      "descriptor": {
+        "utf8_bytes": 169205,
+        "characters": 169049
+      },
+      "input": {
+        "utf8_bytes": 168309,
+        "characters": 168225
+      },
+      "output": {
+        "utf8_bytes": 602,
+        "characters": 602
+      }
+    },
+    {
+      "name": "run_parameter_scan",
+      "descriptor": {
+        "utf8_bytes": 166018,
+        "characters": 165866
+      },
+      "input": {
+        "utf8_bytes": 165132,
+        "characters": 165048
+      },
+      "output": {
+        "utf8_bytes": 602,
+        "characters": 602
+      }
+    },
+    {
+      "name": "run_configuration_evaluation",
+      "descriptor": {
+        "utf8_bytes": 165692,
+        "characters": 165546
+      },
+      "input": {
+        "utf8_bytes": 164805,
+        "characters": 164721
+      },
+      "output": {
+        "utf8_bytes": 602,
+        "characters": 602
+      }
+    },
+    {
+      "name": "run_batch_evaluation",
+      "descriptor": {
+        "utf8_bytes": 165603,
+        "characters": 165463
+      },
+      "input": {
+        "utf8_bytes": 164733,
+        "characters": 164649
+      },
+      "output": {
+        "utf8_bytes": 602,
+        "characters": 602
+      }
+    },
+    {
+      "name": "run_analysis",
+      "descriptor": {
+        "utf8_bytes": 161869,
+        "characters": 161697
+      },
+      "input": {
+        "utf8_bytes": 160957,
+        "characters": 160873
+      },
+      "output": {
+        "utf8_bytes": 602,
+        "characters": 602
+      }
+    },
+    {
+      "name": "update_surfaces",
+      "descriptor": {
+        "utf8_bytes": 19816,
+        "characters": 19654
+      },
+      "input": {
+        "utf8_bytes": 18917,
+        "characters": 18819
+      },
+      "output": {
+        "utf8_bytes": 602,
+        "characters": 602
+      }
+    },
+    {
+      "name": "run_optimization_wizard",
+      "descriptor": {
+        "utf8_bytes": 14467,
+        "characters": 14413
+      },
+      "input": {
+        "utf8_bytes": 13591,
+        "characters": 13591
+      },
+      "output": {
+        "utf8_bytes": 602,
+        "characters": 602
+      }
+    },
+    {
+      "name": "update_nsc_objects",
+      "descriptor": {
+        "utf8_bytes": 12000,
+        "characters": 11954
+      },
+      "input": {
+        "utf8_bytes": 11130,
+        "characters": 11130
+      },
+      "output": {
+        "utf8_bytes": 602,
+        "characters": 602
+      }
+    },
+    {
+      "name": "update_system_settings",
+      "descriptor": {
+        "utf8_bytes": 11277,
+        "characters": 11225
+      },
+      "input": {
+        "utf8_bytes": 10366,
+        "characters": 10366
+      },
+      "output": {
+        "utf8_bytes": 602,
+        "characters": 602
+      }
+    },
+    {
+      "name": "run_star_operation",
+      "descriptor": {
+        "utf8_bytes": 8713,
+        "characters": 8661
+      },
+      "input": {
+        "utf8_bytes": 7847,
+        "characters": 7847
+      },
+      "output": {
+        "utf8_bytes": 602,
+        "characters": 602
+      }
+    },
+    {
+      "name": "run_merit_program",
+      "descriptor": {
+        "utf8_bytes": 7509,
+        "characters": 7451
+      },
+      "input": {
+        "utf8_bytes": 6636,
+        "characters": 6636
+      },
+      "output": {
+        "utf8_bytes": 602,
+        "characters": 602
+      }
+    },
+    {
+      "name": "get_surface_geometry",
+      "descriptor": {
+        "utf8_bytes": 6338,
+        "characters": 6024
+      },
+      "input": {
+        "utf8_bytes": 5491,
+        "characters": 5215
+      },
+      "output": {
+        "utf8_bytes": 602,
+        "characters": 602
+      }
+    },
+    {
+      "name": "run_pop_convergence",
+      "descriptor": {
+        "utf8_bytes": 5036,
+        "characters": 4984
+      },
+      "input": {
+        "utf8_bytes": 4168,
+        "characters": 4168
+      },
+      "output": {
+        "utf8_bytes": 602,
+        "characters": 602
+      }
+    }
+  ],
+  "run_analysis_variants": [
+    {
+      "kind": "absorption_vs_angle",
+      "reachable_schema": {
+        "utf8_bytes": 1816,
+        "characters": 1816
+      }
+    },
+    {
+      "kind": "absorption_vs_wavelength",
+      "reachable_schema": {
+        "utf8_bytes": 1778,
+        "characters": 1778
+      }
+    },
+    {
+      "kind": "athermal_glass_map",
+      "reachable_schema": {
+        "utf8_bytes": 410,
+        "characters": 410
+      }
+    },
+    {
+      "kind": "biocular_dipvergence_convergence",
+      "reachable_schema": {
+        "utf8_bytes": 1134,
+        "characters": 1134
+      }
+    },
+    {
+      "kind": "biocular_field_of_view",
+      "reachable_schema": {
+        "utf8_bytes": 1063,
+        "characters": 1063
+      }
+    },
+    {
+      "kind": "cardinal_points",
+      "reachable_schema": {
+        "utf8_bytes": 666,
+        "characters": 666
+      }
+    },
+    {
+      "kind": "coating_listing",
+      "reachable_schema": {
+        "utf8_bytes": 299,
+        "characters": 299
+      }
+    },
+    {
+      "kind": "coating_optimization",
+      "reachable_schema": {
+        "utf8_bytes": 2697,
+        "characters": 2697
+      }
+    },
+    {
+      "kind": "configuration_matrix_spot",
+      "reachable_schema": {
+        "utf8_bytes": 1388,
+        "characters": 1388
+      }
+    },
+    {
+      "kind": "confocal_response",
+      "reachable_schema": {
+        "utf8_bytes": 1724,
+        "characters": 1724
+      }
+    },
+    {
+      "kind": "contrast_loss",
+      "reachable_schema": {
+        "utf8_bytes": 1120,
+        "characters": 1120
+      }
+    },
+    {
+      "kind": "critical_ray_trace",
+      "reachable_schema": {
+        "utf8_bytes": 1150,
+        "characters": 1150
+      }
+    },
+    {
+      "kind": "design_desensitize",
+      "reachable_schema": {
+        "utf8_bytes": 8915,
+        "characters": 8915
+      }
+    },
+    {
+      "kind": "detector_viewer",
+      "reachable_schema": {
+        "utf8_bytes": 1830,
+        "characters": 1830
+      }
+    },
+    {
+      "kind": "diattenuation_vs_angle",
+      "reachable_schema": {
+        "utf8_bytes": 1816,
+        "characters": 1816
+      }
+    },
+    {
+      "kind": "diattenuation_vs_wavelength",
+      "reachable_schema": {
+        "utf8_bytes": 1778,
+        "characters": 1778
+      }
+    },
+    {
+      "kind": "diff_efficiency_2d",
+      "reachable_schema": {
+        "utf8_bytes": 2573,
+        "characters": 2573
+      }
+    },
+    {
+      "kind": "diff_efficiency_angular",
+      "reachable_schema": {
+        "utf8_bytes": 2288,
+        "characters": 2288
+      }
+    },
+    {
+      "kind": "diff_efficiency_chromatic",
+      "reachable_schema": {
+        "utf8_bytes": 2358,
+        "characters": 2358
+      }
+    },
+    {
+      "kind": "diffraction_encircled_energy",
+      "reachable_schema": {
+        "utf8_bytes": 1054,
+        "characters": 1054
+      }
+    },
+    {
+      "kind": "directivity_plot",
+      "reachable_schema": {
+        "utf8_bytes": 303,
+        "characters": 303
+      }
+    },
+    {
+      "kind": "dispersion_diagram",
+      "reachable_schema": {
+        "utf8_bytes": 1753,
+        "characters": 1753
+      }
+    },
+    {
+      "kind": "dispersion_vs_wavelength",
+      "reachable_schema": {
+        "utf8_bytes": 1784,
+        "characters": 1784
+      }
+    },
+    {
+      "kind": "extended_diffraction_image",
+      "reachable_schema": {
+        "utf8_bytes": 787,
+        "characters": 787
+      }
+    },
+    {
+      "kind": "extended_source_encircled_energy",
+      "reachable_schema": {
+        "utf8_bytes": 1618,
+        "characters": 1618
+      }
+    },
+    {
+      "kind": "fft_line_edge_spread",
+      "reachable_schema": {
+        "utf8_bytes": 1124,
+        "characters": 1124
+      }
+    },
+    {
+      "kind": "fft_mtf_map",
+      "reachable_schema": {
+        "utf8_bytes": 1324,
+        "characters": 1324
+      }
+    },
+    {
+      "kind": "fft_mtf_vs_field",
+      "reachable_schema": {
+        "utf8_bytes": 1025,
+        "characters": 1025
+      }
+    },
+    {
+      "kind": "fft_psf",
+      "reachable_schema": {
+        "utf8_bytes": 1008,
+        "characters": 1008
+      }
+    },
+    {
+      "kind": "fft_psf_cross",
+      "reachable_schema": {
+        "utf8_bytes": 1008,
+        "characters": 1008
+      }
+    },
+    {
+      "kind": "fft_surface_mtf",
+      "reachable_schema": {
+        "utf8_bytes": 1240,
+        "characters": 1240
+      }
+    },
+    {
+      "kind": "fft_through_focus_mtf",
+      "reachable_schema": {
+        "utf8_bytes": 1140,
+        "characters": 1140
+      }
+    },
+    {
+      "kind": "fiber_alignment",
+      "reachable_schema": {
+        "utf8_bytes": 4786,
+        "characters": 4786
+      }
+    },
+    {
+      "kind": "fiber_coupling_settings",
+      "reachable_schema": {
+        "utf8_bytes": 1185,
+        "characters": 1185
+      }
+    },
+    {
+      "kind": "field_curvature_distortion",
+      "reachable_schema": {
+        "utf8_bytes": 463,
+        "characters": 463
+      }
+    },
+    {
+      "kind": "file_comparator",
+      "reachable_schema": {
+        "utf8_bytes": 2091,
+        "characters": 2091
+      }
+    },
+    {
+      "kind": "focal_shift",
+      "reachable_schema": {
+        "utf8_bytes": 335,
+        "characters": 335
+      }
+    },
+    {
+      "kind": "footprint",
+      "reachable_schema": {
+        "utf8_bytes": 763,
+        "characters": 763
+      }
+    },
+    {
+      "kind": "foucault",
+      "reachable_schema": {
+        "utf8_bytes": 1806,
+        "characters": 1806
+      }
+    },
+    {
+      "kind": "fsm_control",
+      "reachable_schema": {
+        "utf8_bytes": 2771,
+        "characters": 2771
+      }
+    },
+    {
+      "kind": "full_field_aberration",
+      "reachable_schema": {
+        "utf8_bytes": 1877,
+        "characters": 1877
+      }
+    },
+    {
+      "kind": "full_field_spot",
+      "reachable_schema": {
+        "utf8_bytes": 1740,
+        "characters": 1740
+      }
+    },
+    {
+      "kind": "geometric_bitmap_image",
+      "reachable_schema": {
+        "utf8_bytes": 1136,
+        "characters": 1136
+      }
+    },
+    {
+      "kind": "geometric_encircled_energy",
+      "reachable_schema": {
+        "utf8_bytes": 1054,
+        "characters": 1054
+      }
+    },
+    {
+      "kind": "geometric_image",
+      "reachable_schema": {
+        "utf8_bytes": 2343,
+        "characters": 2343
+      }
+    },
+    {
+      "kind": "geometric_line_edge_spread",
+      "reachable_schema": {
+        "utf8_bytes": 982,
+        "characters": 982
+      }
+    },
+    {
+      "kind": "geometric_mtf",
+      "reachable_schema": {
+        "utf8_bytes": 1119,
+        "characters": 1119
+      }
+    },
+    {
+      "kind": "geometric_mtf_map",
+      "reachable_schema": {
+        "utf8_bytes": 1430,
+        "characters": 1430
+      }
+    },
+    {
+      "kind": "geometric_mtf_vs_field",
+      "reachable_schema": {
+        "utf8_bytes": 1238,
+        "characters": 1238
+      }
+    },
+    {
+      "kind": "geometric_through_focus_mtf",
+      "reachable_schema": {
+        "utf8_bytes": 1140,
+        "characters": 1140
+      }
+    },
+    {
+      "kind": "ghost_diagnostics",
+      "reachable_schema": {
+        "utf8_bytes": 3226,
+        "characters": 3226
+      }
+    },
+    {
+      "kind": "glass_map",
+      "reachable_schema": {
+        "utf8_bytes": 356,
+        "characters": 356
+      }
+    },
+    {
+      "kind": "glass_trials",
+      "reachable_schema": {
+        "utf8_bytes": 4684,
+        "characters": 4684
+      }
+    },
+    {
+      "kind": "grid_distortion",
+      "reachable_schema": {
+        "utf8_bytes": 901,
+        "characters": 901
+      }
+    },
+    {
+      "kind": "grin_profile",
+      "reachable_schema": {
+        "utf8_bytes": 1712,
+        "characters": 1712
+      }
+    },
+    {
+      "kind": "huygens_mtf",
+      "reachable_schema": {
+        "utf8_bytes": 1119,
+        "characters": 1119
+      }
+    },
+    {
+      "kind": "huygens_mtf_vs_field",
+      "reachable_schema": {
+        "utf8_bytes": 1128,
+        "characters": 1128
+      }
+    },
+    {
+      "kind": "huygens_psf",
+      "reachable_schema": {
+        "utf8_bytes": 1008,
+        "characters": 1008
+      }
+    },
+    {
+      "kind": "huygens_psf_cross",
+      "reachable_schema": {
+        "utf8_bytes": 1008,
+        "characters": 1008
+      }
+    },
+    {
+      "kind": "huygens_surface_mtf",
+      "reachable_schema": {
+        "utf8_bytes": 1257,
+        "characters": 1257
+      }
+    },
+    {
+      "kind": "huygens_through_focus_mtf",
+      "reachable_schema": {
+        "utf8_bytes": 1140,
+        "characters": 1140
+      }
+    },
+    {
+      "kind": "ima_bim_viewer",
+      "reachable_schema": {
+        "utf8_bytes": 548,
+        "characters": 548
+      }
+    },
+    {
+      "kind": "image_simulation",
+      "reachable_schema": {
+        "utf8_bytes": 2807,
+        "characters": 2807
+      }
+    },
+    {
+      "kind": "incident_angle_vs_image_height",
+      "reachable_schema": {
+        "utf8_bytes": 526,
+        "characters": 526
+      }
+    },
+    {
+      "kind": "interferogram",
+      "reachable_schema": {
+        "utf8_bytes": 2705,
+        "characters": 2705
+      }
+    },
+    {
+      "kind": "internal_transmission_vs_wavelength",
+      "reachable_schema": {
+        "utf8_bytes": 1066,
+        "characters": 1066
+      }
+    },
+    {
+      "kind": "lateral_color",
+      "reachable_schema": {
+        "utf8_bytes": 335,
+        "characters": 335
+      }
+    },
+    {
+      "kind": "longitudinal_aberration",
+      "reachable_schema": {
+        "utf8_bytes": 335,
+        "characters": 335
+      }
+    },
+    {
+      "kind": "manufacturing_geometry",
+      "reachable_schema": {
+        "utf8_bytes": 2595,
+        "characters": 2595
+      }
+    },
+    {
+      "kind": "matrix_spot",
+      "reachable_schema": {
+        "utf8_bytes": 1388,
+        "characters": 1388
+      }
+    },
+    {
+      "kind": "nsc_efficiency",
+      "reachable_schema": {
+        "utf8_bytes": 3447,
+        "characters": 3447
+      }
+    },
+    {
+      "kind": "nsc_geometric_mtf",
+      "reachable_schema": {
+        "utf8_bytes": 977,
+        "characters": 977
+      }
+    },
+    {
+      "kind": "nsc_single_ray_trace",
+      "reachable_schema": {
+        "utf8_bytes": 1624,
+        "characters": 1624
+      }
+    },
+    {
+      "kind": "nsc_surface_sag",
+      "reachable_schema": {
+        "utf8_bytes": 2309,
+        "characters": 2309
+      }
+    },
+    {
+      "kind": "opd_fan",
+      "reachable_schema": {
+        "utf8_bytes": 696,
+        "characters": 696
+      }
+    },
+    {
+      "kind": "paraxial_gaussian_beam",
+      "reachable_schema": {
+        "utf8_bytes": 921,
+        "characters": 921
+      }
+    },
+    {
+      "kind": "partially_coherent_image",
+      "reachable_schema": {
+        "utf8_bytes": 592,
+        "characters": 592
+      }
+    },
+    {
+      "kind": "path_analysis",
+      "reachable_schema": {
+        "utf8_bytes": 1245,
+        "characters": 1161
+      }
+    },
+    {
+      "kind": "phase_aberration",
+      "reachable_schema": {
+        "utf8_bytes": 1120,
+        "characters": 1120
+      }
+    },
+    {
+      "kind": "phase_vs_angle",
+      "reachable_schema": {
+        "utf8_bytes": 1816,
+        "characters": 1816
+      }
+    },
+    {
+      "kind": "phase_vs_wavelength",
+      "reachable_schema": {
+        "utf8_bytes": 1778,
+        "characters": 1778
+      }
+    },
+    {
+      "kind": "polarization_pupil_map",
+      "reachable_schema": {
+        "utf8_bytes": 860,
+        "characters": 860
+      }
+    },
+    {
+      "kind": "polarization_ray_trace",
+      "reachable_schema": {
+        "utf8_bytes": 890,
+        "characters": 890
+      }
+    },
+    {
+      "kind": "polarization_transmission",
+      "reachable_schema": {
+        "utf8_bytes": 1252,
+        "characters": 1252
+      }
+    },
+    {
+      "kind": "polarization_transmission_fan",
+      "reachable_schema": {
+        "utf8_bytes": 1098,
+        "characters": 1098
+      }
+    },
+    {
+      "kind": "power_field_map",
+      "reachable_schema": {
+        "utf8_bytes": 1223,
+        "characters": 1223
+      }
+    },
+    {
+      "kind": "power_pupil_map",
+      "reachable_schema": {
+        "utf8_bytes": 999,
+        "characters": 999
+      }
+    },
+    {
+      "kind": "prescription_data",
+      "reachable_schema": {
+        "utf8_bytes": 817,
+        "characters": 817
+      }
+    },
+    {
+      "kind": "pupil_aberration_fan",
+      "reachable_schema": {
+        "utf8_bytes": 855,
+        "characters": 855
+      }
+    },
+    {
+      "kind": "quick_yield",
+      "reachable_schema": {
+        "utf8_bytes": 1384,
+        "characters": 1384
+      }
+    },
+    {
+      "kind": "ray_database_viewer",
+      "reachable_schema": {
+        "utf8_bytes": 676,
+        "characters": 676
+      }
+    },
+    {
+      "kind": "ray_fan",
+      "reachable_schema": {
+        "utf8_bytes": 696,
+        "characters": 696
+      }
+    },
+    {
+      "kind": "reflection_vs_angle",
+      "reachable_schema": {
+        "utf8_bytes": 1816,
+        "characters": 1816
+      }
+    },
+    {
+      "kind": "reflection_vs_wavelength",
+      "reachable_schema": {
+        "utf8_bytes": 1778,
+        "characters": 1778
+      }
+    },
+    {
+      "kind": "relative_illumination",
+      "reachable_schema": {
+        "utf8_bytes": 954,
+        "characters": 954
+      }
+    },
+    {
+      "kind": "retardance_vs_angle",
+      "reachable_schema": {
+        "utf8_bytes": 1816,
+        "characters": 1816
+      }
+    },
+    {
+      "kind": "retardance_vs_wavelength",
+      "reachable_schema": {
+        "utf8_bytes": 1778,
+        "characters": 1778
+      }
+    },
+    {
+      "kind": "rms_field_map",
+      "reachable_schema": {
+        "utf8_bytes": 1975,
+        "characters": 1975
+      }
+    },
+    {
+      "kind": "rms_vs_field",
+      "reachable_schema": {
+        "utf8_bytes": 1481,
+        "characters": 1481
+      }
+    },
+    {
+      "kind": "rms_vs_focus",
+      "reachable_schema": {
+        "utf8_bytes": 1408,
+        "characters": 1408
+      }
+    },
+    {
+      "kind": "rms_vs_wavelength",
+      "reachable_schema": {
+        "utf8_bytes": 1428,
+        "characters": 1428
+      }
+    },
+    {
+      "kind": "sag_table",
+      "reachable_schema": {
+        "utf8_bytes": 812,
+        "characters": 812
+      }
+    },
+    {
+      "kind": "scan_pupil",
+      "reachable_schema": {
+        "utf8_bytes": 2076,
+        "characters": 2076
+      }
+    },
+    {
+      "kind": "seidel_coefficients",
+      "reachable_schema": {
+        "utf8_bytes": 392,
+        "characters": 392
+      }
+    },
+    {
+      "kind": "seidel_diagram",
+      "reachable_schema": {
+        "utf8_bytes": 985,
+        "characters": 985
+      }
+    },
+    {
+      "kind": "sequential_energy_budget",
+      "reachable_schema": {
+        "utf8_bytes": 2378,
+        "characters": 2378
+      }
+    },
+    {
+      "kind": "single_ray_trace",
+      "reachable_schema": {
+        "utf8_bytes": 869,
+        "characters": 869
+      }
+    },
+    {
+      "kind": "skew_gaussian_beam",
+      "reachable_schema": {
+        "utf8_bytes": 1020,
+        "characters": 1020
+      }
+    },
+    {
+      "kind": "source_spectrum_viewer",
+      "reachable_schema": {
+        "utf8_bytes": 324,
+        "characters": 324
+      }
+    },
+    {
+      "kind": "star_2d_def_plot",
+      "reachable_schema": {
+        "utf8_bytes": 386,
+        "characters": 386
+      }
+    },
+    {
+      "kind": "star_align_check",
+      "reachable_schema": {
+        "utf8_bytes": 382,
+        "characters": 382
+      }
+    },
+    {
+      "kind": "star_index_vs_temp",
+      "reachable_schema": {
+        "utf8_bytes": 397,
+        "characters": 397
+      }
+    },
+    {
+      "kind": "star_inspect_fea",
+      "reachable_schema": {
+        "utf8_bytes": 381,
+        "characters": 381
+      }
+    },
+    {
+      "kind": "star_perf_change",
+      "reachable_schema": {
+        "utf8_bytes": 385,
+        "characters": 385
+      }
+    },
+    {
+      "kind": "star_sys_viewer",
+      "reachable_schema": {
+        "utf8_bytes": 375,
+        "characters": 375
+      }
+    },
+    {
+      "kind": "surface_curvature",
+      "reachable_schema": {
+        "utf8_bytes": 673,
+        "characters": 673
+      }
+    },
+    {
+      "kind": "surface_curvature_cross",
+      "reachable_schema": {
+        "utf8_bytes": 673,
+        "characters": 673
+      }
+    },
+    {
+      "kind": "surface_data",
+      "reachable_schema": {
+        "utf8_bytes": 380,
+        "characters": 380
+      }
+    },
+    {
+      "kind": "surface_phase",
+      "reachable_schema": {
+        "utf8_bytes": 673,
+        "characters": 673
+      }
+    },
+    {
+      "kind": "surface_phase_cross",
+      "reachable_schema": {
+        "utf8_bytes": 673,
+        "characters": 673
+      }
+    },
+    {
+      "kind": "surface_phase_slope",
+      "reachable_schema": {
+        "utf8_bytes": 1275,
+        "characters": 1275
+      }
+    },
+    {
+      "kind": "surface_phase_slope_cross",
+      "reachable_schema": {
+        "utf8_bytes": 1086,
+        "characters": 1086
+      }
+    },
+    {
+      "kind": "surface_sag",
+      "reachable_schema": {
+        "utf8_bytes": 673,
+        "characters": 673
+      }
+    },
+    {
+      "kind": "surface_sag_cross",
+      "reachable_schema": {
+        "utf8_bytes": 673,
+        "characters": 673
+      }
+    },
+    {
+      "kind": "surface_slope",
+      "reachable_schema": {
+        "utf8_bytes": 1445,
+        "characters": 1445
+      }
+    },
+    {
+      "kind": "surface_slope_cross",
+      "reachable_schema": {
+        "utf8_bytes": 1256,
+        "characters": 1256
+      }
+    },
+    {
+      "kind": "system_check",
+      "reachable_schema": {
+        "utf8_bytes": 287,
+        "characters": 287
+      }
+    },
+    {
+      "kind": "system_data",
+      "reachable_schema": {
+        "utf8_bytes": 301,
+        "characters": 301
+      }
+    },
+    {
+      "kind": "test_plate_list",
+      "reachable_schema": {
+        "utf8_bytes": 603,
+        "characters": 603
+      }
+    },
+    {
+      "kind": "thermal_compensation",
+      "reachable_schema": {
+        "utf8_bytes": 1501,
+        "characters": 1501
+      }
+    },
+    {
+      "kind": "through_focus_spot",
+      "reachable_schema": {
+        "utf8_bytes": 939,
+        "characters": 939
+      }
+    },
+    {
+      "kind": "tolerance_budget",
+      "reachable_schema": {
+        "utf8_bytes": 3315,
+        "characters": 3315
+      }
+    },
+    {
+      "kind": "tolerance_histogram",
+      "reachable_schema": {
+        "utf8_bytes": 686,
+        "characters": 686
+      }
+    },
+    {
+      "kind": "tolerance_yield",
+      "reachable_schema": {
+        "utf8_bytes": 473,
+        "characters": 473
+      }
+    },
+    {
+      "kind": "transmission_vs_angle",
+      "reachable_schema": {
+        "utf8_bytes": 1816,
+        "characters": 1816
+      }
+    },
+    {
+      "kind": "transmission_vs_wavelength",
+      "reachable_schema": {
+        "utf8_bytes": 1778,
+        "characters": 1778
+      }
+    },
+    {
+      "kind": "universal_plot_1d",
+      "reachable_schema": {
+        "utf8_bytes": 3516,
+        "characters": 3516
+      }
+    },
+    {
+      "kind": "universal_plot_2d",
+      "reachable_schema": {
+        "utf8_bytes": 3713,
+        "characters": 3713
+      }
+    },
+    {
+      "kind": "vignetting",
+      "reachable_schema": {
+        "utf8_bytes": 670,
+        "characters": 670
+      }
+    },
+    {
+      "kind": "wavefront",
+      "reachable_schema": {
+        "utf8_bytes": 830,
+        "characters": 830
+      }
+    },
+    {
+      "kind": "yni_contributions",
+      "reachable_schema": {
+        "utf8_bytes": 415,
+        "characters": 415
+      }
+    },
+    {
+      "kind": "yybar_diagram",
+      "reachable_schema": {
+        "utf8_bytes": 639,
+        "characters": 639
+      }
+    },
+    {
+      "kind": "zernike_annular",
+      "reachable_schema": {
+        "utf8_bytes": 827,
+        "characters": 827
+      }
+    },
+    {
+      "kind": "zernike_coefficients_vs_field",
+      "reachable_schema": {
+        "utf8_bytes": 1247,
+        "characters": 1247
+      }
+    },
+    {
+      "kind": "zernike_fringe",
+      "reachable_schema": {
+        "utf8_bytes": 827,
+        "characters": 827
+      }
+    },
+    {
+      "kind": "zernike_standard",
+      "reachable_schema": {
+        "utf8_bytes": 827,
+        "characters": 827
+      }
+    }
+  ],
+  "detail_samples": [
+    {
+      "kind": "wavefront",
+      "detail_current": {
+        "utf8_bytes": 151046,
+        "characters": 150886
+      },
+      "detail_reachable": {
+        "utf8_bytes": 1247,
+        "characters": 1171
+      }
+    },
+    {
+      "kind": "glass_trials",
+      "detail_current": {
+        "utf8_bytes": 153317,
+        "characters": 153101
+      },
+      "detail_reachable": {
+        "utf8_bytes": 5211,
+        "characters": 5079
+      }
+    },
+    {
+      "kind": "design_desensitize",
+      "detail_current": {
+        "utf8_bytes": 152457,
+        "characters": 152199
+      },
+      "detail_reachable": {
+        "utf8_bytes": 9533,
+        "characters": 9359
+      }
+    },
+    {
+      "kind": "sequential_energy_budget",
+      "detail_current": {
+        "utf8_bytes": 151384,
+        "characters": 151154
+      },
+      "detail_reachable": {
+        "utf8_bytes": 2969,
+        "characters": 2823
+      }
+    }
+  ],
+  "search_sample": {
+    "utf8_bytes": 3744,
+    "characters": 2844
+  },
+  "bootstrap_existing": {
+    "requested_names": [
+      "connect",
+      "disconnect",
+      "get_status",
+      "search_capabilities",
+      "get_capabilities",
+      "get_task_status",
+      "get_task_result",
+      "cancel_task",
+      "get_request_status"
+    ],
+    "found_names": [
+      "connect",
+      "get_status",
+      "get_capabilities",
+      "search_capabilities",
+      "disconnect",
+      "get_task_status",
+      "get_task_result",
+      "cancel_task",
+      "get_request_status"
+    ],
+    "descriptors": {
+      "utf8_bytes": 10275,
+      "characters": 9751
+    }
+  },
+  "native_started": false
+}
