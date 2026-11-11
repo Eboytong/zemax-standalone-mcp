@@ -27,6 +27,8 @@ Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2024
 
 ## 安装和连接
 
+[下载1.1.0安装包](https://github.com/Eboytong/zemax-standalone-mcp/releases/tag/v1.1.0)
+
 准备 Windows x64、Python 3.14 x64、OpticStudio 2024 R2 和适用的 ZOS-API 许可。在仓库根目录的 PowerShell 中运行：
 
 ```powershell
