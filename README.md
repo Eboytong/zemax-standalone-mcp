@@ -1,5 +1,11 @@
 # Zemax Standalone MCP
 
+[中文](#中文) · [English](#english)
+
+<a id="中文"></a>
+
+## 中文
+
 Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2024 R2 的 stdio MCP 服务。当前发布版本为 **1.4.0**，提供 **107 个工具**与 **146 种 `run_analysis` 请求类型**；接口、适用条件和结果格式见使用文档与工具参考。
 
 提供两种工具披露模式：默认`full`直接提供107个工具；`compact`先提供11个搜索、执行和任务控制入口，按需读取单项schema，全部能力保持可调用。Agent可自行组合原生建模、评价、优化和公差工具，也可选择候选管理、材料搜索等工程快捷流程。
@@ -34,9 +40,11 @@ Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2024
 
 [下载1.4.0安装包](https://github.com/Eboytong/zemax-standalone-mcp/releases/tag/v1.4.0)
 
-准备 Windows x64、Python 3.14 x64、OpticStudio 2024 R2 和适用的 ZOS-API 许可。在仓库根目录的 PowerShell 中运行：
+准备 Windows x64、Python 3.14 x64、OpticStudio 2024 R2 和适用的 ZOS-API 许可。在 PowerShell 中获取项目并安装：
 
 ```powershell
+git clone https://github.com/Eboytong/zemax-standalone-mcp.git
+cd zemax-standalone-mcp
 powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -PythonExe python
 ```
 
@@ -61,3 +69,97 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -PythonExe pyt
 | .local | 本机运行、状态、复现数据和历史归档 |
 
 `.local/runs`为默认运行目录；`.local/state`为状态目录。显式环境变量优先采用。当前默认wheel位于`releases/1.4.0/`。
+
+## 许可证与参考
+
+本项目采用 [MIT 许可证](LICENSE)，版权所有 © 2026 Tongeb。运行需要单独安装 Ansys Zemax OpticStudio，并具备适用的 ZOS-API 许可。第三方依赖遵循各自许可证。
+
+接口与方法参考包括 [Yonggang Zemax MCP](https://github.com/YonggangG/Zemax_MCP_Server)（MIT）、[Joey OpticStudio MCP](https://github.com/joeyijun/OpticStudioMCPServer)（MIT）、[OptiVibe MCP](https://github.com/chuang44-tiff/optivibe-mcp)（Apache-2.0）和 [OptiForge](https://github.com/zhaopeizhao41-ops/optiforge)（MIT）。出处及采用方式见[源码参考记录](development/github-references.md)。
+
+---
+
+<a id="english"></a>
+
+## English
+
+Zemax Standalone MCP is a stdio MCP server for **Windows x64, Python 3.14, and OpticStudio 2024 R2**. The current release, **1.4.0**, provides **107 tools** and **146 `run_analysis` request types**. The references describe exact parameters, results, and operating conditions.
+
+Two tool disclosure modes are available. The default `full` mode exposes 107 tools directly. The optional `compact` mode exposes 11 discovery, invocation, connection, and task-control tools; agents retrieve individual schemas as needed and can access the same capabilities. Agents can compose native modeling, evaluation, optimization, and tolerancing tools or select optional engineering workflows.
+
+### Capabilities
+
+Read and modification tools return responses directly. Long-running operations return task IDs for status polling and result retrieval.
+
+| Category | Available capabilities |
+| --- | --- |
+| Connections and projects | Connect to and close Standalone instances; create, open, save, copy, and archive lens files; inspect units, wavelengths, fields, configurations, and external dependencies. |
+| Sequential modeling | Read, insert, copy, delete, and update surfaces; control radii, thicknesses, materials, apertures, coordinates, pickups, and solves; manage configurations, variables, and merit functions. |
+| Non-sequential modeling | Read, insert, copy, delete, and modify NSC objects; perform sequential/non-sequential conversions; read object geometry and detector data. |
+| Ray tracing and propagation | Batch sequential and NSC ray tracing; ZRD reading and replay; POP propagation and convergence analysis; ZBF complex-field reading. |
+| Imaging and optical quality | Spot diagrams, FFT MTF, relative illumination, wavefront, RMS, distortion, field curvature, PSF, FWHM, Seidel, polarization, and material analyses; curves, grids, text, and paginated results. |
+| Optimization and design | Local, global, Hammer, and multistart optimization; optimization wizards and merit-function editing; quick focus, parameter scans, and catalog lens search and evaluation. |
+| Tolerancing and manufacturing | TDE tolerances and compensators; sensitivity, inverse sensitivity, and Monte Carlo analysis; yield and quantile summaries. |
+| Exports and reporting | Layouts, analysis images, CAD, Speos, point clouds, reports, detector data, merit and tolerance files; completed analysis results exported as Markdown, JSON, or CSV. |
+| Engineering search and design improvement | Capability discovery, including Chinese queries; candidate snapshots, branches, restoration, and comparison; joint glass replacement; OPD targets and geometric constraints; fixed-tolerance design optimization with independent yield validation; surface-by-surface polarized ray loss. |
+| Engineering calculations | Manufacturing geometry thresholds, POP fiber alignment, fixed-stack coating optimization, NSC efficiency and uniformity, glass trials, scan-pupil conjugacy, ghost paths, confocal pinhole response, uniform-temperature focus compensation, multiobjective candidates, tolerance cost budgets, and dual-FSM offline control. |
+| Task control | Task status, historical results, supported cancellation, and pagination for curves, rows, and two-dimensional grids. |
+
+### Installation
+
+[Download release 1.4.0](https://github.com/Eboytong/zemax-standalone-mcp/releases/tag/v1.4.0). Prepare Windows x64, Python 3.14 x64, and OpticStudio 2024 R2 with an applicable ZOS-API license. To install from the repository, run in PowerShell:
+
+```powershell
+git clone https://github.com/Eboytong/zemax-standalone-mcp.git
+cd zemax-standalone-mcp
+powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -PythonExe python
+```
+
+`python` must resolve to Python 3.14 x64; an absolute path to its executable can also be supplied. Add `-WithReports -WithGeometry` for optional reporting and geometry dependencies. The installer installs the wheel from `releases/1.4.0/` and writes `.local/config/mcp.config.json`.
+
+For a smaller initial tool catalog, add `-ToolMode compact`. For an existing client configuration, set `ZEMAX_TOOL_MODE=compact` in its environment and restart the MCP connection. See [capability discovery and progressive disclosure](docs/guides/capability-search.md).
+
+### Client configuration and first use
+
+Add the generated configuration's `zemax` entry to your MCP client's server configuration. Adjust `ZEMAX_INSTALL_DIR` if OpticStudio is installed elsewhere. The [configuration template](examples/config/mcp.config.example.json) shows the executable, arguments, and environment settings. Clients with another configuration format should use the same executable, arguments, and environment values.
+
+1. Call `connect`.
+2. Call `open_lens` with an absolute lens-file path, or create a model with `new_system`.
+3. Read `get_system_summary` and run the required analysis.
+4. Poll `get_task_status` until the task reaches a terminal state, then retrieve its output with `get_task_result`.
+5. Call `disconnect` when finished.
+
+In compact mode, use `search_capabilities` and `get_capabilities` to obtain an individual contract, then invoke it through `query_capability` or `execute_capability`. Task-control tools remain directly available.
+
+The stdio server can also be started with:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\start.ps1
+```
+
+The default output directory is `.local/runs`; state is stored in `.local/state`. Explicit environment variables take precedence. The current wheel is in `releases/1.4.0/`.
+
+### Documentation and repository layout
+
+Detailed guides and topic documentation are currently primarily in Chinese. Tool names, schemas, and request examples provide the exact callable interfaces.
+
+- [User documentation](docs/README.md) · [Tool reference](docs/reference/tools.md) · [Request schemas](docs/reference/tool-schemas.json)
+- [Capabilities and conditions](docs/reference/capabilities.md) · [Usage and pagination](docs/guides/usage.md)
+- [Examples](examples/README.md) · [Tests](tests/README.md)
+
+| Directory | Contents |
+| --- | --- |
+| `src` | Product source code |
+| `docs` | User guides, interfaces, and topics |
+| `development` | Development records and evidence |
+| `tests` | Unit and native tests with shared references |
+| `scripts` | Maintenance, probes, and release utilities |
+| `examples` | Workflows, requests, and controlled inputs |
+| `requirements` | Locked dependencies |
+| `releases` | Released wheels |
+| `.local` | Local runs, state, reproduction data, and archives |
+
+### License and acknowledgments
+
+This project is licensed under the [MIT License](LICENSE). Copyright © 2026 Tongeb. Running it requires a separately installed Ansys Zemax OpticStudio and an applicable ZOS-API license. Third-party dependencies retain their own licenses.
+
+Interface and method references include [Yonggang Zemax MCP](https://github.com/YonggangG/Zemax_MCP_Server) (MIT), [Joey OpticStudio MCP](https://github.com/joeyijun/OpticStudioMCPServer) (MIT), [OptiVibe MCP](https://github.com/chuang44-tiff/optivibe-mcp) (Apache-2.0), and [OptiForge](https://github.com/zhaopeizhao41-ops/optiforge) (MIT). See the [source reference register](development/github-references.md) for provenance and how each reference was used.
