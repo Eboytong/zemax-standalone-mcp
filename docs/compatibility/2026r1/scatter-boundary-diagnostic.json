@@ -1,0 +1,9 @@
+{
+  "detector_radius_requested_mm": 3,
+  "hit_radius_min_mm": 2.9929184342683968,
+  "hit_radius_max_mm": 3.0,
+  "hit_radius_mean_mm": 2.9965821812983244,
+  "hits": 10000,
+  "below_3_minus_1e_5": 7732,
+  "interpretation": "Native hit coordinates differ from the independent reference analytic 3 mm sphere; detector geometry requires a separate native boundary characterization."
+}

@@ -1,5 +1,9 @@
 # Zemax Standalone MCP
 
+后续开发以 **OpticStudio 2026 R1** 为基线；本分支记录升级前测试及测试夹具调整。产品适配修复待完成。原生测试：845通过、48失败、11跳过或预期限制。详见 [2026 R1 测试与升级计划](docs/compatibility/2026r1/README.md)。
+
+Future development targets **OpticStudio 2026 R1**. This branch publishes the baseline tests and fixture updates; product fixes are pending. Native tests: 845 passed, 48 failed, 11 skipped/expected limitations. See the [2026 R1 test report and roadmap](docs/compatibility/2026r1/README.md).
+
 [中文](#中文) · [English](#english)
 
 <a id="中文"></a>

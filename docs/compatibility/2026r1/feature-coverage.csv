@@ -1,0 +1,254 @@
+﻿category,name,recorded_calls,accepted,errors,task_states
+tool,cancel_task,82,82,0,
+tool,clear_detectors,7,7,0,
+tool,compare_results,3,3,0,
+tool,connect,887,887,0,
+tool,copy_editor_rows,3,3,0,
+tool,copy_nsc_objects,3,3,0,
+tool,copy_surfaces,9,9,0,
+tool,copy_system,1,1,0,
+tool,create_archive,2,2,0,
+tool,delete_nsc_objects,4,4,0,
+tool,delete_surfaces,2,2,0,
+tool,disconnect,867,867,0,
+tool,evaluate_merit_function,167,167,0,
+tool,export_analysis_image,302,298,4,
+tool,export_evaluation_report,24,24,0,
+tool,export_point_cloud,15,15,0,
+tool,generate_tolerances,1,1,0,
+tool,get_beam_file,426,426,0,
+tool,get_capabilities,39,39,0,
+tool,get_coating_layers,26,26,0,
+tool,get_coating_rta,17,16,1,
+tool,get_configurations,132,132,0,
+tool,get_constraint_coverage,1,1,0,
+tool,get_design_tool_options,6,6,0,
+tool,get_detector_data,741,740,1,
+tool,get_editor_metadata,3,3,0,
+tool,get_external_dependencies,1,1,0,
+tool,get_glass_slots,2,2,0,
+tool,get_historical_result,2,2,0,
+tool,get_hpc_settings,6,0,6,
+tool,get_lens_catalogs,1,1,0,
+tool,get_material_properties,20,20,0,
+tool,get_merit_function,302,302,0,
+tool,get_nsc_object_geometry,16,16,0,
+tool,get_nsc_objects,200,198,2,
+tool,get_optimization_wizard_options,4,4,0,
+tool,get_project_settings,6,6,0,
+tool,get_request_status,2,2,0,
+tool,get_star_data,6,6,0,
+tool,get_status,61,61,0,
+tool,get_surface_geometry,371,371,0,
+tool,get_surfaces,3531,3531,0,
+tool,get_system_resources,79,75,4,
+tool,get_system_settings,932,932,0,
+tool,get_system_summary,43,43,0,
+tool,get_task_result,4635,4635,0,
+tool,get_task_status,10974,10974,0,
+tool,get_tolerances,35,35,0,
+tool,get_variables,8,8,0,
+tool,insert_editor_rows,3,3,0,
+tool,insert_nsc_objects,139,139,0,
+tool,insert_surfaces,557,557,0,
+tool,list_task_history,2,2,0,
+tool,load_archive,2,2,0,
+tool,load_detector_data,12,8,4,
+tool,load_merit_function,1,1,0,
+tool,load_tolerance_file,1,1,0,
+tool,manage_candidates,18,18,0,
+tool,new_system,670,669,1,
+tool,open_lens,2711,2706,5,
+tool,read_zrd,378,378,0,
+tool,run_analysis,2119,2064,55,
+tool,run_batch_evaluation,1,1,0,
+tool,run_batch_ray_trace,648,648,0,
+tool,run_cad_export,53,45,8,
+tool,run_candidate_evaluation,4,4,0,
+tool,run_catalog_evaluation,1,1,0,
+tool,run_catalog_lens,2,2,0,
+tool,run_configuration_evaluation,2,2,0,
+tool,run_design_tool,8,8,0,
+tool,run_fft_mtf,34,33,1,
+tool,run_global_optimization,1,1,0,
+tool,run_hammer_optimization,2,2,0,
+tool,run_layout_export,9,9,0,
+tool,run_lens_catalog_search,1,1,0,
+tool,run_local_optimization,5,5,0,
+tool,run_merit_program,6,6,0,
+tool,run_multistart_optimization,5,5,0,
+tool,run_nsc_conversion,15,7,8,
+tool,run_nsc_ray_trace,557,556,1,
+tool,run_optimization_wizard,5,5,0,
+tool,run_parameter_scan,6,6,0,
+tool,run_pop,208,208,0,
+tool,run_pop_convergence,2,2,0,
+tool,run_quick_focus,2,2,0,
+tool,run_speos_export,3,3,0,
+tool,run_spot_analysis,16,16,0,
+tool,run_standalone_macro,1,1,0,
+tool,run_star_operation,24,24,0,
+tool,run_tolerance_analysis,83,83,0,
+tool,run_zrd_replay,108,108,0,
+tool,save_detector_data,4,4,0,
+tool,save_lens_as,1468,1468,0,
+tool,save_merit_function,1,1,0,
+tool,save_tolerance_file,1,1,0,
+tool,search_capabilities,4,4,0,
+tool,set_configuration,64,64,0,
+tool,set_variables,54,37,17,
+tool,summarize_tolerance_results,15,15,0,
+tool,update_coating_layers,9,9,0,
+tool,update_configurations,45,45,0,
+tool,update_merit_function,19,17,2,
+tool,update_nsc_objects,648,646,2,
+tool,update_project_settings,3,3,0,
+tool,update_surfaces,2775,2608,167,
+tool,update_system_settings,980,971,9,
+tool,update_tolerances,109,109,0,
+analysis,absorption_vs_angle,10,10,0,"{""succeeded"": 10}"
+analysis,absorption_vs_wavelength,6,6,0,"{""succeeded"": 6}"
+analysis,athermal_glass_map,2,2,0,"{""succeeded"": 2}"
+analysis,biocular_dipvergence_convergence,10,9,1,"{""succeeded"": 7, ""cancelled"": 1, ""failed"": 1}"
+analysis,biocular_field_of_view,11,10,1,"{""succeeded"": 8, ""cancelled"": 1, ""failed"": 1}"
+analysis,cardinal_points,2,2,0,"{""succeeded"": 2}"
+analysis,coating_listing,1,1,0,"{""succeeded"": 1}"
+analysis,coating_optimization,6,5,1,"{""succeeded"": 4, ""cancelled"": 1}"
+analysis,configuration_matrix_spot,1,1,0,"{""failed"": 1}"
+analysis,confocal_response,7,7,0,"{""failed"": 3, ""cancelled"": 1, ""succeeded"": 3}"
+analysis,contrast_loss,12,11,1,"{""succeeded"": 10, ""cancelled"": 1}"
+analysis,critical_ray_trace,5,5,0,"{""succeeded"": 3, ""cancelled"": 1, ""failed"": 1}"
+analysis,design_desensitize,4,4,0,"{""failed"": 2, ""cancelled"": 1, ""succeeded"": 1}"
+analysis,detector_viewer,9,7,2,"{""succeeded"": 6, ""cancelled"": 1}"
+analysis,diattenuation_vs_angle,7,7,0,"{""succeeded"": 7}"
+analysis,diattenuation_vs_wavelength,6,6,0,"{""succeeded"": 6}"
+analysis,diff_efficiency_2d,7,7,0,"{""cancelled"": 2, ""succeeded"": 5}"
+analysis,diff_efficiency_angular,12,12,0,"{""failed"": 2, ""succeeded"": 10}"
+analysis,diff_efficiency_chromatic,5,5,0,"{""succeeded"": 5}"
+analysis,diffraction_encircled_energy,35,35,0,"{""succeeded"": 35}"
+analysis,directivity_plot,2,2,0,"{""succeeded"": 2}"
+analysis,dispersion_diagram,14,12,2,"{""succeeded"": 11, ""cancelled"": 1}"
+analysis,dispersion_vs_wavelength,9,9,0,"{""succeeded"": 8, ""cancelled"": 1}"
+analysis,extended_diffraction_image,1,1,0,"{""succeeded"": 1}"
+analysis,extended_source_encircled_energy,25,23,2,"{""succeeded"": 22, ""cancelled"": 1}"
+analysis,fft_line_edge_spread,50,49,1,"{""succeeded"": 48, ""cancelled"": 1}"
+analysis,fft_mtf_map,4,4,0,"{""succeeded"": 4}"
+analysis,fft_mtf_vs_field,2,2,0,"{""succeeded"": 2}"
+analysis,fft_psf,54,54,0,"{""succeeded"": 54}"
+analysis,fft_psf_cross,1,1,0,"{""succeeded"": 1}"
+analysis,fft_surface_mtf,37,37,0,"{""succeeded"": 37}"
+analysis,fft_through_focus_mtf,2,2,0,"{""succeeded"": 2}"
+analysis,fiber_alignment,10,10,0,"{""succeeded"": 8, ""cancelled"": 1, ""failed"": 1}"
+analysis,fiber_coupling_settings,36,36,0,"{""succeeded"": 35, ""cancelled"": 1}"
+analysis,field_curvature_distortion,1,1,0,"{""succeeded"": 1}"
+analysis,file_comparator,6,5,1,"{""succeeded"": 5}"
+analysis,focal_shift,1,1,0,"{""succeeded"": 1}"
+analysis,footprint,6,6,0,"{""succeeded"": 6}"
+analysis,foucault,17,14,3,"{""succeeded"": 13, ""cancelled"": 1}"
+analysis,fsm_control,7,7,0,"{""failed"": 2, ""succeeded"": 4, ""cancelled"": 1}"
+analysis,full_field_aberration,20,19,1,"{""succeeded"": 18, ""cancelled"": 1}"
+analysis,full_field_spot,3,3,0,"{""failed"": 3}"
+analysis,geometric_bitmap_image,9,7,2,"{""succeeded"": 5, ""cancelled"": 1, ""failed"": 1}"
+analysis,geometric_encircled_energy,2,2,0,"{""succeeded"": 2}"
+analysis,geometric_image,11,10,1,"{""succeeded"": 9, ""cancelled"": 1}"
+analysis,geometric_line_edge_spread,14,13,1,"{""cancelled"": 1, ""succeeded"": 12}"
+analysis,geometric_mtf,5,5,0,"{""succeeded"": 5}"
+analysis,geometric_mtf_map,5,5,0,"{""succeeded"": 5}"
+analysis,geometric_mtf_vs_field,2,2,0,"{""succeeded"": 2}"
+analysis,geometric_through_focus_mtf,1,1,0,"{""succeeded"": 1}"
+analysis,ghost_diagnostics,8,8,0,"{""succeeded"": 6, ""cancelled"": 1, ""failed"": 1}"
+analysis,glass_map,7,7,0,"{""succeeded"": 7}"
+analysis,glass_trials,27,27,0,"{""succeeded"": 21, ""failed"": 4, ""cancelled"": 2}"
+analysis,grid_distortion,2,2,0,"{""succeeded"": 2}"
+analysis,grin_profile,24,24,0,"{""succeeded"": 24}"
+analysis,huygens_mtf,54,54,0,"{""succeeded"": 50, ""running"": 4}"
+analysis,huygens_mtf_vs_field,2,2,0,"{""succeeded"": 2}"
+analysis,huygens_psf,51,51,0,"{""succeeded"": 51}"
+analysis,huygens_psf_cross,1,1,0,"{""succeeded"": 1}"
+analysis,huygens_surface_mtf,27,26,1,"{""succeeded"": 25, ""cancelled"": 1}"
+analysis,huygens_through_focus_mtf,1,1,0,"{""succeeded"": 1}"
+analysis,ima_bim_viewer,14,13,1,"{""succeeded"": 12, ""cancelled"": 1}"
+analysis,image_simulation,24,23,1,"{""succeeded"": 22, ""cancelled"": 1}"
+analysis,incident_angle_vs_image_height,23,21,2,"{""cancelled"": 2, ""succeeded"": 16, ""failed"": 3}"
+analysis,interferogram,24,22,2,"{""succeeded"": 21, ""cancelled"": 1}"
+analysis,internal_transmission_vs_wavelength,2,2,0,"{""succeeded"": 2}"
+analysis,lateral_color,1,1,0,"{""succeeded"": 1}"
+analysis,longitudinal_aberration,1,1,0,"{""succeeded"": 1}"
+analysis,manufacturing_geometry,5,5,0,"{""succeeded"": 4, ""cancelled"": 1}"
+analysis,matrix_spot,1,1,0,"{""failed"": 1}"
+analysis,nsc_efficiency,14,14,0,"{""succeeded"": 11, ""failed"": 2, ""cancelled"": 1}"
+analysis,nsc_geometric_mtf,35,35,0,"{""succeeded"": 31, ""cancelled"": 4}"
+analysis,nsc_single_ray_trace,6,6,0,"{""succeeded"": 5, ""cancelled"": 1}"
+analysis,nsc_surface_sag,15,15,0,"{""succeeded"": 11, ""failed"": 3, ""cancelled"": 1}"
+analysis,opd_fan,1,1,0,"{""succeeded"": 1}"
+analysis,paraxial_gaussian_beam,11,10,1,"{""succeeded"": 9, ""cancelled"": 1}"
+analysis,partially_coherent_image,1,1,0,"{""succeeded"": 1}"
+analysis,path_analysis,9,9,0,"{""succeeded"": 8, ""cancelled"": 1}"
+analysis,phase_aberration,10,8,2,"{""cancelled"": 1, ""succeeded"": 7}"
+analysis,phase_vs_angle,9,8,1,"{""succeeded"": 8}"
+analysis,phase_vs_wavelength,9,9,0,"{""succeeded"": 7, ""cancelled"": 2}"
+analysis,polarization_pupil_map,6,6,0,"{""succeeded"": 6}"
+analysis,polarization_ray_trace,25,24,1,"{""succeeded"": 23, ""cancelled"": 1}"
+analysis,polarization_transmission,39,38,1,"{""succeeded"": 37, ""cancelled"": 1}"
+analysis,polarization_transmission_fan,16,16,0,"{""succeeded"": 15, ""cancelled"": 1}"
+analysis,power_field_map,94,94,0,"{""succeeded"": 94}"
+analysis,power_pupil_map,98,98,0,"{""succeeded"": 97, ""cancelled"": 1}"
+analysis,prescription_data,4,4,0,"{""succeeded"": 3, ""failed"": 1}"
+analysis,pupil_aberration_fan,7,7,0,"{""succeeded"": 6, ""cancelled"": 1}"
+analysis,quick_yield,44,44,0,"{""succeeded"": 43, ""cancelled"": 1}"
+analysis,ray_database_viewer,11,11,0,"{""succeeded"": 10, ""cancelled"": 1}"
+analysis,ray_fan,5,5,0,"{""succeeded"": 5}"
+analysis,reflection_vs_angle,30,28,2,"{""succeeded"": 28}"
+analysis,reflection_vs_wavelength,14,14,0,"{""succeeded"": 14}"
+analysis,relative_illumination,3,3,0,"{""succeeded"": 3}"
+analysis,retardance_vs_angle,7,7,0,"{""succeeded"": 7}"
+analysis,retardance_vs_wavelength,6,6,0,"{""succeeded"": 6}"
+analysis,rms_field_map,6,4,2,"{""succeeded"": 3, ""cancelled"": 1}"
+analysis,rms_vs_field,56,56,0,"{""succeeded"": 56}"
+analysis,rms_vs_focus,8,8,0,"{""succeeded"": 8}"
+analysis,rms_vs_wavelength,11,10,1,"{""succeeded"": 9, ""cancelled"": 1}"
+analysis,sag_table,43,42,1,"{""succeeded"": 38, ""cancelled"": 3, ""failed"": 1}"
+analysis,scan_pupil,9,9,0,"{""succeeded"": 7, ""cancelled"": 1, ""failed"": 1}"
+analysis,seidel_coefficients,7,7,0,"{""succeeded"": 7}"
+analysis,seidel_diagram,11,10,1,"{""succeeded"": 8, ""cancelled"": 1, ""failed"": 1}"
+analysis,sequential_energy_budget,8,8,0,"{""cancelled"": 1, ""succeeded"": 7}"
+analysis,single_ray_trace,4,4,0,"{""succeeded"": 4}"
+analysis,skew_gaussian_beam,12,11,1,"{""succeeded"": 10, ""cancelled"": 1}"
+analysis,source_spectrum_viewer,3,3,0,"{""succeeded"": 3}"
+analysis,star_2d_def_plot,1,1,0,"{""failed"": 1}"
+analysis,star_align_check,1,1,0,"{""failed"": 1}"
+analysis,star_index_vs_temp,1,1,0,"{""failed"": 1}"
+analysis,star_inspect_fea,2,2,0,"{""failed"": 2}"
+analysis,star_perf_change,1,1,0,"{""failed"": 1}"
+analysis,star_sys_viewer,1,1,0,"{""failed"": 1}"
+analysis,surface_curvature,1,1,0,"{""succeeded"": 1}"
+analysis,surface_curvature_cross,1,1,0,"{""succeeded"": 1}"
+analysis,surface_data,1,1,0,"{""succeeded"": 1}"
+analysis,surface_phase,4,4,0,"{""succeeded"": 4}"
+analysis,surface_phase_cross,3,3,0,"{""succeeded"": 3}"
+analysis,surface_phase_slope,15,14,1,"{""succeeded"": 13, ""cancelled"": 1}"
+analysis,surface_phase_slope_cross,15,14,1,"{""succeeded"": 13, ""cancelled"": 1}"
+analysis,surface_sag,2,2,0,"{""succeeded"": 2}"
+analysis,surface_sag_cross,1,1,0,"{""succeeded"": 1}"
+analysis,surface_slope,17,16,1,"{""succeeded"": 15, ""cancelled"": 1}"
+analysis,surface_slope_cross,23,22,1,"{""succeeded"": 21, ""cancelled"": 1}"
+analysis,system_check,3,3,0,"{""succeeded"": 3}"
+analysis,system_data,2,2,0,"{""succeeded"": 2}"
+analysis,test_plate_list,13,12,1,"{""succeeded"": 9, ""failed"": 2, ""cancelled"": 1}"
+analysis,thermal_compensation,5,5,0,"{""failed"": 2, ""succeeded"": 2, ""cancelled"": 1}"
+analysis,through_focus_spot,5,5,0,"{""succeeded"": 4, ""cancelled"": 1}"
+analysis,tolerance_budget,6,6,0,"{""succeeded"": 3, ""failed"": 2, ""cancelled"": 1}"
+analysis,tolerance_histogram,9,7,2,"{""succeeded"": 7}"
+analysis,tolerance_yield,7,5,2,"{""succeeded"": 5}"
+analysis,transmission_vs_angle,11,11,0,"{""succeeded"": 11}"
+analysis,transmission_vs_wavelength,6,6,0,"{""succeeded"": 6}"
+analysis,universal_plot_1d,56,53,3,"{""succeeded"": 51, ""cancelled"": 1, ""failed"": 1}"
+analysis,universal_plot_2d,25,24,1,"{""succeeded"": 22, ""cancelled"": 1, ""failed"": 1}"
+analysis,vignetting,2,2,0,"{""succeeded"": 2}"
+analysis,wavefront,291,291,0,"{""succeeded"": 291}"
+analysis,yni_contributions,7,7,0,"{""succeeded"": 7}"
+analysis,yybar_diagram,12,11,1,"{""succeeded"": 10, ""cancelled"": 1}"
+analysis,zernike_annular,6,6,0,"{""succeeded"": 6}"
+analysis,zernike_coefficients_vs_field,18,18,0,"{""succeeded"": 17, ""cancelled"": 1}"
+analysis,zernike_fringe,14,14,0,"{""succeeded"": 14}"
+analysis,zernike_standard,10,10,0,"{""succeeded"": 10}"

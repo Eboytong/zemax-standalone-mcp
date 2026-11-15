@@ -1,0 +1,10 @@
+{
+  "analysis": "fft_through_focus_mtf",
+  "model": "on-axis paraboloid, radius -200 mm, image thickness -100 mm",
+  "service_task_state": "succeeded",
+  "structured_series_count": 0,
+  "structured_grids_count": 0,
+  "native_text": "计算终止; 无效的结果!",
+  "evidence": ".local/runs/runs/analytic_analyses_0634f2813d/calls.json",
+  "finding": "The service reports success for an analysis whose native output explicitly declares invalid results."
+}

@@ -1,0 +1,11 @@
+{
+  "tool": "update_merit_function",
+  "mode": "rms_spot_wizard",
+  "operand": "EFFL",
+  "requested_target": 49.99999950000002,
+  "native_readback_target": 49.9999995,
+  "response_code": "SETTING_REJECTED",
+  "source": "src/zemax_mcp/backend.py:1516",
+  "finding": "Exact floating-point equality rejects a target differing only in the final binary digits after native storage. Product code was left unchanged for this compatibility trial.",
+  "evidence": ".local/runs/runs/live_e7343dedbe/calls.json"
+}
