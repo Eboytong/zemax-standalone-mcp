@@ -146,7 +146,7 @@ def test_incidence_clipping_and_all_blocked_failure():
 @pytest.mark.parametrize('model',['mirror','image_glass','image_power','image_power_glass'])
 def test_image_incidence_reflection_sign_and_before_refraction(model):
     async def work(e):
-        path=PROJECT_ROOT/'verification/development/CV-02'/dict(mirror='probe386-mirror',image_glass='probe387-image-glass',image_power='probe392-image-power',image_power_glass='probe393-image-power-glass')[model]/'probe.json'
+        path=PROJECT_ROOT/'development/evidence/CV-02'/dict(mirror='probe386-mirror',image_glass='probe387-image-glass',image_power='probe392-image-power',image_power_glass='probe393-image-power-glass')[model]/'probe.json'
         native=json.loads(path.read_text(encoding='utf-8'))
         (e.folder/'conditions.json').write_text(json.dumps(dict(angle_atol=1e-6,image_height_atol=1e-5,
             reference='Matched native worksheet; mirror chief angle=-field, glass image incidence=field before Snell refraction'),indent=2),encoding='utf-8')
@@ -253,7 +253,7 @@ def test_image_glass_copy_cancel_and_failure_preserve_source():
 def test_ray_diagram_field_range_and_finite_object_reference(model):
     async def work(e):
         folders=dict(fields_mixed='probe395-fields-mixed',fields_negative='probe397-fields-negative',finite_object='probe398-finite-object')
-        native=json.loads((PROJECT_ROOT/'verification/development/CV-02'/folders[model]/'probe.json').read_text(encoding='utf-8'))
+        native=json.loads((PROJECT_ROOT/'development/evidence/CV-02'/folders[model]/'probe.json').read_text(encoding='utf-8'))
         await e.call('new_system')
         fields=[dict(x=40,y=0),dict(x=0,y=20)]if model=='fields_mixed'else[dict(x=0,y=0),dict(x=0,y=-20 if model=='fields_negative'else 20)]
         await e.call('update_system_settings',dict(settings=dict(aperture_value=10,fields=fields,wavelengths=[dict(wavelength_um=.55)],field_type='ObjectHeight'if model=='finite_object'else'Angle')))

@@ -84,7 +84,7 @@ def test_finite_mems_source_reference_native():
 def test_finite_grid_grin_fixture_boundary_native():
     async def work(e):
         await e.model();await e.call('insert_surfaces',dict(at=2,count=2))
-        source=Path(r'C:\Program Files\ANSYS Inc\v242\Zemax OpticStudio\ZemaxData\Glasscat\Sample.GGD')
+        source=Path(r'C:\Program Files\ANSYS Inc\v261\Zemax OpticStudio\ZemaxData\Glasscat\Sample.GGD')
         assert source.is_file()
         import numpy as np
         table=np.loadtxt(source,skiprows=1,encoding='utf-16');axis=table.reshape(21,21,21,-1)

@@ -149,7 +149,7 @@ def test_coating_layer_polarization_to_image_and_reload():
         await e.call("update_system_settings", {"settings":{"polarization":{"unpolarized":False,"jx":1,"jy":0}}})
         images=await e.call("get_system_resources", {"request":{"kind":"image_simulation_files"}})
         target=Path(images["directory"])/("release_"+uuid.uuid4().hex+".IMA")
-        shutil.copy2(Path(__file__).parent/"resources/imaging023/point.IMA",target)
+        shutil.copy2(Path(__file__).parents[1]/"resources/imaging023/point.IMA",target)
         try:
             baseline=await e.call("get_surfaces")
             settings=await e.call("get_system_settings")

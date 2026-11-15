@@ -14,7 +14,7 @@ from tests.support.paths import run_dir
 @pytest.mark.zemax
 def test_nsc_units_native():
     inputs=run_dir("nsc_unit_inputs")
-    process=subprocess.run([sys.executable,"-B",str(Path(__file__).parent/"support/nsc_unit_fixtures.py"),str(inputs)],
+    process=subprocess.run([sys.executable,"-B",str(PROJECT_ROOT/"scripts/probes/NS-02/nsc_unit_fixtures.py"),str(inputs)],
         cwd=PROJECT_ROOT,env={**os.environ,"PYTHONUTF8":"1"},capture_output=True,text=True,encoding="utf-8",timeout=120)
     (inputs/"stdout.log").write_text(process.stdout,encoding="utf-8")
     (inputs/"stderr.log").write_text(process.stderr,encoding="utf-8")

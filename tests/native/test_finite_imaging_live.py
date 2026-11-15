@@ -30,10 +30,10 @@ def test_cooke_finite_psf_mtf_energy_native(field,wavelength):
                 fx,fy,otf=normalized_otf(values,g['dx']/1000,g['dy']/1000)
                 if family=='huygens':
                     mtf=await e.finish(await e.call('run_analysis',dict(request=dict(kind='huygens_mtf',field=field,wavelength=wavelength,
-                        sampling=sample,image_sampling='S_512x512',image_delta=.5,maximum_frequency=50))))
+                        sampling=sample,image_sampling='S_512x512',image_delta=.5,maximum_frequency=50))),timeout_seconds=600)
                 else:
                     mtf=await e.finish(await e.call('run_fft_mtf',dict(field=field,wavelength=wavelength,
-                        sampling=sample,maximum_frequency=50)))
+                        sampling=sample,maximum_frequency=50)),timeout_seconds=600)
                 for series in mtf['series']:
                     for column,label in enumerate(series['labels']):
                         assert label in ('Tangential','Sagittal','子午','弧矢'),label

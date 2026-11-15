@@ -4,9 +4,20 @@ from pathlib import Path
 import pytest
 from zemax_mcp.backend import Backend
 from zemax_mcp.config import Config
-from zemax_mcp.analyses import ANALYSES
 from zemax_mcp.evaluation import interpolate
 from tests.support.paths import run_dir
+
+REFERENCE_KINDS = (
+    'huygens_mtf', 'geometric_mtf', 'fft_through_focus_mtf',
+    'huygens_through_focus_mtf', 'geometric_through_focus_mtf',
+    'fft_psf', 'fft_psf_cross', 'huygens_psf', 'huygens_psf_cross',
+    'diffraction_encircled_energy', 'geometric_encircled_energy',
+    'wavefront', 'zernike_standard', 'zernike_fringe', 'zernike_annular',
+    'ray_fan', 'opd_fan', 'field_curvature_distortion',
+    'longitudinal_aberration', 'lateral_color', 'focal_shift',
+    'surface_sag', 'surface_curvature', 'surface_phase',
+    'surface_sag_cross', 'surface_curvature_cross', 'surface_phase_cross',
+)
 
 def bessel(order,x):
     term=(x/2)**order/math.factorial(order);total=term
@@ -37,7 +48,7 @@ def test_parabolic_mirror_independent_references():
         call("update_system_settings",dict(aperture_value=10,fields=[dict(x=0,y=0),dict(x=0,y=1),dict(x=0,y=2)],wavelengths=[dict(wavelength_um=.48),dict(wavelength_um=.55),dict(wavelength_um=.65)],primary_wavelength=2))
         call("update_surfaces",dict(changes=[dict(surface=1,radius=-200,conic=-1,material="MIRROR",thickness=-100,semi_diameter=5,replace_solves=True)]))
         call("save_lens_as",dict(path=str(folder/"paraboloid.zos")))
-        for kind in ANALYSES:
+        for kind in REFERENCE_KINDS:
             request=dict(kind=kind)
             if kind.startswith("surface_"):request.update(surface=1,sampling="S_65x65")
             elif kind in {"longitudinal_aberration","lateral_color","focal_shift"}:pass

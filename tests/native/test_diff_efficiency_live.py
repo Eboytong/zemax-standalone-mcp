@@ -9,7 +9,7 @@ from tests.support.native import execute
 @pytest.mark.zemax
 def test_diff_efficiency_hologram_runtime():
     async def work(e):
-        path=Path(r'C:\Program Files\ANSYS Inc\v242\Zemax OpticStudio\ZemaxData\Samples\Sequential\Diffractive components\Transmission hologram.zos')
+        path=Path(r'C:\Program Files\ANSYS Inc\v261\Zemax OpticStudio\ZemaxData\Samples\Sequential\Diffractive components\Transmission hologram.zmx')
         await e.call('open_lens',dict(path=str(path)))
         await e.call('update_system_settings',dict(settings=dict(field_type='Angle')))
         # Manual pp.255-257: enable volume parameters before assigning the emulsion.
