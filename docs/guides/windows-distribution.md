@@ -25,7 +25,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\release\build_wind
 
 ## English
 
-合并至main时，发行工作流将仓库中已经测试的wheel和ZIP作为附件发布，版本标签指向该次main提交。发布说明来自同版本目录中的`CHANGELOG.md`；工作流使用仓库的GitHub Actions凭据。
+1.4.1临时工作流在main合入该版本CHANGELOG时构建并发布wheel和ZIP，标签指向该次main提交。发布完成后移除工作流。
 
 After integration and release regression testing, run the PowerShell command above with Python 3.14 x64. The script builds in a temporary environment using pinned build dependencies and places the wheel and Windows ZIP under `releases/1.4.1/`. Existing artifacts are preserved and cause the build to stop.
 

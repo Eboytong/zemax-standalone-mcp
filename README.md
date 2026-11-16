@@ -1,8 +1,8 @@
 # Zemax Standalone MCP
 
-**1.4.1** 默认使用 **OpticStudio 2026 R1（v261）** 和 **compact** 工具目录。发行包等待整合与回归完成后生成。升级前原生测试记录为845通过、48失败、11跳过或预期限制，见 [2026 R1 测试与升级计划](docs/compatibility/2026r1/README.md)。
+**1.4.1** 默认使用 **OpticStudio 2026 R1（v261）** 和 **compact** 工具目录。[下载1.4.1 Windows安装包](https://github.com/Eboytong/zemax-standalone-mcp/releases/tag/v1.4.1)。本版改动范围验证见[测试报告](docs/compatibility/2026r1/V1.4.1.md)。升级前原生测试记录为845通过、48失败、11跳过或预期限制，见 [2026 R1 测试与升级计划](docs/compatibility/2026r1/README.md)。
 
-**1.4.1** defaults to **OpticStudio 2026 R1 (v261)** and the **compact** tool catalog. Distribution artifacts will be built after integration and regression testing. The pre-upgrade native baseline recorded 845 passed, 48 failed, and 11 skipped/expected limitations. See the [2026 R1 test report and roadmap](docs/compatibility/2026r1/README.md).
+**1.4.1** defaults to **OpticStudio 2026 R1 (v261)** and the **compact** tool catalog. [Download the 1.4.1 Windows distribution](https://github.com/Eboytong/zemax-standalone-mcp/releases/tag/v1.4.1). Changed features passed the [release regression](docs/compatibility/2026r1/V1.4.1.md). The pre-upgrade native baseline recorded 845 passed, 48 failed, and 11 skipped/expected limitations. See the [2026 R1 test report and roadmap](docs/compatibility/2026r1/README.md).
 
 [中文](#中文) · [English](#english)
 
