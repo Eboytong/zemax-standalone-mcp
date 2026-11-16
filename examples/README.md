@@ -2,6 +2,8 @@
 
 从项目根目录使用 `.venv\Scripts\python.exe -B` 运行。光学流程需要本机 OpticStudio 和相应许可。
 
+1.4.1默认使用OpticStudio 2026 R1（v261）与compact目录，配置模板见[客户端配置](config/mcp.config.example.json)。请求示例采用操作本身的参数形状；compact模式通过`query_capability`或`execute_capability`的`arguments`传入。需要直接工具名时选择`ZEMAX_TOOL_MODE=full`。
+
 | 入口 | 用途 |
 | --- | --- |
 | [run_workflow.py](workflows/run_workflow.py) | 分析、文件、NSC、POP、公差与布局工作流，使用 `--help` 查看选项 |

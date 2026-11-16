@@ -40,10 +40,12 @@ def pytest_configure(config):
     os.environ['PYTHONUTF8'] = '1'
     os.environ['MPLCONFIGDIR'] = str(OUT/'matplotlib')
     os.environ['ZEMAX_STATE_DIR'] = str(OUT/'state')
+    # The historical stdio tests exercise direct tools; mode-specific tests override this.
+    os.environ['ZEMAX_TOOL_MODE'] = 'full'
     import zemax_mcp.config as cfg
     cfg.DEFAULT_INSTALL = INSTALL
     import mcp.client.stdio as stdio
-    for key in ('ZEMAX_INSTALL_DIR','ZEMAX_STATE_DIR','MPLCONFIGDIR','PYTHONUTF8'):
+    for key in ('ZEMAX_INSTALL_DIR','ZEMAX_STATE_DIR','MPLCONFIGDIR','PYTHONUTF8','ZEMAX_TOOL_MODE'):
         if key not in stdio.DEFAULT_INHERITED_ENV_VARS:
             stdio.DEFAULT_INHERITED_ENV_VARS.append(key)
     if config.getoption('collectonly'):

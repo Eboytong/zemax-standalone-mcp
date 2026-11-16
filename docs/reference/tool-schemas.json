@@ -1,5 +1,5 @@
 {
-  "service_version": "1.4.0",
+  "service_version": "1.4.1",
   "mode": "full",
   "tools": {
     "cancel_task": {

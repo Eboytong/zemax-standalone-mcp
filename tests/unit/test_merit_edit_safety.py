@@ -391,3 +391,48 @@ def test_final_native_row_rewrite_returns_readback_failure(tmp_path):
     assert response['error']['code']=='SETTING_REJECTED'
     assert response['error']['details']['phase']=='readback'
     assert response['error']['details']['mutation_started']
+
+
+@pytest.mark.parametrize('field', ['target', 'weight'])
+@pytest.mark.parametrize('requested,actual,accepted', [
+    (.6, .6000000000000001, True),
+    (0., 5e-13, True),
+    (1e6, 1e6 + 5e-7, True),
+    (.6, .6 + 2e-12, False),
+    (1e6, 1e6 + 2e-6, False),
+    (1., float('nan'), False),
+    (1., float('inf'), False),
+])
+def test_merit_scalar_readback_tolerance(tmp_path, field, requested, actual, accepted):
+    class NativeRow(Row):
+        def __setattr__(self, name, value):
+            if getattr(self, 'round_readback', False) and name == field.title():
+                value = actual
+            super().__setattr__(name, value)
+
+    row = NativeRow('PMAG')
+    row.round_readback = True
+    backend, _ = setup(tmp_path, [row])
+    response = backend.dispatch('update_merit_function', dict(
+        mode='update', updates=[dict(operand=1, **{field: requested})]))
+    assert response['ok'] is accepted
+    if not accepted:
+        assert response['error']['code'] == 'SETTING_REJECTED'
+        assert response['error']['details']['phase'] == 'readback'
+        assert response['error']['details']['field'] == field
+
+
+def test_merit_parameter_readback_remains_exact(tmp_path):
+    row = Row('REAY')
+    backend, _ = setup(tmp_path, [row])
+    write = backend._write_cell
+
+    def rounded(cell, value):
+        write(cell, value)
+        cell.value += 5e-13
+
+    backend._write_cell = rounded
+    response = backend.dispatch('update_merit_function', dict(
+        mode='update', updates=[dict(operand=1, parameters={'4': .6})]))
+    assert response['error']['code'] == 'SETTING_REJECTED'
+    assert response['error']['details']['column'] == 4

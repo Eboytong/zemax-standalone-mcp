@@ -128,8 +128,63 @@ def test_star_import_stages_resource_and_checks_coordinate_selection(tmp_path, k
     result = b.task['payload']['actual']
     assert result['local_coordinates'] is False
     assert Path(result['filename']).parent.name.startswith('star_input_')
+    resource = b.task['payload']['source_resource']
+    assert resource['source'] == str(source)
+    assert resource['native'] == resource['staged'] == result['filename']
     assert b.events == ['checkpoint', 'import']
     assert b.task['baseline']['context']['model_revision'] == 0
+
+
+@pytest.mark.parametrize('kind', BRANCHES)
+@pytest.mark.parametrize('native_path', ['container.ZST', 'native/container.zst'])
+def test_star_import_accepts_native_zst_and_records_paths(tmp_path, kind, native_path):
+    b = Backend(tmp_path)
+    container = tmp_path / native_path
+    container.parent.mkdir(parents=True, exist_ok=True)
+    container.write_text('native container')
+    native_path = str(container)
+    source = tmp_path / 'source.txt'; source.write_text('fixture')
+    imported = b.import_data
+
+    def native_import(path):
+        imported(path)
+        b.fea.Filename = native_path
+
+    setattr(b.fea, BRANCHES[kind][2], native_import)
+    b.run_star_operation(RunStar(request=dict(kind='import_' + kind, surface=1,
+        path=str(source), length_unit='Millimeters', coordinate_system='local')))
+    list(b.flow)
+    resource = b.task['payload']['source_resource']
+    assert resource['source'] == str(source)
+    assert Path(resource['staged']).parent.name.startswith('star_input_')
+    assert Path(resource['staged']).name == source.name
+    assert resource['native'] == native_path
+    assert b.task['payload']['actual']['filename'] == native_path
+    assert b.events == ['checkpoint', 'import']
+
+
+@pytest.mark.parametrize('failure', ['unrelated_path', 'empty_path', 'missing_zst', 'relative_zst', 'directory_zst', 'empty_points', 'not_imported'])
+def test_star_import_readback_rejection_restores_baseline(tmp_path, failure):
+    b = Backend(tmp_path)
+    source = tmp_path / 'source.txt'; source.write_text('fixture')
+    imported = b.import_data
+
+    def native_import(path):
+        imported(path)
+        b.fea.Filename = '' if failure == 'empty_path' else 'unrelated.txt' if failure == 'unrelated_path' else 'container.zst'
+        if failure == 'missing_zst': b.fea.Filename = str(tmp_path / 'missing.zst')
+        if failure == 'directory_zst':
+            directory = tmp_path / 'directory.zst'; directory.mkdir()
+            b.fea.Filename = str(directory)
+        if failure == 'empty_points': b.fea.NumberOfDataPoints = 0
+        if failure == 'not_imported': b.fea.AreDeformationsImported = False
+
+    b.fea.ImportDeformations = native_import
+    b.run_star_operation(import_request(source))
+    with pytest.raises(ZemaxError) as exc: list(b.flow)
+    assert exc.value.code == ('STAR_IMPORT_FAILED' if failure in {'empty_points', 'not_imported'} else 'SETTING_REJECTED')
+    assert b.events == ['checkpoint', 'import', 'restore']
+    assert 'native' in b.task['payload']['source_resource']
 
 
 def import_request(path, unit='Millimeters'):

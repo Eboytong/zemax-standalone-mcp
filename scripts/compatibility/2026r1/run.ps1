@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 $repoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..')).Path
-$runtime = Join-Path $repoRoot '.local\full-2026r1'
+$runtime = Join-Path $repoRoot '.local\v1.4.1-2026r1'
 $pythonExe = Join-Path $repoRoot '.venv\Scripts\python.exe'
 New-Item -ItemType Directory -Path $runtime -Force | Out-Null
 foreach ($name in @('compat_plugin.py', 'run_all.py', 'report.py', 'status.py', 'tool-names.json')) {

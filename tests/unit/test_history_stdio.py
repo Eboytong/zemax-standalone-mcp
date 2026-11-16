@@ -15,7 +15,7 @@ def test_history_across_stdio_restart(tmp_path):
         root=tmp_path/'runs'
         write_json(root/SESSION/(TASK+'.json'),dict(result_schema_version=1,task=dict(task_id=TASK,kind='history_fixture',state='succeeded',created_at='2026-11-05T00:00:00Z',request_id='seed'),context=dict(session_id=SESSION),artifacts=[],rows=[dict(i=i)for i in range(10)]))
         RequestJournal(root,'prior_worker').begin('interrupted','update_surfaces',{'changes':[]})
-        params=StdioServerParameters(command=sys.executable,args=['-B','-m','zemax_mcp'],cwd=PROJECT_ROOT,env={'PYTHONUTF8':'1','PYTHONPATH':str(PROJECT_ROOT/'src'),'ZEMAX_OUTPUT_DIR':str(root)})
+        params=StdioServerParameters(command=sys.executable,args=['-B','-m','zemax_mcp'],cwd=PROJECT_ROOT,env={'PYTHONUTF8':'1','PYTHONPATH':str(PROJECT_ROOT/'src'),'ZEMAX_TOOL_MODE':'full','ZEMAX_OUTPUT_DIR':str(root)})
         request_id=None
         for generation in range(2):
             async with Client(params,read_timeout_seconds=45)as client:

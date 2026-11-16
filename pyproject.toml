@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "zemax-standalone-mcp"
-version = "1.4.0"
+version = "1.4.1"
 description = "Local Windows MCP server for OpticStudio Standalone"
 readme = "README.md"
 license = "MIT"

@@ -30,7 +30,7 @@ def test_frozen_chinese_query_recall():
         found = {x['capability_id'] for x in search(case['query'])['items']}
         if not found.intersection(case['expected']):
             misses.append(case['query'])
-    assert len(misses) <= 3, misses
+    assert misses == [], misses
 
 
 def test_pagination_details_conditions_and_schema():
@@ -76,7 +76,7 @@ def test_real_stdio_offline_discovery(tmp_path):
         source = str(Path(__file__).parents[2] / 'src')
         boot = f'import sys;sys.path.insert(0,{source!r});from zemax_mcp.server import main;main()'
         params = StdioServerParameters(command=sys.executable, args=['-B', '-c', boot],
-            env={'PYTHONPATH': source, 'PYTHONUTF8': '1', 'ZEMAX_OUTPUT_DIR': str(tmp_path)})
+            env={'PYTHONPATH': source, 'PYTHONUTF8': '1', 'ZEMAX_TOOL_MODE': 'full', 'ZEMAX_OUTPUT_DIR': str(tmp_path)})
         async with Client(params, read_timeout_seconds=60) as client:
             tools = (await client.list_tools()).tools
             assert {tool.name for tool in tools} == set(COMMAND_MODELS)

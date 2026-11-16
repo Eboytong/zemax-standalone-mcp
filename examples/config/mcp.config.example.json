@@ -8,12 +8,12 @@
         "zemax_mcp"
       ],
       "env": {
-        "ZEMAX_INSTALL_DIR": "C:\\Program Files\\ANSYS Inc\\v242\\Zemax OpticStudio",
+        "ZEMAX_INSTALL_DIR": "C:\\Program Files\\ANSYS Inc\\v261\\Zemax OpticStudio",
         "ZEMAX_OUTPUT_DIR": "<解压目录>\\.local\\runs",
         "ZEMAX_STATE_DIR": "<解压目录>\\.local\\state",
         "PYTHONUTF8": "1",
         "PYTHONDONTWRITEBYTECODE": "1",
-        "ZEMAX_TOOL_MODE": "full"
+        "ZEMAX_TOOL_MODE": "compact"
       }
     }
   }

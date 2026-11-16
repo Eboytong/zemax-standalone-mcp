@@ -120,9 +120,43 @@ def _terms(text):
     return set(words)
 
 
-def search(query, limit=5, category="all"):
+# Each concept supplies engineering vocabulary and its implemented entry points.
+CONCEPTS = (
+    (("加工误差", "制造误差", "装配误差", "合格率", "成品率"),
+     "公差 蒙特卡洛 良率", ("tool:run_tolerance_analysis", "analysis:design_desensitize")),
+    (("清晰度", "清晰程度", "有多清楚", "分辨能力", "成像质量"),
+     "MTF 调制传递函数 光斑 像质", ("tool:run_fft_mtf", "analysis:spot")),
+    (("光电接收面", "感光面", "接收屏", "传感器照度"),
+     "探测器 辐照度 功率", ("tool:get_detector_data",)),
+    (("杂散光", "追踪散射", "散射追迹"),
+     "非序列 散射 分光 追迹", ("tool:run_nsc_ray_trace",)),
+    (("波前", "光程差", "opd"), "波前 OPD", ("analysis:wavefront",)),
+    (("保存候选", "存为候选", "候选设计", "设计检查点"),
+     "候选 检查点 保存", ("tool:manage_candidates", "action:manage_candidates:create")),
+    (("反射透射", "反射和透射", "镀膜损耗"),
+     "镀膜 反射率 透射率 吸收率", ("tool:get_coating_rta",)),
+    (("先前算过", "以前的结果", "历史计算"),
+     "历史 任务 结果", ("tool:get_historical_result", "tool:list_task_history")),
+)
+GENERIC_TERMS = _terms("镜头 计算 分析 读取 查询 检查 查看 设置 系统 结果 模型 工具")
+
+
+def _expand(query):
+    folded = query.casefold()
+    expansions, preferred = [], set()
+    for phrases, vocabulary, capabilities in CONCEPTS:
+        if any(phrase in folded for phrase in phrases):
+            expansions.extend(vocabulary.split())
+            preferred.update(capabilities)
+    return list(dict.fromkeys(expansions)), preferred
+
+
+def _rank(query, category):
+    expanded, preferred = _expand(query)
     terms = _terms(query)
+    expanded_terms = _terms(" ".join(expanded)) - terms
     ranked = []
+    folded = query.casefold()
     for entry in build_index():
         if category != "all" and entry["category"] != category:
             continue
@@ -131,15 +165,62 @@ def search(query, limit=5, category="all"):
         if entry['name'] == 'run_layout_export': names |= _terms('system drawing unfold rays')
         description = _terms(entry["description"])
         hits = terms & (names | description)
-        score = 4 * len(terms & names) + len(terms & description)
-        if entry["name"].casefold() in query.casefold():
-            score += 20
+        if not (hits - GENERIC_TERMS or expanded_terms & (names | description)
+                or entry['capability_id'] in preferred or entry['name'].casefold() in folded):
+            continue
+        score = sum(1 if term in GENERIC_TERMS else 4 for term in terms & names)
+        score += sum(.25 if term in GENERIC_TERMS else 1 for term in terms & description)
+        extra_hits = expanded_terms & (names | description)
+        score += 2 * len(expanded_terms & names) + .5 * len(expanded_terms & description)
+        if entry["capability_id"] in preferred:
+            score += 30
+        if re.search(r"(?<![a-z0-9_])" + re.escape(entry["name"].casefold()) + r"(?![a-z0-9_])", folded):
+            score += 100
+        if entry["capability_id"].casefold() in folded:
+            score += 1000
         if score:
-            ranked.append((score, entry, sorted(hits)))
+            ranked.append((score, entry, sorted(hits | extra_hits)))
     ranked.sort(key=lambda item: (-item[0], item[1]["capability_id"]))
-    return dict(query=query, total_matches=len(ranked), items=[
-        {**brief(entry),
-         "score": score, "matched_terms": hits} for score, entry, hits in ranked[:limit]])
+    return ranked, expanded
+
+
+def search(query, limit=5, category="all"):
+    parts = list(dict.fromkeys(part.strip() for part in re.split(
+        r"(?:然后|之后|接着|同时|并且|再|[；;，,。]|\bthen\b|\band\s+then\b)", query,
+        flags=re.IGNORECASE) if part.strip())) or [query]
+    ranked, expanded = _rank(query, category)
+    selections, seen, intents = [], set(), []
+    if len(parts) > 1:
+        for part in parts:
+            candidates, additions = _rank(part, category)
+            expanded.extend(additions)
+            intents.append(dict(query=part, capability_ids=[row[1]['capability_id'] for row in candidates[:limit]]))
+            candidate = next((row for row in candidates if row[1]['capability_id'] not in seen), None)
+            if candidate and len(selections) < limit:
+                selections.append(candidate)
+                seen.add(candidate[1]['capability_id'])
+        # Include candidates found only by a sub-intent in the final union.
+        union = {row[1]['capability_id']: row for row in ranked}
+        for part in parts:
+            for row in _rank(part, category)[0]:
+                old = union.get(row[1]['capability_id'])
+                if old is None or row[0] > old[0]: union[row[1]['capability_id']] = row
+        ranked = sorted(union.values(), key=lambda row: (-row[0], row[1]['capability_id']))
+    for row in ranked:
+        if len(selections) >= limit: break
+        if row[1]['capability_id'] not in seen:
+            selections.append(row)
+            seen.add(row[1]['capability_id'])
+    result = dict(query=query, total_matches=len(ranked), items=[
+        {**brief(entry), "score": score, "matched_terms": hits} for score, entry, hits in selections])
+    if intents: result['intents'] = intents
+    expanded = list(dict.fromkeys(expanded))
+    if expanded: result['expanded_terms'] = expanded
+    retry_queries = parts if intents else [" ".join(expanded)] if expanded else []
+    if retry_queries:
+        result['retry_requests'] = [dict(query=text[:300], limit=limit, category=category)
+                                    for text in retry_queries[:2]]
+    return result
 
 
 def describe(req):

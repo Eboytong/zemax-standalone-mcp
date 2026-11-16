@@ -2,16 +2,16 @@
 
 ## 首次调用
 
-在 MCP 客户端依次调用下列工具，`arguments` 为每次调用的参数；将文件路径替换为本机绝对路径：
+默认compact模式下，在MCP客户端依次调用下列工具，`arguments`为每次调用的参数；将文件路径替换为本机绝对路径。能力参数可通过`get_capabilities(topic="detail",capability_id=...)`读取：
 
 ```json
 {"tool":"connect","arguments":{}}
-{"tool":"open_lens","arguments":{"path":"C:/optics/example.zmx"}}
-{"tool":"get_system_summary","arguments":{}}
-{"tool":"run_analysis","arguments":{"request":{"kind":"relative_illumination"}}}
+{"tool":"execute_capability","arguments":{"capability_id":"tool:open_lens","arguments":{"path":"C:/optics/example.zmx"}}}
+{"tool":"query_capability","arguments":{"capability_id":"tool:get_system_summary","arguments":{}}}
+{"tool":"execute_capability","arguments":{"capability_id":"analysis:relative_illumination","arguments":{"request":{"kind":"relative_illumination"}}}}
 ```
 
-从 `run_analysis` 的响应取得 `task_id`，代入下列请求并轮询状态；任务成功后读取结果，结束时断开：
+从分析响应取得`task_id`，代入下列请求并轮询状态；任务成功后读取结果，结束时断开：
 
 ```json
 {"tool":"get_task_status","arguments":{"task_id":"<task_id>"}}
@@ -20,6 +20,8 @@
 ```
 
 每一行表示一次独立工具调用；实际客户端以其自身的工具调用界面提交。结果数据量较大时，根据 `next_start` 继续读取。
+
+显式full模式可直接调用`open_lens`、`get_system_summary`和`run_analysis`等操作。后续专题与请求示例以这些操作名描述参数；compact模式将相同参数置于`query_capability`或`execute_capability`的`arguments`字段。
 
 ## 响应与编号
 

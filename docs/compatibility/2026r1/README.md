@@ -1,6 +1,6 @@
 # OpticStudio 2026 R1 测试与升级计划
 
-后续产品开发、测试和发布以 OpticStudio 2026 R1 为基线。本次提交记录升级前实测结果、测试夹具调整和可复现的运行工具。已发布的1.4.0产品源码保留当前行为，修复工作按下列问题继续推进。
+产品开发、测试和发布以OpticStudio 2026 R1为基线。1.4.1将默认安装目录改为v261、默认工具目录改为compact；当前运行入口将复测数据写入`.local/v1.4.1-2026r1/`。下列日期、汇总数字和关联报告保留1.4.0升级前实测记录，1.4.1结果随本轮回归另行汇总。
 
 测试日期：2026-11-15。环境：Windows x64、Python 3.14.10、OpticStudio API 26.1.0/build 260127、EnterpriseEdition。被测提交：`6182dd035b51730a71002a04a55b2320cb67ac7d`。
 
@@ -35,11 +35,11 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\compatibility\2026
 
 脚本使用项目`.venv`和本机`v261`安装，依次收集测试、执行普通测试，再逐个独立进程串行运行原生测试。每个原生模块上限3600秒。原生测试会创建有许可的Standalone实例；完整回归耗时数小时。结束后重新生成报告和CSV。
 
-运行时脚本复制至`.local/full-2026r1/`，其ROOT/OUT路径按该位置解析。`report.py`读取本次运行记录；`status.py`可在运行期间查看进度。只运行指定模块或用例：
+运行时脚本复制至`.local/v1.4.1-2026r1/`，其ROOT/OUT路径按该位置解析。`report.py`读取本次运行记录；`status.py`可在运行期间查看进度。兼容性插件为历史直接工具名测试显式设置`ZEMAX_TOOL_MODE=full`，产品默认模式为compact。只运行指定模块或用例：
 
 ```powershell
-.\.venv\Scripts\python.exe -X utf8 -B .local\full-2026r1\run_all.py tests/native/test_2026r1_history_modes_live.py
-.\.venv\Scripts\python.exe -X utf8 -B .local\full-2026r1\status.py
+.\.venv\Scripts\python.exe -X utf8 -B .local\v1.4.1-2026r1\run_all.py tests/native/test_2026r1_history_modes_live.py
+.\.venv\Scripts\python.exe -X utf8 -B .local\v1.4.1-2026r1\status.py
 ```
 
 `--retry-pending`读取运行目录中的`retry-plan.json`，只补跑未记录用例及指定模块中的失败用例。默认计划为空；将需要复测的模块相对路径加入`modules`后使用。
@@ -47,4 +47,3 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\compatibility\2026
 普通测试和部分原生参考测试需要保留的历史数值记录或原生CFG输入，相关缺失条件列在报告中。搬迁路径、2026目录计数、非活动单元格、等待时限和浮点比较等夹具修正均纳入本次提交。
 
 公开报告使用`<REPO>`和`<USER_HOME>`替换测试机目录。完整调用日志、原生结果、ZRD/ZBF、镜头和独立环境保留在测试机`.local/`。本目录提供汇总、覆盖表和关键诊断JSON；报告中的本机产物路径是原始记录引用。
-

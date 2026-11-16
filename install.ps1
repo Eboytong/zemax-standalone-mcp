@@ -2,13 +2,18 @@ param(
     [string]$PythonExe = 'python',
     [switch]$WithReports,
     [switch]$WithGeometry,
-    [ValidateSet('full','compact')][string]$ToolMode = 'full'
+    [ValidateSet('full','compact')][string]$ToolMode
 )
 $ErrorActionPreference = 'Stop'
 $PackageRoot = $PSScriptRoot
 & $PythonExe -c "import sys,struct; assert sys.version_info[:2] == (3,14), 'Python 3.14 required'; assert struct.calcsize('P') == 8, 'x64 Python required'"
 if ($LASTEXITCODE -ne 0) { throw 'Python 3.14 x64 is required.' }
-$Wheel = Get-Item -LiteralPath (Join-Path $PackageRoot 'releases\1.4.0\zemax_standalone_mcp-1.4.0-py3-none-any.whl')
+$Wheel = Get-Item -LiteralPath (Join-Path $PackageRoot 'releases\1.4.1\zemax_standalone_mcp-1.4.1-py3-none-any.whl')
+if (-not $ToolMode) {
+    if ($env:ZEMAX_TOOL_MODE) { $ToolMode = $env:ZEMAX_TOOL_MODE }
+    else { $ToolMode = 'compact' }
+}
+if ($ToolMode -notin @('full', 'compact')) { throw 'ZEMAX_TOOL_MODE must be full or compact.' }
 $EnvRoot = Join-Path $PackageRoot '.venv'
 if (-not (Test-Path -LiteralPath (Join-Path $EnvRoot 'Scripts\python.exe'))) {
     & $PythonExe -m venv $EnvRoot
@@ -26,6 +31,10 @@ if ($Extras.Count -gt 0) { $Requirement += '[' + ($Extras -join ',') + ']' }
 if ($LASTEXITCODE -ne 0) { throw 'Failed to install MCP dependencies.' }
 $OutputRoot = Join-Path $PackageRoot '.local\runs'
 $StateRoot = Join-Path $PackageRoot '.local\state'
+$InstallRoot = 'C:\Program Files\ANSYS Inc\v261\Zemax OpticStudio'
+if ($env:ZEMAX_INSTALL_DIR) { $InstallRoot = $env:ZEMAX_INSTALL_DIR }
+if ($env:ZEMAX_OUTPUT_DIR) { $OutputRoot = $env:ZEMAX_OUTPUT_DIR }
+if ($env:ZEMAX_STATE_DIR) { $StateRoot = $env:ZEMAX_STATE_DIR }
 $ConfigRoot = Join-Path $PackageRoot '.local\config'
 New-Item -ItemType Directory -Path $ConfigRoot -Force | Out-Null
 $ConfigPath = Join-Path $ConfigRoot 'mcp.config.json'
@@ -34,7 +43,7 @@ $ServerConfig = @{
     args = @('-B', '-m', 'zemax_mcp')
     cwd = $PackageRoot
     env = @{
-        ZEMAX_INSTALL_DIR = 'C:\Program Files\ANSYS Inc\v242\Zemax OpticStudio'
+        ZEMAX_INSTALL_DIR = $InstallRoot
         ZEMAX_OUTPUT_DIR = $OutputRoot
         ZEMAX_STATE_DIR = $StateRoot
         PYTHONUTF8 = '1'

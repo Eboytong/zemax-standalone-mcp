@@ -910,12 +910,13 @@ class AnalysesMixin:
         return self._start_task("analysis",tool,actual,analysis=True,collector=self._collect_general_analysis)
 
     def _collect_general_analysis(self,task, *, optional_native_text=False):
+        through_focus_mtf = task.get('settings',{}).get('kind','').endswith('through_focus_mtf')
         r=unwrap(task["native"].GetResults())
         if r is None:
-            raise ZemaxError("ANALYSIS_FAILED","没有有效原生分析结果。")
+            raise ZemaxError("NO_RESULT_DATA" if through_focus_mtf else "ANALYSIS_FAILED","没有有效原生分析结果。")
         header=[str(x) for x in r.HeaderData.Lines] if r.HeaderData is not None and r.HeaderData.Lines is not None else []
         if not r.IsValid:
-            raise ZemaxError("ANALYSIS_FAILED","没有有效原生分析结果。",
+            raise ZemaxError("NO_RESULT_DATA" if through_focus_mtf else "ANALYSIS_FAILED","没有有效原生分析结果。",
                 native_messages=[dict(code=str(r.GetMessageAt(i).ErrorCode),text=str(r.GetMessageAt(i).Text)) for i in range(r.NumberOfMessages)],
                 native_header=header)
         path=self.directory/(task["task_id"]+"_native.txt")
@@ -942,12 +943,22 @@ class AnalysesMixin:
             data["native_export_error"] = "GetTextFile returned true without creating a file"
         data["native_preamble"]=preamble
         data["computation_method"]="native_analysis"
+        if through_focus_mtf and (any(message['code'].casefold() in {'error', 'fatal', 'fatalerror', 'invalidresult', 'invalidresults', 'computationfailed', 'analysisfailed'} for message in data['native_messages']) or
+                re.search(r'computation\s+terminated|invalid\s+results?|fatal\s+error|计算终止|无效的结果', '\n'.join(header + [text] + [message['text'] for message in data['native_messages']]), re.I)):
+            raise ZemaxError('NO_RESULT_DATA','Through-focus MTF reported a native computation error.',
+                native_header=header,native_messages=data['native_messages'],native_preamble=preamble,native_text=str(path))
+        if through_focus_mtf and not r.NumberOfDataSeries:
+            raise ZemaxError('NO_RESULT_DATA','Through-focus MTF returned no native curve.',
+                native_header=header,native_messages=data['native_messages'],native_preamble=preamble,native_text=str(path))
         for i in range(r.NumberOfDataSeries):
             s=r.GetDataSeries(i)
             if s is None or s.XData is None or s.YData is None:
                 raise ZemaxError('NO_RESULT_DATA','原生分析返回了没有坐标或数值的曲线。',series=i,
                     native_messages=data['native_messages'],native_preamble=preamble,native_text=str(path))
             x=dotnet_array(s.XData.Data); y=dotnet_array(s.YData.Data)
+            if through_focus_mtf and (not x or not y or not any(y)):
+                raise ZemaxError('NO_RESULT_DATA','Through-focus MTF returned an empty native curve.',series=i,
+                    native_header=header,native_messages=data['native_messages'],native_preamble=preamble,native_text=str(path))
             if len(x)!=len(y) or any(not math.isfinite(v) for v in x):
                 raise ZemaxError("INVALID_RESULT_DATA","曲线尺寸不一致或横轴包含非有限值。",series=i,x_count=len(x),y_count=len(y))
             invalid=sum(not math.isfinite(v) for row in y for v in row)
