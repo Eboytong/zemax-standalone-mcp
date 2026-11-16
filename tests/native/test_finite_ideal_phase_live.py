@@ -14,7 +14,8 @@ def test_finite_ideal_surface_native(kind):
         await e.model();await e.call('insert_surfaces',dict(at=2))
         parameters={'Paraxial':{1:100,2:1},'ParaxialXY':{1:.01,2:.02},'CoordinateBreak':{1:.2,2:-.3,4:5}}[kind]
         await e.call('update_surfaces',dict(changes=[dict(surface=1,thickness=1,semi_diameter=5,replace_solves=True),
-            dict(surface=2,surface_type=kind,parameters=parameters,semi_diameter=5,replace_solves=True)]))
+            dict(surface=2,surface_type=kind,parameters=parameters,replace_solves=True,
+                **({'semi_diameter':5} if kind!='CoordinateBreak' else {}))]))
         path=e.folder/'model.zos';await e.call('save_lens_as',dict(path=str(path)));records=[]
         for reload in (False,True):
             if reload:await e.call('open_lens',dict(path=str(path)))

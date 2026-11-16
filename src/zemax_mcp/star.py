@@ -228,10 +228,14 @@ class StarMixin:
                         raise ZemaxError('SETTING_REJECTED', 'STAR coordinate system was not adopted.')
                     self._cancel_boundary(task)
                     getattr(branch.FEAData, BRANCHES[data_kind][2])(str(staged))
+                    filename = str(branch.FEAData.Filename)
+                    task['payload']['source_resource']['native'] = filename
                     if not bool(getattr(branch.FEAData, BRANCHES[data_kind][1])) or int(branch.FEAData.NumberOfDataPoints) <= 0:
                         raise ZemaxError('STAR_IMPORT_FAILED', 'Native STAR import did not adopt a nonempty data set.')
-                    filename = str(branch.FEAData.Filename)
-                    if str(Path(filename).resolve()).casefold() != str(staged.resolve()).casefold():
+                    # STAR may store imported points in a native ZST container.
+                    native_path = Path(filename)
+                    valid_container = bool(filename.strip()) and native_path.is_absolute() and native_path.suffix.casefold() == '.zst' and native_path.is_file()
+                    if not valid_container and str(native_path.resolve()).casefold() != str(staged.resolve()).casefold():
                         raise ZemaxError('SETTING_REJECTED', 'STAR import file did not match on readback.', requested=str(staged), actual=filename)
                 else:
                     branch = self._star_branch(q.surface, data_kind)

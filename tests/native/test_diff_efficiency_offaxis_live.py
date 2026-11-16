@@ -13,7 +13,7 @@ def test_unslanted_hologram_offaxis_reference(surface_model):
     async def work(e):
         deviations=[]
         from pathlib import Path
-        await e.call('open_lens',dict(path=str(Path(r'C:\Program Files\ANSYS Inc\v242\Zemax OpticStudio\ZemaxData\Samples\Sequential\Diffractive components\Transmission hologram.zos'))))
+        await e.call('open_lens',dict(path=str(Path(r'C:\Program Files\ANSYS Inc\v261\Zemax OpticStudio\ZemaxData\Samples\Sequential\Diffractive components\Transmission hologram.zmx'))))
         await e.call('update_system_settings',dict(settings=dict(field_type='Angle',fields=[dict(x=0,y=bragg)],polarization=dict(unpolarized=False,jx=1,jy=0,method='XAxisMethod'))))
         geometry={1:0,2:-100,3:-200,4:0,5:100,6:-200,7:.55,8:1}
         if surface_model=='native':

@@ -53,8 +53,10 @@ def create_server(mode=None, bridge=None):
 
     server = MCPServer(
         "Zemax Standalone", version=__version__, lifespan=lifespan,
-        instructions="本机 OpticStudio 2024 R2 Standalone。先 connect，再打开或新建镜头。修改前检查单位与 solve/pickup。run_* 返回任务编号，通过状态与结果工具取回结果。" +
-            (" compact模式：search_capabilities检索，get_capabilities(topic='detail',capability_id=...)读取精确MCP参数。读取用query_capability；建模、分析和保存用execute_capability。已知能力ID可直接调用。" if mode == 'compact' else ''),
+        instructions="本机 OpticStudio 2026 R1 Standalone。发现能力可离线进行；执行光学操作先 connect，再打开或新建镜头。修改前检查单位与 solve/pickup。run_* 返回任务编号，通过状态与结果工具取回结果。"
+            " search_capabilities支持工程同义词和复合需求；按intents分别选择能力并读取get_capabilities(topic='detail',capability_id=...)的精确参数、前置条件与副作用。"
+            "候选不合适时按retry_requests或工程术语改写，最多重检一轮；仍有歧义时询问用户。复合需求由Agent按依赖顺序执行。" +
+            (" compact模式：读取用query_capability；建模、分析和保存用execute_capability。已知能力ID可直接读取详情调用。" if mode == 'compact' else ''),
     )
 
     def tool(fn):
@@ -73,7 +75,7 @@ def create_server(mode=None, bridge=None):
 
     @tool
     async def connect(install_dir: str | None = None) -> ToolResponse:
-        """创建或复用本服务的后台实例，检查许可；默认使用本机已安装的 2024 R2。"""
+        """创建或复用本服务的后台实例，检查许可；默认使用本机已安装的 2026 R1。"""
         return await call("connect", {"install_dir": install_dir})
 
     @tool
@@ -93,7 +95,7 @@ def create_server(mode=None, bridge=None):
     @tool
     async def search_capabilities(query: str, limit: int = 5,
                                   category: Literal["all", "tool", "analysis"] = "all") -> ToolResponse:
-        """离线检索中文工程需求，返回工具/分析kind、匹配词及详情入口；无需连接OpticStudio。"""
+        """离线检索工程需求及复合意图，按需返回intents、expanded_terms和最多两条retry_requests；候选不合适时最多重检一轮，再读取详情调用。"""
         return await call("search_capabilities", dict(query=query, limit=limit, category=category))
 
     @tool

@@ -6,7 +6,7 @@ sys.path[:0]=[str(_workspace),str(_workspace/"src")]
 import json
 import sys
 from pathlib import Path
-from zemax_mcp.config import DEFAULT_INSTALL
+from zemax_mcp.config import Config
 from zemax_mcp.native import NativeSession
 from zemax_mcp.data import unwrap
 
@@ -14,7 +14,7 @@ def create(folder):
     folder=Path(folder);folder.mkdir(parents=True,exist_ok=True)
     native=NativeSession();cases=[]
     try:
-        native.connect(DEFAULT_INSTALL);system=native.system
+        native.connect(Config.from_env().install_dir);system=native.system
         for units in ("Watts","Lumens","Joules"):
             for prefix in ("None","Milli"):
                 system.New(False);system.MakeNonSequential()

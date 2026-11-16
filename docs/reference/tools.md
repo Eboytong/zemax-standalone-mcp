@@ -1,6 +1,6 @@
 # MCP 工具清单
 
-默认full模式直接注册107工具。compact模式注册11入口，包含9个连接/发现/任务控制工具和以下两个调用入口；各原生操作通过相同能力ID和参数合同执行。
+默认compact模式注册11入口，包含9个连接/发现/任务控制工具和以下两个调用入口；显式full模式直接注册107工具，各原生操作通过相同能力ID和参数合同执行。
 
 | compact入口 | 用途 |
 | --- | --- |
@@ -9,7 +9,7 @@
 
 详细用法见[能力发现](../guides/capability-search.md)，compact的11入口合同见[compact schema](compact-tool-schemas.json)。
 
-1.4.0 提供107个工具、146种分析请求。支持Detector Viewer、制造几何评价、光纤对准、固定膜系优化、NSC效率/均匀性、玻璃贡献/替换、扫描瞳共轭、鬼像路径、共焦响应、热补偿、公差成本预算及双FSM离线控制。完整参数见[请求模型](tool-schemas.json)，调用约定见[使用指南](../guides/usage.md)，设置与数值条件见[原生分析矩阵](native-analysis-matrix.csv)及对应专题。
+1.4.1 提供107项工具操作、146种分析请求。支持Detector Viewer、制造几何评价、光纤对准、固定膜系优化、NSC效率/均匀性、玻璃贡献/替换、扫描瞳共轭、鬼像路径、共焦响应、热补偿、公差成本预算及双FSM离线控制。以下为full目录中的操作名；compact中通过能力ID调用。完整参数见[请求模型](tool-schemas.json)，调用约定见[使用指南](../guides/usage.md)，设置与数值条件见[原生分析矩阵](native-analysis-matrix.csv)及对应专题。
 
 | 工具 | 用途 |
 | --- | --- |
@@ -21,7 +21,7 @@
 | `cancel_task` | 请求原生工具取消，继续查询状态确认；已完成任务保持其完成状态。 |
 | `clear_detectors` | 清空指定探测器，detector=0 清空全部。 |
 | `compare_results` | 比较成功的评估结果；分析条件不一致时返回差异，不计算改善结论。 |
-| `connect` | 创建或复用本服务的后台实例，检查许可；默认使用本机已安装的 2024 R2。 |
+| `connect` | 创建或复用本服务的后台实例，检查许可；默认安装目录为2026 R1的v261，可通过ZEMAX_INSTALL_DIR覆盖。 |
 | `copy_editor_rows` | 在同一MFE/MCE/TDE内复制连续行；引用重编号由原生编辑器处理。 |
 | `copy_nsc_objects` | 原生复制非序列对象，复制后回读参考关系。 |
 | `copy_surfaces` | 在物面与像面之间原生复制曲面，保留原物理光阑。 |

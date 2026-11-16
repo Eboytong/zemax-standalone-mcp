@@ -5,6 +5,7 @@ import math
 from pathlib import Path
 
 from tests.support.nsc import setup, update
+from tests.support.wavelength_fixture import fluorescence_fixture
 
 WAVES=[.4375,.5,.515625,.5625,.625,.6875,.75]
 TYPES=["DetectorPolar","DetectorRectangle","DetectorColor"]
@@ -21,8 +22,8 @@ def coefficients():
 
 async def model(e,kind,converted):
     if kind=="DetectorPolar"and converted:
-        spec=json.loads((PROJECT_ROOT/"reference_data/wavelength-filter.json").read_text(encoding="utf-8"))
-        fixture=Path(spec["fluorescence_fixture"]).resolve()
+        spec=json.loads((PROJECT_ROOT/"tests/reference_data/wavelength-filter.json").read_text(encoding="utf-8"))
+        fixture=fluorescence_fixture(spec)
         await e.call("open_lens",dict(path=str(fixture/"dilute_fluorescence.zos")))
         return fixture/"fluorescence.zrd",str(fixture/"dilute_fluorescence.zos"),True
     await setup(e,10)

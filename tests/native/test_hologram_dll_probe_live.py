@@ -8,7 +8,7 @@ from tests.support.native import execute
 @pytest.mark.zemax
 def test_hologram_dll_analysis_compatibility_probe():
     async def work(e):
-        await e.call('open_lens',dict(path=str(Path(r'C:\Program Files\ANSYS Inc\v242\Zemax OpticStudio\ZemaxData\Samples\Sequential\Diffractive components\Transmission hologram.zos'))))
+        await e.call('open_lens',dict(path=str(Path(r'C:\Program Files\ANSYS Inc\v261\Zemax OpticStudio\ZemaxData\Samples\Sequential\Diffractive components\Transmission hologram.zmx'))))
         await e.call('update_system_settings',dict(settings=dict(field_type='Angle')))
         resources=await e.call('get_system_resources',dict(request=dict(kind='surface_files',surface=1,surface_type='UserDefined')))
         names=resources['items']

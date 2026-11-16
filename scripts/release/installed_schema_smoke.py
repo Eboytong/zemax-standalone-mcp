@@ -8,7 +8,8 @@ from pathlib import Path
 from mcp import Client
 from mcp.client.stdio import StdioServerParameters
 
-async def run(target,folder,version,tool_count='107',analysis_count='146',mode='full'):
+async def run(target,folder,version,tool_count=None,analysis_count='146',mode='compact'):
+    if tool_count is None: tool_count = '11' if mode == 'compact' else '107'
     target=Path(target).resolve();folder=Path(folder).resolve();folder.mkdir(parents=True,exist_ok=False)
     sys.path.insert(0,str(target))
     import zemax_mcp

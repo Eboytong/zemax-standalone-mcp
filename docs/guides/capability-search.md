@@ -16,11 +16,21 @@
 
 完整索引使用`get_capabilities(topic="index",start=1,count=100)`分页，编号从1开始。`topic="dependencies"`返回指定能力的条件及修改作用。检索的`category`可选择`tool`或`analysis`，默认`all`。
 
+## 工程表达与复合需求
+
+检索在本地按能力名称、别名和说明评分。精确能力ID和名称优先；工程概念高于“镜头、计算、分析”等通用词。“加工误差、合格率”扩展为公差、蒙特卡洛和良率，“清晰程度”扩展为MTF和光斑，“光电接收面”扩展为探测器。
+
+“读取波前再保存候选设计”会拆成两个意图，分别检索后合并去重。在`limit`允许时，每个意图优先保留一个候选，再按相关度补齐。`category`同时过滤各个意图；`total_matches`表示过滤后的候选并集数量。
+
+结果按需增加三个字段：`intents`给出子需求及其候选能力ID，`expanded_terms`列出使用的工程扩展词，`retry_requests`最多提供两组可直接传给`search_capabilities`的参数。普通单意图、无扩展的检索沿用简短结果结构。
+
+Agent先检查候选用途、前置条件和副作用，再读取详情与参数契约。候选不合适时，可采用重检参数或工程术语改写，最多重检一轮；仍有歧义时向用户确认需求。检索返回能力候选，Agent根据模型状态、任务终态和用户目标决定执行顺序。例如先等待波前任务结束并读取结果，再保存候选设计。
+
 ## 两种披露模式
 
-`full`直接提供107个工具。`compact`提供11个固定入口：连接/断开、状态、能力搜索/详情、任务状态/结果/取消、请求状态，以及`query_capability`、`execute_capability`。全部107项操作和146种分析在compact中仍可通过能力ID调用。
+默认`compact`提供11个固定入口：连接/断开、状态、能力搜索/详情、任务状态/结果/取消、请求状态，以及`query_capability`、`execute_capability`。显式`full`直接提供107个工具。全部107项操作和146种分析在compact中仍可通过能力ID调用。
 
-安装时使用`-ToolMode compact`；已有客户端配置的env可设置`ZEMAX_TOOL_MODE=compact`，重启该MCP连接后生效。`start.ps1 -ToolMode compact`也可指定。两种模式使用同一个后台执行所有者。
+安装和启动默认使用compact。需要full时使用`install.ps1 -ToolMode full`、`start.ps1 -ToolMode full`或`start-2026r1.ps1 -ToolMode full`。模式优先级为显式参数、已有`ZEMAX_TOOL_MODE`环境值、默认compact。已有客户端配置可在env中设置`ZEMAX_TOOL_MODE=full`，重启连接后生效。两种模式使用同一个后台执行所有者。
 
 ```json
 {"topic":"detail","capability_id":"analysis:wavefront"}

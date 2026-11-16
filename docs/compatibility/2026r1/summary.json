@@ -1,0 +1,343 @@
+{
+  "updated": "2026-11-15T22:00:20.340385+08:00",
+  "native": {
+    "collected": 904,
+    "completed": 904,
+    "not_completed": 0,
+    "passed": 845,
+    "failed": 48,
+    "skipped": 11
+  },
+  "unit": {
+    "total": 3777,
+    "passed": 3764,
+    "failed": 0,
+    "skipped": 13
+  },
+  "problem_groups": {
+    "原生离焦 MTF 无效结果仍标为成功": 1,
+    "IGES 多配置图层限制": 1,
+    "NSC 分组转换原生错误": 3,
+    "材料 Abbe 数值参考超差": 1,
+    "相干 FFT 线扩散数值参考超差": 6,
+    "PSF 傅里叶与原生 MTF 数值超差": 4,
+    "散射路径 CDF 超差（观察到边界几何差异）": 1,
+    "评价函数浮点严格相等导致回读误拒绝": 1,
+    "导入模型原生追迹出现错误光线": 3,
+    "受控 .NET 回调装载返回空值": 1,
+    "CriticalRayData 原生结果不可用": 1,
+    "路径阈值过滤后未提供未分类通量": 1,
+    "ABgFile 散射资源接口不可用": 1,
+    "QuickYield 瞳采样数值参考超差": 2,
+    "RMS 视场图数值参考超差": 1,
+    "独立宏运行后未生成预期输出": 1,
+    "STAR 未返回有效数据": 7,
+    "STAR 导入回读为 ZST 容器路径": 3,
+    "曲面 MTF 圆瞳参考超差": 5,
+    "测试资源搬迁路径或历史输入缺失": 1,
+    "曲面 MTF 与 PSF 傅里叶参考超差": 1,
+    "STAR 温度拟合采样为0（输入恒温21度）": 1,
+    "STAR 组件刚体添加坐标断点未通过回读": 1
+  },
+  "modules_completed": 289,
+  "modules_total": 289,
+  "module_runs": 329,
+  "tools_seen": 107,
+  "tools_total": 107,
+  "analyses_seen": 146,
+  "analyses_total": 146,
+  "tools_missing": [],
+  "analyses_missing": [],
+  "tested_commit": "6182dd035b51730a71002a04a55b2320cb67ac7d",
+  "environment": {
+    "opticstudio": "2026 R1",
+    "api": "26.1.0",
+    "build": "260127",
+    "license": "EnterpriseEdition",
+    "python": "3.14.10 x64",
+    "mcp": "1.4.0"
+  },
+  "failed_tests": [
+    {
+      "test": "tests/native/test_analytic_analyses_live.py::test_parabolic_mirror_independent_references",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_cad_layer_modes_live.py::test_cad_iges_solid_surface_layer_diagnostic",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_coating_nsc_probe_live.py::test_mixed_plate_coating_face_discovery",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_conversion_live.py::test_nsc_group_conversion_reference_rays",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_extended_solves_live.py::test_material_solves_numeric_stdio[model]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_fft_spread_coherent_live.py::test_fft_coherent_line_pupil_slice[interior-psf_auto-128]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_fft_spread_coherent_live.py::test_fft_coherent_line_pupil_slice[interior-dft_knots-64]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_fft_spread_coherent_live.py::test_fft_coherent_line_pupil_slice[interior-dft_knots-128]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_fft_spread_coherent_live.py::test_fft_coherent_line_pupil_slice[guard-psf_auto-128]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_fft_spread_coherent_live.py::test_fft_coherent_line_pupil_slice[guard-dft_knots-64]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_fft_spread_coherent_live.py::test_fft_coherent_line_pupil_slice[guard-dft_knots-128]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_finite_imaging_live.py::test_cooke_finite_psf_mtf_energy_native[1-3]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_finite_imaging_live.py::test_cooke_finite_psf_mtf_energy_native[2-3]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_finite_imaging_live.py::test_cooke_finite_psf_mtf_energy_native[3-3]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_finite_scatter_live.py::test_finite_angle_sphere_transport_native[10]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_live.py::test_real_tools_over_stdio",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_model_cad_live.py::test_installed_mesh_geometry_native[oval.stl]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_model_dll_live.py::test_object_dll_controlled_native[DiffractionGrating.DLL]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_net_callback_live.py::test_controlled_net_callback_loader_and_disposal",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_nsc_analyses_live.py::test_critical_controlled_pass_fail_and_model_restoration",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_nsc_conversion_live.py::test_nsc_group_conversion_reference_rays",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_nsc_paths_reference_live.py::test_path_uncategorized_flux_against_independent_database_sum",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_property_pages_live.py::test_property_pages_stdio",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_quick_yield_refractive_live.py::test_quick_yield_refractive_fit_diagnostic[3]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_quick_yield_refractive_live.py::test_quick_yield_refractive_fit_diagnostic[6]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_rms_map_reference_live.py::test_rms_map_native_quadrature",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_spectral_phosphor_live.py::test_installed_phosphor_reference_native",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_standalone_macro_live.py::test_standalone_macro_arguments_output_and_process_close",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_star_analysis_live.py::test_star_analysis_availability_and_generic_creation",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_star_live.py::test_native_star_controlled_constant_data_and_shutdown[deformation]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_star_live.py::test_native_star_controlled_constant_data_and_shutdown[temperature]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_star_live.py::test_native_star_controlled_constant_data_and_shutdown[direct_index]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_surface_mtf_modes_live.py::test_surface_mtf_circular_pupil_and_complex_identity[fft-128-256-10]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_surface_mtf_modes_live.py::test_surface_mtf_circular_pupil_and_complex_identity[fft-256-256-10]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_surface_mtf_modes_live.py::test_surface_mtf_circular_pupil_and_complex_identity[huygens-256-256-10]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_surface_mtf_modes_live.py::test_surface_mtf_circular_pupil_and_complex_identity[huygens-256-512-5]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_surface_mtf_modes_live.py::test_surface_mtf_circular_pupil_and_complex_identity[huygens-512-512-5]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_surface_mtf_phase_identity_live.py::test_fft_surface_mtf_native_phase_identity_diagnostic",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_surface_mtf_psf_reference_live.py::test_surface_mtf_vs_independent_psf_fourier[fft]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_finite_imaging_live.py::test_cooke_finite_psf_mtf_energy_native[0-3]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_2026r1_star_preloaded_live.py::test_2026r1_star_fit_read_unload[temperature]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_2026r1_star_preloaded_live.py::test_2026r1_star_rigid_body_operations[add_coordinate_breaks]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_2026r1_star_each_live.py::test_2026r1_individual_star_analysis[star_align_check]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_2026r1_star_each_live.py::test_2026r1_individual_star_analysis[star_sys_viewer]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_2026r1_star_each_live.py::test_2026r1_individual_star_analysis[star_2d_def_plot]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_2026r1_star_each_live.py::test_2026r1_individual_star_analysis[star_perf_change]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_2026r1_star_each_live.py::test_2026r1_individual_star_analysis[star_index_vs_temp]",
+      "outcome": "failed"
+    },
+    {
+      "test": "tests/native/test_2026r1_star_each_live.py::test_2026r1_individual_star_analysis[star_inspect_fea]",
+      "outcome": "failed"
+    }
+  ],
+  "skipped_tests": [
+    {
+      "test": "tests/native/test_cad_multiple_live.py::test_native_cad_multiple_configurations",
+      "outcome": "skipped",
+      "reason": "tests\\native\\test_cad_multiple_live.py:65: in test_native_cad_multiple_configurations\n    if layer_failures:pytest.xfail('v242 CAD IGES layer output differs from adopted settings: '+str(layer_failures))\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE   _pytest.outcomes.XFailed: v242 CAD IGES layer output differs from adopted settings: [{'mode': 'all_by_layer', 'actual': [0, 65535], 'expected': [10, 11], 'rejected': True}, {'mode': 'all_at_once', 'actual': [0, 65535], 'expected': [10], 'rejected': True}]"
+    },
+    {
+      "test": "tests/native/test_conversion_optical_reference_live.py::test_conversion_polarized_plane_reference[group]",
+      "outcome": "skipped",
+      "reason": "tests\\native\\test_conversion_optical_reference_live.py:151: in test_conversion_polarized_plane_reference\n    if blocked:pytest.xfail(blocked[0])\n               ^^^^^^^^^^^^^^^^^^^^^^^^\nE   _pytest.outcomes.XFailed: 2024 R2 controlled dummy-boundary group conversion: native unknown start error; checkpoint restore/retrace accepted"
+    },
+    {
+      "test": "tests/native/test_hpc_live.py::test_hpc_native_preferences_success_readback",
+      "outcome": "skipped",
+      "reason": "('<REPO>\\\\.venv\\\\Lib\\\\site-packages\\\\anyio\\\\_backends\\\\_asyncio.py', 847, 'unhandled errors in a TaskGroup')"
+    },
+    {
+      "test": "tests/native/test_hpc_live.py::test_hpc_minimal_native_job_result_and_close[nsc]",
+      "outcome": "skipped",
+      "reason": "('<REPO>\\\\.venv\\\\Lib\\\\site-packages\\\\anyio\\\\_backends\\\\_asyncio.py', 847, 'unhandled errors in a TaskGroup')"
+    },
+    {
+      "test": "tests/native/test_hpc_live.py::test_hpc_minimal_native_job_result_and_close[tolerance]",
+      "outcome": "skipped",
+      "reason": "('<REPO>\\\\.venv\\\\Lib\\\\site-packages\\\\anyio\\\\_backends\\\\_asyncio.py', 847, 'unhandled errors in a TaskGroup')"
+    },
+    {
+      "test": "tests/native/test_hpc_live.py::test_hpc_minimal_native_job_result_and_close[global]",
+      "outcome": "skipped",
+      "reason": "('<REPO>\\\\.venv\\\\Lib\\\\site-packages\\\\anyio\\\\_backends\\\\_asyncio.py', 847, 'unhandled errors in a TaskGroup')"
+    },
+    {
+      "test": "tests/native/test_hpc_live.py::test_hpc_minimal_native_job_result_and_close[hammer]",
+      "outcome": "skipped",
+      "reason": "('<REPO>\\\\.venv\\\\Lib\\\\site-packages\\\\anyio\\\\_backends\\\\_asyncio.py', 847, 'unhandled errors in a TaskGroup')"
+    },
+    {
+      "test": "tests/native/test_surface_mtf_anisotropic_reference_live.py::test_fft_surface_mtf_independent_meridional_frequency_scales",
+      "outcome": "skipped",
+      "reason": "('<REPO>\\\\tests\\\\native\\\\test_surface_mtf_anisotropic_reference_live.py', 20, 'Skipped: Requires preserved native509 independent pupil evidence')"
+    },
+    {
+      "test": "tests/native/test_test_plates_live.py::test_test_plates_selected_native_cfgs_identity_and_reload",
+      "outcome": "skipped",
+      "reason": "('<REPO>\\\\tests\\\\native\\\\test_test_plates_live.py', 14, 'Skipped: Provide at least two original native catalog CFG presets in ZEMAX_TEST_PLATE_CFGS')"
+    },
+    {
+      "test": "tests/native/test_wavelength_filter_live.py::test_fluorescence_wavelength_membership_native[native_consistency]",
+      "outcome": "skipped",
+      "reason": "('<REPO>\\\\tests\\\\native\\\\test_wavelength_filter_live.py', 83, 'Skipped: explicit recorded fluorescence ZRD input missing')"
+    },
+    {
+      "test": "tests/native/test_wavelength_filter_live.py::test_fluorescence_wavelength_membership_native[numeric_membership]",
+      "outcome": "skipped",
+      "reason": "('<REPO>\\\\tests\\\\native\\\\test_wavelength_filter_live.py', 83, 'Skipped: explicit recorded fluorescence ZRD input missing')"
+    }
+  ],
+  "resolved_tests": [
+    "tests/native/test_confocal_live.py::test_confocal_two_paths_pinhole_and_reference_stdio",
+    "tests/native/test_conversion_live.py::test_nsc_pure_conversion_sources_and_reload",
+    "tests/native/test_diff_efficiency_live.py::test_diff_efficiency_hologram_runtime",
+    "tests/native/test_diff_efficiency_offaxis_live.py::test_unslanted_hologram_offaxis_reference[native]",
+    "tests/native/test_diff_efficiency_offaxis_live.py::test_unslanted_hologram_offaxis_reference[dll]",
+    "tests/native/test_directivity_plot_live.py::test_directivity_plot_stdio",
+    "tests/native/test_evaluation_live.py::test_native_ray_reference_and_diagnostic",
+    "tests/native/test_finite_ideal_phase_live.py::test_finite_ideal_surface_native[CoordinateBreak]",
+    "tests/native/test_finite_imaging_live.py::test_cooke_finite_psf_mtf_energy_native[1-2]",
+    "tests/native/test_finite_surface_live.py::test_finite_geometric_surface_equation_native[ChebyShv]",
+    "tests/native/test_finite_surface_live.py::test_finite_geometric_surface_equation_native[Tilted]",
+    "tests/native/test_glass_map_live.py::test_glass_map_native_catalog_points_and_lifecycle",
+    "tests/native/test_glass_trials_live.py::test_glass_trials_native_stdio",
+    "tests/native/test_nsc_conversion_live.py::test_nsc_pure_conversion_sources_and_reload",
+    "tests/native/test_nsc_units_live.py::test_nsc_units_native",
+    "tests/native/test_ray_diagrams_live.py::test_image_incidence_reflection_sign_and_before_refraction[mirror]",
+    "tests/native/test_ray_diagrams_live.py::test_image_incidence_reflection_sign_and_before_refraction[image_glass]",
+    "tests/native/test_ray_diagrams_live.py::test_image_incidence_reflection_sign_and_before_refraction[image_power]",
+    "tests/native/test_ray_diagrams_live.py::test_image_incidence_reflection_sign_and_before_refraction[image_power_glass]",
+    "tests/native/test_ray_diagrams_live.py::test_ray_diagram_field_range_and_finite_object_reference[fields_mixed]",
+    "tests/native/test_ray_diagrams_live.py::test_ray_diagram_field_range_and_finite_object_reference[fields_negative]",
+    "tests/native/test_ray_diagrams_live.py::test_ray_diagram_field_range_and_finite_object_reference[finite_object]",
+    "tests/native/test_release_handoffs_live.py::test_coating_layer_polarization_to_image_and_reload",
+    "tests/native/test_wavelength_detector_pairs_live.py::test_detector_wavelength_pair_native[fluorescence-DetectorPolar]",
+    "tests/native/test_zrd_replay_route_live.py::test_recorded_polar_replay_execution_native",
+    "tests/native/test_2026r1_star_preloaded_live.py::test_2026r1_star_fit_read_unload[deformation]",
+    "tests/native/test_2026r1_star_preloaded_live.py::test_2026r1_star_fit_read_unload[direct_index]",
+    "tests/native/test_2026r1_star_preloaded_live.py::test_2026r1_star_rigid_body_operations[rigid_body]",
+    "tests/native/test_2026r1_star_preloaded_live.py::test_2026r1_star_rigid_body_operations[configure]",
+    "tests/native/test_2026r1_star_preloaded_live.py::test_2026r1_star_rigid_body_operations[remove_from_fea]"
+  ]
+}

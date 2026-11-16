@@ -5,13 +5,14 @@ from pathlib import Path
 
 import pytest
 from tests.support.native import execute
+from tests.support.wavelength_fixture import fluorescence_fixture
 
 
 @pytest.mark.zemax
 def test_recorded_polar_replay_execution_native():
     async def work(e):
         spec=json.loads((Path(__file__).parent/"reference_data/wavelength-filter.json").read_text(encoding="utf-8"))
-        fixture=Path(spec["fluorescence_fixture"]).resolve()
+        fixture=fluorescence_fixture(spec)
         await e.call("open_lens",dict(path=str(fixture/"dilute_fluorescence.zos")))
         records=[]
         for expression in ("", "X_WAVERANGE(3,0.499,0.751)", "X_WAVERANGE(3,0.500,0.525)",

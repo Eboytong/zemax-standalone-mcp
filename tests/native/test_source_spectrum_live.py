@@ -10,7 +10,7 @@ from tests.support.native import execute
 @pytest.mark.zemax
 def test_source_spectrum_viewer_stdio():
     async def work(e):
-        await e.call("open_lens", dict(path=str(Path.home() / "Documents/Zemax/Samples/Non-sequential/Colorimetry/Example 1  Two-color mixing gives white.zos")))
+        await e.call("open_lens", dict(path=str(Path.home() / "Documents/Zemax/Samples/Non-sequential/Colorimetry/Example 1  Two-color mixing gives white.zmx")))
         baseline=await e.call('get_system_settings')
         objects=await e.call('get_nsc_objects',dict(request={}))
         result = await e.finish(await e.call("run_analysis", dict(request=dict(kind="source_spectrum_viewer"))))

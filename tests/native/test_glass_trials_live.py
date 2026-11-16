@@ -17,9 +17,9 @@ def test_glass_trials_native_stdio():
             dict(surface=2,semi_diameter=5,radius=-40,thickness=2,material='N-F2',replace_solves=True),dict(surface=3,semi_diameter=5,radius=-150,thickness=90,replace_solves=True)]))
         original=await e.call('get_surfaces');settings=await e.call('get_system_settings');revision=(await e.call('get_status'))['model_revision']
         q=dict(kind='glass_trials',groups=[dict(first_surface=1,last_surface=2),dict(first_surface=2,last_surface=3)],catalogs=['SCHOTT'],
-            variables=[dict(surface=3,cell='thickness',minimum=65,maximum=110)],objectives=[dict(metric='rms_spot')],max_candidates=4)
+            variables=[dict(surface=3,cell='thickness',minimum=65,maximum=110)],objectives=[dict(metric='rms_spot')],max_candidates=8)
         r=await e.finish(await e.call('run_analysis',dict(request=q)),timeout_seconds=180)
-        assert r['summary']['succeeded']==5,r
+        assert r['summary']['succeeded']==r['summary']['candidate_count']==q['max_candidates']+1,r
         assert any(abs(row['identity']['nd']-r['rows'][0]['identity']['nd'])>1e-8 for row in r['rows'])
         assert r['resources']['all_copies_closed'] and not r['resources']['cleanup_errors']
         c=r['contributions'];n=c['native_reference']

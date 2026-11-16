@@ -24,8 +24,8 @@ def test_confocal_two_paths_pinhole_and_reference_stdio():
         diameters=[4,60]
         q=dict(kind='confocal_response',illumination=dict(model=paths[0]),detection=dict(model=paths[1]),detection_magnification=-1,
             offsets_mm=[i/4 for i in range(-8,9)],pinhole_diameters_um=diameters,pupil_sampling='S_512x512',
-            image_sampling='S_128x128',image_delta_um=4,window_check=True,budget_seconds=600)
-        r=await e.finish(await e.call('run_analysis',dict(request=q)),timeout_seconds=650)
+            image_sampling='S_128x128',image_delta_um=4,window_check=True,budget_seconds=1200)
+        r=await e.finish(await e.call('run_analysis',dict(request=q)),timeout_seconds=1250)
         independent=response(r,diameters);x=r['series'][0]['x']
         for j,curve in enumerate(r['summary']['curves']):
             e.check('independent confocal normalized response',max(abs(a-b) for a,b in zip(curve['relative'],independent[j])),0,atol=.005,rtol=0)

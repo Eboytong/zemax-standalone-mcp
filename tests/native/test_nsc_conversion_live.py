@@ -3,6 +3,7 @@ import asyncio
 from pathlib import Path
 import pytest
 from tests.support.native import execute
+from tests.native.test_pure_conversion_reference_live import compare_saved
 
 async def cooke(e):
     await e.call('open_lens',dict(path=str(Path.home()/'Documents/Zemax/Samples/Sequential/Objectives/Cooke 40 degree field.zos')))
@@ -44,7 +45,7 @@ def test_nsc_pure_conversion_sources_and_reload():
         saved=e.folder/'converted-pure.zos'
         await e.call('save_lens_as',dict(path=str(saved)))
         await e.call('open_lens',dict(path=str(saved)))
-        assert (await e.call('get_nsc_objects',dict(request=dict(start=1,count=20))))==objects
+        compare_saved(e,await e.call('get_nsc_objects',dict(request=dict(start=1,count=20))),objects)
     asyncio.run(execute('conversion026_pure',work))
 
 @pytest.mark.zemax

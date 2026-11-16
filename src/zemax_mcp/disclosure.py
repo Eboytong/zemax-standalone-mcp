@@ -27,7 +27,7 @@ READ_ONLY = frozenset({
 
 
 def mode_value(mode=None):
-    value = mode or os.environ.get('ZEMAX_TOOL_MODE', 'full')
+    value = mode or os.environ.get('ZEMAX_TOOL_MODE', 'compact')
     if value not in {'full', 'compact'}:
         raise ValueError('ZEMAX_TOOL_MODE must be full or compact')
     return value

@@ -16,19 +16,23 @@ def test_glass_map_native_catalog_points_and_lifecycle():
         assert result["analysis_kind"]=="glass_map",result
         assert result["task"]["state"]=="succeeded"
         assert result["task"]["settings"]["native"]["IsValid"] is True
-        assert result["native_report_count"]==result["sample_count"]==346
+        count=len(result['rows'])
+        assert result["native_report_count"]==result["sample_count"]==count and count>0
         assert "SCHOTT" in result["system_settings"]["material_catalogs"]
         row=next(item for item in result["rows"] if item["material"]=="N-BK7")
         agf=Path.home()/"Documents"/"Zemax"/"Glasscat"/"SCHOTT.AGF"
+        _,entries=read_catalog(agf)
+        matched=match_rows(result['rows'],entries)
+        assert not matched['missing'] and not matched['mismatched'],matched
         catalog_row=next(line.split() for line in agf.read_text(encoding="utf-8-sig").splitlines()
                          if line.split()[:2]==["NM","N-BK7"])
         e.check("N-BK7 catalog Nd",row["refractive_index_nd"],float(catalog_row[4]),atol=5e-6,rtol=0)
         e.check("N-BK7 catalog Vd",row["abbe_vd"],float(catalog_row[5]),atol=.005,rtol=0)
         scatter=result["scatter"][0]
         assert scatter["x_axis_direction"]=="decreasing_left_to_right"
-        assert len(scatter["points"])==346
+        assert len(scatter["points"])==count
         page=await e.call("get_task_result",dict(task_id=result["task"]["task_id"],start=0,count=3))
-        assert len(page["rows"])==3 and page["total"]==346
+        assert len(page["rows"])==3 and page["total"]==count
         image=await e.call("export_analysis_image",dict(request=dict(task_id=result["task"]["task_id"],path=str(e.folder/"glass-map.png"))))
         assert Path(image["artifacts"][0]["path"]).is_file()
         assert await e.call("get_system_settings")==baseline

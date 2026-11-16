@@ -53,7 +53,7 @@ def test_frozen_sixty_queries():
     for case in cases:
         found={e['capability_id'] for e in search(case['query'])['items']}
         if not (bool(found & set(case['expected'])) if case['expected'] else not found): failures.append(case['id'])
-    assert len(failures)<=3,failures
+    assert failures == [],failures
 
 
 def test_shared_handlers_preserve_wrappers_partial_updates_and_defaults():
@@ -87,9 +87,13 @@ def test_shared_handlers_preserve_wrappers_partial_updates_and_defaults():
 
 
 def test_mode_is_startup_fixed_and_invalid_mode_rejected(monkeypatch):
+    monkeypatch.delenv('ZEMAX_TOOL_MODE', raising=False)
+    assert mode_value() == 'compact'
     monkeypatch.setenv('ZEMAX_TOOL_MODE','compact')
     assert mode_value()=='compact'
     assert mode_value('full')=='full'
+    monkeypatch.setenv('ZEMAX_TOOL_MODE','full')
+    assert mode_value() == 'full'
     with pytest.raises(ValueError):mode_value('dynamic')
 
 
@@ -153,7 +157,8 @@ def test_real_stdio_compact_directory_discovery_error_and_reuse(tmp_path):
     async def run():
         root=Path(__file__).parents[2]
         params=StdioServerParameters(command=sys.executable,args=['-B','-m','zemax_mcp'],cwd=str(root),
-            env=os.environ|{'PYTHONPATH':str(root/'src'),'ZEMAX_TOOL_MODE':'compact','ZEMAX_OUTPUT_DIR':str(tmp_path)})
+            env={key:value for key,value in os.environ.items() if key != 'ZEMAX_TOOL_MODE'} |
+                {'PYTHONPATH':str(root/'src'),'ZEMAX_OUTPUT_DIR':str(tmp_path)})
         async with Client(params) as client:
             tools=(await client.list_tools()).tools
             assert {t.name for t in tools}==BOOTSTRAP|{'query_capability','execute_capability'}

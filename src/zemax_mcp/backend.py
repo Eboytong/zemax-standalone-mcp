@@ -1513,7 +1513,7 @@ class Backend(CandidatesMixin, HpcMixin, StarMixin, ConversionMixin, MaterialsMi
                 row=mfe.GetOperandAt(number)
                 if str(row.Type)!=expected_type:raise ZemaxError('SETTING_REJECTED','评价函数最终行类型已改变。',operand=number,requested=expected_type,actual=str(row.Type))
                 for field in ('target','weight'):
-                    if field in fields and float(getattr(row,field.title()))!=float(getattr(item,field)):raise ZemaxError('SETTING_REJECTED','评价函数最终目标或权重未采用。',operand=number,field=field,requested=getattr(item,field),actual=float(getattr(row,field.title())))
+                    if field in fields and not math.isclose(float(getattr(row,field.title())),float(getattr(item,field)),rel_tol=1e-12,abs_tol=1e-12):raise ZemaxError('SETTING_REJECTED','评价函数最终目标或权重未采用。',operand=number,field=field,requested=getattr(item,field),actual=float(getattr(row,field.title())))
                 for column,value in item.parameters.items():
                     actual=self._cell_value(row.GetCellAt(column))
                     if actual!=value:raise ZemaxError('SETTING_REJECTED','评价函数最终参数未采用。',operand=number,column=column,requested=value,actual=actual)

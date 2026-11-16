@@ -1,6 +1,7 @@
 """Controlled equations for the eight planned geometric surface families."""
 import asyncio
 import json
+import math
 import pytest
 from tests.support.native import execute
 from tests.support.finite_reference import snell,sellmeier,glass_coefficients
@@ -34,9 +35,10 @@ def test_finite_geometric_surface_equation_native(kind):
             await e.call('update_surfaces',dict(changes=[dict(surface=2,parameters={13:6},replace_solves=True)]))
         cells=(await e.call('get_surfaces',dict(start=2,count=1)))['surfaces'][0]['cells']
         change=dict(surface=2,replace_solves=True,parameters=CASES[kind])
-        R=50 if cells['radius']['writable'] else None
+        R=50 if cells['radius']['writable'] and kind!='Tilted' else None
         if R is not None:change['radius']=R
-        if cells['conic']['writable']:change['conic']=0
+        conic=cells['conic']['value']
+        if cells['conic']['writable'] and isinstance(conic,(int,float)) and math.isfinite(conic):change['conic']=0
         if kind=='GridSag':
             path=e.folder/'grid.dat';lines=['65 65 0.25 0.25 0']
             for iy in range(65):
