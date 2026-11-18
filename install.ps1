@@ -8,7 +8,7 @@ $ErrorActionPreference = 'Stop'
 $PackageRoot = $PSScriptRoot
 & $PythonExe -c "import sys,struct; assert sys.version_info[:2] == (3,14), 'Python 3.14 required'; assert struct.calcsize('P') == 8, 'x64 Python required'"
 if ($LASTEXITCODE -ne 0) { throw 'Python 3.14 x64 is required.' }
-$Wheel = Get-Item -LiteralPath (Join-Path $PackageRoot 'releases\1.4.2\zemax_standalone_mcp-1.4.2-py3-none-any.whl')
+$Wheel = Get-Item -LiteralPath (Join-Path $PackageRoot 'releases\1.4.3\zemax_standalone_mcp-1.4.3-py3-none-any.whl')
 if (-not $ToolMode) {
     if ($env:ZEMAX_TOOL_MODE) { $ToolMode = $env:ZEMAX_TOOL_MODE }
     else { $ToolMode = 'compact' }

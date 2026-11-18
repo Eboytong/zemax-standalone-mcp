@@ -115,6 +115,7 @@ def build_index():
     from .models import COMMAND_MODELS
     from .disclosure import contracts, READ_ONLY
     from .schema_disclosure import reachable, select_branch
+    from .readiness import contract
     descriptions = _descriptions()
     handlers = contracts()
     result = []
@@ -138,6 +139,7 @@ def build_index():
         item['selector'] = ['kind', kind]
         result.append(item)
     for item in result:
+        item.update(contract(item['tool_name'], item['analysis_kind']))
         item['read_only'] = item['tool_name'] in READ_ONLY
         item['layer'] = ('optional_workflow' if item['name'] in {'glass_trials','design_desensitize','run_merit_program'}
             else 'service' if item['tool_name'] in {'manage_candidates','run_candidate_evaluation','get_task_result','get_task_status','search_capabilities','get_capabilities'}
@@ -313,7 +315,8 @@ def describe(req):
         if entry is None:
             raise ZemaxError("UNKNOWN_CAPABILITY", "能力编号不存在。", capability_id=req.capability_id)
         if req.topic == "dependencies":
-            return {key: entry[key] for key in ("capability_id", "prerequisites", "availability", "effect")}
+            return {key: entry[key] for key in ("capability_id", "prerequisites", "availability", "effect",
+                                                "requirements", "produces", "preflight_profiled")}
         from .schema_disclosure import select_branch, restrict_analyses
         result = dict(entry)
         if req.action:
@@ -322,7 +325,8 @@ def describe(req):
             result['request_schema'] = restrict_analyses(result['request_schema'], req.analysis_kinds)
         if not req.include_metadata:
             result = {key: result[key] for key in ('capability_id','tool_name','analysis_kind','description',
-                'units','prerequisites','effect','result','read_only','layer','request_schema')}
+                'units','prerequisites','effect','result','read_only','layer','request_schema',
+                'requirements','produces','preflight_profiled')}
         return {**result, **usage(entry)}
     selected = entries[req.start - 1:req.start - 1 + req.count]
     return dict(total=len(entries), start=req.start, count=len(selected),

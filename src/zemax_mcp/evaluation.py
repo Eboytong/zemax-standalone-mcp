@@ -100,7 +100,9 @@ class EvaluationMixin:
         except Exception as exc:
             task["state"] = "failed"
             task["error"] = self._evaluation_error(exc)
-            task["result"] = {**result, "task": self._task_view(task)}
+            view = self._task_view(task)
+            task["result"] = {**result, "completed": False, "error": task["error"],
+                              "task": view, "outcome": view.get('outcome')}
         self._record_task_history(task)
         self.active = None
 
@@ -212,8 +214,10 @@ class EvaluationMixin:
                     except Cancelled:raise
                     except Exception as exc:
                         row.update(state="failed",error=self._evaluation_error(exc))
+                        task["rows"].append(row)
                         if self.requires_reconnect:raise
-                    task["rows"].append(row);task["progress"]=int((i+1)*100/len(req.configurations));yield
+                    else:task["rows"].append(row)
+                    task["progress"]=int((i+1)*100/len(req.configurations));yield
             finally:self._restore_model(task,snapshot,source,work)
         return self._composite("configuration_evaluation",req.model_dump(),flow)
 
@@ -246,8 +250,10 @@ class EvaluationMixin:
                     except Cancelled:raise
                     except Exception as exc:
                         row.update(state="failed",error=self._evaluation_error(exc))
+                        task["rows"].append(row)
                         if self.requires_reconnect:raise
-                    task["rows"].append(row);task["progress"]=int((i+1)*100/len(req.starts));yield
+                    else:task["rows"].append(row)
+                    task["progress"]=int((i+1)*100/len(req.starts));yield
                 finished=True
             finally:
                 self._restore_model(task,snapshot,source,work)
@@ -283,8 +289,11 @@ class EvaluationMixin:
                 row = {"index": i, "value" if scan else "path": item}
                 task["status"] = f"评估 {i+1}/{len(items)}"
                 try:
+                    path = Path(snapshot if scan else item).resolve()
+                    if not scan and not path.is_file():
+                        raise ZemaxError("INVALID_INPUT_FILE", "评估镜头文件不存在。", path=str(path))
                     self.revision += 1
-                    if not self.system.LoadFile(snapshot if scan else str(Path(item).resolve()), False):
+                    if not self.system.LoadFile(str(path), False):
                         raise ZemaxError("LOAD_FAILED", "评估镜头加载失败。")
                     self._require_sequential()
                     self.work_path = None
@@ -302,12 +311,13 @@ class EvaluationMixin:
                     raise
                 except Exception as exc:
                     row.update(state="failed", error=self._evaluation_error(exc))
+                    task["rows"].append(row)
                     if self.requires_reconnect:
-                        task["rows"].append(row)
                         raise
                     if scan and not self.system.LoadFile(snapshot, False):
+                        self.requires_reconnect = True
                         raise ZemaxError("RESTORE_FAILED", "扫描点基线重载失败。")
-                task["rows"].append(row)
+                else:task["rows"].append(row)
                 task["progress"] = int(100 * (i+1) / len(items))
                 yield
         finally:

@@ -13,7 +13,9 @@ def test_saved_task_products_are_exposed_only_after_successful_save(tmp_path):
     backend._save_task_result(task, {"summary": {"value": 2}})
     view = backend._task_view(task)
     assert view["result_path"] == str(tmp_path / "saved.json")
-    assert view["result_artifacts"] == [{"kind": "json", "path": str(tmp_path / "saved.json")}]
+    assert view["result_artifacts"] == [{"kind": "json", "path": str(tmp_path / "saved.json"),
+                                        "source_task_id": "saved", "model_revision": None,
+                                        "calculation_source": None}]
     assert json.loads((tmp_path / "saved.json").read_text(encoding="utf-8"))["task"]["task_id"] == "saved"
 
 

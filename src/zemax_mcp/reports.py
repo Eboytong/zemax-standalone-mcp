@@ -4,6 +4,8 @@ from html import escape
 from pathlib import Path
 from .data import clean
 from .errors import ZemaxError
+from .outcome import populate_outcome
+from .result_metadata import axis_caption, result_metadata, write_series_csv
 
 PDF_ROW_LIMIT=200
 
@@ -30,6 +32,7 @@ def report_assets(folder,results,title,charts,pdf):
         except ImportError as exc:raise ZemaxError("MISSING_DEPENDENCY","图表需要安装项目 reports 依赖。") from exc
     for item in results:
         task_id=item["task_id"];r=item["result"]
+        result_metadata(populate_outcome(r))
         for artifact in r.get("artifacts",[]):
             if artifact.get("kind")in {"beam","intermediate_beam"}:
                 from .beam_files import iter_beam_samples
@@ -64,6 +67,13 @@ def report_assets(folder,results,title,charts,pdf):
                     fig.colorbar(image,ax=ax)
                     png=folder/(task_id+f'_scatter{index}.png');fig.savefig(png,dpi=180);figures.append(png)
                 finally:plt.close(fig)
+        if r.get('series'):
+            series_path = folder / (task_id + '_series.csv')
+            write_series_csv(series_path, r['series'])
+            artifacts.append(dict(kind='series_csv', path=str(series_path), schema_version=1,
+                                  axes=[s['axes'] for s in r['series']], **{
+                                      k: r['provenance'].get(k) for k in (
+                                          'source_task_id', 'model_revision', 'calculation_source', 'actual_settings')}))
         for s in r.get("series",[]):
             path=folder/(task_id+f"_series{s['series']}.csv")
             with path.open("w",encoding="utf-8-sig",newline="") as f:
@@ -72,7 +82,7 @@ def report_assets(folder,results,title,charts,pdf):
             if plt:
                 fig,ax=plt.subplots(figsize=(7,4),layout="constrained")
                 for j,label in enumerate(s["labels"]):ax.plot(s["x"],[row[j] for row in s["y"]],label=label)
-                xlabel=(s["x_label"]if s["x_label"]not in {"None",""}else "原生横轴")+f" ({s.get('x_unit','单位见分析设置')})"
+                xlabel=axis_caption(s['axes']['x'], '原生横轴')
                 ax.set(xlabel=xlabel,title=s["description"]);ax.grid(alpha=.25);ax.legend(fontsize=8)
                 png=path.with_suffix(".png");fig.savefig(png,dpi=180);plt.close(fig);figures.append(png)
         for g in r.get("grids",[]):
@@ -97,7 +107,9 @@ def report_assets(folder,results,title,charts,pdf):
                 import numpy as np
                 values=np.array([[float("nan")if v is None else v for v in row]for row in g["values"]])
                 im=ax.imshow(values,origin="lower",extent=[g["min_x"]-.5*g["dx"],g["min_x"]+(g["nx"]-.5)*g["dx"],g["min_y"]-.5*g["dy"],g["min_y"]+(g["ny"]-.5)*g["dy"]],aspect="auto")
-                ax.set(xlabel=(g["x_label"]if g["x_label"]not in {"None",""}else"X")+f" ({g.get('x_unit','原生网格坐标')})",ylabel=(g["y_label"]if g["y_label"]not in {"None",""}else"Y")+f" ({g.get('y_unit','原生网格坐标')})",title=g["description"]);fig.colorbar(im,ax=ax,label=g["value_label"]if g["value_label"]not in {"None",""}else g.get("value_unit","原生数值（单位见结果原文）"))
+                axes = g['axes']
+                ax.set(xlabel=axis_caption(axes['x'], 'X'), ylabel=axis_caption(axes['y'], 'Y'), title=g['description'])
+                fig.colorbar(im, ax=ax, label=axis_caption(axes['value'], '数值'))
                 png=path.with_suffix(".png");fig.savefig(png,dpi=180);plt.close(fig);figures.append(png)
     for p in figures:
         if not any(a["path"]==str(p)for a in artifacts):artifacts.append(dict(kind="plot",path=str(p),image_source="data_plot"))
@@ -117,7 +129,7 @@ def report_assets(folder,results,title,charts,pdf):
         for item in results:
             r=item["result"]
             story.append(Spacer(1,8));story.append(Paragraph("任务 "+escape(item["task_id"]),heading))
-            for key in ("task","context","system_settings","baseline","restoration","error","artifacts","native_preamble","unavailable_trace_tasks","coupling_definition"):
+            for key in ("task","context","system_settings","baseline","restoration","outcome","provenance","error","artifacts","native_preamble","unavailable_trace_tasks","coupling_definition"):
                 if r.get(key)is not None:
                     story.append(Paragraph(escape(key),body))
                     for line in json.dumps(pdf_preview(clean(r[key])),ensure_ascii=False,indent=2).splitlines():story.append(Paragraph(escape(line),body))
@@ -153,6 +165,8 @@ def report_assets(folder,results,title,charts,pdf):
 
 
 def export_saved_report(folder,results,title,charts,formats):
+    for item in results:
+        result_metadata(populate_outcome(item['result']))
     json_path, csv_path, md_path = folder/"results.json", folder/"metrics.csv", folder/"report.md"
     json_path.write_text(json.dumps(clean(results), ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8")
     lines = ["# " + title.replace("\n", " "), "", "[完整 JSON](results.json) · [指标 CSV](metrics.csv)", ""]
@@ -162,7 +176,7 @@ def export_saved_report(folder,results,title,charts,formats):
         for item in results:
             result = item["result"]
             lines += ["## 任务 " + item["task_id"], "", "```json", json.dumps(clean({
-                k: result.get(k) for k in ("task", "context", "system_settings", "baseline", "summary", "restoration", "error", "artifacts", "unavailable_trace_tasks", "coupling_definition")}), ensure_ascii=False, indent=2), "```", ""]
+                k: result.get(k) for k in ("task", "context", "system_settings", "baseline", "summary", "restoration", "outcome", "provenance", "error", "artifacts", "unavailable_trace_tasks", "coupling_definition")}), ensure_ascii=False, indent=2), "```", ""]
             for row in result.get("rows", []):
                 for metric in row.get("metrics") or [{}]:
                     writer.writerow([item["task_id"], row.get("index"), row.get("value", row.get("path")),

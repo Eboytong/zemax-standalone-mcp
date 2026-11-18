@@ -7,6 +7,8 @@ import re
 import uuid
 from .data import clean, utc_now
 from .errors import ZemaxError
+from .outcome import populate_outcome
+from .result_metadata import result_metadata
 
 ID=re.compile(r'^[0-9a-f]{32}$')
 REQUEST_ID=re.compile(r'^[A-Za-z0-9_-]{1,128}$')
@@ -20,6 +22,20 @@ def write_json(path, value, create_parent=True):
         temporary.write_text(json.dumps(clean(value),ensure_ascii=False,indent=2,allow_nan=False),encoding='utf-8')
         os.replace(temporary,path)
     finally:temporary.unlink(missing_ok=True)
+
+
+def claim_json(path, value):
+    """Publish a complete receipt without replacing an existing Windows file."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(path.name + '.' + uuid.uuid4().hex + '.tmp')
+    try:
+        temporary.write_text(json.dumps(value, ensure_ascii=False, allow_nan=False), encoding='utf-8')
+        os.rename(temporary, path)
+        return True
+    except FileExistsError:
+        return False
+    finally:
+        temporary.unlink(missing_ok=True)
 
 def read_json(path):
     try:
@@ -42,6 +58,31 @@ class RequestJournal:
             worker_instance_id=self.worker,pid=os.getpid(),state='dispatching',started_at=utc_now())
         write_json(self.root/(request_id+'.json'),record)
         return record
+
+    def reserve(self, request_id, command, arguments):
+        if not ID.fullmatch(request_id):
+            raise ZemaxError('INVALID_REQUEST_ID', 'request_id 须为 32 位小写十六进制。')
+        path = (self.root / (request_id + '.json')).resolve()
+        if self.root.resolve().parent != self.base or path.parent != self.root.resolve():
+            raise ZemaxError('INVALID_HISTORY_PATH', '请求回执路径无效。')
+        record = dict(schema_version=1, request_id=request_id, command=command, arguments=arguments,
+                      worker_instance_id=self.worker, pid=os.getpid(), state='dispatching',
+                      started_at=utc_now(), client_assigned=True)
+        if claim_json(path, record):
+            return record, None
+        previous = read_json(path)
+        # Canonicalize object key order without coercing booleans or scalar types.
+        canonical = lambda value: json.dumps(value, sort_keys=True, ensure_ascii=False, allow_nan=False)
+        if (previous.get('request_id') != request_id or previous.get('command') != command
+                or canonical(previous.get('arguments')) != canonical(arguments)):
+            raise ZemaxError('REQUEST_ID_CONFLICT', '该请求编号已用于不同的调用。')
+        if previous.get('state') == 'returned' and 'response' in previous:
+            return None, previous['response']
+        state = ('returned' if previous.get('state') == 'returned' else
+                 'dispatching' if previous.get('worker_instance_id') == self.worker else 'unknown_after_worker_exit')
+        return None, dict(ok=True, data={**previous, 'observed_execution_state': state}, error=None,
+                          context={'request_id': request_id}, warnings=[], artifacts=previous.get('artifacts', []))
+
     def finish(self, record, response):
         if record is None:return
         context=response.get('context',{})
@@ -51,6 +92,8 @@ class RequestJournal:
         record.update(state='returned',finished_at=utc_now(),ok=response.get('ok'),error=response.get('error'),
             session_id=context.get('session_id'),model_revision=context.get('model_revision'),task_id=task_id,
             artifacts=response.get('artifacts',[]))
+        if record.get('client_assigned'):
+            record['response'] = response
         write_json(self.root/(record['request_id']+'.json'),record)
 
 class HistoryMixin:
@@ -71,7 +114,7 @@ class HistoryMixin:
             if not result_path and task.get('state')in ('failed','cancelled')and isinstance(task.get('result'),dict):
                 path=folder/(task['task_id']+'.json')
                 result={**task['result'],'result_schema_version':RESULT_VERSION,'task':self._task_view(task),'context':task.get('context',{}),'artifacts':[]}
-                write_json(path,result);task['result_path']=str(path);result_path=str(path)
+                write_json(path,result_metadata(populate_outcome(result)));task['result_path']=str(path);result_path=str(path)
             record=dict(history_schema_version=1,result_schema_version=RESULT_VERSION,task=self._task_view(task),
                 session_id=session,result_path=result_path,close_attempted=task.get('close_attempted',False),
                 cleanup_warnings=task.get('cleanup_warnings',[]),recorded_at=utc_now())
@@ -145,17 +188,14 @@ class HistoryMixin:
             record=read_json(index_path)
             result['task']=record['task']
         result.update(history=dict(origin='disk',session_id=req.session_id,live_native_state='not_observed',result_schema_version=version))
-        if req.series is not None:
-            series=result.get('series',[])
-            if req.series>=len(series):raise ZemaxError('INDEX_OUT_OF_RANGE','历史曲线编号越界。')
-            item=series[req.series];end=min(req.start+req.count,len(item['x']))
-            return {**{k:result[k]for k in ('task','context','artifacts','history')if k in result},'series':[{**item,'x':item['x'][req.start:end],'y':item['y'][req.start:end]}], 'total':len(item['x']), 'next_start':end if end<len(item['x'])else None}
-
+        result_metadata(populate_outcome(result))
         return self._page_task_result(result,req)
 
     def get_request_status(self, req):
         path=(self._history_root()/'_requests'/(req.request_id+'.json')).resolve()
         if path.parent!=(self._history_root()/'_requests').resolve() or not path.is_relative_to(self._history_root()):raise ZemaxError('INVALID_HISTORY_PATH','请求回执路径无效。')
+        if not path.exists():
+            return dict(request_id=req.request_id, observed_execution_state='not_registered')
         record=read_json(path)
         if record.get('request_id')!=req.request_id:raise ZemaxError('INVALID_RESULT_DATA','回执请求编号不匹配。')
         state=record.get('state')

@@ -8,6 +8,38 @@ import threading
 from .backend import Backend
 from .config import Config
 from .history import RequestJournal
+from .errors import ZemaxError
+
+
+def handle_frame(backend, journal, frame):
+    command = frame.get('command', '')
+    arguments = frame.get('arguments', {})
+    supplied = frame.get('request_id')
+    request_id = supplied if supplied is not None else frame.get('id')
+    record = None
+    journal_error = None
+    try:
+        if supplied is not None:
+            record, replay = journal.reserve(request_id, command, arguments)
+            if replay is not None:
+                return replay
+        else:
+            record = journal.begin(request_id, command, arguments)
+    except Exception as exc:
+        if supplied is not None:
+            error = exc.as_dict() if isinstance(exc, ZemaxError) else dict(
+                code='REQUEST_RECEIPT_FAILED', message='请求回执未确认，操作未派发。', details={'reason': str(exc)})
+            return dict(ok=False, data=None, context={'request_id': request_id}, error=error, warnings=[], artifacts=[])
+        journal_error = str(exc)
+    response = backend.dispatch(command, arguments, request_id=request_id)
+    response.setdefault('context', {})['request_id'] = request_id
+    try:
+        journal.finish(record, response)
+    except Exception as exc:
+        journal_error = str(exc)
+    if journal_error:
+        response.setdefault('warnings', []).append('请求回执写入失败：' + journal_error)
+    return response
 
 
 def main():
@@ -41,20 +73,7 @@ def main():
                 continue
             if frame is None:
                 break
-            record = None
-            journal_error = None
-            try:
-                record = journal.begin(frame.get("id"), frame.get("command", ""), frame.get("arguments", {}))
-            except Exception as exc:
-                journal_error = str(exc)
-            response = backend.dispatch(frame.get("command", ""), frame.get("arguments", {}), request_id=frame.get("id"))
-            response.setdefault("context", {})["request_id"] = frame.get("id")
-            try:
-                journal.finish(record, response)
-            except Exception as exc:
-                journal_error = str(exc)
-            if journal_error:
-                response.setdefault("warnings", []).append("请求回执写入失败：" + journal_error)
+            response = handle_frame(backend, journal, frame)
             sys.stdout.write("@zemax-ipc " + json.dumps({"id": frame.get("id"), "response": response}, ensure_ascii=False, allow_nan=False) + "\n")
     except BrokenPipeError:
         pass

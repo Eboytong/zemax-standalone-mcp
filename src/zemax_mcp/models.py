@@ -20,6 +20,7 @@ class Capabilities(Request):
     action: str | None = None
     analysis_kinds: list[str] | None = None
     include_metadata: bool = False
+    arguments: dict[str, Any] | None = None
 
 
 class ToolResponse(BaseModel):

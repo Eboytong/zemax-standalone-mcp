@@ -79,7 +79,7 @@ def test_real_stdio_offline_discovery(tmp_path):
             env={'PYTHONPATH': source, 'PYTHONUTF8': '1', 'ZEMAX_TOOL_MODE': 'full', 'ZEMAX_OUTPUT_DIR': str(tmp_path)})
         async with Client(params, read_timeout_seconds=60) as client:
             tools = (await client.list_tools()).tools
-            assert {tool.name for tool in tools} == set(COMMAND_MODELS)
+            assert {tool.name for tool in tools} == set(COMMAND_MODELS) | {'execute_capability'}
             tool = next(t for t in tools if t.name == 'search_capabilities')
             assert tool.annotations.read_only_hint is True
             result = (await client.call_tool('search_capabilities', {'query': '镀膜反射率'})).structured_content

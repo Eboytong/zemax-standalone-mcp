@@ -13,7 +13,7 @@ def test_unknown_units_render_without_relabeling_result(tmp_path,monkeypatch,kin
     if kind=='series':data.update(series=0,x=[1,2],y=[[1],[2]],labels=['PMVA'])
     else:data.update(nx=2,ny=2,min_x=1,min_y=1,dx=1,dy=1,values=[[1,2],[1,2]])
     result=export_image({kind if kind=='series'else'grids':[data]},NS(source='data_plot',item=0,width=400,height=300),tmp_path/(kind+'.png'))
-    assert 'parameter (单位见结果)'in labels
+    assert 'parameter (单位未知)'in labels
     assert data['x_unit']is None and result['image_source']=='data_plot'
 
 

@@ -210,6 +210,7 @@ class CandidatesMixin:
                     recovery_checkpoint=before, context=self.context())
 
     def run_candidate_evaluation(self, req):
+        from .evaluation import Cancelled
         from .models import Evaluation
         index, path = self._candidate_index(req.design_id)
         if len(set(req.candidate_ids)) != len(req.candidate_ids):
@@ -224,21 +225,32 @@ class CandidatesMixin:
             try:
                 for i, entry in enumerate(entries):
                     self._cancel_boundary(task)
-                    self.open_lens(SimpleNamespace(path=entry['model_path']))
-                    self._selected_candidate = dict(design_id=req.design_id,
-                        candidate_id=entry['candidate_id'], parent_candidate_id=entry['parent_candidate_id'],
-                        working_file=str(self.work_path))
-                    actual = evaluation_conditions(self.get_system_settings(None))
-                    if actual != index['contract']['conditions']:
-                        raise ZemaxError('EVALUATION_CONDITIONS_CHANGED', '候选系统条件与冻结评价合同不同。',
-                            candidate_id=entry['candidate_id'], expected=index['contract']['conditions'], actual=actual)
-                    if spec.merit and self._candidate_merit_definition() != index['contract']['merit_definition']:
-                        raise ZemaxError('EVALUATION_CONDITIONS_CHANGED', '候选评价函数定义与冻结合同不同。',
-                                         candidate_id=entry['candidate_id'])
-                    result = yield from self._evaluate(task, spec)
+                    try:
+                        self.open_lens(SimpleNamespace(path=entry['model_path']))
+                        self._selected_candidate = dict(design_id=req.design_id,
+                            candidate_id=entry['candidate_id'], parent_candidate_id=entry['parent_candidate_id'],
+                            working_file=str(self.work_path))
+                        actual = evaluation_conditions(self.get_system_settings(None))
+                        if actual != index['contract']['conditions']:
+                            raise ZemaxError('EVALUATION_CONDITIONS_CHANGED', '候选系统条件与冻结评价合同不同。',
+                                candidate_id=entry['candidate_id'], expected=index['contract']['conditions'], actual=actual)
+                        if spec.merit and self._candidate_merit_definition() != index['contract']['merit_definition']:
+                            raise ZemaxError('EVALUATION_CONDITIONS_CHANGED', '候选评价函数定义与冻结合同不同。',
+                                             candidate_id=entry['candidate_id'])
+                        result = yield from self._evaluate(task, spec)
+                    except Cancelled:
+                        raise
+                    except Exception as exc:
+                        task['rows'].append(dict(candidate_id=entry['candidate_id'], state='failed',
+                                                 error=self._evaluation_error(exc)))
+                        if self.requires_reconnect:
+                            raise
+                        task['progress'] = int(100 * (i + 1) / len(entries))
+                        yield
+                        continue
                     entry['evaluation'] = dict(state='succeeded', task_id=task['task_id'],
                         session_id=self.session_id, contract=copy.deepcopy(index['contract']), **result)
-                    task['rows'].append(dict(candidate_id=entry['candidate_id'], **result))
+                    task['rows'].append(dict(candidate_id=entry['candidate_id'], state='succeeded', **result))
                     write_json(path, index)
                     task['progress'] = int(100 * (i + 1) / len(entries))
                     yield

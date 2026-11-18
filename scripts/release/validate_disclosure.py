@@ -101,7 +101,7 @@ async def run_mode(mode):
             record['tools']=tool_names
             record['tools_list_bytes']=size([t.model_dump(mode='json',by_alias=True,exclude_none=True) for t in tools])
             record['input_schema_bytes']=sum(size(t.input_schema) for t in tools)
-            assert len(tools)==(107 if mode=='full' else 11)
+            assert len(tools)==(108 if mode=='full' else 11)
             if mode=='compact': assert record['tools_list_bytes']<=20000
             found=await call('search_capabilities',dict(query='OPD wavefront',limit=5))
             selected=next(x for x in found['items'] if x['capability_id']=='analysis:wavefront')

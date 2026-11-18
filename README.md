@@ -1,8 +1,8 @@
 # Zemax Standalone MCP
 
-**1.4.2** 默认使用 **OpticStudio 2026 R1（v261）** 和 **compact** 工具目录。[下载1.4.2 Windows安装包](https://github.com/Eboytong/zemax-standalone-mcp/releases/tag/v1.4.2)。本版改动范围验证见[测试报告](docs/compatibility/2026r1/V1.4.2.md)。升级前原生测试记录为845通过、48失败、11跳过或预期限制，见 [2026 R1 测试与升级计划](docs/compatibility/2026r1/README.md)。
+**1.4.3** 默认使用 **OpticStudio 2026 R1（v261）** 和 **compact** 工具目录。[下载 Windows 安装包](https://github.com/Eboytong/zemax-standalone-mcp/releases/tag/v1.4.3) · [变更与验证](releases/1.4.3/CHANGELOG.md)。
 
-**1.4.2** defaults to **OpticStudio 2026 R1 (v261)** and the **compact** tool catalog. [Download the 1.4.2 Windows distribution](https://github.com/Eboytong/zemax-standalone-mcp/releases/tag/v1.4.2). Changed features passed the [release regression](docs/compatibility/2026r1/V1.4.2.md). The pre-upgrade native baseline recorded 845 passed, 48 failed, and 11 skipped/expected limitations. See the [2026 R1 test report and roadmap](docs/compatibility/2026r1/README.md).
+**1.4.3** defaults to **OpticStudio 2026 R1 (v261)** and the **compact** tool catalog. [Download the Windows distribution](https://github.com/Eboytong/zemax-standalone-mcp/releases/tag/v1.4.3) · [Changes and validation](releases/1.4.3/CHANGELOG.md).
 
 [中文](#中文) · [English](#english)
 
@@ -10,9 +10,9 @@
 
 ## 中文
 
-Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2026 R1 的 stdio MCP 服务。当前源码版本为 **1.4.2**，提供 **107 项工具操作**与 **146 种 `run_analysis` 请求类型**；接口、适用条件和结果格式见使用文档与工具参考。
+Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2026 R1 的 stdio MCP 服务。当前源码版本为 **1.4.3**，提供 **107 项工具操作**与 **146 种 `run_analysis` 请求类型**。见 [1.4.3 通用接口与调用示例](releases/1.4.3/CHANGELOG.md)。
 
-提供两种工具披露模式：默认`compact`提供11个搜索、执行和任务控制入口，按需读取单项schema，全部能力保持可调用；显式选择`full`直接提供107个工具。Agent可自行组合原生建模、评价、优化和公差工具，也可选择候选管理、材料搜索等工程快捷流程。
+提供两种工具披露模式：默认`compact`提供11个搜索、执行和任务控制入口，按需读取单项schema，全部能力保持可调用；显式选择`full`提供107个直接工具与通用的 `execute_capability` 入口。Agent可自行组合原生建模、评价、优化和公差工具，也可选择候选管理、材料搜索等工程快捷流程。
 
 ## 可以用它做什么
 
@@ -42,15 +42,15 @@ Zemax Standalone MCP 是运行于 Windows x64、Python 3.14 与 OpticStudio 2026
 
 ## 安装和连接
 
-1.4.2 Windows ZIP 的生成与目录布局见[发行包指南](docs/guides/windows-distribution.md)。
+Windows ZIP 的生成与目录布局见[发行包指南](docs/guides/windows-distribution.md)。
 
-准备 Windows x64、Python 3.14 x64、OpticStudio 2026 R1 和适用的 ZOS-API 许可。解压发行 ZIP，进入其中的 `zemax-standalone-mcp-1.4.2-windows-x64` 目录，在 PowerShell 中安装：
+准备 Windows x64、Python 3.14 x64、OpticStudio 2026 R1 和适用的 ZOS-API 许可。解压发行 ZIP，进入其中的 `zemax-standalone-mcp-1.4.3-windows-x64` 目录，在 PowerShell 中安装：
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -PythonExe python
 ```
 
-`python` 应指向 Python 3.14 x64；也可将它替换为该版本 `python.exe` 的绝对路径。需要报告和几何相关可选依赖时，在命令末尾添加 `-WithReports -WithGeometry`。脚本安装 `releases/1.4.2/` 中的 wheel，按锁定依赖下载所需包，并生成 `.local/config/mcp.config.json`。源码安装使用相同命令，需先由发行构建流程生成 wheel。
+`python` 应指向 Python 3.14 x64；也可将它替换为该版本 `python.exe` 的绝对路径。需要报告和几何相关可选依赖时，在命令末尾添加 `-WithReports -WithGeometry`。脚本安装 `releases/1.4.3/` 中的 wheel，按锁定依赖下载所需包，并生成 `.local/config/mcp.config.json`。源码安装使用相同命令，需先由发行构建流程生成 wheel。
 
 默认使用`compact`。需要直接披露全部工具时，在安装命令末尾添加`-ToolMode full`。模式优先级为显式`-ToolMode`、`ZEMAX_TOOL_MODE`环境变量、默认值；安装目录、输出目录和状态目录也采用已有环境值。客户端配置变更后重启MCP连接。调用方式与示例见[能力搜索及渐进式披露](docs/guides/capability-search.md)。
 
@@ -70,7 +70,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -PythonExe pyt
 | releases | 已发行wheel |
 | .local | 本机运行、状态、复现数据和历史归档 |
 
-`.local/runs`为默认运行目录；`.local/state`为状态目录。显式环境变量优先采用。1.4.2 wheel生成于`releases/1.4.2/`。`start-2026r1.ps1`默认使用`.local/runs-2026r1`和`.local/state-2026r1`，并采用已有环境值。
+`.local/runs`为默认运行目录；`.local/state`为状态目录。显式环境变量优先采用。1.4.3 wheel 生成于`releases/1.4.3/`。`start-2026r1.ps1`默认使用`.local/runs-2026r1`和`.local/state-2026r1`，并采用已有环境值。
 
 ## 许可证与参考
 
@@ -84,9 +84,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -PythonExe pyt
 
 ## English
 
-Zemax Standalone MCP is a stdio MCP server for **Windows x64, Python 3.14, and OpticStudio 2026 R1**. Source version **1.4.2** provides **107 tool operations** and **146 `run_analysis` request types**. The references describe exact parameters, results, and operating conditions.
+Zemax Standalone MCP is a stdio MCP server for **Windows x64, Python 3.14, and OpticStudio 2026 R1**. Source version **1.4.3** provides **107 tool operations** and **146 `run_analysis` request types**. See the [1.4.3 contract notes](releases/1.4.3/CHANGELOG.md).
 
-Two tool disclosure modes are available. The default `compact` mode exposes 11 discovery, invocation, connection, and task-control tools; agents retrieve individual schemas as needed and can access the same capabilities. Explicit `full` mode exposes 107 tools directly. Agents can compose native modeling, evaluation, optimization, and tolerancing tools or select optional engineering workflows.
+Two tool disclosure modes are available. The default `compact` mode exposes 11 discovery, invocation, connection, and task-control tools; agents retrieve individual schemas as needed and can access the same capabilities. Explicit `full` mode exposes 107 direct tools plus `execute_capability`. Agents can compose native modeling, evaluation, optimization, and tolerancing tools or select optional engineering workflows.
 
 ### Capabilities
 
@@ -108,13 +108,13 @@ Read and modification tools return responses directly. Long-running operations r
 
 ### Installation
 
-Prepare Windows x64, Python 3.14 x64, and OpticStudio 2026 R1 with an applicable ZOS-API license. Extract the Windows ZIP, open its `zemax-standalone-mcp-1.4.2-windows-x64` directory, and run in PowerShell. See the [distribution guide](docs/guides/windows-distribution.md) for build instructions and package layout.
+Prepare Windows x64, Python 3.14 x64, and OpticStudio 2026 R1 with an applicable ZOS-API license. Extract the Windows ZIP, open its `zemax-standalone-mcp-1.4.3-windows-x64` directory, and run in PowerShell. See the [distribution guide](docs/guides/windows-distribution.md) for build instructions and package layout.
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -PythonExe python
 ```
 
-`python` must resolve to Python 3.14 x64; an absolute path to its executable can also be supplied. Add `-WithReports -WithGeometry` for optional reporting and geometry dependencies. The installer installs the wheel from `releases/1.4.2/`, downloads dependencies using the included locks, and writes `.local/config/mcp.config.json`. Repository installation uses the same command after the release build produces the wheel.
+`python` must resolve to Python 3.14 x64; an absolute path to its executable can also be supplied. Add `-WithReports -WithGeometry` for optional reporting and geometry dependencies. The installer installs the wheel from `releases/1.4.3/`, downloads dependencies using the included locks, and writes `.local/config/mcp.config.json`. Repository installation uses the same command after the release build produces the wheel.
 
 Compact is the default. Add `-ToolMode full` to expose every tool directly. Mode precedence is explicit `-ToolMode`, then `ZEMAX_TOOL_MODE`, then the default. The installer also honors existing install, output, and state directory environment values. Restart the MCP connection after changing client configuration. See [capability discovery and progressive disclosure](docs/guides/capability-search.md).
 
@@ -136,7 +136,7 @@ The stdio server can also be started with:
 powershell -NoProfile -ExecutionPolicy Bypass -File .\start.ps1
 ```
 
-The default output directory is `.local/runs`; state is stored in `.local/state`. Explicit environment variables take precedence. The 1.4.2 wheel is built under `releases/1.4.2/`. `start-2026r1.ps1` defaults to `.local/runs-2026r1` and `.local/state-2026r1` and honors existing environment values.
+The default output directory is `.local/runs`; state is stored in `.local/state`. Explicit environment variables take precedence. The 1.4.3 wheel is built under `releases/1.4.3/`. `start-2026r1.ps1` defaults to `.local/runs-2026r1` and `.local/state-2026r1` and honors existing environment values.
 
 ### Documentation and repository layout
 

@@ -14,7 +14,7 @@ def test_stdio_tools_and_validation_without_zemax():
                                       env={"PYTHONPATH":str(PROJECT_ROOT/"src"),"PYTHONUTF8":"1","ZEMAX_TOOL_MODE":"full"})
         async with Client(params) as client:
             tools = await client.list_tools()
-            assert {tool.name for tool in tools.tools} == set(COMMAND_MODELS)
+            assert {tool.name for tool in tools.tools} == set(COMMAND_MODELS) | {'execute_capability'}
             status = await client.call_tool("get_status", {})
             assert status.structured_content["ok"]
             assert status.structured_content["data"]["connected"] is False

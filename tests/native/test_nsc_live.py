@@ -1,16 +1,15 @@
-import asyncio,json,sys
+import asyncio,json
 from pathlib import Path
 from mcp import Client
-from mcp.client.stdio import StdioServerParameters
 import pytest
-from zemax_mcp.config import PROJECT_ROOT
+from tests.support.native import server_parameters
 from tests.support.paths import run_dir
 
 @pytest.mark.zemax
 def test_nsc_over_stdio():
     async def scenario():
         folder=run_dir("nsc");events=[]
-        params=StdioServerParameters(command=sys.executable,args=["-B","-m","zemax_mcp"],cwd=PROJECT_ROOT,env={"PYTHONUTF8":"1","ZEMAX_OUTPUT_DIR":str(folder)})
+        params=server_parameters(folder)
         try:
             async with Client(params,read_timeout_seconds=120) as client:
                 async def call(name,args=None):

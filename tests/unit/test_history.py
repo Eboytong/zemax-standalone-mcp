@@ -122,7 +122,7 @@ def test_busy_request_status_reads_receipt_without_worker_queue(b,monkeypatch):
     from zemax_mcp.bridge import Bridge
     monkeypatch.setenv('ZEMAX_OUTPUT_DIR',str(b.config.output_dir))
     RequestJournal(b.config.output_dir,'busy').begin('waiting','update_surfaces',{'changes':[]})
-    bridge=Bridge();bridge.pending['waiting']=None
+    bridge=Bridge();bridge.inflight_metadata['transport']=dict(request_id='waiting')
     value=asyncio.run(bridge.request('get_request_status',dict(request_id='waiting')))
     assert value['ok']and value['data']['state']=='dispatching'and bridge.process is None
 
@@ -130,6 +130,6 @@ def test_queued_request_status_does_not_claim_execution(b,monkeypatch):
     import asyncio
     from zemax_mcp.bridge import Bridge
     monkeypatch.setenv('ZEMAX_OUTPUT_DIR',str(b.config.output_dir))
-    bridge=Bridge();bridge.pending['waiting']=None;bridge.inflight_metadata['waiting']=dict(command='update_surfaces')
+    bridge=Bridge();bridge.inflight_metadata['transport']=dict(request_id='waiting')
     value=asyncio.run(bridge.request('get_request_status',dict(request_id='waiting')))
     assert value['ok']and value['data']['observed_execution_state']=='queued_or_dispatching'

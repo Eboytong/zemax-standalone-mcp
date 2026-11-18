@@ -1,5 +1,6 @@
 from contextlib import asynccontextmanager
-from typing import Literal
+from contextvars import ContextVar
+from typing import Annotated, Literal
 
 from mcp.server import MCPServer
 from mcp.types import ToolAnnotations
@@ -7,7 +8,7 @@ from mcp.types import ToolAnnotations
 from . import __version__
 from .bridge import Bridge
 from .models import ArchiveLoad, ArchiveSave, Dependencies, ProjectPatch, SaveLens, OpenLens, SystemResources, CopySurfaces, SurfaceGeometry, BatchRays, ParameterScan, BatchEvaluation, Index, Operand, OperandUpdate, SurfacePatch, SystemPatch, ToolResponse, Variable
-from pydantic import StrictInt
+from pydantic import Field, StrictInt
 from .analysis_models import AnalysisRequest
 from .configuration_models import ConfigurationRange, ConfigurationPatch, GlobalOptimization
 from .models import ConfigurationEvaluation, Multistart
@@ -43,6 +44,7 @@ def create_server(mode=None, bridge=None):
     mode = mode_value(mode)
     bridge = bridge or Bridge()
     handlers = {}
+    request_identity = ContextVar('zemax_request_id', default=None)
 
     @asynccontextmanager
     async def lifespan(server):
@@ -71,7 +73,9 @@ def create_server(mode=None, bridge=None):
         return fn
 
     async def call(command, arguments=None):
-        return ToolResponse.model_validate(await bridge.request(command, arguments))
+        request_id = request_identity.get()
+        options = {'request_id': request_id} if request_id is not None else {}
+        return ToolResponse.model_validate(await bridge.request(command, arguments, **options))
 
     @tool
     async def connect(install_dir: str | None = None) -> ToolResponse:
@@ -81,16 +85,23 @@ def create_server(mode=None, bridge=None):
     @tool
     async def get_status() -> ToolResponse:
         """读取连接、模型修订与当前任务状态；任务超时不能视为原生计算停止。"""
-        return await call("get_status")
+        from .readiness import INDEX_VERSION
+        response = await call("get_status")
+        if response.data is not None:
+            response.data.update(server_version=__version__, tool_mode=mode,
+                                 capability_index_version=INDEX_VERSION)
+        return response
 
     @tool
     async def get_capabilities(topic: Literal["all", "settings", "tool", "merit_cells", "optimization_diagnostics", "overview", "index", "detail", "dependencies"] = "all",
                                tool_name: str | None = None, start: int = 1, count: int = 20,
                                capability_id: str | None = None, action: str | None = None,
-                               analysis_kinds: list[str] | None = None, include_metadata: bool = False) -> ToolResponse:
+                               analysis_kinds: list[str] | None = None, include_metadata: bool = False,
+                               arguments: dict | None = None) -> ToolResponse:
         """overview 离线列出工程、建模、追迹、像质、优化、公差、图像交付及任务能力；index 分页列出能力，detail 返回用法和契约。"""
         return await call("get_capabilities", dict(topic=topic,tool_name=tool_name,start=start,count=count,capability_id=capability_id,
-            action=action,analysis_kinds=analysis_kinds,include_metadata=include_metadata))
+            action=action,analysis_kinds=analysis_kinds,include_metadata=include_metadata,
+            **({'arguments': arguments} if arguments is not None else {})))
 
     @tool
     async def search_capabilities(query: str, limit: int = 5,
@@ -640,10 +651,15 @@ def create_server(mode=None, bridge=None):
             """调用只读能力；先用 search_capabilities 和 get_capabilities(detail) 获取准确参数。"""
             return await invoke(handlers, capability_id, arguments, query=True)
 
-        @server.tool(structured_output=True, annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=True, idempotentHint=False, openWorldHint=False))
-        async def execute_capability(capability_id: str, arguments: dict) -> ToolResponse:
-            """调用建模、分析、文件或工程能力；arguments 使用详情的 MCP 参数形状，任务沿用状态/结果/取消入口。"""
+    @server.tool(structured_output=True, annotations=ToolAnnotations(readOnlyHint=False, destructiveHint=True, idempotentHint=False, openWorldHint=False))
+    async def execute_capability(capability_id: str, arguments: dict,
+                                 request_id: Annotated[str, Field(pattern=r'^[0-9a-f]{32}$')] | None = None) -> ToolResponse:
+        """执行能力；修改前可指定 request_id，断线后按该编号查询回执。"""
+        token = request_identity.set(request_id)
+        try:
             return await invoke(handlers, capability_id, arguments)
+        finally:
+            request_identity.reset(token)
     server.zemax_handlers = handlers
     server.zemax_mode = mode
     return server

@@ -46,6 +46,9 @@ from .coatings import CoatingsMixin
 from .materials import MaterialsMixin
 from .conversion import ConversionMixin
 from .history import HistoryMixin, RESULT_VERSION, write_json
+from .outcome import task_outcome, populate_outcome
+from .readiness import OFFLINE, STATUS_ACCESS, readiness
+from .result_metadata import result_metadata, write_series_csv
 from .analyses import AnalysesMixin
 from .configurations import ConfigurationsMixin
 from .tolerancing import TolerancingMixin
@@ -106,13 +109,9 @@ class Backend(CandidatesMixin, HpcMixin, StarMixin, ConversionMixin, MaterialsMi
             request = COMMAND_MODELS[command].model_validate(arguments)
             if command != 'cancel_task':
                 self.tick()
-            if self.requires_reconnect and command not in {
-                "get_status", "get_capabilities", "search_capabilities", "get_task_status", "get_task_result", "disconnect", "list_task_history", "get_historical_result", "get_request_status"
-            }:
+            if self.requires_reconnect and command not in OFFLINE | {'disconnect'}:
                 raise ZemaxError("RECONNECT_REQUIRED", "原生工具资源释放未确认，请断开后重新连接。")
-            if self.active and command not in {
-                "get_status", "get_capabilities", "search_capabilities", "get_task_status", "get_task_result", "cancel_task", "list_task_history", "get_historical_result", "get_request_status"
-            }:
+            if self.active and command not in STATUS_ACCESS:
                 raise ZemaxError("SYSTEM_BUSY", "当前系统正在计算，请等待完成或请求取消。", task_id=self.active["task_id"])
             data = getattr(self, command)(request)
             warnings = data.get("task", {}).get("cleanup_warnings", []) if isinstance(data, dict) else []
@@ -361,18 +360,45 @@ class Backend(CandidatesMixin, HpcMixin, StarMixin, ConversionMixin, MaterialsMi
                 "recent_tasks": [self._task_view(t) for t in views[-10:][::-1]],
                 **self.context()}
 
+    def _preflight_runtime(self, profiles):
+        app = getattr(self.native, 'application', None)
+        connected = app is not None and getattr(self.native, 'connection_ready', True)
+        features = {}
+        needs_star = any(req['kind'] == 'license_feature' and req['value'] == 'star'
+                         for profile in profiles for req in profile['requirements'])
+        if connected and not self.active and not self.requires_reconnect and needs_star:
+            try:
+                features['star'] = bool(app.IsSTARModuleEnabled)
+            except Exception:
+                pass
+        return dict(connected=connected, requires_reconnect=self.requires_reconnect,
+                    mode=self.system_context.get('mode'), working_model=bool(self.work_path),
+                    active_task_id=self.active.get('task_id') if self.active else None, features=features,
+                    tasks={key: task.get('state') for key, task in self.tasks.items()})
+
     def search_capabilities(self, req):
-        from .capability_index import search
-        return {**search(req.query, req.limit, req.category),
-                "runtime": {"connected": getattr(self.native, "application", None) is not None,
-                            "license": self.license, "requires_reconnect": self.requires_reconnect}}
+        from .capability_index import search, build_index
+        result = search(req.query, req.limit, req.category)
+        entries = {entry['capability_id']: entry for entry in build_index()}
+        profiles = [entries[item['capability_id']] for item in result['items']]
+        runtime = self._preflight_runtime(profiles)
+        for item, profile in zip(result['items'], profiles):
+            item.update(requirements=profile['requirements'], produces=profile['produces'],
+                        readiness=readiness(profile, runtime))
+        return {**result, 'runtime': dict(connected=runtime['connected'], license=self.license,
+                                         requires_reconnect=runtime['requires_reconnect'])}
 
     def get_capabilities(self, req):
         topic = getattr(req, "topic", "all")
         if topic in {"overview", "index", "detail", "dependencies"}:
             from .capability_index import describe
-            return {**describe(req), "runtime": {
-                "connected": getattr(self.native, "application", None) is not None,
+            result = describe(req)
+            profiles = [result] if 'requirements' in result else []
+            runtime = self._preflight_runtime(profiles)
+            if profiles:
+                result['readiness'] = readiness(result, runtime, getattr(req, 'arguments', None))
+            return {**result, "runtime": {
+                "connected": runtime['connected'],
                 "license": self.license, "opticstudio_version": self.version,
                 "model": dict(self.system_context), "requires_reconnect": self.requires_reconnect}}
         if topic == "tool":
@@ -1754,6 +1780,7 @@ class Backend(CandidatesMixin, HpcMixin, StarMixin, ConversionMixin, MaterialsMi
     def _task_view(task):
         keys = ("task_id", "request_id", "kind", "state", "created_at", "finished_at", "progress", "native_progress", "status", "phase", "can_cancel", "cancel_requested", "settings", "context", "error", "close_attempted", "cleanup_warnings", "native_trace_complete", "native_dead_ray_errors", "result_path", "result_artifacts", "budget_seconds", "budget_stop_requested", "budget_stop_attempted", "budget_stop_error", "telemetry_error", "poll_error", "cancellation_effect", "history_warnings")
         view = {k: task[k] for k in keys if k in task}
+        view['outcome'] = task_outcome(task)
         if "started_monotonic" in task:
             now = task.get("finished_monotonic", time.monotonic())
             view["elapsed_seconds"] = round(max(0, now - task["started_monotonic"]), 3)
@@ -1794,6 +1821,8 @@ class Backend(CandidatesMixin, HpcMixin, StarMixin, ConversionMixin, MaterialsMi
             result = task["result"] or self._task_view(task)
         if isinstance(result, dict) and "task" in result:
             result["task"] = self._task_view(task)
+            result['outcome'] = result['task']['outcome']
+        result_metadata(populate_outcome(result))
         if task['state'] == 'succeeded' and isinstance(result, dict):
             from .plotting import image_exports
             result['image_exports'] = image_exports(result)
@@ -1815,7 +1844,7 @@ class Backend(CandidatesMixin, HpcMixin, StarMixin, ConversionMixin, MaterialsMi
                 if len(radii)!=len(item['x']):
                     raise ZemaxError('INVALID_RESULT_DATA','累计能量分箱边界数量与横轴不一致。')
                 page['native_binning']={**item['native_binning'],'enclosure_radius_um':radii[req.start:end]}
-            return {**{k:result[k] for k in ('task','context','artifacts','history','image_exports') if k in result},
+            return {**{k:result[k] for k in ('task','context','artifacts','history','image_exports','outcome','provenance') if k in result},
                     'series':[page],
                     'total':len(item['x']),'next_start':end if end<len(item['x'])else None}
         if result.get("scatter"):
@@ -1843,7 +1872,7 @@ class Backend(CandidatesMixin, HpcMixin, StarMixin, ConversionMixin, MaterialsMi
                     meta["valid_mask"]=[row[req.x_start:xend] for row in g["valid_mask"][req.y_start:yend]]
                 if "pupil_mapping"in g:
                     meta["pupil_mapping"]={**meta["pupil_mapping"],"points":[row[req.x_start:xend]for row in g["pupil_mapping"]["points"][req.y_start:yend]]}
-                return {**{k:result[k] for k in ("task","context","artifacts","history","image_exports") if k in result},
+                return {**{k:result[k] for k in ("task","context","artifacts","history","image_exports","outcome","provenance") if k in result},
                         "grid":{**meta,"x_start":req.x_start,"y_start":req.y_start,
                                 "values":[row[req.x_start:xend] for row in array[req.y_start:yend]],
                                 "next_x":xend if xend<nx else None,"next_y":yend if yend<ny else None}}
@@ -1857,8 +1886,8 @@ class Backend(CandidatesMixin, HpcMixin, StarMixin, ConversionMixin, MaterialsMi
             size = sum(len(s["x"]) + sum(len(row) for row in s["y"]) for s in result["series"])
             if size > 5000:
                 return {**result, "inline_data_truncated": True,
-                        "series": [{"series": s["series"], "description": s["description"], "labels": s["labels"],
-                                    "x_label": s["x_label"], "point_count": len(s["x"])} for s in result["series"]]}
+                        "series": [{k:v for k,v in s.items() if k in ('series','description','labels','x_label','axes','calculation_source')}
+                                   | {'point_count':len(s['x'])} for s in result['series']]}
         return result
 
     def cancel_task(self, req):
@@ -1934,6 +1963,7 @@ class Backend(CandidatesMixin, HpcMixin, StarMixin, ConversionMixin, MaterialsMi
                 item = result.GetDataSeries(i)
                 series.append({"series": i, "description": str(item.Description), "x_label": str(item.XLabel),
                                "labels": [str(x) for x in item.SeriesLabels],
+                               "x_unit": task.get('settings', {}).get('frequency_unit'), "y_unit": "dimensionless",
                                "x": dotnet_array(item.XData.Data), "y": dotnet_array(item.YData.Data)})
             if not series:
                 raise ZemaxError("NO_RESULT_DATA", "FFT MTF 没有提供数据序列。", native_text=str(text_path))
@@ -1984,14 +2014,18 @@ class Backend(CandidatesMixin, HpcMixin, StarMixin, ConversionMixin, MaterialsMi
 
     def _save_task_result(self, task, result):
         result.update(result_schema_version=RESULT_VERSION, task=self._task_view(task), context=task["context"], system_settings=task["system_settings"])
+        populate_outcome(result)
+        if task.get('kind') in {'fft_mtf', 'spot'}:
+            result.setdefault('actual_settings', task['settings'])
         directory = Path(task.get("directory") or self.directory or self.config.output_dir)
         directory.mkdir(parents=True, exist_ok=True)
         path = directory / f"{task['task_id']}.json"
         artifacts = result.setdefault("artifacts", [])
         artifacts.append({"kind": "json", "path": str(path)})
+        result_metadata(result)
         if "series" in result:
             import csv
-            csv_path = self.directory / f"{task['task_id']}.csv"
+            csv_path = directory / f"{task['task_id']}.csv"
             with csv_path.open("w", encoding="utf-8-sig", newline="") as stream:
                 writer = csv.writer(stream)
                 writer.writerow(["series", "description", "frequency", "label", "value"])
@@ -1999,7 +2033,11 @@ class Backend(CandidatesMixin, HpcMixin, StarMixin, ConversionMixin, MaterialsMi
                     for i, x in enumerate(item["x"]):
                         for j, label in enumerate(item["labels"]):
                             writer.writerow([item["series"], item["description"], x, label, item["y"][i][j]])
-            artifacts.append({"kind": "csv", "path": str(csv_path)})
+            artifacts.append({"kind": "csv", "path": str(csv_path), 'legacy': True})
+            series_path = directory / f"{task['task_id']}_series.csv"
+            write_series_csv(series_path, result['series'])
+            artifacts.append(dict(kind='series_csv', path=str(series_path), schema_version=1))
+        result_metadata(result)
         write_json(path, result, create_parent=False)
         task["result_path"] = str(path)
         task["result_artifacts"] = list(artifacts)
@@ -2117,12 +2155,16 @@ class Backend(CandidatesMixin, HpcMixin, StarMixin, ConversionMixin, MaterialsMi
             task["finished_monotonic"] = time.monotonic()
             if task["cancel_requested"]:
                 task["state"] = "cancelled"
-                self._save_task_result(task, {"completed": False, "before": task["before"], "checkpoint": task["context"]["checkpoint"]})
+                result = {"completed": False, "before": task["before"], "checkpoint": task["context"]["checkpoint"]}
             else:
                 result = self._collect(task)
                 task["state"] = "succeeded"
                 task["progress"] = 100
-                self._save_task_result(task, result)
+            if not self._close_task_native(task):
+                task["state"] = "failed"
+                task["error"] = ZemaxError("CLEANUP_FAILED", "原生工具资源释放未确认。").as_dict()
+                result.update(completed=False, error=task["error"])
+            self._save_task_result(task, result)
         except Exception as exc:
             if not stopped_confirmed:
                 # A polling/transport failure is not evidence of native stop.

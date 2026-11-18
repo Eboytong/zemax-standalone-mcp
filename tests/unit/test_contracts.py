@@ -155,6 +155,8 @@ def test_failed_native_release_blocks_new_mutations(tmp_path):
     view = backend.dispatch("get_task_status", {"task_id":"test"})["data"]
     assert view["close_attempted"] is True
     assert view["cleanup_warnings"] == task["cleanup_warnings"]
+    assert view["state"] == "failed" and view["error"]["code"] == "CLEANUP_FAILED"
+    assert view["outcome"]["resource_release"] == "failed"
 
 
 @pytest.mark.parametrize("args", [
