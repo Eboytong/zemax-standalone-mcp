@@ -1,6 +1,6 @@
 # 按工程需求查找能力
 
-`search_capabilities`在未连接OpticStudio时即可使用。短结果返回能力ID、用途、读写分类和详情入口；参数、单位、前置条件和默认值通过详情按需读取。
+连接 OpticStudio 前即可调用 `get_capabilities(topic="overview")`。它返回能力分组、各组数量和代表性能力 ID。`search_capabilities` 根据当前需求查找用途、compact 调用入口、前置条件和预期产物。常见出图能力附最小调用示例，详情提供完整参数、单位和默认值。
 
 ```json
 {"query":"镀膜反射率透射率吸收率","limit":5,"category":"all"}
@@ -14,7 +14,19 @@
 
 读取`request_schema`后，连接、打开模型，再调用对应工具。schema使用实际MCP参数形状，例如`update_system_settings`的外层是`settings`，`run_analysis`的外层是`request`。分析能力以`analysis:<kind>`定位，候选操作以`action:manage_candidates:<action>`定位。`include_metadata=true`返回完整元数据；原生执行按当前模型、资源和许可确认。
 
-完整索引使用`get_capabilities(topic="index",start=1,count=100)`分页，编号从1开始。`topic="dependencies"`返回指定能力的条件及修改作用。检索的`category`可选择`tool`或`analysis`，默认`all`。
+完整索引使用`get_capabilities(topic="index",start=1,count=100)`分页，编号从1开始。`topic="dependencies"`返回指定能力的条件及修改作用。检索的`category`可选择`tool`、`analysis`或`action`，默认`all`。
+
+## 报告插图
+
+搜索「镜头结构图、MTF 曲线、标准点列图」即可定位布局、FFT MTF、点列分析和图像导出。推荐按如下路线调用。
+
+| 图像 | 调用 | 产物 |
+| --- | --- | --- |
+| 镜头布局 | `tool:run_layout_export`，传入绝对 `.png` 路径 | OpticStudio 原生 PNG |
+| MTF | `tool:run_fft_mtf`，任务完成后调用 `tool:export_analysis_image`，取 `source="data_plot"` | 由原生 FFT 曲线绘制的 PNG，`item` 选择曲线组 |
+| 点列 | `tool:run_batch_ray_trace`，向 `rays` 传入归一化视场、光瞳坐标和波长号。以默认目标像面追迹后导出 `source="data_plot"` | 各视场的未渐晕像面交点图，按 `(hx,hy)` 排序选择 `item` |
+
+标准 `tool:run_spot_analysis` 提供原生 RMS、GEO、参考点和分析文本。Standalone 模式下这些统计量和批量追迹点列通过各自的任务获取。`get_task_result` 的 `image_exports` 列出可用来源、已有原生图路径、可绘制项数及相应替代入口。`source="native"` 用于复制已保存的原生图。如果任务无原生图，返回 `UNSUPPORTED_NATIVE_IMAGE` 及可用路径。
 
 ## 工程表达与复合需求
 

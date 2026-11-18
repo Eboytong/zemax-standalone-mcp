@@ -121,7 +121,7 @@ class ExportsMixin:
         def collect(task):
             if not tool.Succeeded:raise ZemaxError("LAYOUT_EXPORT_FAILED",str(tool.ErrorMessage))
             if not path.is_file():raise ZemaxError("EXPORT_FAILED","原生布局未生成请求的图片。",path=str(path))
-            return dict(path=str(path),kind=req.kind,render_source="native OpticStudio layout export",artifacts=[dict(kind="native_image",path=str(path))])
+            return dict(path=str(path),kind=req.kind,render_source="native OpticStudio layout export",artifacts=[dict(kind="native_image",path=str(path),image_source="native")])
         return self._start_task("layout_export",tool,actual,collector=collect)
 
     def run_cad_export(self,req):

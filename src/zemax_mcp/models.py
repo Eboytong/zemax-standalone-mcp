@@ -12,7 +12,7 @@ class Empty(Request):
 
 
 class Capabilities(Request):
-    topic: Literal["all", "settings", "tool", "merit_cells", "optimization_diagnostics", "index", "detail", "dependencies"] = "all"
+    topic: Literal["all", "settings", "tool", "merit_cells", "optimization_diagnostics", "overview", "index", "detail", "dependencies"] = "all"
     capability_id: str | None = None
     tool_name: str | None = None
     start: PositiveIndex = 1

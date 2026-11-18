@@ -1,14 +1,69 @@
 """Single-image exports from saved data, with explicit rendering provenance."""
+import math
 import shutil
 from pathlib import Path
 from .errors import ZemaxError
 
 
+def _native_images(result):
+    return [item for item in result.get('artifacts', []) if item.get('kind') == 'native_image']
+
+
+def _intercept_plots(result):
+    task = result.get('task', {})
+    settings = task.get('settings', {})
+    if task.get('kind') != 'batch_ray_trace' or settings.get('ray_type') != 'Real':
+        return []
+    fields = {}
+    for row in result.get('rows', []):
+        ray = row.get('input', {})
+        position = row.get('position')
+        if (row.get('state') != 'succeeded' or row.get('vignette_code') != 0 or
+                not {'hx', 'hy', 'wavelength'} <= ray.keys() or not position or
+                len(position) < 2 or not all(math.isfinite(v) for v in position[:2])):
+            continue
+        field = (ray['hx'], ray['hy'])
+        points = fields.setdefault(field, [])
+        points.append(dict(x=position[0], y=position[1], wavelength=ray['wavelength']))
+    units = result.get('summary', {}).get('position_unit') or result.get('context', {}).get('lens_units') or 'lens units'
+    target_surface = settings.get('target_surface')
+    return [dict(field=list(field), unit=units, points=points, target_surface=target_surface)
+            for field, points in sorted(fields.items())]
+
+
+def _plot_items(result):
+    items = [('series', item) for item in result.get('series', [])]
+    items.extend(('grid', item) for item in result.get('grids', []))
+    items.extend(('scatter', item) for item in result.get('scatter', []) if item.get('points'))
+    items.extend(('ray_intercepts', item) for item in _intercept_plots(result))
+    if not items:
+        rows = [row for row in result.get('rows', []) if row.get('metrics')]
+        if rows:
+            items.append(('metrics', rows))
+    return items
+
+
+def image_exports(result):
+    """Describe renderable outputs before result pagination strips point data."""
+    images = _native_images(result)
+    items = _plot_items(result)
+    sources = [source for source, available in [('native', images), ('data_plot', items)] if available]
+    response = dict(available_sources=sources, native_images=images, data_plot_items=len(items))
+    if not images:
+        response['native_unavailable_reason'] = '任务未保存原生图像，Standalone 通用分析接口提供数据和文本。'
+        if items:
+            response['alternative'] = dict(capability_id='tool:export_analysis_image', source='data_plot')
+        elif result.get('task', {}).get('kind') == 'spot':
+            response['alternative'] = dict(capability_id='tool:run_batch_ray_trace', next_capability_id='tool:export_analysis_image', source='data_plot')
+    return response
+
+
 def export_image(result,request,path):
     if request.source=="native":
-        images=[a for a in result.get("artifacts",[]) if a.get("kind")=="native_image"]
+        images=_native_images(result)
         if not images:
-            raise ZemaxError("UNSUPPORTED_NATIVE_IMAGE","已保存结果没有原生图片；本机通用分析结果接口不提供窗口位图导出。")
+            metadata = image_exports(result)
+            raise ZemaxError('UNSUPPORTED_NATIVE_IMAGE', metadata['native_unavailable_reason'], **metadata)
         if request.item>=len(images):raise ZemaxError("INDEX_OUT_OF_RANGE","原生图片编号越界。")
         source=Path(images[request.item]["path"])
         if not source.is_file():raise ZemaxError("MISSING_ARTIFACT","原生图片不存在。",path=str(source))
@@ -27,10 +82,7 @@ def export_image(result,request,path):
         import matplotlib.pyplot as plt
         import numpy as np
     except ImportError as exc:raise ZemaxError("MISSING_DEPENDENCY","绘图需要项目reports依赖。") from exc
-    items=[("series",s) for s in result.get("series",[])]+[("grid",g) for g in result.get("grids",[])]+[("scatter",s) for s in result.get("scatter",[]) if s.get("points")]
-    if not items and result.get("rows"):
-        rows=[r for r in result["rows"] if r.get("metrics")]
-        if rows:items=[("metrics",rows)]
+    items=_plot_items(result)
     if not items:raise ZemaxError("NO_PLOTTABLE_DATA","结果没有可绘制的曲线、网格、散点或指标。")
     if request.item>=len(items):raise ZemaxError("INDEX_OUT_OF_RANGE","绘图数据编号越界。",count=len(items))
     kind,data=items[request.item]
@@ -74,11 +126,31 @@ def export_image(result,request,path):
                 else:ax.scatter([p["x"] for p in points],[p["y"] for p in points])
                 ax.set(xlabel=data.get("x_label","X"),ylabel=data.get("y_label","Y"))
                 if data.get("x_axis_direction")=="decreasing_left_to_right":ax.invert_xaxis()
+            elif kind == 'ray_intercepts':
+                points = data['points']
+                for wavelength in sorted({point['wavelength'] for point in points}):
+                    selected = [point for point in points if point['wavelength'] == wavelength]
+                    ax.scatter([point['x'] for point in selected], [point['y'] for point in selected],
+                               s=12, label=f'Wavelength #{wavelength}')
+                hx, hy = data['field']
+                unit = data['unit']
+                target_surface = data['target_surface']
+                title = 'Ray intercepts' if target_surface is None else f'Surface {target_surface} ray intercepts'
+                ax.set(title=f'{title} · Hx={hx:g}, Hy={hy:g}', xlabel=f'X ({unit})', ylabel=f'Y ({unit})', aspect='equal')
+                ax.legend()
+                ax.grid(alpha=.25)
+                plot_settings.update(field=data['field'], position_unit=unit, point_count=len(points))
+                if target_surface is not None:
+                    plot_settings['target_surface'] = target_surface
             else:
                 for key in dict.fromkeys(m["key"] for row in data for m in row["metrics"]):
                     selected=[(r.get("index",i),m) for i,r in enumerate(data) for m in r["metrics"] if m["key"]==key]
                     ax.plot([x for x,m in selected],[m["value"] for x,m in selected],marker="o",label=key+" ("+str(selected[0][1].get("unit",""))+")")
                 ax.set_xlabel("结果行号");ax.legend();ax.grid(alpha=.25)
+            task_kind = result.get('task', {}).get('kind')
+            if task_kind == 'fft_mtf' or kind == 'ray_intercepts':
+                plot_settings['data_source'] = 'OpticStudio FFT MTF' if task_kind == 'fft_mtf' else 'OpticStudio batch ray trace'
+                fig.supxlabel(f"{plot_settings['data_source']} · rendered from data", fontsize=8)
             path.parent.mkdir(parents=True,exist_ok=True);fig.savefig(path,dpi=100)
         finally:plt.close(fig)
     return dict(image_source="data_plot",plotting_settings=plot_settings,

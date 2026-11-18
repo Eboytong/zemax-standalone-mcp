@@ -1,11 +1,11 @@
 # Windows发行包 / Windows distribution
 
-1.4.1发行构建生成以下产物：
+1.4.2发行构建生成以下产物：
 
-- `releases/1.4.1/zemax_standalone_mcp-1.4.1-py3-none-any.whl`
-- `releases/1.4.1/zemax-standalone-mcp-1.4.1-windows-x64.zip`
+- `releases/1.4.2/zemax_standalone_mcp-1.4.2-py3-none-any.whl`
+- `releases/1.4.2/zemax-standalone-mcp-1.4.2-windows-x64.zip`
 
-ZIP中只有一个同名顶层目录，包含`install.ps1`、`start.ps1`、`start-2026r1.ps1`、双语README、MIT LICENSE、`requirements/*.lock.txt`、`examples/config/mcp.config.example.json`、本指南和`releases/1.4.1/`中的wheel。解压后进入顶层目录运行安装。安装需要访问Python包索引以取得锁定依赖。
+ZIP中只有一个同名顶层目录，包含`install.ps1`、`start.ps1`、`start-2026r1.ps1`、双语README、MIT LICENSE、`requirements/*.lock.txt`、`examples/config/mcp.config.example.json`、本指南和`releases/1.4.2/`中的wheel。解压后进入顶层目录运行安装。安装需要访问Python包索引以取得锁定依赖。
 
 默认安装路径为`C:\Program Files\ANSYS Inc\v261\Zemax OpticStudio`，工具目录为compact。已有`ZEMAX_INSTALL_DIR`、`ZEMAX_OUTPUT_DIR`、`ZEMAX_STATE_DIR`和`ZEMAX_TOOL_MODE`环境值会被采用，显式`-ToolMode full`可选择直接工具目录。
 
@@ -25,9 +25,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\release\build_wind
 
 ## English
 
-1.4.1临时工作流在main合入该版本CHANGELOG时构建并发布wheel和ZIP，标签指向该次main提交。发布完成后移除工作流。
-
-After integration and release regression testing, run the PowerShell command above with Python 3.14 x64. The script builds in a temporary environment using pinned build dependencies and places the wheel and Windows ZIP under `releases/1.4.1/`. Existing artifacts are preserved and cause the build to stop.
+After integration and release regression testing, run the PowerShell command above with Python 3.14 x64. The script builds in a temporary environment using pinned build dependencies and places the wheel and Windows ZIP under `releases/1.4.2/`. Existing artifacts are preserved and cause the build to stop.
 
 For reproducible output, keep the source, Python patch version, build dependencies, and `SOURCE_DATE_EPOCH` fixed. The default timestamp is November 16, 2026, 00:00 UTC. ZIP entries use stable ordering, timestamps, attributes, and stored compression.
 

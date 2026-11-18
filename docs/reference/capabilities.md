@@ -1,6 +1,6 @@
 # 能力索引
 
-Zemax Standalone MCP 1.4.1 提供107项工具操作和146种`run_analysis`请求类型，默认安装目录对应OpticStudio 2026 R1。
+Zemax Standalone MCP 1.4.2 提供107项工具操作和146种`run_analysis`请求类型，默认安装目录对应OpticStudio 2026 R1。`get_capabilities(topic="overview")` 离线返回能力分组和代表入口。
 
 默认compact提供11个固定发现/调用/任务控制入口，通过tool、analysis和action能力ID访问同一套操作；显式full直接提供107工具。单项详情只返回相关schema；工程流程可与原生工具自主组合。见[披露模式](../guides/capability-search.md)。
 
@@ -20,7 +20,7 @@ Zemax Standalone MCP 1.4.1 提供107项工具操作和146种`run_analysis`请求
 
 | 入口 | 结果 |
 | --- | --- |
-| `search_capabilities` | 中文需求检索、静态条件及schema详情 |
+| `search_capabilities` | 中英文工程需求检索、用途、调用路径和交付类型 |
 | `manage_candidates` / `run_candidate_evaluation` | 候选分支、恢复和冻结评价比较 |
 | `get_glass_slots` / `run_analysis: glass_trials` | 目录身份、多个材料槽位联合搜索及同预算比较 |
 | `run_merit_program` | 原生向导、完整瞳OPD目标、尺度与几何约束 |

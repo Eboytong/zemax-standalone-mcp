@@ -17,10 +17,10 @@ def ids(result):
     ('查询光学材料的折射率与色散', ['tool:get_material_properties']),
     ('求镀膜的反射透射和吸收', ['tool:get_coating_rta']),
     ('寻找最佳焦点使光斑最小', ['tool:run_quick_focus','analysis:rms_vs_focus']),
-    ('导出三维光路布局图', ['tool:run_layout_export','analysis:system_drawing']),
+    ('导出三维光路布局图', ['tool:run_layout_export']),
     ('分析加工误差引起的成像合格率', ['tool:run_tolerance_analysis','analysis:design_desensitize']),
     ('把镜片中心厚度改成五毫米', ['tool:update_surfaces']),
-    ('这个镜头看东西有多清楚', ['tool:run_fft_mtf','analysis:spot']),
+    ('这个镜头看东西有多清楚', ['tool:run_fft_mtf','tool:run_spot_analysis']),
     ('追踪杂散光到光电接收面的能量分布', ['tool:run_nsc_ray_trace','tool:get_detector_data']),
     ('读取先前算过的结果', ['tool:get_historical_result','tool:list_task_history','tool:get_task_result']),
     ('计算高斯光束经过系统后的复振幅', ['tool:run_pop']),
@@ -71,3 +71,42 @@ def test_compound_limits_and_category(limit):
 @pytest.mark.parametrize('query', ['火星天气预报 xyzq','zzzzqqqqxxxx','订购午餐然后查询天气'])
 def test_unrelated_queries_stay_empty(query):
     assert search(query)['items'] == []
+
+
+@pytest.mark.parametrize('query', [
+    '完成光学设计报告，提供镜头结构图、MTF曲线和点列图',
+    '镜头结构图、MTF 曲线、标准点列图',
+    'Create report figures with a lens layout, FFT MTF curve and a standard spot diagram',
+])
+def test_report_figures_lead_to_all_required_tools(query):
+    result = search(query)
+    required = {'tool:run_layout_export', 'tool:run_fft_mtf', 'tool:run_spot_analysis', 'tool:export_analysis_image'}
+    assert required <= set(ids(result))
+    for item in result['items']:
+        if item['capability_id'] in required:
+            assert item['call'] == 'execute_capability'
+            assert item['example']['capability_id'] == item['capability_id']
+            assert item['prerequisites'] and item['result']
+
+
+def test_report_search_does_not_suggest_surface_removal():
+    assert 'tool:delete_surfaces' not in ids(search('输出装调公差报告和像质图'))
+    assert 'tool:delete_surfaces' in ids(search('删除曲面，然后输出报告'))
+
+
+def test_overview_representatives_and_examples_resolve():
+    from jsonschema import validate
+    from zemax_mcp.capability_index import CONCEPTS, build_index, describe, EXAMPLES
+    from zemax_mcp.models import Capabilities
+
+    index = {item['capability_id']: item for item in build_index()}
+    overview = describe(Capabilities(topic='overview'))
+    assert sum(group['count'] for group in overview['groups']) == overview['total'] == len(index)
+    for group in overview['groups']:
+        assert set(group['capability_ids']) <= index.keys()
+    for _, _, preferred in CONCEPTS:
+        assert set(preferred) <= index.keys()
+    for name, example in EXAMPLES.items():
+        validate(example, index[f'tool:{name}']['request_schema'])
+    for kind in ('relative_illumination', 'field_curvature_distortion'):
+        assert describe(Capabilities(topic='detail', capability_id=f'analysis:{kind}'))['description']

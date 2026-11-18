@@ -1,5 +1,5 @@
 {
-  "service_version": "1.4.1",
+  "service_version": "1.4.2",
   "mode": "compact",
   "tools": {
     "cancel_task": {
@@ -68,6 +68,7 @@
             "tool",
             "merit_cells",
             "optimization_diagnostics",
+            "overview",
             "index",
             "detail",
             "dependencies"
@@ -299,7 +300,8 @@
           "enum": [
             "all",
             "tool",
-            "analysis"
+            "analysis",
+            "action"
           ],
           "title": "Category",
           "type": "string"

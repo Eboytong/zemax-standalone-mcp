@@ -13,7 +13,7 @@ from .schema import Request
 class CapabilitySearch(Request):
     query: Annotated[str, Field(min_length=1, max_length=300)]
     limit: Annotated[int, Field(strict=True, ge=1, le=50)] = 5
-    category: Literal["all", "tool", "analysis"] = "all"
+    category: Literal["all", "tool", "analysis", "action"] = "all"
 
 
 # Terms describe the implemented entry points; parameter contracts come from models.
@@ -30,6 +30,9 @@ METADATA = {
     "run_batch_ray_trace": ("批量真实光线 交点 方向余弦 追迹", "当前镜头长度单位；方向余弦无量纲", "已打开模型；按请求坐标定义", "创建追迹任务", "逐光线rows和状态"),
     "polarization_ray_trace": ("偏振光线 电场 强度 Jones", "归一化强度及复电场", "顺序模型和偏振输入", "创建追迹任务", "光线强度和偏振状态"),
     "run_fft_mtf": ("调制传递函数 MTF 分辨率 像质 空间频率", "cycles/mm或cycles/mrad", "顺序系统；有焦/无焦频率单位匹配", "创建分析任务", "弧矢/子午series"),
+    "run_spot_analysis": ("标准点列图 光斑图 光斑半径 standard spot diagram rms geo", "μm", "有焦顺序模型", "创建分析任务", "原生 RMS、GEO、参考点和文本"),
+    "relative_illumination": ("相对照度 渐晕 relative illumination", "归一化照度", "有焦顺序模型", "创建分析任务", "随视场变化的相对照度数据"),
+    "field_curvature_distortion": ("场曲 畸变 field curvature distortion", "原生轴及单位", "有焦顺序模型", "创建分析任务", "场曲和畸变曲线"),
     "wavefront": ("波前 光程差 OPD", "waves", "顺序模型及场/波长", "创建分析任务", "波前grids"),
     "zernike_standard": ("泽尼克 Zernike 像差系数 波前拟合", "waves", "顺序模型及瞳采样", "创建分析任务", "系数rows"),
     "rms_vs_focus": ("离焦 均方根 光斑 焦移 最佳焦点", "光斑µm；焦移为镜头单位", "有焦顺序模型", "创建分析任务", "RMS随焦移series"),
@@ -44,15 +47,60 @@ METADATA = {
     "get_detector_data": ("探测器 照度 辐照度 功率 网格", "由探测器data_type确定", "非顺序模型；先执行追迹", "读取", "探测器grids/统计"),
     "read_zrd": ("光线数据库 ZRD 光线路径 段 分光", "模型单位及功率", "可用ZRD文件", "创建读取任务", "光线段rows"),
     "get_task_result": ("结果读取 分页 曲线 网格 行 rows series grids", "继承分析结果", "有效task_id及已产生结果", "读取", "分页结果和文件清单"),
-    "export_analysis_image": ("绘图 导出 图片 PNG PDF 图像", "输出像素/页面单位", "可导出的分析任务及绘图依赖", "创建文件", "图像/PDF路径"),
-    "run_layout_export": ("光路布局 二维 三维 折叠 展开", "模型单位", "模型及原生导出接口", "创建布局任务及文件", "原生布局图像"),
+    "export_analysis_image": ("绘图 导出 图片 PNG 图像 插图 配图 figure chart plot", "像素", "已有任务结果；重绘需 reports 依赖", "创建文件", "已保存原生图的副本或基于结果数据绘制的 PNG"),
+    "run_layout_export": ("光路布局 镜头结构图 光路图 二维 三维 折叠 展开 lens layout optical layout cross section", "模型单位", "模型及原生导出接口", "创建布局任务及文件", "原生布局 PNG"),
     "save_lens_as": ("保存 镜头 副本 模型 文件", "无", "已打开模型；绝对输出路径", "写模型文件", "保存路径"),
     "glass_trials": ("玻璃试验 材料替换 选型 候选 排名", "请求评价指标单位", "顺序模型及材料目录", "工作副本计算并恢复", "候选排名及最佳模型"),
-    "system_drawing": ("系统图 光路图 折叠 展开 Unfold", "模型单位", "顺序模型及原生SystemDrawing", "创建分析任务", "原生图像文件"),
     "cancel_task": ("取消 正在执行 原生任务 停止", "无", "有效task_id", "请求取消", "实际任务终态"),
     "get_request_status": ("查询 超时 请求编号 request_id", "无", "有效请求编号", "读取", "执行回执和任务状态"),
     "update_merit_function": ("直接 编辑 评价函数 MFE 操作数 目标 权重", "原生操作数单位", "已打开模型", "修改MFE", "操作数回读"),
 }
+
+GROUPS = {
+    'project': ('工程与材料 / Projects and materials', ('tool:open_lens', 'tool:save_lens_as', 'tool:create_archive', 'tool:get_material_properties')),
+    'modeling': ('顺序和非序列建模 / Modeling', ('tool:update_surfaces', 'tool:update_nsc_objects', 'tool:update_configurations')),
+    'tracing': ('追迹与传播 / Ray tracing and propagation', ('tool:run_batch_ray_trace', 'tool:run_nsc_ray_trace', 'tool:run_pop')),
+    'analysis': ('成像与像质 / Image quality', ('tool:run_fft_mtf', 'tool:run_spot_analysis', 'analysis:relative_illumination', 'analysis:field_curvature_distortion')),
+    'optimization': ('优化与候选 / Optimization and candidates', ('tool:run_local_optimization', 'tool:run_global_optimization', 'tool:manage_candidates')),
+    'tolerancing': ('公差与制造 / Tolerancing and manufacturing', ('tool:run_tolerance_analysis', 'analysis:manufacturing_geometry')),
+    'delivery': ('图像与交付 / Images and delivery', ('tool:run_layout_export', 'tool:export_analysis_image', 'tool:export_evaluation_report')),
+    'service': ('能力发现与任务控制 / Discovery and tasks', ('tool:get_capabilities', 'tool:search_capabilities', 'tool:get_task_result')),
+}
+
+EXAMPLES = {
+    'run_layout_export': {'request': {'kind': 'cross_section', 'path': r'C:\output\layout.png'}},
+    'run_fft_mtf': {'maximum_frequency': 80, 'field': 0, 'wavelength': 0},
+    'run_spot_analysis': {'field': 0, 'wavelength': 0, 'reference': 'Centroid'},
+    'run_batch_ray_trace': {'request': {'rays': [{'wavelength': 1}, {'px': 0.5, 'wavelength': 1}]}},
+    'export_analysis_image': {'request': {'task_id': '<task_id>', 'path': r'C:\output\analysis.png', 'source': 'data_plot'}},
+}
+
+ANALYSIS_DESCRIPTIONS = {
+    'relative_illumination': '计算随视场角变化的归一化相对照度。',
+    'field_curvature_distortion': '计算场曲和光学畸变，返回原生曲线和轴标签。',
+}
+
+
+def _group(item):
+    for key, (_, ids) in GROUPS.items():
+        if item['capability_id'] in ids:
+            return key
+    name = item['tool_name']
+    if any(word in item['name'] for word in ('toleranc', 'yield', 'manufactur', 'desensitize')):
+        return 'tolerancing'
+    if item['category'] == 'analysis' or name == 'run_analysis':
+        return 'analysis'
+    if any(word in name for word in ('export', 'report', 'save_detector')):
+        return 'delivery'
+    if any(word in name for word in ('ray', 'pop', 'detector', 'beam', 'zrd')):
+        return 'tracing'
+    if any(word in name for word in ('optimiz', 'merit', 'variable', 'candidate', 'focus', 'scan', 'constraint')):
+        return 'optimization'
+    if any(word in name for word in ('system_settings', 'surface', 'configuration', 'nsc', 'editor', 'convert', 'operand', 'star', 'coating')):
+        return 'modeling'
+    if any(word in name for word in ('system', 'lens', 'archive', 'catalog', 'material', 'project', 'resource', 'glass', 'dependenc')):
+        return 'project'
+    return 'service'
 
 
 def _descriptions():
@@ -99,6 +147,8 @@ def build_index():
 
 def _entry(name, category, tool, kind, schema, description):
     metadata = METADATA.get(name)
+    if kind and not description:
+        description = ANALYSIS_DESCRIPTIONS.get(kind, f'运行 OpticStudio 分析 {kind}，通过任务结果查看已保存数据。')
     return dict(capability_id=f"{category}:{name}", name=name, category=category,
                 tool_name=tool, analysis_kind=kind, description=description,
                 aliases=metadata[0].split() if metadata else [],
@@ -125,7 +175,7 @@ CONCEPTS = (
     (("加工误差", "制造误差", "装配误差", "合格率", "成品率"),
      "公差 蒙特卡洛 良率", ("tool:run_tolerance_analysis", "analysis:design_desensitize")),
     (("清晰度", "清晰程度", "有多清楚", "分辨能力", "成像质量"),
-     "MTF 调制传递函数 光斑 像质", ("tool:run_fft_mtf", "analysis:spot")),
+     "MTF 调制传递函数 光斑 像质", ("tool:run_fft_mtf", "tool:run_spot_analysis")),
     (("光电接收面", "感光面", "接收屏", "传感器照度"),
      "探测器 辐照度 功率", ("tool:get_detector_data",)),
     (("杂散光", "追踪散射", "散射追迹"),
@@ -190,9 +240,35 @@ def search(query, limit=5, category="all"):
         flags=re.IGNORECASE) if part.strip())) or [query]
     ranked, expanded = _rank(query, category)
     selections, seen, intents = [], set(), []
+    folded = query.casefold()
+    figure_domains = (
+        (('镜头结构图', '光路布局', '光路图', '布局图', 'lens layout', 'optical layout', 'cross section'), 'tool:run_layout_export'),
+        (('mtf', '调制传递函数'), 'tool:run_fft_mtf'),
+        (('点列图', '光斑图', 'spot diagram', 'spot plot'), 'tool:run_spot_analysis'),
+    )
+    figure_ids = [cid for terms, cid in figure_domains if any(term in folded for term in terms)]
+    report = any(term in folded for term in ('报告', '配图', '插图', '出图', 'report', 'figure'))
+    if (figure_ids and report) or len(figure_ids) > 1:
+        figure_ids.append('tool:export_analysis_image')
+    elif report and any(term in folded for term in ('像质图', '图像', '配图', 'figure', 'image')):
+        figure_ids = ['tool:export_analysis_image']
+    else:
+        figure_ids = []
+    index = {item['capability_id']: item for item in build_index()}
+    exact = [row for row in ranked if row[1]['capability_id'] in folded]
+    for row in [*exact, *((30, index[cid], []) for cid in figure_ids if category in ('all', 'tool'))]:
+        cid = row[1]['capability_id']
+        if cid not in seen and len(selections) < limit:
+            selections.append(row)
+            seen.add(cid)
+    explicit_delete = any(word in folded for word in ('删除', '删掉', '移除', 'delete', 'remove'))
+    if report and not explicit_delete:
+        ranked = [row for row in ranked if not row[1]['tool_name'].startswith('delete_')]
     if len(parts) > 1:
         for part in parts:
             candidates, additions = _rank(part, category)
+            if report and not explicit_delete:
+                candidates = [row for row in candidates if not row[1]['tool_name'].startswith('delete_')]
             expanded.extend(additions)
             intents.append(dict(query=part, capability_ids=[row[1]['capability_id'] for row in candidates[:limit]]))
             candidate = next((row for row in candidates if row[1]['capability_id'] not in seen), None)
@@ -203,6 +279,8 @@ def search(query, limit=5, category="all"):
         union = {row[1]['capability_id']: row for row in ranked}
         for part in parts:
             for row in _rank(part, category)[0]:
+                if report and not explicit_delete and row[1]['tool_name'].startswith('delete_'):
+                    continue
                 old = union.get(row[1]['capability_id'])
                 if old is None or row[0] > old[0]: union[row[1]['capability_id']] = row
         ranked = sorted(union.values(), key=lambda row: (-row[0], row[1]['capability_id']))
@@ -211,8 +289,8 @@ def search(query, limit=5, category="all"):
         if row[1]['capability_id'] not in seen:
             selections.append(row)
             seen.add(row[1]['capability_id'])
-    result = dict(query=query, total_matches=len(ranked), items=[
-        {**brief(entry), "score": score, "matched_terms": hits} for score, entry, hits in selections])
+    result = dict(query=query, total_matches=len({row[1]['capability_id'] for row in ranked} | seen), items=[
+        {**brief(entry), **usage(entry), "score": score, "matched_terms": hits} for score, entry, hits in selections])
     if intents: result['intents'] = intents
     expanded = list(dict.fromkeys(expanded))
     if expanded: result['expanded_terms'] = expanded
@@ -226,6 +304,10 @@ def search(query, limit=5, category="all"):
 def describe(req):
     from .errors import ZemaxError
     entries = build_index()
+    if req.topic == 'overview':
+        return dict(total=len(entries), groups=[
+            dict(id=key, title=title, count=sum(_group(entry) == key for entry in entries), capability_ids=list(ids))
+            for key, (title, ids) in GROUPS.items()], index_request=dict(topic='index', start=1, count=20))
     if req.topic in {"detail", "dependencies"}:
         entry = next((item for item in entries if item["capability_id"] == req.capability_id), None)
         if entry is None:
@@ -241,7 +323,7 @@ def describe(req):
         if not req.include_metadata:
             result = {key: result[key] for key in ('capability_id','tool_name','analysis_kind','description',
                 'units','prerequisites','effect','result','read_only','layer','request_schema')}
-        return result
+        return {**result, **usage(entry)}
     selected = entries[req.start - 1:req.start - 1 + req.count]
     return dict(total=len(entries), start=req.start, count=len(selected),
                 items=[brief(item) for item in selected])
@@ -249,3 +331,16 @@ def describe(req):
 
 def brief(item):
     return {key: item[key] for key in ('capability_id', 'name', 'category', 'description', 'effect', 'read_only', 'layer', 'detail_request')}
+
+
+def usage(item):
+    tool = item['tool_name']
+    value = dict(call='query_capability' if item['read_only'] else 'execute_capability',
+                 prerequisites=item['prerequisites'], result=item['result'])
+    if tool in EXAMPLES:
+        value['example'] = dict(capability_id=item['capability_id'], arguments=EXAMPLES[tool])
+    if tool == 'run_spot_analysis':
+        value['next_capabilities'] = ['tool:run_batch_ray_trace', 'tool:export_analysis_image']
+    if tool in {'run_fft_mtf', 'run_batch_ray_trace'}:
+        value['next_capabilities'] = ['tool:export_analysis_image']
+    return value

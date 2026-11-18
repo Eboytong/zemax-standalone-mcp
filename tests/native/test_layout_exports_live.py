@@ -11,7 +11,7 @@ from tests.support.paths import run_dir
 def test_native_layout_images_over_stdio():
     async def scenario():
         folder=run_dir("layouts");events=[]
-        params=StdioServerParameters(command=sys.executable,args=["-B","-m","zemax_mcp"],cwd=PROJECT_ROOT,env={"PYTHONUTF8":"1","ZEMAX_OUTPUT_DIR":str(folder)})
+        params=StdioServerParameters(command=sys.executable,args=["-B","-m","zemax_mcp"],cwd=PROJECT_ROOT,env={"PYTHONUTF8":"1","ZEMAX_OUTPUT_DIR":str(folder),"ZEMAX_STATE_DIR":str(folder/"state"),"ZEMAX_TOOL_MODE":"full","PYTHONPATH":str(PROJECT_ROOT/"src")})
         try:
             async with Client(params,read_timeout_seconds=120)as client:
                 async def call(name,args=None):

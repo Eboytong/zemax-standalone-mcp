@@ -369,7 +369,7 @@ class Backend(CandidatesMixin, HpcMixin, StarMixin, ConversionMixin, MaterialsMi
 
     def get_capabilities(self, req):
         topic = getattr(req, "topic", "all")
-        if topic in {"index", "detail", "dependencies"}:
+        if topic in {"overview", "index", "detail", "dependencies"}:
             from .capability_index import describe
             return {**describe(req), "runtime": {
                 "connected": getattr(self.native, "application", None) is not None,
@@ -1794,6 +1794,9 @@ class Backend(CandidatesMixin, HpcMixin, StarMixin, ConversionMixin, MaterialsMi
             result = task["result"] or self._task_view(task)
         if isinstance(result, dict) and "task" in result:
             result["task"] = self._task_view(task)
+        if task['state'] == 'succeeded' and isinstance(result, dict):
+            from .plotting import image_exports
+            result['image_exports'] = image_exports(result)
         return self._page_task_result(result, req)
 
     def _page_task_result(self, result, req):
@@ -1812,7 +1815,7 @@ class Backend(CandidatesMixin, HpcMixin, StarMixin, ConversionMixin, MaterialsMi
                 if len(radii)!=len(item['x']):
                     raise ZemaxError('INVALID_RESULT_DATA','累计能量分箱边界数量与横轴不一致。')
                 page['native_binning']={**item['native_binning'],'enclosure_radius_um':radii[req.start:end]}
-            return {**{k:result[k] for k in ('task','context','artifacts','history') if k in result},
+            return {**{k:result[k] for k in ('task','context','artifacts','history','image_exports') if k in result},
                     'series':[page],
                     'total':len(item['x']),'next_start':end if end<len(item['x'])else None}
         if result.get("scatter"):
@@ -1840,7 +1843,7 @@ class Backend(CandidatesMixin, HpcMixin, StarMixin, ConversionMixin, MaterialsMi
                     meta["valid_mask"]=[row[req.x_start:xend] for row in g["valid_mask"][req.y_start:yend]]
                 if "pupil_mapping"in g:
                     meta["pupil_mapping"]={**meta["pupil_mapping"],"points":[row[req.x_start:xend]for row in g["pupil_mapping"]["points"][req.y_start:yend]]}
-                return {**{k:result[k] for k in ("task","context","artifacts","history") if k in result},
+                return {**{k:result[k] for k in ("task","context","artifacts","history","image_exports") if k in result},
                         "grid":{**meta,"x_start":req.x_start,"y_start":req.y_start,
                                 "values":[row[req.x_start:xend] for row in array[req.y_start:yend]],
                                 "next_x":xend if xend<nx else None,"next_y":yend if yend<ny else None}}

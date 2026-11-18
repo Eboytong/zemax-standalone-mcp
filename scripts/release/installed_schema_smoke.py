@@ -22,6 +22,10 @@ async def run(target,folder,version,tool_count=None,analysis_count='146',mode='c
         ts=await client.list_tools();record['tool_count']=len(ts.tools);assert record['tool_count']==int(tool_count)
         expected={'search_capabilities','manage_candidates','run_candidate_evaluation','get_glass_slots','run_merit_program'} if mode=='full' else {'search_capabilities','query_capability','execute_capability'}
         assert expected <= {tool.name for tool in ts.tools}
+        overview=(await client.call_tool('get_capabilities',dict(topic='overview'))).structured_content
+        assert overview['ok'] and sum(g['count'] for g in overview['data']['groups'])==overview['data']['total']
+        figures=(await client.call_tool('search_capabilities',dict(query='镜头结构图、MTF 曲线、标准点列图'))).structured_content
+        assert figures['ok'] and {'tool:run_layout_export','tool:run_fft_mtf','tool:run_spot_analysis','tool:export_analysis_image'} <= {item['capability_id'] for item in figures['data']['items']}
         search=(await client.call_tool('search_capabilities',dict(query='逐面能量损耗',limit=5))).structured_content
         assert search['ok'];record['offline_search']=search
         result=(await client.call_tool('get_capabilities',dict(topic='tool',tool_name='run_analysis'))).structured_content
